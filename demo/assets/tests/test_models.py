@@ -7,6 +7,7 @@ from rest_framework.test import APITestCase
 from assets.models import Age, Breed, Color, Cow, Image
 from assets.tests.utils import get_random_age, get_random_breed
 from assets.tests.utils import get_random_color, get_random_image
+from assets.tests.utils import get_random_user, convert_date, get_today
 
 class TestAgeModel(APITestCase):
     fixtures = ['age']
@@ -293,12 +294,14 @@ class TestImageModel(APITestCase):
                          actual.url)
 
 class TestCowModel(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'image']
+    fixtures = ['age', 'breed', 'color', 'cow', 'image', 'user']
 
     def setUp(self):
         self.age_data = {'name': '10 years'}
         self.breed_data = {'name': 'Belgian Blue'}
         self.color_data = {'name': 'blue'}
+        self.cow_data = {'purchased_by': User.objects.get(username=get_random_user()),
+                         'purchase_date': get_today()}
         self.image_data = {'url': '/static/images/belgian_blue.png'}
 
     def tearDown(self):
@@ -317,9 +320,15 @@ class TestCowModel(APITestCase):
         colors = Color.objects.all()
         self.assertEqual(13,
                          len(colors))
+        cows = Cow.objects.all()
+        self.assertEqual(70,
+                         len(cows))
         images = Image.objects.all()
         self.assertEqual(7,
                          len(images))
+        users = User.objects.all()
+        self.assertEqual(3,
+                         len(users))
 
     def test_01_object(self):
         c = Cow()
@@ -330,66 +339,115 @@ class TestCowModel(APITestCase):
  
     def test_02_get(self):
         c = Cow.objects.get(id=1)
+        self.assertEqual('1 year',
+                         c.age.name)
         self.assertEqual('Holstein',
-                         c.name)
-        self.assertEqual('holstein',
                          c.breed.name)
         self.assertEqual('black_white',
                          c.color.name)
         self.assertEqual('/static/images/holstein.png',
-                         c.url)
-        self.assertEqual('2018-01-01',
-                         c.purchase_date)
+                         c.image.url)
+        self.assertEqual('2018-01-26',
+                         convert_date(c.purchase_date))
         self.assertEqual(get_random_user(),
-                         c.purchased_by)
+                         c.purchased_by.username)
 
-    def ttest_03_filter(self):
-        expected = Image.objects.filter(url='/static/images/holstein.png')
-        actual = Image.objects.filter(url__endswith='stein.png')
+    def test_03_filter(self):
+        expected = Cow.objects.filter(image__url='/static/images/holstein.png')
+        actual = Cow.objects.filter(image__url__endswith='stein.png')
         self.assertEqual(len(expected),
                          len(actual))
 
-    def ttest_04_create(self):
+    def test_04_create(self):
+        a = Age.objects.create(**self.age_data)
         b = Breed.objects.create(**self.breed_data)
+        self.color_data.update({'breed': b})
+        c = Color.objects.create(**self.color_data)
         self.image_data.update({'breed': b})
         i = Image.objects.create(**self.image_data)
+        self.cow_data.update({'age': a,
+                              'breed': b,
+                              'color': c,
+                              'image': i})
+        actual = Cow.objects.create(**self.cow_data)
+        self.assertEqual(self.age_data['name'],
+                         actual.age.name)
+        self.assertEqual(self.breed_data['name'],
+                         actual.breed.name)
+        self.assertEqual(self.color_data['name'],
+                         actual.color.name)
         self.assertEqual(self.image_data['url'],
-                         i.url)
+                         actual.image.url)
+        self.assertEqual(self.cow_data['purchase_date'],
+                         actual.purchase_date)
+        self.assertEqual(self.cow_data['purchased_by'],
+                         actual.purchased_by)
 
-    def ttest_05_full_update(self):
-        expected = Image.objects.get(id=1)
-        expected.url = get_random_image()
-        breeds = Breed.objects.filter(id__gt=1) 
-        expected.breed = breeds[randint(1, len(breeds) - 1)]
+    def test_05_full_update(self):
+        a = Age.objects.create(**self.age_data)
+        b = Breed.objects.create(**self.breed_data)
+        self.color_data.update({'breed': b})
+        c = Color.objects.create(**self.color_data)
+        self.image_data.update({'breed': b})
+        i = Image.objects.create(**self.image_data)
+        u = User.objects.get(username=get_random_user())
+        d = get_today()
+        expected = Cow.objects.get(id=1)
+        expected.age = a
+        expected.breed = b
+        expected.color = c
+        expected.image = i
+        expected.purchased_by = u
+        expected.purchase_date = d
         expected.save()
-        actual = Image.objects.get(id=expected.id)
-        self.assertEqual(expected.url,
-                         actual.url)
-        self.assertEqual(expected.breed,
-                         actual.breed)
+        actual = Cow.objects.get(id=expected.id)
+        self.assertEqual(expected.age.name,
+                         actual.age.name)
+        self.assertEqual(expected.breed.name,
+                         actual.breed.name)
+        self.assertEqual(expected.color.name,
+                         actual.color.name)
+        self.assertEqual(expected.image.url,
+                         actual.image.url)
                              
-    def ttest_06_partial_update(self):
-        expected = Image.objects.get(id=1)
-        expected.url = get_random_image()
+    def test_06_partial_update(self):
+        a = Age.objects.create(**self.age_data)
+        expected = Cow.objects.get(id=1)
+        expected.age = a
         expected.save()
-        actual = Image.objects.get(id=expected.id)
-        self.assertEqual(expected.url,
-                         actual.url)
+        actual = Cow.objects.get(id=expected.id)
+        self.assertEqual(expected.age.name,
+                         actual.age.name)
 
-    def ttest_07_delete(self):
-        expected = Image.objects.get(id=1)
+    def test_07_delete(self):
+        expected = Cow.objects.get(id=1)
         expected.delete()
-        with self.assertRaises(Image.DoesNotExist) as context:
-            Image.objects.get(pk=expected.id)
-        msg = 'Image matching query does not exist'
+        with self.assertRaises(Cow.DoesNotExist) as context:
+            Cow.objects.get(pk=expected.id)
+        msg = 'Cow matching query does not exist'
         self.assertIn(msg, str(context.exception))
 
-    def ttest_08_save(self):
+    def test_08_save(self):
+        a = Age.objects.create(**self.age_data)
         b = Breed.objects.create(**self.breed_data)
-        expected = Image()
-        expected.url = self.image_data['url']
+        self.color_data.update({'breed': b})
+        c = Color.objects.create(**self.color_data)
+        self.image_data.update({'breed': b})
+        i = Image.objects.create(**self.image_data)
+        u = User.objects.get(username=get_random_user())
+        expected = Cow()
+        expected.age = a
         expected.breed = b
+        expected.color = c
+        expected.image = i
+        expected.purchased_by = u
         expected.save()
-        actual = Image.objects.get(pk=expected.id)
-        self.assertEqual(expected.url,
-                         actual.url)
+        actual = Cow.objects.get(pk=expected.id)
+        self.assertEqual(expected.age.name,
+                         actual.age.name)
+        self.assertEqual(expected.breed.name,
+                         actual.breed.name)
+        self.assertEqual(expected.color.name,
+                         actual.color.name)
+        self.assertEqual(expected.image.url,
+                         actual.image.url)

@@ -1,8 +1,16 @@
-
 from random import randint
 
+from django.utils.timezone import datetime, localtime, pytz
+
+def convert_date(t):
+    return datetime.strftime(t, '%Y-%m-%d')
+
+def get_today():
+    t = datetime.now()
+    return datetime.date(t)
+
 def get_random_age():
-    age = randint(5, 10)
+    age = randint(6, 10)
     return '{} years'.format(age)
 
 def get_random_breed():
@@ -26,3 +34,6 @@ def get_random_image():
               '/static/images/red_sindhi.png']
     image = randint(0, len(images) - 1)
     return images[image]
+
+def get_random_user():
+    return 'farmhand'
