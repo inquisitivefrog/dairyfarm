@@ -1,0 +1,62 @@
+
+INSTALL TOOLS
+$ cd
+$ python3 -m venv demo
+$ source demo/bin/activate
+(demo) $ brew install python3
+(demo) $ brew update python3
+(demo) $ python -V
+Python 3.6.4
+(demo) $ pip -V
+pip 9.0.1 from /Users/tim/demo/lib/python3.6/site-packages (python 3.6)
+NOTE: install PostGreSQL 10 for MacOSX and start it
+(demo) $ psql
+psql (10.1) 
+tim# CREATE DATABASE dairyfarm;
+tim# \q
+
+CREATE PROJECT
+(demo) $ cd ~/Documents/workspace/python3
+(demo) $ git clone git@github.com:inquisitivefrog/dairyfarm.git
+(demo) $ cd dairyfarm/
+(demo) $ vi Pipfile
+(demo) $ python install --user pipenv
+(demo) $ pipenv install
+NOTE: pipenv reads Pipfile like requirements.txt
+(demo) $ vi requirements.txt
+(demo) $ pip install -r requirements.txt
+NOTE: as Heroku uses pipenv in demo, version control not enforced; stupid!
+(demo) $ django-admin.py --version
+2.0.1
+(demo) $ django-admin.py startproject demo
+(demo) $ mkdir -p static/
+(demo) $ mkdir -p tools/
+(demo) $ mkdir -p demo/fixtures/
+(demo) $ mkdir -p demo/templates/demo/
+(demo) $ mkdir -p demo/tests/
+(demo) $ vi demo/settings.py
+(demo) $ python manage.py check
+(demo) $ python manage.py test
+
+ENABLE SECURITY
+(demo) $ vi demo/serializers.py
+(demo) $ vi demo/templates/demo/index.html
+(demo) $ vi demo/views.py
+(demo) $ vi demo/api_views.py
+(demo) $ vi demo/urls.py
+(demo) $ vi tools/create_user.py
+(demo) $ python manage.py check
+(demo) $ python manage.py collecstatic
+(demo) $ python manage.py test
+(demo) $ ./tools/create_user.py -f old -l macdonald -e farmer@dairyfarm.org -u farmer -p milk
+(demo) $ ./tools/create_user.py -f mister -l greenjeans -e farmhand@dairyfarm.org -u farmhand -p cheese
+(demo) $ ./tools/create_user.py -f doctor -l fixmeup -e doctor@dairyfarm.org -u vet -p cream
+(demo) $ ./tools/purchase_herd.py -b holstein -c 10 -u farmhand
+holstein purchased 10 holsteins
+(demo) $ ./tools/purchase_herd.py -b jersey -c 10 -u farmhand
+jersey purchased 10 jerseys
+(demo) $ ./tools/purchase_herd.py -b guernsey -c 10 -u farmhand 
+guernsey purchased 10 guernseys
+
+
+NOTE: all users have permissions of is_active, is_staff

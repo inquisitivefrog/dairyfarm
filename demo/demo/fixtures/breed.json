@@ -1,0 +1,51 @@
+[
+{
+    "model": "assets.breed",
+    "pk": 1,
+    "fields": {
+        "name": "Holstein"
+    }
+},
+{
+    "model": "assets.breed",
+    "pk": 2,
+    "fields": {
+        "name": "Jersey"
+    }
+},
+{
+    "model": "assets.breed",
+    "pk": 3,
+    "fields": {
+        "name": "Guernsey"
+    }
+},
+{
+    "model": "assets.breed",
+    "pk": 4,
+    "fields": {
+        "name": "Ayrshire"
+    }
+},
+{
+    "model": "assets.breed",
+    "pk": 5,
+    "fields": {
+        "name": "Brown Swiss"
+    }
+},
+{
+    "model": "assets.breed",
+    "pk": 6,
+    "fields": {
+        "name": "Milking Shorthorn"
+    }
+},
+{
+    "model": "assets.breed",
+    "pk": 7,
+    "fields": {
+        "name": "Dutch Belted"
+    }
+}
+]

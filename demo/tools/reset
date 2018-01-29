@@ -1,0 +1,25 @@
+#!/bin/bash -x
+
+# CLEAN UP
+rm ./db.sqlite3
+rm ./assets/migrations/0001_initial.py
+
+# START FRESH
+python manage.py check
+python manage.py makemigrations
+python manage.py migrate
+
+# LOAD DEPENDENCIES
+./tools/create_user.py -f old -l mcdonald -e farmer@dairyfarm.org -u farmer -p milk
+./tools/create_user.py -f mister -l greenjeans -e farmhand@dairyfarm.org -u farmhand -p butter
+./tools/create_user.py -f doctor -l fixmeup -e vet@dairyfarm.org -u vet -p cheese
+./tools/load_references.py
+
+# LOAD TOP LEVEL OBJECTS
+./tools/purchase_herd.py -b holstein -c 10 -u farmhand
+./tools/purchase_herd.py -b jersey -c 10 -u farmhand
+./tools/purchase_herd.py -b guernsey -c 10 -u farmhand
+./tools/purchase_herd.py -b ayrshire -c 10 -u farmhand
+./tools/purchase_herd.py -b brown_swiss -c 10 -u farmhand
+./tools/purchase_herd.py -b milking_shorthorn -c 10 -u farmhand
+./tools/purchase_herd.py -b dutch_belted -c 10 -u farmhand

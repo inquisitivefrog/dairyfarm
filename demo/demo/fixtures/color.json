@@ -1,0 +1,106 @@
+[
+{
+    "model": "assets.color",
+    "pk": 1,
+    "fields": {
+        "breed": 1,
+        "name": "black_white"
+    }
+},
+{
+    "model": "assets.color",
+    "pk": 2,
+    "fields": {
+        "breed": 1,
+        "name": "red_white"
+    }
+},
+{
+    "model": "assets.color",
+    "pk": 3,
+    "fields": {
+        "breed": 2,
+        "name": "brown"
+    }
+},
+{
+    "model": "assets.color",
+    "pk": 4,
+    "fields": {
+        "breed": 2,
+        "name": "tawny"
+    }
+},
+{
+    "model": "assets.color",
+    "pk": 5,
+    "fields": {
+        "breed": 3,
+        "name": "golden_white"
+    }
+},
+{
+    "model": "assets.color",
+    "pk": 6,
+    "fields": {
+        "breed": 4,
+        "name": "golden_white"
+    }
+},
+{
+    "model": "assets.color",
+    "pk": 7,
+    "fields": {
+        "breed": 5,
+        "name": "brown"
+    }
+},
+{
+    "model": "assets.color",
+    "pk": 8,
+    "fields": {
+        "breed": 5,
+        "name": "gray"
+    }
+},
+{
+    "model": "assets.color",
+    "pk": 9,
+    "fields": {
+        "breed": 6,
+        "name": "red"
+    }
+},
+{
+    "model": "assets.color",
+    "pk": 10,
+    "fields": {
+        "breed": 6,
+        "name": "white"
+    }
+},
+{
+    "model": "assets.color",
+    "pk": 11,
+    "fields": {
+        "breed": 6,
+        "name": "roan"
+    }
+},
+{
+    "model": "assets.color",
+    "pk": 12,
+    "fields": {
+        "breed": 6,
+        "name": "red_white"
+    }
+},
+{
+    "model": "assets.color",
+    "pk": 13,
+    "fields": {
+        "breed": 7,
+        "name": "black_white"
+    }
+}
+]

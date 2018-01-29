@@ -1,0 +1,17 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <title>My Dairy Farm</title>
+    <script src="{% static 'angular/angular.min.js' %}"></script>
+    <script src="{% static 'angular/angular-route.min.js' %}"></script>
+    <script src="{% static 'app.js' %}"></script>
+  </head>
+  <body ng-app="farmApp">
+      {% verbatim %}
+        <div ng-controller="AssetController">
+          <div ng-view>
+          </div>
+        </div>
+      {% endverbatim %}
+  </body>
+</html>

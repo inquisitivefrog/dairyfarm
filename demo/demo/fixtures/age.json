@@ -1,0 +1,37 @@
+[
+{
+    "model": "assets.age",
+    "pk": 1,
+    "fields": {
+        "name": "1 year"
+    }
+},
+{
+    "model": "assets.age",
+    "pk": 2,
+    "fields": {
+        "name": "2 years"
+    }
+},
+{
+    "model": "assets.age",
+    "pk": 3,
+    "fields": {
+        "name": "3 years"
+    }
+},
+{
+    "model": "assets.age",
+    "pk": 4,
+    "fields": {
+        "name": "4 years"
+    }
+},
+{
+    "model": "assets.age",
+    "pk": 5,
+    "fields": {
+        "name": "5 years"
+    }
+}
+]

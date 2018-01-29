@@ -1,0 +1,12 @@
+<ul>
+  <li ng-repeat="cow in herd">
+    <p>{{cow.id}}</p>
+    <p>{{cow.purchased_by}}</p>
+    <p>{{cow.purchase_date}}</p>
+    <p>{{cow.breed}}</p>
+    <p>{{cow.color}}</p>
+    <p>{{cow.age}}</p>
+  </li>
+</ul>
+
+<p ng-if="herd.length == 0">No cows purchased yet.</p>

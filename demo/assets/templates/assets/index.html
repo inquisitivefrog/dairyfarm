@@ -1,0 +1,18 @@
+{% extends 'assets/base.html' %}
+
+{% block content %}
+{% if herd %}
+    {% for cow in herd %}
+      <ul>
+        <li>{{cow.id}}</li>
+        <li>{{cow.purchased_by.username}}</li>
+        <li>{{cow.purchase_date}}</li>
+        <li>{{cow.breed.name}}</li>
+        <li>{{cow.color.name}}</li>
+        <li>{{cow.age.name}}</li>
+      </ul>
+    {% endfor %}
+{% else %}
+    <p>No cows are available.</p>
+{% endif %}
+{% endblock %}
