@@ -31,6 +31,11 @@ def read_args():
                         required=False,
                         default=10,
                         help='herd size')
+    parser.add_argument('-d',
+                        '--date',
+                        type=str,
+                        required=True,
+                        help='purchase date as "%Y-%m-%d"')
     parser.add_argument('-u',
                         '--username',
                         type=str,
@@ -39,31 +44,31 @@ def read_args():
     o = parser.parse_args()
     return(o.breed,
            o.count,
+           o.date,
            o.username)
     
-def _get_attrs(breed):
-    from assets.models import Age, Breed, Color, Image
+def _get_data(breed, date, user):
+    from assets.models import Age, Breed, BreedImage, Color
+    from tools.utils import TestTime
     ages = [a.id for a in Age.objects.all() ]
-    a_guess = ages[randint(0, len(ages) - 1)]
+    age_id = ages[randint(0, len(ages) - 1)]
     breed_id = Breed.objects.get(name=breed).id
     colors = [ c.id for c in Color.objects.filter(breed=breed_id) ]
-    c_guess = colors[randint(0, len(colors) - 1)]
-    images = [ i.id for i in Image.objects.filter(breed=breed_id) ]
-    i_guess = images[randint(0, len(images) - 1)]
-    return (breed_id, c_guess, a_guess, i_guess)
+    color_id = colors[randint(0, len(colors) - 1)]
+    images = [ bi.id for bi in BreedImage.objects.filter(breed=breed_id) ]
+    image_id = images[randint(0, len(images) - 1)]
+    return {'purchased_by': user.id,
+            'purchase_date': TestTime.convert_date(date),
+            'color': color_id,
+            'age': age_id,
+            'image': image_id}
 
-def purchase_cow(breed, username):
+def purchase_cow(breed, date, username):
     from django.contrib.auth.models import User
     from assets.serializers import CowSerializer
-    (breed_id, color_id, age_id, image_id) = _get_attrs(breed)
     try:
         user = User.objects.get(username=username)
-        data = {'purchased_by': user.id,
-                'breed': breed_id,
-                'color': color_id,
-                'age': age_id,
-                'image': image_id}
-        cs = CowSerializer(data=data)
+        cs = CowSerializer(data=_get_data(breed, date, user))
         if cs.is_valid() and len(cs.errors) == 0:
             cs.save()
             return
@@ -77,7 +82,7 @@ def purchase_cow(breed, username):
         exit(1)
 
 def main():
-    (breed, count, username) = read_args()
+    (breed, count, date, username) = read_args()
     path.append('/Users/tim/Documents/workspace/python3/dairyfarm/demo/')
     environ.setdefault('DJANGO_SETTINGS_MODULE',
                        'demo.settings')
@@ -87,7 +92,7 @@ def main():
         new_breed = []
         for word in breed.split('_'):
             new_breed.append(word.capitalize())
-        purchase_cow(' '.join(new_breed), username)
+        purchase_cow(' '.join(new_breed), date, username)
         bought += 1
     if bought == 1:
         print('{} purchased {} {}'.format(username, bought, breed))

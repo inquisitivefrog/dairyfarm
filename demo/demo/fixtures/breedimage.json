@@ -1,0 +1,58 @@
+[
+{
+    "model": "assets.breedimage",
+    "pk": 1,
+    "fields": {
+        "breed": 1,
+        "url": "/static/images/breeds/holstein.png"
+    }
+},
+{
+    "model": "assets.breedimage",
+    "pk": 2,
+    "fields": {
+        "breed": 2,
+        "url": "/static/images/breeds/jersey.png"
+    }
+},
+{
+    "model": "assets.breedimage",
+    "pk": 3,
+    "fields": {
+        "breed": 3,
+        "url": "/static/images/breeds/guernsey.png"
+    }
+},
+{
+    "model": "assets.breedimage",
+    "pk": 4,
+    "fields": {
+        "breed": 4,
+        "url": "/static/images/breeds/ayrshire.png"
+    }
+},
+{
+    "model": "assets.breedimage",
+    "pk": 5,
+    "fields": {
+        "breed": 5,
+        "url": "/static/images/breeds/brown_swiss.png"
+    }
+},
+{
+    "model": "assets.breedimage",
+    "pk": 6,
+    "fields": {
+        "breed": 6,
+        "url": "/static/images/breeds/milking_shorthorn.png"
+    }
+},
+{
+    "model": "assets.breedimage",
+    "pk": 7,
+    "fields": {
+        "breed": 7,
+        "url": "/static/images/breeds/dutch_belted.png"
+    }
+}
+]

@@ -1,0 +1,52 @@
+
+Data Modeling
+
+1. Milk
+2. Cow
+3. Color, BreedImage
+4. Age, Breed
+
+1. Pasture
+2. RegionImage 
+3. CerealHay, GrassHay, LegumeHay, Region, Season
+
+1. HealthRecord, Event, Milk
+2. Injury, Illness, Action 
+
+Fast Path
+1. sleep
+2. get inspected
+3. get milked
+4. walk
+5. graze
+6. drink
+7. rest
+8. graze
+9. drink
+10. return walk
+11. get inspected
+12. get milked
+
+Upset Path 1
+1. sleep
+2. get inspected
+3. get diagnosed
+4. get treated
+5. feed
+6. drink
+7. rest
+
+Upset Path 2
+1. sleep
+2. get inspected
+3. get milked
+4. walk
+5. graze
+6. drink
+7. nap
+8. graze
+9. drink
+10. return walk
+11. get inspected
+3. get diagnosed
+4. get treated

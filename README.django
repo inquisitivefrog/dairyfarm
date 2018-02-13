@@ -51,6 +51,7 @@ ENABLE SECURITY
 (demo) $ ./tools/create_user.py -f old -l macdonald -e farmer@dairyfarm.org -u farmer -p milk
 (demo) $ ./tools/create_user.py -f mister -l greenjeans -e farmhand@dairyfarm.org -u farmhand -p cheese
 (demo) $ ./tools/create_user.py -f doctor -l fixmeup -e doctor@dairyfarm.org -u vet -p cream
+(demo) $ ./tools/load_references.py 
 (demo) $ ./tools/purchase_herd.py -b holstein -c 10 -u farmhand
 holstein purchased 10 holsteins
 (demo) $ ./tools/purchase_herd.py -b jersey -c 10 -u farmhand

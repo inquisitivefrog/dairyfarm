@@ -1,0 +1,5322 @@
+[
+{
+    "model": "assets.healthrecord",
+    "pk": 1,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 1,
+        "temperature": 100.8,
+        "respiratory_rate": 43.4,
+        "heart_rate": 67.2,
+        "blood_pressure": 132.0,
+        "weight": 490,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 2,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 1,
+        "temperature": 101.5,
+        "respiratory_rate": 42.4,
+        "heart_rate": 50.2,
+        "blood_pressure": 133.6,
+        "weight": 538,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 3,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 2,
+        "temperature": 100.7,
+        "respiratory_rate": 49.3,
+        "heart_rate": 73.4,
+        "blood_pressure": 145.0,
+        "weight": 488,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 4,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 2,
+        "temperature": 100.6,
+        "respiratory_rate": 44.4,
+        "heart_rate": 67.0,
+        "blood_pressure": 131.6,
+        "weight": 525,
+        "body_condition_score": 3.0,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 5,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 3,
+        "temperature": 102.0,
+        "respiratory_rate": 41.6,
+        "heart_rate": 77.4,
+        "blood_pressure": 146.2,
+        "weight": 548,
+        "body_condition_score": 3.4,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 6,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 3,
+        "temperature": 100.4,
+        "respiratory_rate": 45.9,
+        "heart_rate": 65.2,
+        "blood_pressure": 133.9,
+        "weight": 486,
+        "body_condition_score": 3.4,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 7,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 4,
+        "temperature": 100.8,
+        "respiratory_rate": 29.1,
+        "heart_rate": 81.1,
+        "blood_pressure": 133.6,
+        "weight": 492,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 8,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 4,
+        "temperature": 101.9,
+        "respiratory_rate": 30.3,
+        "heart_rate": 57.1,
+        "blood_pressure": 140.8,
+        "weight": 465,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 9,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 5,
+        "temperature": 96.4,
+        "respiratory_rate": 44.6,
+        "heart_rate": 77.8,
+        "blood_pressure": 138.5,
+        "weight": 508,
+        "body_condition_score": 3.0,
+        "status": 5,
+        "illness": 7,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 10,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 5,
+        "temperature": 101.0,
+        "respiratory_rate": 32.9,
+        "heart_rate": 83.5,
+        "blood_pressure": 133.6,
+        "weight": 489,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 11,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 6,
+        "temperature": 101.5,
+        "respiratory_rate": 36.7,
+        "heart_rate": 56.1,
+        "blood_pressure": 136.3,
+        "weight": 510,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 12,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 6,
+        "temperature": 100.7,
+        "respiratory_rate": 38.3,
+        "heart_rate": 63.7,
+        "blood_pressure": 131.5,
+        "weight": 539,
+        "body_condition_score": 3.2,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 13,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 7,
+        "temperature": 100.9,
+        "respiratory_rate": 42.3,
+        "heart_rate": 57.1,
+        "blood_pressure": 138.0,
+        "weight": 503,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 14,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 7,
+        "temperature": 101.6,
+        "respiratory_rate": 43.8,
+        "heart_rate": 72.1,
+        "blood_pressure": 134.1,
+        "weight": 478,
+        "body_condition_score": 3.4,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 15,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 8,
+        "temperature": 101.2,
+        "respiratory_rate": 32.7,
+        "heart_rate": 64.3,
+        "blood_pressure": 133.5,
+        "weight": 496,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 16,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 8,
+        "temperature": 101.8,
+        "respiratory_rate": 28.3,
+        "heart_rate": 66.2,
+        "blood_pressure": 137.2,
+        "weight": 462,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 17,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 9,
+        "temperature": 99.9,
+        "respiratory_rate": 48.7,
+        "heart_rate": 70.0,
+        "blood_pressure": 117.8,
+        "weight": 472,
+        "body_condition_score": 3.4,
+        "status": 5,
+        "illness": 7,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 18,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 9,
+        "temperature": 100.1,
+        "respiratory_rate": 39.4,
+        "heart_rate": 66.7,
+        "blood_pressure": 134.0,
+        "weight": 615,
+        "body_condition_score": 2.4,
+        "status": 5,
+        "illness": 7,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 19,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 10,
+        "temperature": 101.5,
+        "respiratory_rate": 39.1,
+        "heart_rate": 67.9,
+        "blood_pressure": 119.5,
+        "weight": 437,
+        "body_condition_score": 2.9,
+        "status": 3,
+        "illness": null,
+        "injury": 2,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 20,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 10,
+        "temperature": 101.5,
+        "respiratory_rate": 27.1,
+        "heart_rate": 69.1,
+        "blood_pressure": 147.1,
+        "weight": 468,
+        "body_condition_score": 3.5,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 21,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 1,
+        "temperature": 102.0,
+        "respiratory_rate": 49.8,
+        "heart_rate": 68.2,
+        "blood_pressure": 148.1,
+        "weight": 453,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 22,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 1,
+        "temperature": 100.4,
+        "respiratory_rate": 28.4,
+        "heart_rate": 69.1,
+        "blood_pressure": 140.1,
+        "weight": 548,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 23,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 2,
+        "temperature": 101.8,
+        "respiratory_rate": 44.7,
+        "heart_rate": 71.1,
+        "blood_pressure": 142.0,
+        "weight": 538,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 24,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 2,
+        "temperature": 100.9,
+        "respiratory_rate": 26.4,
+        "heart_rate": 70.9,
+        "blood_pressure": 135.2,
+        "weight": 479,
+        "body_condition_score": 3.5,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 25,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 3,
+        "temperature": 100.8,
+        "respiratory_rate": 44.1,
+        "heart_rate": 83.0,
+        "blood_pressure": 134.2,
+        "weight": 528,
+        "body_condition_score": 3.0,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 26,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 3,
+        "temperature": 102.0,
+        "respiratory_rate": 34.9,
+        "heart_rate": 69.3,
+        "blood_pressure": 134.3,
+        "weight": 538,
+        "body_condition_score": 3.2,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 27,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 4,
+        "temperature": 101.3,
+        "respiratory_rate": 38.4,
+        "heart_rate": 64.9,
+        "blood_pressure": 139.7,
+        "weight": 507,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 28,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 4,
+        "temperature": 96.5,
+        "respiratory_rate": 50.9,
+        "heart_rate": 57.9,
+        "blood_pressure": 119.4,
+        "weight": 423,
+        "body_condition_score": 3.0,
+        "status": 3,
+        "illness": null,
+        "injury": 4,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 29,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 5,
+        "temperature": 101.9,
+        "respiratory_rate": 38.2,
+        "heart_rate": 57.9,
+        "blood_pressure": 136.7,
+        "weight": 464,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 30,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 5,
+        "temperature": 100.5,
+        "respiratory_rate": 41.0,
+        "heart_rate": 77.7,
+        "blood_pressure": 144.5,
+        "weight": 459,
+        "body_condition_score": 3.3,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 31,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 6,
+        "temperature": 101.8,
+        "respiratory_rate": 34.3,
+        "heart_rate": 68.9,
+        "blood_pressure": 135.8,
+        "weight": 504,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 32,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 6,
+        "temperature": 101.6,
+        "respiratory_rate": 45.4,
+        "heart_rate": 65.9,
+        "blood_pressure": 133.2,
+        "weight": 519,
+        "body_condition_score": 3.3,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 33,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 7,
+        "temperature": 100.5,
+        "respiratory_rate": 27.2,
+        "heart_rate": 76.4,
+        "blood_pressure": 149.9,
+        "weight": 477,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 34,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 7,
+        "temperature": 101.3,
+        "respiratory_rate": 40.5,
+        "heart_rate": 52.1,
+        "blood_pressure": 133.4,
+        "weight": 453,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 35,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 8,
+        "temperature": 100.9,
+        "respiratory_rate": 27.1,
+        "heart_rate": 70.6,
+        "blood_pressure": 139.8,
+        "weight": 488,
+        "body_condition_score": 3.3,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 36,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 8,
+        "temperature": 100.9,
+        "respiratory_rate": 37.3,
+        "heart_rate": 61.4,
+        "blood_pressure": 140.0,
+        "weight": 459,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 37,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 9,
+        "temperature": 101.5,
+        "respiratory_rate": 37.2,
+        "heart_rate": 57.9,
+        "blood_pressure": 141.6,
+        "weight": 497,
+        "body_condition_score": 3.2,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 38,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 9,
+        "temperature": 101.9,
+        "respiratory_rate": 37.1,
+        "heart_rate": 72.9,
+        "blood_pressure": 133.6,
+        "weight": 508,
+        "body_condition_score": 3.2,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 39,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 10,
+        "temperature": 101.4,
+        "respiratory_rate": 41.3,
+        "heart_rate": 70.3,
+        "blood_pressure": 141.6,
+        "weight": 493,
+        "body_condition_score": 3.3,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 40,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 10,
+        "temperature": 101.3,
+        "respiratory_rate": 41.4,
+        "heart_rate": 74.0,
+        "blood_pressure": 144.2,
+        "weight": 534,
+        "body_condition_score": 3.5,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 41,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 11,
+        "temperature": 101.4,
+        "respiratory_rate": 37.1,
+        "heart_rate": 69.1,
+        "blood_pressure": 139.8,
+        "weight": 540,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 42,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 11,
+        "temperature": 101.3,
+        "respiratory_rate": 32.8,
+        "heart_rate": 79.4,
+        "blood_pressure": 131.4,
+        "weight": 504,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 43,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 12,
+        "temperature": 100.4,
+        "respiratory_rate": 42.5,
+        "heart_rate": 72.8,
+        "blood_pressure": 135.2,
+        "weight": 482,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 44,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 12,
+        "temperature": 101.8,
+        "respiratory_rate": 35.1,
+        "heart_rate": 73.0,
+        "blood_pressure": 149.4,
+        "weight": 467,
+        "body_condition_score": 3.3,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 45,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 13,
+        "temperature": 101.5,
+        "respiratory_rate": 34.1,
+        "heart_rate": 53.4,
+        "blood_pressure": 141.0,
+        "weight": 469,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 46,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 13,
+        "temperature": 101.9,
+        "respiratory_rate": 35.6,
+        "heart_rate": 77.9,
+        "blood_pressure": 135.4,
+        "weight": 542,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 47,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 14,
+        "temperature": 101.6,
+        "respiratory_rate": 47.0,
+        "heart_rate": 81.3,
+        "blood_pressure": 149.5,
+        "weight": 477,
+        "body_condition_score": 3.4,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 48,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 14,
+        "temperature": 100.7,
+        "respiratory_rate": 31.9,
+        "heart_rate": 79.1,
+        "blood_pressure": 135.0,
+        "weight": 506,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 49,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 15,
+        "temperature": 100.5,
+        "respiratory_rate": 45.4,
+        "heart_rate": 83.3,
+        "blood_pressure": 155.5,
+        "weight": 416,
+        "body_condition_score": 3.5,
+        "status": 3,
+        "illness": null,
+        "injury": 5,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 50,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 15,
+        "temperature": 101.2,
+        "respiratory_rate": 47.5,
+        "heart_rate": 59.9,
+        "blood_pressure": 133.1,
+        "weight": 518,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 51,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 16,
+        "temperature": 100.7,
+        "respiratory_rate": 29.3,
+        "heart_rate": 48.1,
+        "blood_pressure": 141.6,
+        "weight": 548,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 52,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 16,
+        "temperature": 100.9,
+        "respiratory_rate": 29.4,
+        "heart_rate": 61.4,
+        "blood_pressure": 143.8,
+        "weight": 506,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 53,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 17,
+        "temperature": 101.9,
+        "respiratory_rate": 44.3,
+        "heart_rate": 80.6,
+        "blood_pressure": 148.6,
+        "weight": 543,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 54,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 17,
+        "temperature": 101.6,
+        "respiratory_rate": 34.6,
+        "heart_rate": 83.9,
+        "blood_pressure": 133.5,
+        "weight": 513,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 55,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 18,
+        "temperature": 100.7,
+        "respiratory_rate": 44.5,
+        "heart_rate": 82.7,
+        "blood_pressure": 132.3,
+        "weight": 475,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 56,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 18,
+        "temperature": 101.2,
+        "respiratory_rate": 49.0,
+        "heart_rate": 53.7,
+        "blood_pressure": 136.6,
+        "weight": 458,
+        "body_condition_score": 3.5,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 57,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 19,
+        "temperature": 101.2,
+        "respiratory_rate": 38.3,
+        "heart_rate": 49.4,
+        "blood_pressure": 135.6,
+        "weight": 472,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 58,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 19,
+        "temperature": 101.3,
+        "respiratory_rate": 33.3,
+        "heart_rate": 76.6,
+        "blood_pressure": 139.9,
+        "weight": 476,
+        "body_condition_score": 3.4,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 59,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 20,
+        "temperature": 101.8,
+        "respiratory_rate": 34.8,
+        "heart_rate": 81.7,
+        "blood_pressure": 139.3,
+        "weight": 451,
+        "body_condition_score": 3.2,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 60,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 20,
+        "temperature": 102.0,
+        "respiratory_rate": 32.1,
+        "heart_rate": 51.6,
+        "blood_pressure": 140.0,
+        "weight": 547,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 61,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 11,
+        "temperature": 100.4,
+        "respiratory_rate": 48.8,
+        "heart_rate": 61.2,
+        "blood_pressure": 132.8,
+        "weight": 492,
+        "body_condition_score": 3.2,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 62,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 11,
+        "temperature": 100.7,
+        "respiratory_rate": 46.0,
+        "heart_rate": 66.3,
+        "blood_pressure": 143.9,
+        "weight": 505,
+        "body_condition_score": 3.0,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 63,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 12,
+        "temperature": 100.9,
+        "respiratory_rate": 33.6,
+        "heart_rate": 80.0,
+        "blood_pressure": 136.5,
+        "weight": 516,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 64,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 12,
+        "temperature": 101.2,
+        "respiratory_rate": 26.3,
+        "heart_rate": 52.1,
+        "blood_pressure": 141.7,
+        "weight": 523,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 65,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 13,
+        "temperature": 101.4,
+        "respiratory_rate": 48.8,
+        "heart_rate": 51.6,
+        "blood_pressure": 133.9,
+        "weight": 457,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 66,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 13,
+        "temperature": 101.8,
+        "respiratory_rate": 44.9,
+        "heart_rate": 48.6,
+        "blood_pressure": 138.0,
+        "weight": 452,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 67,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 14,
+        "temperature": 101.0,
+        "respiratory_rate": 27.6,
+        "heart_rate": 75.7,
+        "blood_pressure": 149.8,
+        "weight": 517,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 68,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 14,
+        "temperature": 101.9,
+        "respiratory_rate": 44.1,
+        "heart_rate": 71.0,
+        "blood_pressure": 131.7,
+        "weight": 488,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 69,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 15,
+        "temperature": 100.9,
+        "respiratory_rate": 39.7,
+        "heart_rate": 81.7,
+        "blood_pressure": 134.7,
+        "weight": 484,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 70,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 15,
+        "temperature": 101.3,
+        "respiratory_rate": 48.0,
+        "heart_rate": 66.7,
+        "blood_pressure": 147.6,
+        "weight": 542,
+        "body_condition_score": 3.5,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 71,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 16,
+        "temperature": 100.9,
+        "respiratory_rate": 40.6,
+        "heart_rate": 65.9,
+        "blood_pressure": 131.6,
+        "weight": 465,
+        "body_condition_score": 3.0,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 72,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 16,
+        "temperature": 100.8,
+        "respiratory_rate": 39.1,
+        "heart_rate": 71.3,
+        "blood_pressure": 143.5,
+        "weight": 510,
+        "body_condition_score": 3.4,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 73,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 17,
+        "temperature": 99.4,
+        "respiratory_rate": 31.4,
+        "heart_rate": 52.4,
+        "blood_pressure": 163.0,
+        "weight": 456,
+        "body_condition_score": 3.8,
+        "status": 3,
+        "illness": null,
+        "injury": 2,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 74,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 17,
+        "temperature": 101.7,
+        "respiratory_rate": 35.3,
+        "heart_rate": 69.2,
+        "blood_pressure": 138.7,
+        "weight": 506,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 75,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 18,
+        "temperature": 101.6,
+        "respiratory_rate": 38.8,
+        "heart_rate": 52.1,
+        "blood_pressure": 144.7,
+        "weight": 500,
+        "body_condition_score": 3.2,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 76,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 18,
+        "temperature": 101.4,
+        "respiratory_rate": 26.7,
+        "heart_rate": 56.5,
+        "blood_pressure": 139.2,
+        "weight": 507,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 77,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 19,
+        "temperature": 101.4,
+        "respiratory_rate": 29.4,
+        "heart_rate": 56.0,
+        "blood_pressure": 144.1,
+        "weight": 489,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 78,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 19,
+        "temperature": 100.9,
+        "respiratory_rate": 47.6,
+        "heart_rate": 81.6,
+        "blood_pressure": 146.4,
+        "weight": 485,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 79,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 20,
+        "temperature": 99.6,
+        "respiratory_rate": 48.3,
+        "heart_rate": 69.1,
+        "blood_pressure": 163.8,
+        "weight": 610,
+        "body_condition_score": 2.3,
+        "status": 3,
+        "illness": null,
+        "injury": 3,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 80,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 20,
+        "temperature": 101.4,
+        "respiratory_rate": 30.8,
+        "heart_rate": 48.2,
+        "blood_pressure": 136.2,
+        "weight": 555,
+        "body_condition_score": 2.5,
+        "status": 5,
+        "illness": 12,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 81,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 21,
+        "temperature": 101.8,
+        "respiratory_rate": 46.4,
+        "heart_rate": 75.2,
+        "blood_pressure": 133.2,
+        "weight": 452,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 82,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 21,
+        "temperature": 100.9,
+        "respiratory_rate": 42.4,
+        "heart_rate": 55.7,
+        "blood_pressure": 135.1,
+        "weight": 535,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 83,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 22,
+        "temperature": 101.1,
+        "respiratory_rate": 32.3,
+        "heart_rate": 61.0,
+        "blood_pressure": 141.6,
+        "weight": 474,
+        "body_condition_score": 3.4,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 84,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 22,
+        "temperature": 101.9,
+        "respiratory_rate": 47.3,
+        "heart_rate": 49.7,
+        "blood_pressure": 136.4,
+        "weight": 479,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 85,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 23,
+        "temperature": 101.2,
+        "respiratory_rate": 49.6,
+        "heart_rate": 64.1,
+        "blood_pressure": 145.3,
+        "weight": 502,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 86,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 23,
+        "temperature": 100.7,
+        "respiratory_rate": 37.8,
+        "heart_rate": 79.3,
+        "blood_pressure": 138.4,
+        "weight": 530,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 87,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 24,
+        "temperature": 101.5,
+        "respiratory_rate": 28.5,
+        "heart_rate": 59.8,
+        "blood_pressure": 131.7,
+        "weight": 517,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 88,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 24,
+        "temperature": 100.7,
+        "respiratory_rate": 45.4,
+        "heart_rate": 63.3,
+        "blood_pressure": 135.7,
+        "weight": 527,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 89,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 25,
+        "temperature": 100.5,
+        "respiratory_rate": 26.4,
+        "heart_rate": 69.8,
+        "blood_pressure": 147.8,
+        "weight": 463,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 90,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 25,
+        "temperature": 101.0,
+        "respiratory_rate": 38.5,
+        "heart_rate": 80.8,
+        "blood_pressure": 141.0,
+        "weight": 450,
+        "body_condition_score": 3.4,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 91,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 26,
+        "temperature": 100.9,
+        "respiratory_rate": 36.8,
+        "heart_rate": 65.3,
+        "blood_pressure": 134.5,
+        "weight": 494,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 92,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 26,
+        "temperature": 101.1,
+        "respiratory_rate": 31.4,
+        "heart_rate": 72.2,
+        "blood_pressure": 134.8,
+        "weight": 518,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 93,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 27,
+        "temperature": 102.1,
+        "respiratory_rate": 43.3,
+        "heart_rate": 77.7,
+        "blood_pressure": 150.2,
+        "weight": 452,
+        "body_condition_score": 2.3,
+        "status": 5,
+        "illness": 6,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 94,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 27,
+        "temperature": 100.4,
+        "respiratory_rate": 28.6,
+        "heart_rate": 55.6,
+        "blood_pressure": 147.0,
+        "weight": 451,
+        "body_condition_score": 3.2,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 95,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 28,
+        "temperature": 98.3,
+        "respiratory_rate": 25.6,
+        "heart_rate": 58.2,
+        "blood_pressure": 140.0,
+        "weight": 531,
+        "body_condition_score": 2.5,
+        "status": 5,
+        "illness": 11,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 96,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 28,
+        "temperature": 101.3,
+        "respiratory_rate": 50.0,
+        "heart_rate": 60.9,
+        "blood_pressure": 133.5,
+        "weight": 478,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 97,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 29,
+        "temperature": 97.3,
+        "respiratory_rate": 38.1,
+        "heart_rate": 80.6,
+        "blood_pressure": 164.9,
+        "weight": 565,
+        "body_condition_score": 3.0,
+        "status": 3,
+        "illness": null,
+        "injury": 3,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 98,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 29,
+        "temperature": 100.7,
+        "respiratory_rate": 42.4,
+        "heart_rate": 77.4,
+        "blood_pressure": 136.4,
+        "weight": 498,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 99,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 30,
+        "temperature": 101.2,
+        "respiratory_rate": 40.5,
+        "heart_rate": 71.9,
+        "blood_pressure": 130.1,
+        "weight": 517,
+        "body_condition_score": 3.5,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 100,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 30,
+        "temperature": 100.9,
+        "respiratory_rate": 31.6,
+        "heart_rate": 56.3,
+        "blood_pressure": 137.4,
+        "weight": 541,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 101,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 21,
+        "temperature": 101.8,
+        "respiratory_rate": 32.1,
+        "heart_rate": 50.6,
+        "blood_pressure": 142.5,
+        "weight": 454,
+        "body_condition_score": 3.2,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 102,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 21,
+        "temperature": 101.0,
+        "respiratory_rate": 37.4,
+        "heart_rate": 67.4,
+        "blood_pressure": 130.6,
+        "weight": 492,
+        "body_condition_score": 3.0,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 103,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 22,
+        "temperature": 101.2,
+        "respiratory_rate": 45.2,
+        "heart_rate": 64.5,
+        "blood_pressure": 132.6,
+        "weight": 455,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 104,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 22,
+        "temperature": 100.7,
+        "respiratory_rate": 45.2,
+        "heart_rate": 61.8,
+        "blood_pressure": 138.3,
+        "weight": 497,
+        "body_condition_score": 3.4,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 105,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 23,
+        "temperature": 100.6,
+        "respiratory_rate": 26.8,
+        "heart_rate": 49.7,
+        "blood_pressure": 141.1,
+        "weight": 517,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 106,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 23,
+        "temperature": 101.8,
+        "respiratory_rate": 49.4,
+        "heart_rate": 74.8,
+        "blood_pressure": 147.9,
+        "weight": 504,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 107,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 24,
+        "temperature": 101.6,
+        "respiratory_rate": 32.2,
+        "heart_rate": 49.5,
+        "blood_pressure": 149.1,
+        "weight": 530,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 108,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 24,
+        "temperature": 101.4,
+        "respiratory_rate": 27.0,
+        "heart_rate": 71.7,
+        "blood_pressure": 144.5,
+        "weight": 543,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 109,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 25,
+        "temperature": 100.4,
+        "respiratory_rate": 30.5,
+        "heart_rate": 81.1,
+        "blood_pressure": 147.2,
+        "weight": 509,
+        "body_condition_score": 3.3,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 110,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 25,
+        "temperature": 100.8,
+        "respiratory_rate": 60.8,
+        "heart_rate": 56.8,
+        "blood_pressure": 158.5,
+        "weight": 584,
+        "body_condition_score": 3.6,
+        "status": 3,
+        "illness": null,
+        "injury": 2,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 111,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 26,
+        "temperature": 101.8,
+        "respiratory_rate": 30.4,
+        "heart_rate": 76.4,
+        "blood_pressure": 134.1,
+        "weight": 550,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 112,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 26,
+        "temperature": 101.9,
+        "respiratory_rate": 41.5,
+        "heart_rate": 64.6,
+        "blood_pressure": 138.1,
+        "weight": 533,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 113,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 27,
+        "temperature": 100.4,
+        "respiratory_rate": 42.0,
+        "heart_rate": 67.6,
+        "blood_pressure": 135.2,
+        "weight": 504,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 114,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 27,
+        "temperature": 101.7,
+        "respiratory_rate": 26.7,
+        "heart_rate": 58.5,
+        "blood_pressure": 132.9,
+        "weight": 524,
+        "body_condition_score": 3.2,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 115,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 28,
+        "temperature": 102.0,
+        "respiratory_rate": 40.7,
+        "heart_rate": 60.4,
+        "blood_pressure": 146.4,
+        "weight": 478,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 116,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 28,
+        "temperature": 99.3,
+        "respiratory_rate": 64.6,
+        "heart_rate": 88.3,
+        "blood_pressure": 144.9,
+        "weight": 590,
+        "body_condition_score": 2.4,
+        "status": 5,
+        "illness": 15,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 117,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 29,
+        "temperature": 102.0,
+        "respiratory_rate": 58.3,
+        "heart_rate": 83.1,
+        "blood_pressure": 151.2,
+        "weight": 480,
+        "body_condition_score": 2.2,
+        "status": 3,
+        "illness": null,
+        "injury": 2,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 118,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 29,
+        "temperature": 100.7,
+        "respiratory_rate": 47.9,
+        "heart_rate": 77.1,
+        "blood_pressure": 141.4,
+        "weight": 478,
+        "body_condition_score": 3.2,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 119,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 30,
+        "temperature": 100.5,
+        "respiratory_rate": 46.7,
+        "heart_rate": 72.3,
+        "blood_pressure": 141.0,
+        "weight": 510,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 120,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 30,
+        "temperature": 100.5,
+        "respiratory_rate": 34.5,
+        "heart_rate": 57.9,
+        "blood_pressure": 143.2,
+        "weight": 536,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 121,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 31,
+        "temperature": 100.5,
+        "respiratory_rate": 34.4,
+        "heart_rate": 55.8,
+        "blood_pressure": 132.3,
+        "weight": 521,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 122,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 31,
+        "temperature": 100.9,
+        "respiratory_rate": 30.6,
+        "heart_rate": 71.8,
+        "blood_pressure": 141.8,
+        "weight": 544,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 123,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 32,
+        "temperature": 100.6,
+        "respiratory_rate": 36.4,
+        "heart_rate": 49.0,
+        "blood_pressure": 136.6,
+        "weight": 475,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 124,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 32,
+        "temperature": 102.0,
+        "respiratory_rate": 31.1,
+        "heart_rate": 73.9,
+        "blood_pressure": 142.2,
+        "weight": 506,
+        "body_condition_score": 3.5,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 125,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 33,
+        "temperature": 100.8,
+        "respiratory_rate": 41.9,
+        "heart_rate": 57.3,
+        "blood_pressure": 148.6,
+        "weight": 452,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 126,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 33,
+        "temperature": 100.7,
+        "respiratory_rate": 28.1,
+        "heart_rate": 74.6,
+        "blood_pressure": 135.0,
+        "weight": 451,
+        "body_condition_score": 3.0,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 127,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 34,
+        "temperature": 101.8,
+        "respiratory_rate": 45.3,
+        "heart_rate": 78.1,
+        "blood_pressure": 143.3,
+        "weight": 534,
+        "body_condition_score": 3.3,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 128,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 34,
+        "temperature": 100.9,
+        "respiratory_rate": 47.0,
+        "heart_rate": 70.4,
+        "blood_pressure": 140.5,
+        "weight": 546,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 129,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 35,
+        "temperature": 102.0,
+        "respiratory_rate": 26.5,
+        "heart_rate": 53.8,
+        "blood_pressure": 141.1,
+        "weight": 464,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 130,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 35,
+        "temperature": 104.3,
+        "respiratory_rate": 49.2,
+        "heart_rate": 69.4,
+        "blood_pressure": 147.8,
+        "weight": 616,
+        "body_condition_score": 2.8,
+        "status": 5,
+        "illness": 10,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 131,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 36,
+        "temperature": 101.4,
+        "respiratory_rate": 49.2,
+        "heart_rate": 67.3,
+        "blood_pressure": 135.7,
+        "weight": 489,
+        "body_condition_score": 3.4,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 132,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 36,
+        "temperature": 102.0,
+        "respiratory_rate": 32.8,
+        "heart_rate": 78.7,
+        "blood_pressure": 149.7,
+        "weight": 543,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 133,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 37,
+        "temperature": 101.1,
+        "respiratory_rate": 38.6,
+        "heart_rate": 80.6,
+        "blood_pressure": 139.7,
+        "weight": 477,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 134,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 37,
+        "temperature": 100.5,
+        "respiratory_rate": 48.2,
+        "heart_rate": 70.4,
+        "blood_pressure": 135.6,
+        "weight": 483,
+        "body_condition_score": 3.5,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 135,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 38,
+        "temperature": 101.3,
+        "respiratory_rate": 27.9,
+        "heart_rate": 74.5,
+        "blood_pressure": 134.5,
+        "weight": 482,
+        "body_condition_score": 3.5,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 136,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 38,
+        "temperature": 101.5,
+        "respiratory_rate": 46.5,
+        "heart_rate": 51.4,
+        "blood_pressure": 145.6,
+        "weight": 528,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 137,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 39,
+        "temperature": 100.5,
+        "respiratory_rate": 35.1,
+        "heart_rate": 49.3,
+        "blood_pressure": 143.9,
+        "weight": 454,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 138,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 39,
+        "temperature": 100.5,
+        "respiratory_rate": 33.6,
+        "heart_rate": 64.5,
+        "blood_pressure": 149.1,
+        "weight": 502,
+        "body_condition_score": 3.0,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 139,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 40,
+        "temperature": 101.9,
+        "respiratory_rate": 48.1,
+        "heart_rate": 67.6,
+        "blood_pressure": 130.3,
+        "weight": 499,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 140,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 40,
+        "temperature": 101.9,
+        "respiratory_rate": 38.5,
+        "heart_rate": 83.9,
+        "blood_pressure": 145.9,
+        "weight": 512,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 141,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 31,
+        "temperature": 100.7,
+        "respiratory_rate": 34.9,
+        "heart_rate": 78.4,
+        "blood_pressure": 147.1,
+        "weight": 549,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 142,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 31,
+        "temperature": 101.8,
+        "respiratory_rate": 35.3,
+        "heart_rate": 77.6,
+        "blood_pressure": 132.8,
+        "weight": 545,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 143,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 32,
+        "temperature": 101.7,
+        "respiratory_rate": 27.7,
+        "heart_rate": 63.9,
+        "blood_pressure": 130.0,
+        "weight": 527,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 144,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 32,
+        "temperature": 101.8,
+        "respiratory_rate": 29.8,
+        "heart_rate": 53.7,
+        "blood_pressure": 135.0,
+        "weight": 536,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 145,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 33,
+        "temperature": 101.8,
+        "respiratory_rate": 43.2,
+        "heart_rate": 66.3,
+        "blood_pressure": 148.0,
+        "weight": 486,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 146,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 33,
+        "temperature": 100.9,
+        "respiratory_rate": 41.7,
+        "heart_rate": 68.9,
+        "blood_pressure": 148.8,
+        "weight": 539,
+        "body_condition_score": 3.3,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 147,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 34,
+        "temperature": 101.3,
+        "respiratory_rate": 41.4,
+        "heart_rate": 62.9,
+        "blood_pressure": 130.2,
+        "weight": 537,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 148,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 34,
+        "temperature": 101.0,
+        "respiratory_rate": 34.7,
+        "heart_rate": 60.2,
+        "blood_pressure": 142.9,
+        "weight": 545,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 149,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 35,
+        "temperature": 101.5,
+        "respiratory_rate": 29.7,
+        "heart_rate": 68.2,
+        "blood_pressure": 132.0,
+        "weight": 456,
+        "body_condition_score": 3.0,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 150,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 35,
+        "temperature": 98.3,
+        "respiratory_rate": 39.8,
+        "heart_rate": 74.2,
+        "blood_pressure": 131.3,
+        "weight": 572,
+        "body_condition_score": 2.7,
+        "status": 5,
+        "illness": 9,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 151,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 36,
+        "temperature": 100.4,
+        "respiratory_rate": 45.5,
+        "heart_rate": 50.5,
+        "blood_pressure": 130.2,
+        "weight": 482,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 152,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 36,
+        "temperature": 100.4,
+        "respiratory_rate": 46.1,
+        "heart_rate": 79.5,
+        "blood_pressure": 143.5,
+        "weight": 535,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 153,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 37,
+        "temperature": 100.7,
+        "respiratory_rate": 32.7,
+        "heart_rate": 54.5,
+        "blood_pressure": 132.9,
+        "weight": 490,
+        "body_condition_score": 3.3,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 154,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 37,
+        "temperature": 100.8,
+        "respiratory_rate": 45.2,
+        "heart_rate": 53.8,
+        "blood_pressure": 134.9,
+        "weight": 507,
+        "body_condition_score": 3.3,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 155,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 38,
+        "temperature": 100.5,
+        "respiratory_rate": 49.4,
+        "heart_rate": 48.9,
+        "blood_pressure": 145.9,
+        "weight": 504,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 156,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 38,
+        "temperature": 102.0,
+        "respiratory_rate": 42.8,
+        "heart_rate": 83.4,
+        "blood_pressure": 132.1,
+        "weight": 508,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 157,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 39,
+        "temperature": 104.6,
+        "respiratory_rate": 49.2,
+        "heart_rate": 47.5,
+        "blood_pressure": 152.3,
+        "weight": 515,
+        "body_condition_score": 3.0,
+        "status": 3,
+        "illness": null,
+        "injury": 3,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 158,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 39,
+        "temperature": 100.7,
+        "respiratory_rate": 44.9,
+        "heart_rate": 60.7,
+        "blood_pressure": 144.9,
+        "weight": 506,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 159,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 40,
+        "temperature": 101.3,
+        "respiratory_rate": 42.7,
+        "heart_rate": 72.5,
+        "blood_pressure": 146.7,
+        "weight": 482,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 160,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 40,
+        "temperature": 101.3,
+        "respiratory_rate": 47.5,
+        "heart_rate": 58.9,
+        "blood_pressure": 137.6,
+        "weight": 495,
+        "body_condition_score": 3.4,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 161,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 41,
+        "temperature": 101.1,
+        "respiratory_rate": 30.1,
+        "heart_rate": 76.6,
+        "blood_pressure": 132.1,
+        "weight": 473,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 162,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 41,
+        "temperature": 102.7,
+        "respiratory_rate": 32.7,
+        "heart_rate": 75.0,
+        "blood_pressure": 134.5,
+        "weight": 597,
+        "body_condition_score": 4.0,
+        "status": 5,
+        "illness": 9,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 163,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 42,
+        "temperature": 101.7,
+        "respiratory_rate": 49.5,
+        "heart_rate": 82.8,
+        "blood_pressure": 146.5,
+        "weight": 535,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 164,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 42,
+        "temperature": 103.7,
+        "respiratory_rate": 26.6,
+        "heart_rate": 63.8,
+        "blood_pressure": 171.9,
+        "weight": 433,
+        "body_condition_score": 2.2,
+        "status": 3,
+        "illness": null,
+        "injury": 4,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 165,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 43,
+        "temperature": 101.0,
+        "respiratory_rate": 36.1,
+        "heart_rate": 73.2,
+        "blood_pressure": 149.7,
+        "weight": 529,
+        "body_condition_score": 3.3,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 166,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 43,
+        "temperature": 100.6,
+        "respiratory_rate": 39.0,
+        "heart_rate": 77.1,
+        "blood_pressure": 130.9,
+        "weight": 501,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 167,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 44,
+        "temperature": 100.5,
+        "respiratory_rate": 42.4,
+        "heart_rate": 76.5,
+        "blood_pressure": 149.7,
+        "weight": 538,
+        "body_condition_score": 3.3,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 168,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 44,
+        "temperature": 101.9,
+        "respiratory_rate": 43.4,
+        "heart_rate": 60.6,
+        "blood_pressure": 133.7,
+        "weight": 536,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 169,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 45,
+        "temperature": 100.6,
+        "respiratory_rate": 33.6,
+        "heart_rate": 57.8,
+        "blood_pressure": 130.9,
+        "weight": 471,
+        "body_condition_score": 3.0,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 170,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 45,
+        "temperature": 100.7,
+        "respiratory_rate": 43.3,
+        "heart_rate": 71.7,
+        "blood_pressure": 135.2,
+        "weight": 547,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 171,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 46,
+        "temperature": 101.4,
+        "respiratory_rate": 30.2,
+        "heart_rate": 66.7,
+        "blood_pressure": 145.0,
+        "weight": 510,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 172,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 46,
+        "temperature": 101.2,
+        "respiratory_rate": 32.7,
+        "heart_rate": 49.5,
+        "blood_pressure": 139.9,
+        "weight": 484,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 173,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 47,
+        "temperature": 101.5,
+        "respiratory_rate": 45.2,
+        "heart_rate": 48.3,
+        "blood_pressure": 145.3,
+        "weight": 453,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 174,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 47,
+        "temperature": 101.5,
+        "respiratory_rate": 38.8,
+        "heart_rate": 48.4,
+        "blood_pressure": 138.7,
+        "weight": 480,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 175,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 48,
+        "temperature": 100.8,
+        "respiratory_rate": 37.4,
+        "heart_rate": 61.9,
+        "blood_pressure": 144.2,
+        "weight": 526,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 176,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 48,
+        "temperature": 101.1,
+        "respiratory_rate": 29.6,
+        "heart_rate": 57.3,
+        "blood_pressure": 138.9,
+        "weight": 518,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 177,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 49,
+        "temperature": 101.2,
+        "respiratory_rate": 36.9,
+        "heart_rate": 69.5,
+        "blood_pressure": 145.3,
+        "weight": 510,
+        "body_condition_score": 3.0,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 178,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 49,
+        "temperature": 98.4,
+        "respiratory_rate": 66.7,
+        "heart_rate": 52.4,
+        "blood_pressure": 123.3,
+        "weight": 460,
+        "body_condition_score": 3.4,
+        "status": 3,
+        "illness": null,
+        "injury": 2,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 179,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 50,
+        "temperature": 104.7,
+        "respiratory_rate": 33.0,
+        "heart_rate": 71.0,
+        "blood_pressure": 150.8,
+        "weight": 551,
+        "body_condition_score": 2.0,
+        "status": 3,
+        "illness": null,
+        "injury": 4,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 180,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 50,
+        "temperature": 101.9,
+        "respiratory_rate": 45.4,
+        "heart_rate": 74.5,
+        "blood_pressure": 139.3,
+        "weight": 539,
+        "body_condition_score": 3.3,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 181,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 41,
+        "temperature": 100.8,
+        "respiratory_rate": 40.8,
+        "heart_rate": 77.9,
+        "blood_pressure": 137.2,
+        "weight": 511,
+        "body_condition_score": 3.4,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 182,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 41,
+        "temperature": 100.5,
+        "respiratory_rate": 41.6,
+        "heart_rate": 73.7,
+        "blood_pressure": 130.8,
+        "weight": 493,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 183,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 42,
+        "temperature": 101.4,
+        "respiratory_rate": 43.6,
+        "heart_rate": 68.1,
+        "blood_pressure": 135.6,
+        "weight": 502,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 184,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 42,
+        "temperature": 100.5,
+        "respiratory_rate": 39.5,
+        "heart_rate": 76.1,
+        "blood_pressure": 148.3,
+        "weight": 480,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 185,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 43,
+        "temperature": 96.8,
+        "respiratory_rate": 65.8,
+        "heart_rate": 71.7,
+        "blood_pressure": 169.1,
+        "weight": 593,
+        "body_condition_score": 3.8,
+        "status": 3,
+        "illness": null,
+        "injury": 2,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 186,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 43,
+        "temperature": 100.6,
+        "respiratory_rate": 43.2,
+        "heart_rate": 52.3,
+        "blood_pressure": 139.8,
+        "weight": 545,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 187,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 44,
+        "temperature": 101.6,
+        "respiratory_rate": 38.1,
+        "heart_rate": 80.9,
+        "blood_pressure": 149.1,
+        "weight": 505,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 188,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 44,
+        "temperature": 104.8,
+        "respiratory_rate": 52.9,
+        "heart_rate": 79.3,
+        "blood_pressure": 129.4,
+        "weight": 468,
+        "body_condition_score": 2.1,
+        "status": 5,
+        "illness": 14,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 189,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 45,
+        "temperature": 100.7,
+        "respiratory_rate": 49.6,
+        "heart_rate": 82.2,
+        "blood_pressure": 126.0,
+        "weight": 610,
+        "body_condition_score": 3.1,
+        "status": 5,
+        "illness": 6,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 190,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 45,
+        "temperature": 101.3,
+        "respiratory_rate": 34.1,
+        "heart_rate": 79.1,
+        "blood_pressure": 144.9,
+        "weight": 507,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 191,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 46,
+        "temperature": 100.7,
+        "respiratory_rate": 29.3,
+        "heart_rate": 76.6,
+        "blood_pressure": 132.2,
+        "weight": 467,
+        "body_condition_score": 3.0,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 192,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 46,
+        "temperature": 101.0,
+        "respiratory_rate": 38.9,
+        "heart_rate": 78.9,
+        "blood_pressure": 147.0,
+        "weight": 482,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 193,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 47,
+        "temperature": 101.8,
+        "respiratory_rate": 29.0,
+        "heart_rate": 50.0,
+        "blood_pressure": 140.1,
+        "weight": 528,
+        "body_condition_score": 3.4,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 194,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 47,
+        "temperature": 101.2,
+        "respiratory_rate": 46.3,
+        "heart_rate": 54.1,
+        "blood_pressure": 131.3,
+        "weight": 469,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 195,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 48,
+        "temperature": 100.9,
+        "respiratory_rate": 44.5,
+        "heart_rate": 83.2,
+        "blood_pressure": 149.6,
+        "weight": 482,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 196,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 48,
+        "temperature": 101.1,
+        "respiratory_rate": 47.0,
+        "heart_rate": 74.6,
+        "blood_pressure": 144.3,
+        "weight": 454,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 197,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 49,
+        "temperature": 101.8,
+        "respiratory_rate": 47.3,
+        "heart_rate": 58.9,
+        "blood_pressure": 131.4,
+        "weight": 529,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 198,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 49,
+        "temperature": 100.4,
+        "respiratory_rate": 42.9,
+        "heart_rate": 48.3,
+        "blood_pressure": 131.7,
+        "weight": 482,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 199,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 50,
+        "temperature": 100.5,
+        "respiratory_rate": 47.2,
+        "heart_rate": 87.3,
+        "blood_pressure": 158.2,
+        "weight": 439,
+        "body_condition_score": 2.6,
+        "status": 3,
+        "illness": null,
+        "injury": 3,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 200,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 50,
+        "temperature": 101.2,
+        "respiratory_rate": 32.6,
+        "heart_rate": 77.5,
+        "blood_pressure": 132.1,
+        "weight": 549,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 201,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 51,
+        "temperature": 100.5,
+        "respiratory_rate": 28.5,
+        "heart_rate": 55.0,
+        "blood_pressure": 139.6,
+        "weight": 503,
+        "body_condition_score": 3.4,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 202,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 51,
+        "temperature": 101.9,
+        "respiratory_rate": 45.1,
+        "heart_rate": 64.7,
+        "blood_pressure": 133.7,
+        "weight": 542,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 203,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 52,
+        "temperature": 101.7,
+        "respiratory_rate": 32.1,
+        "heart_rate": 52.6,
+        "blood_pressure": 140.8,
+        "weight": 507,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 204,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 52,
+        "temperature": 100.8,
+        "respiratory_rate": 29.9,
+        "heart_rate": 81.3,
+        "blood_pressure": 143.4,
+        "weight": 463,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 205,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 53,
+        "temperature": 101.2,
+        "respiratory_rate": 35.0,
+        "heart_rate": 65.5,
+        "blood_pressure": 141.4,
+        "weight": 515,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 206,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 53,
+        "temperature": 101.1,
+        "respiratory_rate": 26.4,
+        "heart_rate": 59.1,
+        "blood_pressure": 137.1,
+        "weight": 532,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 207,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 54,
+        "temperature": 100.7,
+        "respiratory_rate": 43.0,
+        "heart_rate": 78.9,
+        "blood_pressure": 143.1,
+        "weight": 467,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 208,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 54,
+        "temperature": 100.5,
+        "respiratory_rate": 39.8,
+        "heart_rate": 81.0,
+        "blood_pressure": 135.7,
+        "weight": 515,
+        "body_condition_score": 3.0,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 209,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 55,
+        "temperature": 101.3,
+        "respiratory_rate": 29.2,
+        "heart_rate": 53.9,
+        "blood_pressure": 130.1,
+        "weight": 495,
+        "body_condition_score": 3.0,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 210,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 55,
+        "temperature": 100.8,
+        "respiratory_rate": 28.6,
+        "heart_rate": 77.9,
+        "blood_pressure": 134.0,
+        "weight": 534,
+        "body_condition_score": 3.5,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 211,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 56,
+        "temperature": 101.5,
+        "respiratory_rate": 40.4,
+        "heart_rate": 61.7,
+        "blood_pressure": 137.2,
+        "weight": 522,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 212,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 56,
+        "temperature": 101.6,
+        "respiratory_rate": 45.3,
+        "heart_rate": 73.6,
+        "blood_pressure": 130.6,
+        "weight": 497,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 213,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 57,
+        "temperature": 101.8,
+        "respiratory_rate": 37.7,
+        "heart_rate": 70.8,
+        "blood_pressure": 145.0,
+        "weight": 467,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 214,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 57,
+        "temperature": 101.3,
+        "respiratory_rate": 32.8,
+        "heart_rate": 61.2,
+        "blood_pressure": 135.3,
+        "weight": 489,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 215,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 58,
+        "temperature": 100.4,
+        "respiratory_rate": 28.7,
+        "heart_rate": 55.5,
+        "blood_pressure": 138.6,
+        "weight": 541,
+        "body_condition_score": 3.2,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 216,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 58,
+        "temperature": 100.5,
+        "respiratory_rate": 45.1,
+        "heart_rate": 69.4,
+        "blood_pressure": 142.6,
+        "weight": 544,
+        "body_condition_score": 3.2,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 217,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 59,
+        "temperature": 101.9,
+        "respiratory_rate": 42.5,
+        "heart_rate": 62.4,
+        "blood_pressure": 136.3,
+        "weight": 549,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 218,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 59,
+        "temperature": 104.1,
+        "respiratory_rate": 46.1,
+        "heart_rate": 64.4,
+        "blood_pressure": 164.9,
+        "weight": 445,
+        "body_condition_score": 2.4,
+        "status": 3,
+        "illness": null,
+        "injury": 4,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 219,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 60,
+        "temperature": 101.0,
+        "respiratory_rate": 28.1,
+        "heart_rate": 54.8,
+        "blood_pressure": 132.1,
+        "weight": 520,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 220,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 60,
+        "temperature": 100.8,
+        "respiratory_rate": 31.8,
+        "heart_rate": 51.7,
+        "blood_pressure": 142.4,
+        "weight": 548,
+        "body_condition_score": 3.3,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 221,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 51,
+        "temperature": 101.5,
+        "respiratory_rate": 33.5,
+        "heart_rate": 68.1,
+        "blood_pressure": 138.1,
+        "weight": 546,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 222,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 51,
+        "temperature": 100.9,
+        "respiratory_rate": 37.2,
+        "heart_rate": 56.9,
+        "blood_pressure": 149.1,
+        "weight": 496,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 223,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 52,
+        "temperature": 101.0,
+        "respiratory_rate": 37.0,
+        "heart_rate": 63.4,
+        "blood_pressure": 144.2,
+        "weight": 532,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 224,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 52,
+        "temperature": 100.7,
+        "respiratory_rate": 49.1,
+        "heart_rate": 52.7,
+        "blood_pressure": 134.4,
+        "weight": 510,
+        "body_condition_score": 3.4,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 225,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 53,
+        "temperature": 101.7,
+        "respiratory_rate": 34.0,
+        "heart_rate": 82.3,
+        "blood_pressure": 143.4,
+        "weight": 531,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 226,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 53,
+        "temperature": 102.1,
+        "respiratory_rate": 69.1,
+        "heart_rate": 72.4,
+        "blood_pressure": 161.6,
+        "weight": 567,
+        "body_condition_score": 4.0,
+        "status": 3,
+        "illness": null,
+        "injury": 3,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 227,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 54,
+        "temperature": 101.4,
+        "respiratory_rate": 45.9,
+        "heart_rate": 64.7,
+        "blood_pressure": 133.6,
+        "weight": 541,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 228,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 54,
+        "temperature": 101.0,
+        "respiratory_rate": 37.4,
+        "heart_rate": 60.3,
+        "blood_pressure": 143.6,
+        "weight": 525,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 229,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 55,
+        "temperature": 100.8,
+        "respiratory_rate": 27.6,
+        "heart_rate": 79.4,
+        "blood_pressure": 149.6,
+        "weight": 544,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 230,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 55,
+        "temperature": 101.2,
+        "respiratory_rate": 42.3,
+        "heart_rate": 60.1,
+        "blood_pressure": 131.1,
+        "weight": 517,
+        "body_condition_score": 3.0,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 231,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 56,
+        "temperature": 101.5,
+        "respiratory_rate": 27.8,
+        "heart_rate": 69.4,
+        "blood_pressure": 149.0,
+        "weight": 523,
+        "body_condition_score": 3.2,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 232,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 56,
+        "temperature": 101.8,
+        "respiratory_rate": 32.1,
+        "heart_rate": 88.0,
+        "blood_pressure": 142.5,
+        "weight": 534,
+        "body_condition_score": 2.4,
+        "status": 3,
+        "illness": null,
+        "injury": 4,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 233,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 57,
+        "temperature": 101.8,
+        "respiratory_rate": 30.9,
+        "heart_rate": 63.0,
+        "blood_pressure": 130.3,
+        "weight": 466,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 234,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 57,
+        "temperature": 101.3,
+        "respiratory_rate": 32.6,
+        "heart_rate": 76.0,
+        "blood_pressure": 136.3,
+        "weight": 489,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 235,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 58,
+        "temperature": 100.6,
+        "respiratory_rate": 45.9,
+        "heart_rate": 49.0,
+        "blood_pressure": 143.1,
+        "weight": 527,
+        "body_condition_score": 3.5,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 236,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 58,
+        "temperature": 100.8,
+        "respiratory_rate": 28.9,
+        "heart_rate": 53.8,
+        "blood_pressure": 140.2,
+        "weight": 532,
+        "body_condition_score": 3.5,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 237,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 59,
+        "temperature": 100.6,
+        "respiratory_rate": 44.4,
+        "heart_rate": 61.7,
+        "blood_pressure": 135.6,
+        "weight": 536,
+        "body_condition_score": 3.4,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 238,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 59,
+        "temperature": 102.0,
+        "respiratory_rate": 33.7,
+        "heart_rate": 66.3,
+        "blood_pressure": 139.4,
+        "weight": 455,
+        "body_condition_score": 3.2,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 239,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 60,
+        "temperature": 101.1,
+        "respiratory_rate": 29.5,
+        "heart_rate": 56.8,
+        "blood_pressure": 149.8,
+        "weight": 512,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 240,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 60,
+        "temperature": 101.9,
+        "respiratory_rate": 39.2,
+        "heart_rate": 77.2,
+        "blood_pressure": 145.9,
+        "weight": 510,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 241,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 61,
+        "temperature": 101.5,
+        "respiratory_rate": 26.8,
+        "heart_rate": 63.4,
+        "blood_pressure": 139.8,
+        "weight": 468,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 242,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 61,
+        "temperature": 101.8,
+        "respiratory_rate": 39.9,
+        "heart_rate": 82.4,
+        "blood_pressure": 148.3,
+        "weight": 539,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 243,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 62,
+        "temperature": 100.8,
+        "respiratory_rate": 28.5,
+        "heart_rate": 78.6,
+        "blood_pressure": 149.2,
+        "weight": 506,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 244,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 62,
+        "temperature": 100.5,
+        "respiratory_rate": 45.8,
+        "heart_rate": 49.6,
+        "blood_pressure": 135.0,
+        "weight": 517,
+        "body_condition_score": 3.4,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 245,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 63,
+        "temperature": 100.9,
+        "respiratory_rate": 45.0,
+        "heart_rate": 77.1,
+        "blood_pressure": 142.8,
+        "weight": 450,
+        "body_condition_score": 3.5,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 246,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 63,
+        "temperature": 101.5,
+        "respiratory_rate": 47.5,
+        "heart_rate": 73.8,
+        "blood_pressure": 147.8,
+        "weight": 485,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 247,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 64,
+        "temperature": 101.4,
+        "respiratory_rate": 36.0,
+        "heart_rate": 72.8,
+        "blood_pressure": 149.3,
+        "weight": 503,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 248,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 64,
+        "temperature": 100.9,
+        "respiratory_rate": 38.6,
+        "heart_rate": 61.0,
+        "blood_pressure": 143.1,
+        "weight": 515,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 249,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 65,
+        "temperature": 101.3,
+        "respiratory_rate": 31.8,
+        "heart_rate": 70.6,
+        "blood_pressure": 147.8,
+        "weight": 490,
+        "body_condition_score": 3.2,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 250,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 65,
+        "temperature": 103.1,
+        "respiratory_rate": 40.8,
+        "heart_rate": 62.4,
+        "blood_pressure": 141.8,
+        "weight": 500,
+        "body_condition_score": 3.5,
+        "status": 3,
+        "illness": null,
+        "injury": 4,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 251,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 66,
+        "temperature": 100.7,
+        "respiratory_rate": 48.5,
+        "heart_rate": 76.1,
+        "blood_pressure": 149.8,
+        "weight": 466,
+        "body_condition_score": 3.0,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 252,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 66,
+        "temperature": 96.7,
+        "respiratory_rate": 39.6,
+        "heart_rate": 59.2,
+        "blood_pressure": 158.7,
+        "weight": 647,
+        "body_condition_score": 3.9,
+        "status": 3,
+        "illness": null,
+        "injury": 3,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 253,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 67,
+        "temperature": 101.3,
+        "respiratory_rate": 33.2,
+        "heart_rate": 68.7,
+        "blood_pressure": 139.2,
+        "weight": 470,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 254,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 67,
+        "temperature": 101.3,
+        "respiratory_rate": 48.2,
+        "heart_rate": 51.3,
+        "blood_pressure": 137.1,
+        "weight": 458,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 255,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 68,
+        "temperature": 100.4,
+        "respiratory_rate": 27.4,
+        "heart_rate": 55.4,
+        "blood_pressure": 137.5,
+        "weight": 489,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 256,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 68,
+        "temperature": 101.6,
+        "respiratory_rate": 26.6,
+        "heart_rate": 79.7,
+        "blood_pressure": 137.7,
+        "weight": 487,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 257,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 69,
+        "temperature": 101.7,
+        "respiratory_rate": 32.2,
+        "heart_rate": 59.1,
+        "blood_pressure": 140.9,
+        "weight": 518,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 258,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 69,
+        "temperature": 101.0,
+        "respiratory_rate": 28.6,
+        "heart_rate": 51.6,
+        "blood_pressure": 134.8,
+        "weight": 499,
+        "body_condition_score": 3.2,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 259,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 70,
+        "temperature": 101.9,
+        "respiratory_rate": 36.0,
+        "heart_rate": 83.7,
+        "blood_pressure": 145.0,
+        "weight": 549,
+        "body_condition_score": 3.0,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 260,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T04:00:00Z",
+        "cow": 70,
+        "temperature": 101.9,
+        "respiratory_rate": 49.5,
+        "heart_rate": 52.1,
+        "blood_pressure": 131.6,
+        "weight": 470,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 261,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 61,
+        "temperature": 101.9,
+        "respiratory_rate": 49.7,
+        "heart_rate": 71.2,
+        "blood_pressure": 137.4,
+        "weight": 534,
+        "body_condition_score": 3.4,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 262,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 61,
+        "temperature": 101.7,
+        "respiratory_rate": 30.0,
+        "heart_rate": 65.2,
+        "blood_pressure": 144.2,
+        "weight": 504,
+        "body_condition_score": 3.5,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 263,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 62,
+        "temperature": 100.5,
+        "respiratory_rate": 29.2,
+        "heart_rate": 72.5,
+        "blood_pressure": 136.9,
+        "weight": 455,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 264,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 62,
+        "temperature": 99.3,
+        "respiratory_rate": 41.6,
+        "heart_rate": 76.0,
+        "blood_pressure": 171.8,
+        "weight": 428,
+        "body_condition_score": 2.2,
+        "status": 3,
+        "illness": null,
+        "injury": 3,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 265,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 63,
+        "temperature": 100.4,
+        "respiratory_rate": 33.6,
+        "heart_rate": 84.0,
+        "blood_pressure": 131.5,
+        "weight": 510,
+        "body_condition_score": 3.3,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 266,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 63,
+        "temperature": 101.5,
+        "respiratory_rate": 32.2,
+        "heart_rate": 72.7,
+        "blood_pressure": 131.1,
+        "weight": 484,
+        "body_condition_score": 3.5,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 267,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 64,
+        "temperature": 100.7,
+        "respiratory_rate": 31.1,
+        "heart_rate": 72.2,
+        "blood_pressure": 144.8,
+        "weight": 548,
+        "body_condition_score": 3.3,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 268,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 64,
+        "temperature": 102.0,
+        "respiratory_rate": 26.7,
+        "heart_rate": 53.1,
+        "blood_pressure": 142.2,
+        "weight": 525,
+        "body_condition_score": 3.2,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 269,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 65,
+        "temperature": 96.8,
+        "respiratory_rate": 45.8,
+        "heart_rate": 68.5,
+        "blood_pressure": 139.6,
+        "weight": 606,
+        "body_condition_score": 2.2,
+        "status": 5,
+        "illness": 2,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 270,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 65,
+        "temperature": 101.7,
+        "respiratory_rate": 29.7,
+        "heart_rate": 66.3,
+        "blood_pressure": 145.5,
+        "weight": 473,
+        "body_condition_score": 3.3,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 271,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 66,
+        "temperature": 101.4,
+        "respiratory_rate": 43.3,
+        "heart_rate": 54.5,
+        "blood_pressure": 138.0,
+        "weight": 485,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 272,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 66,
+        "temperature": 101.8,
+        "respiratory_rate": 32.5,
+        "heart_rate": 80.5,
+        "blood_pressure": 149.5,
+        "weight": 463,
+        "body_condition_score": 3.1,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 273,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 67,
+        "temperature": 100.9,
+        "respiratory_rate": 44.7,
+        "heart_rate": 51.8,
+        "blood_pressure": 149.3,
+        "weight": 463,
+        "body_condition_score": 3.3,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 274,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 67,
+        "temperature": 101.4,
+        "respiratory_rate": 27.2,
+        "heart_rate": 48.0,
+        "blood_pressure": 130.5,
+        "weight": 512,
+        "body_condition_score": 3.5,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 275,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 68,
+        "temperature": 100.7,
+        "respiratory_rate": 42.0,
+        "heart_rate": 50.6,
+        "blood_pressure": 149.0,
+        "weight": 471,
+        "body_condition_score": 3.3,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 276,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 68,
+        "temperature": 102.0,
+        "respiratory_rate": 28.7,
+        "heart_rate": 53.3,
+        "blood_pressure": 149.8,
+        "weight": 492,
+        "body_condition_score": 3.4,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 277,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 69,
+        "temperature": 101.1,
+        "respiratory_rate": 26.5,
+        "heart_rate": 63.6,
+        "blood_pressure": 143.3,
+        "weight": 457,
+        "body_condition_score": 3.5,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 278,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 69,
+        "temperature": 101.3,
+        "respiratory_rate": 46.8,
+        "heart_rate": 79.6,
+        "blood_pressure": 137.8,
+        "weight": 489,
+        "body_condition_score": 3.5,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 279,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 70,
+        "temperature": 101.2,
+        "respiratory_rate": 49.6,
+        "heart_rate": 69.6,
+        "blood_pressure": 146.0,
+        "weight": 478,
+        "body_condition_score": 3.1,
+        "status": 2,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+},
+{
+    "model": "assets.healthrecord",
+    "pk": 280,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2015-01-01T16:00:00Z",
+        "cow": 70,
+        "temperature": 100.4,
+        "respiratory_rate": 26.0,
+        "heart_rate": 63.4,
+        "blood_pressure": 147.1,
+        "weight": 504,
+        "body_condition_score": 3.5,
+        "status": 1,
+        "illness": null,
+        "injury": null,
+        "vaccine": null
+    }
+}
+]

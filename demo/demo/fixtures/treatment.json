@@ -1,0 +1,100 @@
+[
+{
+    "model": "assets.treatment",
+    "pk": 1,
+    "fields": {
+        "name": "apply salve"
+    }
+},
+{
+    "model": "assets.treatment",
+    "pk": 2,
+    "fields": {
+        "name": "apply antibiotic powder"
+    }
+},
+{
+    "model": "assets.treatment",
+    "pk": 3,
+    "fields": {
+        "name": "bandage leg, avoid walking"
+    }
+},
+{
+    "model": "assets.treatment",
+    "pk": 4,
+    "fields": {
+        "name": "change feed"
+    }
+},
+{
+    "model": "assets.treatment",
+    "pk": 5,
+    "fields": {
+        "name": "feed antimicrobials"
+    }
+},
+{
+    "model": "assets.treatment",
+    "pk": 6,
+    "fields": {
+        "name": "feed aspirin"
+    }
+},
+{
+    "model": "assets.treatment",
+    "pk": 7,
+    "fields": {
+        "name": "feed magnet, monitor with ultrasound, wait it out"
+    }
+},
+{
+    "model": "assets.treatment",
+    "pk": 8,
+    "fields": {
+        "name": "get diagnosed"
+    }
+},
+{
+    "model": "assets.treatment",
+    "pk": 9,
+    "fields": {
+        "name": "get innoculated, avoid walking"
+    }
+},
+{
+    "model": "assets.treatment",
+    "pk": 10,
+    "fields": {
+        "name": "injest bolus glucose"
+    }
+},
+{
+    "model": "assets.treatment",
+    "pk": 11,
+    "fields": {
+        "name": "pedicure"
+    }
+},
+{
+    "model": "assets.treatment",
+    "pk": 12,
+    "fields": {
+        "name": "teat dipping"
+    }
+},
+{
+    "model": "assets.treatment",
+    "pk": 13,
+    "fields": {
+        "name": "temporarily avoid breeding"
+    }
+},
+{
+    "model": "assets.treatment",
+    "pk": 14,
+    "fields": {
+        "name": "trim excess tissue, wait it out"
+    }
+}
+]

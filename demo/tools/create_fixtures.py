@@ -14,11 +14,28 @@ def get_db_tables():
                  'group_permission.json': 'auth.group_permissions',
                  'user_groups.json': 'auth.user_groups',
                  'user_permission.json': 'auth.user_user_permissions',
+                 'action.json': 'assets.action',
                  'age.json': 'assets.age',
                  'breed.json': 'assets.breed',
+                 'breedimage.json': 'assets.breedimage',
+                 'cerealhay.json': 'assets.cerealhay',
+                 'grasshay.json': 'assets.grasshay',
+                 'healthrecord.json': 'assets.healthrecord',
+                 'illness.json': 'assets.illness',
+                 'injury.json': 'assets.injury',
+                 'legumehay.json': 'assets.legumehay',
                  'color.json': 'assets.color',
                  'cow.json': 'assets.cow',
-                 'image.json': 'assets.image'}
+                 'event.json': 'assets.event',
+                 'milk.json': 'assets.milk',
+                 'pasture.json': 'assets.pasture',
+                 'exercise.json': 'assets.exercise',
+                 'regionimage.json': 'assets.regionimage',
+                 'region.json': 'assets.region',
+                 'season.json': 'assets.season',
+                 'status.json': 'assets.status',
+                 'treatment.json': 'assets.treatment',
+                 'vaccine.json': 'assets.vaccine'}
     return db_tables
 
 def main():

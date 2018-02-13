@@ -1,0 +1,122 @@
+[
+{
+    "model": "assets.illness",
+    "pk": 1,
+    "fields": {
+        "diagnosis": "fever",
+        "treatment": "feed aspirin"
+    }
+},
+{
+    "model": "assets.illness",
+    "pk": 2,
+    "fields": {
+        "diagnosis": "infection",
+        "treatment": "get diagnosed"
+    }
+},
+{
+    "model": "assets.illness",
+    "pk": 3,
+    "fields": {
+        "diagnosis": "TRP",
+        "treatment": "feed magnet, monitor with ultrasound, wait it out"
+    }
+},
+{
+    "model": "assets.illness",
+    "pk": 4,
+    "fields": {
+        "diagnosis": "BRD",
+        "treatment": "feed antimicrobials"
+    }
+},
+{
+    "model": "assets.illness",
+    "pk": 5,
+    "fields": {
+        "diagnosis": "MAP",
+        "treatment": "feed antimicrobials"
+    }
+},
+{
+    "model": "assets.illness",
+    "pk": 6,
+    "fields": {
+        "diagnosis": "RP",
+        "treatment": "trim excess tissue, wait it out"
+    }
+},
+{
+    "model": "assets.illness",
+    "pk": 7,
+    "fields": {
+        "diagnosis": "endometritis",
+        "treatment": "feed antimicrobials"
+    }
+},
+{
+    "model": "assets.illness",
+    "pk": 8,
+    "fields": {
+        "diagnosis": "mastitis",
+        "treatment": "feed antimicrobials"
+    }
+},
+{
+    "model": "assets.illness",
+    "pk": 9,
+    "fields": {
+        "diagnosis": "metritis",
+        "treatment": "feed antimicrobials"
+    }
+},
+{
+    "model": "assets.illness",
+    "pk": 10,
+    "fields": {
+        "diagnosis": "ketosis",
+        "treatment": "injest bolus glucose"
+    }
+},
+{
+    "model": "assets.illness",
+    "pk": 11,
+    "fields": {
+        "diagnosis": "milk fever",
+        "treatment": "teat dipping"
+    }
+},
+{
+    "model": "assets.illness",
+    "pk": 12,
+    "fields": {
+        "diagnosis": "pseudocowpox",
+        "treatment": "teat dipping"
+    }
+},
+{
+    "model": "assets.illness",
+    "pk": 13,
+    "fields": {
+        "diagnosis": "digital dermatitis",
+        "treatment": "apply antibiotic powder"
+    }
+},
+{
+    "model": "assets.illness",
+    "pk": 14,
+    "fields": {
+        "diagnosis": "copper toxicity",
+        "treatment": "change feed"
+    }
+},
+{
+    "model": "assets.illness",
+    "pk": 15,
+    "fields": {
+        "diagnosis": "acidosis",
+        "treatment": "change feed"
+    }
+}
+]

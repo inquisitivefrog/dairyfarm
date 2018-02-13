@@ -1,0 +1,37 @@
+[
+{
+    "model": "assets.cerealhay",
+    "pk": 1,
+    "fields": {
+        "name": "alfalfa"
+    }
+},
+{
+    "model": "assets.cerealhay",
+    "pk": 2,
+    "fields": {
+        "name": "barley"
+    }
+},
+{
+    "model": "assets.cerealhay",
+    "pk": 3,
+    "fields": {
+        "name": "oat"
+    }
+},
+{
+    "model": "assets.cerealhay",
+    "pk": 4,
+    "fields": {
+        "name": "rye"
+    }
+},
+{
+    "model": "assets.cerealhay",
+    "pk": 5,
+    "fields": {
+        "name": "wheat"
+    }
+}
+]

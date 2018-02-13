@@ -2,45 +2,10 @@ from django.views.defaults import bad_request
 
 from rest_framework import generics
 
-from assets.models import Age, Breed, Color, Cow, Image
-from assets.serializers import AgeSerializer, BreedSerializer, CowSerializer
-from assets.serializers import ColorSerializer, CowSerializer, ImageSerializer
-
-class AgeDetail(generics.RetrieveUpdateAPIView):
-    # Get / Update an Age 
-    queryset = Age.objects.all()
-    serializer_class = AgeSerializer
-
-class AgeList(generics.ListCreateAPIView):
-    # Get / Create ages
-    queryset = Age.objects.all()
-    serializer_class = AgeSerializer
-
-class BreedDetail(generics.RetrieveUpdateAPIView):
-    # Get / Update a Breed
-    queryset = Breed.objects.all()
-    serializer_class = BreedSerializer
-
-class BreedList(generics.ListCreateAPIView):
-    # Get / Create breeds 
-    queryset = Breed.objects.all()
-    serializer_class = BreedSerializer
-
-class ColorDetail(generics.RetrieveUpdateAPIView):
-    # Get / Update a Color
-    queryset = Color.objects.all()
-    serializer_class = ColorSerializer
-
-class ColorList(generics.ListCreateAPIView):
-    # Get / Create colors 
-    queryset = Color.objects.all()
-    serializer_class = ColorSerializer
-
-    def create(self, request, *args, **kwargs):
-        try:
-            return super(ColorList, self).create(request, *args, **kwargs)
-        except IntegrityError:
-            return bad_request(request)
+from assets.models import Cow, Event, Exercise, HealthRecord, Milk, Pasture
+from assets.serializers import CowSerializer, EventSerializer
+from assets.serializers import ExerciseSerializer, HealthRecordSerializer
+from assets.serializers import MilkSerializer, PastureSerializer
 
 class CowDetail(generics.RetrieveUpdateAPIView):
     # Get / Update a Cow
@@ -52,12 +17,101 @@ class CowList(generics.ListCreateAPIView):
     queryset = Cow.objects.all()
     serializer_class = CowSerializer
 
-class ImageDetail(generics.RetrieveUpdateAPIView):
-    # Get / Update an Image
-    queryset = Image.objects.all()
-    serializer_class = ImageSerializer
+    #def get_initial(self):
+    #    return {'purchased_by': self.request.user.username,
+    #            'age': self.age.name,
+    #            'color': self.color.name,
+    #            'image': self.image.name}
 
-class ImageList(generics.ListCreateAPIView):
-    # Get / Create images
-    queryset = Image.objects.all()
-    serializer_class = ImageSerializer
+class EventDetail(generics.RetrieveUpdateAPIView):
+    # Get / Update an Event
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
+
+class EventList(generics.ListCreateAPIView):
+    # Get / Create Event
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
+
+    #def get_initial(self):
+    #    return {'recorded_by': self.request.user.username,
+    #            'timestamp': self.timestamp,
+    #            'cow': self.cow,
+    #            'pasture': self.pasture,
+    #            'distance': self.distance}
+
+class ExerciseDetail(generics.RetrieveUpdateAPIView):
+    # Get / Update an Exercise
+    queryset = Exercise.objects.all()
+    serializer_class = ExerciseSerializer
+
+class ExerciseList(generics.ListCreateAPIView):
+    # Get / Create Exercise
+    queryset = Exercise.objects.all()
+    serializer_class = ExerciseSerializer
+
+    #def get_initial(self):
+    #    return {'recorded_by': self.request.user.username,
+    #            'timestamp': self.timestamp,
+    #            'cow': self.cow,
+    #            'pasture': self.pasture,
+    #            'distance': self.distance}
+
+class HealthRecordDetail(generics.RetrieveUpdateAPIView):
+    # Get / Update a HealthRecord
+    queryset = HealthRecord.objects.all()
+    serializer_class = HealthRecordSerializer
+
+class HealthRecordList(generics.ListCreateAPIView):
+    # Get / Create HealthRecord
+    queryset = HealthRecord.objects.all()
+    serializer_class = HealthRecordSerializer
+
+    #def get_initial(self):
+    #    return {'recorded_by': self.request.user,
+    #            'timestamp': self.timestamp,
+    #            'cow': self.cow,
+    #            'temperature': self.temperature,
+    #            'respiratory_rate': self.respiratory_rate,
+    #            'heart_rate': self.heart_rate,
+    #            'blood_pressure': self.blood_pressure,
+    #            'weight': self.weight,
+    #            'body_condition_score': self.body_condition_score,
+    #            'status': self.status.name,
+    #            'illness': self.illness.diagnosis,
+    #            'injury': self.injury.diagnosis}
+
+class MilkDetail(generics.RetrieveUpdateAPIView):
+    # Get / Update a Milk
+    queryset = Milk.objects.all()
+    serializer_class = MilkSerializer
+
+class MilkList(generics.ListCreateAPIView):
+    # Get / Create Milk
+    queryset = Milk.objects.all()
+    serializer_class = MilkSerializer
+
+    #def get_initial(self):
+    #    return {'recorded_by': self.request.user.username,
+    #            'timestamp': self.timestamp,
+    #            'cow': self.cow,
+    #            'gallons': self.gallons}
+
+class PastureDetail(generics.RetrieveUpdateAPIView):
+    # Get / Update a Pasture
+    queryset = Pasture.objects.all()
+    serializer_class = PastureSerializer
+
+class PastureList(generics.ListCreateAPIView):
+    # Get / Create pastures 
+    queryset = Pasture.objects.all()
+    serializer_class = PastureSerializer
+
+    #def get_initial(self):
+    #    return {'seeded_by': self.request.user.username,
+    #            'image': self.image.region.name,
+    #            'cereal_hay': self.cereal_hay.name,
+    #            'grass_hay': self.grass_hay.name,
+    #            'legume_hay': self.legume_hay.name,
+    #            'season': self.season.name}
+

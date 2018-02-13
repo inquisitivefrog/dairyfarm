@@ -1,0 +1,184 @@
+[
+{
+    "model": "assets.pasture",
+    "pk": 1,
+    "fields": {
+        "fallow": false,
+        "distance": 0,
+        "seeded_by": 2,
+        "image": 1,
+        "cereal_hay": 1,
+        "grass_hay": 1,
+        "legume_hay": 1,
+        "season": 1
+    }
+},
+{
+    "model": "assets.pasture",
+    "pk": 2,
+    "fields": {
+        "fallow": false,
+        "distance": 0,
+        "seeded_by": 2,
+        "image": 2,
+        "cereal_hay": 2,
+        "grass_hay": 2,
+        "legume_hay": 2,
+        "season": 1
+    }
+},
+{
+    "model": "assets.pasture",
+    "pk": 3,
+    "fields": {
+        "fallow": false,
+        "distance": 0,
+        "seeded_by": 2,
+        "image": 3,
+        "cereal_hay": 3,
+        "grass_hay": 3,
+        "legume_hay": 3,
+        "season": 1
+    }
+},
+{
+    "model": "assets.pasture",
+    "pk": 4,
+    "fields": {
+        "fallow": false,
+        "distance": 0,
+        "seeded_by": 2,
+        "image": 4,
+        "cereal_hay": 4,
+        "grass_hay": 4,
+        "legume_hay": 4,
+        "season": 1
+    }
+},
+{
+    "model": "assets.pasture",
+    "pk": 5,
+    "fields": {
+        "fallow": false,
+        "distance": 0,
+        "seeded_by": 2,
+        "image": 5,
+        "cereal_hay": 5,
+        "grass_hay": 5,
+        "legume_hay": 5,
+        "season": 1
+    }
+},
+{
+    "model": "assets.pasture",
+    "pk": 6,
+    "fields": {
+        "fallow": false,
+        "distance": 0,
+        "seeded_by": 2,
+        "image": 6,
+        "cereal_hay": 1,
+        "grass_hay": 6,
+        "legume_hay": 6,
+        "season": 1
+    }
+},
+{
+    "model": "assets.pasture",
+    "pk": 7,
+    "fields": {
+        "fallow": false,
+        "distance": 0,
+        "seeded_by": 2,
+        "image": 7,
+        "cereal_hay": 2,
+        "grass_hay": 7,
+        "legume_hay": 1,
+        "season": 1
+    }
+},
+{
+    "model": "assets.pasture",
+    "pk": 8,
+    "fields": {
+        "fallow": false,
+        "distance": 0,
+        "seeded_by": 2,
+        "image": 8,
+        "cereal_hay": 3,
+        "grass_hay": 8,
+        "legume_hay": 2,
+        "season": 1
+    }
+},
+{
+    "model": "assets.pasture",
+    "pk": 9,
+    "fields": {
+        "fallow": false,
+        "distance": 0,
+        "seeded_by": 2,
+        "image": 9,
+        "cereal_hay": 4,
+        "grass_hay": 9,
+        "legume_hay": 3,
+        "season": 1
+    }
+},
+{
+    "model": "assets.pasture",
+    "pk": 10,
+    "fields": {
+        "fallow": false,
+        "distance": 0,
+        "seeded_by": 2,
+        "image": 10,
+        "cereal_hay": 5,
+        "grass_hay": 1,
+        "legume_hay": 4,
+        "season": 1
+    }
+},
+{
+    "model": "assets.pasture",
+    "pk": 11,
+    "fields": {
+        "fallow": true,
+        "distance": 0,
+        "seeded_by": 2,
+        "image": 11,
+        "cereal_hay": null,
+        "grass_hay": null,
+        "legume_hay": null,
+        "season": 1
+    }
+},
+{
+    "model": "assets.pasture",
+    "pk": 12,
+    "fields": {
+        "fallow": true,
+        "distance": 0,
+        "seeded_by": 2,
+        "image": 12,
+        "cereal_hay": null,
+        "grass_hay": null,
+        "legume_hay": null,
+        "season": 1
+    }
+},
+{
+    "model": "assets.pasture",
+    "pk": 13,
+    "fields": {
+        "fallow": false,
+        "distance": 0,
+        "seeded_by": 2,
+        "image": 13,
+        "cereal_hay": 3,
+        "grass_hay": 3,
+        "legume_hay": 3,
+        "season": 1
+    }
+}
+]

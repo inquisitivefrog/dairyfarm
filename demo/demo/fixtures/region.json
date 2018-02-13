@@ -1,0 +1,93 @@
+[
+{
+    "model": "assets.region",
+    "pk": 1,
+    "fields": {
+        "name": "North"
+    }
+},
+{
+    "model": "assets.region",
+    "pk": 2,
+    "fields": {
+        "name": "West"
+    }
+},
+{
+    "model": "assets.region",
+    "pk": 3,
+    "fields": {
+        "name": "South"
+    }
+},
+{
+    "model": "assets.region",
+    "pk": 4,
+    "fields": {
+        "name": "East"
+    }
+},
+{
+    "model": "assets.region",
+    "pk": 5,
+    "fields": {
+        "name": "Central North"
+    }
+},
+{
+    "model": "assets.region",
+    "pk": 6,
+    "fields": {
+        "name": "Central West"
+    }
+},
+{
+    "model": "assets.region",
+    "pk": 7,
+    "fields": {
+        "name": "Central South"
+    }
+},
+{
+    "model": "assets.region",
+    "pk": 8,
+    "fields": {
+        "name": "Central East"
+    }
+},
+{
+    "model": "assets.region",
+    "pk": 9,
+    "fields": {
+        "name": "North West"
+    }
+},
+{
+    "model": "assets.region",
+    "pk": 10,
+    "fields": {
+        "name": "North East"
+    }
+},
+{
+    "model": "assets.region",
+    "pk": 11,
+    "fields": {
+        "name": "South West"
+    }
+},
+{
+    "model": "assets.region",
+    "pk": 12,
+    "fields": {
+        "name": "South East"
+    }
+},
+{
+    "model": "assets.region",
+    "pk": 13,
+    "fields": {
+        "name": "Pen"
+    }
+}
+]

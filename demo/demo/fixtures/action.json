@@ -1,0 +1,121 @@
+[
+{
+    "model": "assets.action",
+    "pk": 1,
+    "fields": {
+        "name": "Call Vet"
+    }
+},
+{
+    "model": "assets.action",
+    "pk": 2,
+    "fields": {
+        "name": "Chew cud"
+    }
+},
+{
+    "model": "assets.action",
+    "pk": 3,
+    "fields": {
+        "name": "Drink"
+    }
+},
+{
+    "model": "assets.action",
+    "pk": 4,
+    "fields": {
+        "name": "Exercise in pen"
+    }
+},
+{
+    "model": "assets.action",
+    "pk": 5,
+    "fields": {
+        "name": "Get diagnosed"
+    }
+},
+{
+    "model": "assets.action",
+    "pk": 6,
+    "fields": {
+        "name": "Get inspected"
+    }
+},
+{
+    "model": "assets.action",
+    "pk": 7,
+    "fields": {
+        "name": "Get treated"
+    }
+},
+{
+    "model": "assets.action",
+    "pk": 8,
+    "fields": {
+        "name": "Get milked"
+    }
+},
+{
+    "model": "assets.action",
+    "pk": 9,
+    "fields": {
+        "name": "Graze"
+    }
+},
+{
+    "model": "assets.action",
+    "pk": 10,
+    "fields": {
+        "name": "Nap"
+    }
+},
+{
+    "model": "assets.action",
+    "pk": 11,
+    "fields": {
+        "name": "Pedicure"
+    }
+},
+{
+    "model": "assets.action",
+    "pk": 12,
+    "fields": {
+        "name": "Rest in pen"
+    }
+},
+{
+    "model": "assets.action",
+    "pk": 13,
+    "fields": {
+        "name": "Return to barn"
+    }
+},
+{
+    "model": "assets.action",
+    "pk": 14,
+    "fields": {
+        "name": "Sleep"
+    }
+},
+{
+    "model": "assets.action",
+    "pk": 15,
+    "fields": {
+        "name": "Visit vet"
+    }
+},
+{
+    "model": "assets.action",
+    "pk": 16,
+    "fields": {
+        "name": "Walk to pasture"
+    }
+},
+{
+    "model": "assets.action",
+    "pk": 17,
+    "fields": {
+        "name": "Wake Up"
+    }
+}
+]

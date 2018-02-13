@@ -1,0 +1,30 @@
+[
+{
+    "model": "assets.year",
+    "pk": 1,
+    "fields": {
+        "name": "2015"
+    }
+},
+{
+    "model": "assets.year",
+    "pk": 2,
+    "fields": {
+        "name": "2016"
+    }
+},
+{
+    "model": "assets.year",
+    "pk": 3,
+    "fields": {
+        "name": "2017"
+    }
+},
+{
+    "model": "assets.year",
+    "pk": 4,
+    "fields": {
+        "name": "2018"
+    }
+}
+]

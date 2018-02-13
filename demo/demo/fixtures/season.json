@@ -1,0 +1,30 @@
+[
+{
+    "model": "assets.season",
+    "pk": 1,
+    "fields": {
+        "name": "Spring"
+    }
+},
+{
+    "model": "assets.season",
+    "pk": 2,
+    "fields": {
+        "name": "Summer"
+    }
+},
+{
+    "model": "assets.season",
+    "pk": 3,
+    "fields": {
+        "name": "Autumn"
+    }
+},
+{
+    "model": "assets.season",
+    "pk": 4,
+    "fields": {
+        "name": "Winter"
+    }
+}
+]

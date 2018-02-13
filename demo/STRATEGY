@@ -1,0 +1,51 @@
+
+inspect_herd.py needs an algorithm change
+1) at most, only 5% of herd should be injured or ill at any given time so
+   ill = randint(1, 10)
+   if ill == 1: 
+       healthy_this_time = False
+   else: 
+       healthy_this_time = True
+2) health markers measured need to switch from SmallInteger to Float
+   but be calculated with only 1-2 decimals
+3) randomness should be tight if healthy and loose if unhealthy
+   if healthy_this_time:
+       temperature = randint(980, 1020) * 10 / 100
+   else:
+       temperature = randint(960, 1050) * 10 / 100
+
+
+4) tools/daily_herd_activity
+   inputs: breed, date, user
+   steps:
+   health inspection
+   if ill:
+       see vet
+       get innoculation
+       rest in barn
+       get walked around pen
+       feed
+       chew cud
+       drink
+   if injured
+       see vet
+       get treated
+       rest in barn
+       get walked around pen
+       feed
+       chew cud
+       drink
+   if not ill and not injured:
+       herd to randomly assigned pasture
+       graze
+       chew cud
+       drink
+       nap
+       make small talk
+       round up
+       
+5) LOGIC
+   inspection
+       if unhealthy:
+           diagnosis
+           treatment

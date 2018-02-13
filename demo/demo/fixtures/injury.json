@@ -1,0 +1,42 @@
+[
+{
+    "model": "assets.injury",
+    "pk": 1,
+    "fields": {
+        "diagnosis": "chapped teat",
+        "treatment": "apply salve"
+    }
+},
+{
+    "model": "assets.injury",
+    "pk": 2,
+    "fields": {
+        "diagnosis": "lameness",
+        "treatment": "pedicure"
+    }
+},
+{
+    "model": "assets.injury",
+    "pk": 3,
+    "fields": {
+        "diagnosis": "sprain",
+        "treatment": "bandage leg, avoid walking"
+    }
+},
+{
+    "model": "assets.injury",
+    "pk": 4,
+    "fields": {
+        "diagnosis": "swollen knee",
+        "treatment": "get innoculated, avoid walking"
+    }
+},
+{
+    "model": "assets.injury",
+    "pk": 5,
+    "fields": {
+        "diagnosis": "sore lower back",
+        "treatment": "temporarily avoid breeding"
+    }
+}
+]

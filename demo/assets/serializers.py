@@ -1,69 +1,55 @@
 from rest_framework import serializers
 
-from assets.models import Age, Breed, Color, Cow, Image
+from assets.models import BreedImage, Cow, Event, Exercise, HealthRecord
+from assets.models import Milk, Pasture
 
-class AgeSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Age
-        lookup_field = 'pk'
-        fields = ('id', 'name')
-
-    def get_initial(self):
-        ages = Age.objects.all()
-        if len(ages) > 0:
-            return {'name': ages[0].name}
-        else:
-            return {'name': None}
-
-class BreedSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Breed
-        lookup_field = 'pk'
-        fields = ('id', 'name')
-
-    def get_initial(self):
-        breeds = Breed.objects.all()
-        if len(breeds) > 0:
-            return {'name': breeds[0].name}
-        else:
-            return {'name': None}
-
-class ColorSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Color
-        lookup_field = 'pk'
-        fields = ('id', 'breed', 'name')
-
-    def get_initial(self):
-        colors = Color.objects.all()
-        if len(colors) > 0:
-            return {'name': colors[0].name,
-                    'breed': colors[0].breed}
-        else:
-            return {'name': None}
-
-class ImageSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Image
-        lookup_field = 'pk'
-        fields = ('id', 'breed', 'url')
-
-    def get_initial(self):
-        images = Image.objects.all()
-        if len(images) > 0:
-            return {'url': images[0].url}
-        else:
-            return {'url': None}
+class BreedImageField(serializers.RelatedField):
+    def to_representation(self, value):
+        return value.breed.name
 
 class CowSerializer(serializers.ModelSerializer):
+    purchased_by = serializers.SlugRelatedField(slug_field='username',
+                                                read_only=True)
+    age = serializers.SlugRelatedField(slug_field='name',
+                                       read_only=True)
+    color= serializers.SlugRelatedField(slug_field='name',
+                                        read_only=True)
+    image = BreedImageField(read_only=True)
+
     class Meta:
         model = Cow
         lookup_field = 'pk'
-        fields = ('id', 'purchased_by', 'purchase_date', 'breed', 'color', 'age', 'image')
+        fields = ('id', 'purchased_by', 'purchase_date', 'age', 'color', 'image')
 
-    def get_initial(self):
-        return {'breed': Cow.breed.name,
-                'color': Cow.color.name,
-                'age': Cow.age.name,
-                'image': Cow.image.name,
-                'purchased_by': self.request.user}
+class EventSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Event
+        lookup_field = 'pk'
+        fields = ('id', 'recorded_by', 'timestamp', 'cow', 'action')
+
+class ExerciseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Exercise
+        lookup_field = 'pk'
+        fields = ('id', 'recorded_by', 'timestamp', 'cow', 'pasture', 'distance')
+
+class HealthRecordSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HealthRecord
+        lookup_field = 'pk'
+        fields = ('id', 'recorded_by', 'timestamp', 'cow', 'temperature',
+                  'respiratory_rate', 'heart_rate', 'blood_pressure', 'weight',
+                  'body_condition_score', 'status', 'illness', 'injury')
+
+class MilkSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Milk
+        lookup_field = 'pk'
+        fields = ('id', 'recorded_by', 'timestamp', 'cow', 'gallons')
+
+class PastureSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Pasture
+        lookup_field = 'pk'
+        fields = ('id', 'fallow', 'seeded_by', 'image', 'cereal_hay', 'grass_hay',
+                  'legume_hay', 'season')

@@ -1,0 +1,65 @@
+[
+{
+    "model": "assets.grasshay",
+    "pk": 1,
+    "fields": {
+        "name": "bermuda"
+    }
+},
+{
+    "model": "assets.grasshay",
+    "pk": 2,
+    "fields": {
+        "name": "bluegrass"
+    }
+},
+{
+    "model": "assets.grasshay",
+    "pk": 3,
+    "fields": {
+        "name": "brome"
+    }
+},
+{
+    "model": "assets.grasshay",
+    "pk": 4,
+    "fields": {
+        "name": "fescue"
+    }
+},
+{
+    "model": "assets.grasshay",
+    "pk": 5,
+    "fields": {
+        "name": "orchardgrass"
+    }
+},
+{
+    "model": "assets.grasshay",
+    "pk": 6,
+    "fields": {
+        "name": "reed canary grass"
+    }
+},
+{
+    "model": "assets.grasshay",
+    "pk": 7,
+    "fields": {
+        "name": "ryegrass"
+    }
+},
+{
+    "model": "assets.grasshay",
+    "pk": 8,
+    "fields": {
+        "name": "sudangrass"
+    }
+},
+{
+    "model": "assets.grasshay",
+    "pk": 9,
+    "fields": {
+        "name": "timothy"
+    }
+}
+]

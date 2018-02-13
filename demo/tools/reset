@@ -1,5 +1,6 @@
-#!/bin/bash -x
+#!/bin/bash
 
+export STIME=`date`
 # CLEAN UP
 rm ./db.sqlite3
 rm ./assets/migrations/0001_initial.py
@@ -14,12 +15,56 @@ python manage.py migrate
 ./tools/create_user.py -f mister -l greenjeans -e farmhand@dairyfarm.org -u farmhand -p butter
 ./tools/create_user.py -f doctor -l fixmeup -e vet@dairyfarm.org -u vet -p cheese
 ./tools/load_references.py
+# PURCHASE COWS
+for breed in holstein jersey guernsey ayrshire brown_swiss milking_shorthorn dutch_belted
+do
+    user="farmhand"
+    dt="2014-12-31"
+    ./tools/purchase_herd.py -b $breed -d "$dt" -c 10 -u $user
+done
 
-# LOAD TOP LEVEL OBJECTS
-./tools/purchase_herd.py -b holstein -c 10 -u farmhand
-./tools/purchase_herd.py -b jersey -c 10 -u farmhand
-./tools/purchase_herd.py -b guernsey -c 10 -u farmhand
-./tools/purchase_herd.py -b ayrshire -c 10 -u farmhand
-./tools/purchase_herd.py -b brown_swiss -c 10 -u farmhand
-./tools/purchase_herd.py -b milking_shorthorn -c 10 -u farmhand
-./tools/purchase_herd.py -b dutch_belted -c 10 -u farmhand
+# SEED PASTURES
+./tools/seed_pastures.py -c alfalfa -g bermuda -l clover -s Spring -r North -u farmhand
+./tools/seed_pastures.py -c barley -g bluegrass -l cowpeas -s Spring -r West -u farmhand
+./tools/seed_pastures.py -c oat -g brome -l lespedeza -s Spring -r South -u farmhand
+./tools/seed_pastures.py -c rye -g fescue -l soybean -s Spring -r East -u farmhand
+./tools/seed_pastures.py -c wheat -g orchardgrass -l trefoil -s Spring -r 'Central North' -u farmhand
+./tools/seed_pastures.py -c alfalfa -g 'reed canary grass' -l vetch -s Spring -r 'Central West' -u farmhand
+./tools/seed_pastures.py -c barley -g ryegrass -l clover -s Spring -r 'Central South' -u farmhand
+./tools/seed_pastures.py -c oat -g sudangrass -l cowpeas -s Spring -r 'Central East' -u farmhand
+./tools/seed_pastures.py -c rye -g timothy -l lespedeza -s Spring -r 'North West' -u farmhand
+./tools/seed_pastures.py -c wheat -g bermuda -l soybean -s Spring -r 'North East' -u farmhand
+./tools/seed_pastures.py -c alfalfa -g bluegrass -l trefoil -s Spring -r 'South West' -u farmhand
+./tools/seed_pastures.py -c barley -g brome -l vetch -s Spring -r 'South East' -u farmhand
+./tools/seed_pastures.py -c oat -g brome -l lespedeza -s Spring -r Pen -u farmhand
+
+# ASSIGN FALLOW PASTURES 
+./tools/assign_fallow_pastures.py -s Spring -r 'South West' -u farmhand
+./tools/assign_fallow_pastures.py -s Spring -r 'South East' -u farmhand
+
+# GENERATE WEEKLY ACTIVITY
+for breed in holstein jersey guernsey ayrshire brown_swiss milking_shorthorn dutch_belted
+do
+    user="vet"
+    #for day in 1 2 3 4 5 6 7
+    for day in 1
+    do
+        dt="2015-01-0$day 04:00:00"
+        echo morning activity
+        ./tools/daily_herd_activity.py -b $breed -d "$dt" -u $user
+        dt="2015-01-0$day 16:00:00"
+        echo evening activity
+        ./tools/daily_herd_activity.py -b $breed -d "$dt" -u $user
+    done
+done
+
+# PRESERVE REFERENCE DATA AS FIXTURES
+./tools/create_fixtures.py
+
+# TEST
+python manage.py test -v 2
+
+export ETIME=`date`
+echo started $STIME
+echo finished $ETIME
+
