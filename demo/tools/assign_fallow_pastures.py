@@ -36,7 +36,8 @@ def read_args():
                                  'North West',
                                  'North East',
                                  'South West',
-                                 'South East'],
+                                 'South East',
+                                 'Pen'],
                         help='field region allocation')
     parser.add_argument('-u',
                         '--username',
@@ -48,37 +49,42 @@ def read_args():
            o.region,
            o.username)
     
+def _get_instance(season, region, user):
+    from assets.models import Pasture, Region, Season
+    try:
+        s_id = Season.objects.get(name=season).id
+        r_id = Region.objects.get(name=region).id
+        instance = Pasture.objects.get(seeded_by=user,
+                                       season=s_id,
+                                       region=r_id)
+        return instance
+    except Pasture.DoesNotExist as e:
+        print('ERROR: pasture not seeded')
+        exit(1)
+
+def _get_data():
+    return {'distance': randint(1, 2),
+            'fallow': True}
+
 def leave_fallow(season, region, username):
     from django.contrib.auth.models import User
-    from assets.models import Pasture, RegionImage, Season
+    from assets.models import Pasture
     from assets.serializers import PastureSerializer
+
     try:
         user = User.objects.get(username=username)
-        distance = randint(1, 12)
-        season = Season.objects.get(name=season)
-        image = RegionImage.objects.get(region__name=region)
-        instance = Pasture.objects.get(seeded_by=user.id,
-                                       season=season.id,
-                                       image=image.id)
-        data = {'seeded_by': user.id,
-                'distance': distance,
-                'fallow': True,
-                'cereal_hay': None,
-                'grass_hay': None,
-                'legume_hay': None,
-                'season': season.id,
-                'image': image.id}
-        ps = PastureSerializer(instance,
-                               data=data,
+        ps = PastureSerializer(instance=_get_instance(season, region, user),
+                               data=_get_data(),
                                partial=True)
         if ps.is_valid() and len(ps.errors) == 0:
             ps.save()
-            print('Region {} left fallow for {} season by {}'.format(image.region.name,
-                                                                     season.name,
+            print('Region {} left fallow for {} season by {}'.format(region,
+                                                                     season,
                                                                      username))
             return
         else:
             print('ERROR: {}'.format(ps.errors))
+            exit(1)
     except PermissionDenied as e:
         print('ERROR: {}'.format(e))
         print('ERROR: {} unable to create pasture!'.format(username))
@@ -88,13 +94,13 @@ def leave_fallow(season, region, username):
         exit(1)
 
 def main():
-    (season, meadow, username) = read_args()
+    (season, region, username) = read_args()
     path.append('/Users/tim/Documents/workspace/python3/dairyfarm/demo/')
     environ.setdefault('DJANGO_SETTINGS_MODULE',
                        'demo.settings')
     setup()
     leave_fallow(season,
-                 meadow,
+                 region,
                  username)
     return
 

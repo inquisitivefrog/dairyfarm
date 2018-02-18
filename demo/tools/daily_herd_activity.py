@@ -25,8 +25,23 @@ def read_args():
                                  'dutch_belted'],
                         default='holstein',
                         help='breed of cattle')
+    parser.add_argument('-c',
+                        '--color',
+                        type=str,
+                        required=False,
+                        choices=['black_white',
+                                 'red_white',
+                                 'brown',
+                                 'tawny',
+                                 'golden_white',
+                                 'gray',
+                                 'red',
+                                 'white',
+                                 'roan'],
+                        default='black_white',
+                        help='breed color')
     parser.add_argument('-d',
-                        '--datetime',
+                        '--date',
                         type=str,
                         required=True,
                         help='inspection time as "%Y-%m-%d"')
@@ -37,157 +52,157 @@ def read_args():
                         help='username of user')
     o = parser.parse_args()
     return(o.breed,
-           o.datetime,
+           o.color,
+           o.date,
            o.username)
     
-def evening_healthy_routine(c_id, dt, u_id):
+def evening_healthy_routine(cow, dt, user):
     from tools.utils import TestData
 
-    data = TestData.get_healthy_cow_data(c_id, dt, u_id)
-    TestData.log_healthrecord(data, c_id, dt, u_id)
-    TestData.log_event('Get milked', c_id, dt, u_id)
+    data = TestData.get_healthy_cow_data(cow, dt, user)
+    TestData.log_healthrecord(data, cow, dt, user)
+    TestData.log_event('Get milked', cow, dt, user)
     gallons = randint(5, 7)
-    TestData.log_milk(gallons, c_id, dt, u_id)
-    TestData.log_event('Sleep', c_id, dt, u_id)
+    TestData.log_milk(gallons, cow, dt, user)
+    TestData.log_event('Sleep', cow, dt, user)
     return
 
-def evening_ill_routine(c_id, dt, u_id):
+def evening_ill_routine(cow, dt, user):
     from assets.models import Treatment
     from tools.utils import TestData
 
-    data = TestData.get_ill_cow_data(c_id, dt, u_id)
-    TestData.log_healthrecord(data, c_id, dt, u_id)
-    TestData.log_event('Call Vet', c_id, dt, u_id)
-    TestData.log_event('Get diagnosed', c_id, dt, u_id)
-    TestData.log_event('Get treated', c_id, dt, u_id)
+    data = TestData.get_ill_cow_data(cow, dt, user)
+    TestData.log_healthrecord(data, cow, dt, user)
+    TestData.log_event('Call Vet', cow, dt, user)
+    TestData.log_event('Get diagnosed', cow, dt, user)
+    TestData.log_event('Get treated', cow, dt, user)
     treatment_id = randint(1, len(Treatment.objects.all()) - 1)
     treatment = Treatment.objects.get(pk=treatment_id)
-    TestData.log_vaccination(treatment.name, c_id, dt, u_id)
-    TestData.log_event('Sleep', c_id, dt, u_id)
+    TestData.log_vaccination(treatment.name, cow, dt, user)
+    TestData.log_event('Sleep', cow, dt, user)
     return
 
-def evening_injured_routine(c_id, dt, u_id):
+def evening_injured_routine(cow, dt, user):
     from tools.utils import TestData
 
-    data = TestData.get_injured_cow_data(c_id, dt, u_id)
-    TestData.log_healthrecord(data, c_id, dt, u_id)
-    TestData.log_event('Call Vet', c_id, dt, u_id)
-    TestData.log_event('Get diagnosed', c_id, dt, u_id)
-    TestData.log_event('Get treated', c_id, dt, u_id)
-    TestData.log_event('Pedicure', c_id, dt, u_id)
+    data = TestData.get_injured_cow_data(cow, dt, user)
+    TestData.log_healthrecord(data, cow, dt, user)
+    TestData.log_event('Call Vet', cow, dt, user)
+    TestData.log_event('Get diagnosed', cow, dt, user)
+    TestData.log_event('Get treated', cow, dt, user)
+    TestData.log_event('Pedicure', cow, dt, user)
     gallons = randint(5, 7)
-    TestData.log_milk(gallons, c_id, dt, u_id)
-    TestData.log_event('Get milked', c_id, dt, u_id)
-    TestData.log_event('Sleep', c_id, dt, u_id)
+    TestData.log_milk(gallons, cow, dt, user)
+    TestData.log_event('Get milked', cow, dt, user)
+    TestData.log_event('Sleep', cow, dt, user)
     return
 
-def morning_healthy_routine(c_id, dt, u_id):
+def morning_healthy_routine(cow, dt, user):
     from assets.models import Pasture
     from tools.utils import TestData
 
-    data = TestData.get_healthy_cow_data(c_id, dt, u_id)
-    TestData.log_healthrecord(data, c_id, dt, u_id)
-    TestData.log_event('Get milked', c_id, dt, u_id)
+    data = TestData.get_healthy_cow_data(cow, dt, user)
+    TestData.log_healthrecord(data, cow, dt, user)
+    TestData.log_event('Get milked', cow, dt, user)
     gallons = randint(5, 7)
-    TestData.log_milk(gallons, c_id, dt, u_id)
-    TestData.log_event('Get milked', c_id, dt, u_id)
-    pastures = Pasture.objects.all()
-    p_id = randint(1, len(pastures) - 2)
-    distance = p_id
-    TestData.log_exercise(distance, p_id, c_id, dt, u_id)
-    TestData.log_event('Walk to pasture', c_id, dt, u_id)
-    TestData.log_event('Graze', c_id, dt, u_id)
-    TestData.log_event('Drink', c_id, dt, u_id)
-    TestData.log_event('Chew cud', c_id, dt, u_id)
-    TestData.log_event('Nap', c_id, dt, u_id)
-    TestData.log_event('Return to barn', c_id, dt, u_id)
-    TestData.log_exercise(distance, p_id, c_id, dt, u_id)
+    TestData.log_milk(gallons, cow, dt, user)
+    TestData.log_event('Get milked', cow, dt, user)
+    pastures = Pasture.objects.filter(fallow=False)
+    pasture = pastures[randint(1, len(pastures) - 1)]
+    distance = pasture.id
+    TestData.log_exercise(distance, pasture, cow, dt, user)
+    TestData.log_event('Walk to pasture', cow, dt, user)
+    TestData.log_event('Graze', cow, dt, user)
+    TestData.log_event('Drink', cow, dt, user)
+    TestData.log_event('Chew cud', cow, dt, user)
+    TestData.log_event('Nap', cow, dt, user)
+    TestData.log_event('Return to barn', cow, dt, user)
+    TestData.log_exercise(distance, pasture, cow, dt, user)
     return
 
-def morning_ill_routine(c_id, dt, u_id):
+def morning_ill_routine(cow, dt, user):
     from assets.models import Treatment
     from tools.utils import TestData
 
-    data = TestData.get_ill_cow_data(c_id, dt, u_id)
-    TestData.log_healthrecord(data, c_id, dt, u_id)
-    TestData.log_event('Call Vet', c_id, dt, u_id)
-    TestData.log_event('Get diagnosed', c_id, dt, u_id)
-    TestData.log_event('Get treated', c_id, dt, u_id)
+    data = TestData.get_ill_cow_data(cow, dt, user)
+    TestData.log_healthrecord(data, cow, dt, user)
+    TestData.log_event('Call Vet', cow, dt, user)
+    TestData.log_event('Get diagnosed', cow, dt, user)
+    TestData.log_event('Get treated', cow, dt, user)
     treatment_id = randint(1, len(Treatment.objects.all()) - 1)
     treatment = Treatment.objects.get(pk=treatment_id)
-    TestData.log_vaccination(treatment.name, c_id, dt, u_id)
-    TestData.log_event('Rest in pen', c_id, dt, u_id)
-    TestData.log_event('Graze', c_id, dt, u_id)
-    TestData.log_event('Drink', c_id, dt, u_id)
-    TestData.log_event('Chew cud', c_id, dt, u_id)
-    TestData.log_event('Nap', c_id, dt, u_id)
+    TestData.log_vaccination(treatment.name, cow, dt, user)
+    TestData.log_event('Rest in pen', cow, dt, user)
+    TestData.log_event('Graze', cow, dt, user)
+    TestData.log_event('Drink', cow, dt, user)
+    TestData.log_event('Chew cud', cow, dt, user)
+    TestData.log_event('Nap', cow, dt, user)
     return
 
-def morning_injured_routine(c_id, dt, u_id):
+def morning_injured_routine(cow, dt, user):
     from assets.models import Pasture
     from tools.utils import TestData
 
-    data = TestData.get_injured_cow_data(c_id, dt, u_id)
-    TestData.log_healthrecord(data, c_id, dt, u_id)
-    TestData.log_event('Call Vet', c_id, dt, u_id)
-    TestData.log_event('Get diagnosed', c_id, dt, u_id)
-    TestData.log_event('Get treated', c_id, dt, u_id)
+    data = TestData.get_injured_cow_data(cow, dt, user)
+    TestData.log_healthrecord(data, cow, dt, user)
+    TestData.log_event('Call Vet', cow, dt, user)
+    TestData.log_event('Get diagnosed', cow, dt, user)
+    TestData.log_event('Get treated', cow, dt, user)
     gallons = randint(5, 7)
-    TestData.log_milk(gallons, c_id, dt, u_id)
-    TestData.log_event('Get milked', c_id, dt, u_id)
-    TestData.log_event('Exercise in pen', c_id, dt, u_id)
-    p_id = Pasture.objects.get(image__region__name='Pen').id
+    TestData.log_milk(gallons, cow, dt, user)
+    TestData.log_event('Get milked', cow, dt, user)
+    TestData.log_event('Exercise in pen', cow, dt, user)
+    pasture = Pasture.objects.get(region__name='Pen')
     distance = randint(1, 2)
-    TestData.log_exercise(distance, p_id, c_id, dt, u_id)
-    TestData.log_event('Graze', c_id, dt, u_id)
-    TestData.log_event('Drink', c_id, dt, u_id)
-    TestData.log_event('Chew cud', c_id, dt, u_id)
-    TestData.log_event('Nap', c_id, dt, u_id)
+    TestData.log_exercise(distance, pasture, cow, dt, user)
+    TestData.log_event('Graze', cow, dt, user)
+    TestData.log_event('Drink', cow, dt, user)
+    TestData.log_event('Chew cud', cow, dt, user)
+    TestData.log_event('Nap', cow, dt, user)
     return
 
-def daily_routine(c_id, dt, u_id):
+def daily_routine(cow, date, user):
     from assets.models import Pasture, Treatment
-    from tools.utils import TestData
+    from tools.utils import TestData, TestTime
 
     # morning
-    TestData.log_event('Wake Up', c_id, dt, u_id)
-    TestData.log_event('Get inspected', c_id, dt, u_id)
+    dt = TestTime.get_morning(date)
+    TestData.log_event('Wake Up', cow, dt, user)
+    TestData.log_event('Get inspected', cow, dt, user)
     health = TestData.get_health()
     if health == 'healthy':
-        morning_healthy_routine(c_id, dt, u_id)
+        morning_healthy_routine(cow, dt, user)
     elif health == 'injured':
-        morning_injured_routine(c_id, dt, u_id)
+        morning_injured_routine(cow, dt, user)
     elif health == 'ill':
-        morning_ill_routine(c_id, dt, u_id)
+        morning_ill_routine(cow, dt, user)
 
     # evening
-    TestData.log_event('Get inspected', c_id, dt, u_id)
+    dt = TestTime.get_evening(date)
+    TestData.log_event('Get inspected', cow, dt, user)
     health = TestData.get_health()
     if health == 'healthy':
-        evening_healthy_routine(c_id, dt, u_id)
+        evening_healthy_routine(cow, dt, user)
     elif health == 'injured':
-        evening_injured_routine(c_id, dt, u_id)
+        evening_injured_routine(cow, dt, user)
     elif health == 'ill':
-        evening_ill_routine(c_id, dt, u_id)
+        evening_ill_routine(cow, dt, user)
     return
 
 def main():
-    (breed, datetime, username) = read_args()
+    (breed, color, date, username) = read_args()
     path.append('/Users/tim/Documents/workspace/python3/dairyfarm/demo/')
     environ.setdefault('DJANGO_SETTINGS_MODULE',
                        'demo.settings')
     setup()
     from django.contrib.auth.models import User
     from assets.models import Cow
-    from tools.utils import TestTime
+    from tools.utils import TestData, TestTime
     user = User.objects.get(username=username)
-    dt = TestTime.convert_datetime(datetime)
-    new_breed = []
-    for word in breed.split('_'):
-        new_breed.append(word.capitalize())
     inspected = 0
-    for cow in Cow.objects.filter(image__breed__name=' '.join(new_breed)):
-        daily_routine(cow.id, dt, user.id)
+    for cow in Cow.objects.filter(breed__name=TestData.convert_name(breed),
+                                  color__name=color):
+        daily_routine(cow, date, user)
         inspected += 1
     if inspected == 1:
         print('{} inspected {} {}'.format(username, inspected, breed))

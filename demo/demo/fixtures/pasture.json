@@ -6,11 +6,13 @@
         "fallow": false,
         "distance": 0,
         "seeded_by": 2,
+        "region": 1,
         "image": 1,
         "cereal_hay": 1,
         "grass_hay": 1,
         "legume_hay": 1,
-        "season": 1
+        "season": 1,
+        "link": "/assets/api/pastures/1/"
     }
 },
 {
@@ -20,11 +22,13 @@
         "fallow": false,
         "distance": 0,
         "seeded_by": 2,
+        "region": 2,
         "image": 2,
         "cereal_hay": 2,
         "grass_hay": 2,
         "legume_hay": 2,
-        "season": 1
+        "season": 1,
+        "link": "/assets/api/pastures/2/"
     }
 },
 {
@@ -34,11 +38,13 @@
         "fallow": false,
         "distance": 0,
         "seeded_by": 2,
+        "region": 3,
         "image": 3,
         "cereal_hay": 3,
         "grass_hay": 3,
         "legume_hay": 3,
-        "season": 1
+        "season": 1,
+        "link": "/assets/api/pastures/3/"
     }
 },
 {
@@ -48,11 +54,13 @@
         "fallow": false,
         "distance": 0,
         "seeded_by": 2,
+        "region": 4,
         "image": 4,
         "cereal_hay": 4,
         "grass_hay": 4,
         "legume_hay": 4,
-        "season": 1
+        "season": 1,
+        "link": "/assets/api/pastures/4/"
     }
 },
 {
@@ -62,11 +70,13 @@
         "fallow": false,
         "distance": 0,
         "seeded_by": 2,
+        "region": 5,
         "image": 5,
         "cereal_hay": 5,
         "grass_hay": 5,
         "legume_hay": 5,
-        "season": 1
+        "season": 1,
+        "link": "/assets/api/pastures/5/"
     }
 },
 {
@@ -76,11 +86,13 @@
         "fallow": false,
         "distance": 0,
         "seeded_by": 2,
+        "region": 6,
         "image": 6,
         "cereal_hay": 1,
         "grass_hay": 6,
         "legume_hay": 6,
-        "season": 1
+        "season": 1,
+        "link": "/assets/api/pastures/6/"
     }
 },
 {
@@ -90,11 +102,13 @@
         "fallow": false,
         "distance": 0,
         "seeded_by": 2,
+        "region": 7,
         "image": 7,
         "cereal_hay": 2,
         "grass_hay": 7,
         "legume_hay": 1,
-        "season": 1
+        "season": 1,
+        "link": "/assets/api/pastures/7/"
     }
 },
 {
@@ -104,11 +118,13 @@
         "fallow": false,
         "distance": 0,
         "seeded_by": 2,
+        "region": 8,
         "image": 8,
         "cereal_hay": 3,
         "grass_hay": 8,
         "legume_hay": 2,
-        "season": 1
+        "season": 1,
+        "link": "/assets/api/pastures/8/"
     }
 },
 {
@@ -118,11 +134,13 @@
         "fallow": false,
         "distance": 0,
         "seeded_by": 2,
+        "region": 9,
         "image": 9,
         "cereal_hay": 4,
         "grass_hay": 9,
         "legume_hay": 3,
-        "season": 1
+        "season": 1,
+        "link": "/assets/api/pastures/9/"
     }
 },
 {
@@ -132,11 +150,13 @@
         "fallow": false,
         "distance": 0,
         "seeded_by": 2,
+        "region": 10,
         "image": 10,
         "cereal_hay": 5,
         "grass_hay": 1,
         "legume_hay": 4,
-        "season": 1
+        "season": 1,
+        "link": "/assets/api/pastures/10/"
     }
 },
 {
@@ -146,11 +166,13 @@
         "fallow": true,
         "distance": 0,
         "seeded_by": 2,
+        "region": 11,
         "image": 11,
-        "cereal_hay": null,
-        "grass_hay": null,
-        "legume_hay": null,
-        "season": 1
+        "cereal_hay": 1,
+        "grass_hay": 2,
+        "legume_hay": 5,
+        "season": 1,
+        "link": "/assets/api/pastures/11/"
     }
 },
 {
@@ -160,25 +182,29 @@
         "fallow": true,
         "distance": 0,
         "seeded_by": 2,
+        "region": 12,
         "image": 12,
-        "cereal_hay": null,
-        "grass_hay": null,
-        "legume_hay": null,
-        "season": 1
+        "cereal_hay": 2,
+        "grass_hay": 3,
+        "legume_hay": 6,
+        "season": 1,
+        "link": "/assets/api/pastures/12/"
     }
 },
 {
     "model": "assets.pasture",
     "pk": 13,
     "fields": {
-        "fallow": false,
+        "fallow": true,
         "distance": 0,
         "seeded_by": 2,
+        "region": 13,
         "image": 13,
         "cereal_hay": 3,
         "grass_hay": 3,
         "legume_hay": 3,
-        "season": 1
+        "season": 1,
+        "link": "/assets/api/pastures/13/"
     }
 }
 ]

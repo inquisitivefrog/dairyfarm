@@ -15,13 +15,29 @@ python manage.py migrate
 ./tools/create_user.py -f mister -l greenjeans -e farmhand@dairyfarm.org -u farmhand -p butter
 ./tools/create_user.py -f doctor -l fixmeup -e vet@dairyfarm.org -u vet -p cheese
 ./tools/load_references.py
+
 # PURCHASE COWS
-for breed in holstein jersey guernsey ayrshire brown_swiss milking_shorthorn dutch_belted
+user="farmhand"
+dt="2014-12-31"
+for color in black_white red_white
 do
-    user="farmhand"
-    dt="2014-12-31"
-    ./tools/purchase_herd.py -b $breed -d "$dt" -c 10 -u $user
+    ./tools/purchase_herd.py -b holstein -c $color -d "$dt" -q 10 -u $user
 done
+for color in brown tawny
+do
+    ./tools/purchase_herd.py -b jersey -c $color -d "$dt" -q 10 -u $user
+done
+./tools/purchase_herd.py -b guernsey -c golden_white -d "$dt" -q 10 -u $user
+./tools/purchase_herd.py -b ayrshire -c golden_white -d "$dt" -q 10 -u $user
+for color in brown gray
+do
+    ./tools/purchase_herd.py -b brown_swiss -c $color -d "$dt" -q 10 -u $user
+done
+for color in red white roan red_white
+do
+    ./tools/purchase_herd.py -b milking_shorthorn -c $color -d "$dt" -q 10 -u $user
+done
+./tools/purchase_herd.py -b dutch_belted -c black_white -d "$dt" -q 10 -u $user
 
 # SEED PASTURES
 ./tools/seed_pastures.py -c alfalfa -g bermuda -l clover -s Spring -r North -u farmhand
@@ -41,21 +57,27 @@ done
 # ASSIGN FALLOW PASTURES 
 ./tools/assign_fallow_pastures.py -s Spring -r 'South West' -u farmhand
 ./tools/assign_fallow_pastures.py -s Spring -r 'South East' -u farmhand
+./tools/assign_fallow_pastures.py -s Spring -r 'Pen' -u farmhand
 
 # GENERATE WEEKLY ACTIVITY
-for breed in holstein jersey guernsey ayrshire brown_swiss milking_shorthorn dutch_belted
+user="vet"
+#for day in 1 2 3 4 5 6 7
+for day in 1
 do
-    user="vet"
-    #for day in 1 2 3 4 5 6 7
-    for day in 1
-    do
-        dt="2015-01-0$day 04:00:00"
-        echo morning activity
-        ./tools/daily_herd_activity.py -b $breed -d "$dt" -u $user
-        dt="2015-01-0$day 16:00:00"
-        echo evening activity
-        ./tools/daily_herd_activity.py -b $breed -d "$dt" -u $user
-    done
+    dt="2015-01-0$day"
+    ./tools/daily_herd_activity.py -b holstein -c black_white -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b holstein -c red_white -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b jersey -c brown -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b jersey -c tawny -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b guernsey -c golden_white -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b ayrshire -c golden_white -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b brown_swiss -c brown -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b brown_swiss -c gray -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b milking_shorthorn -c red -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b milking_shorthorn -c white -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b milking_shorthorn -c roan -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b milking_shorthorn -c red_white -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b dutch_belted -c black_white -d "$dt" -u $user
 done
 
 # PRESERVE REFERENCE DATA AS FIXTURES
@@ -64,7 +86,6 @@ done
 # TEST
 python manage.py test -v 2
 
-export ETIME=`date`
+#export ETIME=`date`
 echo started $STIME
 echo finished $ETIME
-

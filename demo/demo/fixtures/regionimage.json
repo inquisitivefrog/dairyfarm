@@ -3,7 +3,6 @@
     "model": "assets.regionimage",
     "pk": 1,
     "fields": {
-        "region": 1,
         "url": "/static/images/regions/north.png"
     }
 },
@@ -11,7 +10,6 @@
     "model": "assets.regionimage",
     "pk": 2,
     "fields": {
-        "region": 2,
         "url": "/static/images/regions/west.png"
     }
 },
@@ -19,7 +17,6 @@
     "model": "assets.regionimage",
     "pk": 3,
     "fields": {
-        "region": 3,
         "url": "/static/images/regions/south.png"
     }
 },
@@ -27,7 +24,6 @@
     "model": "assets.regionimage",
     "pk": 4,
     "fields": {
-        "region": 4,
         "url": "/static/images/regions/east.png"
     }
 },
@@ -35,7 +31,6 @@
     "model": "assets.regionimage",
     "pk": 5,
     "fields": {
-        "region": 5,
         "url": "/static/images/regions/central_north.png"
     }
 },
@@ -43,7 +38,6 @@
     "model": "assets.regionimage",
     "pk": 6,
     "fields": {
-        "region": 6,
         "url": "/static/images/regions/central_west.png"
     }
 },
@@ -51,7 +45,6 @@
     "model": "assets.regionimage",
     "pk": 7,
     "fields": {
-        "region": 7,
         "url": "/static/images/regions/central_south.png"
     }
 },
@@ -59,7 +52,6 @@
     "model": "assets.regionimage",
     "pk": 8,
     "fields": {
-        "region": 8,
         "url": "/static/images/regions/central_east.png"
     }
 },
@@ -67,7 +59,6 @@
     "model": "assets.regionimage",
     "pk": 9,
     "fields": {
-        "region": 9,
         "url": "/static/images/regions/north_west.png"
     }
 },
@@ -75,7 +66,6 @@
     "model": "assets.regionimage",
     "pk": 10,
     "fields": {
-        "region": 10,
         "url": "/static/images/regions/north_east.png"
     }
 },
@@ -83,7 +73,6 @@
     "model": "assets.regionimage",
     "pk": 11,
     "fields": {
-        "region": 11,
         "url": "/static/images/regions/south_west.png"
     }
 },
@@ -91,7 +80,6 @@
     "model": "assets.regionimage",
     "pk": 12,
     "fields": {
-        "region": 12,
         "url": "/static/images/regions/south_east.png"
     }
 },
@@ -99,7 +87,6 @@
     "model": "assets.regionimage",
     "pk": 13,
     "fields": {
-        "region": 13,
         "url": "/static/images/regions/pen.png"
     }
 }

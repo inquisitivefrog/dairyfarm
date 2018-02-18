@@ -40,14 +40,43 @@ def load_ages():
         print('Defined age: {}'.format(age))
     return
 
+def load_breedimages():
+    from assets.models import Breed, BreedImage
+    images = {'Holstein': '/static/images/breeds/holstein.png',
+              'Jersey': '/static/images/breeds/jersey.png',
+              'Guernsey': '/static/images/breeds/guernsey.png',
+              'Ayrshire': '/static/images/breeds/ayrshire.png',
+              'Brown Swiss': '/static/images/breeds/brown_swiss.png',
+              'Milking Shorthorn': '/static/images/breeds/milking_shorthorn.png',
+              'Dutch Belted': '/static/images/breeds/dutch_belted.png'}
+    for breed, url in images.items(): 
+        data = {'url': url}
+        BreedImage.objects.create(**data)
+        print('Defined image: {}'.format(url))
+    return
+
+def load_colors():
+    from assets.models import Breed, Color
+    colors = ['black_white', 'red_white', 'brown', 'tawny', 'golden_white',
+              'gray', 'red', 'white', 'roan']
+    for color in colors:
+        data = {'name': color}
+        Color.objects.create(**data)
+    return
+
 def load_breeds():
-    from assets.models import Breed
-    breeds = ['Holstein', 'Jersey', 'Guernsey', 'Ayrshire',
-              'Brown Swiss', 'Milking Shorthorn', 'Dutch Belted']
-    for breed in breeds: 
+    from assets.models import Breed, Color
+    breeds = {'Holstein': ['black_white', 'red_white'],
+              'Jersey': ['brown', 'tawny'],
+              'Guernsey': ['golden_white'],
+              'Ayrshire': ['golden_white'],
+              'Brown Swiss': ['brown', 'gray'],
+              'Milking Shorthorn': ['red', 'white', 'roan', 'red_white'],
+              'Dutch Belted': ['black_white']}
+    for breed, colors in breeds.items(): 
         data = {'name': breed}
         Breed.objects.create(**data)
-        print('Defined breed: {}'.format(breed))
+        print('Defined breed: {} of colors: {}'.format(breed, ', '.join(colors)))
     return
 
 def load_cereal_hay():
@@ -57,23 +86,6 @@ def load_cereal_hay():
         data = {'name': cereal}
         CerealHay.objects.create(**data)
         print('Defined cereal hay: {}'.format(cereal))
-    return
-
-def load_colors():
-    from assets.models import Breed, Color
-    colors = {'Holstein': ['black_white', 'red_white'],
-              'Jersey': ['brown', 'tawny'],
-              'Guernsey': ['golden_white'],
-              'Ayrshire': ['golden_white'],
-              'Brown Swiss': ['brown', 'gray'],
-              'Milking Shorthorn': ['red', 'white', 'roan', 'red_white'],
-              'Dutch Belted': ['black_white']}
-    for breed in colors: 
-        for color in colors[breed]:
-            data = {'breed': Breed.objects.get(name=breed),
-                    'name': color}
-            Color.objects.create(**data)
-            print('Defined color: {} for breed: {}'.format(color, breed))
     return
 
 def load_grass_hay():
@@ -132,6 +144,27 @@ def load_illnesses():
                 'treatment': treatment}
         Illness.objects.create(**data)
         print('Defined treatment: {} for diagnosis: {}'.format(treatment, diagnosis))
+    return
+
+def load_regionimages():
+    from assets.models import RegionImage
+    images = {'North': '/static/images/regions/north.png',
+              'West': '/static/images/regions/west.png',
+              'South': '/static/images/regions/south.png',
+              'East': '/static/images/regions/east.png',
+              'Central North': '/static/images/regions/central_north.png',
+              'Central West': '/static/images/regions/central_west.png',
+              'Central South': '/static/images/regions/central_south.png',
+              'Central East': '/static/images/regions/central_east.png',
+              'North West': '/static/images/regions/north_west.png',
+              'North East': '/static/images/regions/north_east.png',
+              'South West': '/static/images/regions/south_west.png',
+              'South East': '/static/images/regions/south_east.png',
+              'Pen': '/static/images/regions/pen.png'}
+    for region, url in images.items(): 
+        data = {'url': url}
+        RegionImage.objects.create(**data)
+        print('Defined regionimage: {} for region: {}'.format(url, region))
     return
 
 def load_regions():
@@ -194,44 +227,6 @@ def load_vaccines():
         print('Defined vaccine: {}'.format(vaccine))
     return
 
-def load_breedimages():
-    from assets.models import Breed, BreedImage
-    images = {'Holstein': '/static/images/breeds/holstein.png',
-              'Jersey': '/static/images/breeds/jersey.png',
-              'Guernsey': '/static/images/breeds/guernsey.png',
-              'Ayrshire': '/static/images/breeds/ayrshire.png',
-              'Brown Swiss': '/static/images/breeds/brown_swiss.png',
-              'Milking Shorthorn': '/static/images/breeds/milking_shorthorn.png',
-              'Dutch Belted': '/static/images/breeds/dutch_belted.png'}
-    for breed, url in images.items(): 
-        data = {'breed': Breed.objects.get(name=breed),
-                'url': url}
-        BreedImage.objects.create(**data)
-        print('Defined image: {} for breed: {}'.format(url, breed))
-    return
-
-def load_regionimages():
-    from assets.models import Region, RegionImage
-    images = {'North': '/static/images/regions/north.png',
-              'West': '/static/images/regions/west.png',
-              'South': '/static/images/regions/south.png',
-              'East': '/static/images/regions/east.png',
-              'Central North': '/static/images/regions/central_north.png',
-              'Central West': '/static/images/regions/central_west.png',
-              'Central South': '/static/images/regions/central_south.png',
-              'Central East': '/static/images/regions/central_east.png',
-              'North West': '/static/images/regions/north_west.png',
-              'North East': '/static/images/regions/north_east.png',
-              'South West': '/static/images/regions/south_west.png',
-              'South East': '/static/images/regions/south_east.png',
-              'Pen': '/static/images/regions/pen.png'}
-    for region, url in images.items(): 
-        data = {'region': Region.objects.get(name=region),
-                'url': url}
-        RegionImage.objects.create(**data)
-        print('Defined regionimage: {} for region: {}'.format(url, region))
-    return
-
 def main():
     path.append('/Users/tim/Documents/workspace/python3/dairyfarm/demo/')
     environ.setdefault('DJANGO_SETTINGS_MODULE',
@@ -239,20 +234,20 @@ def main():
     setup()
     load_actions()
     load_ages()
+    load_breedimages()
+    load_colors()
     load_breeds()
     load_cereal_hay()
-    load_colors()
     load_grass_hay()
     load_legume_hay()
     load_injuries()
     load_illnesses()
+    load_regionimages()
     load_regions()
     load_seasons()
     load_statuses()
     load_treatments()
     load_vaccines()
-    load_breedimages()
-    load_regionimages()
     return
 
 if __name__ == '__main__':

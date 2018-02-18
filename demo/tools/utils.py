@@ -31,6 +31,30 @@ class TestTime:
     def convert_date(cls, d):
         return datetime.date(datetime.strptime(d, '%Y-%m-%d'))
 
+    @classmethod
+    def get_morning(cls, d):
+        tmp = datetime.strptime('{} 04:00:00'.format(d), '%Y-%m-%d %H:%M:%S')
+        return datetime(tmp.year,
+                        tmp.month,
+                        tmp.day,
+                        tmp.hour,
+                        tmp.minute,
+                        tmp.second,
+                        tmp.microsecond,
+                        tzinfo=pytz.timezone(settings.TIME_ZONE))
+
+    @classmethod
+    def get_evening(cls, d):
+        tmp = datetime.strptime('{} 16:00:00'.format(d), '%Y-%m-%d %H:%M:%S')
+        return datetime(tmp.year,
+                        tmp.month,
+                        tmp.day,
+                        tmp.hour,
+                        tmp.minute,
+                        tmp.second,
+                        tmp.microsecond,
+                        tzinfo=pytz.timezone(settings.TIME_ZONE))
+
 class TestData:
     @classmethod
     def get_health(cls):
@@ -45,7 +69,7 @@ class TestData:
             return 'healthy'
 
     @classmethod
-    def get_healthy_cow_data(cls, c_id, dt, u_id):
+    def get_healthy_cow_data(cls, cow, dt, user):
         # ideal healthy temp range: 100.4 - 102.0
         temperature = randint(1004, 1020) * 10.0 / 100
         # ideal healthy resp range: 26 - 50
@@ -58,29 +82,29 @@ class TestData:
         body_condition_score = randint(30, 35) * 10.0 / 100
         # ideal healthy weight range: 450 - 550 
         weight = randint(450, 550)
-        status_id = randint(1, 2)
-        return {'recorded_by': u_id,
+        status = Status.objects.get(pk=randint(1,2)).name
+        return {'recorded_by': user,
                 'timestamp': dt,
-                'cow': c_id,
+                'cow': cow.id,
                 'temperature': temperature,
                 'respiratory_rate': respiratory_rate,
                 'heart_rate': heart_rate,
                 'blood_pressure': blood_pressure,
                 'weight': weight,
                 'body_condition_score': body_condition_score,
-                'status': status_id}
+                'status': status}
 
     @classmethod
-    def _get_ill_injured_cow_data(cls, c_id, dt, u_id):
+    def _get_ill_injured_cow_data(cls, cow, dt, user):
         temperature = randint(960, 1050) * 10.0 / 100
         respiratory_rate = randint(250, 700) * 10.0 / 100
         heart_rate = randint(450, 900) * 10.0 / 100
         blood_pressure = randint(1150, 1750) * 10.0 / 100
         body_condition_score = randint(20, 40) * 10.0 / 100
         weight = randint(400, 650)
-        return {'recorded_by': u_id,
+        return {'recorded_by': user,
                 'timestamp': dt,
-                'cow': c_id,
+                'cow': cow.id,
                 'temperature': temperature,
                 'respiratory_rate': respiratory_rate,
                 'heart_rate': heart_rate,
@@ -89,36 +113,34 @@ class TestData:
                 'body_condition_score': body_condition_score}
 
     @classmethod
-    def get_injured_cow_data(cls, c_id, dt, u_id):
-        status_id = 3
-        injuries = [i.id for i in Injury.objects.all() ]
+    def get_injured_cow_data(cls, cow, dt, user):
+        injuries = [x.id for x in Injury.objects.all()]
         injury_id = injuries[randint(1, len(injuries) - 1)]
-        data = cls._get_ill_injured_cow_data(c_id, dt, u_id)
-        data.update({'status': status_id,
+        data = cls._get_ill_injured_cow_data(cow, dt, user)
+        data.update({'status': 'Injured',
                      'injury': injury_id})
         return data
 
     @classmethod
-    def get_ill_cow_data(cls, c_id, dt, u_id):
-        statuses = [s.id for s in Status.objects.all() ]
-        status_id = statuses[randint(4, len(statuses) - 1)]
-        illnesses = [i.id for i in Illness.objects.all() ]
+    def get_ill_cow_data(cls, cow, dt, user):
+        status = Status.objects.get(pk=randint(4,5)).name
+        illnesses = [x.id for x in Illness.objects.all()]
         illness_id = illnesses[randint(1, len(illnesses) - 1)]
-        data = cls._get_ill_injured_cow_data(c_id, dt, u_id)
-        data.update({'status': status_id,
+        data = cls._get_ill_injured_cow_data(cow, dt, user)
+        data.update({'status': status,
                      'illness': illness_id})
         return data
 
     @classmethod
-    def log_event(cls, action, c_id, dt, u_id):
+    def log_event(cls, action, cow, dt, user):
         try:
             a = Action.objects.get(name=action)
             if not a:
                 print('ERROR: action: {} does not exist!'.format(action))
-            data = {'recorded_by': u_id,
+            data = {'recorded_by': user,
                     'timestamp': dt,
-                    'cow': c_id,
-                    'action': a.id}
+                    'cow': cow.id,
+                    'action': action}
             es = EventSerializer(data=data)
             if es.is_valid() and len(es.errors) == 0:
                 es.save()
@@ -128,12 +150,12 @@ class TestData:
             print('ERROR: {}'.format(e))
 
     @classmethod
-    def log_exercise(cls, distance, p_id, c_id, dt, u_id):
+    def log_exercise(cls, distance, pasture, cow, dt, user):
         try:
-            data = {'recorded_by': u_id,
+            data = {'recorded_by': user,
                     'timestamp': dt,
-                    'cow': c_id,
-                    'pasture': p_id,
+                    'cow': cow.id,
+                    'pasture': pasture.id,
                     'distance': distance}
             es = ExerciseSerializer(data=data)
             if es.is_valid() and len(es.errors) == 0:
@@ -144,7 +166,7 @@ class TestData:
             print('ERROR: {}'.format(e))
 
     @classmethod
-    def log_healthrecord(cls, data, c_id, dt, u_id):
+    def log_healthrecord(cls, data, cow, dt, user):
         try:
             hrs = HealthRecordSerializer(data=data)
             if hrs.is_valid() and len(hrs.errors) == 0:
@@ -155,11 +177,11 @@ class TestData:
             print('ERROR: {}'.format(e))
 
     @classmethod
-    def log_milk(cls, gallons, c_id, dt, u_id):
+    def log_milk(cls, gallons, cow, dt, user):
         try:
-            data = {'recorded_by': u_id,
+            data = {'recorded_by': user,
                     'timestamp': dt,
-                    'cow': c_id,
+                    'cow': cow.id,
                     'gallons': gallons}
             ms = MilkSerializer(data=data)
             if ms.is_valid() and len(ms.errors) == 0:
@@ -170,12 +192,12 @@ class TestData:
             print('ERROR: {}'.format(e))
 
     @classmethod
-    def log_pedicure(cls, action, p_id, c_id, dt, u_id):
+    def log_pedicure(cls, action, pasture, cow, dt, user):
         try:
-            data = {'recorded_by': u_id,
+            data = {'recorded_by': user,
                     'timestamp': dt,
-                    'cow': c_id,
-                    'pasture': p_id,
+                    'cow': cow.id,
+                    'pasture': pasture.id,
                     'distance': distance}
             es = ExerciseSerializer(data=data)
             if es.is_valid() and len(es.errors) == 0:
@@ -186,11 +208,11 @@ class TestData:
             print('ERROR: {}'.format(e))
 
     @classmethod
-    def log_vaccination(cls, diagnosis, c_id, dt, u_id):
+    def log_vaccination(cls, diagnosis, cow, dt, user):
         try:
-            data = {'recorded_by': u_id,
+            data = {'recorded_by': user,
                     'timestamp': dt,
-                    'cow': c_id,
+                    'cow': cow.id,
                     'diagnosis': diagnosis}
             ms = MilkSerializer(data=data)
             if ms.is_valid() and len(ms.errors) == 0:
@@ -199,4 +221,11 @@ class TestData:
                 print('ERROR: {}'.format(ms.errors))
         except IntegrityError as e:
             print('ERROR: {}'.format(e))
+
+    @classmethod
+    def convert_name(cls, name):
+        new_name = []
+        for word in name.split('_'):
+            new_name.append(word.capitalize())
+        return ' '.join(new_name)
 

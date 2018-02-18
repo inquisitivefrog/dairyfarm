@@ -90,30 +90,26 @@ def read_args():
            o.region,
            o.username)
     
-def plant_pasture(cereal_hay, grass_hay, legume_hay, season, region, username):
+def _get_data(cereal_hay, grass_hay, legume_hay, season, region, username):
     from django.contrib.auth.models import User
-    from assets.models import CerealHay, GrassHay, LegumeHay, RegionImage, Season
+    user = User.objects.get(username=username)
+    return {'seeded_by': user,
+            'cereal_hay': cereal_hay,
+            'grass_hay': grass_hay,
+            'legume_hay': legume_hay,
+            'region': region,
+            'season': season}
+
+def plant_pasture(cereal_hay, grass_hay, legume_hay, season, region, username):
     from assets.serializers import PastureSerializer
     try:
-        user = User.objects.get(username=username)
-        cereal_hay = CerealHay.objects.get(name=cereal_hay)
-        grass_hay = GrassHay.objects.get(name=grass_hay)
-        legume_hay = LegumeHay.objects.get(name=legume_hay)
-        image = RegionImage.objects.get(region__name=region)
-        season = Season.objects.get(name=season)
-        data = {'seeded_by': user.id,
-                'cereal_hay': cereal_hay.id,
-                'grass_hay': grass_hay.id,
-                'legume_hay': legume_hay.id,
-                'season': season.id,
-                'image': image.id}
-        ps = PastureSerializer(data=data)
+        ps = PastureSerializer(data=_get_data(cereal_hay, grass_hay, legume_hay, season, region, username))
         if ps.is_valid() and len(ps.errors) == 0:
             ps.save()
-            msg_1 = '{} planted {}, {} '.format(username, cereal_hay.name, grass_hay.name)
-            msg_2 = 'and {} in region {} for {} season'.format(legume_hay.name,
-                                                               image.region.name,
-                                                               season.name)
+            msg_1 = '{} planted {}, {} '.format(username, cereal_hay, grass_hay)
+            msg_2 = 'and {} in region {} for {} season'.format(legume_hay,
+                                                               region,
+                                                               season)
             print(msg_1 + msg_2) 
             return
         else:

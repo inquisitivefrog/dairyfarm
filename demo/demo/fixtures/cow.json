@@ -5,9 +5,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
-        "color": 2,
-        "image": 1
+        "age": 5,
+        "breed": 1,
+        "color": 1,
+        "image": 1,
+        "link": "/assets/api/cows/1/"
     }
 },
 {
@@ -16,9 +18,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
-        "color": 2,
-        "image": 1
+        "age": 2,
+        "breed": 1,
+        "color": 1,
+        "image": 1,
+        "link": "/assets/api/cows/2/"
     }
 },
 {
@@ -27,9 +31,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
-        "color": 2,
-        "image": 1
+        "age": 2,
+        "breed": 1,
+        "color": 1,
+        "image": 1,
+        "link": "/assets/api/cows/3/"
     }
 },
 {
@@ -38,9 +44,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
-        "color": 2,
-        "image": 1
+        "age": 4,
+        "breed": 1,
+        "color": 1,
+        "image": 1,
+        "link": "/assets/api/cows/4/"
     }
 },
 {
@@ -49,9 +57,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
-        "color": 2,
-        "image": 1
+        "age": 1,
+        "breed": 1,
+        "color": 1,
+        "image": 1,
+        "link": "/assets/api/cows/5/"
     }
 },
 {
@@ -61,8 +71,10 @@
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 5,
-        "color": 2,
-        "image": 1
+        "breed": 1,
+        "color": 1,
+        "image": 1,
+        "link": "/assets/api/cows/6/"
     }
 },
 {
@@ -71,9 +83,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
-        "color": 2,
-        "image": 1
+        "age": 1,
+        "breed": 1,
+        "color": 1,
+        "image": 1,
+        "link": "/assets/api/cows/7/"
     }
 },
 {
@@ -82,9 +96,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 3,
+        "breed": 1,
         "color": 1,
-        "image": 1
+        "image": 1,
+        "link": "/assets/api/cows/8/"
     }
 },
 {
@@ -93,9 +109,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 4,
+        "breed": 1,
         "color": 1,
-        "image": 1
+        "image": 1,
+        "link": "/assets/api/cows/9/"
     }
 },
 {
@@ -104,9 +122,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 3,
+        "breed": 1,
         "color": 1,
-        "image": 1
+        "image": 1,
+        "link": "/assets/api/cows/10/"
     }
 },
 {
@@ -115,9 +135,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
-        "color": 3,
-        "image": 2
+        "age": 3,
+        "breed": 1,
+        "color": 2,
+        "image": 1,
+        "link": "/assets/api/cows/11/"
     }
 },
 {
@@ -126,9 +148,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
-        "color": 4,
-        "image": 2
+        "age": 2,
+        "breed": 1,
+        "color": 2,
+        "image": 1,
+        "link": "/assets/api/cows/12/"
     }
 },
 {
@@ -137,9 +161,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
-        "color": 3,
-        "image": 2
+        "age": 5,
+        "breed": 1,
+        "color": 2,
+        "image": 1,
+        "link": "/assets/api/cows/13/"
     }
 },
 {
@@ -148,9 +174,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
-        "color": 4,
-        "image": 2
+        "age": 5,
+        "breed": 1,
+        "color": 2,
+        "image": 1,
+        "link": "/assets/api/cows/14/"
     }
 },
 {
@@ -159,9 +187,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
-        "color": 4,
-        "image": 2
+        "age": 1,
+        "breed": 1,
+        "color": 2,
+        "image": 1,
+        "link": "/assets/api/cows/15/"
     }
 },
 {
@@ -170,9 +200,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
-        "color": 4,
-        "image": 2
+        "age": 4,
+        "breed": 1,
+        "color": 2,
+        "image": 1,
+        "link": "/assets/api/cows/16/"
     }
 },
 {
@@ -181,9 +213,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
-        "color": 3,
-        "image": 2
+        "age": 5,
+        "breed": 1,
+        "color": 2,
+        "image": 1,
+        "link": "/assets/api/cows/17/"
     }
 },
 {
@@ -192,9 +226,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
-        "color": 4,
-        "image": 2
+        "age": 3,
+        "breed": 1,
+        "color": 2,
+        "image": 1,
+        "link": "/assets/api/cows/18/"
     }
 },
 {
@@ -203,9 +239,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
-        "color": 4,
-        "image": 2
+        "age": 3,
+        "breed": 1,
+        "color": 2,
+        "image": 1,
+        "link": "/assets/api/cows/19/"
     }
 },
 {
@@ -215,8 +253,10 @@
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 2,
-        "color": 3,
-        "image": 2
+        "breed": 1,
+        "color": 2,
+        "image": 1,
+        "link": "/assets/api/cows/20/"
     }
 },
 {
@@ -225,9 +265,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
-        "color": 5,
-        "image": 3
+        "age": 1,
+        "breed": 2,
+        "color": 3,
+        "image": 2,
+        "link": "/assets/api/cows/21/"
     }
 },
 {
@@ -236,9 +278,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
-        "color": 5,
-        "image": 3
+        "age": 5,
+        "breed": 2,
+        "color": 3,
+        "image": 2,
+        "link": "/assets/api/cows/22/"
     }
 },
 {
@@ -248,8 +292,10 @@
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 5,
-        "color": 5,
-        "image": 3
+        "breed": 2,
+        "color": 3,
+        "image": 2,
+        "link": "/assets/api/cows/23/"
     }
 },
 {
@@ -258,9 +304,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
-        "color": 5,
-        "image": 3
+        "age": 5,
+        "breed": 2,
+        "color": 3,
+        "image": 2,
+        "link": "/assets/api/cows/24/"
     }
 },
 {
@@ -269,9 +317,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
-        "color": 5,
-        "image": 3
+        "age": 3,
+        "breed": 2,
+        "color": 3,
+        "image": 2,
+        "link": "/assets/api/cows/25/"
     }
 },
 {
@@ -280,9 +330,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
-        "color": 5,
-        "image": 3
+        "age": 1,
+        "breed": 2,
+        "color": 3,
+        "image": 2,
+        "link": "/assets/api/cows/26/"
     }
 },
 {
@@ -292,8 +344,10 @@
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 3,
-        "color": 5,
-        "image": 3
+        "breed": 2,
+        "color": 3,
+        "image": 2,
+        "link": "/assets/api/cows/27/"
     }
 },
 {
@@ -302,9 +356,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
-        "color": 5,
-        "image": 3
+        "age": 3,
+        "breed": 2,
+        "color": 3,
+        "image": 2,
+        "link": "/assets/api/cows/28/"
     }
 },
 {
@@ -314,8 +370,10 @@
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 5,
-        "color": 5,
-        "image": 3
+        "breed": 2,
+        "color": 3,
+        "image": 2,
+        "link": "/assets/api/cows/29/"
     }
 },
 {
@@ -324,9 +382,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
-        "color": 5,
-        "image": 3
+        "age": 1,
+        "breed": 2,
+        "color": 3,
+        "image": 2,
+        "link": "/assets/api/cows/30/"
     }
 },
 {
@@ -335,9 +395,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
-        "color": 6,
-        "image": 4
+        "age": 4,
+        "breed": 2,
+        "color": 4,
+        "image": 2,
+        "link": "/assets/api/cows/31/"
     }
 },
 {
@@ -346,9 +408,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
-        "color": 6,
-        "image": 4
+        "age": 1,
+        "breed": 2,
+        "color": 4,
+        "image": 2,
+        "link": "/assets/api/cows/32/"
     }
 },
 {
@@ -357,9 +421,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
-        "color": 6,
-        "image": 4
+        "age": 2,
+        "breed": 2,
+        "color": 4,
+        "image": 2,
+        "link": "/assets/api/cows/33/"
     }
 },
 {
@@ -369,8 +435,10 @@
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 4,
-        "color": 6,
-        "image": 4
+        "breed": 2,
+        "color": 4,
+        "image": 2,
+        "link": "/assets/api/cows/34/"
     }
 },
 {
@@ -379,9 +447,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
-        "color": 6,
-        "image": 4
+        "age": 1,
+        "breed": 2,
+        "color": 4,
+        "image": 2,
+        "link": "/assets/api/cows/35/"
     }
 },
 {
@@ -390,9 +460,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
-        "color": 6,
-        "image": 4
+        "age": 4,
+        "breed": 2,
+        "color": 4,
+        "image": 2,
+        "link": "/assets/api/cows/36/"
     }
 },
 {
@@ -401,9 +473,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
-        "color": 6,
-        "image": 4
+        "age": 1,
+        "breed": 2,
+        "color": 4,
+        "image": 2,
+        "link": "/assets/api/cows/37/"
     }
 },
 {
@@ -412,9 +486,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
-        "color": 6,
-        "image": 4
+        "age": 2,
+        "breed": 2,
+        "color": 4,
+        "image": 2,
+        "link": "/assets/api/cows/38/"
     }
 },
 {
@@ -423,9 +499,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
-        "color": 6,
-        "image": 4
+        "age": 4,
+        "breed": 2,
+        "color": 4,
+        "image": 2,
+        "link": "/assets/api/cows/39/"
     }
 },
 {
@@ -435,8 +513,10 @@
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 3,
-        "color": 6,
-        "image": 4
+        "breed": 2,
+        "color": 4,
+        "image": 2,
+        "link": "/assets/api/cows/40/"
     }
 },
 {
@@ -446,8 +526,10 @@
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 2,
-        "color": 7,
-        "image": 5
+        "breed": 3,
+        "color": 5,
+        "image": 3,
+        "link": "/assets/api/cows/41/"
     }
 },
 {
@@ -457,8 +539,10 @@
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 1,
-        "color": 8,
-        "image": 5
+        "breed": 3,
+        "color": 5,
+        "image": 3,
+        "link": "/assets/api/cows/42/"
     }
 },
 {
@@ -468,8 +552,10 @@
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 1,
-        "color": 8,
-        "image": 5
+        "breed": 3,
+        "color": 5,
+        "image": 3,
+        "link": "/assets/api/cows/43/"
     }
 },
 {
@@ -478,9 +564,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
-        "color": 8,
-        "image": 5
+        "age": 2,
+        "breed": 3,
+        "color": 5,
+        "image": 3,
+        "link": "/assets/api/cows/44/"
     }
 },
 {
@@ -490,8 +578,10 @@
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 1,
-        "color": 7,
-        "image": 5
+        "breed": 3,
+        "color": 5,
+        "image": 3,
+        "link": "/assets/api/cows/45/"
     }
 },
 {
@@ -500,9 +590,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
-        "color": 8,
-        "image": 5
+        "age": 1,
+        "breed": 3,
+        "color": 5,
+        "image": 3,
+        "link": "/assets/api/cows/46/"
     }
 },
 {
@@ -511,9 +603,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
-        "color": 8,
-        "image": 5
+        "age": 4,
+        "breed": 3,
+        "color": 5,
+        "image": 3,
+        "link": "/assets/api/cows/47/"
     }
 },
 {
@@ -522,9 +616,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
-        "color": 7,
-        "image": 5
+        "age": 2,
+        "breed": 3,
+        "color": 5,
+        "image": 3,
+        "link": "/assets/api/cows/48/"
     }
 },
 {
@@ -534,8 +630,10 @@
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 5,
-        "color": 8,
-        "image": 5
+        "breed": 3,
+        "color": 5,
+        "image": 3,
+        "link": "/assets/api/cows/49/"
     }
 },
 {
@@ -544,9 +642,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
-        "color": 8,
-        "image": 5
+        "age": 1,
+        "breed": 3,
+        "color": 5,
+        "image": 3,
+        "link": "/assets/api/cows/50/"
     }
 },
 {
@@ -555,9 +655,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
-        "color": 11,
-        "image": 6
+        "age": 2,
+        "breed": 4,
+        "color": 5,
+        "image": 4,
+        "link": "/assets/api/cows/51/"
     }
 },
 {
@@ -567,8 +669,10 @@
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 5,
-        "color": 12,
-        "image": 6
+        "breed": 4,
+        "color": 5,
+        "image": 4,
+        "link": "/assets/api/cows/52/"
     }
 },
 {
@@ -578,8 +682,10 @@
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 3,
-        "color": 10,
-        "image": 6
+        "breed": 4,
+        "color": 5,
+        "image": 4,
+        "link": "/assets/api/cows/53/"
     }
 },
 {
@@ -588,9 +694,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
-        "color": 10,
-        "image": 6
+        "age": 1,
+        "breed": 4,
+        "color": 5,
+        "image": 4,
+        "link": "/assets/api/cows/54/"
     }
 },
 {
@@ -599,9 +707,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
-        "color": 11,
-        "image": 6
+        "age": 5,
+        "breed": 4,
+        "color": 5,
+        "image": 4,
+        "link": "/assets/api/cows/55/"
     }
 },
 {
@@ -610,9 +720,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
-        "color": 11,
-        "image": 6
+        "age": 2,
+        "breed": 4,
+        "color": 5,
+        "image": 4,
+        "link": "/assets/api/cows/56/"
     }
 },
 {
@@ -622,8 +734,10 @@
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 1,
-        "color": 12,
-        "image": 6
+        "breed": 4,
+        "color": 5,
+        "image": 4,
+        "link": "/assets/api/cows/57/"
     }
 },
 {
@@ -632,9 +746,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
-        "color": 11,
-        "image": 6
+        "age": 4,
+        "breed": 4,
+        "color": 5,
+        "image": 4,
+        "link": "/assets/api/cows/58/"
     }
 },
 {
@@ -643,9 +759,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
-        "color": 9,
-        "image": 6
+        "age": 5,
+        "breed": 4,
+        "color": 5,
+        "image": 4,
+        "link": "/assets/api/cows/59/"
     }
 },
 {
@@ -654,9 +772,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
-        "color": 12,
-        "image": 6
+        "age": 5,
+        "breed": 4,
+        "color": 5,
+        "image": 4,
+        "link": "/assets/api/cows/60/"
     }
 },
 {
@@ -665,9 +785,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
-        "color": 13,
-        "image": 7
+        "age": 2,
+        "breed": 5,
+        "color": 3,
+        "image": 5,
+        "link": "/assets/api/cows/61/"
     }
 },
 {
@@ -676,9 +798,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
-        "color": 13,
-        "image": 7
+        "age": 5,
+        "breed": 5,
+        "color": 3,
+        "image": 5,
+        "link": "/assets/api/cows/62/"
     }
 },
 {
@@ -687,9 +811,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
-        "color": 13,
-        "image": 7
+        "age": 4,
+        "breed": 5,
+        "color": 3,
+        "image": 5,
+        "link": "/assets/api/cows/63/"
     }
 },
 {
@@ -698,9 +824,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
-        "color": 13,
-        "image": 7
+        "age": 4,
+        "breed": 5,
+        "color": 3,
+        "image": 5,
+        "link": "/assets/api/cows/64/"
     }
 },
 {
@@ -710,8 +838,10 @@
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 5,
-        "color": 13,
-        "image": 7
+        "breed": 5,
+        "color": 3,
+        "image": 5,
+        "link": "/assets/api/cows/65/"
     }
 },
 {
@@ -720,9 +850,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
-        "color": 13,
-        "image": 7
+        "age": 1,
+        "breed": 5,
+        "color": 3,
+        "image": 5,
+        "link": "/assets/api/cows/66/"
     }
 },
 {
@@ -732,8 +864,10 @@
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 4,
-        "color": 13,
-        "image": 7
+        "breed": 5,
+        "color": 3,
+        "image": 5,
+        "link": "/assets/api/cows/67/"
     }
 },
 {
@@ -742,9 +876,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
-        "color": 13,
-        "image": 7
+        "age": 3,
+        "breed": 5,
+        "color": 3,
+        "image": 5,
+        "link": "/assets/api/cows/68/"
     }
 },
 {
@@ -753,9 +889,11 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
-        "color": 13,
-        "image": 7
+        "age": 1,
+        "breed": 5,
+        "color": 3,
+        "image": 5,
+        "link": "/assets/api/cows/69/"
     }
 },
 {
@@ -764,9 +902,791 @@
     "fields": {
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
+        "age": 5,
+        "breed": 5,
+        "color": 3,
+        "image": 5,
+        "link": "/assets/api/cows/70/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 71,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 5,
+        "breed": 5,
+        "color": 6,
+        "image": 5,
+        "link": "/assets/api/cows/71/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 72,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 3,
+        "breed": 5,
+        "color": 6,
+        "image": 5,
+        "link": "/assets/api/cows/72/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 73,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
         "age": 4,
-        "color": 13,
-        "image": 7
+        "breed": 5,
+        "color": 6,
+        "image": 5,
+        "link": "/assets/api/cows/73/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 74,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 2,
+        "breed": 5,
+        "color": 6,
+        "image": 5,
+        "link": "/assets/api/cows/74/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 75,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 1,
+        "breed": 5,
+        "color": 6,
+        "image": 5,
+        "link": "/assets/api/cows/75/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 76,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 1,
+        "breed": 5,
+        "color": 6,
+        "image": 5,
+        "link": "/assets/api/cows/76/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 77,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 3,
+        "breed": 5,
+        "color": 6,
+        "image": 5,
+        "link": "/assets/api/cows/77/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 78,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 4,
+        "breed": 5,
+        "color": 6,
+        "image": 5,
+        "link": "/assets/api/cows/78/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 79,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 5,
+        "breed": 5,
+        "color": 6,
+        "image": 5,
+        "link": "/assets/api/cows/79/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 80,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 3,
+        "breed": 5,
+        "color": 6,
+        "image": 5,
+        "link": "/assets/api/cows/80/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 81,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 3,
+        "breed": 6,
+        "color": 7,
+        "image": 6,
+        "link": "/assets/api/cows/81/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 82,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 3,
+        "breed": 6,
+        "color": 7,
+        "image": 6,
+        "link": "/assets/api/cows/82/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 83,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 4,
+        "breed": 6,
+        "color": 7,
+        "image": 6,
+        "link": "/assets/api/cows/83/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 84,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 5,
+        "breed": 6,
+        "color": 7,
+        "image": 6,
+        "link": "/assets/api/cows/84/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 85,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 1,
+        "breed": 6,
+        "color": 7,
+        "image": 6,
+        "link": "/assets/api/cows/85/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 86,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 4,
+        "breed": 6,
+        "color": 7,
+        "image": 6,
+        "link": "/assets/api/cows/86/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 87,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 2,
+        "breed": 6,
+        "color": 7,
+        "image": 6,
+        "link": "/assets/api/cows/87/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 88,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 2,
+        "breed": 6,
+        "color": 7,
+        "image": 6,
+        "link": "/assets/api/cows/88/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 89,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 3,
+        "breed": 6,
+        "color": 7,
+        "image": 6,
+        "link": "/assets/api/cows/89/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 90,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 5,
+        "breed": 6,
+        "color": 7,
+        "image": 6,
+        "link": "/assets/api/cows/90/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 91,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 3,
+        "breed": 6,
+        "color": 8,
+        "image": 6,
+        "link": "/assets/api/cows/91/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 92,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 5,
+        "breed": 6,
+        "color": 8,
+        "image": 6,
+        "link": "/assets/api/cows/92/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 93,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 4,
+        "breed": 6,
+        "color": 8,
+        "image": 6,
+        "link": "/assets/api/cows/93/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 94,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 4,
+        "breed": 6,
+        "color": 8,
+        "image": 6,
+        "link": "/assets/api/cows/94/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 95,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 4,
+        "breed": 6,
+        "color": 8,
+        "image": 6,
+        "link": "/assets/api/cows/95/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 96,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 2,
+        "breed": 6,
+        "color": 8,
+        "image": 6,
+        "link": "/assets/api/cows/96/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 97,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 5,
+        "breed": 6,
+        "color": 8,
+        "image": 6,
+        "link": "/assets/api/cows/97/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 98,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 3,
+        "breed": 6,
+        "color": 8,
+        "image": 6,
+        "link": "/assets/api/cows/98/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 99,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 4,
+        "breed": 6,
+        "color": 8,
+        "image": 6,
+        "link": "/assets/api/cows/99/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 100,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 5,
+        "breed": 6,
+        "color": 8,
+        "image": 6,
+        "link": "/assets/api/cows/100/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 101,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 2,
+        "breed": 6,
+        "color": 9,
+        "image": 6,
+        "link": "/assets/api/cows/101/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 102,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 5,
+        "breed": 6,
+        "color": 9,
+        "image": 6,
+        "link": "/assets/api/cows/102/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 103,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 2,
+        "breed": 6,
+        "color": 9,
+        "image": 6,
+        "link": "/assets/api/cows/103/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 104,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 4,
+        "breed": 6,
+        "color": 9,
+        "image": 6,
+        "link": "/assets/api/cows/104/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 105,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 2,
+        "breed": 6,
+        "color": 9,
+        "image": 6,
+        "link": "/assets/api/cows/105/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 106,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 3,
+        "breed": 6,
+        "color": 9,
+        "image": 6,
+        "link": "/assets/api/cows/106/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 107,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 4,
+        "breed": 6,
+        "color": 9,
+        "image": 6,
+        "link": "/assets/api/cows/107/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 108,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 2,
+        "breed": 6,
+        "color": 9,
+        "image": 6,
+        "link": "/assets/api/cows/108/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 109,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 5,
+        "breed": 6,
+        "color": 9,
+        "image": 6,
+        "link": "/assets/api/cows/109/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 110,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 4,
+        "breed": 6,
+        "color": 9,
+        "image": 6,
+        "link": "/assets/api/cows/110/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 111,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 3,
+        "breed": 6,
+        "color": 2,
+        "image": 6,
+        "link": "/assets/api/cows/111/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 112,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 4,
+        "breed": 6,
+        "color": 2,
+        "image": 6,
+        "link": "/assets/api/cows/112/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 113,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 1,
+        "breed": 6,
+        "color": 2,
+        "image": 6,
+        "link": "/assets/api/cows/113/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 114,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 4,
+        "breed": 6,
+        "color": 2,
+        "image": 6,
+        "link": "/assets/api/cows/114/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 115,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 1,
+        "breed": 6,
+        "color": 2,
+        "image": 6,
+        "link": "/assets/api/cows/115/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 116,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 3,
+        "breed": 6,
+        "color": 2,
+        "image": 6,
+        "link": "/assets/api/cows/116/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 117,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 2,
+        "breed": 6,
+        "color": 2,
+        "image": 6,
+        "link": "/assets/api/cows/117/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 118,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 1,
+        "breed": 6,
+        "color": 2,
+        "image": 6,
+        "link": "/assets/api/cows/118/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 119,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 4,
+        "breed": 6,
+        "color": 2,
+        "image": 6,
+        "link": "/assets/api/cows/119/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 120,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 5,
+        "breed": 6,
+        "color": 2,
+        "image": 6,
+        "link": "/assets/api/cows/120/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 121,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 4,
+        "breed": 7,
+        "color": 1,
+        "image": 7,
+        "link": "/assets/api/cows/121/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 122,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 5,
+        "breed": 7,
+        "color": 1,
+        "image": 7,
+        "link": "/assets/api/cows/122/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 123,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 4,
+        "breed": 7,
+        "color": 1,
+        "image": 7,
+        "link": "/assets/api/cows/123/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 124,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 2,
+        "breed": 7,
+        "color": 1,
+        "image": 7,
+        "link": "/assets/api/cows/124/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 125,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 1,
+        "breed": 7,
+        "color": 1,
+        "image": 7,
+        "link": "/assets/api/cows/125/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 126,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 4,
+        "breed": 7,
+        "color": 1,
+        "image": 7,
+        "link": "/assets/api/cows/126/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 127,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 1,
+        "breed": 7,
+        "color": 1,
+        "image": 7,
+        "link": "/assets/api/cows/127/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 128,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 3,
+        "breed": 7,
+        "color": 1,
+        "image": 7,
+        "link": "/assets/api/cows/128/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 129,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 1,
+        "breed": 7,
+        "color": 1,
+        "image": 7,
+        "link": "/assets/api/cows/129/"
+    }
+},
+{
+    "model": "assets.cow",
+    "pk": 130,
+    "fields": {
+        "purchased_by": 2,
+        "purchase_date": "2014-12-31",
+        "age": 4,
+        "breed": 7,
+        "color": 1,
+        "image": 7,
+        "link": "/assets/api/cows/130/"
     }
 }
 ]

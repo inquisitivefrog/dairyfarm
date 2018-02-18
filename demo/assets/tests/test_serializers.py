@@ -18,15 +18,18 @@ class TestCowSerializer(APITestCase):
         user = User.objects.get(username=get_random_user())
         ages = Age.objects.all()
         age = ages[randint(0, len(ages) - 1)]
+        breeds = Breed.objects.all()
+        breed = breeds[randint(0, len(breeds) - 1)]
         colors = Color.objects.all()
         color = colors[randint(0, len(colors) - 1)]
         images = BreedImage.objects.all()
         image = images[randint(0, len(images) - 1)]
         self.cow_data = {'purchased_by': user,
                          'purchase_date': get_purchase_date(),
-                         'age': age,
-                         'color': color,
-                         'image': image}
+                         'age': age.name,
+                         'breed': breed.name,
+                         'color': color.name,
+                         'image': image.pk}
 
     def tearDown(self):
         self.cow_data = None
@@ -42,10 +45,10 @@ class TestCowSerializer(APITestCase):
         self.assertEqual(7,
                          len(images))
         colors = Color.objects.all()
-        self.assertEqual(13,
+        self.assertEqual(9,
                          len(colors))
         herd = Cow.objects.all()
-        self.assertEqual(70,
+        self.assertEqual(130,
                          len(herd))
         users = User.objects.all()
         self.assertEqual(3,
@@ -56,12 +59,10 @@ class TestCowSerializer(APITestCase):
         self.assertTrue(actual.is_valid())
         self.assertEqual(0,
                          len(actual.errors))
-        print('DEBUG: data: {}'.format(self.cow_data))
-        print('DEBUG: errors: {}'.format(actual.errors))
         actual.save()
         self.assertIn('purchased_by',
                       actual.data)
-        self.assertIn('purchased_date',
+        self.assertIn('purchase_date',
                       actual.data)
         self.assertIn('age',
                       actual.data)
@@ -79,7 +80,9 @@ class TestCowSerializer(APITestCase):
                          '^\d{4}-\d{2}-\d{2}$')
         self.assertRegex(actual.data['age'],
                          '\d year')
+        self.assertRegex(actual.data['breed'],
+                         '\w')
         self.assertRegex(actual.data['color'],
                          '\w_\w')
-        self.assertRegex(actual.data['image'].lower(),
-                         '\w')
+        self.assertLessEqual(1,
+                             actual.data['image'])
