@@ -137,9 +137,17 @@ class TestData:
             a = Action.objects.get(name=action)
             if not a:
                 print('ERROR: action: {} does not exist!'.format(action))
+            print('DEBUG: cow: {}'.format(cow))
+            c = Cow.objects.get(pk=cow.id)
+            if not c:
+                print('ERROR: cow: {} does not exist!'.format(cow))
+            cs = CowSerializer(instance=c)
+            print('DEBUG: cs data: {}'.format(cs.data))
+            cow_data = cs.data
+            cow_data.update({'id': cow.id})
             data = {'recorded_by': user,
                     'timestamp': dt,
-                    'cow': cow.id,
+                    'cow': cow_data,
                     'action': action}
             es = EventSerializer(data=data)
             if es.is_valid() and len(es.errors) == 0:

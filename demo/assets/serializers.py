@@ -16,29 +16,33 @@ class CowSerializer(serializers.ModelSerializer):
                                          slug_field='name')
     color = serializers.SlugRelatedField(queryset=Color.objects.all(),
                                         slug_field='name')
+    image = serializers.SlugRelatedField(queryset=BreedImage.objects.all(),
+                                         slug_field='url')
 
     class Meta:
-        model = Cow
-        lookup_field = 'pk'
         fields = ('id', 'purchased_by', 'purchase_date', 'age', 'breed',
                   'color', 'image', 'link')
+        lookup_field = 'pk'
+        model = Cow
+        read_only_fields = ('link',)
 
 class EventSerializer(serializers.ModelSerializer):
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                slug_field='username')
-    cow = CowSerializer()
+    cow = CowSerializer(read_only=True)
     action = serializers.SlugRelatedField(queryset=Action.objects.all(),
                                           slug_field='name')
 
     class Meta:
-        model = Event
-        lookup_field = 'pk'
         fields = ('id', 'recorded_by', 'timestamp', 'cow', 'action', 'link')
+        lookup_field = 'pk'
+        model = Event
+        read_only_fields = ('cow', 'link',)
 
 class HealthRecordSerializer(serializers.ModelSerializer):
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                slug_field='username')
-    cow = CowSerializer()
+    cow = CowSerializer(read_only=True)
     illness = serializers.SlugRelatedField(queryset=Illness.objects.all(),
                                            slug_field='diagnosis')
     injury = serializers.SlugRelatedField(queryset=Injury.objects.all(),
@@ -47,21 +51,23 @@ class HealthRecordSerializer(serializers.ModelSerializer):
                                           slug_field='name')
 
     class Meta:
-        model = HealthRecord
-        lookup_field = 'pk'
         fields = ('id', 'recorded_by', 'timestamp', 'cow', 'temperature',
                   'respiratory_rate', 'heart_rate', 'blood_pressure', 'weight',
                   'body_condition_score', 'status', 'illness', 'injury', 'link')
+        lookup_field = 'pk'
+        model = HealthRecord
+        read_only_fields = ('link',)
 
 class MilkSerializer(serializers.ModelSerializer):
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                slug_field='username')
-    cow = CowSerializer()
+    cow = CowSerializer(read_only=True)
 
     class Meta:
-        model = Milk
-        lookup_field = 'pk'
         fields = ('id', 'recorded_by', 'timestamp', 'cow', 'gallons', 'link')
+        lookup_field = 'pk'
+        model = Milk
+        read_only_fields = ('link',)
 
 class PastureSerializer(serializers.ModelSerializer):
     seeded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
@@ -78,15 +84,16 @@ class PastureSerializer(serializers.ModelSerializer):
                                           slug_field='name')
 
     class Meta:
-        model = Pasture
-        lookup_field = 'pk'
         fields = ('id', 'fallow', 'seeded_by', 'image', 'region', 'cereal_hay',
                   'grass_hay', 'legume_hay', 'season', 'link')
+        lookup_field = 'pk'
+        model = Pasture
+        read_only_fields = ('link',)
 
 class ExerciseSerializer(serializers.ModelSerializer):
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                slug_field='username')
-    cow = CowSerializer()
+    cow = CowSerializer(read_only=True)
     pasture = PastureSerializer(read_only=True)
 
     class Meta:
@@ -94,3 +101,4 @@ class ExerciseSerializer(serializers.ModelSerializer):
         lookup_field = 'pk'
         fields = ('id', 'recorded_by', 'timestamp', 'cow', 'pasture',
                   'distance', 'link')
+        read_only_fields = ('link',)
