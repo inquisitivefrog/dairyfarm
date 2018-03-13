@@ -4,6 +4,7 @@ from argparse import ArgumentParser
 from os import environ
 from random import randint
 from sys import exit, path
+from uuid import uuid4
 
 from django import setup
 from django.conf import settings
@@ -64,18 +65,23 @@ def read_args():
            o.username)
     
 def _get_data(breed, color, date, user):
-    from assets.models import Age, Cow
+    from assets.models import Age, BreedImage, Cow
     from tools.utils import TestTime
     ages = [a.name for a in Age.objects.all() ]
     age = ages[randint(0, len(ages) - 1)]
-    new_breed = []
+    tmp = []
     for word in breed.split('_'):
-        new_breed.append(word.capitalize()) 
-    return {'purchased_by': user,
+       tmp.append(word.capitalize()) 
+    b_name = ' '.join(tmp)
+    images = BreedImage.objects.filter(url__contains=breed)
+    i_name = images[0].url
+    return {'rfid': uuid4(),
+            'purchased_by': user,
             'purchase_date': TestTime.convert_date(date),
             'color': color,
             'age': age,
-            'breed': ' '.join(new_breed)}
+            'breed': b_name,
+            'image': i_name}
 
 def purchase_cow(breed, color, date, username):
     from django.contrib.auth.models import User

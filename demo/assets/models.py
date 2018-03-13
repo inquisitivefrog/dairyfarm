@@ -1,3 +1,5 @@
+from uuid import uuid4
+
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -118,6 +120,8 @@ class CerealHay(models.Model):
             return '{}'.format(self.__class__)
 
 class Cow(models.Model):
+    rfid = models.UUIDField(default=uuid4,
+                            unique=True)
     purchased_by = models.ForeignKey(User,
                                      on_delete=models.CASCADE)
     purchase_date = models.DateField(auto_now_add=False)
@@ -137,16 +141,14 @@ class Cow(models.Model):
  
     def __str__(self):
         if self.id:
-            return '{}: {}: {}'.format(self.age.name,
-                                       self.breed.name,
-                                       self.color.name)
+            return str(self.rfid)
         else:
             return '{}'.format(self.__class__)
 
     def __repr__(self):
         if self.id:
             return '{}:{}'.format(self.__class__,
-                                  self.id)
+                                  str(self.rfid))
         else:
             return '{}'.format(self.__class__)
 
@@ -170,8 +172,10 @@ class Event(models.Model):
                                     on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
     cow = models.ForeignKey(Cow,
+                            null=False,
                             on_delete=models.CASCADE)
     action = models.ForeignKey(Action,
+                               null=False,
                                on_delete=models.CASCADE)
     link = models.URLField(max_length=50,
                            null=True,

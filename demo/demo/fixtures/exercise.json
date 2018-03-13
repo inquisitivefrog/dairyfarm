@@ -1,2 +1,242 @@
 [
+{
+    "model": "assets.exercise",
+    "pk": 1,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:30.383Z",
+        "cow": 1,
+        "pasture": 7,
+        "distance": 7,
+        "link": "/assets/api/exercises/1/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 2,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:30.433Z",
+        "cow": 1,
+        "pasture": 7,
+        "distance": 7,
+        "link": "/assets/api/exercises/2/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 3,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:30.531Z",
+        "cow": 2,
+        "pasture": 10,
+        "distance": 10,
+        "link": "/assets/api/exercises/3/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 4,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:30.589Z",
+        "cow": 2,
+        "pasture": 10,
+        "distance": 10,
+        "link": "/assets/api/exercises/4/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 5,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:30.686Z",
+        "cow": 3,
+        "pasture": 2,
+        "distance": 2,
+        "link": "/assets/api/exercises/5/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 6,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:30.739Z",
+        "cow": 3,
+        "pasture": 2,
+        "distance": 2,
+        "link": "/assets/api/exercises/6/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 7,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:30.836Z",
+        "cow": 4,
+        "pasture": 10,
+        "distance": 10,
+        "link": "/assets/api/exercises/7/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 8,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:30.899Z",
+        "cow": 4,
+        "pasture": 10,
+        "distance": 10,
+        "link": "/assets/api/exercises/8/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 9,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.040Z",
+        "cow": 5,
+        "pasture": 8,
+        "distance": 8,
+        "link": "/assets/api/exercises/9/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 10,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.116Z",
+        "cow": 5,
+        "pasture": 8,
+        "distance": 8,
+        "link": "/assets/api/exercises/10/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 11,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.227Z",
+        "cow": 6,
+        "pasture": 3,
+        "distance": 3,
+        "link": "/assets/api/exercises/11/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 12,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.272Z",
+        "cow": 6,
+        "pasture": 3,
+        "distance": 3,
+        "link": "/assets/api/exercises/12/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 13,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.347Z",
+        "cow": 7,
+        "pasture": 9,
+        "distance": 9,
+        "link": "/assets/api/exercises/13/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 14,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.403Z",
+        "cow": 7,
+        "pasture": 9,
+        "distance": 9,
+        "link": "/assets/api/exercises/14/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 15,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.481Z",
+        "cow": 8,
+        "pasture": 6,
+        "distance": 6,
+        "link": "/assets/api/exercises/15/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 16,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.535Z",
+        "cow": 8,
+        "pasture": 6,
+        "distance": 6,
+        "link": "/assets/api/exercises/16/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 17,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.632Z",
+        "cow": 9,
+        "pasture": 7,
+        "distance": 7,
+        "link": "/assets/api/exercises/17/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 18,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.679Z",
+        "cow": 9,
+        "pasture": 7,
+        "distance": 7,
+        "link": "/assets/api/exercises/18/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 19,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.796Z",
+        "cow": 10,
+        "pasture": 9,
+        "distance": 9,
+        "link": "/assets/api/exercises/19/"
+    }
+},
+{
+    "model": "assets.exercise",
+    "pk": 20,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.849Z",
+        "cow": 10,
+        "pasture": 9,
+        "distance": 9,
+        "link": "/assets/api/exercises/20/"
+    }
+}
 ]

@@ -8,23 +8,13 @@ from assets.models import Age, Action, Breed, BreedImage, Color, Cow
 from assets.models import CerealHay, GrassHay, Illness, Injury, LegumeHay
 from assets.models import Region, RegionImage, Season, Status, Treatment
 from assets.models import Vaccine, Pasture, HealthRecord, Milk, Event, Exercise
-from assets.tests.utils import convert_date
-from assets.tests.utils import get_action, get_breed, get_cereal
-from assets.tests.utils import get_grass, get_illness, get_injury, get_legume
-from assets.tests.utils import get_purchase_date, get_region, get_regionimage
-from assets.tests.utils import get_pasture, get_random_age, get_random_breed
-from assets.tests.utils import get_random_color, get_random_image
-from assets.tests.utils import get_random_user, get_date, get_datetime
-from assets.tests.utils import get_season, get_status
-from assets.tests.utils import get_treatment, get_vaccine
-from assets.tests.utils import get_temp, get_resp, get_hr, get_bp
-from assets.tests.utils import get_bcs, get_weight
+from assets.tests.utils import TestData, TestTime
 
 class TestActionModel(APITestCase):
     fixtures = ['action']
 
     def setUp(self):
-        self.action_data = {'name': get_action()}
+        self.action_data = {'name': TestData.get_action()}
 
     def tearDown(self):
         self.action_data = None
@@ -64,7 +54,7 @@ class TestActionModel(APITestCase):
 
     def test_05_full_update(self):
         expected = Action.objects.get(id=1)
-        expected.name = get_action()
+        expected.name = TestData.get_action()
         expected.save()
         actual = Action.objects.get(id=expected.id)
         self.assertEqual(expected.name,
@@ -130,7 +120,7 @@ class TestAgeModel(APITestCase):
 
     def test_05_full_update(self):
         expected = Age.objects.get(id=1)
-        expected.name = get_random_age()
+        expected.name = TestData.get_random_age()
         expected.save()
         actual = Age.objects.get(id=expected.id)
         self.assertEqual(expected.name,
@@ -156,7 +146,7 @@ class TestBreedModel(APITestCase):
     fixtures = ['breed']
 
     def setUp(self):
-        self.breed_data = {'name': get_breed()}
+        self.breed_data = {'name': TestData.get_breed()}
 
     def tearDown(self):
         self.breed_data = None
@@ -196,7 +186,7 @@ class TestBreedModel(APITestCase):
 
     def test_05_full_update(self):
         expected = Breed.objects.get(id=1)
-        expected.name = get_random_breed()
+        expected.name = TestData.get_random_breed()
         expected.save()
         actual = Breed.objects.get(id=expected.id)
         self.assertEqual(expected.name,
@@ -262,7 +252,7 @@ class TestColorModel(APITestCase):
 
     def test_05_full_update(self):
         expected = Color.objects.get(id=1)
-        expected.name = get_random_color()
+        expected.name = TestData.get_random_color()
         expected.save()
         actual = Color.objects.get(id=expected.id)
         self.assertEqual(expected.name,
@@ -331,7 +321,7 @@ class TestBreedImageModel(APITestCase):
 
     def test_05_full_update(self):
         expected = BreedImage.objects.get(id=1)
-        expected.url = get_random_image()
+        expected.url = TestData.get_random_image()
         expected.save()
         actual = BreedImage.objects.get(id=expected.id)
         self.assertEqual(expected.url,
@@ -339,7 +329,7 @@ class TestBreedImageModel(APITestCase):
                              
     def test_06_partial_update(self):
         expected = BreedImage.objects.get(id=1)
-        expected.url = get_random_image()
+        expected.url = TestData.get_random_image()
         expected.save()
         actual = BreedImage.objects.get(id=expected.id)
         self.assertEqual(expected.url,
@@ -365,7 +355,7 @@ class TestCerealHayModel(APITestCase):
     fixtures = ['cerealhay']
 
     def setUp(self):
-        self.cereal_data = {'name': get_cereal()}
+        self.cereal_data = {'name': TestData.get_cereal()}
 
     def tearDown(self):
         self.cereal_data = None
@@ -405,7 +395,7 @@ class TestCerealHayModel(APITestCase):
 
     def test_05_full_update(self):
         expected = CerealHay.objects.get(id=1)
-        expected.name = get_cereal()
+        expected.name = TestData.get_cereal()
         expected.save()
         actual = CerealHay.objects.get(id=expected.id)
         self.assertEqual(expected.name,
@@ -431,7 +421,7 @@ class TestGrassHayModel(APITestCase):
     fixtures = ['grasshay']
 
     def setUp(self):
-        self.grass_data = {'name': get_grass()}
+        self.grass_data = {'name': TestData.get_grass()}
 
     def tearDown(self):
         self.grass_data = None
@@ -471,7 +461,7 @@ class TestGrassHayModel(APITestCase):
 
     def test_05_full_update(self):
         expected = GrassHay.objects.get(id=1)
-        expected.name = get_grass()
+        expected.name = TestData.get_grass()
         expected.save()
         actual = GrassHay.objects.get(id=expected.id)
         self.assertEqual(expected.name,
@@ -497,7 +487,7 @@ class TestIllnessModel(APITestCase):
     fixtures = ['illness']
 
     def setUp(self):
-        self.illness_data = {'diagnosis': get_illness()}
+        self.illness_data = {'diagnosis': TestData.get_illness()}
 
     def tearDown(self):
         self.illness_data = None
@@ -537,7 +527,7 @@ class TestIllnessModel(APITestCase):
 
     def test_05_full_update(self):
         expected = Illness.objects.get(id=1)
-        expected.diagnosis = get_illness()
+        expected.diagnosis = TestData.get_illness()
         expected.save()
         actual = Illness.objects.get(id=expected.id)
         self.assertEqual(expected.diagnosis,
@@ -563,7 +553,7 @@ class TestInjuryModel(APITestCase):
     fixtures = ['injury']
 
     def setUp(self):
-        self.injury_data = {'diagnosis': get_injury()}
+        self.injury_data = {'diagnosis': TestData.get_injury()}
 
     def tearDown(self):
         self.injury_data = None
@@ -603,7 +593,7 @@ class TestInjuryModel(APITestCase):
 
     def test_05_full_update(self):
         expected = Injury.objects.get(id=1)
-        expected.diagnosis = get_injury()
+        expected.diagnosis = TestData.get_injury()
         expected.save()
         actual = Injury.objects.get(id=expected.id)
         self.assertEqual(expected.diagnosis,
@@ -629,7 +619,7 @@ class TestLegumeHayModel(APITestCase):
     fixtures = ['legumehay']
 
     def setUp(self):
-        self.legume_data = {'name': get_legume()}
+        self.legume_data = {'name': TestData.get_legume()}
 
     def tearDown(self):
         self.legume_data = None
@@ -657,7 +647,7 @@ class TestLegumeHayModel(APITestCase):
                          lh.name)        
 
     def test_03_filter(self):
-        expected = LegumeHay.objects.filter(name=get_legume())
+        expected = LegumeHay.objects.filter(name=TestData.get_legume())
         actual = LegumeHay.objects.filter(name__endswith='foin')
         self.assertEqual(len(expected),
                          len(actual))
@@ -669,7 +659,7 @@ class TestLegumeHayModel(APITestCase):
 
     def test_05_full_update(self):
         expected = LegumeHay.objects.get(id=1)
-        expected.name = get_legume()
+        expected.name = TestData.get_legume()
         expected.save()
         actual = LegumeHay.objects.get(id=expected.id)
         self.assertEqual(expected.name,
@@ -695,7 +685,7 @@ class TestRegionModel(APITestCase):
     fixtures = ['region']
 
     def setUp(self):
-        self.region_data = {'name': get_region()}
+        self.region_data = {'name': TestData.get_region()}
 
     def tearDown(self):
         self.region_data = None
@@ -723,7 +713,7 @@ class TestRegionModel(APITestCase):
                          r.name)
 
     def test_03_filter(self):
-        expected = Region.objects.filter(name=get_region())
+        expected = Region.objects.filter(name=TestData.get_region())
         actual = Region.objects.filter(name__endswith='Center')
         self.assertEqual(len(expected),
                          len(actual))
@@ -735,7 +725,7 @@ class TestRegionModel(APITestCase):
 
     def test_05_full_update(self):
         expected = Region.objects.get(id=1)
-        expected.name = get_region()
+        expected.name = TestData.get_region()
         expected.save()
         actual = Region.objects.get(id=expected.id)
         self.assertEqual(expected.name,
@@ -761,7 +751,7 @@ class TestRegionImageModel(APITestCase):
     fixtures = ['regionimage']
 
     def setUp(self):
-        self.image_data = {'url': get_regionimage()}
+        self.image_data = {'url': TestData.get_regionimage()}
         self.url = '/static/images/regions/north.png'
 
     def tearDown(self):
@@ -804,7 +794,7 @@ class TestRegionImageModel(APITestCase):
 
     def test_05_full_update(self):
         expected = RegionImage.objects.get(id=1)
-        expected.url = get_random_image()
+        expected.url = TestData.get_random_image()
         expected.save()
         actual = RegionImage.objects.get(id=expected.id)
         self.assertEqual(expected.url,
@@ -812,7 +802,7 @@ class TestRegionImageModel(APITestCase):
                              
     def test_06_partial_update(self):
         expected = RegionImage.objects.get(id=1)
-        expected.url = get_random_image()
+        expected.url = TestData.get_random_image()
         expected.save()
         actual = RegionImage.objects.get(id=expected.id)
         self.assertEqual(expected.url,
@@ -838,7 +828,7 @@ class TestSeasonModel(APITestCase):
     fixtures = ['season']
 
     def setUp(self):
-        self.season_data = {'name': get_season()}
+        self.season_data = {'name': TestData.get_season()}
 
     def tearDown(self):
         self.season_data = None
@@ -878,7 +868,7 @@ class TestSeasonModel(APITestCase):
 
     def test_05_full_update(self):
         expected = Season.objects.get(id=1)
-        expected.name = get_season()
+        expected.name = TestData.get_season()
         expected.save()
         actual = Season.objects.get(id=expected.id)
         self.assertEqual(expected.name,
@@ -904,7 +894,7 @@ class TestStatusModel(APITestCase):
     fixtures = ['status']
 
     def setUp(self):
-        self.status_data = {'name': get_status()}
+        self.status_data = {'name': TestData.get_status()}
 
     def tearDown(self):
         self.status_data = None
@@ -944,7 +934,7 @@ class TestStatusModel(APITestCase):
 
     def test_05_full_update(self):
         expected = Status.objects.get(id=1)
-        expected.name = get_status()
+        expected.name = TestData.get_status()
         expected.save()
         actual = Status.objects.get(id=expected.id)
         self.assertEqual(expected.name,
@@ -970,7 +960,7 @@ class TestTreatmentModel(APITestCase):
     fixtures = ['treatment']
 
     def setUp(self):
-        self.treatment_data = {'name': get_treatment()}
+        self.treatment_data = {'name': TestData.get_treatment()}
 
     def tearDown(self):
         self.treatment_data = None
@@ -1010,7 +1000,7 @@ class TestTreatmentModel(APITestCase):
 
     def test_05_full_update(self):
         expected = Treatment.objects.get(id=1)
-        expected.name = get_treatment()
+        expected.name = TestData.get_treatment()
         expected.save()
         actual = Treatment.objects.get(id=expected.id)
         self.assertEqual(expected.name,
@@ -1036,7 +1026,7 @@ class TestVaccineModel(APITestCase):
     fixtures = ['vaccine']
 
     def setUp(self):
-        self.vaccine_data = {'name': get_vaccine()}
+        self.vaccine_data = {'name': TestData.get_vaccine()}
 
     def tearDown(self):
         self.vaccine_data = None
@@ -1076,7 +1066,7 @@ class TestVaccineModel(APITestCase):
 
     def test_05_full_update(self):
         expected = Vaccine.objects.get(id=1)
-        expected.name = get_vaccine()
+        expected.name = TestData.get_vaccine()
         expected.save()
         actual = Vaccine.objects.get(id=expected.id)
         self.assertEqual(expected.name,
@@ -1102,15 +1092,17 @@ class TestCowModel(APITestCase):
     fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow']
 
     def setUp(self):
+        self.rfid = TestData.get_rfid()
         self.age_data = {'name': '10 years'}
         self.breed_data = {'name': 'Belgian Blue'}
         self.color_data = {'name': 'blue'}
-        self.cow_data = {'purchased_by': User.objects.get(username=get_random_user()),
-                         'purchase_date': get_date()}
+        self.cow_data = {'purchased_by': User.objects.get(username=TestData.get_random_user()),
+                         'purchase_date': TestTime.get_date()}
         self.image_data = {'url': '/static/images/belgian_blue.png'}
         self.url = '/static/images/breeds/holstein.png'
 
     def tearDown(self):
+        self.rfid = None
         self.age_data = None
         self.breed_data = None
         self.color_data = None
@@ -1147,24 +1139,24 @@ class TestCowModel(APITestCase):
         self.assertEqual("<class 'assets.models.Cow'>",
                          str(c))
         c = Cow.objects.get(pk=1)
-        self.assertEqual("<class 'assets.models.Cow'>:{}".format(c.id),
+        self.assertEqual("<class 'assets.models.Cow'>:{}".format(c.rfid),
                          repr(c))
-        self.assertEqual('{}: {}: {}'.format(c.age.name,
-                                             c.breed.name,
-                                             c.color.name),
+        self.assertEqual(str(c.rfid),
                          str(c))
  
     def test_02_get(self):
         c = Cow.objects.get(id=1)
+        self.assertRegex(str(c.rfid),
+                         '^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$')
         self.assertRegex(c.age.name, ' year')
         self.assertRegex(c.color.name, '_white$')
         self.assertEqual('Holstein',
                          c.breed.name)
         self.assertEqual(self.url,
                          c.image.url)
-        self.assertEqual(get_purchase_date(),
-                         convert_date(c.purchase_date))
-        self.assertEqual(get_random_user(),
+        self.assertEqual(TestTime.get_purchase_date(),
+                         TestTime.convert_date(c.purchase_date))
+        self.assertEqual(TestData.get_random_user(),
                          c.purchased_by.username)
 
     def test_03_filter(self):
@@ -1178,11 +1170,14 @@ class TestCowModel(APITestCase):
         b = Breed.objects.create(**self.breed_data)
         c = Color.objects.create(**self.color_data)
         i = BreedImage.objects.create(**self.image_data)
-        self.cow_data.update({'age': a,
+        self.cow_data.update({'rfid': self.rfid,
+                              'age': a,
                               'breed': b,
                               'color': c,
                               'image': i})
         actual = Cow.objects.create(**self.cow_data)
+        self.assertRegex(str(actual.rfid),
+                         '^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$')
         self.assertEqual(self.age_data['name'],
                          actual.age.name)
         self.assertEqual(self.breed_data['name'],
@@ -1201,8 +1196,8 @@ class TestCowModel(APITestCase):
         b = Breed.objects.create(**self.breed_data)
         c = Color.objects.create(**self.color_data)
         i = BreedImage.objects.create(**self.image_data)
-        u = User.objects.get(username=get_random_user())
-        d = get_date()
+        u = User.objects.get(username=TestData.get_random_user())
+        d = TestTime.get_date()
         expected = Cow.objects.get(id=1)
         expected.age = a
         expected.breed = b
@@ -1212,6 +1207,8 @@ class TestCowModel(APITestCase):
         expected.purchase_date = d
         expected.save()
         actual = Cow.objects.get(id=expected.id)
+        self.assertRegex(str(actual.rfid),
+                         '^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$')
         self.assertEqual(expected.age.name,
                          actual.age.name)
         self.assertEqual(expected.color.name,
@@ -1243,16 +1240,19 @@ class TestCowModel(APITestCase):
         b = Breed.objects.create(**self.breed_data)
         c = Color.objects.create(**self.color_data)
         i = BreedImage.objects.create(**self.image_data)
-        u = User.objects.get(username=get_random_user())
+        u = User.objects.get(username=TestData.get_random_user())
         expected = Cow()
+        expected.rfid = self.rfid
         expected.age = a
         expected.breed = b 
         expected.color = c
         expected.image = i
         expected.purchased_by = u
-        expected.purchase_date = get_purchase_date()
+        expected.purchase_date = TestTime.get_purchase_date()
         expected.save()
         actual = Cow.objects.get(pk=expected.id)
+        self.assertRegex(str(actual.rfid),
+                         '^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$')
         self.assertEqual(expected.age.name,
                          actual.age.name)
         self.assertEqual(expected.color.name,
@@ -1268,16 +1268,16 @@ class TestPastureModel(APITestCase):
                 'regionimage', 'season', 'user', 'pasture']
 
     def setUp(self):
-        user = User.objects.get(username=get_random_user())
+        user = User.objects.get(username=TestData.get_random_user())
         region = Region.objects.get(pk=11)
         image = RegionImage.objects.get(pk=11)
-        cereal_data = {'name': get_cereal()}
+        cereal_data = {'name': TestData.get_cereal()}
         cereal = CerealHay.objects.create(**cereal_data)
-        grass_data = {'name': get_grass()}
+        grass_data = {'name': TestData.get_grass()}
         grass = GrassHay.objects.create(**grass_data)
-        legume_data = {'name': get_legume()}
+        legume_data = {'name': TestData.get_legume()}
         legume = LegumeHay.objects.create(**legume_data)
-        season_data = {'name': get_season()}
+        season_data = {'name': TestData.get_season()}
         season = Season.objects.create(**season_data)
         self.pasture_data = {'seeded_by': user,
                              'image': image,
@@ -1335,7 +1335,7 @@ class TestPastureModel(APITestCase):
  
     def test_02_get(self):
         p = Pasture.objects.get(id=1)
-        self.assertEqual(get_random_user(),
+        self.assertEqual(TestData.get_random_user(),
                          p.seeded_by.username)        
         self.assertEqual('North',
                          p.region.name)        
@@ -1349,7 +1349,7 @@ class TestPastureModel(APITestCase):
                          p.season.name)        
 
     def test_03_filter(self):
-        expected = Pasture.objects.filter(region__name=get_pasture())
+        expected = Pasture.objects.filter(region__name=TestData.get_pasture())
         actual = Pasture.objects.filter(region__name__endswith='ll')
         self.assertEqual(len(expected),
                          len(actual))
@@ -1430,7 +1430,7 @@ class TestEventModel(APITestCase):
     fixtures = ['action', 'age', 'breed', 'color', 'cow', 'breedimage', 'user', 'event']
 
     def setUp(self):
-        user = User.objects.get(username=get_random_user())
+        user = User.objects.get(username=TestData.get_random_user())
         action = Action.objects.get(pk=1)
         cow = Cow.objects.get(pk=1)
         self.event_data = {'recorded_by': user,
@@ -1460,8 +1460,8 @@ class TestEventModel(APITestCase):
         self.assertEqual(3,
                          len(users))
         events = Event.objects.all()
-        self.assertLessEqual(100,
-                             len(events))
+        self.assertEqual(134,
+                         len(events))
 
     def test_01_object(self):
         e = Event()
@@ -1510,8 +1510,14 @@ class TestEventModel(APITestCase):
         actual = Event.objects.get(pk=e.id)
         self.assertEqual(e.recorded_by.username,
                          actual.recorded_by.username)
+        self.assertEqual(e.cow.age.name,
+                         actual.cow.age.name)        
         self.assertEqual(e.cow.breed.name,
                          actual.cow.breed.name)        
+        self.assertEqual(e.cow.color.name,
+                         actual.cow.color.name)        
+        self.assertEqual(e.cow.image.url,
+                         actual.cow.image.url)        
         self.assertEqual(e.action.name,
                          actual.action.name)        
 
@@ -1558,7 +1564,7 @@ class TestExerciseModel(APITestCase):
                 'pasture', 'exercise']
 
     def setUp(self):
-        user = User.objects.get(username=get_random_user())
+        user = User.objects.get(username=TestData.get_random_user())
         cow = Cow.objects.get(pk=1)
         pasture = Pasture.objects.get(pk=1)
         distance = 1
@@ -1611,7 +1617,7 @@ class TestExerciseModel(APITestCase):
         self.assertEqual(13,
                          len(pastures))
         exercises = Exercise.objects.all()
-        self.assertLessEqual(100,
+        self.assertEqual(20,
                              len(exercises))
 
     def test_01_object(self):
@@ -1717,7 +1723,7 @@ class TestMilkModel(APITestCase):
     fixtures = ['age', 'breed', 'breedimage', 'color', 'cow', 'user', 'milk']
 
     def setUp(self):
-        user = User.objects.get(username=get_random_user())
+        user = User.objects.get(username=TestData.get_random_user())
         cow = Cow.objects.get(pk=1)
         gallons = 1
         self.milk_data = {'recorded_by': user,
@@ -1747,8 +1753,8 @@ class TestMilkModel(APITestCase):
         self.assertEqual(130,
                          len(cows))
         milk = Milk.objects.all()
-        self.assertLessEqual(10,
-                             len(milk))
+        self.assertEqual(20,
+                         len(milk))
 
     def test_01_object(self):
         m = Milk()
@@ -1844,7 +1850,7 @@ class TestHealthRecordModel(APITestCase):
                 'status', 'vaccine', 'user', 'cow', 'healthrecord']
 
     def setUp(self):
-        user = User.objects.get(username=get_random_user())
+        user = User.objects.get(username=TestData.get_random_user())
         cow = Cow.objects.get(pk=1)
         status = Status.objects.get(name='Healthy')
         illness = None
@@ -1852,12 +1858,12 @@ class TestHealthRecordModel(APITestCase):
         vaccine = None
         self.hr_data = {'recorded_by': user,
                         'cow': cow,
-                        'temperature': get_temp(),
-                        'respiratory_rate': get_resp(),
-                        'heart_rate': get_hr(),
-                        'blood_pressure': get_bp(),
-                        'weight': get_weight(),
-                        'body_condition_score': get_bcs(),
+                        'temperature': TestData.get_temp(),
+                        'respiratory_rate': TestData.get_resp(),
+                        'heart_rate': TestData.get_hr(),
+                        'blood_pressure': TestData.get_bp(),
+                        'weight': TestData.get_weight(),
+                        'body_condition_score': TestData.get_bcs(),
                         'status': status}
 
     def tearDown(self):
@@ -1895,10 +1901,10 @@ class TestHealthRecordModel(APITestCase):
         self.assertEqual(130,
                          len(cows))
         hr = HealthRecord.objects.all()
-        self.assertLessEqual(10,
-                             len(hr))
+        self.assertEqual(20,
+                         len(hr))
 
-    def ttest_01_object(self):
+    def test_01_object(self):
         hr = HealthRecord()
         self.assertEqual("<class 'assets.models.HealthRecord'>",
                          repr(hr))
@@ -1914,12 +1920,11 @@ class TestHealthRecordModel(APITestCase):
         self.assertRegex(date,
                          '^\d{4}-\d{2}-\d{2}$')
         self.assertRegex(time,
-                         '^\d{2}:\d{2}:\d{2}\+\d{2}:\d{2}:$')
-        (age, color, breed, cow_id, temp, resp, HR, BP, weight, BCS, status, hr_id) = tmp.split(':')
+                         '^\d{2}:\d{2}:\d{2}\.\d{6}\+\d{2}:\d{2}:$')
+        (age, breed, color, temp, resp, HR, BP, weight, BCS, status) = tmp.split(':')
         self.assertRegex(age.strip(), '\d year')
-        self.assertRegex(color.strip(), '\w_\w')
         self.assertRegex(breed.strip().lower(), '\w')
-        self.assertRegex(cow_id.strip(), '\d')
+        self.assertRegex(color.strip(), '\w_\w')
         self.assertRegex(temp.strip(), '\d{3}\.\d')
         self.assertRegex(resp.strip(), '\d{2}\.\d')
         self.assertRegex(HR.strip(), '\d{2}\.\d')
@@ -1927,12 +1932,11 @@ class TestHealthRecordModel(APITestCase):
         self.assertRegex(weight.strip(), '\d{3}')
         self.assertRegex(BCS.strip(), '\d\.\d')
         self.assertRegex(status.strip(), '\w')
-        self.assertRegex(hr_id.strip(), '\d')
  
-    def ttest_02_get(self):
+    def test_02_get(self):
         hr = HealthRecord.objects.get(id=1)
         self.assertRegex(hr.recorded_by.username, '\w')
-        self.assertRegex(hr.cow.image.breed.name, '\w')
+        self.assertRegex(hr.cow.breed.name, '\w')
         self.assertIsInstance(hr.temperature, float)
         self.assertIsInstance(hr.respiratory_rate, float)
         self.assertIsInstance(hr.heart_rate, float)
@@ -1942,19 +1946,19 @@ class TestHealthRecordModel(APITestCase):
         self.assertRegex(hr.status.name, '\w')
         self.assertGreaterEqual(hr.id, 0)
 
-    def ttest_03_filter(self):
-        expected = HealthRecord.objects.filter(cow__image__breed__name='Holstein')
-        actual = HealthRecord.objects.filter(cow__image__breed__name__endswith='ein')
+    def test_03_filter(self):
+        expected = HealthRecord.objects.filter(cow__breed__name='Holstein')
+        actual = HealthRecord.objects.filter(cow__image__url__endswith='ein.png')
         self.assertLessEqual(len(expected),
                              len(actual))
 
-    def ttest_04_create(self):
+    def test_04_create(self):
         hr = HealthRecord.objects.create(**self.hr_data)
         actual = HealthRecord.objects.get(pk=hr.id)
         self.assertEqual(hr.recorded_by.username,
                          actual.recorded_by.username)
-        self.assertEqual(hr.cow.image.breed.name,
-                         actual.cow.image.breed.name)        
+        self.assertEqual(hr.cow.breed.name,
+                         actual.cow.breed.name)        
         self.assertLessEqual(0,
                              actual.temperature)
         self.assertLessEqual(0,
@@ -1970,7 +1974,7 @@ class TestHealthRecordModel(APITestCase):
         self.assertLessEqual(hr.status.name,
                              actual.status.name)
 
-    def ttest_05_full_update(self):
+    def test_05_full_update(self):
         expected = HealthRecord.objects.get(id=1)
         expected.recorded_by = self.hr_data['recorded_by']
         expected.cow = self.hr_data['cow']
@@ -1985,8 +1989,8 @@ class TestHealthRecordModel(APITestCase):
         actual = HealthRecord.objects.get(id=expected.id)
         self.assertEqual(expected.recorded_by.username,
                          actual.recorded_by.username)
-        self.assertEqual(expected.cow.image.breed.name,
-                         actual.cow.image.breed.name)        
+        self.assertEqual(expected.cow.breed.name,
+                         actual.cow.breed.name)        
         self.assertLessEqual(0,
                              actual.temperature)
         self.assertLessEqual(0,
@@ -2002,7 +2006,7 @@ class TestHealthRecordModel(APITestCase):
         self.assertLessEqual(expected.status.name,
                              actual.status.name)
                              
-    def ttest_06_delete(self):
+    def test_06_delete(self):
         expected = HealthRecord.objects.get(id=1)
         expected.delete()
         with self.assertRaises(HealthRecord.DoesNotExist) as context:
@@ -2010,7 +2014,7 @@ class TestHealthRecordModel(APITestCase):
         msg = 'HealthRecord matching query does not exist'
         self.assertIn(msg, str(context.exception))
 
-    def ttest_07_save(self):
+    def test_07_save(self):
         expected = HealthRecord()
         expected.recorded_by = self.hr_data['recorded_by']
         expected.cow = self.hr_data['cow']
@@ -2025,8 +2029,8 @@ class TestHealthRecordModel(APITestCase):
         actual = HealthRecord.objects.get(pk=expected.id)
         self.assertEqual(expected.recorded_by.username,
                          actual.recorded_by.username)
-        self.assertEqual(expected.cow.image.breed.name,
-                         actual.cow.image.breed.name)        
+        self.assertEqual(expected.cow.breed.name,
+                         actual.cow.breed.name)        
         self.assertLessEqual(0,
                              actual.temperature)
         self.assertLessEqual(0,

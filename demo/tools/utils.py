@@ -6,7 +6,7 @@ from django.utils.timezone import datetime, pytz
 
 from assets.models import Action, Cow, Event, Pasture, Illness
 from assets.models import Injury, Status, Treatment
-from assets.serializers import CowSerializer, EventSerializer
+from assets.serializers import CowSerializer, EventWriteSerializer
 from assets.serializers import ExerciseSerializer, HealthRecordSerializer
 from assets.serializers import MilkSerializer, PastureSerializer
 
@@ -85,7 +85,7 @@ class TestData:
         status = Status.objects.get(pk=randint(1,2)).name
         return {'recorded_by': user,
                 'timestamp': dt,
-                'cow': cow.id,
+                'cow': cow.rfid,
                 'temperature': temperature,
                 'respiratory_rate': respiratory_rate,
                 'heart_rate': heart_rate,
@@ -104,7 +104,7 @@ class TestData:
         weight = randint(400, 650)
         return {'recorded_by': user,
                 'timestamp': dt,
-                'cow': cow.id,
+                'cow': cow.rfid,
                 'temperature': temperature,
                 'respiratory_rate': respiratory_rate,
                 'heart_rate': heart_rate,
@@ -114,21 +114,21 @@ class TestData:
 
     @classmethod
     def get_injured_cow_data(cls, cow, dt, user):
-        injuries = [x.id for x in Injury.objects.all()]
-        injury_id = injuries[randint(1, len(injuries) - 1)]
+        injuries = [x.diagnosis for x in Injury.objects.all()]
+        injury = injuries[randint(1, len(injuries) - 1)]
         data = cls._get_ill_injured_cow_data(cow, dt, user)
         data.update({'status': 'Injured',
-                     'injury': injury_id})
+                     'injury': injury})
         return data
 
     @classmethod
     def get_ill_cow_data(cls, cow, dt, user):
         status = Status.objects.get(pk=randint(4,5)).name
-        illnesses = [x.id for x in Illness.objects.all()]
-        illness_id = illnesses[randint(1, len(illnesses) - 1)]
+        illnesses = [x.diagnosis for x in Illness.objects.all()]
+        illness = illnesses[randint(1, len(illnesses) - 1)]
         data = cls._get_ill_injured_cow_data(cow, dt, user)
         data.update({'status': status,
-                     'illness': illness_id})
+                     'illness': illness})
         return data
 
     @classmethod
@@ -137,24 +137,21 @@ class TestData:
             a = Action.objects.get(name=action)
             if not a:
                 print('ERROR: action: {} does not exist!'.format(action))
-            print('DEBUG: cow: {}'.format(cow))
-            c = Cow.objects.get(pk=cow.id)
+            c = Cow.objects.get(rfid=cow.rfid)
             if not c:
                 print('ERROR: cow: {} does not exist!'.format(cow))
-            cs = CowSerializer(instance=c)
-            print('DEBUG: cs data: {}'.format(cs.data))
-            cow_data = cs.data
-            cow_data.update({'id': cow.id})
             data = {'recorded_by': user,
                     'timestamp': dt,
-                    'cow': cow_data,
+                    'cow': c.rfid,
                     'action': action}
-            es = EventSerializer(data=data)
+            es = EventWriteSerializer(data=data)
             if es.is_valid() and len(es.errors) == 0:
                 es.save()
             else:
+                print('EventWriteSerializer failed')
                 print('ERROR: {}'.format(es.errors))
         except IntegrityError as e:
+            print('Integrity error')
             print('ERROR: {}'.format(e))
 
     @classmethod
@@ -162,8 +159,8 @@ class TestData:
         try:
             data = {'recorded_by': user,
                     'timestamp': dt,
-                    'cow': cow.id,
-                    'pasture': pasture.id,
+                    'cow': cow.rfid,
+                    'pasture': pasture.region,
                     'distance': distance}
             es = ExerciseSerializer(data=data)
             if es.is_valid() and len(es.errors) == 0:
@@ -189,7 +186,7 @@ class TestData:
         try:
             data = {'recorded_by': user,
                     'timestamp': dt,
-                    'cow': cow.id,
+                    'cow': cow.rfid,
                     'gallons': gallons}
             ms = MilkSerializer(data=data)
             if ms.is_valid() and len(ms.errors) == 0:
@@ -204,7 +201,7 @@ class TestData:
         try:
             data = {'recorded_by': user,
                     'timestamp': dt,
-                    'cow': cow.id,
+                    'cow': cow.rfid,
                     'pasture': pasture.id,
                     'distance': distance}
             es = ExerciseSerializer(data=data)
@@ -220,7 +217,7 @@ class TestData:
         try:
             data = {'recorded_by': user,
                     'timestamp': dt,
-                    'cow': cow.id,
+                    'cow': cow.rfid,
                     'diagnosis': diagnosis}
             ms = MilkSerializer(data=data)
             if ms.is_valid() and len(ms.errors) == 0:

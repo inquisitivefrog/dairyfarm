@@ -1,2 +1,222 @@
 [
+{
+    "model": "assets.milk",
+    "pk": 1,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:30.371Z",
+        "cow": 1,
+        "gallons": 7,
+        "link": "/assets/api/milk/1/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 2,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:30.466Z",
+        "cow": 1,
+        "gallons": 5,
+        "link": "/assets/api/milk/2/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 3,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:30.515Z",
+        "cow": 2,
+        "gallons": 7,
+        "link": "/assets/api/milk/3/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 4,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:30.622Z",
+        "cow": 2,
+        "gallons": 5,
+        "link": "/assets/api/milk/4/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 5,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:30.671Z",
+        "cow": 3,
+        "gallons": 7,
+        "link": "/assets/api/milk/5/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 6,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:30.772Z",
+        "cow": 3,
+        "gallons": 6,
+        "link": "/assets/api/milk/6/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 7,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:30.821Z",
+        "cow": 4,
+        "gallons": 6,
+        "link": "/assets/api/milk/7/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 8,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:30.940Z",
+        "cow": 4,
+        "gallons": 5,
+        "link": "/assets/api/milk/8/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 9,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.016Z",
+        "cow": 5,
+        "gallons": 5,
+        "link": "/assets/api/milk/9/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 10,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.162Z",
+        "cow": 5,
+        "gallons": 6,
+        "link": "/assets/api/milk/10/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 11,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.212Z",
+        "cow": 6,
+        "gallons": 6,
+        "link": "/assets/api/milk/11/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 12,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.298Z",
+        "cow": 6,
+        "gallons": 5,
+        "link": "/assets/api/milk/12/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 13,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.334Z",
+        "cow": 7,
+        "gallons": 6,
+        "link": "/assets/api/milk/13/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 14,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.429Z",
+        "cow": 7,
+        "gallons": 7,
+        "link": "/assets/api/milk/14/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 15,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.468Z",
+        "cow": 8,
+        "gallons": 6,
+        "link": "/assets/api/milk/15/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 16,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.568Z",
+        "cow": 8,
+        "gallons": 6,
+        "link": "/assets/api/milk/16/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 17,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.616Z",
+        "cow": 9,
+        "gallons": 5,
+        "link": "/assets/api/milk/17/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 18,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.728Z",
+        "cow": 9,
+        "gallons": 5,
+        "link": "/assets/api/milk/18/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 19,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.776Z",
+        "cow": 10,
+        "gallons": 6,
+        "link": "/assets/api/milk/19/"
+    }
+},
+{
+    "model": "assets.milk",
+    "pk": 20,
+    "fields": {
+        "recorded_by": 3,
+        "timestamp": "2018-03-13T22:17:31.879Z",
+        "cow": 10,
+        "gallons": 7,
+        "link": "/assets/api/milk/20/"
+    }
+}
 ]

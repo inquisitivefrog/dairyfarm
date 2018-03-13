@@ -104,10 +104,10 @@ def morning_healthy_routine(cow, dt, user):
     data = TestData.get_healthy_cow_data(cow, dt, user)
     TestData.log_healthrecord(data, cow, dt, user)
     TestData.log_event('Get milked', cow, dt, user)
-    #gallons = randint(5, 7)
-    #TestData.log_milk(gallons, cow, dt, user)
-    #TestData.log_event('Get milked', cow, dt, user)
-    #pastures = Pasture.objects.filter(fallow=False)
+    gallons = randint(5, 7)
+    TestData.log_milk(gallons, cow, dt, user)
+    TestData.log_event('Get milked', cow, dt, user)
+    pastures = Pasture.objects.filter(fallow=False)
     pasture = pastures[randint(1, len(pastures) - 1)]
     distance = pasture.id
     TestData.log_exercise(distance, pasture, cow, dt, user)
@@ -168,8 +168,7 @@ def daily_routine(cow, date, user):
     # morning
     dt = TestTime.get_morning(date)
     TestData.log_event('Wake Up', cow, dt, user)
-    #TestData.log_event('Get inspected', cow, dt, user)
-    return
+    TestData.log_event('Get inspected', cow, dt, user)
     health = TestData.get_health()
     if health == 'healthy':
         morning_healthy_routine(cow, dt, user)

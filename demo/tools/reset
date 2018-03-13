@@ -21,8 +21,7 @@ user="farmhand"
 dt="2014-12-31"
 for color in black_white red_white
 do
-    ./tools/purchase_herd.py -b holstein -c $color -d "$dt" -q 1 -u $user
-    #./tools/purchase_herd.py -b holstein -c $color -d "$dt" -q 10 -u $user
+    ./tools/purchase_herd.py -b holstein -c $color -d "$dt" -q 10 -u $user
 done
 for color in brown tawny
 do
@@ -80,7 +79,6 @@ do
     #./tools/daily_herd_activity.py -b milking_shorthorn -c red_white -d "$dt" -u $user
     #./tools/daily_herd_activity.py -b dutch_belted -c black_white -d "$dt" -u $user
 done
-exit
 
 # PRESERVE REFERENCE DATA AS FIXTURES
 ./tools/create_fixtures.py
