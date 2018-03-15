@@ -5,7 +5,7 @@ from rest_framework import serializers
 from assets.models import Action, Age, Breed, BreedImage, CerealHay, Color
 from assets.models import Cow, Event, Exercise, GrassHay, HealthRecord
 from assets.models import Illness, Injury, LegumeHay, Milk, Pasture
-from assets.models import Region, Season, Status
+from assets.models import Region, RegionImage, Season, Status
 
 class CowSerializer(serializers.ModelSerializer):
     purchased_by = serializers.SlugRelatedField(queryset=User.objects.all(),
@@ -56,6 +56,8 @@ class EventWriteSerializer(serializers.ModelSerializer):
         cow = validated_data.pop('cow')
         event = Event.objects.create(cow=cow, **validated_data)
         return event
+    
+    # update() does not need to be overridden
     
 class HealthRecordReadSerializer(serializers.ModelSerializer):
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
@@ -132,12 +134,14 @@ class PastureSerializer(serializers.ModelSerializer):
                                              slug_field='name')
     region = serializers.SlugRelatedField(queryset=Region.objects.all(),
                                           slug_field='name')
+    image = serializers.SlugRelatedField(queryset=RegionImage.objects.all(),
+                                         slug_field='url')
     season = serializers.SlugRelatedField(queryset=Season.objects.all(),
                                           slug_field='name')
 
     class Meta:
-        fields = ('id', 'fallow', 'seeded_by', 'image', 'region', 'cereal_hay',
-                  'grass_hay', 'legume_hay', 'season', 'link')
+        fields = ('id', 'fallow', 'distance', 'seeded_by', 'image', 'region',
+                  'cereal_hay', 'grass_hay', 'legume_hay', 'season', 'link')
         lookup_field = 'pk'
         model = Pasture
         read_only_fields = ('link',)

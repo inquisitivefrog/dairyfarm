@@ -65,6 +65,11 @@ class TestData:
         return 'cow pox vaccine'
 
     @classmethod
+    def get_distance(cls):
+        distance = randint(1, 3)
+        return distance
+
+    @classmethod
     def get_random_age(cls):
         age = randint(6, 10)
         return '{} years'.format(age)

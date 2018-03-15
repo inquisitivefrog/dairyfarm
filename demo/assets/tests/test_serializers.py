@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from rest_framework.test import APITestCase
 
 from assets.models import Action, Age, Breed, BreedImage, Color, Cow, Event
+from assets.models import CerealHay, GrassHay, LegumeHay, Pasture
+from assets.models import Region, RegionImage, Season
 from assets.serializers import CowSerializer, EventReadSerializer
 from assets.serializers import EventWriteSerializer, ExerciseReadSerializer
 from assets.serializers import ExerciseWriteSerializer
@@ -232,6 +234,282 @@ class TestCowSerializer(APITestCase):
         self.assertIn('link',
                       actual.data)
 
+class TestPastureSerializer(APITestCase):
+    # note: order matters when loading fixtures
+    fixtures = ['cerealhay', 'grasshay', 'legumehay', 'region', 'regionimage',
+                'season', 'user', 'pasture']
+
+    def setUp(self):
+        self._load_pasture_data()
+        self._load_model_data()
+
+    def tearDown(self):
+        self.pasture_data = None
+        self.model_data = None
+
+    def _load_pasture_data(self):
+        fallow = False
+        distance = TestData.get_distance()
+        user = User.objects.get(username=TestData.get_random_user())
+        cereals = CerealHay.objects.all()
+        cereal = cereals[randint(0, len(cereals) - 1)]
+        grasses = GrassHay.objects.all()
+        grass = grasses[randint(0, len(grasses) - 1)]
+        images = RegionImage.objects.all()
+        image = images[randint(0, len(images) - 1)]
+        legumes = LegumeHay.objects.all()
+        legume = legumes[randint(0, len(legumes) - 1)]
+        regions = Region.objects.all()
+        region = regions[randint(0, len(regions) - 1)]
+        seasons = Season.objects.all()
+        season = seasons[randint(0, len(seasons) - 1)]
+        self.pasture_data = {'fallow': fallow,
+                             'distance': distance,
+                             'seeded_by': user,
+                             'region': region.name,
+                             'image': image.url,
+                             'cereal_hay': cereal.name,
+                             'grass_hay': grass.name,
+                             'legume_hay': legume.name,
+                             'season': season.name}
+
+    def _load_model_data(self):
+        user = User.objects.get(username=TestData.get_random_user())
+        fallow = False
+        distance = TestData.get_distance()
+        user = User.objects.get(username=TestData.get_random_user())
+        cereals = CerealHay.objects.all()
+        cereal = cereals[randint(0, len(cereals) - 1)]
+        grasses = GrassHay.objects.all()
+        grass = grasses[randint(0, len(grasses) - 1)]
+        images = RegionImage.objects.all()
+        image = images[randint(0, len(images) - 1)]
+        legumes = LegumeHay.objects.all()
+        legume = legumes[randint(0, len(legumes) - 1)]
+        regions = Region.objects.all()
+        region = regions[randint(0, len(regions) - 1)]
+        seasons = Season.objects.all()
+        season = seasons[randint(0, len(seasons) - 1)]
+        self.model_data = {'fallow': fallow,
+                           'distance': distance,
+                           'seeded_by': user,
+                           'region': region,
+                           'image': image,
+                           'cereal_hay': cereal,
+                           'grass_hay': grass,
+                           'legume_hay': legume,
+                           'season': season}
+
+    def test_00_load_fixtures(self):
+        cereals = CerealHay.objects.all()
+        self.assertEqual(5,
+                         len(cereals))
+        grasses = GrassHay.objects.all()
+        self.assertEqual(9,
+                         len(grasses))
+        legumes = LegumeHay.objects.all()
+        self.assertEqual(6,
+                         len(legumes))
+        pastures = Pasture.objects.all()
+        self.assertEqual(13,
+                         len(pastures))
+        regions = Region.objects.all()
+        self.assertEqual(13,
+                         len(regions))
+        images = RegionImage.objects.all()
+        self.assertEqual(13,
+                         len(images))
+        seasons = Season.objects.all()
+        self.assertEqual(4,
+                         len(seasons))
+        users = User.objects.all()
+        self.assertEqual(3,
+                         len(users))
+
+    def test_01_create(self):
+        actual = PastureSerializer(data=self.pasture_data)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertIn('id',
+                      actual.data)
+        self.assertIn('fallow',
+                      actual.data)
+        self.assertIn('distance',
+                      actual.data)
+        self.assertIn('seeded_by',
+                      actual.data)
+        self.assertIn('region',
+                      actual.data)
+        self.assertIn('image',
+                      actual.data)
+        self.assertIn('cereal_hay',
+                      actual.data)
+        self.assertIn('grass_hay',
+                      actual.data)
+        self.assertIn('legume_hay',
+                      actual.data)
+        self.assertIn('season',
+                      actual.data)
+        self.assertIn('link',
+                      actual.data)
+
+    def test_02_bulk_create(self):
+        expected = 10
+        data = []
+        for i in range(expected):
+            self._load_pasture_data()
+            data.append(self.pasture_data)
+        actual = PastureSerializer(data=data,
+                                   many=True)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('fallow',
+                          actual.data[i])
+            self.assertIn('distance',
+                          actual.data[i])
+            self.assertIn('seeded_by',
+                          actual.data[i])
+            self.assertIn('region',
+                          actual.data[i])
+            self.assertIn('image',
+                          actual.data[i])
+            self.assertIn('cereal_hay',
+                          actual.data[i])
+            self.assertIn('grass_hay',
+                          actual.data[i])
+            self.assertIn('legume_hay',
+                          actual.data[i])
+            self.assertIn('season',
+                          actual.data[i])
+            self.assertIn('link',
+                          actual.data[i])
+
+    def test_03_retrieve(self):
+        pasture = Pasture.objects.get(id=1)
+        actual = PastureSerializer(pasture)
+        self.assertFalse(actual.data['fallow'])
+        self.assertGreaterEqual(5,
+                                actual.data['distance'])
+        self.assertEqual(actual.data['seeded_by'],
+                         TestData.get_random_user())
+        self.assertRegex(actual.data['region'],
+                         '^\w+$')
+        self.assertRegex(actual.data['image'],
+                         '^/static/images/regions/\w+')
+        self.assertRegex(actual.data['cereal_hay'],
+                         '^\w+$')
+        self.assertRegex(actual.data['grass_hay'],
+                         '^\w+$')
+        self.assertRegex(actual.data['legume_hay'],
+                         '^\w+$')
+        self.assertRegex(actual.data['season'],
+                         '^\w+$')
+
+    def test_04_list(self):
+        expected = 10
+        fields = []
+        for i in range(expected):
+            self._load_model_data()
+            pasture = Pasture.objects.create(**self.model_data)
+            fields.append(pasture)
+        actual = PastureSerializer(fields,
+                               many=True)
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('fallow',
+                          actual.data[i])
+            self.assertIn('distance',
+                          actual.data[i])
+            self.assertIn('seeded_by',
+                          actual.data[i])
+            self.assertIn('region',
+                          actual.data[i])
+            self.assertIn('image',
+                          actual.data[i])
+            self.assertIn('cereal_hay',
+                          actual.data[i])
+            self.assertIn('grass_hay',
+                          actual.data[i])
+            self.assertIn('legume_hay',
+                          actual.data[i])
+            self.assertIn('season',
+                          actual.data[i])
+            self.assertIn('link',
+                          actual.data[i])
+
+    def test_05_full_update(self):
+        pasture = Pasture.objects.get(id=1)
+        self._load_pasture_data()
+        actual = PastureSerializer(pasture,
+                                   data=self.pasture_data,
+                                   partial=False)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(self.pasture_data['fallow'],
+                         actual.data['fallow'])
+        self.assertEqual(self.pasture_data['distance'],
+                         actual.data['distance'])
+        self.assertEqual(self.pasture_data['seeded_by'].username,
+                         actual.data['seeded_by'])
+        self.assertEqual(self.pasture_data['region'],
+                         actual.data['region'])
+        self.assertEqual(self.pasture_data['image'],
+                         actual.data['image'])
+        self.assertEqual(self.pasture_data['cereal_hay'],
+                         actual.data['cereal_hay'])
+        self.assertEqual(self.pasture_data['grass_hay'],
+                         actual.data['grass_hay'])
+        self.assertEqual(self.pasture_data['legume_hay'],
+                         actual.data['legume_hay'])
+        self.assertEqual(self.pasture_data['season'],
+                         actual.data['season'])
+
+    def test_06_partial_update(self):
+        pasture = Pasture.objects.get(id=1)
+        self._load_pasture_data()
+        del self.pasture_data['distance']
+        del self.pasture_data['region']
+        del self.pasture_data['season']
+        actual = PastureSerializer(pasture,
+                                   data=self.pasture_data,
+                                   partial=True)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(self.pasture_data['fallow'],
+                         actual.data['fallow'])
+        self.assertEqual(pasture.distance,
+                         actual.data['distance'])
+        self.assertEqual(self.pasture_data['seeded_by'].username,
+                         actual.data['seeded_by'])
+        self.assertEqual(pasture.region.name,
+                         actual.data['region'])
+        self.assertEqual(self.pasture_data['image'],
+                         actual.data['image'])
+        self.assertEqual(self.pasture_data['cereal_hay'],
+                         actual.data['cereal_hay'])
+        self.assertEqual(self.pasture_data['grass_hay'],
+                         actual.data['grass_hay'])
+        self.assertEqual(self.pasture_data['legume_hay'],
+                         actual.data['legume_hay'])
+        self.assertEqual(pasture.season.name,
+                         actual.data['season'])
+
 class TestEventReadSerializer(APITestCase):
     # note: order matters when loading fixtures
     fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow', 'action', 'event']
@@ -413,6 +691,7 @@ class TestEventWriteSerializer(APITestCase):
     def test_03_full_update(self):
         event = Event.objects.get(id=1)
         self._load_event_data()
+        self.event_data.update({'cow': event.cow.rfid})
         actual = EventWriteSerializer(event,
                                       data=self.event_data,
                                       partial=False)
@@ -430,6 +709,7 @@ class TestEventWriteSerializer(APITestCase):
     def test_04_partial_update(self):
         event = Event.objects.get(id=1)
         self._load_event_data()
+        self.event_data.update({'cow': event.cow.rfid})
         del self.event_data['action']
         actual = EventWriteSerializer(event,
                                       data=self.event_data,
@@ -440,3 +720,7 @@ class TestEventWriteSerializer(APITestCase):
         actual.save()
         self.assertEqual(self.event_data['recorded_by'].username,
                          actual.data['recorded_by'])
+        self.assertEqual(self.event_data['cow'],
+                         actual.data['cow'])
+        self.assertEqual(event.action.name,
+                         actual.data['action'])
