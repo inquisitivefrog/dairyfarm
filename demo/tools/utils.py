@@ -4,11 +4,12 @@ from django.conf import settings
 from django.db.utils import IntegrityError
 from django.utils.timezone import datetime, pytz
 
-from assets.models import Action, Cow, Event, Pasture, Illness
-from assets.models import Injury, Status, Treatment
+from assets.models import Action, Cow, Event, Illness
+from assets.models import Injury, Status, Treatment, Vaccine
 from assets.serializers import CowSerializer, EventWriteSerializer
-from assets.serializers import ExerciseSerializer, HealthRecordSerializer
-from assets.serializers import MilkSerializer, PastureSerializer
+from assets.serializers import ExerciseWriteSerializer
+from assets.serializers import HealthRecordWriteSerializer
+from assets.serializers import MilkWriteSerializer
 
 class TestTime:
     @classmethod
@@ -126,9 +127,12 @@ class TestData:
         status = Status.objects.get(pk=randint(4,5)).name
         illnesses = [x.diagnosis for x in Illness.objects.all()]
         illness = illnesses[randint(1, len(illnesses) - 1)]
+        vaccines = [x.name for x in Vaccine.objects.all()]
+        vaccine = vaccines[randint(1, len(vaccines) - 1)]
         data = cls._get_ill_injured_cow_data(cow, dt, user)
         data.update({'status': status,
-                     'illness': illness})
+                     'illness': illness,
+                     'vaccine': vaccine})
         return data
 
     @classmethod
@@ -162,7 +166,7 @@ class TestData:
                     'cow': cow.rfid,
                     'pasture': pasture.region,
                     'distance': distance}
-            es = ExerciseSerializer(data=data)
+            es = ExerciseWriteSerializer(data=data)
             if es.is_valid() and len(es.errors) == 0:
                 es.save()
             else:
@@ -173,7 +177,7 @@ class TestData:
     @classmethod
     def log_healthrecord(cls, data, cow, dt, user):
         try:
-            hrs = HealthRecordSerializer(data=data)
+            hrs = HealthRecordWriteSerializer(data=data)
             if hrs.is_valid() and len(hrs.errors) == 0:
                 hrs.save()
             else:
@@ -188,7 +192,7 @@ class TestData:
                     'timestamp': dt,
                     'cow': cow.rfid,
                     'gallons': gallons}
-            ms = MilkSerializer(data=data)
+            ms = MilkWriteSerializer(data=data)
             if ms.is_valid() and len(ms.errors) == 0:
                 ms.save()
             else:
@@ -204,7 +208,7 @@ class TestData:
                     'cow': cow.rfid,
                     'pasture': pasture.id,
                     'distance': distance}
-            es = ExerciseSerializer(data=data)
+            es = ExerciseWriteSerializer(data=data)
             if es.is_valid() and len(es.errors) == 0:
                 es.save()
             else:
@@ -219,7 +223,7 @@ class TestData:
                     'timestamp': dt,
                     'cow': cow.rfid,
                     'diagnosis': diagnosis}
-            ms = MilkSerializer(data=data)
+            ms = MilkWriteSerializer(data=data)
             if ms.is_valid() and len(ms.errors) == 0:
                 ms.save()
             else:

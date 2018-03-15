@@ -70,6 +70,27 @@ class TestData:
         return distance
 
     @classmethod
+    def get_milk(cls):
+        gallons = randint(3, 6)
+        return gallons 
+
+    @classmethod
+    def get_age(cls):
+        return '3 years'
+
+    @classmethod
+    def get_breed(cls):
+        return 'Ayrshire'
+
+    @classmethod
+    def get_color(cls):
+        return 'roan'
+
+    @classmethod
+    def get_image(cls):
+        return '/static/images/breeds/ayrshire.png'
+  
+    @classmethod
     def get_random_age(cls):
         age = randint(6, 10)
         return '{} years'.format(age)
@@ -89,13 +110,13 @@ class TestData:
 
     @classmethod
     def get_random_image(cls):
-        images = ['/static/images/criollo.png',
-                  '/static/images/pineywood.png',
-                  '/static/images/randall.png',
-                  '/static/images/belgian_blue.png',
-                  '/static/images/american_milking_devon.png',
-                  '/static/images/guzerat.png',
-                  '/static/images/red_sindhi.png']
+        images = ['/static/images/breeds/criollo.png',
+                  '/static/images/breeds/pineywood.png',
+                  '/static/images/breeds/randall.png',
+                  '/static/images/breeds/belgian_blue.png',
+                  '/static/images/breeds/american_milking_devon.png',
+                  '/static/images/breeds/guzerat.png',
+                  '/static/images/breeds/red_sindhi.png']
         image = randint(0, len(images) - 1)
         return images[image]
 
@@ -132,6 +153,31 @@ class TestData:
     def get_weight(cls):
         # ideal healthy weight range: 450 - 550
         return randint(450, 550)
+
+    @classmethod
+    def get_allowed_detail_methods(cls):
+        return 'GET, HEAD, OPTIONS'
+
+    @classmethod
+    def get_allowed_list_methods(cls):
+        return 'GET, POST, HEAD, OPTIONS'
+
+    @classmethod
+    def get_content_length(cls):
+        return '0'
+
+    @classmethod
+    def get_content_type(cls):
+        return 'text/html; charset=utf-8'
+
+    @classmethod
+    def get_format(cls):
+        return 'application/json'
+
+    @classmethod
+    def get_cow_keys(cls):
+        return ['id', 'rfid', 'purchased_by', 'purchase_date', 'age', 'breed',
+                'color', 'image', 'link']
 
 class TestTime:
     @classmethod

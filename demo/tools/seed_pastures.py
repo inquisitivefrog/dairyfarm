@@ -90,14 +90,26 @@ def read_args():
            o.region,
            o.username)
     
+def _convert_name(n):
+    prefix = '/static/images/regions/'
+    suffix = '.png'
+    words = []
+    for word in n.split():
+        words.append(word.lower())
+    new_word = '_'.join(words)
+    return prefix + new_word + suffix
+
 def _get_data(cereal_hay, grass_hay, legume_hay, season, region, username):
     from django.contrib.auth.models import User
+    from assets.models import RegionImage
     user = User.objects.get(username=username)
+    image = RegionImage.objects.get(url__contains=_convert_name(region)) 
     return {'seeded_by': user,
             'cereal_hay': cereal_hay,
             'grass_hay': grass_hay,
             'legume_hay': legume_hay,
             'region': region,
+            'image': image,
             'season': season}
 
 def plant_pasture(cereal_hay, grass_hay, legume_hay, season, region, username):

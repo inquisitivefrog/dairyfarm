@@ -164,7 +164,7 @@
     "pk": 11,
     "fields": {
         "fallow": true,
-        "distance": 0,
+        "distance": 1,
         "seeded_by": 2,
         "region": 11,
         "image": 11,
@@ -180,7 +180,7 @@
     "pk": 12,
     "fields": {
         "fallow": true,
-        "distance": 0,
+        "distance": 1,
         "seeded_by": 2,
         "region": 12,
         "image": 12,
@@ -196,7 +196,7 @@
     "pk": 13,
     "fields": {
         "fallow": true,
-        "distance": 0,
+        "distance": 2,
         "seeded_by": 2,
         "region": 13,
         "image": 13,

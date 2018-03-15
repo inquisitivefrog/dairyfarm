@@ -5,7 +5,7 @@ from rest_framework import serializers
 from assets.models import Action, Age, Breed, BreedImage, CerealHay, Color
 from assets.models import Cow, Event, Exercise, GrassHay, HealthRecord
 from assets.models import Illness, Injury, LegumeHay, Milk, Pasture
-from assets.models import Region, RegionImage, Season, Status
+from assets.models import Region, RegionImage, Season, Status, Vaccine
 
 class CowSerializer(serializers.ModelSerializer):
     purchased_by = serializers.SlugRelatedField(queryset=User.objects.all(),
@@ -71,11 +71,14 @@ class HealthRecordReadSerializer(serializers.ModelSerializer):
                                            required=False)
     status = serializers.SlugRelatedField(queryset=Status.objects.all(),
                                           slug_field='name')
+    vaccine = serializers.SlugRelatedField(queryset=Vaccine.objects.all(),
+                                           slug_field='name')
 
     class Meta:
         fields = ('id', 'recorded_by', 'timestamp', 'cow', 'temperature',
                   'respiratory_rate', 'heart_rate', 'blood_pressure', 'weight',
-                  'body_condition_score', 'status', 'illness', 'injury', 'link')
+                  'body_condition_score', 'status', 'illness', 'injury',
+                  'vaccine', 'link')
         lookup_field = 'pk'
         model = HealthRecord
         read_only_fields = ('link',)
@@ -93,11 +96,15 @@ class HealthRecordWriteSerializer(serializers.ModelSerializer):
                                            required=False)
     status = serializers.SlugRelatedField(queryset=Status.objects.all(),
                                           slug_field='name')
+    vaccine = serializers.SlugRelatedField(queryset=Vaccine.objects.all(),
+                                           slug_field='name',
+                                           required=False)
 
     class Meta:
-        fields = ('id', 'recorded_by', 'cow', 'temperature', 'respiratory_rate',
-                  'heart_rate', 'blood_pressure', 'weight',
-                  'body_condition_score', 'status', 'illness', 'injury')
+        fields = ('id', 'recorded_by', 'timestamp', 'cow', 'temperature',
+                  'respiratory_rate', 'heart_rate', 'blood_pressure', 'weight',
+                  'body_condition_score', 'status', 'illness', 'injury',
+                  'vaccine', 'link')
         lookup_field = 'pk'
         model = HealthRecord
 

@@ -66,18 +66,18 @@ for day in 1
 do
     dt="2015-01-0$day"
     ./tools/daily_herd_activity.py -b holstein -c black_white -d "$dt" -u $user
-    #./tools/daily_herd_activity.py -b holstein -c red_white -d "$dt" -u $user
-    #./tools/daily_herd_activity.py -b jersey -c brown -d "$dt" -u $user
-    #./tools/daily_herd_activity.py -b jersey -c tawny -d "$dt" -u $user
-    #./tools/daily_herd_activity.py -b guernsey -c golden_white -d "$dt" -u $user
-    #./tools/daily_herd_activity.py -b ayrshire -c golden_white -d "$dt" -u $user
-    #./tools/daily_herd_activity.py -b brown_swiss -c brown -d "$dt" -u $user
-    #./tools/daily_herd_activity.py -b brown_swiss -c gray -d "$dt" -u $user
-    #./tools/daily_herd_activity.py -b milking_shorthorn -c red -d "$dt" -u $user
-    #./tools/daily_herd_activity.py -b milking_shorthorn -c white -d "$dt" -u $user
-    #./tools/daily_herd_activity.py -b milking_shorthorn -c roan -d "$dt" -u $user
-    #./tools/daily_herd_activity.py -b milking_shorthorn -c red_white -d "$dt" -u $user
-    #./tools/daily_herd_activity.py -b dutch_belted -c black_white -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b holstein -c red_white -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b jersey -c brown -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b jersey -c tawny -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b guernsey -c golden_white -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b ayrshire -c golden_white -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b brown_swiss -c brown -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b brown_swiss -c gray -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b milking_shorthorn -c red -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b milking_shorthorn -c white -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b milking_shorthorn -c roan -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b milking_shorthorn -c red_white -d "$dt" -u $user
+    ./tools/daily_herd_activity.py -b dutch_belted -c black_white -d "$dt" -u $user
 done
 
 # PRESERVE REFERENCE DATA AS FIXTURES

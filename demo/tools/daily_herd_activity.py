@@ -161,7 +161,7 @@ def morning_injured_routine(cow, dt, user):
     TestData.log_event('Nap', cow, dt, user)
     return
 
-def daily_routine(cow, date, user):
+def daily_routine(cow, date, user, first=False):
     from assets.models import Pasture, Treatment
     from tools.utils import TestData, TestTime
 
@@ -169,7 +169,10 @@ def daily_routine(cow, date, user):
     dt = TestTime.get_morning(date)
     TestData.log_event('Wake Up', cow, dt, user)
     TestData.log_event('Get inspected', cow, dt, user)
-    health = TestData.get_health()
+    if first:
+        health = 'healthy'
+    else:
+        health = TestData.get_health()
     if health == 'healthy':
         morning_healthy_routine(cow, dt, user)
     elif health == 'injured':
@@ -180,7 +183,10 @@ def daily_routine(cow, date, user):
     # evening
     dt = TestTime.get_evening(date)
     TestData.log_event('Get inspected', cow, dt, user)
-    health = TestData.get_health()
+    if first:
+        health = 'healthy'
+    else:
+        health = TestData.get_health()
     if health == 'healthy':
         evening_healthy_routine(cow, dt, user)
     elif health == 'injured':
@@ -202,7 +208,10 @@ def main():
     inspected = 0
     for cow in Cow.objects.filter(breed__name=TestData.convert_name(breed),
                                   color__name=color):
-        daily_routine(cow, date, user)
+        if inspected > 0:
+            daily_routine(cow, date, user)
+        else:
+            daily_routine(cow, date, user, first=True)
         inspected += 1
     if inspected == 1:
         print('{} inspected {} {}'.format(username, inspected, breed))
