@@ -51,7 +51,7 @@ class Color(models.Model):
 
     def __str__(self):
         if self.id:
-            return '{}'.format(self.name)
+            return self.name
         else:
             return '{}'.format(self.__class__)
 
@@ -70,7 +70,7 @@ class BreedImage(models.Model):
 
     def __str__(self):
         if self.id:
-            return '{}'.format(self.url)
+            return self.url
         else:
             return '{}'.format(self.__class__)
 
@@ -89,7 +89,7 @@ class Breed(models.Model):
 
     def __str__(self):
         if self.id:
-            return '{}'.format(self.name)
+            return self.name
         else:
             return '{}'.format(self.__class__)
 
@@ -108,7 +108,7 @@ class CerealHay(models.Model):
 
     def __str__(self):
         if self.id:
-            return '{}'.format(self.name)
+            return self.name
         else:
             return '{}'.format(self.__class__)
 
@@ -183,12 +183,10 @@ class Event(models.Model):
 
     def __str__(self):
         if self.id:
-            return '{}: {}: {}: {}: {}: {}'.format(self.recorded_by.username,
-                                                   self.timestamp,
-                                                   self.cow.age.name,
-                                                   self.cow.breed.name,
-                                                   self.cow.color.name,
-                                                   self.action.name)
+            return '{}: {}: {}: {}'.format(self.recorded_by.username,
+                                           self.timestamp,
+                                           self.cow.rfid,
+                                           self.action.name)
         else:
             return '{}'.format(self.__class__)
 
@@ -214,7 +212,7 @@ class GrassHay(models.Model):
 
     def __str__(self):
         if self.id:
-            return '{}'.format(self.name)
+            return self.name
         else:
             return '{}'.format(self.__class__)
 
@@ -280,7 +278,7 @@ class LegumeHay(models.Model):
 
     def __str__(self):
         if self.id:
-            return '{}'.format(self.name)
+            return self.name
         else:
             return '{}'.format(self.__class__)
 
@@ -299,7 +297,7 @@ class Region(models.Model):
 
     def __str__(self):
         if self.id:
-            return '{}'.format(self.name)
+            return self.name
         else:
             return '{}'.format(self.__class__)
 
@@ -318,7 +316,7 @@ class RegionImage(models.Model):
 
     def __str__(self):
         if self.id:
-            return '{}'.format(self.url)
+            return self.url
         else:
             return '{}'.format(self.__class__)
 
@@ -337,7 +335,7 @@ class Season(models.Model):
 
     def __str__(self):
         if self.id:
-            return '{}'.format(self.name)
+            return self.name
         else:
             return '{}'.format(self.__class__)
 
@@ -356,7 +354,7 @@ class Status(models.Model):
 
     def __str__(self):
         if self.id:
-            return '{}'.format(self.name)
+            return self.name
         else:
             return '{}'.format(self.__class__)
 
@@ -375,7 +373,7 @@ class Treatment(models.Model):
 
     def __str__(self):
         if self.id:
-            return '{}'.format(self.name)
+            return self.name
         else:
             return '{}'.format(self.__class__)
 
@@ -394,7 +392,7 @@ class Vaccine(models.Model):
 
     def __str__(self):
         if self.id:
-            return '{}'.format(self.name)
+            return self.name
         else:
             return '{}'.format(self.__class__)
 
@@ -603,18 +601,7 @@ class Pasture(models.Model):
 
     def __str__(self):
         if self.id:
-            if self.fallow:
-                return '{}: {}: {}: {}'.format(self.fallow,
-                                               self.seeded_by.username,
-                                               self.region.name,
-                                               self.season.name)
-            else:
-                return '{}: {}: {}: {}: {}: {}'.format(self.seeded_by.username,
-                                                       self.region.name,
-                                                       self.cereal_hay.name,
-                                                       self.grass_hay.name,
-                                                       self.legume_hay.name,
-                                                       self.season.name)
+            return self.region.name
         else:
             return '{}'.format(self.__class__)
 

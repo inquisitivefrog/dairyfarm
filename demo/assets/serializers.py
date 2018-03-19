@@ -172,7 +172,7 @@ class ExerciseWriteSerializer(serializers.ModelSerializer):
     cow = serializers.SlugRelatedField(queryset=Cow.objects.all(),
                                           slug_field='rfid')
     pasture = serializers.SlugRelatedField(queryset=Pasture.objects.all(),
-                                          slug_field='region')
+                                          slug_field='region_id')
 
     class Meta:
         model = Exercise

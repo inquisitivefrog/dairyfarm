@@ -37,7 +37,7 @@ class TestIndexView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_detail_methods(),
+        self.assertEquals(TestData.get_allowed_methods(),
                           response.get('allow'))
         self.assertEquals(TestData.get_content_length(),
                           response.get('content-length'))

@@ -11,7 +11,7 @@ from assets.serializers import HealthRecordWriteSerializer
 from assets.serializers import MilkReadSerializer, MilkWriteSerializer
 from assets.serializers import PastureSerializer
 
-class CowDetail(generics.RetrieveUpdateAPIView):
+class CowDetail(generics.RetrieveUpdateDestroyAPIView):
     # Get / Update a Cow
     queryset = Cow.objects.all()
     serializer_class = CowSerializer
@@ -21,8 +21,8 @@ class CowList(generics.ListCreateAPIView):
     queryset = Cow.objects.all()
     serializer_class = CowSerializer
 
-class EventDetail(generics.RetrieveUpdateAPIView):
-    # Get / Update an Event
+class EventDetail(generics.RetrieveUpdateDestroyAPIView):
+    # Get / Update / Destroy an Event
     queryset = Event.objects.all()
 
     def get_serializer_class(self):
@@ -39,8 +39,8 @@ class EventList(generics.ListCreateAPIView):
             return EventReadSerializer
         return EventWriteSerializer
 
-class ExerciseDetail(generics.RetrieveUpdateAPIView):
-    # Get / Update an Exercise
+class ExerciseDetail(generics.RetrieveUpdateDestroyAPIView):
+    # Get / Update / Destroy an Exercise
     queryset = Exercise.objects.all()
 
     def get_serializer_class(self):
@@ -57,8 +57,8 @@ class ExerciseList(generics.ListCreateAPIView):
             return ExerciseReadSerializer
         return ExerciseWriteSerializer
 
-class HealthRecordDetail(generics.RetrieveUpdateAPIView):
-    # Get / Update a HealthRecord
+class HealthRecordDetail(generics.RetrieveUpdateDestroyAPIView):
+    # Get / Update / Destroy a HealthRecord
     queryset = HealthRecord.objects.all()
 
     def get_serializer_class(self):
@@ -75,8 +75,9 @@ class HealthRecordList(generics.ListCreateAPIView):
             return HealthRecordReadSerializer
         return HealthRecordWriteSerializer
 
-class MilkDetail(generics.RetrieveUpdateAPIView):
+class MilkDetail(generics.RetrieveUpdateDestroyAPIView):
     # Get / Update a Milk
+    # Get / Update / Destroy a Milk
     queryset = Milk.objects.all()
 
     def get_serializer_class(self):
@@ -93,8 +94,8 @@ class MilkList(generics.ListCreateAPIView):
             return MilkReadSerializer
         return MilkWriteSerializer
 
-class PastureDetail(generics.RetrieveUpdateAPIView):
-    # Get / Update a Pasture
+class PastureDetail(generics.RetrieveUpdateDestroyAPIView):
+    # Get / Update / Destroy a Pasture
     queryset = Pasture.objects.all()
     serializer_class = PastureSerializer
 

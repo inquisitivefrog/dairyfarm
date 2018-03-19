@@ -1325,12 +1325,7 @@ class TestPastureModel(APITestCase):
         p = Pasture.objects.get(pk=1)
         self.assertEqual("<class 'assets.models.Pasture'>:{}".format(p.id),
                          repr(p))
-        self.assertEqual('{}: {}: {}: {}: {}: {}'.format(p.seeded_by.username,
-                                                         p.region.name,
-                                                         p.cereal_hay.name,
-                                                         p.grass_hay.name,
-                                                         p.legume_hay.name,
-                                                         p.season.name),
+        self.assertEqual(p.region.name,
                          str(p))
  
     def test_02_get(self):
@@ -1480,13 +1475,9 @@ class TestEventModel(APITestCase):
                          '^\d{4}-\d{2}-\d{2}$')
         self.assertRegex(time,
                          '^\d{2}:\d{2}:\d{2}.\d{6}\+\d{2}:\d{2}:$')
-        (age, breed, color, action_name) = tmp.split(':')
-        self.assertEqual(e.cow.age.name,
-                         age.strip())
-        self.assertEqual(e.cow.color.name,
-                         color.strip())
-        self.assertEqual(e.cow.breed.name,
-                         breed.strip())
+        (rfid, action_name) = tmp.split(':')
+        self.assertEqual(str(e.cow.rfid),
+                         rfid.strip())
         self.assertEqual(e.action.name,
                          action_name.strip())
  

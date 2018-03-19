@@ -155,8 +155,12 @@ class TestData:
         return randint(450, 550)
 
     @classmethod
-    def get_allowed_detail_methods(cls):
+    def get_allowed_methods(cls):
         return 'GET, HEAD, OPTIONS'
+
+    @classmethod
+    def get_allowed_detail_methods(cls):
+        return 'GET, PUT, PATCH, DELETE, HEAD, OPTIONS'
 
     @classmethod
     def get_allowed_list_methods(cls):
@@ -178,6 +182,22 @@ class TestData:
     def get_cow_keys(cls):
         return ['id', 'rfid', 'purchased_by', 'purchase_date', 'age', 'breed',
                 'color', 'image', 'link']
+
+    @classmethod
+    def get_event_read_keys(cls):
+        return ['id', 'recorded_by', 'cow', 'action', 'link']
+
+    @classmethod
+    def get_event_write_keys(cls):
+        return ['id', 'recorded_by', 'cow', 'action']
+
+    @classmethod
+    def get_exercise_read_keys(cls):
+        return ['id', 'recorded_by', 'pasture', 'distance', 'link']
+
+    @classmethod
+    def get_exercise_write_keys(cls):
+        return ['id', 'recorded_by', 'pasture', 'distance']
 
 class TestTime:
     @classmethod

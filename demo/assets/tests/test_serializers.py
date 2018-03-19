@@ -618,7 +618,8 @@ class TestEventReadSerializer(APITestCase):
 
 class TestEventWriteSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow', 'action', 'event']
+    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow',
+                'action', 'event']
 
     def setUp(self):
         self._load_event_data()
@@ -647,8 +648,8 @@ class TestEventWriteSerializer(APITestCase):
         self.assertEqual(3,
                          len(users))
         events = Event.objects.all()
-        self.assertEqual(134,
-                         len(events))
+        self.assertLessEqual(10,
+                             len(events))
 
     def test_01_create(self):
         actual = EventWriteSerializer(data=self.event_data)
@@ -1082,7 +1083,7 @@ class TestExerciseReadSerializer(APITestCase):
             self.assertIn('link',
                           actual.data[i])
 
-class TestEventWriteSerializer(APITestCase):
+class TestExerciseWriteSerializer(APITestCase):
     # note: order matters when loading fixtures
     fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow',
                 'cerealhay', 'grasshay', 'legumehay', 'region', 'regionimage',
@@ -1103,7 +1104,7 @@ class TestEventWriteSerializer(APITestCase):
         distance = TestData.get_distance()
         self.exercise_data = {'recorded_by': user,
                               'cow': cow.rfid,
-                              'pasture': pasture.region,
+                              'pasture': pasture.region.id,
                               'distance': distance}
 
     def test_00_load_fixtures(self):
@@ -1200,7 +1201,7 @@ class TestEventWriteSerializer(APITestCase):
                          actual.data['recorded_by'])
         self.assertEqual(self.exercise_data['cow'],
                          actual.data['cow'])
-        self.assertEqual(exercise.pasture.region,
+        self.assertEqual(exercise.pasture.region.id,
                          actual.data['pasture'])
         self.assertEqual(exercise.distance,
                          actual.data['distance'])
