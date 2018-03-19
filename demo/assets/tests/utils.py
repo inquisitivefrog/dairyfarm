@@ -199,6 +199,14 @@ class TestData:
     def get_exercise_write_keys(cls):
         return ['id', 'recorded_by', 'pasture', 'distance']
 
+    @classmethod
+    def get_milk_read_keys(cls):
+        return ['id', 'recorded_by', 'cow', 'gallons', 'link']
+
+    @classmethod
+    def get_milk_write_keys(cls):
+        return ['id', 'recorded_by', 'cow', 'gallons']
+
 class TestTime:
     @classmethod
     def get_purchase_date(cls):
