@@ -179,9 +179,14 @@ class TestData:
         return 'application/json'
 
     @classmethod
-    def get_cow_keys(cls):
+    def get_cow_read_keys(cls):
         return ['id', 'rfid', 'purchased_by', 'purchase_date', 'age', 'breed',
                 'color', 'image', 'link']
+
+    @classmethod
+    def get_cow_write_keys(cls):
+        return ['id', 'rfid', 'purchased_by', 'purchase_date', 'age', 'breed',
+                'color', 'image']
 
     @classmethod
     def get_event_read_keys(cls):
@@ -206,6 +211,28 @@ class TestData:
     @classmethod
     def get_milk_write_keys(cls):
         return ['id', 'recorded_by', 'cow', 'gallons']
+
+    @classmethod
+    def get_pasture_read_keys(cls):
+        return ['id', 'fallow', 'distance', 'seeded_by', 'region', 'image',
+                'cereal_hay', 'grass_hay', 'legume_hay', 'season', 'link']
+
+    @classmethod
+    def get_pasture_write_keys(cls):
+        return ['id', 'fallow', 'distance', 'seeded_by', 'region', 'image',
+                'cereal_hay', 'grass_hay', 'legume_hay', 'season']
+
+    @classmethod
+    def get_hr_read_keys(cls):
+        return ['id', 'cow', 'recorded_by', 'temperature', 'respiratory_rate',
+                'heart_rate', 'blood_pressure', 'weight', 'body_condition_score',
+                'illness', 'injury', 'vaccine', 'link']
+
+    @classmethod
+    def get_hr_write_keys(cls):
+        return ['id', 'cow', 'recorded_by', 'temperature', 'respiratory_rate',
+                'heart_rate', 'blood_pressure', 'weight', 'body_condition_score',
+                'illness', 'injury', 'vaccine']
 
 class TestTime:
     @classmethod
