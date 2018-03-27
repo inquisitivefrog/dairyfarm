@@ -15,23 +15,22 @@ from assets.api_views import CowDetail, CowList, EventDetail, EventList
 from assets.api_views import ExerciseDetail, ExerciseList, HealthRecordDetail
 from assets.api_views import HealthRecordList, MilkDetail, MilkList
 from assets.api_views import PastureDetail, PastureList
-from assets.models import Action, Age, Breed, BreedImage, CerealHay, Color, Cow
+from assets.models import Action, Age, Breed, CerealHay, Color, Cow
 from assets.models import Event, Exercise, GrassHay, HealthRecord, Illness
-from assets.models import Injury, LegumeHay, Milk, Pasture, Region, RegionImage
+from assets.models import Injury, LegumeHay, Milk, Pasture, Region
 from assets.models import Season, Status, Vaccine
 from assets.tests.utils import TestData, TestTime
 from assets.views import IndexView
 
 class TestCowListView(APITestCase):
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow']
+    fixtures = ['age', 'breed', 'color', 'user', 'cow']
 
     def setUp(self):
         self.data = {'purchased_by': TestData.get_random_user(),
                      'purchase_date': TestTime.get_purchase_date(),
                      'age': TestData.get_age(),
-                     'breed': TestData.get_breed(),
-                     'color': TestData.get_color(),
-                     'image': TestData.get_image()}
+                     'breed': 'Holstein',
+                     'color': 'black_white'}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.herd = Cow.objects.all()
         self.request = None
@@ -119,15 +118,14 @@ class TestCowListView(APITestCase):
                           data)
 
 class TestCowDetailView(APITestCase):
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow']
+    fixtures = ['age', 'breed', 'color', 'user', 'cow']
 
     def setUp(self):
         self.data = {'purchased_by': TestData.get_random_user(),
                      'purchase_date': TestTime.get_purchase_date(),
                      'age': TestData.get_age(),
-                     'breed': TestData.get_breed(),
-                     'color': TestData.get_color(),
-                     'image': TestData.get_image()}
+                     'breed': 'Holstein',
+                     'color': 'black_white'}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.herd = Cow.objects.all()
         self.request = None
@@ -219,8 +217,6 @@ class TestCowDetailView(APITestCase):
                       data['breed'])
         self.assertEqual(self.data['color'],
                       data['color'])
-        self.assertEqual(self.data['image'],
-                      data['image'])
         self.assertIn('link',
                       data)
 
@@ -257,8 +253,6 @@ class TestCowDetailView(APITestCase):
                       data['breed'])
         self.assertIn('color',
                       data)
-        self.assertIn('image',
-                      data)
         self.assertIn('link',
                       data)
 
@@ -276,7 +270,7 @@ class TestCowDetailView(APITestCase):
                          response.reason_phrase)
 
 class TestPastureListView(APITestCase):
-    fixtures = ['cerealhay', 'grasshay', 'legumehay', 'region', 'regionimage',
+    fixtures = ['cerealhay', 'grasshay', 'legumehay', 'region',
                 'season', 'user', 'pasture']
 
     def setUp(self):
@@ -287,8 +281,6 @@ class TestPastureListView(APITestCase):
         cereal = cereals[randint(0, len(cereals) - 1)]
         grasses = GrassHay.objects.all()
         grass = grasses[randint(0, len(grasses) - 1)]
-        images = RegionImage.objects.all()
-        image = images[randint(0, len(images) - 1)]
         legumes = LegumeHay.objects.all()
         legume = legumes[randint(0, len(legumes) - 1)]
         regions = Region.objects.all()
@@ -297,13 +289,14 @@ class TestPastureListView(APITestCase):
         season = seasons[randint(0, len(seasons) - 1)]
         self.data = {'fallow': fallow,
                      'distance': distance,
+                     'plant_date': TestTime.convert_date(TestTime.get_date()),
+                     'year': TestTime.get_year(),
+                     'season': season.name,
                      'seeded_by': user.username,
                      'region': region.name,
-                     'image': image.url,
                      'cereal_hay': cereal.name,
                      'grass_hay': grass.name,
-                     'legume_hay': legume.name,
-                     'season': season.name}
+                     'legume_hay': legume.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.request = None
         self.url = django_reverse('assets:pasture-list')
@@ -325,12 +318,12 @@ class TestPastureListView(APITestCase):
         legumes = LegumeHay.objects.all()
         self.assertLessEqual(1,
                              len(legumes))
+        seasons = Season.objects.all()
+        self.assertLessEqual(4,
+                             len(seasons))
         fields = Pasture.objects.all()
         self.assertLessEqual(1,
                              len(fields))
-        seasons = Season.objects.all()
-        self.assertLessEqual(1,
-                             len(seasons))
         users = User.objects.all()
         self.assertLessEqual(1,
                              len(users))
@@ -401,7 +394,7 @@ class TestPastureListView(APITestCase):
                           data)
 
 class TestPastureDetailView(APITestCase):
-    fixtures = ['cerealhay', 'grasshay', 'legumehay', 'region', 'regionimage',
+    fixtures = ['cerealhay', 'grasshay', 'legumehay', 'region',
                 'season', 'user', 'pasture']
 
     def setUp(self):
@@ -412,8 +405,6 @@ class TestPastureDetailView(APITestCase):
         cereal = cereals[randint(0, len(cereals) - 1)]
         grasses = GrassHay.objects.all()
         grass = grasses[randint(0, len(grasses) - 1)]
-        images = RegionImage.objects.all()
-        image = images[randint(0, len(images) - 1)]
         legumes = LegumeHay.objects.all()
         legume = legumes[randint(0, len(legumes) - 1)]
         regions = Region.objects.all()
@@ -422,13 +413,13 @@ class TestPastureDetailView(APITestCase):
         season = seasons[randint(0, len(seasons) - 1)]
         self.data = {'fallow': fallow,
                      'distance': distance,
+                     'year': TestTime.get_year(),
+                     'season': season.name,
                      'seeded_by': user.username,
                      'region': region.name,
-                     'image': image.url,
                      'cereal_hay': cereal.name,
                      'grass_hay': grass.name,
-                     'legume_hay': legume.name,
-                     'season': season.name}
+                     'legume_hay': legume.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.request = None
         self.pk = Pasture.objects.get(pk=1).id
@@ -453,12 +444,12 @@ class TestPastureDetailView(APITestCase):
         legumes = LegumeHay.objects.all()
         self.assertLessEqual(1,
                              len(legumes))
+        seasons = Season.objects.all()
+        self.assertLessEqual(4,
+                             len(seasons))
         fields = Pasture.objects.all()
         self.assertLessEqual(1,
                              len(fields))
-        seasons = Season.objects.all()
-        self.assertLessEqual(1,
-                             len(seasons))
         users = User.objects.all()
         self.assertLessEqual(1,
                              len(users))
@@ -543,6 +534,10 @@ class TestPastureDetailView(APITestCase):
                       data)
         self.assertIn('fallow',
                       data)
+        self.assertIn('year',
+                      data)
+        self.assertIn('season',
+                      data)
         self.assertIn('distance',
                       data)
         self.assertIn('seeded_by',
@@ -554,10 +549,6 @@ class TestPastureDetailView(APITestCase):
         self.assertEqual(self.data['legume_hay'],
                       data['legume_hay'])
         self.assertIn('region',
-                      data)
-        self.assertIn('image',
-                      data)
-        self.assertIn('season',
                       data)
         self.assertIn('link',
                       data)
@@ -576,7 +567,7 @@ class TestPastureDetailView(APITestCase):
                          response.reason_phrase)
 
 class TestEventListView(APITestCase):
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow',
+    fixtures = ['age', 'breed', 'color', 'user', 'cow',
                 'action', 'event']
 
     def setUp(self):
@@ -679,7 +670,7 @@ class TestEventListView(APITestCase):
                           data)
 
 class TestEventDetailView(APITestCase):
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow',
+    fixtures = ['age', 'breed', 'color', 'user', 'cow',
                 'action', 'event']
 
     def setUp(self):
@@ -822,8 +813,8 @@ class TestEventDetailView(APITestCase):
                          response.reason_phrase)
 
 class TestExerciseListView(APITestCase):
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow',
-                'cerealhay', 'grasshay', 'legumehay', 'region', 'regionimage',
+    fixtures = ['age', 'breed', 'color', 'user', 'cow',
+                'cerealhay', 'grasshay', 'legumehay', 'region',
                 'season', 'pasture', 'exercise']
 
     def setUp(self):
@@ -932,8 +923,8 @@ class TestExerciseListView(APITestCase):
                           data)
 
 class TestExerciseDetailView(APITestCase):
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow',
-                'cerealhay', 'grasshay', 'legumehay', 'region', 'regionimage',
+    fixtures = ['age', 'breed', 'color', 'user', 'cow',
+                'cerealhay', 'grasshay', 'legumehay', 'region',
                 'season', 'pasture', 'exercise']
 
     def setUp(self):
@@ -1082,7 +1073,7 @@ class TestExerciseDetailView(APITestCase):
                          response.reason_phrase)
 
 class TestMilkListView(APITestCase):
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow', 'milk']
+    fixtures = ['age', 'breed', 'color', 'user', 'cow', 'milk']
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
@@ -1180,7 +1171,7 @@ class TestMilkListView(APITestCase):
                           data)
 
 class TestMilkDetailView(APITestCase):
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow', 'milk']
+    fixtures = ['age', 'breed', 'color', 'user', 'cow', 'milk']
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
@@ -1318,7 +1309,7 @@ class TestMilkDetailView(APITestCase):
                          response.reason_phrase)
 
 class TestHealthRecordListView(APITestCase):
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow',
+    fixtures = ['age', 'breed', 'color', 'user', 'cow',
                 'illness', 'injury', 'status', 'vaccine', 'healthrecord']
 
     def setUp(self):
@@ -1443,7 +1434,7 @@ class TestHealthRecordListView(APITestCase):
                           data)
 
 class TestHealthRecordDetailView(APITestCase):
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow',
+    fixtures = ['age', 'breed', 'color', 'user', 'cow',
                 'illness', 'injury', 'status', 'vaccine', 'healthrecord']
 
     def setUp(self):

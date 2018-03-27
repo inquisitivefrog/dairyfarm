@@ -4,9 +4,9 @@ from django.conf import settings
 from django.db.utils import IntegrityError
 from django.utils.timezone import datetime, pytz
 
-from assets.models import Action, Cow, Event, Illness
-from assets.models import Injury, Status, Treatment, Vaccine
-from assets.serializers import CowSerializer, EventWriteSerializer
+from assets.models import Action, Cow, Event, Illness, Injury
+from assets.models import Pasture, Status, Treatment, Vaccine
+from assets.serializers import EventWriteSerializer
 from assets.serializers import ExerciseWriteSerializer
 from assets.serializers import HealthRecordWriteSerializer
 from assets.serializers import MilkWriteSerializer
@@ -15,6 +15,10 @@ class TestTime:
     @classmethod
     def add_time(cls, dt, t):
         pass
+
+    @classmethod
+    def get_year(cls, dt):
+        return dt.year
 
     @classmethod
     def convert_datetime(cls, dt):
@@ -159,15 +163,29 @@ class TestData:
             print('ERROR: {}'.format(e))
 
     @classmethod
-    def log_exercise(cls, distance, pasture, cow, dt, user):
+    def log_exercise(cls, pasture, cow, dt, user):
         try:
+            #print('DEBUG: pasture: {}'.format(pasture.id))
+            fields = Pasture.objects.filter(region__name=pasture.region.name,
+                                            season__name=pasture.season.name,
+                                            year=TestTime.get_year(dt))
+            #print('DEBUG: fields: {}'.format([ x.id for x in fields ]))
+            field = Pasture.objects.get(region__name=pasture.region.name,
+                                        season__name=pasture.season.name,
+                                        year=TestTime.get_year(dt))
+            if field.id < 13:
+                distance = field.id
+            else:
+                distance = (field.id % 13) + 1
             data = {'recorded_by': user,
                     'timestamp': dt,
                     'cow': cow.rfid,
-                    'pasture': pasture.region,
+                    'pasture': field.region.id,
                     'distance': distance}
+            #print('DEBUG: data: {}'.format(data))
             es = ExerciseWriteSerializer(data=data)
             if es.is_valid() and len(es.errors) == 0:
+                #print('DEBUG: valid serialized data')
                 es.save()
             else:
                 print('ERROR: {}'.format(es.errors))
@@ -203,6 +221,10 @@ class TestData:
     @classmethod
     def log_pedicure(cls, action, pasture, cow, dt, user):
         try:
+            if field.id < 13:
+                distance = field.id
+            else:
+                distance = (field.id % 13) + 1
             data = {'recorded_by': user,
                     'timestamp': dt,
                     'cow': cow.rfid,
@@ -237,4 +259,3 @@ class TestData:
         for word in name.split('_'):
             new_name.append(word.capitalize())
         return ' '.join(new_name)
-

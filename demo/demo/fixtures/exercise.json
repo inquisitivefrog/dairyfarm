@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:23.139Z",
+        "timestamp": "2018-03-26T21:10:33.958Z",
         "cow": 1,
         "pasture": 7,
         "distance": 7,
@@ -16,7 +16,7 @@
     "pk": 2,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:23.185Z",
+        "timestamp": "2018-03-26T21:10:34.014Z",
         "cow": 1,
         "pasture": 7,
         "distance": 7,
@@ -28,10 +28,10 @@
     "pk": 3,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:23.288Z",
-        "cow": 2,
-        "pasture": 13,
-        "distance": 1,
+        "timestamp": "2018-03-26T21:10:34.247Z",
+        "cow": 3,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/3/"
     }
 },
@@ -40,10 +40,10 @@
     "pk": 4,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:23.400Z",
+        "timestamp": "2018-03-26T21:10:34.302Z",
         "cow": 3,
-        "pasture": 7,
-        "distance": 7,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/4/"
     }
 },
@@ -52,10 +52,10 @@
     "pk": 5,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:23.456Z",
-        "cow": 3,
-        "pasture": 7,
-        "distance": 7,
+        "timestamp": "2018-03-26T21:10:34.395Z",
+        "cow": 4,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/5/"
     }
 },
@@ -64,10 +64,10 @@
     "pk": 6,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:23.543Z",
+        "timestamp": "2018-03-26T21:10:34.452Z",
         "cow": 4,
-        "pasture": 3,
-        "distance": 3,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/6/"
     }
 },
@@ -76,10 +76,10 @@
     "pk": 7,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:23.597Z",
-        "cow": 4,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:34.545Z",
+        "cow": 5,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/7/"
     }
 },
@@ -88,10 +88,10 @@
     "pk": 8,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:23.684Z",
+        "timestamp": "2018-03-26T21:10:34.597Z",
         "cow": 5,
-        "pasture": 3,
-        "distance": 3,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/8/"
     }
 },
@@ -100,10 +100,10 @@
     "pk": 9,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:23.735Z",
-        "cow": 5,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:34.694Z",
+        "cow": 6,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/9/"
     }
 },
@@ -112,10 +112,10 @@
     "pk": 10,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:23.833Z",
+        "timestamp": "2018-03-26T21:10:34.760Z",
         "cow": 6,
-        "pasture": 3,
-        "distance": 3,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/10/"
     }
 },
@@ -124,10 +124,10 @@
     "pk": 11,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:23.890Z",
-        "cow": 6,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:34.886Z",
+        "cow": 7,
+        "pasture": 13,
+        "distance": 1,
         "link": "/assets/api/exercises/11/"
     }
 },
@@ -136,8 +136,8 @@
     "pk": 12,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:23.983Z",
-        "cow": 7,
+        "timestamp": "2018-03-26T21:10:35.012Z",
+        "cow": 8,
         "pasture": 4,
         "distance": 4,
         "link": "/assets/api/exercises/12/"
@@ -148,8 +148,8 @@
     "pk": 13,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:24.037Z",
-        "cow": 7,
+        "timestamp": "2018-03-26T21:10:35.071Z",
+        "cow": 8,
         "pasture": 4,
         "distance": 4,
         "link": "/assets/api/exercises/13/"
@@ -160,10 +160,10 @@
     "pk": 14,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:24.148Z",
-        "cow": 8,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:35.162Z",
+        "cow": 9,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/14/"
     }
 },
@@ -172,10 +172,10 @@
     "pk": 15,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:24.204Z",
-        "cow": 8,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:35.219Z",
+        "cow": 9,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/15/"
     }
 },
@@ -184,10 +184,10 @@
     "pk": 16,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:24.291Z",
-        "cow": 9,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:35.345Z",
+        "cow": 10,
+        "pasture": 13,
+        "distance": 1,
         "link": "/assets/api/exercises/16/"
     }
 },
@@ -196,10 +196,10 @@
     "pk": 17,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:24.345Z",
-        "cow": 9,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:35.936Z",
+        "cow": 11,
+        "pasture": 3,
+        "distance": 3,
         "link": "/assets/api/exercises/17/"
     }
 },
@@ -208,10 +208,10 @@
     "pk": 18,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:24.473Z",
-        "cow": 10,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:35.992Z",
+        "cow": 11,
+        "pasture": 3,
+        "distance": 3,
         "link": "/assets/api/exercises/18/"
     }
 },
@@ -220,10 +220,10 @@
     "pk": 19,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:24.529Z",
-        "cow": 10,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:36.088Z",
+        "cow": 12,
+        "pasture": 3,
+        "distance": 3,
         "link": "/assets/api/exercises/19/"
     }
 },
@@ -232,10 +232,10 @@
     "pk": 20,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:25.063Z",
-        "cow": 11,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:36.147Z",
+        "cow": 12,
+        "pasture": 3,
+        "distance": 3,
         "link": "/assets/api/exercises/20/"
     }
 },
@@ -244,10 +244,10 @@
     "pk": 21,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:25.118Z",
-        "cow": 11,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:36.245Z",
+        "cow": 13,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/21/"
     }
 },
@@ -256,8 +256,8 @@
     "pk": 22,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:25.243Z",
-        "cow": 12,
+        "timestamp": "2018-03-26T21:10:36.300Z",
+        "cow": 13,
         "pasture": 9,
         "distance": 9,
         "link": "/assets/api/exercises/22/"
@@ -268,8 +268,8 @@
     "pk": 23,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:25.296Z",
-        "cow": 12,
+        "timestamp": "2018-03-26T21:10:36.403Z",
+        "cow": 14,
         "pasture": 9,
         "distance": 9,
         "link": "/assets/api/exercises/23/"
@@ -280,10 +280,10 @@
     "pk": 24,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:25.391Z",
-        "cow": 13,
-        "pasture": 7,
-        "distance": 7,
+        "timestamp": "2018-03-26T21:10:36.461Z",
+        "cow": 14,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/24/"
     }
 },
@@ -292,10 +292,10 @@
     "pk": 25,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:25.448Z",
-        "cow": 13,
-        "pasture": 7,
-        "distance": 7,
+        "timestamp": "2018-03-26T21:10:36.564Z",
+        "cow": 15,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/25/"
     }
 },
@@ -304,10 +304,10 @@
     "pk": 26,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:25.554Z",
-        "cow": 14,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:36.623Z",
+        "cow": 15,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/26/"
     }
 },
@@ -316,10 +316,10 @@
     "pk": 27,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:25.609Z",
-        "cow": 14,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:36.722Z",
+        "cow": 16,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/27/"
     }
 },
@@ -328,10 +328,10 @@
     "pk": 28,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:25.699Z",
-        "cow": 15,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:36.773Z",
+        "cow": 16,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/28/"
     }
 },
@@ -340,10 +340,10 @@
     "pk": 29,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:25.751Z",
-        "cow": 15,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:36.866Z",
+        "cow": 17,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/29/"
     }
 },
@@ -352,7 +352,7 @@
     "pk": 30,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:25.979Z",
+        "timestamp": "2018-03-26T21:10:36.920Z",
         "cow": 17,
         "pasture": 4,
         "distance": 4,
@@ -364,8 +364,8 @@
     "pk": 31,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:26.038Z",
-        "cow": 17,
+        "timestamp": "2018-03-26T21:10:37.053Z",
+        "cow": 18,
         "pasture": 4,
         "distance": 4,
         "link": "/assets/api/exercises/31/"
@@ -376,10 +376,10 @@
     "pk": 32,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:26.144Z",
+        "timestamp": "2018-03-26T21:10:37.117Z",
         "cow": 18,
-        "pasture": 7,
-        "distance": 7,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/32/"
     }
 },
@@ -388,10 +388,10 @@
     "pk": 33,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:26.197Z",
-        "cow": 18,
-        "pasture": 7,
-        "distance": 7,
+        "timestamp": "2018-03-26T21:10:37.219Z",
+        "cow": 19,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/33/"
     }
 },
@@ -400,10 +400,10 @@
     "pk": 34,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:26.268Z",
+        "timestamp": "2018-03-26T21:10:37.271Z",
         "cow": 19,
-        "pasture": 3,
-        "distance": 3,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/34/"
     }
 },
@@ -412,10 +412,10 @@
     "pk": 35,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:26.310Z",
-        "cow": 19,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:37.371Z",
+        "cow": 20,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/35/"
     }
 },
@@ -424,10 +424,10 @@
     "pk": 36,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:26.381Z",
+        "timestamp": "2018-03-26T21:10:37.430Z",
         "cow": 20,
-        "pasture": 4,
-        "distance": 4,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/36/"
     }
 },
@@ -436,8 +436,8 @@
     "pk": 37,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:26.426Z",
-        "cow": 20,
+        "timestamp": "2018-03-26T21:10:38.000Z",
+        "cow": 21,
         "pasture": 4,
         "distance": 4,
         "link": "/assets/api/exercises/37/"
@@ -448,10 +448,10 @@
     "pk": 38,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:26.963Z",
+        "timestamp": "2018-03-26T21:10:38.062Z",
         "cow": 21,
-        "pasture": 5,
-        "distance": 5,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/38/"
     }
 },
@@ -460,10 +460,10 @@
     "pk": 39,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:27.017Z",
-        "cow": 21,
-        "pasture": 5,
-        "distance": 5,
+        "timestamp": "2018-03-26T21:10:38.161Z",
+        "cow": 22,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/39/"
     }
 },
@@ -472,10 +472,10 @@
     "pk": 40,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:27.110Z",
+        "timestamp": "2018-03-26T21:10:38.219Z",
         "cow": 22,
-        "pasture": 7,
-        "distance": 7,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/40/"
     }
 },
@@ -484,10 +484,10 @@
     "pk": 41,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:27.160Z",
-        "cow": 22,
-        "pasture": 7,
-        "distance": 7,
+        "timestamp": "2018-03-26T21:10:38.323Z",
+        "cow": 23,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/41/"
     }
 },
@@ -496,10 +496,10 @@
     "pk": 42,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:27.249Z",
+        "timestamp": "2018-03-26T21:10:38.379Z",
         "cow": 23,
-        "pasture": 2,
-        "distance": 2,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/42/"
     }
 },
@@ -508,10 +508,10 @@
     "pk": 43,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:27.290Z",
-        "cow": 23,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:38.472Z",
+        "cow": 24,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/43/"
     }
 },
@@ -520,7 +520,7 @@
     "pk": 44,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:27.388Z",
+        "timestamp": "2018-03-26T21:10:38.529Z",
         "cow": 24,
         "pasture": 4,
         "distance": 4,
@@ -532,10 +532,10 @@
     "pk": 45,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:27.440Z",
-        "cow": 24,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:38.616Z",
+        "cow": 25,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/45/"
     }
 },
@@ -544,8 +544,8 @@
     "pk": 46,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:27.676Z",
-        "cow": 26,
+        "timestamp": "2018-03-26T21:10:38.673Z",
+        "cow": 25,
         "pasture": 9,
         "distance": 9,
         "link": "/assets/api/exercises/46/"
@@ -556,10 +556,10 @@
     "pk": 47,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:27.733Z",
+        "timestamp": "2018-03-26T21:10:38.771Z",
         "cow": 26,
-        "pasture": 9,
-        "distance": 9,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/47/"
     }
 },
@@ -568,10 +568,10 @@
     "pk": 48,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:27.850Z",
-        "cow": 27,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:38.835Z",
+        "cow": 26,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/48/"
     }
 },
@@ -580,10 +580,10 @@
     "pk": 49,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:27.907Z",
+        "timestamp": "2018-03-26T21:10:38.938Z",
         "cow": 27,
-        "pasture": 4,
-        "distance": 4,
+        "pasture": 3,
+        "distance": 3,
         "link": "/assets/api/exercises/49/"
     }
 },
@@ -592,10 +592,10 @@
     "pk": 50,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:28.002Z",
-        "cow": 28,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:38.991Z",
+        "cow": 27,
+        "pasture": 3,
+        "distance": 3,
         "link": "/assets/api/exercises/50/"
     }
 },
@@ -604,10 +604,10 @@
     "pk": 51,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:28.058Z",
-        "cow": 28,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:39.279Z",
+        "cow": 29,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/51/"
     }
 },
@@ -616,10 +616,10 @@
     "pk": 52,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:28.152Z",
+        "timestamp": "2018-03-26T21:10:39.340Z",
         "cow": 29,
-        "pasture": 9,
-        "distance": 9,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/52/"
     }
 },
@@ -628,10 +628,10 @@
     "pk": 53,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:28.209Z",
-        "cow": 29,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:39.440Z",
+        "cow": 30,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/53/"
     }
 },
@@ -640,7 +640,7 @@
     "pk": 54,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:28.302Z",
+        "timestamp": "2018-03-26T21:10:39.503Z",
         "cow": 30,
         "pasture": 8,
         "distance": 8,
@@ -652,10 +652,10 @@
     "pk": 55,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:28.360Z",
-        "cow": 30,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:40.060Z",
+        "cow": 31,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/55/"
     }
 },
@@ -664,10 +664,10 @@
     "pk": 56,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:28.903Z",
+        "timestamp": "2018-03-26T21:10:40.111Z",
         "cow": 31,
-        "pasture": 5,
-        "distance": 5,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/56/"
     }
 },
@@ -676,10 +676,10 @@
     "pk": 57,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:28.953Z",
-        "cow": 31,
-        "pasture": 5,
-        "distance": 5,
+        "timestamp": "2018-03-26T21:10:40.211Z",
+        "cow": 32,
+        "pasture": 3,
+        "distance": 3,
         "link": "/assets/api/exercises/57/"
     }
 },
@@ -688,10 +688,10 @@
     "pk": 58,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:29.044Z",
+        "timestamp": "2018-03-26T21:10:40.266Z",
         "cow": 32,
-        "pasture": 7,
-        "distance": 7,
+        "pasture": 3,
+        "distance": 3,
         "link": "/assets/api/exercises/58/"
     }
 },
@@ -700,10 +700,10 @@
     "pk": 59,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:29.094Z",
-        "cow": 32,
-        "pasture": 7,
-        "distance": 7,
+        "timestamp": "2018-03-26T21:10:40.392Z",
+        "cow": 33,
+        "pasture": 13,
+        "distance": 1,
         "link": "/assets/api/exercises/59/"
     }
 },
@@ -712,8 +712,8 @@
     "pk": 60,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:29.185Z",
-        "cow": 33,
+        "timestamp": "2018-03-26T21:10:40.516Z",
+        "cow": 34,
         "pasture": 4,
         "distance": 4,
         "link": "/assets/api/exercises/60/"
@@ -724,8 +724,8 @@
     "pk": 61,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:29.239Z",
-        "cow": 33,
+        "timestamp": "2018-03-26T21:10:40.568Z",
+        "cow": 34,
         "pasture": 4,
         "distance": 4,
         "link": "/assets/api/exercises/61/"
@@ -736,10 +736,10 @@
     "pk": 62,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:29.333Z",
-        "cow": 34,
-        "pasture": 5,
-        "distance": 5,
+        "timestamp": "2018-03-26T21:10:40.651Z",
+        "cow": 35,
+        "pasture": 2,
+        "distance": 2,
         "link": "/assets/api/exercises/62/"
     }
 },
@@ -748,10 +748,10 @@
     "pk": 63,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:29.392Z",
-        "cow": 34,
-        "pasture": 5,
-        "distance": 5,
+        "timestamp": "2018-03-26T21:10:40.713Z",
+        "cow": 35,
+        "pasture": 2,
+        "distance": 2,
         "link": "/assets/api/exercises/63/"
     }
 },
@@ -760,10 +760,10 @@
     "pk": 64,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:29.497Z",
-        "cow": 35,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:40.843Z",
+        "cow": 36,
+        "pasture": 13,
+        "distance": 1,
         "link": "/assets/api/exercises/64/"
     }
 },
@@ -772,10 +772,10 @@
     "pk": 65,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:29.552Z",
-        "cow": 35,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:41.109Z",
+        "cow": 38,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/65/"
     }
 },
@@ -784,10 +784,10 @@
     "pk": 66,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:29.670Z",
-        "cow": 36,
-        "pasture": 10,
-        "distance": 10,
+        "timestamp": "2018-03-26T21:10:41.163Z",
+        "cow": 38,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/66/"
     }
 },
@@ -796,10 +796,10 @@
     "pk": 67,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:29.725Z",
-        "cow": 36,
-        "pasture": 10,
-        "distance": 10,
+        "timestamp": "2018-03-26T21:10:41.403Z",
+        "cow": 40,
+        "pasture": 2,
+        "distance": 2,
         "link": "/assets/api/exercises/67/"
     }
 },
@@ -808,10 +808,10 @@
     "pk": 68,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:29.823Z",
-        "cow": 37,
-        "pasture": 5,
-        "distance": 5,
+        "timestamp": "2018-03-26T21:10:41.463Z",
+        "cow": 40,
+        "pasture": 2,
+        "distance": 2,
         "link": "/assets/api/exercises/68/"
     }
 },
@@ -820,10 +820,10 @@
     "pk": 69,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:29.879Z",
-        "cow": 37,
-        "pasture": 5,
-        "distance": 5,
+        "timestamp": "2018-03-26T21:10:42.028Z",
+        "cow": 41,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/69/"
     }
 },
@@ -832,10 +832,10 @@
     "pk": 70,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:30.015Z",
-        "cow": 38,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:42.089Z",
+        "cow": 41,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/70/"
     }
 },
@@ -844,10 +844,10 @@
     "pk": 71,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:30.072Z",
-        "cow": 38,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:42.196Z",
+        "cow": 42,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/71/"
     }
 },
@@ -856,10 +856,10 @@
     "pk": 72,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:30.168Z",
-        "cow": 39,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:42.249Z",
+        "cow": 42,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/72/"
     }
 },
@@ -868,10 +868,10 @@
     "pk": 73,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:30.225Z",
-        "cow": 39,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:42.377Z",
+        "cow": 43,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/73/"
     }
 },
@@ -880,10 +880,10 @@
     "pk": 74,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:30.318Z",
-        "cow": 40,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:42.438Z",
+        "cow": 43,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/74/"
     }
 },
@@ -892,10 +892,10 @@
     "pk": 75,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:30.368Z",
-        "cow": 40,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:42.539Z",
+        "cow": 44,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/75/"
     }
 },
@@ -904,10 +904,10 @@
     "pk": 76,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:30.913Z",
-        "cow": 41,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:42.598Z",
+        "cow": 44,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/76/"
     }
 },
@@ -916,10 +916,10 @@
     "pk": 77,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:30.971Z",
-        "cow": 41,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:42.834Z",
+        "cow": 46,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/77/"
     }
 },
@@ -928,10 +928,10 @@
     "pk": 78,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:31.068Z",
-        "cow": 42,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:42.888Z",
+        "cow": 46,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/78/"
     }
 },
@@ -940,10 +940,10 @@
     "pk": 79,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:31.126Z",
-        "cow": 42,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:42.989Z",
+        "cow": 47,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/79/"
     }
 },
@@ -952,10 +952,10 @@
     "pk": 80,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:31.224Z",
-        "cow": 43,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:43.048Z",
+        "cow": 47,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/80/"
     }
 },
@@ -964,10 +964,10 @@
     "pk": 81,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:31.276Z",
-        "cow": 43,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:43.148Z",
+        "cow": 48,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/81/"
     }
 },
@@ -976,8 +976,8 @@
     "pk": 82,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:31.372Z",
-        "cow": 44,
+        "timestamp": "2018-03-26T21:10:43.207Z",
+        "cow": 48,
         "pasture": 9,
         "distance": 9,
         "link": "/assets/api/exercises/82/"
@@ -988,10 +988,10 @@
     "pk": 83,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:31.428Z",
-        "cow": 44,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:43.306Z",
+        "cow": 49,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/83/"
     }
 },
@@ -1000,8 +1000,8 @@
     "pk": 84,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:31.523Z",
-        "cow": 45,
+        "timestamp": "2018-03-26T21:10:43.367Z",
+        "cow": 49,
         "pasture": 10,
         "distance": 10,
         "link": "/assets/api/exercises/84/"
@@ -1012,10 +1012,10 @@
     "pk": 85,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:31.584Z",
-        "cow": 45,
-        "pasture": 10,
-        "distance": 10,
+        "timestamp": "2018-03-26T21:10:43.472Z",
+        "cow": 50,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/85/"
     }
 },
@@ -1024,10 +1024,10 @@
     "pk": 86,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:31.678Z",
-        "cow": 46,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:43.523Z",
+        "cow": 50,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/86/"
     }
 },
@@ -1036,10 +1036,10 @@
     "pk": 87,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:31.738Z",
-        "cow": 46,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:44.073Z",
+        "cow": 51,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/87/"
     }
 },
@@ -1048,10 +1048,10 @@
     "pk": 88,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:31.838Z",
-        "cow": 47,
-        "pasture": 7,
-        "distance": 7,
+        "timestamp": "2018-03-26T21:10:44.124Z",
+        "cow": 51,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/88/"
     }
 },
@@ -1060,8 +1060,8 @@
     "pk": 89,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:31.900Z",
-        "cow": 47,
+        "timestamp": "2018-03-26T21:10:44.223Z",
+        "cow": 52,
         "pasture": 7,
         "distance": 7,
         "link": "/assets/api/exercises/89/"
@@ -1072,10 +1072,10 @@
     "pk": 90,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:31.991Z",
-        "cow": 48,
-        "pasture": 10,
-        "distance": 10,
+        "timestamp": "2018-03-26T21:10:44.280Z",
+        "cow": 52,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/90/"
     }
 },
@@ -1084,10 +1084,10 @@
     "pk": 91,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:32.044Z",
-        "cow": 48,
-        "pasture": 10,
-        "distance": 10,
+        "timestamp": "2018-03-26T21:10:44.380Z",
+        "cow": 53,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/91/"
     }
 },
@@ -1096,10 +1096,10 @@
     "pk": 92,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:32.139Z",
-        "cow": 49,
-        "pasture": 7,
-        "distance": 7,
+        "timestamp": "2018-03-26T21:10:44.436Z",
+        "cow": 53,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/92/"
     }
 },
@@ -1108,10 +1108,10 @@
     "pk": 93,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:32.197Z",
-        "cow": 49,
-        "pasture": 7,
-        "distance": 7,
+        "timestamp": "2018-03-26T21:10:44.551Z",
+        "cow": 54,
+        "pasture": 2,
+        "distance": 2,
         "link": "/assets/api/exercises/93/"
     }
 },
@@ -1120,10 +1120,10 @@
     "pk": 94,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:32.288Z",
-        "cow": 50,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:44.614Z",
+        "cow": 54,
+        "pasture": 2,
+        "distance": 2,
         "link": "/assets/api/exercises/94/"
     }
 },
@@ -1132,10 +1132,10 @@
     "pk": 95,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:32.345Z",
-        "cow": 50,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:44.714Z",
+        "cow": 55,
+        "pasture": 2,
+        "distance": 2,
         "link": "/assets/api/exercises/95/"
     }
 },
@@ -1144,10 +1144,10 @@
     "pk": 96,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:32.921Z",
-        "cow": 51,
-        "pasture": 6,
-        "distance": 6,
+        "timestamp": "2018-03-26T21:10:44.776Z",
+        "cow": 55,
+        "pasture": 2,
+        "distance": 2,
         "link": "/assets/api/exercises/96/"
     }
 },
@@ -1156,10 +1156,10 @@
     "pk": 97,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:32.979Z",
-        "cow": 51,
-        "pasture": 6,
-        "distance": 6,
+        "timestamp": "2018-03-26T21:10:44.874Z",
+        "cow": 56,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/97/"
     }
 },
@@ -1168,10 +1168,10 @@
     "pk": 98,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:33.074Z",
-        "cow": 52,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:44.933Z",
+        "cow": 56,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/98/"
     }
 },
@@ -1180,10 +1180,10 @@
     "pk": 99,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:33.135Z",
-        "cow": 52,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:45.030Z",
+        "cow": 57,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/99/"
     }
 },
@@ -1192,10 +1192,10 @@
     "pk": 100,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:33.229Z",
-        "cow": 53,
-        "pasture": 5,
-        "distance": 5,
+        "timestamp": "2018-03-26T21:10:45.092Z",
+        "cow": 57,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/100/"
     }
 },
@@ -1204,10 +1204,10 @@
     "pk": 101,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:33.294Z",
-        "cow": 53,
-        "pasture": 5,
-        "distance": 5,
+        "timestamp": "2018-03-26T21:10:45.187Z",
+        "cow": 58,
+        "pasture": 3,
+        "distance": 3,
         "link": "/assets/api/exercises/101/"
     }
 },
@@ -1216,10 +1216,10 @@
     "pk": 102,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:33.392Z",
-        "cow": 54,
-        "pasture": 10,
-        "distance": 10,
+        "timestamp": "2018-03-26T21:10:45.250Z",
+        "cow": 58,
+        "pasture": 3,
+        "distance": 3,
         "link": "/assets/api/exercises/102/"
     }
 },
@@ -1228,8 +1228,8 @@
     "pk": 103,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:33.444Z",
-        "cow": 54,
+        "timestamp": "2018-03-26T21:10:45.355Z",
+        "cow": 59,
         "pasture": 10,
         "distance": 10,
         "link": "/assets/api/exercises/103/"
@@ -1240,10 +1240,10 @@
     "pk": 104,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:33.571Z",
-        "cow": 55,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:45.407Z",
+        "cow": 59,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/104/"
     }
 },
@@ -1252,10 +1252,10 @@
     "pk": 105,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:33.633Z",
-        "cow": 55,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:45.507Z",
+        "cow": 60,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/105/"
     }
 },
@@ -1264,10 +1264,10 @@
     "pk": 106,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:33.727Z",
-        "cow": 56,
-        "pasture": 7,
-        "distance": 7,
+        "timestamp": "2018-03-26T21:10:45.563Z",
+        "cow": 60,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/106/"
     }
 },
@@ -1276,10 +1276,10 @@
     "pk": 107,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:33.787Z",
-        "cow": 56,
-        "pasture": 7,
-        "distance": 7,
+        "timestamp": "2018-03-26T21:10:46.131Z",
+        "cow": 61,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/107/"
     }
 },
@@ -1288,10 +1288,10 @@
     "pk": 108,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:33.885Z",
-        "cow": 57,
-        "pasture": 5,
-        "distance": 5,
+        "timestamp": "2018-03-26T21:10:46.186Z",
+        "cow": 61,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/108/"
     }
 },
@@ -1300,10 +1300,10 @@
     "pk": 109,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:33.943Z",
-        "cow": 57,
-        "pasture": 5,
-        "distance": 5,
+        "timestamp": "2018-03-26T21:10:46.286Z",
+        "cow": 62,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/109/"
     }
 },
@@ -1312,10 +1312,10 @@
     "pk": 110,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:34.036Z",
-        "cow": 58,
-        "pasture": 7,
-        "distance": 7,
+        "timestamp": "2018-03-26T21:10:46.342Z",
+        "cow": 62,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/110/"
     }
 },
@@ -1324,10 +1324,10 @@
     "pk": 111,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:34.097Z",
-        "cow": 58,
-        "pasture": 7,
-        "distance": 7,
+        "timestamp": "2018-03-26T21:10:46.440Z",
+        "cow": 63,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/111/"
     }
 },
@@ -1336,10 +1336,10 @@
     "pk": 112,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:34.199Z",
-        "cow": 59,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:46.498Z",
+        "cow": 63,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/112/"
     }
 },
@@ -1348,10 +1348,10 @@
     "pk": 113,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:34.264Z",
-        "cow": 59,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:46.587Z",
+        "cow": 64,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/113/"
     }
 },
@@ -1360,10 +1360,10 @@
     "pk": 114,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:34.361Z",
-        "cow": 60,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:46.644Z",
+        "cow": 64,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/114/"
     }
 },
@@ -1372,10 +1372,10 @@
     "pk": 115,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:34.418Z",
-        "cow": 60,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:46.729Z",
+        "cow": 65,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/115/"
     }
 },
@@ -1384,10 +1384,10 @@
     "pk": 116,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:34.960Z",
-        "cow": 61,
-        "pasture": 6,
-        "distance": 6,
+        "timestamp": "2018-03-26T21:10:46.782Z",
+        "cow": 65,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/116/"
     }
 },
@@ -1396,10 +1396,10 @@
     "pk": 117,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:35.014Z",
-        "cow": 61,
-        "pasture": 6,
-        "distance": 6,
+        "timestamp": "2018-03-26T21:10:46.992Z",
+        "cow": 67,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/117/"
     }
 },
@@ -1408,10 +1408,10 @@
     "pk": 118,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:35.105Z",
-        "cow": 62,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:47.047Z",
+        "cow": 67,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/118/"
     }
 },
@@ -1420,10 +1420,10 @@
     "pk": 119,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:35.166Z",
-        "cow": 62,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:47.144Z",
+        "cow": 68,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/119/"
     }
 },
@@ -1432,10 +1432,10 @@
     "pk": 120,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:35.257Z",
-        "cow": 63,
-        "pasture": 7,
-        "distance": 7,
+        "timestamp": "2018-03-26T21:10:47.199Z",
+        "cow": 68,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/120/"
     }
 },
@@ -1444,10 +1444,10 @@
     "pk": 121,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:35.311Z",
-        "cow": 63,
-        "pasture": 7,
-        "distance": 7,
+        "timestamp": "2018-03-26T21:10:47.419Z",
+        "cow": 70,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/121/"
     }
 },
@@ -1456,8 +1456,8 @@
     "pk": 122,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:35.402Z",
-        "cow": 64,
+        "timestamp": "2018-03-26T21:10:47.471Z",
+        "cow": 70,
         "pasture": 8,
         "distance": 8,
         "link": "/assets/api/exercises/122/"
@@ -1468,10 +1468,10 @@
     "pk": 123,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:35.460Z",
-        "cow": 64,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:48.076Z",
+        "cow": 71,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/123/"
     }
 },
@@ -1480,10 +1480,10 @@
     "pk": 124,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:35.557Z",
-        "cow": 65,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:48.126Z",
+        "cow": 71,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/124/"
     }
 },
@@ -1492,10 +1492,10 @@
     "pk": 125,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:35.609Z",
-        "cow": 65,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:48.228Z",
+        "cow": 72,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/125/"
     }
 },
@@ -1504,10 +1504,10 @@
     "pk": 126,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:35.705Z",
-        "cow": 66,
-        "pasture": 10,
-        "distance": 10,
+        "timestamp": "2018-03-26T21:10:48.289Z",
+        "cow": 72,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/126/"
     }
 },
@@ -1516,10 +1516,10 @@
     "pk": 127,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:35.758Z",
-        "cow": 66,
-        "pasture": 10,
-        "distance": 10,
+        "timestamp": "2018-03-26T21:10:48.419Z",
+        "cow": 73,
+        "pasture": 13,
+        "distance": 1,
         "link": "/assets/api/exercises/127/"
     }
 },
@@ -1528,10 +1528,10 @@
     "pk": 128,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:35.855Z",
-        "cow": 67,
-        "pasture": 6,
-        "distance": 6,
+        "timestamp": "2018-03-26T21:10:48.553Z",
+        "cow": 74,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/128/"
     }
 },
@@ -1540,10 +1540,10 @@
     "pk": 129,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:35.916Z",
-        "cow": 67,
-        "pasture": 6,
-        "distance": 6,
+        "timestamp": "2018-03-26T21:10:48.612Z",
+        "cow": 74,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/129/"
     }
 },
@@ -1552,8 +1552,8 @@
     "pk": 130,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:36.010Z",
-        "cow": 68,
+        "timestamp": "2018-03-26T21:10:48.701Z",
+        "cow": 75,
         "pasture": 2,
         "distance": 2,
         "link": "/assets/api/exercises/130/"
@@ -1564,8 +1564,8 @@
     "pk": 131,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:36.067Z",
-        "cow": 68,
+        "timestamp": "2018-03-26T21:10:48.748Z",
+        "cow": 75,
         "pasture": 2,
         "distance": 2,
         "link": "/assets/api/exercises/131/"
@@ -1576,10 +1576,10 @@
     "pk": 132,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:36.166Z",
-        "cow": 69,
-        "pasture": 6,
-        "distance": 6,
+        "timestamp": "2018-03-26T21:10:48.833Z",
+        "cow": 76,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/132/"
     }
 },
@@ -1588,10 +1588,10 @@
     "pk": 133,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:36.226Z",
-        "cow": 69,
-        "pasture": 6,
-        "distance": 6,
+        "timestamp": "2018-03-26T21:10:48.890Z",
+        "cow": 76,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/133/"
     }
 },
@@ -1600,8 +1600,8 @@
     "pk": 134,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:36.341Z",
-        "cow": 70,
+        "timestamp": "2018-03-26T21:10:48.978Z",
+        "cow": 77,
         "pasture": 2,
         "distance": 2,
         "link": "/assets/api/exercises/134/"
@@ -1612,8 +1612,8 @@
     "pk": 135,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:36.400Z",
-        "cow": 70,
+        "timestamp": "2018-03-26T21:10:49.031Z",
+        "cow": 77,
         "pasture": 2,
         "distance": 2,
         "link": "/assets/api/exercises/135/"
@@ -1624,10 +1624,10 @@
     "pk": 136,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:36.933Z",
-        "cow": 71,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:49.126Z",
+        "cow": 78,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/136/"
     }
 },
@@ -1636,10 +1636,10 @@
     "pk": 137,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:36.987Z",
-        "cow": 71,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:49.183Z",
+        "cow": 78,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/137/"
     }
 },
@@ -1648,10 +1648,10 @@
     "pk": 138,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:37.084Z",
-        "cow": 72,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:49.302Z",
+        "cow": 79,
+        "pasture": 13,
+        "distance": 1,
         "link": "/assets/api/exercises/138/"
     }
 },
@@ -1660,10 +1660,10 @@
     "pk": 139,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:37.145Z",
-        "cow": 72,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:49.436Z",
+        "cow": 80,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/139/"
     }
 },
@@ -1672,10 +1672,10 @@
     "pk": 140,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:37.248Z",
-        "cow": 73,
-        "pasture": 5,
-        "distance": 5,
+        "timestamp": "2018-03-26T21:10:49.484Z",
+        "cow": 80,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/140/"
     }
 },
@@ -1684,10 +1684,10 @@
     "pk": 141,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:37.306Z",
-        "cow": 73,
-        "pasture": 5,
-        "distance": 5,
+        "timestamp": "2018-03-26T21:10:50.045Z",
+        "cow": 81,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/141/"
     }
 },
@@ -1696,10 +1696,10 @@
     "pk": 142,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:37.401Z",
-        "cow": 74,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:50.093Z",
+        "cow": 81,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/142/"
     }
 },
@@ -1708,10 +1708,10 @@
     "pk": 143,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:37.457Z",
-        "cow": 74,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:50.197Z",
+        "cow": 82,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/143/"
     }
 },
@@ -1720,10 +1720,10 @@
     "pk": 144,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:37.560Z",
-        "cow": 75,
-        "pasture": 5,
-        "distance": 5,
+        "timestamp": "2018-03-26T21:10:50.250Z",
+        "cow": 82,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/144/"
     }
 },
@@ -1732,10 +1732,10 @@
     "pk": 145,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:37.614Z",
-        "cow": 75,
-        "pasture": 5,
-        "distance": 5,
+        "timestamp": "2018-03-26T21:10:50.362Z",
+        "cow": 83,
+        "pasture": 13,
+        "distance": 1,
         "link": "/assets/api/exercises/145/"
     }
 },
@@ -1744,10 +1744,10 @@
     "pk": 146,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:37.710Z",
-        "cow": 76,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:50.488Z",
+        "cow": 84,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/146/"
     }
 },
@@ -1756,10 +1756,10 @@
     "pk": 147,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:37.766Z",
-        "cow": 76,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:50.542Z",
+        "cow": 84,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/147/"
     }
 },
@@ -1768,10 +1768,10 @@
     "pk": 148,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:37.861Z",
-        "cow": 77,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:50.637Z",
+        "cow": 85,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/148/"
     }
 },
@@ -1780,10 +1780,10 @@
     "pk": 149,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:37.920Z",
-        "cow": 77,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:50.693Z",
+        "cow": 85,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/149/"
     }
 },
@@ -1792,10 +1792,10 @@
     "pk": 150,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:38.017Z",
-        "cow": 78,
-        "pasture": 10,
-        "distance": 10,
+        "timestamp": "2018-03-26T21:10:50.792Z",
+        "cow": 86,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/150/"
     }
 },
@@ -1804,10 +1804,10 @@
     "pk": 151,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:38.070Z",
-        "cow": 78,
-        "pasture": 10,
-        "distance": 10,
+        "timestamp": "2018-03-26T21:10:50.845Z",
+        "cow": 86,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/151/"
     }
 },
@@ -1816,10 +1816,10 @@
     "pk": 152,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:38.168Z",
-        "cow": 79,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:50.939Z",
+        "cow": 87,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/152/"
     }
 },
@@ -1828,10 +1828,10 @@
     "pk": 153,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:38.221Z",
-        "cow": 79,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:50.990Z",
+        "cow": 87,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/153/"
     }
 },
@@ -1840,10 +1840,10 @@
     "pk": 154,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:38.313Z",
-        "cow": 80,
-        "pasture": 6,
-        "distance": 6,
+        "timestamp": "2018-03-26T21:10:51.085Z",
+        "cow": 88,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/154/"
     }
 },
@@ -1852,10 +1852,10 @@
     "pk": 155,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:38.373Z",
-        "cow": 80,
-        "pasture": 6,
-        "distance": 6,
+        "timestamp": "2018-03-26T21:10:51.139Z",
+        "cow": 88,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/155/"
     }
 },
@@ -1864,10 +1864,10 @@
     "pk": 156,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:38.918Z",
-        "cow": 81,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:51.227Z",
+        "cow": 89,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/156/"
     }
 },
@@ -1876,10 +1876,10 @@
     "pk": 157,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:38.978Z",
-        "cow": 81,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:51.282Z",
+        "cow": 89,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/157/"
     }
 },
@@ -1888,10 +1888,10 @@
     "pk": 158,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:39.073Z",
-        "cow": 82,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:51.404Z",
+        "cow": 90,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/158/"
     }
 },
@@ -1900,10 +1900,10 @@
     "pk": 159,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:39.127Z",
-        "cow": 82,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:51.456Z",
+        "cow": 90,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/159/"
     }
 },
@@ -1912,8 +1912,8 @@
     "pk": 160,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:39.226Z",
-        "cow": 83,
+        "timestamp": "2018-03-26T21:10:52.039Z",
+        "cow": 91,
         "pasture": 2,
         "distance": 2,
         "link": "/assets/api/exercises/160/"
@@ -1924,8 +1924,8 @@
     "pk": 161,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:39.277Z",
-        "cow": 83,
+        "timestamp": "2018-03-26T21:10:52.091Z",
+        "cow": 91,
         "pasture": 2,
         "distance": 2,
         "link": "/assets/api/exercises/161/"
@@ -1936,10 +1936,10 @@
     "pk": 162,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:39.407Z",
-        "cow": 84,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:52.186Z",
+        "cow": 92,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/162/"
     }
 },
@@ -1948,10 +1948,10 @@
     "pk": 163,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:39.466Z",
-        "cow": 84,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:52.244Z",
+        "cow": 92,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/163/"
     }
 },
@@ -1960,10 +1960,10 @@
     "pk": 164,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:39.562Z",
-        "cow": 85,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:52.333Z",
+        "cow": 93,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/164/"
     }
 },
@@ -1972,10 +1972,10 @@
     "pk": 165,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:39.622Z",
-        "cow": 85,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:52.392Z",
+        "cow": 93,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/165/"
     }
 },
@@ -1984,10 +1984,10 @@
     "pk": 166,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:39.721Z",
-        "cow": 86,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:52.489Z",
+        "cow": 94,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/166/"
     }
 },
@@ -1996,10 +1996,10 @@
     "pk": 167,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:39.777Z",
-        "cow": 86,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:52.535Z",
+        "cow": 94,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/167/"
     }
 },
@@ -2008,10 +2008,10 @@
     "pk": 168,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:39.879Z",
-        "cow": 87,
-        "pasture": 5,
-        "distance": 5,
+        "timestamp": "2018-03-26T21:10:52.750Z",
+        "cow": 96,
+        "pasture": 3,
+        "distance": 3,
         "link": "/assets/api/exercises/168/"
     }
 },
@@ -2020,10 +2020,10 @@
     "pk": 169,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:39.943Z",
-        "cow": 87,
-        "pasture": 5,
-        "distance": 5,
+        "timestamp": "2018-03-26T21:10:52.802Z",
+        "cow": 96,
+        "pasture": 3,
+        "distance": 3,
         "link": "/assets/api/exercises/169/"
     }
 },
@@ -2032,10 +2032,10 @@
     "pk": 170,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:40.034Z",
-        "cow": 88,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:52.900Z",
+        "cow": 97,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/170/"
     }
 },
@@ -2044,10 +2044,10 @@
     "pk": 171,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:40.089Z",
-        "cow": 88,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:52.962Z",
+        "cow": 97,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/171/"
     }
 },
@@ -2056,10 +2056,10 @@
     "pk": 172,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:40.181Z",
-        "cow": 89,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:53.089Z",
+        "cow": 98,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/172/"
     }
 },
@@ -2068,10 +2068,10 @@
     "pk": 173,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:40.238Z",
-        "cow": 89,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:53.144Z",
+        "cow": 98,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/173/"
     }
 },
@@ -2080,10 +2080,10 @@
     "pk": 174,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:40.333Z",
-        "cow": 90,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:53.232Z",
+        "cow": 99,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/174/"
     }
 },
@@ -2092,10 +2092,10 @@
     "pk": 175,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:40.388Z",
-        "cow": 90,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:53.281Z",
+        "cow": 99,
+        "pasture": 8,
+        "distance": 8,
         "link": "/assets/api/exercises/175/"
     }
 },
@@ -2104,10 +2104,10 @@
     "pk": 176,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:40.925Z",
-        "cow": 91,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:53.361Z",
+        "cow": 100,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/176/"
     }
 },
@@ -2116,10 +2116,10 @@
     "pk": 177,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:40.981Z",
-        "cow": 91,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:53.417Z",
+        "cow": 100,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/177/"
     }
 },
@@ -2128,10 +2128,10 @@
     "pk": 178,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:41.081Z",
-        "cow": 92,
-        "pasture": 5,
-        "distance": 5,
+        "timestamp": "2018-03-26T21:10:53.997Z",
+        "cow": 101,
+        "pasture": 2,
+        "distance": 2,
         "link": "/assets/api/exercises/178/"
     }
 },
@@ -2140,10 +2140,10 @@
     "pk": 179,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:41.133Z",
-        "cow": 92,
-        "pasture": 5,
-        "distance": 5,
+        "timestamp": "2018-03-26T21:10:54.050Z",
+        "cow": 101,
+        "pasture": 2,
+        "distance": 2,
         "link": "/assets/api/exercises/179/"
     }
 },
@@ -2152,10 +2152,10 @@
     "pk": 180,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:41.228Z",
-        "cow": 93,
-        "pasture": 6,
-        "distance": 6,
+        "timestamp": "2018-03-26T21:10:54.133Z",
+        "cow": 102,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/180/"
     }
 },
@@ -2164,10 +2164,10 @@
     "pk": 181,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:41.280Z",
-        "cow": 93,
-        "pasture": 6,
-        "distance": 6,
+        "timestamp": "2018-03-26T21:10:54.186Z",
+        "cow": 102,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/181/"
     }
 },
@@ -2176,10 +2176,10 @@
     "pk": 182,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:41.380Z",
-        "cow": 94,
-        "pasture": 10,
-        "distance": 10,
+        "timestamp": "2018-03-26T21:10:54.279Z",
+        "cow": 103,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/182/"
     }
 },
@@ -2188,10 +2188,10 @@
     "pk": 183,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:41.436Z",
-        "cow": 94,
-        "pasture": 10,
-        "distance": 10,
+        "timestamp": "2018-03-26T21:10:54.338Z",
+        "cow": 103,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/183/"
     }
 },
@@ -2200,10 +2200,10 @@
     "pk": 184,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:41.533Z",
-        "cow": 95,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:54.428Z",
+        "cow": 104,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/184/"
     }
 },
@@ -2212,10 +2212,10 @@
     "pk": 185,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:41.589Z",
-        "cow": 95,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:54.486Z",
+        "cow": 104,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/185/"
     }
 },
@@ -2224,10 +2224,10 @@
     "pk": 186,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:41.686Z",
-        "cow": 96,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:54.581Z",
+        "cow": 105,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/186/"
     }
 },
@@ -2236,10 +2236,10 @@
     "pk": 187,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:41.744Z",
-        "cow": 96,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:54.639Z",
+        "cow": 105,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/187/"
     }
 },
@@ -2248,10 +2248,10 @@
     "pk": 188,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:41.845Z",
-        "cow": 97,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:54.729Z",
+        "cow": 106,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/188/"
     }
 },
@@ -2260,10 +2260,10 @@
     "pk": 189,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:41.899Z",
-        "cow": 97,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:54.786Z",
+        "cow": 106,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/189/"
     }
 },
@@ -2272,10 +2272,10 @@
     "pk": 190,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:41.997Z",
-        "cow": 98,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:54.880Z",
+        "cow": 107,
+        "pasture": 2,
+        "distance": 2,
         "link": "/assets/api/exercises/190/"
     }
 },
@@ -2284,10 +2284,10 @@
     "pk": 191,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:42.050Z",
-        "cow": 98,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:54.935Z",
+        "cow": 107,
+        "pasture": 2,
+        "distance": 2,
         "link": "/assets/api/exercises/191/"
     }
 },
@@ -2296,10 +2296,10 @@
     "pk": 192,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:42.151Z",
-        "cow": 99,
-        "pasture": 10,
-        "distance": 10,
+        "timestamp": "2018-03-26T21:10:55.031Z",
+        "cow": 108,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/192/"
     }
 },
@@ -2308,10 +2308,10 @@
     "pk": 193,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:42.213Z",
-        "cow": 99,
-        "pasture": 10,
-        "distance": 10,
+        "timestamp": "2018-03-26T21:10:55.088Z",
+        "cow": 108,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/193/"
     }
 },
@@ -2320,10 +2320,10 @@
     "pk": 194,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:42.335Z",
-        "cow": 100,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:55.184Z",
+        "cow": 109,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/194/"
     }
 },
@@ -2332,10 +2332,10 @@
     "pk": 195,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:42.390Z",
-        "cow": 100,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:55.239Z",
+        "cow": 109,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/195/"
     }
 },
@@ -2344,10 +2344,10 @@
     "pk": 196,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:42.932Z",
-        "cow": 101,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:55.383Z",
+        "cow": 110,
+        "pasture": 13,
+        "distance": 1,
         "link": "/assets/api/exercises/196/"
     }
 },
@@ -2356,10 +2356,10 @@
     "pk": 197,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:42.982Z",
-        "cow": 101,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:56.015Z",
+        "cow": 111,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/197/"
     }
 },
@@ -2368,10 +2368,10 @@
     "pk": 198,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:43.074Z",
-        "cow": 102,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:56.070Z",
+        "cow": 111,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/198/"
     }
 },
@@ -2380,10 +2380,10 @@
     "pk": 199,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:43.133Z",
-        "cow": 102,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:56.160Z",
+        "cow": 112,
+        "pasture": 2,
+        "distance": 2,
         "link": "/assets/api/exercises/199/"
     }
 },
@@ -2392,9 +2392,9 @@
     "pk": 200,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:43.256Z",
-        "cow": 103,
-        "pasture": 13,
+        "timestamp": "2018-03-26T21:10:56.215Z",
+        "cow": 112,
+        "pasture": 2,
         "distance": 2,
         "link": "/assets/api/exercises/200/"
     }
@@ -2404,10 +2404,10 @@
     "pk": 201,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:43.385Z",
-        "cow": 104,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:56.311Z",
+        "cow": 113,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/201/"
     }
 },
@@ -2416,10 +2416,10 @@
     "pk": 202,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:43.443Z",
-        "cow": 104,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:56.363Z",
+        "cow": 113,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/202/"
     }
 },
@@ -2428,10 +2428,10 @@
     "pk": 203,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:43.598Z",
-        "cow": 105,
-        "pasture": 13,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:56.450Z",
+        "cow": 114,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/203/"
     }
 },
@@ -2440,10 +2440,10 @@
     "pk": 204,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:43.875Z",
-        "cow": 107,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:56.506Z",
+        "cow": 114,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/204/"
     }
 },
@@ -2452,10 +2452,10 @@
     "pk": 205,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:43.933Z",
-        "cow": 107,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:56.616Z",
+        "cow": 115,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/205/"
     }
 },
@@ -2464,8 +2464,8 @@
     "pk": 206,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:44.022Z",
-        "cow": 108,
+        "timestamp": "2018-03-26T21:10:56.670Z",
+        "cow": 115,
         "pasture": 9,
         "distance": 9,
         "link": "/assets/api/exercises/206/"
@@ -2476,10 +2476,10 @@
     "pk": 207,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:44.076Z",
-        "cow": 108,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:56.765Z",
+        "cow": 116,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/207/"
     }
 },
@@ -2488,10 +2488,10 @@
     "pk": 208,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:44.321Z",
-        "cow": 110,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:56.814Z",
+        "cow": 116,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/208/"
     }
 },
@@ -2500,10 +2500,10 @@
     "pk": 209,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:44.377Z",
-        "cow": 110,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:56.900Z",
+        "cow": 117,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/209/"
     }
 },
@@ -2512,10 +2512,10 @@
     "pk": 210,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:44.920Z",
-        "cow": 111,
-        "pasture": 10,
-        "distance": 10,
+        "timestamp": "2018-03-26T21:10:56.953Z",
+        "cow": 117,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/210/"
     }
 },
@@ -2524,10 +2524,10 @@
     "pk": 211,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:44.978Z",
-        "cow": 111,
-        "pasture": 10,
-        "distance": 10,
+        "timestamp": "2018-03-26T21:10:57.190Z",
+        "cow": 119,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/211/"
     }
 },
@@ -2536,10 +2536,10 @@
     "pk": 212,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:45.080Z",
-        "cow": 112,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:57.247Z",
+        "cow": 119,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/212/"
     }
 },
@@ -2548,10 +2548,10 @@
     "pk": 213,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:45.137Z",
-        "cow": 112,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:57.340Z",
+        "cow": 120,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/213/"
     }
 },
@@ -2560,10 +2560,10 @@
     "pk": 214,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:45.235Z",
-        "cow": 113,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:57.397Z",
+        "cow": 120,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/214/"
     }
 },
@@ -2572,10 +2572,10 @@
     "pk": 215,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:45.290Z",
-        "cow": 113,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:57.995Z",
+        "cow": 121,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/215/"
     }
 },
@@ -2584,10 +2584,10 @@
     "pk": 216,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:45.381Z",
-        "cow": 114,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:58.050Z",
+        "cow": 121,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/216/"
     }
 },
@@ -2596,10 +2596,10 @@
     "pk": 217,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:45.435Z",
-        "cow": 114,
-        "pasture": 4,
-        "distance": 4,
+        "timestamp": "2018-03-26T21:10:58.154Z",
+        "cow": 122,
+        "pasture": 6,
+        "distance": 6,
         "link": "/assets/api/exercises/217/"
     }
 },
@@ -2608,8 +2608,8 @@
     "pk": 218,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:45.533Z",
-        "cow": 115,
+        "timestamp": "2018-03-26T21:10:58.217Z",
+        "cow": 122,
         "pasture": 6,
         "distance": 6,
         "link": "/assets/api/exercises/218/"
@@ -2620,10 +2620,10 @@
     "pk": 219,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:45.588Z",
-        "cow": 115,
-        "pasture": 6,
-        "distance": 6,
+        "timestamp": "2018-03-26T21:10:58.320Z",
+        "cow": 123,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/219/"
     }
 },
@@ -2632,10 +2632,10 @@
     "pk": 220,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:45.686Z",
-        "cow": 116,
-        "pasture": 6,
-        "distance": 6,
+        "timestamp": "2018-03-26T21:10:58.375Z",
+        "cow": 123,
+        "pasture": 7,
+        "distance": 7,
         "link": "/assets/api/exercises/220/"
     }
 },
@@ -2644,10 +2644,10 @@
     "pk": 221,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:45.741Z",
-        "cow": 116,
-        "pasture": 6,
-        "distance": 6,
+        "timestamp": "2018-03-26T21:10:58.471Z",
+        "cow": 124,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/221/"
     }
 },
@@ -2656,10 +2656,10 @@
     "pk": 222,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:45.837Z",
-        "cow": 117,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:58.528Z",
+        "cow": 124,
+        "pasture": 9,
+        "distance": 9,
         "link": "/assets/api/exercises/222/"
     }
 },
@@ -2668,10 +2668,10 @@
     "pk": 223,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:45.897Z",
-        "cow": 117,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:58.623Z",
+        "cow": 125,
+        "pasture": 2,
+        "distance": 2,
         "link": "/assets/api/exercises/223/"
     }
 },
@@ -2680,8 +2680,8 @@
     "pk": 224,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:45.996Z",
-        "cow": 118,
+        "timestamp": "2018-03-26T21:10:58.673Z",
+        "cow": 125,
         "pasture": 2,
         "distance": 2,
         "link": "/assets/api/exercises/224/"
@@ -2692,10 +2692,10 @@
     "pk": 225,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:46.053Z",
-        "cow": 118,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:58.748Z",
+        "cow": 126,
+        "pasture": 3,
+        "distance": 3,
         "link": "/assets/api/exercises/225/"
     }
 },
@@ -2704,10 +2704,10 @@
     "pk": 226,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:46.150Z",
-        "cow": 119,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:58.798Z",
+        "cow": 126,
+        "pasture": 3,
+        "distance": 3,
         "link": "/assets/api/exercises/226/"
     }
 },
@@ -2716,10 +2716,10 @@
     "pk": 227,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:46.206Z",
-        "cow": 119,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:58.900Z",
+        "cow": 127,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/227/"
     }
 },
@@ -2728,10 +2728,10 @@
     "pk": 228,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:46.295Z",
-        "cow": 120,
-        "pasture": 3,
-        "distance": 3,
+        "timestamp": "2018-03-26T21:10:58.964Z",
+        "cow": 127,
+        "pasture": 4,
+        "distance": 4,
         "link": "/assets/api/exercises/228/"
     }
 },
@@ -2740,8 +2740,8 @@
     "pk": 229,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:46.358Z",
-        "cow": 120,
+        "timestamp": "2018-03-26T21:10:59.064Z",
+        "cow": 128,
         "pasture": 3,
         "distance": 3,
         "link": "/assets/api/exercises/229/"
@@ -2752,10 +2752,10 @@
     "pk": 230,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:46.901Z",
-        "cow": 121,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:59.123Z",
+        "cow": 128,
+        "pasture": 3,
+        "distance": 3,
         "link": "/assets/api/exercises/230/"
     }
 },
@@ -2764,10 +2764,10 @@
     "pk": 231,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:46.959Z",
-        "cow": 121,
-        "pasture": 9,
-        "distance": 9,
+        "timestamp": "2018-03-26T21:10:59.217Z",
+        "cow": 129,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/231/"
     }
 },
@@ -2776,10 +2776,10 @@
     "pk": 232,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:47.054Z",
-        "cow": 122,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:59.274Z",
+        "cow": 129,
+        "pasture": 5,
+        "distance": 5,
         "link": "/assets/api/exercises/232/"
     }
 },
@@ -2788,10 +2788,10 @@
     "pk": 233,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:47.113Z",
-        "cow": 122,
-        "pasture": 8,
-        "distance": 8,
+        "timestamp": "2018-03-26T21:10:59.376Z",
+        "cow": 130,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/233/"
     }
 },
@@ -2800,191 +2800,11 @@
     "pk": 234,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:47.212Z",
-        "cow": 123,
-        "pasture": 2,
-        "distance": 2,
+        "timestamp": "2018-03-26T21:10:59.433Z",
+        "cow": 130,
+        "pasture": 10,
+        "distance": 10,
         "link": "/assets/api/exercises/234/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 235,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:47.272Z",
-        "cow": 123,
-        "pasture": 2,
-        "distance": 2,
-        "link": "/assets/api/exercises/235/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 236,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:47.365Z",
-        "cow": 124,
-        "pasture": 6,
-        "distance": 6,
-        "link": "/assets/api/exercises/236/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 237,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:47.414Z",
-        "cow": 124,
-        "pasture": 6,
-        "distance": 6,
-        "link": "/assets/api/exercises/237/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 238,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:47.502Z",
-        "cow": 125,
-        "pasture": 8,
-        "distance": 8,
-        "link": "/assets/api/exercises/238/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 239,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:47.564Z",
-        "cow": 125,
-        "pasture": 8,
-        "distance": 8,
-        "link": "/assets/api/exercises/239/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 240,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:47.659Z",
-        "cow": 126,
-        "pasture": 3,
-        "distance": 3,
-        "link": "/assets/api/exercises/240/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 241,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:47.713Z",
-        "cow": 126,
-        "pasture": 3,
-        "distance": 3,
-        "link": "/assets/api/exercises/241/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 242,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:47.830Z",
-        "cow": 127,
-        "pasture": 6,
-        "distance": 6,
-        "link": "/assets/api/exercises/242/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 243,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:47.888Z",
-        "cow": 127,
-        "pasture": 6,
-        "distance": 6,
-        "link": "/assets/api/exercises/243/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 244,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:47.985Z",
-        "cow": 128,
-        "pasture": 9,
-        "distance": 9,
-        "link": "/assets/api/exercises/244/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 245,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:48.040Z",
-        "cow": 128,
-        "pasture": 9,
-        "distance": 9,
-        "link": "/assets/api/exercises/245/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 246,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:48.134Z",
-        "cow": 129,
-        "pasture": 3,
-        "distance": 3,
-        "link": "/assets/api/exercises/246/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 247,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:48.190Z",
-        "cow": 129,
-        "pasture": 3,
-        "distance": 3,
-        "link": "/assets/api/exercises/247/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 248,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:48.288Z",
-        "cow": 130,
-        "pasture": 3,
-        "distance": 3,
-        "link": "/assets/api/exercises/248/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 249,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-15T21:15:48.339Z",
-        "cow": 130,
-        "pasture": 3,
-        "distance": 3,
-        "link": "/assets/api/exercises/249/"
     }
 }
 ]

@@ -3,49 +3,56 @@
     "model": "assets.breed",
     "pk": 1,
     "fields": {
-        "name": "Holstein"
+        "name": "Holstein",
+        "url": "/static/images/breeds/holstein.png"
     }
 },
 {
     "model": "assets.breed",
     "pk": 2,
     "fields": {
-        "name": "Jersey"
+        "name": "Jersey",
+        "url": "/static/images/breeds/jersey.png"
     }
 },
 {
     "model": "assets.breed",
     "pk": 3,
     "fields": {
-        "name": "Guernsey"
+        "name": "Guernsey",
+        "url": "/static/images/breeds/guernsey.png"
     }
 },
 {
     "model": "assets.breed",
     "pk": 4,
     "fields": {
-        "name": "Ayrshire"
+        "name": "Ayrshire",
+        "url": "/static/images/breeds/ayrshire.png"
     }
 },
 {
     "model": "assets.breed",
     "pk": 5,
     "fields": {
-        "name": "Brown Swiss"
+        "name": "Brown Swiss",
+        "url": "/static/images/breeds/brown_swiss.png"
     }
 },
 {
     "model": "assets.breed",
     "pk": 6,
     "fields": {
-        "name": "Milking Shorthorn"
+        "name": "Milking Shorthorn",
+        "url": "/static/images/breeds/milking_shorthorn.png"
     }
 },
 {
     "model": "assets.breed",
     "pk": 7,
     "fields": {
-        "name": "Dutch Belted"
+        "name": "Dutch Belted",
+        "url": "/static/images/breeds/dutch_belted.png"
     }
 }
 ]

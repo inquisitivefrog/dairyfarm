@@ -50,7 +50,7 @@ class TestData:
 
     @classmethod
     def get_season(cls):
-        return 'Fall'
+        return 'Autumn'
 
     @classmethod
     def get_status(cls):
@@ -80,7 +80,7 @@ class TestData:
 
     @classmethod
     def get_breed(cls):
-        return 'Ayrshire'
+        return 'Criollo'
 
     @classmethod
     def get_color(cls):
@@ -88,7 +88,7 @@ class TestData:
 
     @classmethod
     def get_image(cls):
-        return '/static/images/breeds/ayrshire.png'
+        return '/static/images/breeds/criollo.png'
   
     @classmethod
     def get_random_age(cls):
@@ -181,12 +181,12 @@ class TestData:
     @classmethod
     def get_cow_read_keys(cls):
         return ['id', 'rfid', 'purchased_by', 'purchase_date', 'age', 'breed',
-                'color', 'image', 'link']
+                'color', 'link']
 
     @classmethod
     def get_cow_write_keys(cls):
         return ['id', 'rfid', 'purchased_by', 'purchase_date', 'age', 'breed',
-                'color', 'image']
+                'color']
 
     @classmethod
     def get_event_read_keys(cls):
@@ -214,13 +214,13 @@ class TestData:
 
     @classmethod
     def get_pasture_read_keys(cls):
-        return ['id', 'fallow', 'distance', 'seeded_by', 'region', 'image',
-                'cereal_hay', 'grass_hay', 'legume_hay', 'season', 'link']
+        return ['id', 'fallow', 'distance', 'seeded_by', 'region',
+                'cereal_hay', 'grass_hay', 'legume_hay', 'season', 'year', 'link']
 
     @classmethod
     def get_pasture_write_keys(cls):
-        return ['id', 'fallow', 'distance', 'seeded_by', 'region', 'image',
-                'cereal_hay', 'grass_hay', 'legume_hay', 'season']
+        return ['id', 'fallow', 'distance', 'seeded_by', 'region',
+                'cereal_hay', 'grass_hay', 'legume_hay', 'season', 'year']
 
     @classmethod
     def get_hr_read_keys(cls):
@@ -240,8 +240,8 @@ class TestTime:
         return '2014-12-31'
 
     @classmethod
-    def convert_date(cls, t):
-        return datetime.strftime(t, '%Y-%m-%d')
+    def convert_date(cls, d):
+        return datetime.strftime(d, '%Y-%m-%d')
 
     @classmethod
     def get_date(cls):
@@ -279,3 +279,6 @@ class TestTime:
                                                     second,
                                                     t.microsecond))
 
+    @classmethod
+    def get_year(cls):
+        return 2016

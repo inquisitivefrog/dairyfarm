@@ -5,6 +5,8 @@ from django.db import models
 
 from rest_framework.reverse import reverse
 
+from assets.helpers import AssetTime
+
 class Action(models.Model):
     name = models.CharField(max_length=20,
                             null=False,
@@ -62,30 +64,15 @@ class Color(models.Model):
         else:
             return '{}'.format(self.__class__)
 
-class BreedImage(models.Model):
-    url = models.CharField(max_length=50,
-                           null=False,
-                           blank=False,
-                           unique=True)
-
-    def __str__(self):
-        if self.id:
-            return self.url
-        else:
-            return '{}'.format(self.__class__)
-
-    def __repr__(self):
-        if self.id:
-            return '{}:{}'.format(self.__class__,
-                                  self.id)
-        else:
-            return '{}'.format(self.__class__)
-
 class Breed(models.Model):
     name = models.CharField(max_length=20,
                             null=False,
                             blank=False,
                             unique=False)
+    url = models.CharField(max_length=50,
+                           null=False,
+                           blank=False,
+                           unique=True)
 
     def __str__(self):
         if self.id:
@@ -120,21 +107,19 @@ class CerealHay(models.Model):
             return '{}'.format(self.__class__)
 
 class Cow(models.Model):
-    rfid = models.UUIDField(default=uuid4,
+    rfid = models.UUIDField(default=uuid4(),
                             unique=True)
     purchased_by = models.ForeignKey(User,
                                      on_delete=models.CASCADE)
-    purchase_date = models.DateField(auto_now_add=False)
+    purchase_date = models.DateField()
     age = models.ForeignKey(Age,
                             on_delete=models.CASCADE)
     breed = models.ForeignKey(Breed,
                               on_delete=models.CASCADE)
     color = models.ForeignKey(Color,
                               on_delete=models.CASCADE)
-    image = models.ForeignKey(BreedImage,
-                              null=True,
-                              blank=False,
-                              on_delete=models.CASCADE)
+    sell_date = models.DateField(null=False,
+                                 default='2100-12-31')
     link = models.URLField(max_length=50,
                            null=True,
                            blank=False)
@@ -158,9 +143,7 @@ class Cow(models.Model):
         for word in self.breed.name.split(' '):
             tmp.append(word.lower())
         b_name = '_'.join(tmp)
-        image = BreedImage.objects.get(url__contains=b_name)
-        kwargs = {'image': image.pk,
-                  'link': reverse('assets:cow-detail',
+        kwargs = {'link': reverse('assets:cow-detail',
                                   kwargs = {'pk': self.pk})}
         Cow.objects.filter(pk=self.pk).update(**kwargs)
         return
@@ -294,6 +277,10 @@ class Region(models.Model):
                             null=False,
                             blank=False,
                             unique=True)
+    url = models.CharField(max_length=50,
+                           null=False,
+                           blank=False,
+                           unique=True)
 
     def __str__(self):
         if self.id:
@@ -308,27 +295,8 @@ class Region(models.Model):
         else:
             return '{}'.format(self.__class__)
 
-class RegionImage(models.Model):
-    url = models.CharField(max_length=50,
-                           null=False,
-                           blank=False,
-                           unique=True)
-
-    def __str__(self):
-        if self.id:
-            return self.url
-        else:
-            return '{}'.format(self.__class__)
-
-    def __repr__(self):
-        if self.id:
-            return '{}:{}'.format(self.__class__,
-                                  self.id)
-        else:
-            return '{}'.format(self.__class__)
-
 class Season(models.Model):
-    name = models.CharField(max_length=10,
+    name = models.CharField(max_length=20,
                             null=False,
                             blank=False,
                             unique=True)
@@ -564,6 +532,11 @@ class Pasture(models.Model):
     distance = models.IntegerField(default=0,
                                    null=False,
                                    blank=False)
+    year = models.SmallIntegerField(default=2015)
+    season = models.ForeignKey(Season,
+                               null=False,
+                               blank=False,
+                               on_delete=models.CASCADE)
     seeded_by = models.ForeignKey(User,
                                   null=False,
                                   blank=False,
@@ -572,10 +545,6 @@ class Pasture(models.Model):
                                null=False,
                                blank=False,
                                on_delete=models.CASCADE)
-    image = models.ForeignKey(RegionImage,
-                              null=True,
-                              blank=False,
-                              on_delete=models.CASCADE)
     cereal_hay = models.ForeignKey(CerealHay,
                                    null=True,
                                    blank=False,
@@ -591,10 +560,6 @@ class Pasture(models.Model):
                                    blank=False,
                                    default=None,
                                    on_delete=models.CASCADE)
-    season = models.ForeignKey(Season,
-                               null=False,
-                               blank=False,
-                               on_delete=models.CASCADE)
     link = models.URLField(max_length=50,
                            null=True,
                            blank=False)
@@ -618,9 +583,7 @@ class Pasture(models.Model):
         for word in self.region.name.split(' '):
             tmp.append(word.lower())
         r_name = '/{}.png'.format( '_'.join(tmp))
-        image = RegionImage.objects.get(url__endswith=r_name)
-        kwargs = {'image': image.pk,
-                  'link': reverse('assets:pasture-detail',
+        kwargs = {'link': reverse('assets:pasture-detail',
                                   kwargs = {'pk': self.pk})}
         Pasture.objects.filter(pk=self.pk).update(**kwargs)
         return

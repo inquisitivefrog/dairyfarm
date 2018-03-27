@@ -107,17 +107,17 @@ def morning_healthy_routine(cow, dt, user):
     gallons = randint(5, 7)
     TestData.log_milk(gallons, cow, dt, user)
     TestData.log_event('Get milked', cow, dt, user)
+    # dt should be 1-90d > plant_date but will vary by season due to uneven calendar
     pastures = Pasture.objects.filter(fallow=False)
     pasture = pastures[randint(1, len(pastures) - 1)]
-    distance = pasture.id
-    TestData.log_exercise(distance, pasture, cow, dt, user)
+    TestData.log_exercise(pasture, cow, dt, user)
     TestData.log_event('Walk to pasture', cow, dt, user)
     TestData.log_event('Graze', cow, dt, user)
     TestData.log_event('Drink', cow, dt, user)
     TestData.log_event('Chew cud', cow, dt, user)
     TestData.log_event('Nap', cow, dt, user)
     TestData.log_event('Return to barn', cow, dt, user)
-    TestData.log_exercise(distance, pasture, cow, dt, user)
+    TestData.log_exercise(pasture, cow, dt, user)
     return
 
 def morning_ill_routine(cow, dt, user):
@@ -153,8 +153,7 @@ def morning_injured_routine(cow, dt, user):
     TestData.log_event('Get milked', cow, dt, user)
     TestData.log_event('Exercise in pen', cow, dt, user)
     pasture = Pasture.objects.get(region__name='Pen')
-    distance = randint(1, 2)
-    TestData.log_exercise(distance, pasture, cow, dt, user)
+    TestData.log_exercise(pasture, cow, dt, user)
     TestData.log_event('Graze', cow, dt, user)
     TestData.log_event('Drink', cow, dt, user)
     TestData.log_event('Chew cud', cow, dt, user)
@@ -214,9 +213,11 @@ def main():
             daily_routine(cow, date, user, first=True)
         inspected += 1
     if inspected == 1:
-        print('{} inspected {} {}'.format(username, inspected, breed))
+        print('{} {} inspected on {} by {}'.format(inspected, breed, date, username))
+    elif breed.endswith('s'):
+        print('{} {} inspected on {} by {}'.format(inspected, breed, date, username))
     else:
-        print('{} inspected {} {}s'.format(username, inspected, breed))
+        print('{} {}s inspected on {} by {}'.format(inspected, breed, date, username))
     return
 
 if __name__ == '__main__':

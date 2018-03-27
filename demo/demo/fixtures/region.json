@@ -3,91 +3,104 @@
     "model": "assets.region",
     "pk": 1,
     "fields": {
-        "name": "North"
+        "name": "North",
+        "url": "/static/images/regions/north.png"
     }
 },
 {
     "model": "assets.region",
     "pk": 2,
     "fields": {
-        "name": "West"
+        "name": "West",
+        "url": "/static/images/regions/west.png"
     }
 },
 {
     "model": "assets.region",
     "pk": 3,
     "fields": {
-        "name": "South"
+        "name": "South",
+        "url": "/static/images/regions/south.png"
     }
 },
 {
     "model": "assets.region",
     "pk": 4,
     "fields": {
-        "name": "East"
+        "name": "East",
+        "url": "/static/images/regions/east.png"
     }
 },
 {
     "model": "assets.region",
     "pk": 5,
     "fields": {
-        "name": "Central North"
+        "name": "Central North",
+        "url": "/static/images/regions/central_north.png"
     }
 },
 {
     "model": "assets.region",
     "pk": 6,
     "fields": {
-        "name": "Central West"
+        "name": "Central West",
+        "url": "/static/images/regions/central_west.png"
     }
 },
 {
     "model": "assets.region",
     "pk": 7,
     "fields": {
-        "name": "Central South"
+        "name": "Central South",
+        "url": "/static/images/regions/central_south.png"
     }
 },
 {
     "model": "assets.region",
     "pk": 8,
     "fields": {
-        "name": "Central East"
+        "name": "Central East",
+        "url": "/static/images/regions/central_east.png"
     }
 },
 {
     "model": "assets.region",
     "pk": 9,
     "fields": {
-        "name": "North West"
+        "name": "North West",
+        "url": "/static/images/regions/north_west.png"
     }
 },
 {
     "model": "assets.region",
     "pk": 10,
     "fields": {
-        "name": "North East"
+        "name": "North East",
+        "url": "/static/images/regions/north_east.png"
     }
 },
 {
     "model": "assets.region",
     "pk": 11,
     "fields": {
-        "name": "South West"
+        "name": "South West",
+        "url": "/static/images/regions/south_west.png"
     }
 },
 {
     "model": "assets.region",
     "pk": 12,
     "fields": {
-        "name": "South East"
+        "name": "South East",
+        "url": "/static/images/regions/south_east.png"
     }
 },
 {
     "model": "assets.region",
     "pk": 13,
     "fields": {
-        "name": "Pen"
+        "name": "Pen",
+        "url": "/static/images/regions/pen.png"
     }
 }
 ]

@@ -1,0 +1,38 @@
+#!/bin/bash
+
+. ./tools/functions --source-only
+
+export STIME=`date`
+
+# main
+for month in 1 2 3
+do
+    generate_monthly_activity vet 2015 $month
+done
+purchase_cows farmer 2015-03-31 10
+for month in 4 5 6
+do
+    generate_monthly_activity vet 2015 $month
+done
+exit
+
+purchase_cows farmer 2015-05-31 10
+seed_pastures Autumn farmhand 2015
+fallow_pastures Autumn farmhand 2015
+
+for month in 7 8 9
+do
+    generate_monthly_activity vet 2015 $month
+done
+purchase_cows farmer 2015-09-30 10
+seed_pastures Winter farmhand 2015
+fallow_pastures Winter farmhand 2015
+
+for month in 10 11 12
+do
+    generate_monthly_activity vet 2015 $month
+done
+
+export ETIME=`date`
+echo started $STIME
+echo finished $ETIME

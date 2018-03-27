@@ -40,21 +40,6 @@ def load_ages():
         print('Defined age: {}'.format(age))
     return
 
-def load_breedimages():
-    from assets.models import Breed, BreedImage
-    images = {'Holstein': '/static/images/breeds/holstein.png',
-              'Jersey': '/static/images/breeds/jersey.png',
-              'Guernsey': '/static/images/breeds/guernsey.png',
-              'Ayrshire': '/static/images/breeds/ayrshire.png',
-              'Brown Swiss': '/static/images/breeds/brown_swiss.png',
-              'Milking Shorthorn': '/static/images/breeds/milking_shorthorn.png',
-              'Dutch Belted': '/static/images/breeds/dutch_belted.png'}
-    for breed, url in images.items(): 
-        data = {'url': url}
-        BreedImage.objects.create(**data)
-        print('Defined image: {}'.format(url))
-    return
-
 def load_colors():
     from assets.models import Breed, Color
     colors = ['black_white', 'red_white', 'brown', 'tawny', 'golden_white',
@@ -73,8 +58,16 @@ def load_breeds():
               'Brown Swiss': ['brown', 'gray'],
               'Milking Shorthorn': ['red', 'white', 'roan', 'red_white'],
               'Dutch Belted': ['black_white']}
+    images = {'Holstein': '/static/images/breeds/holstein.png',
+              'Jersey': '/static/images/breeds/jersey.png',
+              'Guernsey': '/static/images/breeds/guernsey.png',
+              'Ayrshire': '/static/images/breeds/ayrshire.png',
+              'Brown Swiss': '/static/images/breeds/brown_swiss.png',
+              'Milking Shorthorn': '/static/images/breeds/milking_shorthorn.png',
+              'Dutch Belted': '/static/images/breeds/dutch_belted.png'}
     for breed, colors in breeds.items(): 
-        data = {'name': breed}
+        data = {'name': breed,
+                'url': images[breed]}
         Breed.objects.create(**data)
         print('Defined breed: {} of colors: {}'.format(breed, ', '.join(colors)))
     return
@@ -146,8 +139,11 @@ def load_illnesses():
         print('Defined treatment: {} for diagnosis: {}'.format(treatment, diagnosis))
     return
 
-def load_regionimages():
-    from assets.models import RegionImage
+def load_regions():
+    from assets.models import Region
+    regions = ['North', 'West', 'South', 'East', 'Central North',
+               'Central West', 'Central South', 'Central East',
+               'North West', 'North East', 'South West', 'South East', 'Pen']
     images = {'North': '/static/images/regions/north.png',
               'West': '/static/images/regions/west.png',
               'South': '/static/images/regions/south.png',
@@ -161,30 +157,23 @@ def load_regionimages():
               'South West': '/static/images/regions/south_west.png',
               'South East': '/static/images/regions/south_east.png',
               'Pen': '/static/images/regions/pen.png'}
-    for region, url in images.items(): 
-        data = {'url': url}
-        RegionImage.objects.create(**data)
-        print('Defined regionimage: {} for region: {}'.format(url, region))
-    return
-
-def load_regions():
-    from assets.models import Region
-    regions = ['North', 'West', 'South', 'East', 'Central North',
-               'Central West', 'Central South', 'Central East',
-               'North West', 'North East', 'South West', 'South East', 'Pen']
     for region in regions: 
-        data = {'name': region}
+        data = {'name': region,
+                'url': images[region]}
         Region.objects.create(**data)
         print('Defined region: {}'.format(region))
     return
 
 def load_seasons():
     from assets.models import Season
-    seasons = ['Spring', 'Summer', 'Autumn', 'Winter']
-    for season in seasons: 
-        data = {'name': season}
+    names = ['Spring',
+             'Summer',
+             'Autumn',
+             'Winter']
+    for name in names:
+        data = {'name': name}
         Season.objects.create(**data)
-        print('Defined season: {}'.format(season))
+        print('Defined season: {}'.format(name))
     return
 
 def load_statuses():
@@ -234,7 +223,6 @@ def main():
     setup()
     load_actions()
     load_ages()
-    load_breedimages()
     load_colors()
     load_breeds()
     load_cereal_hay()
@@ -242,7 +230,6 @@ def main():
     load_legume_hay()
     load_injuries()
     load_illnesses()
-    load_regionimages()
     load_regions()
     load_seasons()
     load_statuses()

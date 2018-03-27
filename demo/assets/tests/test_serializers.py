@@ -4,9 +4,9 @@ from django.contrib.auth.models import User
 
 from rest_framework.test import APITestCase
 
-from assets.models import Action, Age, Breed, BreedImage, CerealHay, Color, Cow
+from assets.models import Action, Age, Breed, CerealHay, Color, Cow
 from assets.models import Event, Exercise, GrassHay, HealthRecord, Illness
-from assets.models import Injury, LegumeHay, Milk, Pasture, Region, RegionImage
+from assets.models import Injury, LegumeHay, Milk, Pasture, Region
 from assets.models import Season, Status, Vaccine
 from assets.serializers import CowSerializer, EventReadSerializer
 from assets.serializers import EventWriteSerializer, ExerciseReadSerializer
@@ -18,7 +18,7 @@ from assets.tests.utils import TestData, TestTime
 
 class TestCowSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow']
+    fixtures = ['age', 'breed', 'color', 'user', 'cow']
 
     def setUp(self):
         self._load_cow_data()
@@ -36,14 +36,11 @@ class TestCowSerializer(APITestCase):
         breed = breeds[randint(0, len(breeds) - 1)]
         colors = Color.objects.all()
         color = colors[randint(0, len(colors) - 1)]
-        images = BreedImage.objects.all()
-        image = images[randint(0, len(images) - 1)]
         self.cow_data = {'purchased_by': user,
                          'purchase_date': TestTime.get_purchase_date(),
                          'age': age.name,
                          'breed': breed.name,
-                         'color': color.name,
-                         'image': image.url}
+                         'color': color.name}
 
     def _load_model_data(self):
         user = User.objects.get(username=TestData.get_random_user())
@@ -53,14 +50,11 @@ class TestCowSerializer(APITestCase):
         breed = breeds[randint(0, len(breeds) - 1)]
         colors = Color.objects.all()
         color = colors[randint(0, len(colors) - 1)]
-        images = BreedImage.objects.all()
-        image = images[randint(0, len(images) - 1)]
         self.model_data = {'purchased_by': user,
                            'purchase_date': TestTime.get_purchase_date(),
                            'age': age,
                            'breed': breed,
-                           'color': color,
-                           'image': image}
+                           'color': color}
 
     def test_00_load_fixtures(self):
         ages = Age.objects.all()
@@ -69,9 +63,6 @@ class TestCowSerializer(APITestCase):
         breeds = Breed.objects.all()
         self.assertEqual(7,
                          len(breeds))
-        images = BreedImage.objects.all()
-        self.assertEqual(7,
-                         len(images))
         colors = Color.objects.all()
         self.assertEqual(9,
                          len(colors))
@@ -99,8 +90,6 @@ class TestCowSerializer(APITestCase):
         self.assertIn('breed',
                       actual.data)
         self.assertIn('color',
-                      actual.data)
-        self.assertIn('image',
                       actual.data)
         self.assertIn('link',
                       actual.data)
@@ -132,8 +121,6 @@ class TestCowSerializer(APITestCase):
                           actual.data[i])
             self.assertIn('color',
                           actual.data[i])
-            self.assertIn('image',
-                          actual.data[i])
             self.assertIn('link',
                           actual.data[i])
 
@@ -150,8 +137,6 @@ class TestCowSerializer(APITestCase):
                          '\w')
         self.assertRegex(actual.data['color'],
                          '\w_\w')
-        self.assertRegex(actual.data['image'],
-                         '/static/images/breeds/\w+.png')
 
     def test_04_list(self):
         expected = 10
@@ -177,8 +162,6 @@ class TestCowSerializer(APITestCase):
                           actual.data[i])
             self.assertIn('color',
                           actual.data[i])
-            self.assertIn('image',
-                          actual.data[i])
             self.assertIn('link',
                           actual.data[i])
 
@@ -202,8 +185,6 @@ class TestCowSerializer(APITestCase):
                          actual.data['breed'])
         self.assertEqual(self.cow_data['color'],
                          actual.data['color'])
-        self.assertEqual(self.cow_data['image'],
-                         actual.data['image'])
         self.assertIn('link',
                       actual.data)
 
@@ -212,7 +193,6 @@ class TestCowSerializer(APITestCase):
         self._load_cow_data()
         del self.cow_data['purchase_date']
         del self.cow_data['breed']
-        del self.cow_data['image']
         actual = CowSerializer(cow,
                                data=self.cow_data,
                                partial=True)
@@ -230,14 +210,12 @@ class TestCowSerializer(APITestCase):
                       actual.data)
         self.assertIn('breed',
                       actual.data)
-        self.assertIn('image',
-                      actual.data)
         self.assertIn('link',
                       actual.data)
 
 class TestPastureSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['cerealhay', 'grasshay', 'legumehay', 'region', 'regionimage',
+    fixtures = ['cerealhay', 'grasshay', 'legumehay', 'region',
                 'season', 'user', 'pasture']
 
     def setUp(self):
@@ -256,8 +234,6 @@ class TestPastureSerializer(APITestCase):
         cereal = cereals[randint(0, len(cereals) - 1)]
         grasses = GrassHay.objects.all()
         grass = grasses[randint(0, len(grasses) - 1)]
-        images = RegionImage.objects.all()
-        image = images[randint(0, len(images) - 1)]
         legumes = LegumeHay.objects.all()
         legume = legumes[randint(0, len(legumes) - 1)]
         regions = Region.objects.all()
@@ -266,13 +242,13 @@ class TestPastureSerializer(APITestCase):
         season = seasons[randint(0, len(seasons) - 1)]
         self.pasture_data = {'fallow': fallow,
                              'distance': distance,
+                             'season': season,
+                             'year': TestTime.get_year(),
                              'seeded_by': user,
                              'region': region.name,
-                             'image': image.url,
                              'cereal_hay': cereal.name,
                              'grass_hay': grass.name,
-                             'legume_hay': legume.name,
-                             'season': season.name}
+                             'legume_hay': legume.name}
 
     def _load_model_data(self):
         user = User.objects.get(username=TestData.get_random_user())
@@ -283,8 +259,6 @@ class TestPastureSerializer(APITestCase):
         cereal = cereals[randint(0, len(cereals) - 1)]
         grasses = GrassHay.objects.all()
         grass = grasses[randint(0, len(grasses) - 1)]
-        images = RegionImage.objects.all()
-        image = images[randint(0, len(images) - 1)]
         legumes = LegumeHay.objects.all()
         legume = legumes[randint(0, len(legumes) - 1)]
         regions = Region.objects.all()
@@ -293,13 +267,13 @@ class TestPastureSerializer(APITestCase):
         season = seasons[randint(0, len(seasons) - 1)]
         self.model_data = {'fallow': fallow,
                            'distance': distance,
+                           'season': season,
+                           'year': TestTime.get_year(),
                            'seeded_by': user,
                            'region': region,
-                           'image': image,
                            'cereal_hay': cereal,
                            'grass_hay': grass,
-                           'legume_hay': legume,
-                           'season': season}
+                           'legume_hay': legume}
 
     def test_00_load_fixtures(self):
         cereals = CerealHay.objects.all()
@@ -317,9 +291,6 @@ class TestPastureSerializer(APITestCase):
         regions = Region.objects.all()
         self.assertEqual(13,
                          len(regions))
-        images = RegionImage.objects.all()
-        self.assertEqual(13,
-                         len(images))
         seasons = Season.objects.all()
         self.assertEqual(4,
                          len(seasons))
@@ -339,19 +310,19 @@ class TestPastureSerializer(APITestCase):
                       actual.data)
         self.assertIn('distance',
                       actual.data)
+        self.assertIn('year',
+                      actual.data)
+        self.assertIn('season',
+                      actual.data)
         self.assertIn('seeded_by',
                       actual.data)
         self.assertIn('region',
-                      actual.data)
-        self.assertIn('image',
                       actual.data)
         self.assertIn('cereal_hay',
                       actual.data)
         self.assertIn('grass_hay',
                       actual.data)
         self.assertIn('legume_hay',
-                      actual.data)
-        self.assertIn('season',
                       actual.data)
         self.assertIn('link',
                       actual.data)
@@ -375,21 +346,21 @@ class TestPastureSerializer(APITestCase):
                           actual.data[i])
             self.assertIn('fallow',
                           actual.data[i])
+            self.assertIn('year',
+                          actual.data[i])
+            self.assertIn('season',
+                          actual.data[i])
             self.assertIn('distance',
                           actual.data[i])
             self.assertIn('seeded_by',
                           actual.data[i])
             self.assertIn('region',
                           actual.data[i])
-            self.assertIn('image',
-                          actual.data[i])
             self.assertIn('cereal_hay',
                           actual.data[i])
             self.assertIn('grass_hay',
                           actual.data[i])
             self.assertIn('legume_hay',
-                          actual.data[i])
-            self.assertIn('season',
                           actual.data[i])
             self.assertIn('link',
                           actual.data[i])
@@ -402,17 +373,17 @@ class TestPastureSerializer(APITestCase):
                                 actual.data['distance'])
         self.assertEqual(actual.data['seeded_by'],
                          TestData.get_random_user())
+        self.assertLessEqual(2014,
+                             actual.data['year'])
+        self.assertRegex(actual.data['season'],
+                         '^\w+$')
         self.assertRegex(actual.data['region'],
                          '^\w+$')
-        self.assertRegex(actual.data['image'],
-                         '^/static/images/regions/\w+')
         self.assertRegex(actual.data['cereal_hay'],
                          '^\w+$')
         self.assertRegex(actual.data['grass_hay'],
                          '^\w+$')
         self.assertRegex(actual.data['legume_hay'],
-                         '^\w+$')
-        self.assertRegex(actual.data['season'],
                          '^\w+$')
 
     def test_04_list(self):
@@ -431,21 +402,21 @@ class TestPastureSerializer(APITestCase):
                           actual.data[i])
             self.assertIn('fallow',
                           actual.data[i])
+            self.assertIn('year',
+                          actual.data[i])
+            self.assertIn('season',
+                          actual.data[i])
             self.assertIn('distance',
                           actual.data[i])
             self.assertIn('seeded_by',
                           actual.data[i])
             self.assertIn('region',
                           actual.data[i])
-            self.assertIn('image',
-                          actual.data[i])
             self.assertIn('cereal_hay',
                           actual.data[i])
             self.assertIn('grass_hay',
                           actual.data[i])
             self.assertIn('legume_hay',
-                          actual.data[i])
-            self.assertIn('season',
                           actual.data[i])
             self.assertIn('link',
                           actual.data[i])
@@ -462,29 +433,28 @@ class TestPastureSerializer(APITestCase):
         actual.save()
         self.assertEqual(self.pasture_data['fallow'],
                          actual.data['fallow'])
+        self.assertEqual(self.pasture_data['year'],
+                         actual.data['year'])
+        self.assertEqual(self.pasture_data['season'].name,
+                         actual.data['season'])
         self.assertEqual(self.pasture_data['distance'],
                          actual.data['distance'])
         self.assertEqual(self.pasture_data['seeded_by'].username,
                          actual.data['seeded_by'])
         self.assertEqual(self.pasture_data['region'],
                          actual.data['region'])
-        self.assertEqual(self.pasture_data['image'],
-                         actual.data['image'])
         self.assertEqual(self.pasture_data['cereal_hay'],
                          actual.data['cereal_hay'])
         self.assertEqual(self.pasture_data['grass_hay'],
                          actual.data['grass_hay'])
         self.assertEqual(self.pasture_data['legume_hay'],
                          actual.data['legume_hay'])
-        self.assertEqual(self.pasture_data['season'],
-                         actual.data['season'])
 
     def test_06_partial_update(self):
         pasture = Pasture.objects.get(id=1)
         self._load_pasture_data()
         del self.pasture_data['distance']
         del self.pasture_data['region']
-        del self.pasture_data['season']
         actual = PastureSerializer(pasture,
                                    data=self.pasture_data,
                                    partial=True)
@@ -494,26 +464,26 @@ class TestPastureSerializer(APITestCase):
         actual.save()
         self.assertEqual(self.pasture_data['fallow'],
                          actual.data['fallow'])
+        self.assertEqual(self.pasture_data['year'],
+                         actual.data['year'])
+        self.assertEqual(self.pasture_data['season'].name,
+                         actual.data['season'])
         self.assertEqual(pasture.distance,
                          actual.data['distance'])
         self.assertEqual(self.pasture_data['seeded_by'].username,
                          actual.data['seeded_by'])
         self.assertEqual(pasture.region.name,
                          actual.data['region'])
-        self.assertEqual(self.pasture_data['image'],
-                         actual.data['image'])
         self.assertEqual(self.pasture_data['cereal_hay'],
                          actual.data['cereal_hay'])
         self.assertEqual(self.pasture_data['grass_hay'],
                          actual.data['grass_hay'])
         self.assertEqual(self.pasture_data['legume_hay'],
                          actual.data['legume_hay'])
-        self.assertEqual(pasture.season.name,
-                         actual.data['season'])
 
 class TestEventReadSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow', 'action', 'event']
+    fixtures = ['age', 'breed', 'color', 'user', 'cow', 'action', 'event']
 
     def setUp(self):
         self._load_model_data()
@@ -568,8 +538,6 @@ class TestEventReadSerializer(APITestCase):
                          '\w')
         self.assertRegex(actual.data['cow']['color'],
                          '\w_\w')
-        self.assertRegex(actual.data['cow']['image'],
-                         '/static/images/breeds/\w+\.png')
         self.assertRegex(actual.data['cow']['link'],
                          '/assets/api/cows/\d/')
         self.assertRegex(actual.data['action'],
@@ -607,8 +575,6 @@ class TestEventReadSerializer(APITestCase):
                           actual.data[i]['cow'])
             self.assertIn('color',
                           actual.data[i]['cow'])
-            self.assertIn('image',
-                          actual.data[i]['cow'])
             self.assertIn('link',
                           actual.data[i]['cow'])
             self.assertIn('action',
@@ -618,7 +584,7 @@ class TestEventReadSerializer(APITestCase):
 
 class TestEventWriteSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow',
+    fixtures = ['age', 'breed', 'color', 'user', 'cow',
                 'action', 'event']
 
     def setUp(self):
@@ -729,7 +695,7 @@ class TestEventWriteSerializer(APITestCase):
 
 class TestMilkReadSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow', 'milk']
+    fixtures = ['age', 'breed', 'color', 'user', 'cow', 'milk']
 
     def setUp(self):
         self._load_model_data()
@@ -779,8 +745,6 @@ class TestMilkReadSerializer(APITestCase):
                          '\w')
         self.assertRegex(actual.data['cow']['color'],
                          '\w_\w')
-        self.assertRegex(actual.data['cow']['image'],
-                         '/static/images/breeds/\w+\.png')
         self.assertRegex(actual.data['cow']['link'],
                          '/assets/api/cows/\d/')
         self.assertGreaterEqual(10,
@@ -818,8 +782,6 @@ class TestMilkReadSerializer(APITestCase):
                           actual.data[i]['cow'])
             self.assertIn('color',
                           actual.data[i]['cow'])
-            self.assertIn('image',
-                          actual.data[i]['cow'])
             self.assertIn('link',
                           actual.data[i]['cow'])
             self.assertIn('gallons',
@@ -829,7 +791,7 @@ class TestMilkReadSerializer(APITestCase):
 
 class TestMilkWriteSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow', 'milk']
+    fixtures = ['age', 'breed', 'color', 'user', 'cow', 'milk']
 
     def setUp(self):
         self._load_milk_data()
@@ -934,8 +896,8 @@ class TestMilkWriteSerializer(APITestCase):
 
 class TestExerciseReadSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow',
-                'cerealhay', 'grasshay', 'legumehay', 'region', 'regionimage',
+    fixtures = ['age', 'breed', 'color', 'user', 'cow',
+                'cerealhay', 'grasshay', 'legumehay', 'region',
                 'season', 'pasture', 'exercise']
 
     def setUp(self):
@@ -993,8 +955,6 @@ class TestExerciseReadSerializer(APITestCase):
                          '\w')
         self.assertRegex(actual.data['cow']['color'],
                          '\w_\w')
-        self.assertRegex(actual.data['cow']['image'],
-                         '/static/images/breeds/\w+\.png')
         self.assertRegex(actual.data['cow']['link'],
                          '/assets/api/cows/\d/')
         self.assertLessEqual(1,
@@ -1007,16 +967,12 @@ class TestExerciseReadSerializer(APITestCase):
                          TestData.get_random_user())
         self.assertRegex(actual.data['pasture']['region'],
                          '^\w+')
-        self.assertRegex(actual.data['pasture']['image'],
-                         '^/static/images/regions/\w+')
         self.assertRegex(actual.data['pasture']['cereal_hay'],
                          '^\w+')
         self.assertRegex(actual.data['pasture']['grass_hay'],
                          '^\w+')
         self.assertRegex(actual.data['pasture']['legume_hay'],
                          '^\w+')
-        self.assertRegex(actual.data['pasture']['season'],
-                         '^\w+$')
         self.assertRegex(actual.data['pasture']['link'],
                          '/assets/api/pastures/\d+/')
         self.assertGreaterEqual(10,
@@ -1054,8 +1010,6 @@ class TestExerciseReadSerializer(APITestCase):
                           actual.data[i]['cow'])
             self.assertIn('color',
                           actual.data[i]['cow'])
-            self.assertIn('image',
-                          actual.data[i]['cow'])
             self.assertIn('link',
                           actual.data[i]['cow'])
             self.assertIn('id',
@@ -1066,15 +1020,11 @@ class TestExerciseReadSerializer(APITestCase):
                           actual.data[i]['pasture'])
             self.assertIn('region',
                           actual.data[i]['pasture'])
-            self.assertIn('image',
-                          actual.data[i]['pasture'])
             self.assertIn('cereal_hay',
                           actual.data[i]['pasture'])
             self.assertIn('grass_hay',
                           actual.data[i]['pasture'])
             self.assertIn('legume_hay',
-                          actual.data[i]['pasture'])
-            self.assertIn('season',
                           actual.data[i]['pasture'])
             self.assertIn('link',
                           actual.data[i]['pasture'])
@@ -1085,8 +1035,8 @@ class TestExerciseReadSerializer(APITestCase):
 
 class TestExerciseWriteSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow',
-                'cerealhay', 'grasshay', 'legumehay', 'region', 'regionimage',
+    fixtures = ['age', 'breed', 'color', 'user', 'cow',
+                'cerealhay', 'grasshay', 'legumehay', 'region',
                 'season', 'pasture', 'exercise']
 
     def setUp(self):
@@ -1208,7 +1158,7 @@ class TestExerciseWriteSerializer(APITestCase):
 
 class TestHealthRecordReadSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow',
+    fixtures = ['age', 'breed', 'color', 'user', 'cow',
                 'illness', 'injury', 'status', 'vaccine', 'healthrecord']
 
     def setUp(self):
@@ -1292,8 +1242,6 @@ class TestHealthRecordReadSerializer(APITestCase):
                          '\w')
         self.assertRegex(actual.data['cow']['color'],
                          '\w_\w')
-        self.assertRegex(actual.data['cow']['image'],
-                         '/static/images/breeds/\w+\.png')
         self.assertRegex(actual.data['cow']['link'],
                          '/assets/api/cows/\d/')
         self.assertRegex(str(actual.data['temperature']),
@@ -1349,8 +1297,6 @@ class TestHealthRecordReadSerializer(APITestCase):
                           actual.data[i]['cow'])
             self.assertIn('color',
                           actual.data[i]['cow'])
-            self.assertIn('image',
-                          actual.data[i]['cow'])
             self.assertIn('link',
                           actual.data[i]['cow'])
             self.assertIn('temperature',
@@ -1378,7 +1324,7 @@ class TestHealthRecordReadSerializer(APITestCase):
 
 class TestHealthRecordWriteSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'breedimage', 'color', 'user', 'cow',
+    fixtures = ['age', 'breed', 'color', 'user', 'cow',
                 'illness', 'injury', 'status', 'vaccine', 'healthrecord']
 
     def setUp(self):
@@ -1434,8 +1380,6 @@ class TestHealthRecordWriteSerializer(APITestCase):
 
     def test_01_create_healthy(self):
         actual = HealthRecordWriteSerializer(data=self.hr_data)
-        #print('DEBUG: hr data: {}'.format(self.hr_data))
-        #print('DEBUG: hr fail: {}'.format(actual.errors))
         self.assertTrue(actual.is_valid())
         self.assertEqual(0,
                          len(actual.errors))

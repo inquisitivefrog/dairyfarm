@@ -89,9 +89,9 @@ def _format(key):
     return key
         
 def display_records():
-    from assets.models import Action, Age, Breed, BreedImage, CerealHay
+    from assets.models import Action, Age, Breed, CerealHay
     from assets.models import Color, Cow, GrassHay, Illness
-    from assets.models import Injury, LegumeHay, Region, RegionImage
+    from assets.models import Injury, LegumeHay, Region
     from assets.models import Season, Status, Treatment, Vaccine
     from assets.models import Event, Exercise, HealthRecord, Milk, Pasture
     print('REFERENCES LOADED')
@@ -101,8 +101,6 @@ def display_records():
     print('Total Ages: {}'.format(len(a)))
     b = Breed.objects.all()
     print('Total Breeds: {}'.format(len(b)))
-    b = BreedImage.objects.all()
-    print('Total Breed Images: {}'.format(len(b)))
     c = CerealHay.objects.all()
     print('Total Cereal Hays: {}'.format(len(c)))
     c = Color.objects.all()
@@ -117,8 +115,6 @@ def display_records():
     print('Total Legume Hays: {}'.format(len(l)))
     r = Region.objects.all()
     print('Total Regions: {}'.format(len(r)))
-    i = RegionImage.objects.all()
-    print('Total Region images: {}'.format(len(i)))
     s = Season.objects.all()
     print('Total Seasons: {}'.format(len(s)))
     s = Status.objects.all()
@@ -130,6 +126,7 @@ def display_records():
     return
     
 def display_activity():
+    from itertools import accumulate
     from assets.models import Cow, Event, Exercise, HealthRecord, Milk, Pasture
     print('\nRECENT ACTIVITY')
     c = Cow.objects.all()
@@ -140,8 +137,10 @@ def display_activity():
     print('Total Exercises: {} logged'.format(len(e)))
     hr = HealthRecord.objects.all()
     print('Total Health Records: {} recorded'.format(len(hr)))
-    m = Milk.objects.all()
-    print('Total gallons of Milk: {} collected'.format(len(m)))
+    milk = 0
+    for e in [ m.gallons for m in Milk.objects.all() ]:
+        milk += e
+    print('Total gallons of Milk: {} collected'.format(milk))
     p = Pasture.objects.filter(fallow=False)
     print('Total Pastures: {} available for grazing'.format(len(p)))
     return

@@ -65,30 +65,28 @@ def read_args():
            o.username)
     
 def _get_data(breed, color, date, user):
-    from assets.models import Age, BreedImage, Cow
+    from assets.models import Age, Breed, Cow
     from tools.utils import TestTime
-    ages = [a.name for a in Age.objects.all() ]
+    ages = [ a.name for a in Age.objects.all() ]
     age = ages[randint(0, len(ages) - 1)]
     tmp = []
     for word in breed.split('_'):
        tmp.append(word.capitalize()) 
     b_name = ' '.join(tmp)
-    images = BreedImage.objects.filter(url__contains=breed)
-    i_name = images[0].url
+    breed = Breed.objects.get(name=b_name)
     return {'rfid': uuid4(),
             'purchased_by': user,
             'purchase_date': TestTime.convert_date(date),
             'color': color,
             'age': age,
-            'breed': b_name,
-            'image': i_name}
+            'breed': breed}
 
 def purchase_cow(breed, color, date, username):
     from django.contrib.auth.models import User
-    from assets.serializers import CowSerializer
+    from assets.serializers import CowWriteSerializer
     try:
         user = User.objects.get(username=username)
-        cs = CowSerializer(data=_get_data(breed, color, date, user))
+        cs = CowWriteSerializer(data=_get_data(breed, color, date, user))
         if cs.is_valid() and len(cs.errors) == 0:
             cs.save()
             return
@@ -112,10 +110,12 @@ def main():
     for i in range(quantity):
         purchase_cow(breed, color, date, username)
         bought += 1
-    if bought == 1 or breed.endswith('s'):
-        print('{} purchased {} {} {}'.format(username, bought, color, breed))
+    if bought == 1:
+        print('{} {} {} purchased on {} by {}'.format(bought, color, breed, date, username))
+    elif breed.endswith('s'):
+        print('{} {} {}es purchased on {} by {}'.format(bought, color, breed, date, username))
     else:
-        print('{} purchased {} {} {}s'.format(username, bought, color, breed))
+        print('{} {} {}s purchased on {} by {}'.format(bought, color, breed, date, username))
     return
 
 if __name__ == '__main__':

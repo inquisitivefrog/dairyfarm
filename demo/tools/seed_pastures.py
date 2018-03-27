@@ -50,15 +50,6 @@ def read_args():
                                  'vetch'],
                         default='clover',
                         help='legume planted to make hay')
-    parser.add_argument('-s',
-                        '--season',
-                        type=str,
-                        required=True,
-                        choices=['Spring',
-                                 'Summer',
-                                 'Autumn',
-                                 'Winter'],
-                        help='planting season')
     parser.add_argument('-r',
                         '--region',
                         type=str,
@@ -77,18 +68,30 @@ def read_args():
                                  'South East',
                                  'Pen'],
                         help='field region allocation')
+    parser.add_argument('-s',
+                        '--season',
+                        type=str,
+                        choices=['Spring', 'Summer', 'Autumn', 'Winter'],
+                        required=True,
+                        help='season planted')
     parser.add_argument('-u',
                         '--username',
                         type=str,
                         required=True,
                         help='username of user')
+    parser.add_argument('-y',
+                        '--year',
+                        type=int,
+                        required=True,
+                        help='year planted YYYY')
     o = parser.parse_args()
     return(o.cereal,
            o.grass,
            o.legume,
-           o.season,
            o.region,
-           o.username)
+           o.season,
+           o.username,
+           o.year)
     
 def _convert_name(n):
     prefix = '/static/images/regions/'
@@ -99,29 +102,30 @@ def _convert_name(n):
     new_word = '_'.join(words)
     return prefix + new_word + suffix
 
-def _get_data(cereal_hay, grass_hay, legume_hay, season, region, username):
+def _get_data(cereal_hay, grass_hay, legume_hay, region, season, username, year):
     from django.contrib.auth.models import User
-    from assets.models import RegionImage
+    from tools.utils import TestTime
     user = User.objects.get(username=username)
-    image = RegionImage.objects.get(url__contains=_convert_name(region)) 
     return {'seeded_by': user,
             'cereal_hay': cereal_hay,
+            'year': year,
+            'season': season,
             'grass_hay': grass_hay,
             'legume_hay': legume_hay,
-            'region': region,
-            'image': image,
-            'season': season}
+            'region': region}
 
-def plant_pasture(cereal_hay, grass_hay, legume_hay, season, region, username):
+def plant_pasture(cereal_hay, grass_hay, legume_hay, region, season, username, year):
     from assets.serializers import PastureSerializer
     try:
-        ps = PastureSerializer(data=_get_data(cereal_hay, grass_hay, legume_hay, season, region, username))
+        ps = PastureSerializer(data=_get_data(cereal_hay, grass_hay, legume_hay,
+                               region, season, username, year))
         if ps.is_valid() and len(ps.errors) == 0:
             ps.save()
             msg_1 = '{} planted {}, {} '.format(username, cereal_hay, grass_hay)
-            msg_2 = 'and {} in region {} for {} season'.format(legume_hay,
-                                                               region,
-                                                               season)
+            msg_2 = 'and {} in region {} for {} {}'.format(legume_hay,
+                                                           region,
+                                                           season,
+                                                           year)
             print(msg_1 + msg_2) 
             return
         else:
@@ -139,7 +143,7 @@ def plant_pasture(cereal_hay, grass_hay, legume_hay, season, region, username):
         exit(1)
 
 def main():
-    (cereal_hay, grass_hay, legume_hay, season, region, username) = read_args()
+    (cereal_hay, grass_hay, legume_hay, region, season, username, year) = read_args()
     path.append('/Users/tim/Documents/workspace/python3/dairyfarm/demo/')
     environ.setdefault('DJANGO_SETTINGS_MODULE',
                        'demo.settings')
@@ -147,9 +151,10 @@ def main():
     plant_pasture(cereal_hay,
                   grass_hay,
                   legume_hay,
-                  season,
                   region,
-                  username)
+                  season,
+                  username,
+                  year)
     return
 
 if __name__ == '__main__':
