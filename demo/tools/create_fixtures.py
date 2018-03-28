@@ -29,8 +29,8 @@ def get_db_tables():
                  'legumehay.json': 'assets.legumehay',
                  'milk.json': 'assets.milk',
                  'pasture.json': 'assets.pasture',
-                 'region.json': 'assets.region',
                  'season.json': 'assets.season',
+                 'seed.json': 'assets.seed',
                  'status.json': 'assets.status',
                  'treatment.json': 'assets.treatment',
                  'vaccine.json': 'assets.vaccine'}

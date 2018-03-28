@@ -1,0 +1,142 @@
+[
+{
+    "model": "assets.seed",
+    "pk": 1,
+    "fields": {
+        "seeded_by": 2,
+        "year": 2015,
+        "season": 1,
+        "pasture": 1,
+        "cereal_hay": 1,
+        "grass_hay": 1,
+        "legume_hay": 1,
+        "link": "/assets/api/seeds/1/"
+    }
+},
+{
+    "model": "assets.seed",
+    "pk": 2,
+    "fields": {
+        "seeded_by": 2,
+        "year": 2015,
+        "season": 1,
+        "pasture": 2,
+        "cereal_hay": 2,
+        "grass_hay": 2,
+        "legume_hay": 2,
+        "link": "/assets/api/seeds/2/"
+    }
+},
+{
+    "model": "assets.seed",
+    "pk": 3,
+    "fields": {
+        "seeded_by": 2,
+        "year": 2015,
+        "season": 1,
+        "pasture": 3,
+        "cereal_hay": 3,
+        "grass_hay": 3,
+        "legume_hay": 3,
+        "link": "/assets/api/seeds/3/"
+    }
+},
+{
+    "model": "assets.seed",
+    "pk": 4,
+    "fields": {
+        "seeded_by": 2,
+        "year": 2015,
+        "season": 1,
+        "pasture": 4,
+        "cereal_hay": 4,
+        "grass_hay": 4,
+        "legume_hay": 4,
+        "link": "/assets/api/seeds/4/"
+    }
+},
+{
+    "model": "assets.seed",
+    "pk": 5,
+    "fields": {
+        "seeded_by": 2,
+        "year": 2015,
+        "season": 1,
+        "pasture": 5,
+        "cereal_hay": 5,
+        "grass_hay": 5,
+        "legume_hay": 5,
+        "link": "/assets/api/seeds/5/"
+    }
+},
+{
+    "model": "assets.seed",
+    "pk": 6,
+    "fields": {
+        "seeded_by": 2,
+        "year": 2015,
+        "season": 1,
+        "pasture": 6,
+        "cereal_hay": 1,
+        "grass_hay": 6,
+        "legume_hay": 6,
+        "link": "/assets/api/seeds/6/"
+    }
+},
+{
+    "model": "assets.seed",
+    "pk": 7,
+    "fields": {
+        "seeded_by": 2,
+        "year": 2015,
+        "season": 1,
+        "pasture": 7,
+        "cereal_hay": 2,
+        "grass_hay": 7,
+        "legume_hay": 1,
+        "link": "/assets/api/seeds/7/"
+    }
+},
+{
+    "model": "assets.seed",
+    "pk": 8,
+    "fields": {
+        "seeded_by": 2,
+        "year": 2015,
+        "season": 1,
+        "pasture": 8,
+        "cereal_hay": 3,
+        "grass_hay": 8,
+        "legume_hay": 2,
+        "link": "/assets/api/seeds/8/"
+    }
+},
+{
+    "model": "assets.seed",
+    "pk": 9,
+    "fields": {
+        "seeded_by": 2,
+        "year": 2015,
+        "season": 1,
+        "pasture": 9,
+        "cereal_hay": 4,
+        "grass_hay": 9,
+        "legume_hay": 3,
+        "link": "/assets/api/seeds/9/"
+    }
+},
+{
+    "model": "assets.seed",
+    "pk": 10,
+    "fields": {
+        "seeded_by": 2,
+        "year": 2015,
+        "season": 1,
+        "pasture": 10,
+        "cereal_hay": 5,
+        "grass_hay": 1,
+        "legume_hay": 4,
+        "link": "/assets/api/seeds/10/"
+    }
+}
+]

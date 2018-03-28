@@ -68,7 +68,7 @@ def evening_healthy_routine(cow, dt, user):
     return
 
 def evening_ill_routine(cow, dt, user):
-    from assets.models import Treatment
+    from assets.models import Vaccine
     from tools.utils import TestData
 
     data = TestData.get_ill_cow_data(cow, dt, user)
@@ -76,9 +76,6 @@ def evening_ill_routine(cow, dt, user):
     TestData.log_event('Call Vet', cow, dt, user)
     TestData.log_event('Get diagnosed', cow, dt, user)
     TestData.log_event('Get treated', cow, dt, user)
-    treatment_id = randint(1, len(Treatment.objects.all()) - 1)
-    treatment = Treatment.objects.get(pk=treatment_id)
-    TestData.log_vaccination(treatment.name, cow, dt, user)
     TestData.log_event('Sleep', cow, dt, user)
     return
 
@@ -121,7 +118,7 @@ def morning_healthy_routine(cow, dt, user):
     return
 
 def morning_ill_routine(cow, dt, user):
-    from assets.models import Treatment
+    from assets.models import Vaccine
     from tools.utils import TestData
 
     data = TestData.get_ill_cow_data(cow, dt, user)
@@ -129,9 +126,6 @@ def morning_ill_routine(cow, dt, user):
     TestData.log_event('Call Vet', cow, dt, user)
     TestData.log_event('Get diagnosed', cow, dt, user)
     TestData.log_event('Get treated', cow, dt, user)
-    treatment_id = randint(1, len(Treatment.objects.all()) - 1)
-    treatment = Treatment.objects.get(pk=treatment_id)
-    TestData.log_vaccination(treatment.name, cow, dt, user)
     TestData.log_event('Rest in pen', cow, dt, user)
     TestData.log_event('Graze', cow, dt, user)
     TestData.log_event('Drink', cow, dt, user)
@@ -152,7 +146,7 @@ def morning_injured_routine(cow, dt, user):
     TestData.log_milk(gallons, cow, dt, user)
     TestData.log_event('Get milked', cow, dt, user)
     TestData.log_event('Exercise in pen', cow, dt, user)
-    pasture = Pasture.objects.get(region__name='Pen')
+    pasture = Pasture.objects.get(name='Pen')
     TestData.log_exercise(pasture, cow, dt, user)
     TestData.log_event('Graze', cow, dt, user)
     TestData.log_event('Drink', cow, dt, user)

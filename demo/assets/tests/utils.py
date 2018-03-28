@@ -37,6 +37,10 @@ class TestData:
         return 'Hill'
 
     @classmethod
+    def get_pastureimage(cls):
+        return '/static/images/regions/hill.jpg'
+
+    @classmethod
     def get_region(cls):
         return 'Dead Center'
 

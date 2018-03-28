@@ -570,54 +570,54 @@
     "model": "auth.permission",
     "pk": 64,
     "fields": {
-        "name": "Can add region",
+        "name": "Can add season",
         "content_type": 22,
-        "codename": "add_region"
+        "codename": "add_season"
     }
 },
 {
     "model": "auth.permission",
     "pk": 65,
     "fields": {
-        "name": "Can change region",
+        "name": "Can change season",
         "content_type": 22,
-        "codename": "change_region"
+        "codename": "change_season"
     }
 },
 {
     "model": "auth.permission",
     "pk": 66,
     "fields": {
-        "name": "Can delete region",
+        "name": "Can delete season",
         "content_type": 22,
-        "codename": "delete_region"
+        "codename": "delete_season"
     }
 },
 {
     "model": "auth.permission",
     "pk": 67,
     "fields": {
-        "name": "Can add season",
+        "name": "Can add seed",
         "content_type": 23,
-        "codename": "add_season"
+        "codename": "add_seed"
     }
 },
 {
     "model": "auth.permission",
     "pk": 68,
     "fields": {
-        "name": "Can change season",
+        "name": "Can change seed",
         "content_type": 23,
-        "codename": "change_season"
+        "codename": "change_seed"
     }
 },
 {
     "model": "auth.permission",
     "pk": 69,
     "fields": {
-        "name": "Can delete season",
+        "name": "Can delete seed",
         "content_type": 23,
-        "codename": "delete_season"
+        "codename": "delete_seed"
     }
 },
 {

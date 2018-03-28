@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:33.942Z",
+        "milking_time": "2015-01-01T04:00:00Z",
         "cow": 1,
         "gallons": 7,
         "link": "/assets/api/milk/1/"
@@ -15,9 +15,9 @@
     "pk": 2,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:34.047Z",
+        "milking_time": "2015-01-01T16:00:00Z",
         "cow": 1,
-        "gallons": 5,
+        "gallons": 7,
         "link": "/assets/api/milk/2/"
     }
 },
@@ -26,9 +26,9 @@
     "pk": 3,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:34.116Z",
-        "cow": 2,
-        "gallons": 0,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 3,
+        "gallons": 6,
         "link": "/assets/api/milk/3/"
     }
 },
@@ -37,9 +37,9 @@
     "pk": 4,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:34.185Z",
-        "cow": 2,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 3,
+        "gallons": 5,
         "link": "/assets/api/milk/4/"
     }
 },
@@ -48,8 +48,8 @@
     "pk": 5,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:34.229Z",
-        "cow": 3,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 5,
         "gallons": 7,
         "link": "/assets/api/milk/5/"
     }
@@ -59,9 +59,9 @@
     "pk": 6,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:34.332Z",
-        "cow": 3,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 5,
+        "gallons": 7,
         "link": "/assets/api/milk/6/"
     }
 },
@@ -70,9 +70,9 @@
     "pk": 7,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:34.375Z",
-        "cow": 4,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 7,
+        "gallons": 5,
         "link": "/assets/api/milk/7/"
     }
 },
@@ -81,8 +81,8 @@
     "pk": 8,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:34.480Z",
-        "cow": 4,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 7,
         "gallons": 5,
         "link": "/assets/api/milk/8/"
     }
@@ -92,9 +92,9 @@
     "pk": 9,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:34.527Z",
-        "cow": 5,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 9,
+        "gallons": 6,
         "link": "/assets/api/milk/9/"
     }
 },
@@ -103,8 +103,8 @@
     "pk": 10,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:34.628Z",
-        "cow": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 9,
         "gallons": 7,
         "link": "/assets/api/milk/10/"
     }
@@ -114,9 +114,9 @@
     "pk": 11,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:34.673Z",
-        "cow": 6,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 11,
+        "gallons": 5,
         "link": "/assets/api/milk/11/"
     }
 },
@@ -125,9 +125,9 @@
     "pk": 12,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:34.793Z",
-        "cow": 6,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 11,
+        "gallons": 7,
         "link": "/assets/api/milk/12/"
     }
 },
@@ -136,9 +136,9 @@
     "pk": 13,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:34.860Z",
-        "cow": 7,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 13,
+        "gallons": 5,
         "link": "/assets/api/milk/13/"
     }
 },
@@ -147,9 +147,9 @@
     "pk": 14,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:34.946Z",
-        "cow": 7,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 13,
+        "gallons": 6,
         "link": "/assets/api/milk/14/"
     }
 },
@@ -158,8 +158,8 @@
     "pk": 15,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:34.994Z",
-        "cow": 8,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 15,
         "gallons": 6,
         "link": "/assets/api/milk/15/"
     }
@@ -169,8 +169,8 @@
     "pk": 16,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:35.100Z",
-        "cow": 8,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 15,
         "gallons": 5,
         "link": "/assets/api/milk/16/"
     }
@@ -180,9 +180,9 @@
     "pk": 17,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:35.143Z",
-        "cow": 9,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 17,
+        "gallons": 5,
         "link": "/assets/api/milk/17/"
     }
 },
@@ -191,9 +191,9 @@
     "pk": 18,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:35.254Z",
-        "cow": 9,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 19,
+        "gallons": 5,
         "link": "/assets/api/milk/18/"
     }
 },
@@ -202,8 +202,8 @@
     "pk": 19,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:35.319Z",
-        "cow": 10,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 19,
         "gallons": 7,
         "link": "/assets/api/milk/19/"
     }
@@ -213,9 +213,9 @@
     "pk": 20,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:35.409Z",
-        "cow": 10,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 2,
+        "gallons": 6,
         "link": "/assets/api/milk/20/"
     }
 },
@@ -224,9 +224,9 @@
     "pk": 21,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:35.918Z",
-        "cow": 11,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 2,
+        "gallons": 7,
         "link": "/assets/api/milk/21/"
     }
 },
@@ -235,8 +235,8 @@
     "pk": 22,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:36.022Z",
-        "cow": 11,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 4,
         "gallons": 7,
         "link": "/assets/api/milk/22/"
     }
@@ -246,8 +246,8 @@
     "pk": 23,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:36.069Z",
-        "cow": 12,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 4,
         "gallons": 5,
         "link": "/assets/api/milk/23/"
     }
@@ -257,9 +257,9 @@
     "pk": 24,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:36.176Z",
-        "cow": 12,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 6,
+        "gallons": 5,
         "link": "/assets/api/milk/24/"
     }
 },
@@ -268,8 +268,8 @@
     "pk": 25,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:36.226Z",
-        "cow": 13,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 6,
         "gallons": 5,
         "link": "/assets/api/milk/25/"
     }
@@ -279,8 +279,8 @@
     "pk": 26,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:36.333Z",
-        "cow": 13,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 8,
         "gallons": 6,
         "link": "/assets/api/milk/26/"
     }
@@ -290,9 +290,9 @@
     "pk": 27,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:36.384Z",
-        "cow": 14,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 8,
+        "gallons": 5,
         "link": "/assets/api/milk/27/"
     }
 },
@@ -301,9 +301,9 @@
     "pk": 28,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:36.495Z",
-        "cow": 14,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 10,
+        "gallons": 5,
         "link": "/assets/api/milk/28/"
     }
 },
@@ -312,8 +312,8 @@
     "pk": 29,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:36.546Z",
-        "cow": 15,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 10,
         "gallons": 6,
         "link": "/assets/api/milk/29/"
     }
@@ -323,9 +323,9 @@
     "pk": 30,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:36.656Z",
-        "cow": 15,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 12,
+        "gallons": 7,
         "link": "/assets/api/milk/30/"
     }
 },
@@ -334,9 +334,9 @@
     "pk": 31,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:36.703Z",
-        "cow": 16,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 12,
+        "gallons": 6,
         "link": "/assets/api/milk/31/"
     }
 },
@@ -345,9 +345,9 @@
     "pk": 32,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:36.804Z",
-        "cow": 16,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 14,
+        "gallons": 5,
         "link": "/assets/api/milk/32/"
     }
 },
@@ -356,9 +356,9 @@
     "pk": 33,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:36.848Z",
-        "cow": 17,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 14,
+        "gallons": 5,
         "link": "/assets/api/milk/33/"
     }
 },
@@ -367,8 +367,8 @@
     "pk": 34,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:36.978Z",
-        "cow": 17,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 16,
         "gallons": 6,
         "link": "/assets/api/milk/34/"
     }
@@ -378,8 +378,8 @@
     "pk": 35,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:37.034Z",
-        "cow": 18,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 16,
         "gallons": 5,
         "link": "/assets/api/milk/35/"
     }
@@ -389,9 +389,9 @@
     "pk": 36,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:37.149Z",
+        "milking_time": "2015-01-01T04:00:00Z",
         "cow": 18,
-        "gallons": 7,
+        "gallons": 6,
         "link": "/assets/api/milk/36/"
     }
 },
@@ -400,9 +400,9 @@
     "pk": 37,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:37.200Z",
-        "cow": 19,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 18,
+        "gallons": 5,
         "link": "/assets/api/milk/37/"
     }
 },
@@ -411,9 +411,9 @@
     "pk": 38,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:37.305Z",
-        "cow": 19,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 20,
+        "gallons": 5,
         "link": "/assets/api/milk/38/"
     }
 },
@@ -422,9 +422,9 @@
     "pk": 39,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:37.351Z",
+        "milking_time": "2015-01-01T16:00:00Z",
         "cow": 20,
-        "gallons": 5,
+        "gallons": 7,
         "link": "/assets/api/milk/39/"
     }
 },
@@ -433,9 +433,9 @@
     "pk": 40,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:37.464Z",
-        "cow": 20,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 21,
+        "gallons": 5,
         "link": "/assets/api/milk/40/"
     }
 },
@@ -444,7 +444,7 @@
     "pk": 41,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:37.983Z",
+        "milking_time": "2015-01-01T16:00:00Z",
         "cow": 21,
         "gallons": 7,
         "link": "/assets/api/milk/41/"
@@ -455,8 +455,8 @@
     "pk": 42,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:38.089Z",
-        "cow": 21,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 23,
         "gallons": 7,
         "link": "/assets/api/milk/42/"
     }
@@ -466,8 +466,8 @@
     "pk": 43,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:38.140Z",
-        "cow": 22,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 23,
         "gallons": 7,
         "link": "/assets/api/milk/43/"
     }
@@ -477,9 +477,9 @@
     "pk": 44,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:38.251Z",
-        "cow": 22,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 25,
+        "gallons": 6,
         "link": "/assets/api/milk/44/"
     }
 },
@@ -488,9 +488,9 @@
     "pk": 45,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:38.303Z",
-        "cow": 23,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 25,
+        "gallons": 6,
         "link": "/assets/api/milk/45/"
     }
 },
@@ -499,8 +499,8 @@
     "pk": 46,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:38.411Z",
-        "cow": 23,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 27,
         "gallons": 5,
         "link": "/assets/api/milk/46/"
     }
@@ -510,9 +510,9 @@
     "pk": 47,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:38.453Z",
-        "cow": 24,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 27,
+        "gallons": 7,
         "link": "/assets/api/milk/47/"
     }
 },
@@ -521,8 +521,8 @@
     "pk": 48,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:38.559Z",
-        "cow": 24,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 29,
         "gallons": 6,
         "link": "/assets/api/milk/48/"
     }
@@ -532,9 +532,9 @@
     "pk": 49,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:38.598Z",
-        "cow": 25,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 29,
+        "gallons": 7,
         "link": "/assets/api/milk/49/"
     }
 },
@@ -543,9 +543,9 @@
     "pk": 50,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:38.706Z",
-        "cow": 25,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 31,
+        "gallons": 6,
         "link": "/assets/api/milk/50/"
     }
 },
@@ -554,9 +554,9 @@
     "pk": 51,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:38.752Z",
-        "cow": 26,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 31,
+        "gallons": 5,
         "link": "/assets/api/milk/51/"
     }
 },
@@ -565,8 +565,8 @@
     "pk": 52,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:38.868Z",
-        "cow": 26,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 33,
         "gallons": 5,
         "link": "/assets/api/milk/52/"
     }
@@ -576,8 +576,8 @@
     "pk": 53,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:38.913Z",
-        "cow": 27,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 33,
         "gallons": 7,
         "link": "/assets/api/milk/53/"
     }
@@ -587,9 +587,9 @@
     "pk": 54,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:39.022Z",
-        "cow": 27,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 35,
+        "gallons": 6,
         "link": "/assets/api/milk/54/"
     }
 },
@@ -598,9 +598,9 @@
     "pk": 55,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:39.090Z",
-        "cow": 28,
-        "gallons": 0,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 35,
+        "gallons": 7,
         "link": "/assets/api/milk/55/"
     }
 },
@@ -609,9 +609,9 @@
     "pk": 56,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:39.190Z",
-        "cow": 28,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 37,
+        "gallons": 7,
         "link": "/assets/api/milk/56/"
     }
 },
@@ -620,8 +620,8 @@
     "pk": 57,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:39.259Z",
-        "cow": 29,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 37,
         "gallons": 5,
         "link": "/assets/api/milk/57/"
     }
@@ -631,9 +631,9 @@
     "pk": 58,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:39.370Z",
-        "cow": 29,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 39,
+        "gallons": 6,
         "link": "/assets/api/milk/58/"
     }
 },
@@ -642,9 +642,9 @@
     "pk": 59,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:39.421Z",
-        "cow": 30,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 39,
+        "gallons": 6,
         "link": "/assets/api/milk/59/"
     }
 },
@@ -653,8 +653,8 @@
     "pk": 60,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:39.538Z",
-        "cow": 30,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 22,
         "gallons": 7,
         "link": "/assets/api/milk/60/"
     }
@@ -664,8 +664,8 @@
     "pk": 61,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:40.043Z",
-        "cow": 31,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 22,
         "gallons": 5,
         "link": "/assets/api/milk/61/"
     }
@@ -675,9 +675,9 @@
     "pk": 62,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:40.142Z",
-        "cow": 31,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 24,
+        "gallons": 5,
         "link": "/assets/api/milk/62/"
     }
 },
@@ -686,8 +686,8 @@
     "pk": 63,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:40.192Z",
-        "cow": 32,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 24,
         "gallons": 7,
         "link": "/assets/api/milk/63/"
     }
@@ -697,8 +697,8 @@
     "pk": 64,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:40.299Z",
-        "cow": 32,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 26,
         "gallons": 7,
         "link": "/assets/api/milk/64/"
     }
@@ -708,9 +708,9 @@
     "pk": 65,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:40.365Z",
-        "cow": 33,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 26,
+        "gallons": 6,
         "link": "/assets/api/milk/65/"
     }
 },
@@ -719,8 +719,8 @@
     "pk": 66,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:40.455Z",
-        "cow": 33,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 28,
         "gallons": 5,
         "link": "/assets/api/milk/66/"
     }
@@ -730,9 +730,9 @@
     "pk": 67,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:40.497Z",
-        "cow": 34,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 28,
+        "gallons": 6,
         "link": "/assets/api/milk/67/"
     }
 },
@@ -741,9 +741,9 @@
     "pk": 68,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:40.593Z",
-        "cow": 34,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 30,
+        "gallons": 5,
         "link": "/assets/api/milk/68/"
     }
 },
@@ -752,9 +752,9 @@
     "pk": 69,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:40.633Z",
-        "cow": 35,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 30,
+        "gallons": 6,
         "link": "/assets/api/milk/69/"
     }
 },
@@ -763,8 +763,8 @@
     "pk": 70,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:40.748Z",
-        "cow": 35,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 32,
         "gallons": 6,
         "link": "/assets/api/milk/70/"
     }
@@ -774,8 +774,8 @@
     "pk": 71,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:40.817Z",
-        "cow": 36,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 32,
         "gallons": 7,
         "link": "/assets/api/milk/71/"
     }
@@ -785,8 +785,8 @@
     "pk": 72,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:40.903Z",
-        "cow": 36,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 34,
         "gallons": 5,
         "link": "/assets/api/milk/72/"
     }
@@ -796,9 +796,9 @@
     "pk": 73,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:40.971Z",
-        "cow": 37,
-        "gallons": 0,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 34,
+        "gallons": 7,
         "link": "/assets/api/milk/73/"
     }
 },
@@ -807,8 +807,8 @@
     "pk": 74,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:41.039Z",
-        "cow": 37,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 36,
         "gallons": 6,
         "link": "/assets/api/milk/74/"
     }
@@ -818,8 +818,8 @@
     "pk": 75,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:41.089Z",
-        "cow": 38,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 36,
         "gallons": 6,
         "link": "/assets/api/milk/75/"
     }
@@ -829,7 +829,7 @@
     "pk": 76,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:41.197Z",
+        "milking_time": "2015-01-01T04:00:00Z",
         "cow": 38,
         "gallons": 5,
         "link": "/assets/api/milk/76/"
@@ -840,9 +840,9 @@
     "pk": 77,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:41.264Z",
-        "cow": 39,
-        "gallons": 0,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 38,
+        "gallons": 6,
         "link": "/assets/api/milk/77/"
     }
 },
@@ -851,9 +851,9 @@
     "pk": 78,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:41.338Z",
-        "cow": 39,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 40,
+        "gallons": 6,
         "link": "/assets/api/milk/78/"
     }
 },
@@ -862,7 +862,7 @@
     "pk": 79,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:41.384Z",
+        "milking_time": "2015-01-01T16:00:00Z",
         "cow": 40,
         "gallons": 5,
         "link": "/assets/api/milk/79/"
@@ -873,9 +873,9 @@
     "pk": 80,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:41.497Z",
-        "cow": 40,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 41,
+        "gallons": 7,
         "link": "/assets/api/milk/80/"
     }
 },
@@ -884,9 +884,9 @@
     "pk": 81,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:42.008Z",
+        "milking_time": "2015-01-01T16:00:00Z",
         "cow": 41,
-        "gallons": 6,
+        "gallons": 5,
         "link": "/assets/api/milk/81/"
     }
 },
@@ -895,9 +895,9 @@
     "pk": 82,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:42.124Z",
-        "cow": 41,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 42,
+        "gallons": 7,
         "link": "/assets/api/milk/82/"
     }
 },
@@ -906,9 +906,9 @@
     "pk": 83,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:42.176Z",
+        "milking_time": "2015-01-01T16:00:00Z",
         "cow": 42,
-        "gallons": 7,
+        "gallons": 6,
         "link": "/assets/api/milk/83/"
     }
 },
@@ -917,9 +917,9 @@
     "pk": 84,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:42.302Z",
-        "cow": 42,
-        "gallons": 0,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 43,
+        "gallons": 6,
         "link": "/assets/api/milk/84/"
     }
 },
@@ -928,7 +928,7 @@
     "pk": 85,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:42.356Z",
+        "milking_time": "2015-01-01T16:00:00Z",
         "cow": 43,
         "gallons": 6,
         "link": "/assets/api/milk/85/"
@@ -939,8 +939,8 @@
     "pk": 86,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:42.470Z",
-        "cow": 43,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 44,
         "gallons": 7,
         "link": "/assets/api/milk/86/"
     }
@@ -950,7 +950,7 @@
     "pk": 87,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:42.518Z",
+        "milking_time": "2015-01-01T16:00:00Z",
         "cow": 44,
         "gallons": 7,
         "link": "/assets/api/milk/87/"
@@ -961,9 +961,9 @@
     "pk": 88,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:42.627Z",
-        "cow": 44,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 45,
+        "gallons": 7,
         "link": "/assets/api/milk/88/"
     }
 },
@@ -972,9 +972,9 @@
     "pk": 89,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:42.696Z",
-        "cow": 45,
-        "gallons": 0,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 46,
+        "gallons": 5,
         "link": "/assets/api/milk/89/"
     }
 },
@@ -983,9 +983,9 @@
     "pk": 90,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:42.767Z",
-        "cow": 45,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 46,
+        "gallons": 7,
         "link": "/assets/api/milk/90/"
     }
 },
@@ -994,9 +994,9 @@
     "pk": 91,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:42.815Z",
-        "cow": 46,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 47,
+        "gallons": 7,
         "link": "/assets/api/milk/91/"
     }
 },
@@ -1005,9 +1005,9 @@
     "pk": 92,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:42.919Z",
-        "cow": 46,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 47,
+        "gallons": 5,
         "link": "/assets/api/milk/92/"
     }
 },
@@ -1016,8 +1016,8 @@
     "pk": 93,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:42.970Z",
-        "cow": 47,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 48,
         "gallons": 5,
         "link": "/assets/api/milk/93/"
     }
@@ -1027,9 +1027,9 @@
     "pk": 94,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:43.077Z",
-        "cow": 47,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 48,
+        "gallons": 7,
         "link": "/assets/api/milk/94/"
     }
 },
@@ -1038,8 +1038,8 @@
     "pk": 95,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:43.123Z",
-        "cow": 48,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 49,
         "gallons": 7,
         "link": "/assets/api/milk/95/"
     }
@@ -1049,9 +1049,9 @@
     "pk": 96,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:43.240Z",
-        "cow": 48,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 50,
+        "gallons": 5,
         "link": "/assets/api/milk/96/"
     }
 },
@@ -1060,8 +1060,8 @@
     "pk": 97,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:43.287Z",
-        "cow": 49,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 50,
         "gallons": 5,
         "link": "/assets/api/milk/97/"
     }
@@ -1071,9 +1071,9 @@
     "pk": 98,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:43.402Z",
-        "cow": 49,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 51,
+        "gallons": 5,
         "link": "/assets/api/milk/98/"
     }
 },
@@ -1082,9 +1082,9 @@
     "pk": 99,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:43.452Z",
-        "cow": 50,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 51,
+        "gallons": 6,
         "link": "/assets/api/milk/99/"
     }
 },
@@ -1093,9 +1093,9 @@
     "pk": 100,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:43.554Z",
-        "cow": 50,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 52,
+        "gallons": 5,
         "link": "/assets/api/milk/100/"
     }
 },
@@ -1104,9 +1104,9 @@
     "pk": 101,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:44.055Z",
-        "cow": 51,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 52,
+        "gallons": 7,
         "link": "/assets/api/milk/101/"
     }
 },
@@ -1115,8 +1115,8 @@
     "pk": 102,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:44.153Z",
-        "cow": 51,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 53,
         "gallons": 6,
         "link": "/assets/api/milk/102/"
     }
@@ -1126,9 +1126,9 @@
     "pk": 103,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:44.203Z",
-        "cow": 52,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 53,
+        "gallons": 5,
         "link": "/assets/api/milk/103/"
     }
 },
@@ -1137,9 +1137,9 @@
     "pk": 104,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:44.309Z",
-        "cow": 52,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 54,
+        "gallons": 7,
         "link": "/assets/api/milk/104/"
     }
 },
@@ -1148,9 +1148,9 @@
     "pk": 105,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:44.360Z",
-        "cow": 53,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 54,
+        "gallons": 6,
         "link": "/assets/api/milk/105/"
     }
 },
@@ -1159,9 +1159,9 @@
     "pk": 106,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:44.482Z",
-        "cow": 53,
-        "gallons": 0,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 55,
+        "gallons": 5,
         "link": "/assets/api/milk/106/"
     }
 },
@@ -1170,9 +1170,9 @@
     "pk": 107,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:44.531Z",
-        "cow": 54,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 55,
+        "gallons": 7,
         "link": "/assets/api/milk/107/"
     }
 },
@@ -1181,9 +1181,9 @@
     "pk": 108,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:44.643Z",
-        "cow": 54,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 56,
+        "gallons": 6,
         "link": "/assets/api/milk/108/"
     }
 },
@@ -1192,9 +1192,9 @@
     "pk": 109,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:44.694Z",
-        "cow": 55,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 56,
+        "gallons": 7,
         "link": "/assets/api/milk/109/"
     }
 },
@@ -1203,8 +1203,8 @@
     "pk": 110,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:44.806Z",
-        "cow": 55,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 57,
         "gallons": 5,
         "link": "/assets/api/milk/110/"
     }
@@ -1214,8 +1214,8 @@
     "pk": 111,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:44.855Z",
-        "cow": 56,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 57,
         "gallons": 7,
         "link": "/assets/api/milk/111/"
     }
@@ -1225,9 +1225,9 @@
     "pk": 112,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:44.967Z",
-        "cow": 56,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 58,
+        "gallons": 7,
         "link": "/assets/api/milk/112/"
     }
 },
@@ -1236,9 +1236,9 @@
     "pk": 113,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:45.011Z",
-        "cow": 57,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 58,
+        "gallons": 7,
         "link": "/assets/api/milk/113/"
     }
 },
@@ -1247,9 +1247,9 @@
     "pk": 114,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:45.124Z",
-        "cow": 57,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 59,
+        "gallons": 6,
         "link": "/assets/api/milk/114/"
     }
 },
@@ -1258,8 +1258,8 @@
     "pk": 115,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:45.169Z",
-        "cow": 58,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 59,
         "gallons": 6,
         "link": "/assets/api/milk/115/"
     }
@@ -1269,9 +1269,9 @@
     "pk": 116,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:45.285Z",
-        "cow": 58,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 60,
+        "gallons": 6,
         "link": "/assets/api/milk/116/"
     }
 },
@@ -1280,9 +1280,9 @@
     "pk": 117,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:45.335Z",
-        "cow": 59,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 60,
+        "gallons": 7,
         "link": "/assets/api/milk/117/"
     }
 },
@@ -1291,9 +1291,9 @@
     "pk": 118,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:45.439Z",
-        "cow": 59,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 61,
+        "gallons": 5,
         "link": "/assets/api/milk/118/"
     }
 },
@@ -1302,8 +1302,8 @@
     "pk": 119,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:45.489Z",
-        "cow": 60,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 61,
         "gallons": 7,
         "link": "/assets/api/milk/119/"
     }
@@ -1313,9 +1313,9 @@
     "pk": 120,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:45.600Z",
-        "cow": 60,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 63,
+        "gallons": 6,
         "link": "/assets/api/milk/120/"
     }
 },
@@ -1324,8 +1324,8 @@
     "pk": 121,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:46.110Z",
-        "cow": 61,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 65,
         "gallons": 7,
         "link": "/assets/api/milk/121/"
     }
@@ -1335,9 +1335,9 @@
     "pk": 122,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:46.218Z",
-        "cow": 61,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 65,
+        "gallons": 5,
         "link": "/assets/api/milk/122/"
     }
 },
@@ -1346,9 +1346,9 @@
     "pk": 123,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:46.266Z",
-        "cow": 62,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 67,
+        "gallons": 7,
         "link": "/assets/api/milk/123/"
     }
 },
@@ -1357,9 +1357,9 @@
     "pk": 124,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:46.376Z",
-        "cow": 62,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 67,
+        "gallons": 7,
         "link": "/assets/api/milk/124/"
     }
 },
@@ -1368,8 +1368,8 @@
     "pk": 125,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:46.421Z",
-        "cow": 63,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 69,
         "gallons": 6,
         "link": "/assets/api/milk/125/"
     }
@@ -1379,8 +1379,8 @@
     "pk": 126,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:46.528Z",
-        "cow": 63,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 71,
         "gallons": 7,
         "link": "/assets/api/milk/126/"
     }
@@ -1390,9 +1390,9 @@
     "pk": 127,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:46.569Z",
-        "cow": 64,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 73,
+        "gallons": 6,
         "link": "/assets/api/milk/127/"
     }
 },
@@ -1401,8 +1401,8 @@
     "pk": 128,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:46.673Z",
-        "cow": 64,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 73,
         "gallons": 6,
         "link": "/assets/api/milk/128/"
     }
@@ -1412,8 +1412,8 @@
     "pk": 129,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:46.712Z",
-        "cow": 65,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 75,
         "gallons": 7,
         "link": "/assets/api/milk/129/"
     }
@@ -1423,9 +1423,9 @@
     "pk": 130,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:46.808Z",
-        "cow": 65,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 75,
+        "gallons": 6,
         "link": "/assets/api/milk/130/"
     }
 },
@@ -1434,9 +1434,9 @@
     "pk": 131,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:46.863Z",
-        "cow": 66,
-        "gallons": 0,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 77,
+        "gallons": 5,
         "link": "/assets/api/milk/131/"
     }
 },
@@ -1445,9 +1445,9 @@
     "pk": 132,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:46.927Z",
-        "cow": 66,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 77,
+        "gallons": 6,
         "link": "/assets/api/milk/132/"
     }
 },
@@ -1456,9 +1456,9 @@
     "pk": 133,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:46.966Z",
-        "cow": 67,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 79,
+        "gallons": 7,
         "link": "/assets/api/milk/133/"
     }
 },
@@ -1467,8 +1467,8 @@
     "pk": 134,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:47.077Z",
-        "cow": 67,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 79,
         "gallons": 6,
         "link": "/assets/api/milk/134/"
     }
@@ -1478,9 +1478,9 @@
     "pk": 135,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:47.124Z",
-        "cow": 68,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 62,
+        "gallons": 7,
         "link": "/assets/api/milk/135/"
     }
 },
@@ -1489,9 +1489,9 @@
     "pk": 136,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:47.226Z",
-        "cow": 68,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 62,
+        "gallons": 5,
         "link": "/assets/api/milk/136/"
     }
 },
@@ -1500,9 +1500,9 @@
     "pk": 137,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:47.282Z",
-        "cow": 69,
-        "gallons": 0,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 64,
+        "gallons": 5,
         "link": "/assets/api/milk/137/"
     }
 },
@@ -1511,8 +1511,8 @@
     "pk": 138,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:47.352Z",
-        "cow": 69,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 66,
         "gallons": 6,
         "link": "/assets/api/milk/138/"
     }
@@ -1522,8 +1522,8 @@
     "pk": 139,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:47.400Z",
-        "cow": 70,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 66,
         "gallons": 6,
         "link": "/assets/api/milk/139/"
     }
@@ -1533,8 +1533,8 @@
     "pk": 140,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:47.496Z",
-        "cow": 70,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 68,
         "gallons": 5,
         "link": "/assets/api/milk/140/"
     }
@@ -1544,9 +1544,9 @@
     "pk": 141,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:48.053Z",
-        "cow": 71,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 68,
+        "gallons": 6,
         "link": "/assets/api/milk/141/"
     }
 },
@@ -1555,9 +1555,9 @@
     "pk": 142,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:48.159Z",
-        "cow": 71,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 70,
+        "gallons": 7,
         "link": "/assets/api/milk/142/"
     }
 },
@@ -1566,9 +1566,9 @@
     "pk": 143,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:48.208Z",
-        "cow": 72,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 70,
+        "gallons": 6,
         "link": "/assets/api/milk/143/"
     }
 },
@@ -1577,9 +1577,9 @@
     "pk": 144,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:48.323Z",
+        "milking_time": "2015-01-01T16:00:00Z",
         "cow": 72,
-        "gallons": 6,
+        "gallons": 5,
         "link": "/assets/api/milk/144/"
     }
 },
@@ -1588,8 +1588,8 @@
     "pk": 145,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:48.390Z",
-        "cow": 73,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 74,
         "gallons": 6,
         "link": "/assets/api/milk/145/"
     }
@@ -1599,8 +1599,8 @@
     "pk": 146,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:48.488Z",
-        "cow": 73,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 74,
         "gallons": 7,
         "link": "/assets/api/milk/146/"
     }
@@ -1610,8 +1610,8 @@
     "pk": 147,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:48.535Z",
-        "cow": 74,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 76,
         "gallons": 7,
         "link": "/assets/api/milk/147/"
     }
@@ -1621,9 +1621,9 @@
     "pk": 148,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:48.639Z",
-        "cow": 74,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 76,
+        "gallons": 7,
         "link": "/assets/api/milk/148/"
     }
 },
@@ -1632,9 +1632,9 @@
     "pk": 149,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:48.687Z",
-        "cow": 75,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 78,
+        "gallons": 6,
         "link": "/assets/api/milk/149/"
     }
 },
@@ -1643,9 +1643,9 @@
     "pk": 150,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:48.776Z",
-        "cow": 75,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 78,
+        "gallons": 6,
         "link": "/assets/api/milk/150/"
     }
 },
@@ -1654,8 +1654,8 @@
     "pk": 151,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:48.816Z",
-        "cow": 76,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 80,
         "gallons": 5,
         "link": "/assets/api/milk/151/"
     }
@@ -1665,9 +1665,9 @@
     "pk": 152,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:48.919Z",
-        "cow": 76,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 80,
+        "gallons": 6,
         "link": "/assets/api/milk/152/"
     }
 },
@@ -1676,8 +1676,8 @@
     "pk": 153,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:48.962Z",
-        "cow": 77,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 81,
         "gallons": 7,
         "link": "/assets/api/milk/153/"
     }
@@ -1687,9 +1687,9 @@
     "pk": 154,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:49.061Z",
-        "cow": 77,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 81,
+        "gallons": 6,
         "link": "/assets/api/milk/154/"
     }
 },
@@ -1698,9 +1698,9 @@
     "pk": 155,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:49.106Z",
-        "cow": 78,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 85,
+        "gallons": 5,
         "link": "/assets/api/milk/155/"
     }
 },
@@ -1709,9 +1709,9 @@
     "pk": 156,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:49.214Z",
-        "cow": 78,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 85,
+        "gallons": 5,
         "link": "/assets/api/milk/156/"
     }
 },
@@ -1720,9 +1720,9 @@
     "pk": 157,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:49.277Z",
-        "cow": 79,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 89,
+        "gallons": 5,
         "link": "/assets/api/milk/157/"
     }
 },
@@ -1731,9 +1731,9 @@
     "pk": 158,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:49.364Z",
-        "cow": 79,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 89,
+        "gallons": 5,
         "link": "/assets/api/milk/158/"
     }
 },
@@ -1742,9 +1742,9 @@
     "pk": 159,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:49.417Z",
-        "cow": 80,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 93,
+        "gallons": 5,
         "link": "/assets/api/milk/159/"
     }
 },
@@ -1753,9 +1753,9 @@
     "pk": 160,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:49.508Z",
-        "cow": 80,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 93,
+        "gallons": 5,
         "link": "/assets/api/milk/160/"
     }
 },
@@ -1764,9 +1764,9 @@
     "pk": 161,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:50.030Z",
-        "cow": 81,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 97,
+        "gallons": 6,
         "link": "/assets/api/milk/161/"
     }
 },
@@ -1775,9 +1775,9 @@
     "pk": 162,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:50.126Z",
-        "cow": 81,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 97,
+        "gallons": 6,
         "link": "/assets/api/milk/162/"
     }
 },
@@ -1786,9 +1786,9 @@
     "pk": 163,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:50.177Z",
-        "cow": 82,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 101,
+        "gallons": 7,
         "link": "/assets/api/milk/163/"
     }
 },
@@ -1797,8 +1797,8 @@
     "pk": 164,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:50.277Z",
-        "cow": 82,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 101,
         "gallons": 7,
         "link": "/assets/api/milk/164/"
     }
@@ -1808,8 +1808,8 @@
     "pk": 165,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:50.338Z",
-        "cow": 83,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 105,
         "gallons": 5,
         "link": "/assets/api/milk/165/"
     }
@@ -1819,9 +1819,9 @@
     "pk": 166,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:50.423Z",
-        "cow": 83,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 109,
+        "gallons": 7,
         "link": "/assets/api/milk/166/"
     }
 },
@@ -1830,9 +1830,9 @@
     "pk": 167,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:50.471Z",
-        "cow": 84,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 109,
+        "gallons": 7,
         "link": "/assets/api/milk/167/"
     }
 },
@@ -1841,8 +1841,8 @@
     "pk": 168,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:50.572Z",
-        "cow": 84,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 113,
         "gallons": 7,
         "link": "/assets/api/milk/168/"
     }
@@ -1852,9 +1852,9 @@
     "pk": 169,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:50.619Z",
-        "cow": 85,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 113,
+        "gallons": 5,
         "link": "/assets/api/milk/169/"
     }
 },
@@ -1863,9 +1863,9 @@
     "pk": 170,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:50.723Z",
-        "cow": 85,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 117,
+        "gallons": 6,
         "link": "/assets/api/milk/170/"
     }
 },
@@ -1874,9 +1874,9 @@
     "pk": 171,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:50.773Z",
-        "cow": 86,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 82,
+        "gallons": 5,
         "link": "/assets/api/milk/171/"
     }
 },
@@ -1885,9 +1885,9 @@
     "pk": 172,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:50.875Z",
-        "cow": 86,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 82,
+        "gallons": 7,
         "link": "/assets/api/milk/172/"
     }
 },
@@ -1896,9 +1896,9 @@
     "pk": 173,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:50.922Z",
-        "cow": 87,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 86,
+        "gallons": 5,
         "link": "/assets/api/milk/173/"
     }
 },
@@ -1907,9 +1907,9 @@
     "pk": 174,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:51.021Z",
-        "cow": 87,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 86,
+        "gallons": 5,
         "link": "/assets/api/milk/174/"
     }
 },
@@ -1918,8 +1918,8 @@
     "pk": 175,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:51.067Z",
-        "cow": 88,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 90,
         "gallons": 6,
         "link": "/assets/api/milk/175/"
     }
@@ -1929,9 +1929,9 @@
     "pk": 176,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:51.165Z",
-        "cow": 88,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 90,
+        "gallons": 7,
         "link": "/assets/api/milk/176/"
     }
 },
@@ -1940,8 +1940,8 @@
     "pk": 177,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:51.207Z",
-        "cow": 89,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 94,
         "gallons": 7,
         "link": "/assets/api/milk/177/"
     }
@@ -1951,9 +1951,9 @@
     "pk": 178,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:51.334Z",
-        "cow": 89,
-        "gallons": 0,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 94,
+        "gallons": 6,
         "link": "/assets/api/milk/178/"
     }
 },
@@ -1962,8 +1962,8 @@
     "pk": 179,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:51.383Z",
-        "cow": 90,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 98,
         "gallons": 7,
         "link": "/assets/api/milk/179/"
     }
@@ -1973,9 +1973,9 @@
     "pk": 180,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:51.485Z",
-        "cow": 90,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 98,
+        "gallons": 7,
         "link": "/assets/api/milk/180/"
     }
 },
@@ -1984,9 +1984,9 @@
     "pk": 181,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:52.018Z",
-        "cow": 91,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 102,
+        "gallons": 6,
         "link": "/assets/api/milk/181/"
     }
 },
@@ -1995,9 +1995,9 @@
     "pk": 182,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:52.123Z",
-        "cow": 91,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 102,
+        "gallons": 7,
         "link": "/assets/api/milk/182/"
     }
 },
@@ -2006,9 +2006,9 @@
     "pk": 183,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:52.167Z",
-        "cow": 92,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 106,
+        "gallons": 6,
         "link": "/assets/api/milk/183/"
     }
 },
@@ -2017,9 +2017,9 @@
     "pk": 184,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:52.273Z",
-        "cow": 92,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 106,
+        "gallons": 5,
         "link": "/assets/api/milk/184/"
     }
 },
@@ -2028,9 +2028,9 @@
     "pk": 185,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:52.315Z",
-        "cow": 93,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 110,
+        "gallons": 6,
         "link": "/assets/api/milk/185/"
     }
 },
@@ -2039,9 +2039,9 @@
     "pk": 186,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:52.425Z",
-        "cow": 93,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 110,
+        "gallons": 7,
         "link": "/assets/api/milk/186/"
     }
 },
@@ -2050,9 +2050,9 @@
     "pk": 187,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:52.473Z",
-        "cow": 94,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 114,
+        "gallons": 5,
         "link": "/assets/api/milk/187/"
     }
 },
@@ -2061,9 +2061,9 @@
     "pk": 188,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:52.560Z",
-        "cow": 94,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 114,
+        "gallons": 6,
         "link": "/assets/api/milk/188/"
     }
 },
@@ -2072,9 +2072,9 @@
     "pk": 189,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:52.613Z",
-        "cow": 95,
-        "gallons": 0,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 118,
+        "gallons": 6,
         "link": "/assets/api/milk/189/"
     }
 },
@@ -2083,8 +2083,8 @@
     "pk": 190,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:52.683Z",
-        "cow": 95,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 118,
         "gallons": 7,
         "link": "/assets/api/milk/190/"
     }
@@ -2094,9 +2094,9 @@
     "pk": 191,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:52.730Z",
-        "cow": 96,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 83,
+        "gallons": 5,
         "link": "/assets/api/milk/191/"
     }
 },
@@ -2105,9 +2105,9 @@
     "pk": 192,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:52.832Z",
-        "cow": 96,
-        "gallons": 7,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 83,
+        "gallons": 5,
         "link": "/assets/api/milk/192/"
     }
 },
@@ -2116,9 +2116,9 @@
     "pk": 193,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:52.880Z",
-        "cow": 97,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 87,
+        "gallons": 6,
         "link": "/assets/api/milk/193/"
     }
 },
@@ -2127,9 +2127,9 @@
     "pk": 194,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:53.015Z",
-        "cow": 97,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 91,
+        "gallons": 7,
         "link": "/assets/api/milk/194/"
     }
 },
@@ -2138,9 +2138,9 @@
     "pk": 195,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:53.070Z",
-        "cow": 98,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 91,
+        "gallons": 7,
         "link": "/assets/api/milk/195/"
     }
 },
@@ -2149,9 +2149,9 @@
     "pk": 196,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:53.171Z",
-        "cow": 98,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 95,
+        "gallons": 5,
         "link": "/assets/api/milk/196/"
     }
 },
@@ -2160,9 +2160,9 @@
     "pk": 197,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:53.217Z",
-        "cow": 99,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 95,
+        "gallons": 5,
         "link": "/assets/api/milk/197/"
     }
 },
@@ -2171,9 +2171,9 @@
     "pk": 198,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:53.308Z",
+        "milking_time": "2015-01-01T04:00:00Z",
         "cow": 99,
-        "gallons": 5,
+        "gallons": 6,
         "link": "/assets/api/milk/198/"
     }
 },
@@ -2182,8 +2182,8 @@
     "pk": 199,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:53.346Z",
-        "cow": 100,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 99,
         "gallons": 6,
         "link": "/assets/api/milk/199/"
     }
@@ -2193,9 +2193,9 @@
     "pk": 200,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:53.449Z",
-        "cow": 100,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 103,
+        "gallons": 6,
         "link": "/assets/api/milk/200/"
     }
 },
@@ -2204,8 +2204,8 @@
     "pk": 201,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:53.980Z",
-        "cow": 101,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 103,
         "gallons": 5,
         "link": "/assets/api/milk/201/"
     }
@@ -2215,9 +2215,9 @@
     "pk": 202,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:54.078Z",
-        "cow": 101,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 107,
+        "gallons": 7,
         "link": "/assets/api/milk/202/"
     }
 },
@@ -2226,8 +2226,8 @@
     "pk": 203,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:54.116Z",
-        "cow": 102,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 111,
         "gallons": 7,
         "link": "/assets/api/milk/203/"
     }
@@ -2237,9 +2237,9 @@
     "pk": 204,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:54.218Z",
-        "cow": 102,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 111,
+        "gallons": 7,
         "link": "/assets/api/milk/204/"
     }
 },
@@ -2248,9 +2248,9 @@
     "pk": 205,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:54.264Z",
-        "cow": 103,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 115,
+        "gallons": 5,
         "link": "/assets/api/milk/205/"
     }
 },
@@ -2259,8 +2259,8 @@
     "pk": 206,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:54.366Z",
-        "cow": 103,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 115,
         "gallons": 7,
         "link": "/assets/api/milk/206/"
     }
@@ -2270,9 +2270,9 @@
     "pk": 207,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:54.411Z",
-        "cow": 104,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 119,
+        "gallons": 5,
         "link": "/assets/api/milk/207/"
     }
 },
@@ -2281,8 +2281,8 @@
     "pk": 208,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:54.516Z",
-        "cow": 104,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 119,
         "gallons": 5,
         "link": "/assets/api/milk/208/"
     }
@@ -2292,8 +2292,8 @@
     "pk": 209,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:54.562Z",
-        "cow": 105,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 84,
         "gallons": 5,
         "link": "/assets/api/milk/209/"
     }
@@ -2303,8 +2303,8 @@
     "pk": 210,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:54.667Z",
-        "cow": 105,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 84,
         "gallons": 5,
         "link": "/assets/api/milk/210/"
     }
@@ -2314,9 +2314,9 @@
     "pk": 211,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:54.708Z",
-        "cow": 106,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 88,
+        "gallons": 5,
         "link": "/assets/api/milk/211/"
     }
 },
@@ -2325,8 +2325,8 @@
     "pk": 212,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:54.816Z",
-        "cow": 106,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 88,
         "gallons": 6,
         "link": "/assets/api/milk/212/"
     }
@@ -2336,9 +2336,9 @@
     "pk": 213,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:54.862Z",
-        "cow": 107,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 92,
+        "gallons": 5,
         "link": "/assets/api/milk/213/"
     }
 },
@@ -2347,8 +2347,8 @@
     "pk": 214,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:54.968Z",
-        "cow": 107,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 92,
         "gallons": 7,
         "link": "/assets/api/milk/214/"
     }
@@ -2358,8 +2358,8 @@
     "pk": 215,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:55.013Z",
-        "cow": 108,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 96,
         "gallons": 7,
         "link": "/assets/api/milk/215/"
     }
@@ -2369,8 +2369,8 @@
     "pk": 216,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:55.120Z",
-        "cow": 108,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 96,
         "gallons": 6,
         "link": "/assets/api/milk/216/"
     }
@@ -2380,9 +2380,9 @@
     "pk": 217,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:55.165Z",
-        "cow": 109,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 100,
+        "gallons": 7,
         "link": "/assets/api/milk/217/"
     }
 },
@@ -2391,9 +2391,9 @@
     "pk": 218,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:55.291Z",
-        "cow": 109,
-        "gallons": 0,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 100,
+        "gallons": 5,
         "link": "/assets/api/milk/218/"
     }
 },
@@ -2402,9 +2402,9 @@
     "pk": 219,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:55.355Z",
-        "cow": 110,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 104,
+        "gallons": 5,
         "link": "/assets/api/milk/219/"
     }
 },
@@ -2413,8 +2413,8 @@
     "pk": 220,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:55.442Z",
-        "cow": 110,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 104,
         "gallons": 6,
         "link": "/assets/api/milk/220/"
     }
@@ -2424,9 +2424,9 @@
     "pk": 221,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:55.994Z",
-        "cow": 111,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 108,
+        "gallons": 7,
         "link": "/assets/api/milk/221/"
     }
 },
@@ -2435,9 +2435,9 @@
     "pk": 222,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:56.100Z",
-        "cow": 111,
-        "gallons": 6,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 108,
+        "gallons": 7,
         "link": "/assets/api/milk/222/"
     }
 },
@@ -2446,9 +2446,9 @@
     "pk": 223,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:56.142Z",
+        "milking_time": "2015-01-01T04:00:00Z",
         "cow": 112,
-        "gallons": 7,
+        "gallons": 6,
         "link": "/assets/api/milk/223/"
     }
 },
@@ -2457,9 +2457,9 @@
     "pk": 224,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:56.245Z",
+        "milking_time": "2015-01-01T16:00:00Z",
         "cow": 112,
-        "gallons": 5,
+        "gallons": 6,
         "link": "/assets/api/milk/224/"
     }
 },
@@ -2468,9 +2468,9 @@
     "pk": 225,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:56.292Z",
-        "cow": 113,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 116,
+        "gallons": 6,
         "link": "/assets/api/milk/225/"
     }
 },
@@ -2479,9 +2479,9 @@
     "pk": 226,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:56.390Z",
-        "cow": 113,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 120,
+        "gallons": 5,
         "link": "/assets/api/milk/226/"
     }
 },
@@ -2490,8 +2490,8 @@
     "pk": 227,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:56.431Z",
-        "cow": 114,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 121,
         "gallons": 6,
         "link": "/assets/api/milk/227/"
     }
@@ -2501,9 +2501,9 @@
     "pk": 228,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:56.554Z",
-        "cow": 114,
-        "gallons": 0,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 121,
+        "gallons": 5,
         "link": "/assets/api/milk/228/"
     }
 },
@@ -2512,9 +2512,9 @@
     "pk": 229,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:56.599Z",
-        "cow": 115,
-        "gallons": 6,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 122,
+        "gallons": 7,
         "link": "/assets/api/milk/229/"
     }
 },
@@ -2523,9 +2523,9 @@
     "pk": 230,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:56.699Z",
-        "cow": 115,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 122,
+        "gallons": 6,
         "link": "/assets/api/milk/230/"
     }
 },
@@ -2534,9 +2534,9 @@
     "pk": 231,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:56.751Z",
-        "cow": 116,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 123,
+        "gallons": 7,
         "link": "/assets/api/milk/231/"
     }
 },
@@ -2545,8 +2545,8 @@
     "pk": 232,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:56.840Z",
-        "cow": 116,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 123,
         "gallons": 6,
         "link": "/assets/api/milk/232/"
     }
@@ -2556,8 +2556,8 @@
     "pk": 233,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:56.883Z",
-        "cow": 117,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 124,
         "gallons": 6,
         "link": "/assets/api/milk/233/"
     }
@@ -2567,8 +2567,8 @@
     "pk": 234,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:56.982Z",
-        "cow": 117,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 124,
         "gallons": 6,
         "link": "/assets/api/milk/234/"
     }
@@ -2578,9 +2578,9 @@
     "pk": 235,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:57.045Z",
-        "cow": 118,
-        "gallons": 0,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 125,
+        "gallons": 7,
         "link": "/assets/api/milk/235/"
     }
 },
@@ -2589,9 +2589,9 @@
     "pk": 236,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:57.132Z",
-        "cow": 118,
-        "gallons": 0,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 125,
+        "gallons": 7,
         "link": "/assets/api/milk/236/"
     }
 },
@@ -2600,8 +2600,8 @@
     "pk": 237,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:57.173Z",
-        "cow": 119,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 126,
         "gallons": 7,
         "link": "/assets/api/milk/237/"
     }
@@ -2611,9 +2611,9 @@
     "pk": 238,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:57.276Z",
-        "cow": 119,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 126,
+        "gallons": 6,
         "link": "/assets/api/milk/238/"
     }
 },
@@ -2622,8 +2622,8 @@
     "pk": 239,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:57.321Z",
-        "cow": 120,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 127,
         "gallons": 5,
         "link": "/assets/api/milk/239/"
     }
@@ -2633,8 +2633,8 @@
     "pk": 240,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:57.430Z",
-        "cow": 120,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 127,
         "gallons": 7,
         "link": "/assets/api/milk/240/"
     }
@@ -2644,9 +2644,9 @@
     "pk": 241,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:57.976Z",
-        "cow": 121,
-        "gallons": 7,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 128,
+        "gallons": 6,
         "link": "/assets/api/milk/241/"
     }
 },
@@ -2655,9 +2655,9 @@
     "pk": 242,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:58.085Z",
-        "cow": 121,
-        "gallons": 5,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 128,
+        "gallons": 7,
         "link": "/assets/api/milk/242/"
     }
 },
@@ -2666,8 +2666,8 @@
     "pk": 243,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:58.132Z",
-        "cow": 122,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 129,
         "gallons": 5,
         "link": "/assets/api/milk/243/"
     }
@@ -2677,9 +2677,9 @@
     "pk": 244,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:58.253Z",
-        "cow": 122,
-        "gallons": 5,
+        "milking_time": "2015-01-01T04:00:00Z",
+        "cow": 130,
+        "gallons": 7,
         "link": "/assets/api/milk/244/"
     }
 },
@@ -2688,175 +2688,10 @@
     "pk": 245,
     "fields": {
         "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:58.299Z",
-        "cow": 123,
+        "milking_time": "2015-01-01T16:00:00Z",
+        "cow": 130,
         "gallons": 6,
         "link": "/assets/api/milk/245/"
-    }
-},
-{
-    "model": "assets.milk",
-    "pk": 246,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:58.406Z",
-        "cow": 123,
-        "gallons": 7,
-        "link": "/assets/api/milk/246/"
-    }
-},
-{
-    "model": "assets.milk",
-    "pk": 247,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:58.454Z",
-        "cow": 124,
-        "gallons": 5,
-        "link": "/assets/api/milk/247/"
-    }
-},
-{
-    "model": "assets.milk",
-    "pk": 248,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:58.561Z",
-        "cow": 124,
-        "gallons": 5,
-        "link": "/assets/api/milk/248/"
-    }
-},
-{
-    "model": "assets.milk",
-    "pk": 249,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:58.604Z",
-        "cow": 125,
-        "gallons": 5,
-        "link": "/assets/api/milk/249/"
-    }
-},
-{
-    "model": "assets.milk",
-    "pk": 250,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:58.696Z",
-        "cow": 125,
-        "gallons": 5,
-        "link": "/assets/api/milk/250/"
-    }
-},
-{
-    "model": "assets.milk",
-    "pk": 251,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:58.732Z",
-        "cow": 126,
-        "gallons": 5,
-        "link": "/assets/api/milk/251/"
-    }
-},
-{
-    "model": "assets.milk",
-    "pk": 252,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:58.827Z",
-        "cow": 126,
-        "gallons": 7,
-        "link": "/assets/api/milk/252/"
-    }
-},
-{
-    "model": "assets.milk",
-    "pk": 253,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:58.880Z",
-        "cow": 127,
-        "gallons": 7,
-        "link": "/assets/api/milk/253/"
-    }
-},
-{
-    "model": "assets.milk",
-    "pk": 254,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:58.998Z",
-        "cow": 127,
-        "gallons": 5,
-        "link": "/assets/api/milk/254/"
-    }
-},
-{
-    "model": "assets.milk",
-    "pk": 255,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:59.046Z",
-        "cow": 128,
-        "gallons": 5,
-        "link": "/assets/api/milk/255/"
-    }
-},
-{
-    "model": "assets.milk",
-    "pk": 256,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:59.153Z",
-        "cow": 128,
-        "gallons": 5,
-        "link": "/assets/api/milk/256/"
-    }
-},
-{
-    "model": "assets.milk",
-    "pk": 257,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:59.201Z",
-        "cow": 129,
-        "gallons": 6,
-        "link": "/assets/api/milk/257/"
-    }
-},
-{
-    "model": "assets.milk",
-    "pk": 258,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:59.306Z",
-        "cow": 129,
-        "gallons": 5,
-        "link": "/assets/api/milk/258/"
-    }
-},
-{
-    "model": "assets.milk",
-    "pk": 259,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:59.357Z",
-        "cow": 130,
-        "gallons": 6,
-        "link": "/assets/api/milk/259/"
-    }
-},
-{
-    "model": "assets.milk",
-    "pk": 260,
-    "fields": {
-        "recorded_by": 3,
-        "timestamp": "2018-03-26T21:10:59.465Z",
-        "cow": 130,
-        "gallons": 6,
-        "link": "/assets/api/milk/260/"
     }
 }
 ]

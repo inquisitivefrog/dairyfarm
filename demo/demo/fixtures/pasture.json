@@ -3,208 +3,130 @@
     "model": "assets.pasture",
     "pk": 1,
     "fields": {
+        "name": "North",
+        "url": "/static/images/regions/north.png",
         "fallow": false,
-        "distance": 0,
-        "year": 2015,
-        "season": 1,
-        "seeded_by": 2,
-        "region": 1,
-        "cereal_hay": 1,
-        "grass_hay": 1,
-        "legume_hay": 1,
-        "link": "/assets/api/pastures/1/"
+        "distance": 8
     }
 },
 {
     "model": "assets.pasture",
     "pk": 2,
     "fields": {
+        "name": "West",
+        "url": "/static/images/regions/west.png",
         "fallow": false,
-        "distance": 0,
-        "year": 2015,
-        "season": 1,
-        "seeded_by": 2,
-        "region": 2,
-        "cereal_hay": 2,
-        "grass_hay": 2,
-        "legume_hay": 2,
-        "link": "/assets/api/pastures/2/"
+        "distance": 7
     }
 },
 {
     "model": "assets.pasture",
     "pk": 3,
     "fields": {
+        "name": "South",
+        "url": "/static/images/regions/south.png",
         "fallow": false,
-        "distance": 0,
-        "year": 2015,
-        "season": 1,
-        "seeded_by": 2,
-        "region": 3,
-        "cereal_hay": 3,
-        "grass_hay": 3,
-        "legume_hay": 3,
-        "link": "/assets/api/pastures/3/"
+        "distance": 6
     }
 },
 {
     "model": "assets.pasture",
     "pk": 4,
     "fields": {
+        "name": "East",
+        "url": "/static/images/regions/east.png",
         "fallow": false,
-        "distance": 0,
-        "year": 2015,
-        "season": 1,
-        "seeded_by": 2,
-        "region": 4,
-        "cereal_hay": 4,
-        "grass_hay": 4,
-        "legume_hay": 4,
-        "link": "/assets/api/pastures/4/"
+        "distance": 8
     }
 },
 {
     "model": "assets.pasture",
     "pk": 5,
     "fields": {
+        "name": "Central North",
+        "url": "/static/images/regions/central_north.png",
         "fallow": false,
-        "distance": 0,
-        "year": 2015,
-        "season": 1,
-        "seeded_by": 2,
-        "region": 5,
-        "cereal_hay": 5,
-        "grass_hay": 5,
-        "legume_hay": 5,
-        "link": "/assets/api/pastures/5/"
+        "distance": 1
     }
 },
 {
     "model": "assets.pasture",
     "pk": 6,
     "fields": {
+        "name": "Central West",
+        "url": "/static/images/regions/central_west.png",
         "fallow": false,
-        "distance": 0,
-        "year": 2015,
-        "season": 1,
-        "seeded_by": 2,
-        "region": 6,
-        "cereal_hay": 1,
-        "grass_hay": 6,
-        "legume_hay": 6,
-        "link": "/assets/api/pastures/6/"
+        "distance": 2
     }
 },
 {
     "model": "assets.pasture",
     "pk": 7,
     "fields": {
+        "name": "Central South",
+        "url": "/static/images/regions/central_south.png",
         "fallow": false,
-        "distance": 0,
-        "year": 2015,
-        "season": 1,
-        "seeded_by": 2,
-        "region": 7,
-        "cereal_hay": 2,
-        "grass_hay": 7,
-        "legume_hay": 1,
-        "link": "/assets/api/pastures/7/"
+        "distance": 1
     }
 },
 {
     "model": "assets.pasture",
     "pk": 8,
     "fields": {
+        "name": "Central East",
+        "url": "/static/images/regions/central_east.png",
         "fallow": false,
-        "distance": 0,
-        "year": 2015,
-        "season": 1,
-        "seeded_by": 2,
-        "region": 8,
-        "cereal_hay": 3,
-        "grass_hay": 8,
-        "legume_hay": 2,
-        "link": "/assets/api/pastures/8/"
+        "distance": 7
     }
 },
 {
     "model": "assets.pasture",
     "pk": 9,
     "fields": {
+        "name": "North West",
+        "url": "/static/images/regions/north_west.png",
         "fallow": false,
-        "distance": 0,
-        "year": 2015,
-        "season": 1,
-        "seeded_by": 2,
-        "region": 9,
-        "cereal_hay": 4,
-        "grass_hay": 9,
-        "legume_hay": 3,
-        "link": "/assets/api/pastures/9/"
+        "distance": 5
     }
 },
 {
     "model": "assets.pasture",
     "pk": 10,
     "fields": {
+        "name": "North East",
+        "url": "/static/images/regions/north_east.png",
         "fallow": false,
-        "distance": 0,
-        "year": 2015,
-        "season": 1,
-        "seeded_by": 2,
-        "region": 10,
-        "cereal_hay": 5,
-        "grass_hay": 1,
-        "legume_hay": 4,
-        "link": "/assets/api/pastures/10/"
+        "distance": 7
     }
 },
 {
     "model": "assets.pasture",
     "pk": 11,
     "fields": {
+        "name": "South West",
+        "url": "/static/images/regions/south_west.png",
         "fallow": true,
-        "distance": 1,
-        "year": 2015,
-        "season": 1,
-        "seeded_by": 2,
-        "region": 11,
-        "cereal_hay": 1,
-        "grass_hay": 2,
-        "legume_hay": 5,
-        "link": "/assets/api/pastures/11/"
+        "distance": 6
     }
 },
 {
     "model": "assets.pasture",
     "pk": 12,
     "fields": {
+        "name": "South East",
+        "url": "/static/images/regions/south_east.png",
         "fallow": true,
-        "distance": 1,
-        "year": 2015,
-        "season": 1,
-        "seeded_by": 2,
-        "region": 12,
-        "cereal_hay": 2,
-        "grass_hay": 3,
-        "legume_hay": 6,
-        "link": "/assets/api/pastures/12/"
+        "distance": 8
     }
 },
 {
     "model": "assets.pasture",
     "pk": 13,
     "fields": {
+        "name": "Pen",
+        "url": "/static/images/regions/pen.png",
         "fallow": true,
-        "distance": 1,
-        "year": 2015,
-        "season": 1,
-        "seeded_by": 2,
-        "region": 13,
-        "cereal_hay": 3,
-        "grass_hay": 3,
-        "legume_hay": 3,
-        "link": "/assets/api/pastures/13/"
+        "distance": 6
     }
 }
 ]

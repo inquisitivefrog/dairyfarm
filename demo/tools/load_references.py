@@ -1,6 +1,7 @@
 #!/Users/tim/demo/bin/python3
 
 from os import environ
+from random import randint
 from sys import exit, path
 
 from django import setup
@@ -156,7 +157,9 @@ def load_pastures():
                 'Pen': '/static/images/regions/pen.png'}
     for name, url in pastures.items(): 
         data = {'name': name,
-                'url': url}
+                'url': url,
+                'fallow': False,
+                'distance': randint(1, 10)}
         if name not in ['South West', 'South East', 'Pen']:
             Pasture.objects.create(**data)
         else:

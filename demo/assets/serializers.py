@@ -5,7 +5,7 @@ from rest_framework import serializers
 from assets.models import Action, Age, Breed, CerealHay, Color
 from assets.models import Cow, Event, Exercise, GrassHay, HealthRecord
 from assets.models import Illness, Injury, LegumeHay, Milk, Pasture
-from assets.models import Season, Seed, Status, Vaccine
+from assets.models import Season, Seed, Status, Treatment, Vaccine
 
 # dependent serializers
 class ActionSerializer(serializers.ModelSerializer):
@@ -80,6 +80,12 @@ class StatusSerializer(serializers.ModelSerializer):
         lookup_field = 'pk'
         model = Status
 
+class TreatmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('id', 'name')
+        lookup_field = 'pk'
+        model = Treatment 
+
 class VaccineSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('id', 'name')
@@ -151,7 +157,7 @@ class EventWriteSerializer(serializers.ModelSerializer):
                                           slug_field='name')
 
     class Meta:
-        fields = ('id', 'recorded_by', 'cow', 'action')
+        fields = ('id', 'recorded_by', 'event_time', 'cow', 'action')
         lookup_field = 'pk'
         model = Event
 
@@ -172,13 +178,14 @@ class HealthRecordReadSerializer(serializers.ModelSerializer):
     illness = IllnessSerializer(read_only=True)
     injury = InjurySerializer(read_only=True)
     status = StatusSerializer(read_only=True)
+    treatment = TreatmentSerializer(read_only=True)
     vaccine = VaccineSerializer(read_only=True)
 
     class Meta:
-        fields = ('id', 'recorded_by', 'timestamp', 'cow', 'temperature',
+        fields = ('id', 'recorded_by', 'inspection_time', 'cow', 'temperature',
                   'respiratory_rate', 'heart_rate', 'blood_pressure', 'weight',
                   'body_condition_score', 'status', 'illness', 'injury',
-                  'vaccine', 'link')
+                  'treatment', 'vaccine', 'link')
         lookup_field = 'pk'
         model = HealthRecord
         read_only_fields = ('link',)
@@ -196,15 +203,18 @@ class HealthRecordWriteSerializer(serializers.ModelSerializer):
                                            required=False)
     status = serializers.SlugRelatedField(queryset=Status.objects.all(),
                                           slug_field='name')
+    treatment = serializers.SlugRelatedField(queryset=Treatment.objects.all(),
+                                           slug_field='name',
+                                           required=False)
     vaccine = serializers.SlugRelatedField(queryset=Vaccine.objects.all(),
                                            slug_field='name',
                                            required=False)
 
     class Meta:
-        fields = ('id', 'recorded_by', 'timestamp', 'cow', 'temperature',
+        fields = ('id', 'recorded_by', 'inspection_time', 'cow', 'temperature',
                   'respiratory_rate', 'heart_rate', 'blood_pressure', 'weight',
                   'body_condition_score', 'status', 'illness', 'injury',
-                  'vaccine', 'link')
+                  'treatment', 'vaccine', 'link')
         lookup_field = 'pk'
         model = HealthRecord
 
@@ -219,6 +229,10 @@ class HealthRecordWriteSerializer(serializers.ModelSerializer):
             injury = validated_data.pop('injury')
         else:
             injury = None
+        if 'treatment' in validated_data: 
+            treatment = validated_data.pop('treatment')
+        else:
+            treatment = None
         if 'vaccine' in validated_data: 
             vaccine = validated_data.pop('vaccine')
         else:
@@ -227,6 +241,7 @@ class HealthRecordWriteSerializer(serializers.ModelSerializer):
                                          illness=illness,
                                          injury=injury,
                                          status=status,
+                                         treatment=treatment,
                                          vaccine=vaccine,
                                          **validated_data)
         return hr
@@ -239,7 +254,7 @@ class MilkReadSerializer(serializers.ModelSerializer):
     cow = CowReadSerializer(read_only=True)
 
     class Meta:
-        fields = ('id', 'recorded_by', 'timestamp', 'cow', 'gallons', 'link')
+        fields = ('id', 'recorded_by', 'milking_time', 'cow', 'gallons', 'link')
         lookup_field = 'pk'
         model = Milk
         read_only_fields = ('link',)
@@ -251,7 +266,7 @@ class MilkWriteSerializer(serializers.ModelSerializer):
                                           slug_field='rfid')
 
     class Meta:
-        fields = ('id', 'recorded_by', 'cow', 'gallons')
+        fields = ('id', 'recorded_by', 'cow', 'milking_time', 'gallons')
         lookup_field = 'pk'
         model = Milk
 
@@ -328,7 +343,8 @@ class ExerciseReadSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exercise
         lookup_field = 'pk'
-        fields = ('id', 'recorded_by', 'timestamp', 'cow', 'pasture', 'link')
+        fields = ('id', 'recorded_by', 'exercise_time', 'cow', 'pasture',
+                  'distance', 'link')
         read_only_fields = ('link',)
 
 class ExerciseWriteSerializer(serializers.ModelSerializer):
@@ -342,7 +358,8 @@ class ExerciseWriteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exercise
         lookup_field = 'pk'
-        fields = ('id', 'recorded_by', 'timestamp', 'cow', 'pasture')
+        fields = ('id', 'recorded_by', 'exercise_time', 'cow', 'pasture',
+                  'distance')
 
     def create(self, validated_data):
         cow = validated_data.pop('cow')

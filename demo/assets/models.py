@@ -268,6 +268,31 @@ class LegumeHay(models.Model):
         else:
             return '{}'.format(self.__class__)
 
+class Pasture(models.Model):
+    name = models.CharField(max_length=20,
+                            null=False,
+                            blank=False,
+                            unique=True)
+    url = models.CharField(max_length=50,
+                           null=False,
+                           blank=False,
+                           unique=True)
+    fallow = models.BooleanField(default=False)
+    distance = models.IntegerField(default=0)
+
+    def __str__(self):
+        if self.id:
+            return '{}'.format(self.name)
+        else:
+            return '{}'.format(self.__class__)
+
+    def __repr__(self):
+        if self.id:
+            return '{}:{}'.format(self.__class__,
+                                  self.id)
+        else:
+            return '{}'.format(self.__class__)
+
 class Season(models.Model):
     name = models.CharField(max_length=20,
                             null=False,
@@ -349,7 +374,7 @@ class HealthRecord(models.Model):
                                     null=False,
                                     blank=False,
                                     on_delete=models.CASCADE)
-    timestamp = models.DateTimeField(auto_now_add=True)
+    inspection_time = models.DateTimeField(auto_now_add=True)
     cow = models.ForeignKey(Cow,
                             on_delete=models.CASCADE)
     temperature = models.FloatField(default=1.00,
@@ -380,6 +405,10 @@ class HealthRecord(models.Model):
                                null=True,
                                blank=False,
                                on_delete=models.CASCADE)
+    treatment = models.ForeignKey(Treatment,
+                                  null=True,
+                                  blank=False,
+                                  on_delete=models.CASCADE)
     vaccine = models.ForeignKey(Vaccine,
                                 null=True,
                                 blank=False,
@@ -389,62 +418,8 @@ class HealthRecord(models.Model):
                            blank=False)
 
     def __str__(self):
-        if self.id and self.illness:
-            return '{}: {}: {}: {}: {}: {}: {}: {}: {}: {}: {}: {}: {}'.format(self.recorded_by.username,
-                                                                               self.timestamp,
-                                                                               self.cow.age.name,
-                                                                               self.cow.breed.name,
-                                                                               self.cow.color.name,
-                                                                               self.temperature,
-                                                                               self.respiratory_rate,
-                                                                               self.heart_rate,
-                                                                               self.blood_pressure,
-                                                                               self.weight,
-                                                                               self.body_condition_score,
-                                                                               self.status.name,
-                                                                               self.illness.diagnosis)
-        elif self.id and self.injury:
-            return '{}: {}: {}: {}: {}: {}: {}: {}: {}: {}: {}: {}: {}'.format(self.recorded_by.username,
-                                                                               self.timestamp,
-                                                                               self.cow.age.name,
-                                                                               self.cow.breed.name,
-                                                                               self.cow.color.name,
-                                                                               self.temperature,
-                                                                               self.respiratory_rate,
-                                                                               self.heart_rate,
-                                                                               self.blood_pressure,
-                                                                               self.weight,
-                                                                               self.body_condition_score,
-                                                                               self.status.name,
-                                                                               self.injury.diagnosis)
-        elif self.id and self.vaccine:
-            return '{}: {}: {}: {}: {}: {}: {}: {}: {}: {}: {}: {}: {}: {}'.format(self.recorded_by.username,
-                                                                                   self.timestamp,
-                                                                                   self.cow.age.name,
-                                                                                   self.cow.breed.name,
-                                                                                   self.cow.color.name,
-                                                                                   self.temperature,
-                                                                                   self.respiratory_rate,
-                                                                                   self.heart_rate,
-                                                                                   self.blood_pressure,
-                                                                                   self.weight,
-                                                                                   self.body_condition_score,
-                                                                                   self.status.name,
-                                                                                   self.illness.diagnosis,
-                                                                                   self.vaccine.name)
-        elif self.id:
-            return '{}: {}: {}: {}: {}: {}: {}: {}: {}: {}: {}: {}'.format(self.recorded_by.username,
-                                                                           self.timestamp,
-                                                                           self.cow.age.name,
-                                                                           self.cow.breed.name,
-                                                                           self.cow.color.name,
-                                                                           self.temperature,
-                                                                           self.respiratory_rate,
-                                                                           self.heart_rate,
-                                                                           self.blood_pressure,
-                                                                           self.weight,
-                                                                           self.body_condition_score,
-                                                                           self.status.name)
+        if self.id:
+            return self.id
         else:
             return '{}'.format(self.__class__)
 
@@ -467,7 +442,7 @@ class Milk(models.Model):
                                     null=False,
                                     blank=False,
                                     on_delete=models.CASCADE)
-    timestamp = models.DateTimeField(auto_now_add=True)
+    milking_time = models.DateTimeField()
     cow = models.ForeignKey(Cow,
                             on_delete=models.CASCADE)
     gallons = models.SmallIntegerField(default=0)
@@ -477,12 +452,7 @@ class Milk(models.Model):
 
     def __str__(self):
         if self.id:
-            return '{}: {}: {}: {}: {}: {}'.format(self.recorded_by.username,
-                                                   self.timestamp,
-                                                   self.cow.age.name,
-                                                   self.cow.breed.name,
-                                                   self.cow.color.name,
-                                                   self.gallons)
+            return self.id
         else:
             return '{}'.format(self.__class__)
 
@@ -499,31 +469,6 @@ class Milk(models.Model):
                                   kwargs = {'pk': self.pk})}
         Milk.objects.filter(pk=self.pk).update(**kwargs)
         return
-
-class Pasture(models.Model):
-    name = models.CharField(max_length=20,
-                            null=False,
-                            blank=False,
-                            unique=True)
-    url = models.CharField(max_length=50,
-                           null=False,
-                           blank=False,
-                           unique=True)
-    fallow = models.BooleanField(default=False)
-    distance = models.IntegerField(default=0)
-
-    def __str__(self):
-        if self.id:
-            return '{}'.format(self.name)
-        else:
-            return '{}'.format(self.__class__)
-
-    def __repr__(self):
-        if self.id:
-            return '{}:{}'.format(self.__class__,
-                                  self.id)
-        else:
-            return '{}'.format(self.__class__)
 
 class Seed(models.Model):
     seeded_by = models.ForeignKey(User,
@@ -556,7 +501,7 @@ class Seed(models.Model):
 
     def __str__(self):
         if self.id:
-            return self.pasture.name
+            return self.id
         else:
             return '{}'.format(self.__class__)
 
@@ -579,24 +524,19 @@ class Exercise(models.Model):
                                     null=False,
                                     blank=False,
                                     on_delete=models.CASCADE)
-    timestamp = models.DateTimeField(auto_now_add=True)
+    exercise_time = models.DateTimeField()
     cow = models.ForeignKey(Cow,
                             on_delete=models.CASCADE)
     pasture = models.ForeignKey(Pasture,
                                 on_delete=models.CASCADE)
+    distance = models.IntegerField(default=0)
     link = models.URLField(max_length=50,
                            null=True,
                            blank=False)
 
     def __str__(self):
         if self.id:
-            return '{}: {}: {}: {}: {}: {}: {}'.format(self.recorded_by.username,
-                                                       self.timestamp,
-                                                       self.cow.age.name,
-                                                       self.cow.breed.name,
-                                                       self.cow.color.name,
-                                                       self.pasture.region.name,
-                                                       self.distance)
+            return self.id
         else:
             return '{}'.format(self.__class__)
 

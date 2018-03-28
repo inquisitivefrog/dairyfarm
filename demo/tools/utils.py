@@ -4,8 +4,9 @@ from django.conf import settings
 from django.db.utils import IntegrityError
 from django.utils.timezone import datetime, pytz
 
-from assets.models import Action, Cow, Event, Illness, Injury
-from assets.models import Pasture, Status, Treatment, Vaccine
+from assets.models import Action, Cow, Event, HealthRecord
+from assets.models import Illness, Injury, Pasture
+from assets.models import Seed, Status, Treatment, Vaccine
 from assets.serializers import EventWriteSerializer
 from assets.serializers import ExerciseWriteSerializer
 from assets.serializers import HealthRecordWriteSerializer
@@ -121,9 +122,12 @@ class TestData:
     def get_injured_cow_data(cls, cow, dt, user):
         injuries = [x.diagnosis for x in Injury.objects.all()]
         injury = injuries[randint(1, len(injuries) - 1)]
+        treatments = [x.name for x in Treatment.objects.all()]
+        treatment = treatments[randint(1, len(treatments) - 1)]
         data = cls._get_ill_injured_cow_data(cow, dt, user)
         data.update({'status': 'Injured',
-                     'injury': injury})
+                     'injury': injury,
+                     'treatment': treatment})
         return data
 
     @classmethod
@@ -149,7 +153,7 @@ class TestData:
             if not c:
                 print('ERROR: cow: {} does not exist!'.format(cow))
             data = {'recorded_by': user,
-                    'timestamp': dt,
+                    'event_time': dt,
                     'cow': c.rfid,
                     'action': action}
             es = EventWriteSerializer(data=data)
@@ -165,27 +169,13 @@ class TestData:
     @classmethod
     def log_exercise(cls, pasture, cow, dt, user):
         try:
-            #print('DEBUG: pasture: {}'.format(pasture.id))
-            fields = Pasture.objects.filter(region__name=pasture.region.name,
-                                            season__name=pasture.season.name,
-                                            year=TestTime.get_year(dt))
-            #print('DEBUG: fields: {}'.format([ x.id for x in fields ]))
-            field = Pasture.objects.get(region__name=pasture.region.name,
-                                        season__name=pasture.season.name,
-                                        year=TestTime.get_year(dt))
-            if field.id < 13:
-                distance = field.id
-            else:
-                distance = (field.id % 13) + 1
             data = {'recorded_by': user,
-                    'timestamp': dt,
+                    'exercise_time': dt,
                     'cow': cow.rfid,
-                    'pasture': field.region.id,
-                    'distance': distance}
-            #print('DEBUG: data: {}'.format(data))
+                    'pasture': pasture.name,
+                    'distance': pasture.distance}
             es = ExerciseWriteSerializer(data=data)
             if es.is_valid() and len(es.errors) == 0:
-                #print('DEBUG: valid serialized data')
                 es.save()
             else:
                 print('ERROR: {}'.format(es.errors))
@@ -207,7 +197,7 @@ class TestData:
     def log_milk(cls, gallons, cow, dt, user):
         try:
             data = {'recorded_by': user,
-                    'timestamp': dt,
+                    'milking_time': dt,
                     'cow': cow.rfid,
                     'gallons': gallons}
             ms = MilkWriteSerializer(data=data)
@@ -235,21 +225,6 @@ class TestData:
                 es.save()
             else:
                 print('ERROR: {}'.format(es.errors))
-        except IntegrityError as e:
-            print('ERROR: {}'.format(e))
-
-    @classmethod
-    def log_vaccination(cls, diagnosis, cow, dt, user):
-        try:
-            data = {'recorded_by': user,
-                    'timestamp': dt,
-                    'cow': cow.rfid,
-                    'diagnosis': diagnosis}
-            ms = MilkWriteSerializer(data=data)
-            if ms.is_valid() and len(ms.errors) == 0:
-                ms.save()
-            else:
-                print('ERROR: {}'.format(ms.errors))
         except IntegrityError as e:
             print('ERROR: {}'.format(e))
 

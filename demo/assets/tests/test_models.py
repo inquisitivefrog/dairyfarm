@@ -6,7 +6,7 @@ from rest_framework.test import APITestCase
 
 from assets.models import Age, Action, Breed, Color, Cow
 from assets.models import CerealHay, GrassHay, Illness, Injury, LegumeHay
-from assets.models import Region, Season, Status, Treatment
+from assets.models import Season, Seed, Status, Treatment
 from assets.models import Vaccine, Pasture, HealthRecord, Milk, Event, Exercise
 from assets.tests.utils import TestData, TestTime
 
@@ -613,81 +613,96 @@ class TestLegumeHayModel(APITestCase):
         self.assertEqual(expected.name,
                          actual.name)
 
-class TestRegionModel(APITestCase):
-    fixtures = ['region']
+class TestPastureModel(APITestCase):
+    fixtures = ['pasture']
 
     def setUp(self):
-        self.region_data = {'name': TestData.get_region(),
-                            'url': TestData.get_regionimage()}
+        self.pasture_data = {'name': TestData.get_pasture(),
+                            'url': TestData.get_pastureimage(),
+                            'fallow': False,
+                            'distance': randint(1, 5)}
 
     def tearDown(self):
-        self.region_data = None
+        self.pasture_data = None
 
     def test_00_load_fixtures(self):
-        regions = Region.objects.all()
+        pastures = Pasture.objects.all()
         self.assertEqual(13,
-                         len(regions))
+                         len(pastures))
 
     def test_01_object(self):
-        r = Region()
-        self.assertEqual("<class 'assets.models.Region'>",
-                         repr(r))
-        self.assertEqual("<class 'assets.models.Region'>",
-                         str(r))
-        r = Region.objects.get(pk=1)
-        self.assertEqual("<class 'assets.models.Region'>:{}".format(r.id),
-                         repr(r))
-        self.assertEqual(r.name,
-                         str(r))
+        p = Pasture()
+        self.assertEqual("<class 'assets.models.Pasture'>",
+                         repr(p))
+        self.assertEqual("<class 'assets.models.Pasture'>",
+                         str(p))
+        p = Pasture.objects.get(pk=1)
+        self.assertEqual("<class 'assets.models.Pasture'>:{}".format(p.id),
+                         repr(p))
+        self.assertEqual(p.name,
+                         str(p))
  
     def test_02_get(self):
-        r = Region.objects.get(id=1)
+        p = Pasture.objects.get(id=1)
         self.assertEqual('North',
-                         r.name)
+                         p.name)
         self.assertEqual('/static/images/regions/north.png',
-                         r.url)
+                         p.url)
+        self.assertFalse(p.fallow)
+        self.assertLessEqual(1,
+                             p.distance)
 
     def test_03_filter(self):
-        expected = Region.objects.filter(name=TestData.get_region())
-        actual = Region.objects.filter(name__endswith='Center')
+        expected = Pasture.objects.filter(name='Pen')
+        actual = Pasture.objects.filter(name__endswith='en')
         self.assertEqual(len(expected),
                          len(actual))
 
     def test_04_create(self):
-        r = Region.objects.create(**self.region_data)
-        self.assertEqual(self.region_data['name'],
-                         r.name)
-        self.assertEqual(self.region_data['url'],
-                         r.url)
+        p = Pasture.objects.create(**self.pasture_data)
+        self.assertEqual(self.pasture_data['name'],
+                         p.name)
+        self.assertEqual(self.pasture_data['url'],
+                         p.url)
 
     def test_05_full_update(self):
-        expected = Region.objects.get(id=1)
-        expected.name = TestData.get_region()
+        expected = Pasture.objects.get(id=1)
+        expected.name = TestData.get_pasture()
         expected.save()
-        actual = Region.objects.get(id=expected.id)
+        actual = Pasture.objects.get(id=expected.id)
         self.assertEqual(expected.name,
                          actual.name)
         self.assertEqual(expected.url,
                          actual.url)
+        self.assertEqual(expected.fallow,
+                         actual.fallow)
+        self.assertEqual(expected.distance,
+                         actual.distance)
                              
     def test_06_delete(self):
-        expected = Region.objects.get(id=1)
+        expected = Pasture.objects.get(id=1)
         expected.delete()
-        with self.assertRaises(Region.DoesNotExist) as context:
-            Region.objects.get(pk=expected.id)
-        msg = 'Region matching query does not exist'
+        with self.assertRaises(Pasture.DoesNotExist) as context:
+            Pasture.objects.get(pk=expected.id)
+        msg = 'Pasture matching query does not exist'
         self.assertIn(msg, str(context.exception))
 
     def test_07_save(self):
-        expected = Region()
-        expected.name = self.region_data['name']
-        expected.url = self.region_data['url']
+        expected = Pasture()
+        expected.name = self.pasture_data['name']
+        expected.url = self.pasture_data['url']
+        expected.fallow = self.pasture_data['fallow']
+        expected.distance = self.pasture_data['distance']
         expected.save()
-        actual = Region.objects.get(pk=expected.id)
+        actual = Pasture.objects.get(pk=expected.id)
         self.assertEqual(expected.name,
                          actual.name)
         self.assertEqual(expected.url,
                          actual.url)
+        self.assertEqual(expected.fallow,
+                         actual.fallow)
+        self.assertEqual(expected.distance,
+                         actual.distance)
 
 class TestSeasonModel(APITestCase):
     fixtures = ['season']
@@ -822,7 +837,7 @@ class TestStatusModel(APITestCase):
         self.assertEqual(expected.name,
                          actual.name)
 
-class TestTreatmentModel(APITestCase):
+class TTestTreatmentModel(APITestCase):
     fixtures = ['treatment']
 
     def setUp(self):
@@ -888,7 +903,7 @@ class TestTreatmentModel(APITestCase):
         self.assertEqual(expected.name,
                          actual.name)
 
-class TestVaccineModel(APITestCase):
+class TTestVaccineModel(APITestCase):
     fixtures = ['vaccine']
 
     def setUp(self):
@@ -954,7 +969,7 @@ class TestVaccineModel(APITestCase):
         self.assertEqual(expected.name,
                          actual.name)
 
-class TestCowModel(APITestCase):
+class TTestCowModel(APITestCase):
     fixtures = ['age', 'breed', 'color', 'user', 'cow']
 
     def setUp(self):
@@ -1118,10 +1133,10 @@ class TestCowModel(APITestCase):
         self.assertEqual(expected.breed.url,
                          actual.breed.url)
 
-class TestPastureModel(APITestCase):
+class TestSeedModel(APITestCase):
     # Note: loading order does matter
-    fixtures = ['cerealhay', 'grasshay', 'legumehay', 'region',
-                'season', 'user', 'pasture']
+    fixtures = ['cerealhay', 'grasshay', 'legumehay', 'season',
+                'user', 'pasture', 'seed']
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
@@ -1286,7 +1301,7 @@ class TestPastureModel(APITestCase):
         self.assertEqual(expected.legume_hay.name,
                          actual.legume_hay.name)        
 
-class TestEventModel(APITestCase):
+class TTestEventModel(APITestCase):
     # Note: loading order does matter
     fixtures = ['action', 'age', 'breed', 'color', 'cow', 'user', 'event']
 
@@ -1411,7 +1426,7 @@ class TestEventModel(APITestCase):
         self.assertEqual(expected.action.name,
                          actual.action.name)        
 
-class TestExerciseModel(APITestCase):
+class TTestExerciseModel(APITestCase):
     # Note: loading order does matter
     fixtures = ['age', 'breed', 'cerealhay', 'color', 'grasshay',
                 'legumehay', 'region', 'user', 'cow', 'season',
@@ -1563,7 +1578,7 @@ class TestExerciseModel(APITestCase):
         self.assertEqual(expected.pasture.region.name,
                          actual.pasture.region.name)        
 
-class TestMilkModel(APITestCase):
+class TTestMilkModel(APITestCase):
     # Note: loading order does matter
     fixtures = ['age', 'breed', 'color', 'cow', 'user', 'milk']
 
@@ -1686,7 +1701,7 @@ class TestMilkModel(APITestCase):
         self.assertEqual(expected.gallons,
                          actual.gallons)
 
-class TestHealthRecordModel(APITestCase):
+class TTestHealthRecordModel(APITestCase):
     # Note: loading order does matter
     fixtures = ['age', 'breed', 'color', 'illness', 'injury',
                 'status', 'vaccine', 'user', 'cow', 'healthrecord']
