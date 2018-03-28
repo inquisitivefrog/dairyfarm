@@ -26,21 +26,6 @@ def read_args():
                                  'dutch_belted'],
                         default='holstein',
                         help='breed of cattle')
-    parser.add_argument('-c',
-                        '--color',
-                        type=str,
-                        required=False,
-                        choices=['black_white',
-                                 'red_white',
-                                 'brown',
-                                 'tawny',
-                                 'golden_white',
-                                 'gray',
-                                 'red',
-                                 'white',
-                                 'roan'],
-                        default='black_white',
-                        help='breed color')
     parser.add_argument('-q',
                         '--quantity',
                         type=int,
@@ -59,13 +44,22 @@ def read_args():
                         help='username of user')
     o = parser.parse_args()
     return(o.breed,
-           o.color,
            o.quantity,
            o.date,
            o.username)
-    
+
+def _get_colors(breed):
+    cows = {'holstein': ['black_white', 'red_white'],
+            'jersey': ['brown', 'tawny'],
+            'guernsey': ['golden_white'],
+            'ayrshire': ['golden_white'],
+            'brown_swiss': ['brown', 'gray'],
+            'milking_shorthorn': ['red', 'white', 'roan', 'red_white'],
+            'dutch_belted': ['black_white']}
+    return cows[breed]
+
 def _get_data(breed, color, date, user):
-    from assets.models import Age, Breed, Cow
+    from assets.models import Age, Breed
     from tools.utils import TestTime
     ages = [ a.name for a in Age.objects.all() ]
     age = ages[randint(0, len(ages) - 1)]
@@ -77,45 +71,38 @@ def _get_data(breed, color, date, user):
     return {'rfid': uuid4(),
             'purchased_by': user,
             'purchase_date': TestTime.convert_date(date),
-            'color': color,
             'age': age,
-            'breed': breed}
+            'breed': breed.name,
+            'color': color}
 
-def purchase_cow(breed, color, date, username):
+def purchase_cow(breed, date, username):
     from django.contrib.auth.models import User
     from assets.serializers import CowWriteSerializer
     try:
         user = User.objects.get(username=username)
-        cs = CowWriteSerializer(data=_get_data(breed, color, date, user))
-        if cs.is_valid() and len(cs.errors) == 0:
-            cs.save()
-            return
-        else:
-           print('ERROR: cs errors: {}'.format(cs.errors))
-           exit(1)
+        for color in _get_colors(breed):
+            cs = CowWriteSerializer(data=_get_data(breed, color, date, user))
+            if cs.is_valid() and len(cs.errors) == 0:
+                cs.save()
+            else:
+                print('ERROR: cs errors: {}'.format(cs.errors))
+                
     except PermissionDenied as e:
         print('ERROR: unable to create username: {}!'.format(username))
-        exit(1)
     except IntegrityError as e:
         print('REAL ERROR: {}'.format(str(e)))
-        exit(1)
 
 def main():
-    (breed, color, quantity, date, username) = read_args()
+    (breed, quantity, date, username) = read_args()
     path.append('/Users/tim/Documents/workspace/python3/dairyfarm/demo/')
     environ.setdefault('DJANGO_SETTINGS_MODULE',
                        'demo.settings')
     setup()
     bought = 0
     for i in range(quantity):
-        purchase_cow(breed, color, date, username)
+        purchase_cow(breed, date, username)
         bought += 1
-    if bought == 1:
-        print('{} {} {} purchased on {} by {}'.format(bought, color, breed, date, username))
-    elif breed.endswith('s'):
-        print('{} {} {}es purchased on {} by {}'.format(bought, color, breed, date, username))
-    else:
-        print('{} {} {}s purchased on {} by {}'.format(bought, color, breed, date, username))
+    print('{} {} purchased on {} by {}'.format(bought, breed, date, username))
     return
 
 if __name__ == '__main__':

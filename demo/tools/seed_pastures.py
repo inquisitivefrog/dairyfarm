@@ -50,8 +50,8 @@ def read_args():
                                  'vetch'],
                         default='clover',
                         help='legume planted to make hay')
-    parser.add_argument('-r',
-                        '--region',
+    parser.add_argument('-p',
+                        '--pasture',
                         type=str,
                         required=True,
                         choices=['North',
@@ -67,7 +67,7 @@ def read_args():
                                  'South West',
                                  'South East',
                                  'Pen'],
-                        help='field region allocation')
+                        help='which pasture to seed')
     parser.add_argument('-s',
                         '--season',
                         type=str,
@@ -88,7 +88,7 @@ def read_args():
     return(o.cereal,
            o.grass,
            o.legume,
-           o.region,
+           o.pasture,
            o.season,
            o.username,
            o.year)
@@ -102,40 +102,38 @@ def _convert_name(n):
     new_word = '_'.join(words)
     return prefix + new_word + suffix
 
-def _get_data(cereal_hay, grass_hay, legume_hay, region, season, username, year):
+def _get_data(cereal_hay, grass_hay, legume_hay, pasture, season, username, year):
     from django.contrib.auth.models import User
     from tools.utils import TestTime
     user = User.objects.get(username=username)
-    return {'seeded_by': user,
+    return {'seeded_by': username,
             'cereal_hay': cereal_hay,
             'year': year,
             'season': season,
             'grass_hay': grass_hay,
             'legume_hay': legume_hay,
-            'region': region}
+            'pasture': pasture}
 
-def plant_pasture(cereal_hay, grass_hay, legume_hay, region, season, username, year):
-    from assets.serializers import PastureSerializer
+def plant_pasture(cereal_hay, grass_hay, legume_hay, pasture, season, username, year):
+    from assets.serializers import SeedWriteSerializer
     try:
-        ps = PastureSerializer(data=_get_data(cereal_hay, grass_hay, legume_hay,
-                               region, season, username, year))
-        if ps.is_valid() and len(ps.errors) == 0:
-            ps.save()
+        ss = SeedWriteSerializer(data=_get_data(cereal_hay, grass_hay, legume_hay,
+                                                pasture, season, username, year))
+        if ss.is_valid() and len(ss.errors) == 0:
+            ss.save()
             msg_1 = '{} planted {}, {} '.format(username, cereal_hay, grass_hay)
             msg_2 = 'and {} in region {} for {} {}'.format(legume_hay,
-                                                           region,
+                                                           pasture,
                                                            season,
                                                            year)
             print(msg_1 + msg_2) 
             return
         else:
-            print('PastureSerializer valid: {}'.format(ps.is_valid()))
-            print('PastureSerializer errors: {}'.format(ps.errors))
-            print('ERROR: {}'.format(ps.errors))
+            print('ERROR: {}'.format(ss.errors))
     except PermissionDenied as e:
         print('PermissionDenied')
         print('ERROR: {}'.format(e))
-        print('ERROR: {} unable to seed region {}!'.format(username, region))
+        print('ERROR: {} unable to seed pasture {}!'.format(username, pasture))
         exit(1)
     except IntegrityError as e:
         print('IntegrityError')
@@ -143,7 +141,7 @@ def plant_pasture(cereal_hay, grass_hay, legume_hay, region, season, username, y
         exit(1)
 
 def main():
-    (cereal_hay, grass_hay, legume_hay, region, season, username, year) = read_args()
+    (cereal_hay, grass_hay, legume_hay, pasture, season, username, year) = read_args()
     path.append('/Users/tim/Documents/workspace/python3/dairyfarm/demo/')
     environ.setdefault('DJANGO_SETTINGS_MODULE',
                        'demo.settings')
@@ -151,7 +149,7 @@ def main():
     plant_pasture(cereal_hay,
                   grass_hay,
                   legume_hay,
-                  region,
+                  pasture,
                   season,
                   username,
                   year)

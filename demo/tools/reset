@@ -9,14 +9,14 @@ clean_up
 start_fresh
 load_dependencies
 purchase_cows farmhand 2014-12-31 10
-purchase_cows farmhand 2015-03-31 10
-purchase_cows farmhand 2015-06-30 10
-purchase_cows farmhand 2015-09-30 10
-purchase_cows farmhand 2015-12-31 10
-exit
+#purchase_cows farmhand 2015-03-31 10
+#purchase_cows farmhand 2015-06-30 10
+#purchase_cows farmhand 2015-09-30 10
+#purchase_cows farmhand 2015-12-31 10
 seed_pastures Spring farmhand 2015
 fallow_pastures Spring farmhand 2015
 generate_daily_activity vet 2015-01-01
+exit
 preserve_reference_data
 test
 

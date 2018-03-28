@@ -5,36 +5,88 @@ from rest_framework import serializers
 from assets.models import Action, Age, Breed, CerealHay, Color
 from assets.models import Cow, Event, Exercise, GrassHay, HealthRecord
 from assets.models import Illness, Injury, LegumeHay, Milk, Pasture
-from assets.models import Region, Season, Status, Vaccine
+from assets.models import Season, Seed, Status, Vaccine
 
+# dependent serializers
 class ActionSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('id', 'name')
         lookup_field = 'pk'
         model = Action
-        read_only_fields = ('id', 'name')
 
 class AgeSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('id', 'name')
         lookup_field = 'pk'
         model = Age
-        read_only_fields = ('id', 'name')
 
 class BreedSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('id', 'name', 'url')
         lookup_field = 'pk'
         model = Breed
-        read_only_fields = ('id', 'name', 'url')
 
 class ColorSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('id', 'name')
         lookup_field = 'pk'
         model = Color
-        read_only_fields = ('id', 'name')
 
+class CerealHaySerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('id', 'name')
+        lookup_field = 'pk'
+        model = CerealHay
+
+class GrassHaySerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('id', 'name')
+        lookup_field = 'pk'
+        model = GrassHay
+
+class IllnessSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('id', 'diagnosis', 'treatment')
+        lookup_field = 'pk'
+        model = Illness
+
+class InjurySerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('id', 'diagnosis', 'treatment')
+        lookup_field = 'pk'
+        model = Injury
+
+class LegumeHaySerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('id', 'name')
+        lookup_field = 'pk'
+        model = LegumeHay
+
+class PastureSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('id', 'name', 'url', 'fallow', 'distance')
+        lookup_field = 'pk'
+        model = Pasture
+
+class SeasonSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('id', 'name')
+        lookup_field = 'pk'
+        model = Season
+
+class StatusSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('id', 'name')
+        lookup_field = 'pk'
+        model = Status
+
+class VaccineSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('id', 'name')
+        lookup_field = 'pk'
+        model = Vaccine
+
+# independent serializers
 class CowReadSerializer(serializers.ModelSerializer):
     purchased_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                 slug_field='username')
@@ -85,7 +137,7 @@ class EventReadSerializer(serializers.ModelSerializer):
     action = ActionSerializer(read_only=True)
 
     class Meta:
-        fields = ('id', 'recorded_by', 'timestamp', 'cow', 'action', 'link')
+        fields = ('id', 'recorded_by', 'event_time', 'cow', 'action', 'link')
         lookup_field = 'pk'
         model = Event
         read_only_fields = ('link',)
@@ -105,7 +157,10 @@ class EventWriteSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         cow = validated_data.pop('cow')
-        event = Event.objects.create(cow=cow, **validated_data)
+        action = validated_data.pop('action')
+        event = Event.objects.create(cow=cow,
+                                     action=action,
+                                     **validated_data)
         return event
     
     # update() does not need to be overridden
@@ -114,16 +169,10 @@ class HealthRecordReadSerializer(serializers.ModelSerializer):
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                slug_field='username')
     cow = CowReadSerializer(read_only=True)
-    illness = serializers.SlugRelatedField(queryset=Illness.objects.all(),
-                                           slug_field='diagnosis',
-                                           required=False)
-    injury = serializers.SlugRelatedField(queryset=Injury.objects.all(),
-                                           slug_field='diagnosis',
-                                           required=False)
-    status = serializers.SlugRelatedField(queryset=Status.objects.all(),
-                                          slug_field='name')
-    vaccine = serializers.SlugRelatedField(queryset=Vaccine.objects.all(),
-                                           slug_field='name')
+    illness = IllnessSerializer(read_only=True)
+    injury = InjurySerializer(read_only=True)
+    status = StatusSerializer(read_only=True)
+    vaccine = VaccineSerializer(read_only=True)
 
     class Meta:
         fields = ('id', 'recorded_by', 'timestamp', 'cow', 'temperature',
@@ -159,6 +208,31 @@ class HealthRecordWriteSerializer(serializers.ModelSerializer):
         lookup_field = 'pk'
         model = HealthRecord
 
+    def create(self, validated_data):
+        cow = validated_data.pop('cow')
+        status = validated_data.pop('status')
+        if 'illness' in validated_data: 
+            illness = validated_data.pop('illness')
+        else:
+            illness = None
+        if 'injury' in validated_data: 
+            injury = validated_data.pop('injury')
+        else:
+            injury = None
+        if 'vaccine' in validated_data: 
+            vaccine = validated_data.pop('vaccine')
+        else:
+            vaccine = None
+        hr = HealthRecord.objects.create(cow=cow,
+                                         illness=illness,
+                                         injury=injury,
+                                         status=status,
+                                         vaccine=vaccine,
+                                         **validated_data)
+        return hr
+    
+    # update() does not need to be overridden
+    
 class MilkReadSerializer(serializers.ModelSerializer):
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                slug_field='username')
@@ -181,26 +255,69 @@ class MilkWriteSerializer(serializers.ModelSerializer):
         lookup_field = 'pk'
         model = Milk
 
-class PastureSerializer(serializers.ModelSerializer):
+    def create(self, validated_data):
+        cow = validated_data.pop('cow')
+        milk = Milk.objects.create(cow=cow,
+                                   **validated_data)
+        return milk
+    
+    # update() does not need to be overridden
+
+class SeedReadSerializer(serializers.ModelSerializer):
     seeded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                              slug_field='username')
+    pasture = PastureSerializer(read_only=True)
+    season = SeasonSerializer(read_only=True)
+    cereal_hay = CerealHaySerializer(read_only=True)
+    grass_hay = GrassHaySerializer(read_only=True)
+    legume_hay = LegumeHaySerializer(read_only=True)
+
+    class Meta:
+        fields = ('id', 'seeded_by', 'pasture', 'season', 'year',
+                  'cereal_hay', 'grass_hay', 'legume_hay', 'link')
+        lookup_field = 'pk'
+        model = Seed
+        read_only_fields = ('link',)
+
+class SeedWriteSerializer(serializers.ModelSerializer):
+    seeded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
+                                             slug_field='username')
+    pasture = serializers.SlugRelatedField(queryset=Pasture.objects.all(),
+                                           slug_field='name')
+    season = serializers.SlugRelatedField(queryset=Season.objects.all(),
+                                         slug_field='name')
     cereal_hay = serializers.SlugRelatedField(queryset=CerealHay.objects.all(),
                                               slug_field='name')
     grass_hay = serializers.SlugRelatedField(queryset=GrassHay.objects.all(),
                                              slug_field='name')
     legume_hay = serializers.SlugRelatedField(queryset=LegumeHay.objects.all(),
                                              slug_field='name')
-    region = serializers.SlugRelatedField(queryset=Region.objects.all(),
-                                          slug_field='name')
-    season = serializers.SlugRelatedField(queryset=Season.objects.all(),
-                                         slug_field='name')
 
     class Meta:
-        fields = ('id', 'fallow', 'distance', 'seeded_by', 'region',
-                  'year', 'season', 'cereal_hay', 'grass_hay', 'legume_hay', 'link')
+        fields = ('id', 'seeded_by', 'pasture', 'season', 'year',
+                  'cereal_hay', 'grass_hay', 'legume_hay')
         lookup_field = 'pk'
-        model = Pasture
-        read_only_fields = ('link',)
+        model = Seed
+
+    def create(self, validated_data):
+        pasture = validated_data.pop('pasture')
+        season = validated_data.pop('season')
+        cereal_hay = validated_data.pop('cereal_hay')
+        grass_hay = validated_data.pop('grass_hay')
+        legume_hay = validated_data.pop('legume_hay')
+        seeded_by = validated_data.pop('seeded_by')
+        year = validated_data.pop('year')
+        seed = Seed.objects.create(pasture=pasture,
+                                   season=season,
+                                   cereal_hay=cereal_hay,
+                                   grass_hay=grass_hay,
+                                   legume_hay=legume_hay,
+                                   seeded_by=seeded_by,
+                                   year=year)
+                                   #**validated_data)
+        return seed
+    
+    # update() does not need to be overridden
 
 class ExerciseReadSerializer(serializers.ModelSerializer):
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
@@ -211,8 +328,7 @@ class ExerciseReadSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exercise
         lookup_field = 'pk'
-        fields = ('id', 'recorded_by', 'timestamp', 'cow', 'pasture',
-                  'distance', 'link')
+        fields = ('id', 'recorded_by', 'timestamp', 'cow', 'pasture', 'link')
         read_only_fields = ('link',)
 
 class ExerciseWriteSerializer(serializers.ModelSerializer):
@@ -221,9 +337,20 @@ class ExerciseWriteSerializer(serializers.ModelSerializer):
     cow = serializers.SlugRelatedField(queryset=Cow.objects.all(),
                                           slug_field='rfid')
     pasture = serializers.SlugRelatedField(queryset=Pasture.objects.all(),
-                                          slug_field='region_id')
+                                          slug_field='name')
 
     class Meta:
         model = Exercise
         lookup_field = 'pk'
-        fields = ('id', 'recorded_by', 'cow', 'pasture', 'distance')
+        fields = ('id', 'recorded_by', 'timestamp', 'cow', 'pasture')
+
+    def create(self, validated_data):
+        cow = validated_data.pop('cow')
+        pasture = validated_data.pop('pasture')
+        exercise = Exercise.objects.create(cow=cow,
+                                           pasture=pasture,
+                                           **validated_data)
+        return exercise
+    
+    # update() does not need to be overridden
+

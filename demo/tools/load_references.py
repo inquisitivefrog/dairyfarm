@@ -65,11 +65,11 @@ def load_breeds():
               'Brown Swiss': '/static/images/breeds/brown_swiss.png',
               'Milking Shorthorn': '/static/images/breeds/milking_shorthorn.png',
               'Dutch Belted': '/static/images/breeds/dutch_belted.png'}
-    for breed, colors in breeds.items(): 
+    for breed in breeds: 
         data = {'name': breed,
                 'url': images[breed]}
         Breed.objects.create(**data)
-        print('Defined breed: {} of colors: {}'.format(breed, ', '.join(colors)))
+        print('Defined breed: {}'.format(breed))
     return
 
 def load_cereal_hay():
@@ -139,29 +139,30 @@ def load_illnesses():
         print('Defined treatment: {} for diagnosis: {}'.format(treatment, diagnosis))
     return
 
-def load_regions():
-    from assets.models import Region
-    regions = ['North', 'West', 'South', 'East', 'Central North',
-               'Central West', 'Central South', 'Central East',
-               'North West', 'North East', 'South West', 'South East', 'Pen']
-    images = {'North': '/static/images/regions/north.png',
-              'West': '/static/images/regions/west.png',
-              'South': '/static/images/regions/south.png',
-              'East': '/static/images/regions/east.png',
-              'Central North': '/static/images/regions/central_north.png',
-              'Central West': '/static/images/regions/central_west.png',
-              'Central South': '/static/images/regions/central_south.png',
-              'Central East': '/static/images/regions/central_east.png',
-              'North West': '/static/images/regions/north_west.png',
-              'North East': '/static/images/regions/north_east.png',
-              'South West': '/static/images/regions/south_west.png',
-              'South East': '/static/images/regions/south_east.png',
-              'Pen': '/static/images/regions/pen.png'}
-    for region in regions: 
-        data = {'name': region,
-                'url': images[region]}
-        Region.objects.create(**data)
-        print('Defined region: {}'.format(region))
+def load_pastures():
+    from assets.models import Pasture
+    pastures = {'North': '/static/images/regions/north.png',
+                'West': '/static/images/regions/west.png',
+                'South': '/static/images/regions/south.png',
+                'East': '/static/images/regions/east.png',
+                'Central North': '/static/images/regions/central_north.png',
+                'Central West': '/static/images/regions/central_west.png',
+                'Central South': '/static/images/regions/central_south.png',
+                'Central East': '/static/images/regions/central_east.png',
+                'North West': '/static/images/regions/north_west.png',
+                'North East': '/static/images/regions/north_east.png',
+                'South West': '/static/images/regions/south_west.png',
+                'South East': '/static/images/regions/south_east.png',
+                'Pen': '/static/images/regions/pen.png'}
+    for name, url in pastures.items(): 
+        data = {'name': name,
+                'url': url}
+        if name not in ['South West', 'South East', 'Pen']:
+            Pasture.objects.create(**data)
+        else:
+            data.update({'fallow': True})
+            Pasture.objects.create(**data)
+        print('Defined pasture: {}'.format(name))
     return
 
 def load_seasons():
@@ -230,7 +231,7 @@ def main():
     load_legume_hay()
     load_injuries()
     load_illnesses()
-    load_regions()
+    load_pastures()
     load_seasons()
     load_statuses()
     load_treatments()

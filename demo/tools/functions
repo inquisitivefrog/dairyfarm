@@ -22,53 +22,32 @@ function purchase_cows() {
     user=$1
     dt=$2
     quantity=$3
-    for color in black_white red_white
+    for breed in holstein jersey guernsey ayrshire brown_swiss milking_shorthorn dutch_belted
     do
-        ./tools/purchase_herd.py -b holstein -c $color -d "$dt" -q $quantity -u $user
+        ./tools/purchase_herd.py -b $breed -d "$dt" -q $quantity -u $user
     done
-    for color in brown tawny
-    do
-        ./tools/purchase_herd.py -b jersey -c $color -d "$dt" -q $quantity -u $user
-    done
-    ./tools/purchase_herd.py -b guernsey -c golden_white -d "$dt" -q $quantity -u $user
-    ./tools/purchase_herd.py -b ayrshire -c golden_white -d "$dt" -q $quantity -u $user
-    for color in brown gray
-    do
-        ./tools/purchase_herd.py -b brown_swiss -c $color -d "$dt" -q $quantity -u $user
-    done
-    for color in red white roan red_white
-    do
-        ./tools/purchase_herd.py -b milking_shorthorn -c $color -d "$dt" -q $quantity -u $user
-    done
-    ./tools/purchase_herd.py -b dutch_belted -c black_white -d "$dt" -q $quantity -u $user
 }
 
 function seed_pastures() {
     season=$1
     user=$2
     year=$3
-    ./tools/seed_pastures.py -c alfalfa -g bermuda -l clover -r North -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c barley -g bluegrass -l cowpeas -r West -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c oat -g brome -l lespedeza -r South -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c rye -g fescue -l soybean -r East -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c wheat -g orchardgrass -l trefoil -r 'Central North' -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c alfalfa -g 'reed canary grass' -l vetch -r 'Central West' -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c barley -g ryegrass -l clover -r 'Central South' -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c oat -g sudangrass -l cowpeas -r 'Central East' -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c rye -g timothy -l lespedeza -r 'North West' -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c wheat -g bermuda -l soybean -r 'North East' -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c alfalfa -g bluegrass -l trefoil -r 'South West' -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c barley -g brome -l vetch -r 'South East' -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c oat -g brome -l lespedeza -r Pen -s $season -u $user -y $year
+    ./tools/seed_pastures.py -c alfalfa -g bermuda -l clover -p North -s $season -u $user -y $year
+    ./tools/seed_pastures.py -c barley -g bluegrass -l cowpeas -p West -s $season -u $user -y $year
+    ./tools/seed_pastures.py -c oat -g brome -l lespedeza -p South -s $season -u $user -y $year
+    ./tools/seed_pastures.py -c rye -g fescue -l soybean -p East -s $season -u $user -y $year
+    ./tools/seed_pastures.py -c wheat -g orchardgrass -l trefoil -p 'Central North' -s $season -u $user -y $year
+    ./tools/seed_pastures.py -c alfalfa -g 'reed canary grass' -l vetch -p 'Central West' -s $season -u $user -y $year
+    ./tools/seed_pastures.py -c barley -g ryegrass -l clover -p 'Central South' -s $season -u $user -y $year
+    ./tools/seed_pastures.py -c oat -g sudangrass -l cowpeas -p 'Central East' -s $season -u $user -y $year
+    ./tools/seed_pastures.py -c rye -g timothy -l lespedeza -p 'North West' -s $season -u $user -y $year
+    ./tools/seed_pastures.py -c wheat -g bermuda -l soybean -p 'North East' -s $season -u $user -y $year
 }
 
 function fallow_pastures() {
-    season=$1
-    user=$2
-    year=$3
-    ./tools/assign_fallow_pastures.py -r "South West" -s $season -u $user -y $year
-    ./tools/assign_fallow_pastures.py -r "South East" -s $season -u $user -y $year
-    ./tools/assign_fallow_pastures.py -r "Pen" -s $season -u $user -y $year
+    ./tools/assign_fallow_pastures.py -p "South West" 
+    ./tools/assign_fallow_pastures.py -p "South East" 
+    ./tools/assign_fallow_pastures.py -p "Pen" 
 }
 
 function generate_daily_activity() {

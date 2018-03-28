@@ -6,7 +6,7 @@ from assets.api_views import CowDetail, CowList, CowListByMonth, CowListByYear
 from assets.api_views import EventDetail, EventList
 from assets.api_views import ExerciseDetail, ExerciseList, HealthRecordDetail
 from assets.api_views import HealthRecordList, MilkDetail, MilkList
-from assets.api_views import PastureDetail, PastureList
+from assets.api_views import SeedDetail, SeedList
 from assets.views import IndexView
 
 app_name = 'assets'
@@ -50,10 +50,10 @@ urlpatterns = [
     url(r'^api/milk/(?P<pk>\d+)/$',
         MilkDetail.as_view(),
         name='milk-detail'),
-    url(r'^api/pastures/$',
-        PastureList.as_view(),
-        name='pasture-list'),
-    url(r'^api/pastures/(?P<pk>\d+)/$',
-        PastureDetail.as_view(),
-        name='pasture-detail'),
+    url(r'^api/seeds/$',
+        SeedList.as_view(),
+        name='seed-list'),
+    url(r'^api/seeds/(?P<pk>\d+)/$',
+        SeedDetail.as_view(),
+        name='seed-detail'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

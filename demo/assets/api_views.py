@@ -2,15 +2,15 @@ from django.views.defaults import bad_request
 
 from rest_framework import generics
 
-from assets.models import Cow, Event, Exercise, HealthRecord, Milk, Pasture
+from assets.models import Cow, Event, Exercise, HealthRecord, Milk, Seed
 from assets.helpers import AssetTime
-from assets.serializers import CowReadSerializer, CowWriteSerializer, EventReadSerializer
-from assets.serializers import EventWriteSerializer, ExerciseReadSerializer
-from assets.serializers import ExerciseWriteSerializer
+from assets.serializers import CowReadSerializer, CowWriteSerializer
+from assets.serializers import EventReadSerializer, EventWriteSerializer
+from assets.serializers import ExerciseReadSerializer, ExerciseWriteSerializer
 from assets.serializers import HealthRecordReadSerializer
 from assets.serializers import HealthRecordWriteSerializer
 from assets.serializers import MilkReadSerializer, MilkWriteSerializer
-from assets.serializers import PastureSerializer
+from assets.serializers import SeedReadSerializer, SeedWriteSerializer
 
 class CowDetail(generics.RetrieveUpdateDestroyAPIView):
     # Get / Update a Cow
@@ -38,12 +38,9 @@ class CowListByMonth(generics.ListAPIView):
         if self.kwargs:
             year = self.kwargs['year']
             month = self.kwargs['month']
-            start_date = AssetTime.sdate_year_month(year, month)
             end_date = AssetTime.edate_year_month(year, month)
-            print('start_date: {}'.format(start_date))
-            print('end_date: {}'.format(end_date))
-            return Cow.objects.filter(sell_date__gt=end_date,
-                                      purchase_date__lte=start_date)
+            return Cow.objects.filter(sell_date__gte=end_date,
+                                      purchase_date__lte=end_date)
         return Cow.objects.all()
 
 class CowListByYear(generics.ListAPIView):
@@ -53,12 +50,9 @@ class CowListByYear(generics.ListAPIView):
     def get_queryset(self):
         if self.kwargs:
             year = self.kwargs['year']
-            start_date = AssetTime.sdate_year(year)
             end_date = AssetTime.edate_year(year)
-            print('start_date: {}'.format(start_date))
-            print('end_date: {}'.format(end_date))
             return Cow.objects.filter(sell_date__gte=end_date,
-                                      purchase_date__lte=start_date)
+                                      purchase_date__lte=end_date)
         return Cow.objects.all()
 
 class EventDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -116,7 +110,6 @@ class HealthRecordList(generics.ListCreateAPIView):
         return HealthRecordWriteSerializer
 
 class MilkDetail(generics.RetrieveUpdateDestroyAPIView):
-    # Get / Update a Milk
     # Get / Update / Destroy a Milk
     queryset = Milk.objects.all()
 
@@ -134,12 +127,21 @@ class MilkList(generics.ListCreateAPIView):
             return MilkReadSerializer
         return MilkWriteSerializer
 
-class PastureDetail(generics.RetrieveUpdateDestroyAPIView):
-    # Get / Update / Destroy a Pasture
-    queryset = Pasture.objects.all()
-    serializer_class = PastureSerializer
+class SeedDetail(generics.RetrieveUpdateDestroyAPIView):
+    # Get / Update / Destroy a Seed
+    queryset = Seed.objects.all()
 
-class PastureList(generics.ListCreateAPIView):
+    def get_serializer_class(self):
+        if self.request.method in ('GET',):
+            return SeedReadSerializer
+        return SeedWriteSerializer
+
+class SeedList(generics.ListCreateAPIView):
     # Get / Create pastures 
-    queryset = Pasture.objects.all()
-    serializer_class = PastureSerializer
+    queryset = Seed.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method in ('GET',):
+            return SeedReadSerializer
+        return SeedWriteSerializer
+

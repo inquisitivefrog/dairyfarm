@@ -72,7 +72,7 @@ class Breed(models.Model):
     url = models.CharField(max_length=50,
                            null=False,
                            blank=False,
-                           unique=True)
+                           unique=False)
 
     def __str__(self):
         if self.id:
@@ -107,7 +107,7 @@ class CerealHay(models.Model):
             return '{}'.format(self.__class__)
 
 class Cow(models.Model):
-    rfid = models.UUIDField(default=uuid4(),
+    rfid = models.UUIDField(default=uuid4,
                             unique=True)
     purchased_by = models.ForeignKey(User,
                                      on_delete=models.CASCADE)
@@ -139,10 +139,6 @@ class Cow(models.Model):
 
     def save(self, *args, **kwargs):
         super(Cow, self).save(*args, **kwargs)
-        tmp = []
-        for word in self.breed.name.split(' '):
-            tmp.append(word.lower())
-        b_name = '_'.join(tmp)
         kwargs = {'link': reverse('assets:cow-detail',
                                   kwargs = {'pk': self.pk})}
         Cow.objects.filter(pk=self.pk).update(**kwargs)
@@ -153,7 +149,7 @@ class Event(models.Model):
                                     null=False,
                                     blank=False,
                                     on_delete=models.CASCADE)
-    timestamp = models.DateTimeField(auto_now_add=True)
+    event_time = models.DateTimeField()
     cow = models.ForeignKey(Cow,
                             null=False,
                             on_delete=models.CASCADE)
@@ -167,7 +163,7 @@ class Event(models.Model):
     def __str__(self):
         if self.id:
             return '{}: {}: {}: {}'.format(self.recorded_by.username,
-                                           self.timestamp,
+                                           self.event_time,
                                            self.cow.rfid,
                                            self.action.name)
         else:
@@ -258,29 +254,6 @@ class LegumeHay(models.Model):
                             null=False,
                             blank=False,
                             unique=True)
-
-    def __str__(self):
-        if self.id:
-            return self.name
-        else:
-            return '{}'.format(self.__class__)
-
-    def __repr__(self):
-        if self.id:
-            return '{}:{}'.format(self.__class__,
-                                  self.id)
-        else:
-            return '{}'.format(self.__class__)
-
-class Region(models.Model):
-    name = models.CharField(max_length=20,
-                            null=False,
-                            blank=False,
-                            unique=True)
-    url = models.CharField(max_length=50,
-                           null=False,
-                           blank=False,
-                           unique=True)
 
     def __str__(self):
         if self.id:
@@ -528,23 +501,40 @@ class Milk(models.Model):
         return
 
 class Pasture(models.Model):
+    name = models.CharField(max_length=20,
+                            null=False,
+                            blank=False,
+                            unique=True)
+    url = models.CharField(max_length=50,
+                           null=False,
+                           blank=False,
+                           unique=True)
     fallow = models.BooleanField(default=False)
-    distance = models.IntegerField(default=0,
-                                   null=False,
-                                   blank=False)
-    year = models.SmallIntegerField(default=2015)
-    season = models.ForeignKey(Season,
-                               null=False,
-                               blank=False,
-                               on_delete=models.CASCADE)
+    distance = models.IntegerField(default=0)
+
+    def __str__(self):
+        if self.id:
+            return '{}'.format(self.name)
+        else:
+            return '{}'.format(self.__class__)
+
+    def __repr__(self):
+        if self.id:
+            return '{}:{}'.format(self.__class__,
+                                  self.id)
+        else:
+            return '{}'.format(self.__class__)
+
+class Seed(models.Model):
     seeded_by = models.ForeignKey(User,
                                   null=False,
                                   blank=False,
                                   on_delete=models.CASCADE)
-    region = models.ForeignKey(Region,
-                               null=False,
-                               blank=False,
+    year = models.SmallIntegerField(default=2015)
+    season = models.ForeignKey(Season,
                                on_delete=models.CASCADE)
+    pasture = models.ForeignKey(Pasture,
+                                on_delete=models.CASCADE)
     cereal_hay = models.ForeignKey(CerealHay,
                                    null=True,
                                    blank=False,
@@ -566,7 +556,7 @@ class Pasture(models.Model):
 
     def __str__(self):
         if self.id:
-            return self.region.name
+            return self.pasture.name
         else:
             return '{}'.format(self.__class__)
 
@@ -578,14 +568,10 @@ class Pasture(models.Model):
             return '{}'.format(self.__class__)
 
     def save(self, *args, **kwargs):
-        super(Pasture, self).save(*args, **kwargs)
-        tmp = []
-        for word in self.region.name.split(' '):
-            tmp.append(word.lower())
-        r_name = '/{}.png'.format( '_'.join(tmp))
-        kwargs = {'link': reverse('assets:pasture-detail',
+        super(Seed, self).save(*args, **kwargs)
+        kwargs = {'link': reverse('assets:seed-detail',
                                   kwargs = {'pk': self.pk})}
-        Pasture.objects.filter(pk=self.pk).update(**kwargs)
+        Seed.objects.filter(pk=self.pk).update(**kwargs)
         return
 
 class Exercise(models.Model):
@@ -598,7 +584,6 @@ class Exercise(models.Model):
                             on_delete=models.CASCADE)
     pasture = models.ForeignKey(Pasture,
                                 on_delete=models.CASCADE)
-    distance = models.IntegerField(default=0)
     link = models.URLField(max_length=50,
                            null=True,
                            blank=False)
