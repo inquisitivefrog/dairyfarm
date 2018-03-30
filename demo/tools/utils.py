@@ -90,7 +90,7 @@ class TestData:
         weight = randint(450, 550)
         status = Status.objects.get(pk=randint(1,2)).name
         return {'recorded_by': user,
-                'timestamp': dt,
+                'inspection_time': dt,
                 'cow': cow.rfid,
                 'temperature': temperature,
                 'respiratory_rate': respiratory_rate,
@@ -109,7 +109,7 @@ class TestData:
         body_condition_score = randint(20, 40) * 10.0 / 100
         weight = randint(400, 650)
         return {'recorded_by': user,
-                'timestamp': dt,
+                'inspection_time': dt,
                 'cow': cow.rfid,
                 'temperature': temperature,
                 'respiratory_rate': respiratory_rate,
@@ -147,11 +147,7 @@ class TestData:
     def log_event(cls, action, cow, dt, user):
         try:
             a = Action.objects.get(name=action)
-            if not a:
-                print('ERROR: action: {} does not exist!'.format(action))
             c = Cow.objects.get(rfid=cow.rfid)
-            if not c:
-                print('ERROR: cow: {} does not exist!'.format(cow))
             data = {'recorded_by': user,
                     'event_time': dt,
                     'cow': c.rfid,
@@ -172,8 +168,7 @@ class TestData:
             data = {'recorded_by': user,
                     'exercise_time': dt,
                     'cow': cow.rfid,
-                    'pasture': pasture.name,
-                    'distance': pasture.distance}
+                    'pasture': pasture.name}
             es = ExerciseWriteSerializer(data=data)
             if es.is_valid() and len(es.errors) == 0:
                 es.save()
@@ -205,26 +200,6 @@ class TestData:
                 ms.save()
             else:
                 print('ERROR: {}'.format(ms.errors))
-        except IntegrityError as e:
-            print('ERROR: {}'.format(e))
-
-    @classmethod
-    def log_pedicure(cls, action, pasture, cow, dt, user):
-        try:
-            if field.id < 13:
-                distance = field.id
-            else:
-                distance = (field.id % 13) + 1
-            data = {'recorded_by': user,
-                    'timestamp': dt,
-                    'cow': cow.rfid,
-                    'pasture': pasture.id,
-                    'distance': distance}
-            es = ExerciseWriteSerializer(data=data)
-            if es.is_valid() and len(es.errors) == 0:
-                es.save()
-            else:
-                print('ERROR: {}'.format(es.errors))
         except IntegrityError as e:
             print('ERROR: {}'.format(e))
 

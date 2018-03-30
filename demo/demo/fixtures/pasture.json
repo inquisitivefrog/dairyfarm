@@ -6,7 +6,7 @@
         "name": "North",
         "url": "/static/images/regions/north.png",
         "fallow": false,
-        "distance": 8
+        "distance": 4
     }
 },
 {
@@ -16,7 +16,7 @@
         "name": "West",
         "url": "/static/images/regions/west.png",
         "fallow": false,
-        "distance": 7
+        "distance": 4
     }
 },
 {
@@ -26,7 +26,7 @@
         "name": "South",
         "url": "/static/images/regions/south.png",
         "fallow": false,
-        "distance": 6
+        "distance": 5
     }
 },
 {
@@ -36,7 +36,7 @@
         "name": "East",
         "url": "/static/images/regions/east.png",
         "fallow": false,
-        "distance": 8
+        "distance": 2
     }
 },
 {
@@ -46,7 +46,7 @@
         "name": "Central North",
         "url": "/static/images/regions/central_north.png",
         "fallow": false,
-        "distance": 1
+        "distance": 5
     }
 },
 {
@@ -56,7 +56,7 @@
         "name": "Central West",
         "url": "/static/images/regions/central_west.png",
         "fallow": false,
-        "distance": 2
+        "distance": 3
     }
 },
 {
@@ -66,7 +66,7 @@
         "name": "Central South",
         "url": "/static/images/regions/central_south.png",
         "fallow": false,
-        "distance": 1
+        "distance": 10
     }
 },
 {
@@ -76,7 +76,7 @@
         "name": "Central East",
         "url": "/static/images/regions/central_east.png",
         "fallow": false,
-        "distance": 7
+        "distance": 8
     }
 },
 {
@@ -86,7 +86,7 @@
         "name": "North West",
         "url": "/static/images/regions/north_west.png",
         "fallow": false,
-        "distance": 5
+        "distance": 3
     }
 },
 {
@@ -96,7 +96,7 @@
         "name": "North East",
         "url": "/static/images/regions/north_east.png",
         "fallow": false,
-        "distance": 7
+        "distance": 2
     }
 },
 {
@@ -116,7 +116,7 @@
         "name": "South East",
         "url": "/static/images/regions/south_east.png",
         "fallow": true,
-        "distance": 8
+        "distance": 10
     }
 },
 {
@@ -126,7 +126,7 @@
         "name": "Pen",
         "url": "/static/images/regions/pen.png",
         "fallow": true,
-        "distance": 6
+        "distance": 5
     }
 }
 ]

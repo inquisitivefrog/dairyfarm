@@ -7,7 +7,6 @@
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 1,
         "pasture": 8,
-        "distance": 7,
         "link": "/assets/api/exercises/1/"
     }
 },
@@ -19,7 +18,6 @@
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 1,
         "pasture": 8,
-        "distance": 7,
         "link": "/assets/api/exercises/2/"
     }
 },
@@ -30,8 +28,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 3,
-        "pasture": 6,
-        "distance": 2,
+        "pasture": 4,
         "link": "/assets/api/exercises/3/"
     }
 },
@@ -42,8 +39,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 3,
-        "pasture": 6,
-        "distance": 2,
+        "pasture": 4,
         "link": "/assets/api/exercises/4/"
     }
 },
@@ -54,8 +50,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 5,
-        "pasture": 9,
-        "distance": 5,
+        "pasture": 4,
         "link": "/assets/api/exercises/5/"
     }
 },
@@ -66,8 +61,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 5,
-        "pasture": 9,
-        "distance": 5,
+        "pasture": 4,
         "link": "/assets/api/exercises/6/"
     }
 },
@@ -78,8 +72,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 7,
-        "pasture": 6,
-        "distance": 2,
+        "pasture": 4,
         "link": "/assets/api/exercises/7/"
     }
 },
@@ -90,8 +83,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 7,
-        "pasture": 6,
-        "distance": 2,
+        "pasture": 4,
         "link": "/assets/api/exercises/8/"
     }
 },
@@ -102,8 +94,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 9,
-        "pasture": 4,
-        "distance": 8,
+        "pasture": 13,
         "link": "/assets/api/exercises/9/"
     }
 },
@@ -113,9 +104,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 9,
-        "pasture": 4,
-        "distance": 8,
+        "cow": 11,
+        "pasture": 8,
         "link": "/assets/api/exercises/10/"
     }
 },
@@ -126,8 +116,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 11,
-        "pasture": 6,
-        "distance": 2,
+        "pasture": 8,
         "link": "/assets/api/exercises/11/"
     }
 },
@@ -137,9 +126,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 11,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 13,
+        "pasture": 7,
         "link": "/assets/api/exercises/12/"
     }
 },
@@ -151,7 +139,6 @@
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 13,
         "pasture": 7,
-        "distance": 1,
         "link": "/assets/api/exercises/13/"
     }
 },
@@ -161,9 +148,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 13,
-        "pasture": 7,
-        "distance": 1,
+        "cow": 15,
+        "pasture": 5,
         "link": "/assets/api/exercises/14/"
     }
 },
@@ -174,8 +160,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 15,
-        "pasture": 10,
-        "distance": 7,
+        "pasture": 5,
         "link": "/assets/api/exercises/15/"
     }
 },
@@ -185,9 +170,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 15,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 17,
+        "pasture": 7,
         "link": "/assets/api/exercises/16/"
     }
 },
@@ -197,9 +181,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 19,
-        "pasture": 3,
-        "distance": 6,
+        "cow": 17,
+        "pasture": 7,
         "link": "/assets/api/exercises/17/"
     }
 },
@@ -210,8 +193,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 19,
-        "pasture": 3,
-        "distance": 6,
+        "pasture": 6,
         "link": "/assets/api/exercises/18/"
     }
 },
@@ -221,9 +203,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 2,
-        "pasture": 7,
-        "distance": 1,
+        "cow": 19,
+        "pasture": 6,
         "link": "/assets/api/exercises/19/"
     }
 },
@@ -234,8 +215,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 2,
-        "pasture": 7,
-        "distance": 1,
+        "pasture": 9,
         "link": "/assets/api/exercises/20/"
     }
 },
@@ -245,9 +225,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 4,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 2,
+        "pasture": 9,
         "link": "/assets/api/exercises/21/"
     }
 },
@@ -257,9 +236,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 4,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 6,
+        "pasture": 3,
         "link": "/assets/api/exercises/22/"
     }
 },
@@ -270,8 +248,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 6,
-        "pasture": 9,
-        "distance": 5,
+        "pasture": 3,
         "link": "/assets/api/exercises/23/"
     }
 },
@@ -281,9 +258,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 6,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 8,
+        "pasture": 10,
         "link": "/assets/api/exercises/24/"
     }
 },
@@ -294,8 +270,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 8,
-        "pasture": 6,
-        "distance": 2,
+        "pasture": 10,
         "link": "/assets/api/exercises/25/"
     }
 },
@@ -305,9 +280,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 8,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 10,
+        "pasture": 9,
         "link": "/assets/api/exercises/26/"
     }
 },
@@ -318,8 +292,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 10,
-        "pasture": 5,
-        "distance": 1,
+        "pasture": 9,
         "link": "/assets/api/exercises/27/"
     }
 },
@@ -329,9 +302,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 10,
-        "pasture": 5,
-        "distance": 1,
+        "cow": 12,
+        "pasture": 9,
         "link": "/assets/api/exercises/28/"
     }
 },
@@ -342,8 +314,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 12,
-        "pasture": 2,
-        "distance": 7,
+        "pasture": 9,
         "link": "/assets/api/exercises/29/"
     }
 },
@@ -353,9 +324,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 12,
-        "pasture": 2,
-        "distance": 7,
+        "cow": 14,
+        "pasture": 8,
         "link": "/assets/api/exercises/30/"
     }
 },
@@ -366,8 +336,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 14,
-        "pasture": 6,
-        "distance": 2,
+        "pasture": 8,
         "link": "/assets/api/exercises/31/"
     }
 },
@@ -377,9 +346,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 14,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 16,
+        "pasture": 9,
         "link": "/assets/api/exercises/32/"
     }
 },
@@ -390,8 +358,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 16,
-        "pasture": 3,
-        "distance": 6,
+        "pasture": 9,
         "link": "/assets/api/exercises/33/"
     }
 },
@@ -401,9 +368,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 16,
-        "pasture": 3,
-        "distance": 6,
+        "cow": 18,
+        "pasture": 7,
         "link": "/assets/api/exercises/34/"
     }
 },
@@ -414,8 +380,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 18,
-        "pasture": 9,
-        "distance": 5,
+        "pasture": 7,
         "link": "/assets/api/exercises/35/"
     }
 },
@@ -425,9 +390,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 18,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 20,
+        "pasture": 6,
         "link": "/assets/api/exercises/36/"
     }
 },
@@ -438,8 +402,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 20,
-        "pasture": 9,
-        "distance": 5,
+        "pasture": 6,
         "link": "/assets/api/exercises/37/"
     }
 },
@@ -449,9 +412,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 20,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 21,
+        "pasture": 5,
         "link": "/assets/api/exercises/38/"
     }
 },
@@ -462,8 +424,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 21,
-        "pasture": 4,
-        "distance": 8,
+        "pasture": 5,
         "link": "/assets/api/exercises/39/"
     }
 },
@@ -473,9 +434,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 21,
-        "pasture": 4,
-        "distance": 8,
+        "cow": 23,
+        "pasture": 5,
         "link": "/assets/api/exercises/40/"
     }
 },
@@ -486,8 +446,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 23,
-        "pasture": 6,
-        "distance": 2,
+        "pasture": 5,
         "link": "/assets/api/exercises/41/"
     }
 },
@@ -497,9 +456,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 23,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 25,
+        "pasture": 8,
         "link": "/assets/api/exercises/42/"
     }
 },
@@ -510,8 +468,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 25,
-        "pasture": 7,
-        "distance": 1,
+        "pasture": 8,
         "link": "/assets/api/exercises/43/"
     }
 },
@@ -521,9 +478,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 25,
-        "pasture": 7,
-        "distance": 1,
+        "cow": 27,
+        "pasture": 3,
         "link": "/assets/api/exercises/44/"
     }
 },
@@ -534,8 +490,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 27,
-        "pasture": 8,
-        "distance": 7,
+        "pasture": 3,
         "link": "/assets/api/exercises/45/"
     }
 },
@@ -545,9 +500,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 27,
-        "pasture": 8,
-        "distance": 7,
+        "cow": 29,
+        "pasture": 3,
         "link": "/assets/api/exercises/46/"
     }
 },
@@ -558,8 +512,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 29,
-        "pasture": 7,
-        "distance": 1,
+        "pasture": 3,
         "link": "/assets/api/exercises/47/"
     }
 },
@@ -569,9 +522,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 29,
+        "cow": 31,
         "pasture": 7,
-        "distance": 1,
         "link": "/assets/api/exercises/48/"
     }
 },
@@ -582,8 +534,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 31,
-        "pasture": 5,
-        "distance": 1,
+        "pasture": 7,
         "link": "/assets/api/exercises/49/"
     }
 },
@@ -593,9 +544,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 31,
-        "pasture": 5,
-        "distance": 1,
+        "cow": 33,
+        "pasture": 4,
         "link": "/assets/api/exercises/50/"
     }
 },
@@ -606,8 +556,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 33,
-        "pasture": 9,
-        "distance": 5,
+        "pasture": 4,
         "link": "/assets/api/exercises/51/"
     }
 },
@@ -617,9 +566,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 33,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 35,
+        "pasture": 8,
         "link": "/assets/api/exercises/52/"
     }
 },
@@ -631,7 +579,6 @@
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 35,
         "pasture": 8,
-        "distance": 7,
         "link": "/assets/api/exercises/53/"
     }
 },
@@ -641,9 +588,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 35,
-        "pasture": 8,
-        "distance": 7,
+        "cow": 37,
+        "pasture": 3,
         "link": "/assets/api/exercises/54/"
     }
 },
@@ -655,7 +601,6 @@
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 37,
         "pasture": 3,
-        "distance": 6,
         "link": "/assets/api/exercises/55/"
     }
 },
@@ -665,9 +610,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 37,
+        "cow": 39,
         "pasture": 3,
-        "distance": 6,
         "link": "/assets/api/exercises/56/"
     }
 },
@@ -678,8 +622,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 39,
-        "pasture": 9,
-        "distance": 5,
+        "pasture": 3,
         "link": "/assets/api/exercises/57/"
     }
 },
@@ -689,9 +632,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 39,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 22,
+        "pasture": 3,
         "link": "/assets/api/exercises/58/"
     }
 },
@@ -702,8 +644,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 22,
-        "pasture": 6,
-        "distance": 2,
+        "pasture": 3,
         "link": "/assets/api/exercises/59/"
     }
 },
@@ -713,9 +654,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 22,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 24,
+        "pasture": 9,
         "link": "/assets/api/exercises/60/"
     }
 },
@@ -726,8 +666,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 24,
-        "pasture": 7,
-        "distance": 1,
+        "pasture": 9,
         "link": "/assets/api/exercises/61/"
     }
 },
@@ -737,9 +676,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 24,
-        "pasture": 7,
-        "distance": 1,
+        "cow": 28,
+        "pasture": 4,
         "link": "/assets/api/exercises/62/"
     }
 },
@@ -749,9 +687,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 26,
+        "cow": 28,
         "pasture": 4,
-        "distance": 8,
         "link": "/assets/api/exercises/63/"
     }
 },
@@ -761,9 +698,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 26,
-        "pasture": 4,
-        "distance": 8,
+        "cow": 30,
+        "pasture": 7,
         "link": "/assets/api/exercises/64/"
     }
 },
@@ -773,9 +709,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 28,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 30,
+        "pasture": 7,
         "link": "/assets/api/exercises/65/"
     }
 },
@@ -785,9 +720,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 28,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 32,
+        "pasture": 6,
         "link": "/assets/api/exercises/66/"
     }
 },
@@ -797,9 +731,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 30,
-        "pasture": 5,
-        "distance": 1,
+        "cow": 32,
+        "pasture": 6,
         "link": "/assets/api/exercises/67/"
     }
 },
@@ -809,9 +742,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 30,
-        "pasture": 5,
-        "distance": 1,
+        "cow": 34,
+        "pasture": 6,
         "link": "/assets/api/exercises/68/"
     }
 },
@@ -821,9 +753,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 32,
-        "pasture": 7,
-        "distance": 1,
+        "cow": 34,
+        "pasture": 6,
         "link": "/assets/api/exercises/69/"
     }
 },
@@ -833,9 +764,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 32,
-        "pasture": 7,
-        "distance": 1,
+        "cow": 36,
+        "pasture": 6,
         "link": "/assets/api/exercises/70/"
     }
 },
@@ -845,9 +775,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 34,
+        "cow": 36,
         "pasture": 6,
-        "distance": 2,
         "link": "/assets/api/exercises/71/"
     }
 },
@@ -857,9 +786,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 34,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 38,
+        "pasture": 2,
         "link": "/assets/api/exercises/72/"
     }
 },
@@ -869,9 +797,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 36,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 38,
+        "pasture": 2,
         "link": "/assets/api/exercises/73/"
     }
 },
@@ -881,9 +808,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 36,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 40,
+        "pasture": 5,
         "link": "/assets/api/exercises/74/"
     }
 },
@@ -893,9 +819,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 38,
-        "pasture": 3,
-        "distance": 6,
+        "cow": 40,
+        "pasture": 5,
         "link": "/assets/api/exercises/75/"
     }
 },
@@ -905,9 +830,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 38,
-        "pasture": 3,
-        "distance": 6,
+        "cow": 41,
+        "pasture": 2,
         "link": "/assets/api/exercises/76/"
     }
 },
@@ -917,9 +841,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 40,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 41,
+        "pasture": 2,
         "link": "/assets/api/exercises/77/"
     }
 },
@@ -929,9 +852,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 40,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 42,
+        "pasture": 7,
         "link": "/assets/api/exercises/78/"
     }
 },
@@ -941,9 +863,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 41,
+        "cow": 42,
         "pasture": 7,
-        "distance": 1,
         "link": "/assets/api/exercises/79/"
     }
 },
@@ -953,9 +874,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 41,
-        "pasture": 7,
-        "distance": 1,
+        "cow": 43,
+        "pasture": 10,
         "link": "/assets/api/exercises/80/"
     }
 },
@@ -965,9 +885,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 42,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 43,
+        "pasture": 10,
         "link": "/assets/api/exercises/81/"
     }
 },
@@ -977,9 +896,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 42,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 44,
+        "pasture": 5,
         "link": "/assets/api/exercises/82/"
     }
 },
@@ -989,9 +907,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 43,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 44,
+        "pasture": 5,
         "link": "/assets/api/exercises/83/"
     }
 },
@@ -1001,9 +918,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 43,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 45,
+        "pasture": 6,
         "link": "/assets/api/exercises/84/"
     }
 },
@@ -1013,9 +929,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 44,
-        "pasture": 5,
-        "distance": 1,
+        "cow": 45,
+        "pasture": 6,
         "link": "/assets/api/exercises/85/"
     }
 },
@@ -1025,9 +940,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 44,
-        "pasture": 5,
-        "distance": 1,
+        "cow": 46,
+        "pasture": 2,
         "link": "/assets/api/exercises/86/"
     }
 },
@@ -1038,8 +952,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 46,
-        "pasture": 10,
-        "distance": 7,
+        "pasture": 2,
         "link": "/assets/api/exercises/87/"
     }
 },
@@ -1049,9 +962,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 46,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 47,
+        "pasture": 8,
         "link": "/assets/api/exercises/88/"
     }
 },
@@ -1062,8 +974,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 47,
-        "pasture": 5,
-        "distance": 1,
+        "pasture": 8,
         "link": "/assets/api/exercises/89/"
     }
 },
@@ -1073,9 +984,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 47,
-        "pasture": 5,
-        "distance": 1,
+        "cow": 49,
+        "pasture": 7,
         "link": "/assets/api/exercises/90/"
     }
 },
@@ -1085,9 +995,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 48,
-        "pasture": 5,
-        "distance": 1,
+        "cow": 49,
+        "pasture": 7,
         "link": "/assets/api/exercises/91/"
     }
 },
@@ -1097,9 +1006,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 48,
-        "pasture": 5,
-        "distance": 1,
+        "cow": 50,
+        "pasture": 2,
         "link": "/assets/api/exercises/92/"
     }
 },
@@ -1111,7 +1019,6 @@
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 50,
         "pasture": 2,
-        "distance": 7,
         "link": "/assets/api/exercises/93/"
     }
 },
@@ -1121,9 +1028,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 50,
-        "pasture": 2,
-        "distance": 7,
+        "cow": 51,
+        "pasture": 4,
         "link": "/assets/api/exercises/94/"
     }
 },
@@ -1134,8 +1040,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 51,
-        "pasture": 5,
-        "distance": 1,
+        "pasture": 4,
         "link": "/assets/api/exercises/95/"
     }
 },
@@ -1145,9 +1050,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 51,
-        "pasture": 5,
-        "distance": 1,
+        "cow": 52,
+        "pasture": 9,
         "link": "/assets/api/exercises/96/"
     }
 },
@@ -1158,8 +1062,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 52,
-        "pasture": 3,
-        "distance": 6,
+        "pasture": 9,
         "link": "/assets/api/exercises/97/"
     }
 },
@@ -1169,9 +1072,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 52,
-        "pasture": 3,
-        "distance": 6,
+        "cow": 53,
+        "pasture": 8,
         "link": "/assets/api/exercises/98/"
     }
 },
@@ -1182,8 +1084,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 53,
-        "pasture": 5,
-        "distance": 1,
+        "pasture": 8,
         "link": "/assets/api/exercises/99/"
     }
 },
@@ -1193,9 +1094,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 53,
+        "cow": 54,
         "pasture": 5,
-        "distance": 1,
         "link": "/assets/api/exercises/100/"
     }
 },
@@ -1206,8 +1106,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 54,
-        "pasture": 6,
-        "distance": 2,
+        "pasture": 5,
         "link": "/assets/api/exercises/101/"
     }
 },
@@ -1217,9 +1116,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 54,
+        "cow": 55,
         "pasture": 6,
-        "distance": 2,
         "link": "/assets/api/exercises/102/"
     }
 },
@@ -1230,8 +1128,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 55,
-        "pasture": 3,
-        "distance": 6,
+        "pasture": 6,
         "link": "/assets/api/exercises/103/"
     }
 },
@@ -1241,9 +1138,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 55,
-        "pasture": 3,
-        "distance": 6,
+        "cow": 56,
+        "pasture": 4,
         "link": "/assets/api/exercises/104/"
     }
 },
@@ -1254,8 +1150,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 56,
-        "pasture": 8,
-        "distance": 7,
+        "pasture": 4,
         "link": "/assets/api/exercises/105/"
     }
 },
@@ -1265,9 +1160,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 56,
-        "pasture": 8,
-        "distance": 7,
+        "cow": 57,
+        "pasture": 7,
         "link": "/assets/api/exercises/106/"
     }
 },
@@ -1278,8 +1172,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 57,
-        "pasture": 9,
-        "distance": 5,
+        "pasture": 7,
         "link": "/assets/api/exercises/107/"
     }
 },
@@ -1289,9 +1182,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 57,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 58,
+        "pasture": 6,
         "link": "/assets/api/exercises/108/"
     }
 },
@@ -1302,8 +1194,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 58,
-        "pasture": 9,
-        "distance": 5,
+        "pasture": 6,
         "link": "/assets/api/exercises/109/"
     }
 },
@@ -1313,9 +1204,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 58,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 59,
+        "pasture": 6,
         "link": "/assets/api/exercises/110/"
     }
 },
@@ -1326,8 +1216,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 59,
-        "pasture": 10,
-        "distance": 7,
+        "pasture": 6,
         "link": "/assets/api/exercises/111/"
     }
 },
@@ -1337,9 +1226,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 59,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 60,
+        "pasture": 3,
         "link": "/assets/api/exercises/112/"
     }
 },
@@ -1350,8 +1238,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 60,
-        "pasture": 13,
-        "distance": 6,
+        "pasture": 3,
         "link": "/assets/api/exercises/113/"
     }
 },
@@ -1362,8 +1249,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 61,
-        "pasture": 10,
-        "distance": 7,
+        "pasture": 8,
         "link": "/assets/api/exercises/114/"
     }
 },
@@ -1374,8 +1260,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 61,
-        "pasture": 10,
-        "distance": 7,
+        "pasture": 8,
         "link": "/assets/api/exercises/115/"
     }
 },
@@ -1385,9 +1270,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 65,
+        "cow": 63,
         "pasture": 6,
-        "distance": 2,
         "link": "/assets/api/exercises/116/"
     }
 },
@@ -1397,9 +1281,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 65,
+        "cow": 63,
         "pasture": 6,
-        "distance": 2,
         "link": "/assets/api/exercises/117/"
     }
 },
@@ -1409,9 +1292,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 67,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 65,
+        "pasture": 8,
         "link": "/assets/api/exercises/118/"
     }
 },
@@ -1421,9 +1303,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 67,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 65,
+        "pasture": 8,
         "link": "/assets/api/exercises/119/"
     }
 },
@@ -1433,9 +1314,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 73,
+        "cow": 67,
         "pasture": 4,
-        "distance": 8,
         "link": "/assets/api/exercises/120/"
     }
 },
@@ -1445,9 +1325,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 73,
+        "cow": 67,
         "pasture": 4,
-        "distance": 8,
         "link": "/assets/api/exercises/121/"
     }
 },
@@ -1457,9 +1336,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 75,
-        "pasture": 4,
-        "distance": 8,
+        "cow": 69,
+        "pasture": 8,
         "link": "/assets/api/exercises/122/"
     }
 },
@@ -1469,9 +1347,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 75,
-        "pasture": 4,
-        "distance": 8,
+        "cow": 69,
+        "pasture": 8,
         "link": "/assets/api/exercises/123/"
     }
 },
@@ -1481,9 +1358,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 77,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 71,
+        "pasture": 13,
         "link": "/assets/api/exercises/124/"
     }
 },
@@ -1493,9 +1369,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 77,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 73,
+        "pasture": 8,
         "link": "/assets/api/exercises/125/"
     }
 },
@@ -1505,9 +1380,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 79,
-        "pasture": 3,
-        "distance": 6,
+        "cow": 73,
+        "pasture": 8,
         "link": "/assets/api/exercises/126/"
     }
 },
@@ -1517,9 +1391,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 79,
-        "pasture": 3,
-        "distance": 6,
+        "cow": 75,
+        "pasture": 4,
         "link": "/assets/api/exercises/127/"
     }
 },
@@ -1529,9 +1402,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 62,
+        "cow": 75,
         "pasture": 4,
-        "distance": 8,
         "link": "/assets/api/exercises/128/"
     }
 },
@@ -1541,9 +1413,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 62,
-        "pasture": 4,
-        "distance": 8,
+        "cow": 77,
+        "pasture": 2,
         "link": "/assets/api/exercises/129/"
     }
 },
@@ -1553,9 +1424,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 64,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 77,
+        "pasture": 2,
         "link": "/assets/api/exercises/130/"
     }
 },
@@ -1565,9 +1435,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 64,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 79,
+        "pasture": 7,
         "link": "/assets/api/exercises/131/"
     }
 },
@@ -1577,9 +1446,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 66,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 79,
+        "pasture": 7,
         "link": "/assets/api/exercises/132/"
     }
 },
@@ -1589,9 +1457,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 66,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 62,
+        "pasture": 8,
         "link": "/assets/api/exercises/133/"
     }
 },
@@ -1601,9 +1468,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 68,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 62,
+        "pasture": 8,
         "link": "/assets/api/exercises/134/"
     }
 },
@@ -1613,9 +1479,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 68,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 64,
+        "pasture": 4,
         "link": "/assets/api/exercises/135/"
     }
 },
@@ -1625,9 +1490,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 70,
+        "cow": 64,
         "pasture": 4,
-        "distance": 8,
         "link": "/assets/api/exercises/136/"
     }
 },
@@ -1637,9 +1501,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 70,
-        "pasture": 4,
-        "distance": 8,
+        "cow": 66,
+        "pasture": 3,
         "link": "/assets/api/exercises/137/"
     }
 },
@@ -1649,9 +1512,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 74,
-        "pasture": 7,
-        "distance": 1,
+        "cow": 66,
+        "pasture": 3,
         "link": "/assets/api/exercises/138/"
     }
 },
@@ -1661,9 +1523,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 74,
+        "cow": 68,
         "pasture": 7,
-        "distance": 1,
         "link": "/assets/api/exercises/139/"
     }
 },
@@ -1673,9 +1534,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 76,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 68,
+        "pasture": 7,
         "link": "/assets/api/exercises/140/"
     }
 },
@@ -1685,9 +1545,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 76,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 70,
+        "pasture": 13,
         "link": "/assets/api/exercises/141/"
     }
 },
@@ -1697,9 +1556,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 78,
-        "pasture": 2,
-        "distance": 7,
+        "cow": 72,
+        "pasture": 3,
         "link": "/assets/api/exercises/142/"
     }
 },
@@ -1709,9 +1567,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 78,
-        "pasture": 2,
-        "distance": 7,
+        "cow": 72,
+        "pasture": 3,
         "link": "/assets/api/exercises/143/"
     }
 },
@@ -1721,9 +1578,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 80,
+        "cow": 74,
         "pasture": 8,
-        "distance": 7,
         "link": "/assets/api/exercises/144/"
     }
 },
@@ -1733,9 +1589,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 80,
+        "cow": 74,
         "pasture": 8,
-        "distance": 7,
         "link": "/assets/api/exercises/145/"
     }
 },
@@ -1745,9 +1600,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 81,
-        "pasture": 8,
-        "distance": 7,
+        "cow": 76,
+        "pasture": 5,
         "link": "/assets/api/exercises/146/"
     }
 },
@@ -1757,9 +1611,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 81,
-        "pasture": 8,
-        "distance": 7,
+        "cow": 76,
+        "pasture": 5,
         "link": "/assets/api/exercises/147/"
     }
 },
@@ -1769,9 +1622,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 85,
-        "pasture": 5,
-        "distance": 1,
+        "cow": 78,
+        "pasture": 2,
         "link": "/assets/api/exercises/148/"
     }
 },
@@ -1781,9 +1633,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 85,
-        "pasture": 5,
-        "distance": 1,
+        "cow": 78,
+        "pasture": 2,
         "link": "/assets/api/exercises/149/"
     }
 },
@@ -1793,9 +1644,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 89,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 80,
+        "pasture": 5,
         "link": "/assets/api/exercises/150/"
     }
 },
@@ -1805,9 +1655,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 89,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 80,
+        "pasture": 5,
         "link": "/assets/api/exercises/151/"
     }
 },
@@ -1817,9 +1666,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 93,
-        "pasture": 13,
-        "distance": 6,
+        "cow": 81,
+        "pasture": 9,
         "link": "/assets/api/exercises/152/"
     }
 },
@@ -1829,9 +1677,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 97,
-        "pasture": 2,
-        "distance": 7,
+        "cow": 81,
+        "pasture": 9,
         "link": "/assets/api/exercises/153/"
     }
 },
@@ -1841,9 +1688,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 97,
-        "pasture": 2,
-        "distance": 7,
+        "cow": 85,
+        "pasture": 9,
         "link": "/assets/api/exercises/154/"
     }
 },
@@ -1853,9 +1699,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 101,
-        "pasture": 8,
-        "distance": 7,
+        "cow": 85,
+        "pasture": 9,
         "link": "/assets/api/exercises/155/"
     }
 },
@@ -1865,9 +1710,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 101,
-        "pasture": 8,
-        "distance": 7,
+        "cow": 89,
+        "pasture": 7,
         "link": "/assets/api/exercises/156/"
     }
 },
@@ -1877,9 +1721,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 105,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 89,
+        "pasture": 7,
         "link": "/assets/api/exercises/157/"
     }
 },
@@ -1889,9 +1732,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 105,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 93,
+        "pasture": 9,
         "link": "/assets/api/exercises/158/"
     }
 },
@@ -1901,9 +1743,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 109,
-        "pasture": 8,
-        "distance": 7,
+        "cow": 93,
+        "pasture": 9,
         "link": "/assets/api/exercises/159/"
     }
 },
@@ -1913,9 +1754,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 109,
-        "pasture": 8,
-        "distance": 7,
+        "cow": 101,
+        "pasture": 9,
         "link": "/assets/api/exercises/160/"
     }
 },
@@ -1925,9 +1765,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 113,
-        "pasture": 7,
-        "distance": 1,
+        "cow": 101,
+        "pasture": 9,
         "link": "/assets/api/exercises/161/"
     }
 },
@@ -1937,9 +1776,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 113,
-        "pasture": 7,
-        "distance": 1,
+        "cow": 105,
+        "pasture": 9,
         "link": "/assets/api/exercises/162/"
     }
 },
@@ -1949,9 +1787,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 82,
+        "cow": 105,
         "pasture": 9,
-        "distance": 5,
         "link": "/assets/api/exercises/163/"
     }
 },
@@ -1961,9 +1798,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 82,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 109,
+        "pasture": 2,
         "link": "/assets/api/exercises/164/"
     }
 },
@@ -1973,9 +1809,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 86,
+        "cow": 109,
         "pasture": 2,
-        "distance": 7,
         "link": "/assets/api/exercises/165/"
     }
 },
@@ -1985,9 +1820,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 86,
+        "cow": 113,
         "pasture": 2,
-        "distance": 7,
         "link": "/assets/api/exercises/166/"
     }
 },
@@ -1997,9 +1831,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 90,
-        "pasture": 7,
-        "distance": 1,
+        "cow": 113,
+        "pasture": 2,
         "link": "/assets/api/exercises/167/"
     }
 },
@@ -2009,9 +1842,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 90,
+        "cow": 117,
         "pasture": 7,
-        "distance": 1,
         "link": "/assets/api/exercises/168/"
     }
 },
@@ -2021,9 +1853,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 94,
-        "pasture": 8,
-        "distance": 7,
+        "cow": 117,
+        "pasture": 7,
         "link": "/assets/api/exercises/169/"
     }
 },
@@ -2033,9 +1864,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 94,
-        "pasture": 8,
-        "distance": 7,
+        "cow": 82,
+        "pasture": 10,
         "link": "/assets/api/exercises/170/"
     }
 },
@@ -2045,9 +1875,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 98,
-        "pasture": 3,
-        "distance": 6,
+        "cow": 82,
+        "pasture": 10,
         "link": "/assets/api/exercises/171/"
     }
 },
@@ -2057,9 +1886,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 98,
-        "pasture": 3,
-        "distance": 6,
+        "cow": 86,
+        "pasture": 7,
         "link": "/assets/api/exercises/172/"
     }
 },
@@ -2069,9 +1897,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 102,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 86,
+        "pasture": 7,
         "link": "/assets/api/exercises/173/"
     }
 },
@@ -2081,9 +1908,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 102,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 90,
+        "pasture": 10,
         "link": "/assets/api/exercises/174/"
     }
 },
@@ -2093,9 +1919,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 106,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 90,
+        "pasture": 10,
         "link": "/assets/api/exercises/175/"
     }
 },
@@ -2105,9 +1930,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 106,
+        "cow": 94,
         "pasture": 6,
-        "distance": 2,
         "link": "/assets/api/exercises/176/"
     }
 },
@@ -2117,9 +1941,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 110,
+        "cow": 94,
         "pasture": 6,
-        "distance": 2,
         "link": "/assets/api/exercises/177/"
     }
 },
@@ -2129,9 +1952,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 110,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 102,
+        "pasture": 3,
         "link": "/assets/api/exercises/178/"
     }
 },
@@ -2141,9 +1963,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 114,
+        "cow": 102,
         "pasture": 3,
-        "distance": 6,
         "link": "/assets/api/exercises/179/"
     }
 },
@@ -2153,9 +1974,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 114,
-        "pasture": 3,
-        "distance": 6,
+        "cow": 110,
+        "pasture": 4,
         "link": "/assets/api/exercises/180/"
     }
 },
@@ -2165,9 +1985,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 118,
-        "pasture": 5,
-        "distance": 1,
+        "cow": 110,
+        "pasture": 4,
         "link": "/assets/api/exercises/181/"
     }
 },
@@ -2177,9 +1996,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 118,
-        "pasture": 5,
-        "distance": 1,
+        "cow": 114,
+        "pasture": 10,
         "link": "/assets/api/exercises/182/"
     }
 },
@@ -2189,9 +2007,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 83,
-        "pasture": 7,
-        "distance": 1,
+        "cow": 114,
+        "pasture": 10,
         "link": "/assets/api/exercises/183/"
     }
 },
@@ -2202,8 +2019,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 83,
-        "pasture": 7,
-        "distance": 1,
+        "pasture": 8,
         "link": "/assets/api/exercises/184/"
     }
 },
@@ -2213,9 +2029,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 87,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 83,
+        "pasture": 8,
         "link": "/assets/api/exercises/185/"
     }
 },
@@ -2226,8 +2041,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 87,
-        "pasture": 6,
-        "distance": 2,
+        "pasture": 7,
         "link": "/assets/api/exercises/186/"
     }
 },
@@ -2237,9 +2051,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 91,
-        "pasture": 8,
-        "distance": 7,
+        "cow": 87,
+        "pasture": 7,
         "link": "/assets/api/exercises/187/"
     }
 },
@@ -2250,8 +2063,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 91,
-        "pasture": 8,
-        "distance": 7,
+        "pasture": 5,
         "link": "/assets/api/exercises/188/"
     }
 },
@@ -2261,9 +2073,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 95,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 91,
+        "pasture": 5,
         "link": "/assets/api/exercises/189/"
     }
 },
@@ -2275,7 +2086,6 @@
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 95,
         "pasture": 10,
-        "distance": 7,
         "link": "/assets/api/exercises/190/"
     }
 },
@@ -2285,9 +2095,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 99,
-        "pasture": 7,
-        "distance": 1,
+        "cow": 95,
+        "pasture": 10,
         "link": "/assets/api/exercises/191/"
     }
 },
@@ -2298,8 +2107,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 99,
-        "pasture": 7,
-        "distance": 1,
+        "pasture": 6,
         "link": "/assets/api/exercises/192/"
     }
 },
@@ -2309,9 +2117,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 103,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 99,
+        "pasture": 6,
         "link": "/assets/api/exercises/193/"
     }
 },
@@ -2321,9 +2128,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 103,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 107,
+        "pasture": 8,
         "link": "/assets/api/exercises/194/"
     }
 },
@@ -2334,8 +2140,7 @@
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 107,
-        "pasture": 3,
-        "distance": 6,
+        "pasture": 8,
         "link": "/assets/api/exercises/195/"
     }
 },
@@ -2345,9 +2150,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 107,
-        "pasture": 3,
-        "distance": 6,
+        "cow": 111,
+        "pasture": 4,
         "link": "/assets/api/exercises/196/"
     }
 },
@@ -2359,7 +2163,6 @@
         "exercise_time": "2015-01-01T04:00:00Z",
         "cow": 111,
         "pasture": 4,
-        "distance": 8,
         "link": "/assets/api/exercises/197/"
     }
 },
@@ -2369,9 +2172,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 111,
-        "pasture": 4,
-        "distance": 8,
+        "cow": 115,
+        "pasture": 13,
         "link": "/assets/api/exercises/198/"
     }
 },
@@ -2381,9 +2183,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 115,
-        "pasture": 4,
-        "distance": 8,
+        "cow": 119,
+        "pasture": 10,
         "link": "/assets/api/exercises/199/"
     }
 },
@@ -2393,9 +2194,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 115,
-        "pasture": 4,
-        "distance": 8,
+        "cow": 119,
+        "pasture": 10,
         "link": "/assets/api/exercises/200/"
     }
 },
@@ -2405,9 +2205,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 119,
-        "pasture": 3,
-        "distance": 6,
+        "cow": 84,
+        "pasture": 9,
         "link": "/assets/api/exercises/201/"
     }
 },
@@ -2417,9 +2216,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 119,
-        "pasture": 3,
-        "distance": 6,
+        "cow": 84,
+        "pasture": 9,
         "link": "/assets/api/exercises/202/"
     }
 },
@@ -2429,9 +2227,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 84,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 88,
+        "pasture": 13,
         "link": "/assets/api/exercises/203/"
     }
 },
@@ -2441,9 +2238,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 84,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 92,
+        "pasture": 2,
         "link": "/assets/api/exercises/204/"
     }
 },
@@ -2453,9 +2249,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 88,
+        "cow": 92,
         "pasture": 2,
-        "distance": 7,
         "link": "/assets/api/exercises/205/"
     }
 },
@@ -2465,9 +2260,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 88,
-        "pasture": 2,
-        "distance": 7,
+        "cow": 100,
+        "pasture": 10,
         "link": "/assets/api/exercises/206/"
     }
 },
@@ -2477,9 +2271,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 92,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 100,
+        "pasture": 10,
         "link": "/assets/api/exercises/207/"
     }
 },
@@ -2489,9 +2282,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 92,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 104,
+        "pasture": 4,
         "link": "/assets/api/exercises/208/"
     }
 },
@@ -2501,9 +2293,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 96,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 104,
+        "pasture": 4,
         "link": "/assets/api/exercises/209/"
     }
 },
@@ -2513,9 +2304,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 96,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 108,
+        "pasture": 6,
         "link": "/assets/api/exercises/210/"
     }
 },
@@ -2525,9 +2315,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 100,
-        "pasture": 4,
-        "distance": 8,
+        "cow": 108,
+        "pasture": 6,
         "link": "/assets/api/exercises/211/"
     }
 },
@@ -2537,9 +2326,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 100,
-        "pasture": 4,
-        "distance": 8,
+        "cow": 112,
+        "pasture": 10,
         "link": "/assets/api/exercises/212/"
     }
 },
@@ -2549,9 +2337,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 104,
-        "pasture": 8,
-        "distance": 7,
+        "cow": 112,
+        "pasture": 10,
         "link": "/assets/api/exercises/213/"
     }
 },
@@ -2561,9 +2348,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 104,
-        "pasture": 8,
-        "distance": 7,
+        "cow": 116,
+        "pasture": 10,
         "link": "/assets/api/exercises/214/"
     }
 },
@@ -2573,9 +2359,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 108,
+        "cow": 116,
         "pasture": 10,
-        "distance": 7,
         "link": "/assets/api/exercises/215/"
     }
 },
@@ -2585,9 +2370,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 108,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 120,
+        "pasture": 13,
         "link": "/assets/api/exercises/216/"
     }
 },
@@ -2597,9 +2381,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 112,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 121,
+        "pasture": 7,
         "link": "/assets/api/exercises/217/"
     }
 },
@@ -2609,9 +2392,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 112,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 121,
+        "pasture": 7,
         "link": "/assets/api/exercises/218/"
     }
 },
@@ -2621,9 +2403,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 120,
+        "cow": 122,
         "pasture": 3,
-        "distance": 6,
         "link": "/assets/api/exercises/219/"
     }
 },
@@ -2633,9 +2414,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 120,
+        "cow": 122,
         "pasture": 3,
-        "distance": 6,
         "link": "/assets/api/exercises/220/"
     }
 },
@@ -2645,9 +2425,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 121,
-        "pasture": 2,
-        "distance": 7,
+        "cow": 123,
+        "pasture": 5,
         "link": "/assets/api/exercises/221/"
     }
 },
@@ -2657,9 +2436,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 121,
-        "pasture": 2,
-        "distance": 7,
+        "cow": 123,
+        "pasture": 5,
         "link": "/assets/api/exercises/222/"
     }
 },
@@ -2669,9 +2447,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 122,
+        "cow": 124,
         "pasture": 2,
-        "distance": 7,
         "link": "/assets/api/exercises/223/"
     }
 },
@@ -2681,9 +2458,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 122,
+        "cow": 124,
         "pasture": 2,
-        "distance": 7,
         "link": "/assets/api/exercises/224/"
     }
 },
@@ -2693,9 +2469,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 123,
-        "pasture": 2,
-        "distance": 7,
+        "cow": 125,
+        "pasture": 3,
         "link": "/assets/api/exercises/225/"
     }
 },
@@ -2705,9 +2480,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 123,
-        "pasture": 2,
-        "distance": 7,
+        "cow": 125,
+        "pasture": 3,
         "link": "/assets/api/exercises/226/"
     }
 },
@@ -2717,9 +2491,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 124,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 126,
+        "pasture": 10,
         "link": "/assets/api/exercises/227/"
     }
 },
@@ -2729,9 +2502,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 124,
-        "pasture": 9,
-        "distance": 5,
+        "cow": 126,
+        "pasture": 10,
         "link": "/assets/api/exercises/228/"
     }
 },
@@ -2741,9 +2513,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 125,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 127,
+        "pasture": 5,
         "link": "/assets/api/exercises/229/"
     }
 },
@@ -2753,9 +2524,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 125,
-        "pasture": 6,
-        "distance": 2,
+        "cow": 127,
+        "pasture": 5,
         "link": "/assets/api/exercises/230/"
     }
 },
@@ -2765,9 +2535,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 126,
-        "pasture": 2,
-        "distance": 7,
+        "cow": 128,
+        "pasture": 4,
         "link": "/assets/api/exercises/231/"
     }
 },
@@ -2777,9 +2546,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 126,
-        "pasture": 2,
-        "distance": 7,
+        "cow": 128,
+        "pasture": 4,
         "link": "/assets/api/exercises/232/"
     }
 },
@@ -2789,9 +2557,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 127,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 129,
+        "pasture": 6,
         "link": "/assets/api/exercises/233/"
     }
 },
@@ -2801,9 +2568,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 127,
-        "pasture": 10,
-        "distance": 7,
+        "cow": 129,
+        "pasture": 6,
         "link": "/assets/api/exercises/234/"
     }
 },
@@ -2813,9 +2579,8 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 128,
-        "pasture": 5,
-        "distance": 1,
+        "cow": 130,
+        "pasture": 9,
         "link": "/assets/api/exercises/235/"
     }
 },
@@ -2825,58 +2590,9 @@
     "fields": {
         "recorded_by": 3,
         "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 128,
-        "pasture": 5,
-        "distance": 1,
+        "cow": 130,
+        "pasture": 9,
         "link": "/assets/api/exercises/236/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 237,
-    "fields": {
-        "recorded_by": 3,
-        "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 129,
-        "pasture": 4,
-        "distance": 8,
-        "link": "/assets/api/exercises/237/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 238,
-    "fields": {
-        "recorded_by": 3,
-        "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 129,
-        "pasture": 4,
-        "distance": 8,
-        "link": "/assets/api/exercises/238/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 239,
-    "fields": {
-        "recorded_by": 3,
-        "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 130,
-        "pasture": 10,
-        "distance": 7,
-        "link": "/assets/api/exercises/239/"
-    }
-},
-{
-    "model": "assets.exercise",
-    "pk": 240,
-    "fields": {
-        "recorded_by": 3,
-        "exercise_time": "2015-01-01T04:00:00Z",
-        "cow": 130,
-        "pasture": 10,
-        "distance": 7,
-        "link": "/assets/api/exercises/240/"
     }
 }
 ]

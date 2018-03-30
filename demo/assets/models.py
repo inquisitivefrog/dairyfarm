@@ -529,7 +529,6 @@ class Exercise(models.Model):
                             on_delete=models.CASCADE)
     pasture = models.ForeignKey(Pasture,
                                 on_delete=models.CASCADE)
-    distance = models.IntegerField(default=0)
     link = models.URLField(max_length=50,
                            null=True,
                            blank=False)

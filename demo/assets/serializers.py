@@ -344,7 +344,7 @@ class ExerciseReadSerializer(serializers.ModelSerializer):
         model = Exercise
         lookup_field = 'pk'
         fields = ('id', 'recorded_by', 'exercise_time', 'cow', 'pasture',
-                  'distance', 'link')
+                  'link')
         read_only_fields = ('link',)
 
 class ExerciseWriteSerializer(serializers.ModelSerializer):
@@ -358,8 +358,7 @@ class ExerciseWriteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exercise
         lookup_field = 'pk'
-        fields = ('id', 'recorded_by', 'exercise_time', 'cow', 'pasture',
-                  'distance')
+        fields = ('id', 'recorded_by', 'exercise_time', 'cow', 'pasture')
 
     def create(self, validated_data):
         cow = validated_data.pop('cow')

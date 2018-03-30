@@ -248,6 +248,10 @@ class TestTime:
         return datetime.strftime(d, '%Y-%m-%d')
 
     @classmethod
+    def convert_datetime(cls, dt):
+        return datetime.strftime(dt, '%Y-%m-%d %H:%M:%S.%f+00:00')
+
+    @classmethod
     def get_date(cls):
         t = datetime.now()
         return datetime.date(t)

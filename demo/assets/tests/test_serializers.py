@@ -6,8 +6,8 @@ from rest_framework.test import APITestCase
 
 from assets.models import Action, Age, Breed, CerealHay, Color, Cow
 from assets.models import Event, Exercise, GrassHay, HealthRecord, Illness
-from assets.models import Injury, LegumeHay, Milk, Pasture, Region
-from assets.models import Season, Status, Vaccine
+from assets.models import Injury, LegumeHay, Milk, Pasture, Season
+from assets.models import Seed, Status, Vaccine
 from assets.serializers import CowSerializer, EventReadSerializer
 from assets.serializers import EventWriteSerializer, ExerciseReadSerializer
 from assets.serializers import ExerciseWriteSerializer
@@ -215,8 +215,7 @@ class TestCowSerializer(APITestCase):
 
 class TestPastureSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['cerealhay', 'grasshay', 'legumehay', 'region',
-                'season', 'user', 'pasture']
+    fixtures = ['pasture']
 
     def setUp(self):
         self._load_pasture_data()
