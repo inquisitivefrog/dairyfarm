@@ -7,16 +7,1229 @@ from rest_framework.test import APITestCase
 from assets.models import Action, Age, Breed, CerealHay, Color, Cow
 from assets.models import Event, Exercise, GrassHay, HealthRecord, Illness
 from assets.models import Injury, LegumeHay, Milk, Pasture, Season
-from assets.models import Seed, Status, Vaccine
-from assets.serializers import CowSerializer, EventReadSerializer
-from assets.serializers import EventWriteSerializer, ExerciseReadSerializer
+from assets.models import Seed, Status, Treatment, Vaccine
+from assets.serializers import ActionSerializer, AgeSerializer
+from assets.serializers import BreedSerializer, ColorSerializer
+from assets.serializers import CerealHaySerializer, GrassHaySerializer
+from assets.serializers import IllnessSerializer, InjurySerializer
+from assets.serializers import LegumeHaySerializer, PastureSerializer
+from assets.serializers import SeasonSerializer, StatusSerializer
+from assets.serializers import TreatmentSerializer, VaccineSerializer
+
+from assets.serializers import CowReadSerializer, CowWriteSerializer
+from assets.serializers import EventReadSerializer, EventWriteSerializer, ExerciseReadSerializer
 from assets.serializers import ExerciseWriteSerializer
 from assets.serializers import HealthRecordReadSerializer
 from assets.serializers import HealthRecordWriteSerializer, MilkReadSerializer
 from assets.serializers import MilkWriteSerializer, PastureSerializer
 from assets.tests.utils import TestData, TestTime
 
-class TestCowSerializer(APITestCase):
+class TestActionSerializer(APITestCase):
+    # note: order matters when loading fixtures
+    fixtures = ['action']
+
+    def setUp(self):
+        self._load_action_data()
+
+    def tearDown(self):
+        self.action_data = None
+
+    def _load_action_data(self):
+        self.action_data = {'name': TestData.get_action()}
+
+    def test_00_load_fixtures(self):
+        actions = Action.objects.all()
+        self.assertEqual(17,
+                         len(actions))
+
+    def test_01_create(self):
+        actual = ActionSerializer(data=self.action_data)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertIn('id',
+                      actual.data)
+        self.assertIn('name',
+                      actual.data)
+
+    def test_02_bulk_create(self):
+        expected = 10
+        data = []
+        for i in range(expected):
+            self._load_action_data()
+            self.action_data.update({'name': '{} {}'.format(self.action_data['name'], i)})
+            data.append(self.action_data)
+        actual = ActionSerializer(data=data,
+                                  many=True)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_03_retrieve(self):
+        action = Action.objects.get(id=1)
+        actual = ActionSerializer(action)
+        self.assertRegex(actual.data['name'],
+                         '\w+')
+
+    def test_04_list(self):
+        expected = 10
+        actions = []
+        for i in range(expected):
+            self._load_action_data()
+            self.action_data.update({'name': '{} {}'.format(self.action_data['name'], i)})
+            action = Action.objects.create(**self.action_data)
+            actions.append(action)
+        actual = ActionSerializer(actions,
+                                  many=True)
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_05_full_update(self):
+        action = Action.objects.get(id=1)
+        self._load_action_data()
+        self.action_data.update({'name': TestData.get_action()})
+        actual = ActionSerializer(action,
+                                  data=self.action_data,
+                                  partial=False)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(self.action_data['name'],
+                         actual.data['name'])
+
+class TestAgeSerializer(APITestCase):
+    # note: order matters when loading fixtures
+    fixtures = ['age']
+
+    def setUp(self):
+        self._load_age_data()
+
+    def tearDown(self):
+        self.age_data = None
+
+    def _load_age_data(self):
+        self.age_data = {'name': '{} years'.format(randint(10, 1000))}
+
+    def test_00_load_fixtures(self):
+        ages = Age.objects.all()
+        self.assertEqual(5,
+                         len(ages))
+
+    def test_01_create(self):
+        actual = AgeSerializer(data=self.age_data)
+        self.assertTrue(actual.is_valid())
+        print(actual.errors)
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertIn('id',
+                      actual.data)
+        self.assertIn('name',
+                      actual.data)
+
+    def test_02_bulk_create(self):
+        expected = 10
+        data = []
+        for i in range(expected):
+            self._load_age_data()
+            data.append(self.age_data)
+        actual = AgeSerializer(data=data,
+                               many=True)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_03_retrieve(self):
+        age = Age.objects.get(id=1)
+        actual = AgeSerializer(age)
+        self.assertRegex(actual.data['name'],
+                         '\w+')
+
+    def test_04_list(self):
+        expected = 10
+        ages = []
+        for i in range(expected):
+            self._load_age_data()
+            age = Age.objects.create(**self.age_data)
+            ages.append(age)
+        actual = AgeSerializer(ages,
+                               many=True)
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_05_full_update(self):
+        age = Age.objects.get(id=1)
+        self._load_age_data()
+        actual = AgeSerializer(age,
+                               data=self.age_data,
+                               partial=False)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(self.age_data['name'],
+                         actual.data['name'])
+
+class TestBreedSerializer(APITestCase):
+    # note: order matters when loading fixtures
+    fixtures = ['breed']
+
+    def setUp(self):
+        self._load_breed_data()
+
+    def tearDown(self):
+        self.breed_data = None
+
+    def _load_breed_data(self):
+        name = '{}_{}'.format(TestData.get_breed(), randint(10, 1000))
+        self.breed_data = {'name': name,
+                           'url': '/static/images/breeds/{}.jpg'.format(name.lower())}
+
+    def test_00_load_fixtures(self):
+        breeds = Breed.objects.all()
+        self.assertEqual(7,
+                         len(breeds))
+
+    def test_01_create(self):
+        actual = BreedSerializer(data=self.breed_data)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertIn('id',
+                      actual.data)
+        self.assertIn('name',
+                      actual.data)
+
+    def test_02_bulk_create(self):
+        expected = 10
+        data = []
+        for i in range(expected):
+            self._load_breed_data()
+            data.append(self.breed_data)
+        actual = BreedSerializer(data=data,
+                                 many=True)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_03_retrieve(self):
+        breed = Breed.objects.get(id=1)
+        actual = BreedSerializer(breed)
+        self.assertRegex(actual.data['name'],
+                         '\w+')
+        self.assertRegex(actual.data['url'],
+                         '/static/images/breeds/\w+\.png')
+
+    def test_04_list(self):
+        expected = 10
+        breeds = []
+        for i in range(expected):
+            self._load_breed_data()
+            breed = Breed.objects.create(**self.breed_data)
+            breeds.append(breed)
+        actual = BreedSerializer(breeds,
+                                 many=True)
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+            self.assertIn('url',
+                          actual.data[i])
+
+    def test_05_full_update(self):
+        breed = Breed.objects.get(id=1)
+        self._load_breed_data()
+        actual = BreedSerializer(breed,
+                                 data=self.breed_data,
+                                 partial=False)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(self.breed_data['name'],
+                         actual.data['name'])
+        self.assertEqual(self.breed_data['url'],
+                         actual.data['url'])
+
+    def test_06_partial_update(self):
+        breed = Breed.objects.get(id=1)
+        self._load_breed_data()
+        del self.breed_data['url']
+        actual = BreedSerializer(breed,
+                                 data=self.breed_data,
+                                 partial=True)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(self.breed_data['name'],
+                         actual.data['name'])
+        self.assertEqual(breed.url,
+                         actual.data['url'])
+
+class TestColorSerializer(APITestCase):
+    # note: order matters when loading fixtures
+    fixtures = ['color']
+
+    def setUp(self):
+        self._load_color_data()
+
+    def tearDown(self):
+        self.color_data = None
+
+    def _load_color_data(self):
+        name = '{}_{}'.format(TestData.get_color(), randint(10, 1000))
+        self.color_data = {'name': name}
+
+    def test_00_load_fixtures(self):
+        colors = Color.objects.all()
+        self.assertEqual(9,
+                         len(colors))
+
+    def test_01_create(self):
+        actual = ColorSerializer(data=self.color_data)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertIn('id',
+                      actual.data)
+        self.assertIn('name',
+                      actual.data)
+
+    def test_02_bulk_create(self):
+        expected = 10
+        data = []
+        for i in range(expected):
+            self._load_color_data()
+            self.color_data.update({'name': '{} {}'.format(self.color_data['name'], i)})
+            data.append(self.color_data)
+        actual = ColorSerializer(data=data,
+                                  many=True)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_03_retrieve(self):
+        color = Color.objects.get(id=1)
+        actual = ColorSerializer(color)
+        self.assertRegex(actual.data['name'],
+                         '\w+')
+
+    def test_04_list(self):
+        expected = 10
+        colors = []
+        for i in range(expected):
+            self._load_color_data()
+            self.color_data.update({'name': '{} {}'.format(self.color_data['name'], i)})
+            color = Color.objects.create(**self.color_data)
+            colors.append(color)
+        actual = ColorSerializer(colors,
+                                  many=True)
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_05_full_update(self):
+        color = Color.objects.get(id=1)
+        self._load_color_data()
+        actual = ColorSerializer(color,
+                                  data=self.color_data,
+                                  partial=False)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(self.color_data['name'],
+                         actual.data['name'])
+
+class TestCerealHaySerializer(APITestCase):
+    # note: order matters when loading fixtures
+    fixtures = ['cerealhay']
+
+    def setUp(self):
+        self._load_cereal_data()
+
+    def tearDown(self):
+        self.cereal_data = None
+
+    def _load_cereal_data(self):
+        name = '{}_{}'.format(TestData.get_cereal(), randint(10, 1000))
+        self.cereal_data = {'name': name}
+
+    def test_00_load_fixtures(self):
+        cereals = CerealHay.objects.all()
+        self.assertEqual(5,
+                         len(cereals))
+
+    def test_01_create(self):
+        actual = CerealHaySerializer(data=self.cereal_data)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertIn('id',
+                      actual.data)
+        self.assertIn('name',
+                      actual.data)
+
+    def test_02_bulk_create(self):
+        expected = 10
+        data = []
+        for i in range(expected):
+            self._load_cereal_data()
+            data.append(self.cereal_data)
+        actual = CerealHaySerializer(data=data,
+                                     many=True)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_03_retrieve(self):
+        cereal = CerealHay.objects.get(id=1)
+        actual = CerealHaySerializer(cereal)
+        self.assertRegex(actual.data['name'],
+                         '\w+')
+
+    def test_04_list(self):
+        expected = 10
+        cereals = []
+        for i in range(expected):
+            self._load_cereal_data()
+            cereal = CerealHay.objects.create(**self.cereal_data)
+            cereals.append(cereal)
+        actual = CerealHaySerializer(cereals,
+                                     many=True)
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_05_full_update(self):
+        cereal = CerealHay.objects.get(id=1)
+        self._load_cereal_data()
+        actual = CerealHaySerializer(cereal,
+                                     data=self.cereal_data,
+                                     partial=False)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(self.cereal_data['name'],
+                         actual.data['name'])
+
+class TestGrassHaySerializer(APITestCase):
+    # note: order matters when loading fixtures
+    fixtures = ['grasshay']
+
+    def setUp(self):
+        self._load_grass_data()
+
+    def tearDown(self):
+        self.grass_data = None
+
+    def _load_grass_data(self):
+        name = '{}_{}'.format(TestData.get_grass(), randint(10, 1000))
+        self.grass_data = {'name': name}
+
+    def test_00_load_fixtures(self):
+        grasses = GrassHay.objects.all()
+        self.assertEqual(9,
+                         len(grasses))
+
+    def test_01_create(self):
+        actual = GrassHaySerializer(data=self.grass_data)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertIn('id',
+                      actual.data)
+        self.assertIn('name',
+                      actual.data)
+
+    def test_02_bulk_create(self):
+        expected = 10
+        data = []
+        for i in range(expected):
+            self._load_grass_data()
+            data.append(self.grass_data)
+        actual = GrassHaySerializer(data=data,
+                                     many=True)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_03_retrieve(self):
+        grass = GrassHay.objects.get(id=1)
+        actual = GrassHaySerializer(grass)
+        self.assertRegex(actual.data['name'],
+                         '\w+')
+
+    def test_04_list(self):
+        expected = 10
+        grasses = []
+        for i in range(expected):
+            self._load_grass_data()
+            grass = GrassHay.objects.create(**self.grass_data)
+            grasses.append(grass)
+        actual = GrassHaySerializer(grasses,
+                                     many=True)
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_05_full_update(self):
+        grass = GrassHay.objects.get(id=1)
+        self._load_grass_data()
+        actual = GrassHaySerializer(grass,
+                                     data=self.grass_data,
+                                     partial=False)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(self.grass_data['name'],
+                         actual.data['name'])
+
+class TestIllnessSerializer(APITestCase):
+    # note: order matters when loading fixtures
+    fixtures = ['illness']
+
+    def setUp(self):
+        self._load_illness_data()
+
+    def tearDown(self):
+        self.illness_data = None
+
+    def _load_illness_data(self):
+        diagnosis = '{}_{}'.format(TestData.get_illness(), randint(10, 1000))
+        treatment = '{}_{}'.format(TestData.get_treatment(), randint(10, 1000))
+        self.illness_data = {'diagnosis': diagnosis,
+                             'treatment': treatment}
+
+    def test_00_load_fixtures(self):
+        illnesses = Illness.objects.all()
+        self.assertEqual(15,
+                         len(illnesses))
+
+    def test_01_create(self):
+        actual = IllnessSerializer(data=self.illness_data)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertIn('id',
+                      actual.data)
+        self.assertIn('diagnosis',
+                      actual.data)
+        self.assertIn('treatment',
+                      actual.data)
+
+    def test_02_bulk_create(self):
+        expected = 10
+        data = []
+        for i in range(expected):
+            self._load_illness_data()
+            data.append(self.illness_data)
+        actual = IllnessSerializer(data=data,
+                                 many=True)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('diagnosis',
+                          actual.data[i])
+            self.assertIn('treatment',
+                          actual.data[i])
+
+    def test_03_retrieve(self):
+        illness = Illness.objects.get(id=1)
+        actual = IllnessSerializer(illness)
+        self.assertRegex(actual.data['diagnosis'],
+                         '\w+')
+        self.assertRegex(actual.data['treatment'],
+                         '\w+')
+
+    def test_04_list(self):
+        expected = 10
+        illnesses = []
+        for i in range(expected):
+            self._load_illness_data()
+            illness = Illness.objects.create(**self.illness_data)
+            illnesses.append(illness)
+        actual = IllnessSerializer(illnesses,
+                                   many=True)
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('diagnosis',
+                          actual.data[i])
+            self.assertIn('treatment',
+                          actual.data[i])
+
+    def test_05_full_update(self):
+        illness = Illness.objects.get(id=1)
+        self._load_illness_data()
+        actual = IllnessSerializer(illness,
+                                 data=self.illness_data,
+                                 partial=False)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(self.illness_data['diagnosis'],
+                         actual.data['diagnosis'])
+        self.assertEqual(self.illness_data['treatment'],
+                         actual.data['treatment'])
+
+    def test_06_partial_update(self):
+        illness = Illness.objects.get(id=1)
+        self._load_illness_data()
+        del self.illness_data['treatment']
+        actual = IllnessSerializer(illness,
+                                   data=self.illness_data,
+                                   partial=True)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(self.illness_data['diagnosis'],
+                         actual.data['diagnosis'])
+        self.assertEqual(illness.treatment,
+                         actual.data['treatment'])
+
+class TestInjurySerializer(APITestCase):
+    # note: order matters when loading fixtures
+    fixtures = ['injury']
+
+    def setUp(self):
+        self._load_injury_data()
+
+    def tearDown(self):
+        self.injury_data = None
+
+    def _load_injury_data(self):
+        diagnosis = '{}_{}'.format(TestData.get_injury(), randint(10, 10000))
+        treatment = '{}_{}'.format(TestData.get_treatment(), randint(10, 10000))
+        self.injury_data = {'diagnosis': diagnosis,
+                            'treatment': treatment}
+
+    def test_00_load_fixtures(self):
+        injuries = Injury.objects.all()
+        self.assertEqual(5,
+                         len(injuries))
+
+    def test_01_create(self):
+        actual = InjurySerializer(data=self.injury_data)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertIn('id',
+                      actual.data)
+        self.assertIn('diagnosis',
+                      actual.data)
+        self.assertIn('treatment',
+                      actual.data)
+
+    def test_02_bulk_create(self):
+        expected = 10
+        data = []
+        for i in range(expected):
+            self._load_injury_data()
+            data.append(self.injury_data)
+        actual = InjurySerializer(data=data,
+                                  many=True)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('diagnosis',
+                          actual.data[i])
+            self.assertIn('treatment',
+                          actual.data[i])
+
+    def test_03_retrieve(self):
+        injury = Injury.objects.get(id=1)
+        actual = InjurySerializer(injury)
+        self.assertRegex(actual.data['diagnosis'],
+                         '\w+')
+        self.assertRegex(actual.data['treatment'],
+                         '\w+')
+
+    def test_04_list(self):
+        expected = 10
+        injuries = []
+        for i in range(expected):
+            self._load_injury_data()
+            injury = Injury.objects.create(**self.injury_data)
+            injuries.append(injury)
+        actual = InjurySerializer(injuries,
+                                  many=True)
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('diagnosis',
+                          actual.data[i])
+            self.assertIn('treatment',
+                          actual.data[i])
+
+    def test_05_full_update(self):
+        injury = Injury.objects.get(id=1)
+        self._load_injury_data()
+        actual = InjurySerializer(injury,
+                                  data=self.injury_data,
+                                  partial=False)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(self.injury_data['diagnosis'],
+                         actual.data['diagnosis'])
+        self.assertEqual(self.injury_data['treatment'],
+                         actual.data['treatment'])
+
+    def test_06_partial_update(self):
+        injury = Injury.objects.get(id=1)
+        self._load_injury_data()
+        del self.injury_data['treatment']
+        actual = InjurySerializer(injury,
+                                  data=self.injury_data,
+                                  partial=True)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(self.injury_data['diagnosis'],
+                         actual.data['diagnosis'])
+        self.assertEqual(injury.treatment,
+                         actual.data['treatment'])
+
+class TestLegumeHaySerializer(APITestCase):
+    # note: order matters when loading fixtures
+    fixtures = ['legumehay']
+
+    def setUp(self):
+        self._load_legume_data()
+
+    def tearDown(self):
+        self.legume_data = None
+
+    def _load_legume_data(self):
+        name = '{}_{}'.format(TestData.get_legume(), randint(10, 1000))
+        self.legume_data = {'name': name}
+
+    def test_00_load_fixtures(self):
+        legumes = LegumeHay.objects.all()
+        self.assertEqual(6,
+                         len(legumes))
+
+    def test_01_create(self):
+        actual = LegumeHaySerializer(data=self.legume_data)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertIn('id',
+                      actual.data)
+        self.assertIn('name',
+                      actual.data)
+
+    def test_02_bulk_create(self):
+        expected = 10
+        data = []
+        for i in range(expected):
+            self._load_legume_data()
+            data.append(self.legume_data)
+        actual = LegumeHaySerializer(data=data,
+                                     many=True)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_03_retrieve(self):
+        legume = LegumeHay.objects.get(id=1)
+        actual = LegumeHaySerializer(legume)
+        self.assertRegex(actual.data['name'],
+                         '\w+')
+
+    def test_04_list(self):
+        expected = 10
+        legumes = []
+        for i in range(expected):
+            self._load_legume_data()
+            legume = LegumeHay.objects.create(**self.legume_data)
+            legumes.append(legume)
+        actual = LegumeHaySerializer(legumes,
+                                     many=True)
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_05_full_update(self):
+        legume = LegumeHay.objects.get(id=1)
+        self._load_legume_data()
+        actual = LegumeHaySerializer(legume,
+                                     data=self.legume_data,
+                                     partial=False)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(self.legume_data['name'],
+                         actual.data['name'])
+
+class TestSeasonSerializer(APITestCase):
+    # note: order matters when loading fixtures
+    fixtures = ['season']
+
+    def setUp(self):
+        self._load_season_data()
+
+    def tearDown(self):
+        self.season_data = None
+
+    def _load_season_data(self):
+        name = '{}_{}'.format(TestData.get_season(), randint(10, 1000))
+        self.season_data = {'name': name}
+
+    def test_00_load_fixtures(self):
+        seasons = Season.objects.all()
+        self.assertEqual(4,
+                         len(seasons))
+
+    def test_01_create(self):
+        actual = SeasonSerializer(data=self.season_data)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertIn('id',
+                      actual.data)
+        self.assertIn('name',
+                      actual.data)
+
+    def test_02_bulk_create(self):
+        expected = 10
+        data = []
+        for i in range(expected):
+            self._load_season_data()
+            self.season_data.update({'name': '{} {}'.format(self.season_data['name'], i)})
+            data.append(self.season_data)
+        actual = SeasonSerializer(data=data,
+                                  many=True)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_03_retrieve(self):
+        season = Season.objects.get(id=1)
+        actual = SeasonSerializer(season)
+        self.assertRegex(actual.data['name'],
+                         '\w+')
+
+    def test_04_list(self):
+        expected = 10
+        seasons = []
+        for i in range(expected):
+            self._load_season_data()
+            self.season_data.update({'name': '{} {}'.format(self.season_data['name'], i)})
+            season = Season.objects.create(**self.season_data)
+            seasons.append(season)
+        actual = SeasonSerializer(seasons,
+                                  many=True)
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_05_full_update(self):
+        season = Season.objects.get(id=1)
+        self._load_season_data()
+        actual = SeasonSerializer(season,
+                                  data=self.season_data,
+                                  partial=False)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(self.season_data['name'],
+                         actual.data['name'])
+
+class TestStatusSerializer(APITestCase):
+    # note: order matters when loading fixtures
+    fixtures = ['status']
+
+    def setUp(self):
+        self._load_status_data()
+
+    def tearDown(self):
+        self.status_data = None
+
+    def _load_status_data(self):
+        name = '{}_{}'.format(TestData.get_status(), randint(10, 1000))
+        self.status_data = {'name': name}
+
+    def test_00_load_fixtures(self):
+        statuses = Status.objects.all()
+        self.assertEqual(5,
+                         len(statuses))
+
+    def test_01_create(self):
+        actual = StatusSerializer(data=self.status_data)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertIn('id',
+                      actual.data)
+        self.assertIn('name',
+                      actual.data)
+
+    def test_02_bulk_create(self):
+        expected = 10
+        data = []
+        for i in range(expected):
+            self._load_status_data()
+            self.status_data.update({'name': '{} {}'.format(self.status_data['name'], i)})
+            data.append(self.status_data)
+        actual = StatusSerializer(data=data,
+                                  many=True)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_03_retrieve(self):
+        status = Status.objects.get(id=1)
+        actual = StatusSerializer(status)
+        self.assertRegex(actual.data['name'],
+                         '\w+')
+
+    def test_04_list(self):
+        expected = 10
+        statuses = []
+        for i in range(expected):
+            self._load_status_data()
+            self.status_data.update({'name': '{} {}'.format(self.status_data['name'], i)})
+            status = Status.objects.create(**self.status_data)
+            statuses.append(status)
+        actual = StatusSerializer(statuses,
+                                  many=True)
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_05_full_update(self):
+        status = Status.objects.get(id=1)
+        self._load_status_data()
+        actual = StatusSerializer(status,
+                                  data=self.status_data,
+                                  partial=False)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(self.status_data['name'],
+                         actual.data['name'])
+
+class TestTreatmentSerializer(APITestCase):
+    # note: order matters when loading fixtures
+    fixtures = ['treatment']
+
+    def setUp(self):
+        self._load_treatment_data()
+
+    def tearDown(self):
+        self.treatment_data = None
+
+    def _load_treatment_data(self):
+        name = '{}_{}'.format('apply_salve', randint(10, 1000))
+        self.treatment_data = {'name': name}
+
+    def test_00_load_fixtures(self):
+        treatments = Treatment.objects.all()
+        self.assertEqual(14,
+                         len(treatments))
+
+    def test_01_create(self):
+        actual = TreatmentSerializer(data=self.treatment_data)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertIn('id',
+                      actual.data)
+        self.assertIn('name',
+                      actual.data)
+
+    def test_02_bulk_create(self):
+        expected = 10
+        data = []
+        for i in range(expected):
+            self._load_treatment_data()
+            data.append(self.treatment_data)
+        actual = TreatmentSerializer(data=data,
+                                  many=True)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_03_retrieve(self):
+        treatment = Treatment.objects.get(id=1)
+        actual = TreatmentSerializer(treatment)
+        self.assertRegex(actual.data['name'],
+                         '\w+')
+
+    def test_04_list(self):
+        expected = 10
+        treatments = []
+        for i in range(expected):
+            self._load_treatment_data()
+            treatment = Treatment.objects.create(**self.treatment_data)
+            treatments.append(treatment)
+        actual = TreatmentSerializer(treatments,
+                                  many=True)
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_05_full_update(self):
+        treatment = Treatment.objects.get(id=1)
+        self._load_treatment_data()
+        actual = TreatmentSerializer(treatment,
+                                  data=self.treatment_data,
+                                  partial=False)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(self.treatment_data['name'],
+                         actual.data['name'])
+
+class TestVaccineSerializer(APITestCase):
+    # note: order matters when loading fixtures
+    fixtures = ['vaccine']
+
+    def setUp(self):
+        self._load_vaccine_data()
+
+    def tearDown(self):
+        self.vaccine_data = None
+
+    def _load_vaccine_data(self):
+        name = '{}_{}'.format('take vaccine', randint(10, 1000))
+        self.vaccine_data = {'name': name}
+
+    def test_00_load_fixtures(self):
+        vaccines = Vaccine.objects.all()
+        self.assertEqual(6,
+                         len(vaccines))
+
+    def test_01_create(self):
+        actual = VaccineSerializer(data=self.vaccine_data)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertIn('id',
+                      actual.data)
+        self.assertIn('name',
+                      actual.data)
+
+    def test_02_bulk_create(self):
+        expected = 10
+        data = []
+        for i in range(expected):
+            self._load_vaccine_data()
+            data.append(self.vaccine_data)
+        actual = VaccineSerializer(data=data,
+                                   many=True)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_03_retrieve(self):
+        vaccine = Vaccine.objects.get(id=1)
+        actual = VaccineSerializer(vaccine)
+        self.assertRegex(actual.data['name'],
+                         '\w+')
+
+    def test_04_list(self):
+        expected = 10
+        vaccines = []
+        for i in range(expected):
+            self._load_vaccine_data()
+            vaccine = Vaccine.objects.create(**self.vaccine_data)
+            vaccines.append(vaccine)
+        actual = VaccineSerializer(vaccines,
+                                   many=True)
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+
+    def test_05_full_update(self):
+        vaccine = Vaccine.objects.get(id=1)
+        self._load_vaccine_data()
+        actual = VaccineSerializer(vaccine,
+                                  data=self.vaccine_data,
+                                  partial=False)
+        self.assertTrue(actual.is_valid())
+        self.assertEqual(0,
+                         len(actual.errors))
+        actual.save()
+        self.assertEqual(self.vaccine_data['name'],
+                         actual.data['name'])
+
+class TestCowReadSerializer(APITestCase):
     # note: order matters when loading fixtures
     fixtures = ['age', 'breed', 'color', 'user', 'cow']
 
@@ -37,7 +1250,7 @@ class TestCowSerializer(APITestCase):
         colors = Color.objects.all()
         color = colors[randint(0, len(colors) - 1)]
         self.cow_data = {'purchased_by': user,
-                         'purchase_date': TestTime.get_purchase_date(),
+                         'purchased_date': TestTime.get_date(),
                          'age': age.name,
                          'breed': breed.name,
                          'color': color.name}
@@ -51,7 +1264,7 @@ class TestCowSerializer(APITestCase):
         colors = Color.objects.all()
         color = colors[randint(0, len(colors) - 1)]
         self.model_data = {'purchased_by': user,
-                           'purchase_date': TestTime.get_purchase_date(),
+                           'purchased_date': TestTime.get_date(),
                            'age': age,
                            'breed': breed,
                            'color': color}
@@ -61,35 +1274,27 @@ class TestCowSerializer(APITestCase):
         self.assertEqual(5,
                          len(ages))
         breeds = Breed.objects.all()
-        self.assertEqual(7,
+        self.assertEqual(5,
                          len(breeds))
         colors = Color.objects.all()
-        self.assertEqual(9,
+        self.assertEqual(5,
                          len(colors))
-        herd = Cow.objects.all()
-        self.assertEqual(130,
-                         len(herd))
         users = User.objects.all()
         self.assertEqual(3,
                          len(users))
+        herd = Cow.objects.all()
+        self.assertEqual(130,
+                         len(herd))
 
     def test_01_create(self):
-        actual = CowSerializer(data=self.cow_data)
+        actual = CowReadSerializer(data=self.cow_data)
         self.assertTrue(actual.is_valid())
         self.assertEqual(0,
                          len(actual.errors))
         actual.save()
         self.assertIn('id',
                       actual.data)
-        self.assertIn('purchased_by',
-                      actual.data)
-        self.assertIn('purchase_date',
-                      actual.data)
-        self.assertIn('age',
-                      actual.data)
-        self.assertIn('breed',
-                      actual.data)
-        self.assertIn('color',
+        self.assertIn('name',
                       actual.data)
         self.assertIn('link',
                       actual.data)
