@@ -194,49 +194,49 @@ class TestData:
 
     @classmethod
     def get_event_read_keys(cls):
-        return ['id', 'recorded_by', 'cow', 'action', 'link']
+        return ['id', 'recorded_by', 'cow', 'event_time', 'action', 'link']
 
     @classmethod
     def get_event_write_keys(cls):
-        return ['id', 'recorded_by', 'cow', 'action']
+        return ['id', 'recorded_by', 'cow', 'event_time', 'action']
 
     @classmethod
     def get_exercise_read_keys(cls):
-        return ['id', 'recorded_by', 'pasture', 'distance', 'link']
+        return ['id', 'recorded_by', 'pasture', 'exercise_time', 'link']
 
     @classmethod
     def get_exercise_write_keys(cls):
-        return ['id', 'recorded_by', 'pasture', 'distance']
+        return ['id', 'recorded_by', 'pasture', 'exercise_time']
 
     @classmethod
     def get_milk_read_keys(cls):
-        return ['id', 'recorded_by', 'cow', 'gallons', 'link']
+        return ['id', 'recorded_by', 'cow', 'milking_time', 'gallons', 'link']
 
     @classmethod
     def get_milk_write_keys(cls):
-        return ['id', 'recorded_by', 'cow', 'gallons']
+        return ['id', 'recorded_by', 'cow', 'milking_time', 'gallons']
 
     @classmethod
-    def get_pasture_read_keys(cls):
-        return ['id', 'fallow', 'distance', 'seeded_by', 'region',
-                'cereal_hay', 'grass_hay', 'legume_hay', 'season', 'year', 'link']
+    def get_seed_read_keys(cls):
+        return ['id', 'seeded_by', 'pasture', 'cereal_hay',
+                'grass_hay', 'legume_hay', 'season', 'year', 'link']
 
     @classmethod
-    def get_pasture_write_keys(cls):
-        return ['id', 'fallow', 'distance', 'seeded_by', 'region',
-                'cereal_hay', 'grass_hay', 'legume_hay', 'season', 'year']
+    def get_seed_write_keys(cls):
+        return ['id', 'seeded_by', 'pasture', 'cereal_hay',
+                'grass_hay', 'legume_hay', 'season', 'year']
 
     @classmethod
     def get_hr_read_keys(cls):
         return ['id', 'cow', 'recorded_by', 'temperature', 'respiratory_rate',
                 'heart_rate', 'blood_pressure', 'weight', 'body_condition_score',
-                'illness', 'injury', 'vaccine', 'link']
+                'illness', 'injury', 'vaccine', 'inspection_time', 'link']
 
     @classmethod
     def get_hr_write_keys(cls):
         return ['id', 'cow', 'recorded_by', 'temperature', 'respiratory_rate',
                 'heart_rate', 'blood_pressure', 'weight', 'body_condition_score',
-                'illness', 'injury', 'vaccine']
+                'illness', 'injury', 'vaccine', 'inspection_time']
 
 class TestTime:
     @classmethod

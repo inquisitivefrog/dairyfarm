@@ -25,7 +25,19 @@ class TestAssetsCowAPIURLConf(APITestCase):
         self.assertEqual(expected,
                          django_reverse('assets:cow-list'))
 
-    def test_02_cow_detail(self):
+    def test_02_cow_list_month(self):
+        expected = '/assets/api/cows/2018/03/'
+        self.assertEqual(expected,
+                         django_reverse('assets:cow-list-month',
+                                        args=('2018', '03')))
+
+    def test_03_cow_list_year(self):
+        expected = '/assets/api/cows/2018/'
+        self.assertEqual(expected,
+                         django_reverse('assets:cow-list-year',
+                                        args=('2018',)))
+
+    def test_04_cow_detail(self):
         expected = '/assets/api/cows/1/'
         self.assertEqual(expected,
                          django_reverse('assets:cow-detail',
@@ -103,20 +115,20 @@ class TestAssetsMilkAPIURLConf(APITestCase):
                          django_reverse('assets:milk-detail',
                                         args=(1,)))
 
-class TestAssetsPastureAPIURLConf(APITestCase):
+class TestAssetsSeedAPIURLConf(APITestCase):
     def setUp(self):
         pass
 
     def tearDown(self):
         pass
 
-    def test_01_pasture_list(self):
-        expected = '/assets/api/pastures/'
+    def test_01_seed_list(self):
+        expected = '/assets/api/seeds/'
         self.assertEqual(expected,
-                         django_reverse('assets:pasture-list'))
+                         django_reverse('assets:seed-list'))
 
-    def test_02_pasture_detail(self):
-        expected = '/assets/api/pastures/1/'
+    def test_02_seed_detail(self):
+        expected = '/assets/api/seeds/1/'
         self.assertEqual(expected,
-                         django_reverse('assets:pasture-detail',
+                         django_reverse('assets:seed-detail',
                                         args=(1,)))

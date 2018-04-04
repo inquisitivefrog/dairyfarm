@@ -144,4 +144,3 @@ class SeedList(generics.ListCreateAPIView):
         if self.request.method in ('GET',):
             return SeedReadSerializer
         return SeedWriteSerializer
-

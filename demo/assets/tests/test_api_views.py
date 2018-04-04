@@ -14,11 +14,11 @@ from rest_framework.test import force_authenticate
 from assets.api_views import CowDetail, CowList, EventDetail, EventList
 from assets.api_views import ExerciseDetail, ExerciseList, HealthRecordDetail
 from assets.api_views import HealthRecordList, MilkDetail, MilkList
-from assets.api_views import PastureDetail, PastureList
+from assets.api_views import SeedDetail, SeedList
 from assets.models import Action, Age, Breed, CerealHay, Color, Cow
 from assets.models import Event, Exercise, GrassHay, HealthRecord, Illness
-from assets.models import Injury, LegumeHay, Milk, Pasture, Region
-from assets.models import Season, Status, Vaccine
+from assets.models import Injury, LegumeHay, Milk, Pasture
+from assets.models import Season, Seed, Status, Treatment, Vaccine
 from assets.tests.utils import TestData, TestTime
 from assets.views import IndexView
 
@@ -217,8 +217,6 @@ class TestCowDetailView(APITestCase):
                       data['breed'])
         self.assertEqual(self.data['color'],
                       data['color'])
-        self.assertIn('link',
-                      data)
 
     def test_04_partial_update(self):
         data = {'age': self.data['age'],
@@ -253,8 +251,6 @@ class TestCowDetailView(APITestCase):
                       data['breed'])
         self.assertIn('color',
                       data)
-        self.assertIn('link',
-                      data)
 
     def test_05_destroy(self):
         request = self.factory.delete(path=self.url,
@@ -269,13 +265,11 @@ class TestCowDetailView(APITestCase):
         self.assertEqual('No Content',
                          response.reason_phrase)
 
-class TestPastureListView(APITestCase):
-    fixtures = ['cerealhay', 'grasshay', 'legumehay', 'region',
-                'season', 'user', 'pasture']
+class TestSeedListView(APITestCase):
+    fixtures = ['cerealhay', 'grasshay', 'legumehay', 'pasture',
+                'season', 'user', 'seed']
 
     def setUp(self):
-        fallow = False
-        distance = TestData.get_distance()
         user = User.objects.get(username=TestData.get_random_user())
         cereals = CerealHay.objects.all()
         cereal = cereals[randint(0, len(cereals) - 1)]
@@ -283,23 +277,20 @@ class TestPastureListView(APITestCase):
         grass = grasses[randint(0, len(grasses) - 1)]
         legumes = LegumeHay.objects.all()
         legume = legumes[randint(0, len(legumes) - 1)]
-        regions = Region.objects.all()
-        region = regions[randint(0, len(regions) - 1)]
+        fields = Pasture.objects.all()
+        pasture = fields[randint(0, len(fields) - 1)]
         seasons = Season.objects.all()
         season = seasons[randint(0, len(seasons) - 1)]
-        self.data = {'fallow': fallow,
-                     'distance': distance,
-                     'plant_date': TestTime.convert_date(TestTime.get_date()),
-                     'year': TestTime.get_year(),
+        self.data = {'year': TestTime.get_year(),
                      'season': season.name,
                      'seeded_by': user.username,
-                     'region': region.name,
+                     'pasture': pasture.name,
                      'cereal_hay': cereal.name,
                      'grass_hay': grass.name,
                      'legume_hay': legume.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.request = None
-        self.url = django_reverse('assets:pasture-list')
+        self.url = django_reverse('assets:seed-list')
         self.user = User.objects.get(username=TestData.get_random_user())
 
     def tearDown(self):
@@ -318,12 +309,15 @@ class TestPastureListView(APITestCase):
         legumes = LegumeHay.objects.all()
         self.assertLessEqual(1,
                              len(legumes))
-        seasons = Season.objects.all()
-        self.assertLessEqual(4,
-                             len(seasons))
         fields = Pasture.objects.all()
         self.assertLessEqual(1,
                              len(fields))
+        seasons = Season.objects.all()
+        self.assertLessEqual(4,
+                             len(seasons))
+        seeds = Seed.objects.all()
+        self.assertLessEqual(10,
+                             len(seeds))
         users = User.objects.all()
         self.assertLessEqual(1,
                              len(users))
@@ -333,7 +327,7 @@ class TestPastureListView(APITestCase):
                                        content_type=TestData.get_format())
         force_authenticate(request, user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = PastureList.as_view()(request=request)
+        response = SeedList.as_view()(request=request)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -349,7 +343,7 @@ class TestPastureListView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = PastureList.as_view()(request=request)
+        response = SeedList.as_view()(request=request)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -367,7 +361,7 @@ class TestPastureListView(APITestCase):
         self.assertIn('results',
                       data)
         for field in data['results']:
-            for key in TestData.get_pasture_read_keys():
+            for key in TestData.get_seed_read_keys():
                 self.assertIn(key,
                               field)
 
@@ -380,7 +374,7 @@ class TestPastureListView(APITestCase):
                            user=self.user)
         request.POST = self.data
         self.assertTrue(self.user.is_authenticated)
-        response = PastureList.as_view()(request=request)
+        response = SeedList.as_view()(request=request)
         self.assertEqual(201,
                          response.status_code)
         self.assertEqual('Created',
@@ -389,17 +383,15 @@ class TestPastureListView(APITestCase):
              response = response.render()
         stream = BytesIO(response.content)
         data = JSONParser().parse(stream)
-        for key in TestData.get_pasture_write_keys():
+        for key in TestData.get_seed_write_keys():
             self.assertIn(key,
                           data)
 
-class TestPastureDetailView(APITestCase):
-    fixtures = ['cerealhay', 'grasshay', 'legumehay', 'region',
-                'season', 'user', 'pasture']
+class TestSeedDetailView(APITestCase):
+    fixtures = ['cerealhay', 'grasshay', 'legumehay', 'pasture',
+                'season', 'user', 'seed']
 
     def setUp(self):
-        fallow = False
-        distance = TestData.get_distance()
         user = User.objects.get(username=TestData.get_random_user())
         cereals = CerealHay.objects.all()
         cereal = cereals[randint(0, len(cereals) - 1)]
@@ -407,23 +399,21 @@ class TestPastureDetailView(APITestCase):
         grass = grasses[randint(0, len(grasses) - 1)]
         legumes = LegumeHay.objects.all()
         legume = legumes[randint(0, len(legumes) - 1)]
-        regions = Region.objects.all()
-        region = regions[randint(0, len(regions) - 1)]
+        fields = Pasture.objects.all()
+        pasture = fields[randint(0, len(fields) - 1)]
         seasons = Season.objects.all()
         season = seasons[randint(0, len(seasons) - 1)]
-        self.data = {'fallow': fallow,
-                     'distance': distance,
-                     'year': TestTime.get_year(),
+        self.data = {'year': TestTime.get_year(),
                      'season': season.name,
                      'seeded_by': user.username,
-                     'region': region.name,
+                     'pasture': pasture.name,
                      'cereal_hay': cereal.name,
                      'grass_hay': grass.name,
                      'legume_hay': legume.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.request = None
-        self.pk = Pasture.objects.get(pk=1).id
-        self.url = django_reverse('assets:pasture-detail',
+        self.pk = Seed.objects.get(pk=1).id
+        self.url = django_reverse('assets:seed-detail',
                                   args=(self.pk,))
         self.user = User.objects.get(username=TestData.get_random_user())
 
@@ -444,12 +434,15 @@ class TestPastureDetailView(APITestCase):
         legumes = LegumeHay.objects.all()
         self.assertLessEqual(1,
                              len(legumes))
-        seasons = Season.objects.all()
-        self.assertLessEqual(4,
-                             len(seasons))
         fields = Pasture.objects.all()
         self.assertLessEqual(1,
                              len(fields))
+        seasons = Season.objects.all()
+        self.assertLessEqual(4,
+                             len(seasons))
+        seeds = Seed.objects.all()
+        self.assertLessEqual(10,
+                             len(seeds))
         users = User.objects.all()
         self.assertLessEqual(1,
                              len(users))
@@ -459,8 +452,8 @@ class TestPastureDetailView(APITestCase):
                                        content_type=TestData.get_format())
         force_authenticate(request, user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = PastureDetail.as_view()(request=request,
-                                           pk=self.pk)
+        response = SeedDetail.as_view()(request=request,
+                                        pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -476,8 +469,8 @@ class TestPastureDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = PastureDetail.as_view()(request=request,
-                                           pk=self.pk)
+        response = SeedDetail.as_view()(request=request,
+                                        pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -486,7 +479,7 @@ class TestPastureDetailView(APITestCase):
              response = response.render()
         stream = BytesIO(response.content)
         data = JSONParser().parse(stream)
-        for key in TestData.get_pasture_read_keys():
+        for key in TestData.get_seed_read_keys():
             self.assertIn(key,
                           data)
 
@@ -497,8 +490,8 @@ class TestPastureDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = PastureDetail.as_view()(request=request,
-                                           pk=self.pk)
+        response = SeedDetail.as_view()(request=request,
+                                        pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -507,7 +500,7 @@ class TestPastureDetailView(APITestCase):
              response = response.render()
         stream = BytesIO(response.content)
         data = JSONParser().parse(stream)
-        for key in TestData.get_pasture_write_keys():
+        for key in TestData.get_seed_write_keys():
             self.assertIn(key,
                           data)
 
@@ -520,8 +513,8 @@ class TestPastureDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = PastureDetail.as_view()(request=request,
-                                           pk=self.pk)
+        response = SeedDetail.as_view()(request=request,
+                                        pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -530,28 +523,9 @@ class TestPastureDetailView(APITestCase):
              response = response.render()
         stream = BytesIO(response.content)
         data = JSONParser().parse(stream)
-        self.assertIn('id',
-                      data)
-        self.assertIn('fallow',
-                      data)
-        self.assertIn('year',
-                      data)
-        self.assertIn('season',
-                      data)
-        self.assertIn('distance',
-                      data)
-        self.assertIn('seeded_by',
-                      data)
-        self.assertIn('cereal_hay',
-                      data)
-        self.assertEqual(self.data['grass_hay'],
-                      data['grass_hay'])
-        self.assertEqual(self.data['legume_hay'],
-                      data['legume_hay'])
-        self.assertIn('region',
-                      data)
-        self.assertIn('link',
-                      data)
+        for key in TestData.get_seed_write_keys():
+            self.assertIn(key,
+                          data)
 
     def test_05_destroy(self):
         request = self.factory.delete(path=self.url,
@@ -559,8 +533,8 @@ class TestPastureDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = PastureDetail.as_view()(request=request,
-                                           pk=self.pk)
+        response = SeedDetail.as_view()(request=request,
+                                        pk=self.pk)
         self.assertEqual(204,
                          response.status_code)
         self.assertEqual('No Content',
@@ -578,6 +552,7 @@ class TestEventListView(APITestCase):
         cow = herd[randint(0, len(herd) - 1)]
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
+                     'event_time': TestTime.get_datetime(),
                      'action': action.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.request = None
@@ -681,6 +656,7 @@ class TestEventDetailView(APITestCase):
         cow = herd[randint(0, len(herd) - 1)]
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
+                     'event_time': TestTime.get_datetime(),
                      'action': action.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.request = None
@@ -814,8 +790,7 @@ class TestEventDetailView(APITestCase):
 
 class TestExerciseListView(APITestCase):
     fixtures = ['age', 'breed', 'color', 'user', 'cow',
-                'cerealhay', 'grasshay', 'legumehay', 'region',
-                'season', 'pasture', 'exercise']
+                'pasture', 'season', 'exercise']
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
@@ -823,11 +798,10 @@ class TestExerciseListView(APITestCase):
         pasture = fields[randint(0, len(fields) - 1)]
         herd = Cow.objects.all()
         cow = herd[randint(0, len(herd) - 1)]
-        distance = TestData.get_distance()
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
-                     'pasture': pasture.region.id,
-                     'distance': distance}
+                     'exercise_time': TestTime.get_datetime(),
+                     'pasture': pasture.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.request = None
         self.url = django_reverse('assets:exercise-list')
@@ -906,10 +880,6 @@ class TestExerciseListView(APITestCase):
         request.POST = self.data
         self.assertTrue(self.user.is_authenticated)
         response = ExerciseList.as_view()(request=request)
-        #self.assertEqual(400, response.status_code)
-        #self.assertEqual('Bad Request', response.reason_phrase)
-        #response = response.render()
-        #self.assertEqual('WTF', response.content)
         self.assertEqual(201,
                          response.status_code)
         self.assertEqual('Created',
@@ -924,8 +894,7 @@ class TestExerciseListView(APITestCase):
 
 class TestExerciseDetailView(APITestCase):
     fixtures = ['age', 'breed', 'color', 'user', 'cow',
-                'cerealhay', 'grasshay', 'legumehay', 'region',
-                'season', 'pasture', 'exercise']
+                'pasture', 'season', 'exercise']
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
@@ -933,11 +902,10 @@ class TestExerciseDetailView(APITestCase):
         pasture = fields[randint(0, len(fields) - 1)]
         herd = Cow.objects.all()
         cow = herd[randint(0, len(herd) - 1)]
-        distance = TestData.get_distance()
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
-                     'pasture': pasture.region.id,
-                     'distance': distance}
+                     'exercise_time': TestTime.get_datetime(),
+                     'pasture': pasture.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.request = None
         self.pk = Exercise.objects.get(pk=1).id
@@ -1025,13 +993,13 @@ class TestExerciseDetailView(APITestCase):
                       data['recorded_by'])
         self.assertIn(self.data['cow'],
                       data['cow'])
+        self.assertIn('exercise_time',
+                      data)
         self.assertEqual(self.data['pasture'],
                       data['pasture'])
-        self.assertEqual(self.data['distance'],
-                      data['distance'])
 
     def test_04_partial_update(self):
-        data = {'distance': self.data['distance']}
+        data = {'pasture': self.data['pasture']}
         request = self.factory.patch(path=self.url,
                                      data=dumps(data),
                                      content_type=TestData.get_format())
@@ -1054,10 +1022,10 @@ class TestExerciseDetailView(APITestCase):
                       data)
         self.assertIn('cow',
                       data)
+        self.assertIn('exercise_time',
+                      data)
         self.assertIn('pasture',
                       data)
-        self.assertEqual(self.data['distance'],
-                      data['distance'])
 
     def test_05_destroy(self):
         request = self.factory.delete(path=self.url,
@@ -1082,6 +1050,7 @@ class TestMilkListView(APITestCase):
         gallons = TestData.get_milk()
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
+                     'milking_time': TestTime.get_datetime(),
                      'gallons': gallons}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.request = None
@@ -1180,6 +1149,7 @@ class TestMilkDetailView(APITestCase):
         gallons = TestData.get_milk()
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
+                     'milking_time': TestTime.get_datetime(),
                      'gallons': gallons}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.request = None
@@ -1259,14 +1229,9 @@ class TestMilkDetailView(APITestCase):
              response = response.render()
         stream = BytesIO(response.content)
         data = JSONParser().parse(stream)
-        self.assertIn('id',
-                      data)
-        self.assertIn(self.data['recorded_by'],
-                      data['recorded_by'])
-        self.assertIn(self.data['cow'],
-                      data['cow'])
-        self.assertEqual(self.data['gallons'],
-                      data['gallons'])
+        for key in TestData.get_milk_write_keys():
+            self.assertIn(key,
+                          data)
 
     def test_04_partial_update(self):
         data = {'gallons': self.data['gallons']}
@@ -1286,14 +1251,9 @@ class TestMilkDetailView(APITestCase):
              response = response.render()
         stream = BytesIO(response.content)
         data = JSONParser().parse(stream)
-        self.assertIn('id',
-                      data)
-        self.assertIn('recorded_by',
-                      data)
-        self.assertIn('cow',
-                      data)
-        self.assertEqual(self.data['gallons'],
-                      data['gallons'])
+        for key in TestData.get_milk_write_keys():
+            self.assertIn(key,
+                          data)
 
     def test_05_destroy(self):
         request = self.factory.delete(path=self.url,
@@ -1309,8 +1269,8 @@ class TestMilkDetailView(APITestCase):
                          response.reason_phrase)
 
 class TestHealthRecordListView(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'user', 'cow',
-                'illness', 'injury', 'status', 'vaccine', 'healthrecord']
+    fixtures = ['age', 'breed', 'color', 'user', 'cow', 'illness',
+                'injury', 'status', 'treatment', 'vaccine', 'healthrecord']
 
     def setUp(self):
         herd = Cow.objects.all()
@@ -1326,16 +1286,17 @@ class TestHealthRecordListView(APITestCase):
         vaccine = vaccines[randint(0, len(vaccines) - 1)]
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
-                      'temperature': TestData.get_temp(),
-                      'respiratory_rate': TestData.get_resp(),
-                      'heart_rate': TestData.get_hr(),
-                      'blood_pressure': TestData.get_bp(),
-                      'weight': TestData.get_weight(),
-                      'body_condition_score': TestData.get_bcs(),
-                      'status': status.name,
-                      'illness': illness.diagnosis,
-                      'injury': injury.diagnosis,
-                      'vaccine': vaccine.name}
+                     'inspection_time': TestTime.get_datetime(),
+                     'temperature': TestData.get_temp(),
+                     'respiratory_rate': TestData.get_resp(),
+                     'heart_rate': TestData.get_hr(),
+                     'blood_pressure': TestData.get_bp(),
+                     'weight': TestData.get_weight(),
+                     'body_condition_score': TestData.get_bcs(),
+                     'status': status.name,
+                     'illness': illness.diagnosis,
+                     'injury': injury.diagnosis,
+                     'vaccine': vaccine.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.request = None
         self.url = django_reverse('assets:healthrecord-list')
@@ -1434,8 +1395,8 @@ class TestHealthRecordListView(APITestCase):
                           data)
 
 class TestHealthRecordDetailView(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'user', 'cow',
-                'illness', 'injury', 'status', 'vaccine', 'healthrecord']
+    fixtures = ['age', 'breed', 'color', 'user', 'cow', 'illness',
+                'injury', 'status', 'treatment', 'vaccine', 'healthrecord']
 
     def setUp(self):
         herd = Cow.objects.all()
@@ -1451,6 +1412,7 @@ class TestHealthRecordDetailView(APITestCase):
         vaccine = vaccines[randint(0, len(vaccines) - 1)]
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
+                     'inspection_time': TestTime.get_datetime(),
                      'temperature': TestData.get_temp(),
                      'respiratory_rate': TestData.get_resp(),
                      'heart_rate': TestData.get_hr(),
