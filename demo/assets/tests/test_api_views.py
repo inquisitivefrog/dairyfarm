@@ -11,8 +11,9 @@ from rest_framework.reverse import django_reverse
 from rest_framework.test import APIRequestFactory, APITestCase
 from rest_framework.test import force_authenticate
 
-from assets.api_views import CowDetail, CowList, EventDetail, EventList
-from assets.api_views import ExerciseDetail, ExerciseList, HealthRecordDetail
+from assets.api_views import CowDetail, CowList, CowListByMonth, CowListByYear
+from assets.api_views import EventDetail, EventList, ExerciseDetail
+from assets.api_views import ExerciseList, HealthRecordDetail
 from assets.api_views import HealthRecordList, MilkDetail, MilkList
 from assets.api_views import SeedDetail, SeedList
 from assets.models import Action, Age, Breed, CerealHay, Color, Cow
@@ -33,7 +34,6 @@ class TestCowListView(APITestCase):
                      'color': 'black_white'}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.herd = Cow.objects.all()
-        self.request = None
         self.url = django_reverse('assets:cow-list')
         self.user = User.objects.get(username=TestData.get_random_user())
 
@@ -41,7 +41,6 @@ class TestCowListView(APITestCase):
         self.data = None
         self.factory = None
         self.herd = None
-        self.request = None
         self.user = None
 
     def test_00_load_fixtures(self):
@@ -117,6 +116,246 @@ class TestCowListView(APITestCase):
             self.assertIn(key,
                           data)
 
+class TestCowListByMonthView(APITestCase):
+    fixtures = ['age', 'breed', 'color', 'user', 'cow']
+
+    def setUp(self):
+        self.year = '2015'
+        self.month = '01'
+        self.data = {'purchased_by': TestData.get_random_user(),
+                     'purchase_date': TestTime.get_purchase_date(),
+                     'age': TestData.get_age(),
+                     'breed': 'Holstein',
+                     'color': 'black_white'}
+        self.factory = APIRequestFactory(enforce_csrf_checks=True)
+        self.herd = Cow.objects.all()
+        self.url = django_reverse('assets:cow-list-month',
+                                  args=(self.year, self.month))
+        self.user = User.objects.get(username=TestData.get_random_user())
+
+    def tearDown(self):
+        self.year = None
+        self.month = None
+        self.data = None
+        self.factory = None
+        self.herd = None
+        self.url = None
+        self.user = None
+
+    def test_00_load_fixtures(self):
+        herd = Cow.objects.all()
+        self.assertLessEqual(1,
+                             len(herd))
+        users = User.objects.all()
+        self.assertLessEqual(1,
+                             len(users))
+
+    def test_01_options(self):
+        request = self.factory.options(path=self.url,
+                                       content_type=TestData.get_format())
+        force_authenticate(request, user=self.user)
+        self.assertTrue(self.user.is_authenticated)
+        response = CowListByMonth.as_view()(request=request)
+        if not response.is_rendered:
+             response = response.render()
+        self.assertEqual(200,
+                         response.status_code)
+        self.assertEqual('OK',
+                         response.reason_phrase)
+        self.assertEquals(TestData.get_allowed_methods(),
+                          response.get('allow'))
+        self.assertEquals('application/json',
+                          response.get('content-type'))
+        stream = BytesIO(response.content)
+        data = JSONParser().parse(stream)
+        self.assertEqual('Cow List By Month',
+                         data['name'])
+        self.assertEqual('',
+                         data['description'])
+        self.assertEqual(['application/json', 'text/html'],
+                         data['renders'])
+        parses = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data']
+        self.assertEqual(parses,
+                         data['parses'])
+
+    def test_02_list_no_args_kwargs(self):
+        request = self.factory.get(path=self.url,
+                                   content_type=TestData.get_format())
+        force_authenticate(request,
+                           user=self.user)
+        self.assertTrue(self.user.is_authenticated)
+        response = CowListByMonth.as_view()(request=request)
+        if not response.is_rendered:
+             response = response.render()
+        self.assertEqual(200,
+                         response.status_code)
+        self.assertEqual('OK',
+                         response.reason_phrase)
+        if not response.is_rendered:
+             response = response.render()
+        stream = BytesIO(response.content)
+        data = JSONParser().parse(stream)
+        self.assertIn('count',
+                      data)
+        self.assertIn('next',
+                      data)
+        self.assertIn('previous',
+                      data)
+        self.assertIn('results',
+                      data)
+        for cow in data['results']:
+            for key in TestData.get_cow_read_keys():
+                self.assertIn(key,
+                              cow)
+
+    def test_03_list_kwargs(self):
+        kwargs = {'year': self.year, 'month': self.month}
+        request = self.factory.get(path=self.url,
+                                   content_type=TestData.get_format())
+        force_authenticate(request,
+                           user=self.user)
+        self.assertTrue(self.user.is_authenticated)
+        response = CowListByMonth.as_view()(request=request, **kwargs)
+        if not response.is_rendered:
+             response = response.render()
+        self.assertEqual(200,
+                         response.status_code)
+        self.assertEqual('OK',
+                         response.reason_phrase)
+        if not response.is_rendered:
+             response = response.render()
+        stream = BytesIO(response.content)
+        data = JSONParser().parse(stream)
+        self.assertIn('count',
+                      data)
+        self.assertIn('next',
+                      data)
+        self.assertIn('previous',
+                      data)
+        self.assertIn('results',
+                      data)
+        for cow in data['results']:
+            for key in TestData.get_cow_read_keys():
+                self.assertIn(key,
+                              cow)
+
+class TestCowListByYearView(APITestCase):
+    fixtures = ['age', 'breed', 'color', 'user', 'cow']
+
+    def setUp(self):
+        self.year = '2015'
+        self.data = {'purchased_by': TestData.get_random_user(),
+                     'purchase_date': TestTime.get_purchase_date(),
+                     'age': TestData.get_age(),
+                     'breed': 'Holstein',
+                     'color': 'black_white'}
+        self.factory = APIRequestFactory(enforce_csrf_checks=True)
+        self.herd = Cow.objects.all()
+        self.url = django_reverse('assets:cow-list-year',
+                                  args=(self.year,))
+        self.user = User.objects.get(username=TestData.get_random_user())
+
+    def tearDown(self):
+        self.year = None
+        self.data = None
+        self.factory = None
+        self.herd = None
+        self.url = None
+        self.user = None
+
+    def test_00_load_fixtures(self):
+        herd = Cow.objects.all()
+        self.assertLessEqual(1,
+                             len(herd))
+        users = User.objects.all()
+        self.assertLessEqual(1,
+                             len(users))
+
+    def test_01_options(self):
+        request = self.factory.options(path=self.url,
+                                       content_type=TestData.get_format())
+        force_authenticate(request, user=self.user)
+        self.assertTrue(self.user.is_authenticated)
+        response = CowListByYear.as_view()(request=request)
+        if not response.is_rendered:
+             response = response.render()
+        self.assertEqual(200,
+                         response.status_code)
+        self.assertEqual('OK',
+                         response.reason_phrase)
+        self.assertEquals(TestData.get_allowed_methods(),
+                          response.get('allow'))
+        self.assertEquals('application/json',
+                          response.get('content-type'))
+        stream = BytesIO(response.content)
+        data = JSONParser().parse(stream)
+        self.assertEqual('Cow List By Year',
+                         data['name'])
+        self.assertEqual('',
+                         data['description'])
+        self.assertEqual(['application/json', 'text/html'],
+                         data['renders'])
+        parses = ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data']
+        self.assertEqual(parses,
+                         data['parses'])
+
+    def test_02_list_no_args_kwargs(self):
+        request = self.factory.get(path=self.url,
+                                   content_type=TestData.get_format())
+        force_authenticate(request,
+                           user=self.user)
+        self.assertTrue(self.user.is_authenticated)
+        response = CowListByYear.as_view()(request=request)
+        self.assertEqual(200,
+                         response.status_code)
+        self.assertEqual('OK',
+                         response.reason_phrase)
+        if not response.is_rendered:
+             response = response.render()
+        stream = BytesIO(response.content)
+        data = JSONParser().parse(stream)
+        self.assertIn('count',
+                      data)
+        self.assertIn('next',
+                      data)
+        self.assertIn('previous',
+                      data)
+        self.assertIn('results',
+                      data)
+        for cow in data['results']:
+            for key in TestData.get_cow_read_keys():
+                self.assertIn(key,
+                              cow)
+
+    def test_03_list_kwargs(self):
+        kwargs = {'year': self.year}
+        request = self.factory.get(path=self.url,
+                                   content_type=TestData.get_format())
+        force_authenticate(request,
+                           user=self.user)
+        self.assertTrue(self.user.is_authenticated)
+        response = CowListByYear.as_view()(request=request, **kwargs)
+        self.assertEqual(200,
+                         response.status_code)
+        self.assertEqual('OK',
+                         response.reason_phrase)
+        if not response.is_rendered:
+             response = response.render()
+        stream = BytesIO(response.content)
+        data = JSONParser().parse(stream)
+        self.assertIn('count',
+                      data)
+        self.assertIn('next',
+                      data)
+        self.assertIn('previous',
+                      data)
+        self.assertIn('results',
+                      data)
+        for cow in data['results']:
+            for key in TestData.get_cow_read_keys():
+                self.assertIn(key,
+                              cow)
+
 class TestCowDetailView(APITestCase):
     fixtures = ['age', 'breed', 'color', 'user', 'cow']
 
@@ -128,7 +367,6 @@ class TestCowDetailView(APITestCase):
                      'color': 'black_white'}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.herd = Cow.objects.all()
-        self.request = None
         self.pk = self.herd[0].id
         self.url = django_reverse('assets:cow-detail',
                                   args=(self.pk,))
@@ -139,7 +377,6 @@ class TestCowDetailView(APITestCase):
         self.factory = None
         self.herd = None
         self.pk = None
-        self.request = None
         self.user = None
 
     def test_00_load_fixtures(self):
@@ -203,8 +440,6 @@ class TestCowDetailView(APITestCase):
              response = response.render()
         stream = BytesIO(response.content)
         data = JSONParser().parse(stream)
-        self.assertIn('id',
-                      data)
         self.assertIn('rfid',
                       data)
         self.assertEqual(self.data['purchased_by'],
@@ -237,8 +472,6 @@ class TestCowDetailView(APITestCase):
              response = response.render()
         stream = BytesIO(response.content)
         data = JSONParser().parse(stream)
-        self.assertIn('id',
-                      data)
         self.assertIn('rfid',
                       data)
         self.assertIn('purchased_by',
@@ -289,14 +522,12 @@ class TestSeedListView(APITestCase):
                      'grass_hay': grass.name,
                      'legume_hay': legume.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
-        self.request = None
         self.url = django_reverse('assets:seed-list')
         self.user = User.objects.get(username=TestData.get_random_user())
 
     def tearDown(self):
         self.data = None
         self.factory = None
-        self.request = None
         self.user = None
 
     def test_00_load_fixtures(self):
@@ -411,7 +642,6 @@ class TestSeedDetailView(APITestCase):
                      'grass_hay': grass.name,
                      'legume_hay': legume.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
-        self.request = None
         self.pk = Seed.objects.get(pk=1).id
         self.url = django_reverse('assets:seed-detail',
                                   args=(self.pk,))
@@ -421,7 +651,6 @@ class TestSeedDetailView(APITestCase):
         self.data = None
         self.factory = None
         self.pk = None
-        self.request = None
         self.user = None
 
     def test_00_load_fixtures(self):
@@ -555,14 +784,12 @@ class TestEventListView(APITestCase):
                      'event_time': TestTime.get_datetime(),
                      'action': action.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
-        self.request = None
         self.url = django_reverse('assets:event-list')
         self.user = User.objects.get(username=TestData.get_random_user())
 
     def tearDown(self):
         self.data = None
         self.factory = None
-        self.request = None
         self.user = None
 
     def test_00_load_fixtures(self):
@@ -659,7 +886,6 @@ class TestEventDetailView(APITestCase):
                      'event_time': TestTime.get_datetime(),
                      'action': action.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
-        self.request = None
         self.pk = Event.objects.get(pk=1).id
         self.url = django_reverse('assets:event-detail',
                                   args=(self.pk,))
@@ -669,7 +895,6 @@ class TestEventDetailView(APITestCase):
         self.data = None
         self.factory = None
         self.pk = None
-        self.request = None
         self.user = None
 
     def test_00_load_fixtures(self):
@@ -803,14 +1028,12 @@ class TestExerciseListView(APITestCase):
                      'exercise_time': TestTime.get_datetime(),
                      'pasture': pasture.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
-        self.request = None
         self.url = django_reverse('assets:exercise-list')
         self.user = User.objects.get(username=TestData.get_random_user())
 
     def tearDown(self):
         self.data = None
         self.factory = None
-        self.request = None
         self.user = None
 
     def test_00_load_fixtures(self):
@@ -907,7 +1130,6 @@ class TestExerciseDetailView(APITestCase):
                      'exercise_time': TestTime.get_datetime(),
                      'pasture': pasture.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
-        self.request = None
         self.pk = Exercise.objects.get(pk=1).id
         self.url = django_reverse('assets:exercise-detail',
                                   args=(self.pk,))
@@ -917,7 +1139,6 @@ class TestExerciseDetailView(APITestCase):
         self.data = None
         self.factory = None
         self.pk = None
-        self.request = None
         self.user = None
 
     def test_00_load_fixtures(self):
@@ -1053,14 +1274,12 @@ class TestMilkListView(APITestCase):
                      'milking_time': TestTime.get_datetime(),
                      'gallons': gallons}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
-        self.request = None
         self.url = django_reverse('assets:milk-list')
         self.user = User.objects.get(username=TestData.get_random_user())
 
     def tearDown(self):
         self.data = None
         self.factory = None
-        self.request = None
         self.user = None
 
     def test_00_load_fixtures(self):
@@ -1152,7 +1371,6 @@ class TestMilkDetailView(APITestCase):
                      'milking_time': TestTime.get_datetime(),
                      'gallons': gallons}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
-        self.request = None
         self.pk = Milk.objects.get(pk=1).id
         self.url = django_reverse('assets:milk-detail',
                                   args=(self.pk,))
@@ -1162,7 +1380,6 @@ class TestMilkDetailView(APITestCase):
         self.data = None
         self.factory = None
         self.pk = None
-        self.request = None
         self.user = None
 
     def test_00_load_fixtures(self):
@@ -1298,7 +1515,6 @@ class TestHealthRecordListView(APITestCase):
                      'injury': injury.diagnosis,
                      'vaccine': vaccine.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
-        self.request = None
         self.url = django_reverse('assets:healthrecord-list')
         self.user = User.objects.get(username=TestData.get_random_user())
 
@@ -1306,7 +1522,6 @@ class TestHealthRecordListView(APITestCase):
         self.data = None
         self.factory = None
         self.herd = None
-        self.request = None
         self.user = None
 
     def test_00_load_fixtures(self):
@@ -1424,7 +1639,6 @@ class TestHealthRecordDetailView(APITestCase):
                      'injury': injury.diagnosis,
                      'vaccine': vaccine.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
-        self.request = None
         self.pk = HealthRecord.objects.get(pk=1).id
         self.url = django_reverse('assets:healthrecord-detail',
                                   args=(self.pk,))
@@ -1434,7 +1648,6 @@ class TestHealthRecordDetailView(APITestCase):
         self.data = None
         self.factory = None
         self.pk = None
-        self.request = None
         self.user = None
 
     def test_00_load_fixtures(self):

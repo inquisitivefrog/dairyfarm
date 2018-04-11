@@ -184,12 +184,12 @@ class TestData:
 
     @classmethod
     def get_cow_read_keys(cls):
-        return ['id', 'rfid', 'purchased_by', 'purchase_date', 'age', 'breed',
+        return ['rfid', 'purchased_by', 'purchase_date', 'age', 'breed',
                 'color', 'link']
 
     @classmethod
     def get_cow_write_keys(cls):
-        return ['id', 'rfid', 'purchased_by', 'purchase_date', 'age', 'breed',
+        return ['rfid', 'purchased_by', 'purchase_date', 'age', 'breed',
                 'color']
 
     @classmethod

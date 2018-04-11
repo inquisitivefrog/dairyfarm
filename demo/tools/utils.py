@@ -88,7 +88,11 @@ class TestData:
         body_condition_score = randint(30, 35) * 10.0 / 100
         # ideal healthy weight range: 450 - 550 
         weight = randint(450, 550)
-        status = Status.objects.get(pk=randint(1,2)).name
+        pregnant = randint(1, 10)
+        if pregnant < 3:
+            status = Status.objects.get(pk=2).name
+        else:
+            status = Status.objects.get(pk=1).name
         return {'recorded_by': user,
                 'inspection_time': dt,
                 'cow': cow.rfid,

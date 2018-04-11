@@ -105,7 +105,7 @@ class CowReadSerializer(serializers.ModelSerializer):
                   'breed', 'color', 'sell_date', 'link')
         lookup_field = 'pk'
         model = Cow
-        read_only_fields = ('link',)
+        read_only_fields = ('rfid', 'link',)
 
 class CowWriteSerializer(serializers.ModelSerializer):
     purchased_by = serializers.SlugRelatedField(queryset=User.objects.all(),
@@ -118,11 +118,10 @@ class CowWriteSerializer(serializers.ModelSerializer):
                                          slug_field='name')
 
     class Meta:
-        fields = ('id', 'rfid', 'purchased_by', 'purchase_date', 'age',
-                  'breed', 'color')
+        fields = ('rfid', 'purchased_by', 'purchase_date', 'age', 'breed',
+                  'color')
         lookup_field = 'pk'
         model = Cow
-        read_only_fields = ('rfid', 'link')
 
     def create(self, validated_data):
         age = validated_data.pop('age')
@@ -152,7 +151,7 @@ class EventWriteSerializer(serializers.ModelSerializer):
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                slug_field='username')
     cow = serializers.SlugRelatedField(queryset=Cow.objects.all(),
-                                          slug_field='rfid')
+                                       slug_field='rfid')
     action = serializers.SlugRelatedField(queryset=Action.objects.all(),
                                           slug_field='name')
 
@@ -194,7 +193,7 @@ class HealthRecordWriteSerializer(serializers.ModelSerializer):
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                slug_field='username')
     cow = serializers.SlugRelatedField(queryset=Cow.objects.all(),
-                                          slug_field='rfid')
+                                       slug_field='rfid')
     illness = serializers.SlugRelatedField(queryset=Illness.objects.all(),
                                            slug_field='diagnosis',
                                            required=False)
@@ -259,11 +258,17 @@ class MilkReadSerializer(serializers.ModelSerializer):
         model = Milk
         read_only_fields = ('link',)
 
+class MilkSummaryReadSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('gallons',)
+        lookup_field = 'pk'
+        model = Milk
+
 class MilkWriteSerializer(serializers.ModelSerializer):
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                slug_field='username')
     cow = serializers.SlugRelatedField(queryset=Cow.objects.all(),
-                                          slug_field='rfid')
+                                       slug_field='rfid')
 
     class Meta:
         fields = ('id', 'recorded_by', 'cow', 'milking_time', 'gallons')
@@ -300,13 +305,13 @@ class SeedWriteSerializer(serializers.ModelSerializer):
     pasture = serializers.SlugRelatedField(queryset=Pasture.objects.all(),
                                            slug_field='name')
     season = serializers.SlugRelatedField(queryset=Season.objects.all(),
-                                         slug_field='name')
+                                          slug_field='name')
     cereal_hay = serializers.SlugRelatedField(queryset=CerealHay.objects.all(),
                                               slug_field='name')
     grass_hay = serializers.SlugRelatedField(queryset=GrassHay.objects.all(),
                                              slug_field='name')
     legume_hay = serializers.SlugRelatedField(queryset=LegumeHay.objects.all(),
-                                             slug_field='name')
+                                              slug_field='name')
 
     class Meta:
         fields = ('id', 'seeded_by', 'pasture', 'season', 'year',
@@ -351,7 +356,7 @@ class ExerciseWriteSerializer(serializers.ModelSerializer):
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                slug_field='username')
     cow = serializers.SlugRelatedField(queryset=Cow.objects.all(),
-                                          slug_field='rfid')
+                                       slug_field='rfid')
     pasture = serializers.SlugRelatedField(queryset=Pasture.objects.all(),
                                           slug_field='name')
 
@@ -369,4 +374,3 @@ class ExerciseWriteSerializer(serializers.ModelSerializer):
         return exercise
     
     # update() does not need to be overridden
-

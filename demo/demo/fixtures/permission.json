@@ -700,5 +700,59 @@
         "content_type": 26,
         "codename": "delete_vaccine"
     }
+},
+{
+    "model": "auth.permission",
+    "pk": 79,
+    "fields": {
+        "name": "Can add annual",
+        "content_type": 27,
+        "codename": "add_annual"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 80,
+    "fields": {
+        "name": "Can change annual",
+        "content_type": 27,
+        "codename": "change_annual"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 81,
+    "fields": {
+        "name": "Can delete annual",
+        "content_type": 27,
+        "codename": "delete_annual"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 82,
+    "fields": {
+        "name": "Can add monthly",
+        "content_type": 28,
+        "codename": "add_monthly"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 83,
+    "fields": {
+        "name": "Can change monthly",
+        "content_type": 28,
+        "codename": "change_monthly"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 84,
+    "fields": {
+        "name": "Can delete monthly",
+        "content_type": 28,
+        "codename": "delete_monthly"
+    }
 }
 ]

@@ -3,9 +3,7 @@ from uuid import uuid4
 from django.contrib.auth.models import User
 from django.db import models
 
-from rest_framework.reverse import reverse
-
-from assets.helpers import AssetTime
+from rest_framework.reverse import django_reverse
 
 class Action(models.Model):
     name = models.CharField(max_length=20,
@@ -126,21 +124,21 @@ class Cow(models.Model):
  
     def __str__(self):
         if self.id:
-            return str(self.rfid)
+            return str(self.id)
         else:
             return '{}'.format(self.__class__)
 
     def __repr__(self):
         if self.id:
             return '{}:{}'.format(self.__class__,
-                                  str(self.rfid))
+                                  str(self.pk))
         else:
             return '{}'.format(self.__class__)
 
     def save(self, *args, **kwargs):
         super(Cow, self).save(*args, **kwargs)
-        kwargs = {'link': reverse('assets:cow-detail',
-                                  kwargs = {'pk': self.pk})}
+        kwargs = {'link': django_reverse('assets:cow-detail',
+                                        kwargs = {'pk': self.pk})}
         Cow.objects.filter(pk=self.pk).update(**kwargs)
         return
 
@@ -162,10 +160,7 @@ class Event(models.Model):
 
     def __str__(self):
         if self.id:
-            return '{}: {}: {}: {}'.format(self.recorded_by.username,
-                                           self.event_time,
-                                           self.cow.rfid,
-                                           self.action.name)
+            return str(self.id)
         else:
             return '{}'.format(self.__class__)
 
@@ -178,8 +173,8 @@ class Event(models.Model):
 
     def save(self, *args, **kwargs):
         super(Event, self).save(*args, **kwargs)
-        kwargs = {'link': reverse('assets:event-detail',
-                                  kwargs = {'pk': self.pk})}
+        kwargs = {'link': django_reverse('assets:event-detail',
+                                         kwargs = {'pk': self.pk})}
         Event.objects.filter(pk=self.pk).update(**kwargs)
         return
 
@@ -213,8 +208,7 @@ class Illness(models.Model):
 
     def __str__(self):
         if self.id:
-            return '{}: {}'.format(self.diagnosis,
-                                   self.treatment)
+            return self.diagnosis
         else:
             return '{}'.format(self.__class__)
 
@@ -237,8 +231,7 @@ class Injury(models.Model):
 
     def __str__(self):
         if self.id:
-            return '{}: {}'.format(self.diagnosis,
-                                   self.treatment)
+            return self.diagnosis
         else:
             return '{}'.format(self.__class__)
 
@@ -374,7 +367,7 @@ class HealthRecord(models.Model):
                                     null=False,
                                     blank=False,
                                     on_delete=models.CASCADE)
-    inspection_time = models.DateTimeField(auto_now_add=True)
+    inspection_time = models.DateTimeField()
     cow = models.ForeignKey(Cow,
                             on_delete=models.CASCADE)
     temperature = models.FloatField(default=1.00,
@@ -432,8 +425,8 @@ class HealthRecord(models.Model):
 
     def save(self, *args, **kwargs):
         super(HealthRecord, self).save(*args, **kwargs)
-        kwargs = {'link': reverse('assets:healthrecord-detail',
-                                  kwargs = {'pk': self.pk})}
+        kwargs = {'link': django_reverse('assets:healthrecord-detail',
+                                         kwargs = {'pk': self.pk})}
         HealthRecord.objects.filter(pk=self.pk).update(**kwargs)
         return
 
@@ -465,8 +458,8 @@ class Milk(models.Model):
 
     def save(self, *args, **kwargs):
         super(Milk, self).save(*args, **kwargs)
-        kwargs = {'link': reverse('assets:milk-detail',
-                                  kwargs = {'pk': self.pk})}
+        kwargs = {'link': django_reverse('assets:milk-detail',
+                                         kwargs = {'pk': self.pk})}
         Milk.objects.filter(pk=self.pk).update(**kwargs)
         return
 
@@ -514,8 +507,8 @@ class Seed(models.Model):
 
     def save(self, *args, **kwargs):
         super(Seed, self).save(*args, **kwargs)
-        kwargs = {'link': reverse('assets:seed-detail',
-                                  kwargs = {'pk': self.pk})}
+        kwargs = {'link': django_reverse('assets:seed-detail',
+                                         kwargs = {'pk': self.pk})}
         Seed.objects.filter(pk=self.pk).update(**kwargs)
         return
 
@@ -535,7 +528,7 @@ class Exercise(models.Model):
 
     def __str__(self):
         if self.id:
-            return self.id
+            return str(self.id)
         else:
             return '{}'.format(self.__class__)
 
@@ -548,7 +541,7 @@ class Exercise(models.Model):
 
     def save(self, *args, **kwargs):
         super(Exercise, self).save(*args, **kwargs)
-        kwargs = {'link': reverse('assets:exercise-detail',
-                                  kwargs = {'pk': self.pk})}
+        kwargs = {'link': django_reverse('assets:exercise-detail',
+                                         kwargs = {'pk': self.pk})}
         Exercise.objects.filter(pk=self.pk).update(**kwargs)
         return

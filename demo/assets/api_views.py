@@ -1,4 +1,4 @@
-from django.views.defaults import bad_request
+from django.db.models import Sum
 
 from rest_framework import generics
 
@@ -10,6 +10,7 @@ from assets.serializers import ExerciseReadSerializer, ExerciseWriteSerializer
 from assets.serializers import HealthRecordReadSerializer
 from assets.serializers import HealthRecordWriteSerializer
 from assets.serializers import MilkReadSerializer, MilkWriteSerializer
+from assets.serializers import MilkSummaryReadSerializer
 from assets.serializers import SeedReadSerializer, SeedWriteSerializer
 
 class CowDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -109,6 +110,42 @@ class HealthRecordList(generics.ListCreateAPIView):
             return HealthRecordReadSerializer
         return HealthRecordWriteSerializer
 
+class HealthRecordListByMonth(generics.ListCreateAPIView):
+    # Get report of cow health records
+    serializer_class = HealthRecordReadSerializer
+
+    def get_queryset(self):
+        if self.kwargs:
+            year = self.kwargs['year']
+            month = self.kwargs['month']
+            start_date = AssetTime.sdate_year_month(year, month)
+            end_date = AssetTime.edate_year_month(year, month)
+            return HealthRecord.objects.filter(inspection_time__gte=start_date,
+                                               inspection_time__lte=end_date).order_by('cow')
+        print('no kwargs')
+        return HealthRecord.objects.all()
+
+class HealthRecordIllCowsSummary(generics.ListAPIView):
+    # Get summary of ill cows
+    serializer_class = HealthRecordReadSerializer
+    pagination_class = None
+
+    def get_queryset(self):
+        illnesses = ['Bacterial Illness', 'Viral Illness']
+        if self.kwargs:
+            year = self.kwargs['year']
+            month = self.kwargs['month']
+            sdate = AssetTime.sdate_year_month(year, month)
+            edate = AssetTime.edate_year_month(year, month)
+          
+            total_cows = HealthRecord.objects.filter(status__name__in=illnesses,
+                                                     inspection_time__gte=sdate,
+                                                     inspection_time__lte=edate).count()
+        else:
+            total_cows = HealthRecord.objects.all().count()
+        print('total cows: {}'.format(total_cows))
+        return [{'status': total_cows}]
+
 class MilkDetail(generics.RetrieveUpdateDestroyAPIView):
     # Get / Update / Destroy a Milk
     queryset = Milk.objects.all()
@@ -127,6 +164,37 @@ class MilkList(generics.ListCreateAPIView):
             return MilkReadSerializer
         return MilkWriteSerializer
 
+class MilkListByMonth(generics.ListAPIView):
+    # Get list of milk production by month
+    serializer_class = MilkReadSerializer
+
+    def get_queryset(self):
+        if self.kwargs:
+            year = self.kwargs['year']
+            month = self.kwargs['month']
+            start_date = AssetTime.sdate_year_month(year, month)
+            end_date = AssetTime.edate_year_month(year, month)
+            return Milk.objects.filter(milking_time__gte=start_date,
+                                       milking_time__lte=end_date)
+        return Milk.objects.all()
+
+class MilkSummaryByMonth(generics.ListAPIView):
+    # Get summary of milk production
+    serializer_class = MilkSummaryReadSerializer
+    pagination_class = None
+
+    def get_queryset(self):
+        if self.kwargs:
+            year = self.kwargs['year']
+            month = self.kwargs['month']
+            start_date = AssetTime.sdate_year_month(year, month)
+            end_date = AssetTime.edate_year_month(year, month)
+            total_gallons = Milk.objects.filter(milking_time__gte=start_date,
+                                                milking_time__lte=end_date).aggregate(Sum('gallons'))['gallons__sum']
+        else:
+            total_gallons = (Milk.objects.all().aggregate(Sum('gallons')))
+        return [{'gallons': total_gallons}]
+
 class SeedDetail(generics.RetrieveUpdateDestroyAPIView):
     # Get / Update / Destroy a Seed
     queryset = Seed.objects.all()
@@ -137,7 +205,7 @@ class SeedDetail(generics.RetrieveUpdateDestroyAPIView):
         return SeedWriteSerializer
 
 class SeedList(generics.ListCreateAPIView):
-    # Get / Create pastures 
+    # Get / Create pastures
     queryset = Seed.objects.all()
 
     def get_serializer_class(self):

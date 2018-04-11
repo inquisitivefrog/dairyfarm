@@ -1,4 +1,4 @@
-from django.utils.timezone import datetime, localtime, pytz
+from django.utils.timezone import datetime, pytz
 
 class InvalidTime(Exception):
     def __init__(self, msg):
@@ -18,26 +18,59 @@ class AssetTime:
 
     @classmethod
     def sdate_year_month(cls, y, m):
-        return '{}-{}-01'.format(y, m)
+        t = datetime.strptime('{}-{}-01'.format(y, m),
+                              '%Y-%m-%d')
+        return datetime(t.year,
+                        t.month,
+                        t.day,
+                        t.hour,
+                        t.minute,
+                        t.second,
+                        t.microsecond,
+                        tzinfo=pytz.timezone('UTC'))
 
     @classmethod
     def edate_year_month(cls, y, m):
         if m == '12':
             y = int(y) + 1
             m = '01'
-            return '{}-{}-01'.format(y, m)
+            t = datetime.strptime('{}-{}-01'.format(y, m),
+                                  '%Y-%m-%d')
         elif m.startswith('0'):
             m = int(m[1:]) + 1
             if m < 10:
-                return '{}-0{}-01'.format(y, m)
+                t = datetime.strptime('{}-0{}-01'.format(y, m),
+                                      '%Y-%m-%d')
             else:
-                return '{}-{}-01'.format(y, m)
+                t = datetime.strptime('{}-{}-01'.format(y, m),
+                                      '%Y-%m-%d')
         else:
             m = int(m) + 1
-            return '{}-{}-01'.format(y, m)
+            t = datetime.strptime('{}-{}-01'.format(y, m),
+                                  '%Y-%m-%d')
+        return datetime(t.year,
+                        t.month,
+                        t.day,
+                        t.hour,
+                        t.minute,
+                        t.second,
+                        t.microsecond,
+                        tzinfo=pytz.timezone('UTC'))
 
     @classmethod
     def edate_year(cls, y):
         y = int(y) + 1
         return '{}-01-01'.format(y)
 
+    @classmethod
+    def get_datetime(cls, y, m):
+        t = datetime.strptime('{}-{}-01'.format(y, m),
+                              '%Y-%m-%d')
+        return datetime(t.year,
+                        t.month,
+                        t.day,
+                        t.hour,
+                        t.minute,
+                        t.second,
+                        t.microsecond,
+                        tzinfo=pytz.timezone('UTC'))

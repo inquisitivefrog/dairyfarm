@@ -20,7 +20,13 @@ urlpatterns = [
     url(r'^api/users/(?P<pk>[0-9]+)/$',
         UserDetail.as_view(),
         name='user_detail'),
-    url(r'^assets/', include('assets.urls',
-                             namespace="assets")),
-    path('admin/', admin.site.urls)
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    url(r'^assets/',
+        include('assets.urls',
+                namespace="assets")),
+    url(r'^summary/',
+        include('summary.urls',
+                namespace="summary")),
+    path('admin/',
+         admin.site.urls)
+] + static(settings.STATIC_URL,
+           document_root=settings.STATIC_ROOT)

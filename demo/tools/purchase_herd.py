@@ -68,9 +68,9 @@ def _get_data(breed, color, date, user):
        tmp.append(word.capitalize()) 
     b_name = ' '.join(tmp)
     breed = Breed.objects.get(name=b_name)
-    return {'rfid': uuid4(),
-            'purchased_by': user,
+    return {'purchased_by': user,
             'purchase_date': TestTime.convert_date(date),
+            'rfid': uuid4(),
             'age': age,
             'breed': breed.name,
             'color': color}

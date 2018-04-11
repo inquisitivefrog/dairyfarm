@@ -5,7 +5,9 @@ from django.conf.urls.static import static
 from assets.api_views import CowDetail, CowList, CowListByMonth, CowListByYear
 from assets.api_views import EventDetail, EventList
 from assets.api_views import ExerciseDetail, ExerciseList, HealthRecordDetail
-from assets.api_views import HealthRecordList, MilkDetail, MilkList
+from assets.api_views import HealthRecordList, HealthRecordListByMonth, MilkDetail
+from assets.api_views import MilkList, MilkListByMonth, MilkSummaryByMonth
+from assets.api_views import HealthRecordIllCowsSummary
 from assets.api_views import SeedDetail, SeedList
 from assets.views import IndexView
 
@@ -41,12 +43,24 @@ urlpatterns = [
     url(r'^api/healthrecords/$',
         HealthRecordList.as_view(),
         name='healthrecord-list'),
+    url(r'^api/healthrecords/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/$',
+        HealthRecordListByMonth.as_view(),
+        name='healthrecord-list-month'),
+    url(r'^api/healthrecords/illness/summary/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/$',
+        HealthRecordIllCowsSummary.as_view(),
+        name='healthrecord-illness-summary-month'),
     url(r'^api/healthrecords/(?P<pk>\d+)/$',
         HealthRecordDetail.as_view(),
         name='healthrecord-detail'),
     url(r'^api/milk/$',
         MilkList.as_view(),
         name='milk-list'),
+    url(r'^api/milk/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/$',
+        MilkListByMonth.as_view(),
+        name='milk-list-month'),
+    url(r'^api/milk/summary/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/$',
+        MilkSummaryByMonth.as_view(),
+        name='milk-summary-month'),
     url(r'^api/milk/(?P<pk>\d+)/$',
         MilkDetail.as_view(),
         name='milk-detail'),
@@ -56,4 +70,4 @@ urlpatterns = [
     url(r'^api/seeds/(?P<pk>\d+)/$',
         SeedDetail.as_view(),
         name='seed-detail'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
