@@ -1,12 +1,10 @@
-from bs4 import BeautifulSoup
-from json import dumps, loads
-from random import randint, random
+from json import dumps
+from random import randint
 
 from django.contrib.auth.models import User
 from django.utils.six import BytesIO
 
 from rest_framework.parsers import JSONParser
-from rest_framework.request import Request
 from rest_framework.reverse import django_reverse
 from rest_framework.test import APIRequestFactory, APITestCase
 from rest_framework.test import force_authenticate

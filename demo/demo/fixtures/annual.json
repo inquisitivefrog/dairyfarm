@@ -1,0 +1,32 @@
+[
+{
+    "model": "summary.annual",
+    "pk": 1,
+    "fields": {
+        "created_by": 1,
+        "year": 2015,
+        "total_cows": 520,
+        "aged_cows": 101,
+        "pregnant_cows": 470,
+        "ill_cows": 381,
+        "injured_cows": 367,
+        "gallons_milk": 44463,
+        "link": "/summary/api/annual/2015/"
+    }
+},
+{
+    "model": "summary.annual",
+    "pk": 2,
+    "fields": {
+        "created_by": 1,
+        "year": 2016,
+        "total_cows": 520,
+        "aged_cows": 101,
+        "pregnant_cows": 369,
+        "ill_cows": 150,
+        "injured_cows": 161,
+        "gallons_milk": 17792,
+        "link": "/summary/api/annual/2016/"
+    }
+}
+]

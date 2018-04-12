@@ -2766,12 +2766,8 @@ class TestExerciseReadSerializer(APITestCase):
                               bool)
         self.assertLessEqual(1,
                              actual.data['pasture']['distance'])
-        if actual.data['pasture']['name'].find(' ') > 0:
-            self.assertRegex(actual.data['pasture']['name'],
-                             '\w')
-        else:
-            self.assertRegex(actual.data['pasture']['name'],
-                         '^\w$')
+        self.assertRegex(actual.data['pasture']['name'],
+                         '\w')
         self.assertRegex(actual.data['link'],
                          '/assets/api/exercises/\d+/')
 

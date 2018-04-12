@@ -21,19 +21,22 @@ def read_args():
                         '--username',
                         required=False,
                         type=str,
+                        choices=['farmer', 'farmhand', 'vet'],
                         default='',
                         help='existing user by username')
     parser.add_argument('-y',
                         '--year',
                         required=False,
                         type=str,
-                        default='',
+                        choices=['2015', '2016', '2017', '2018'],
+                        default=None,
                         help='year in %Y format')
     parser.add_argument('-m',
                         '--month',
                         required=False,
                         type=str,
-                        default='',
+                        choices=['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+                        default=None,
                         help='month in %m format')
     o = parser.parse_args()
     return (o.duration,
@@ -78,8 +81,8 @@ def main():
     elif duration == 'monthly':
         data.update({'month': month}) 
         generate_monthly_report(data)
-        display_monthly_report(year,
-                               month)
+        print(display_monthly_report(year,
+                                     month))
     return
 
 if __name__ == '__main__':

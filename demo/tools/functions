@@ -136,14 +136,15 @@ function preserve_reference_data() {
 function reporting() {
     duration=$1
     user=$2
-    year=$3
-    month=$4
-    if [ -e $year ]; then
-        echo reporting $duration $user $year
-        ./tools/reporting.py --duration $duration --username $user --year $year
-    elif [ -e $month ]; then
+    if [ $# -eq 4 ]; then
+        year=$3
+        month=$4
         echo reporting $duration $user $year $month
         ./tools/reporting.py --duration $duration --username $user --year $year --month $month
+    elif [ $# -eq 3 ]; then
+        year=$3
+        echo reporting $duration $user $year
+        ./tools/reporting.py --duration $duration --username $user --year $year
     fi
 }
 
@@ -152,5 +153,8 @@ function test() {
     python manage.py test -v 2 assets.tests.test_serializers
     python manage.py test -v 2 assets.tests.test_api_views
     python manage.py test -v 2 assets.tests.test_urls
-    #python manage.py test -v 2 summary.tests.test_models
+    python manage.py test -v 2 summary.tests.test_models
+    python manage.py test -v 2 summary.tests.test_serializers
+    python manage.py test -v 2 summary.tests.test_api_views
+    python manage.py test -v 2 summary.tests.test_urls
 }

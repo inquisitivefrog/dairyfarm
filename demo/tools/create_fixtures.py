@@ -16,7 +16,7 @@ def get_db_tables():
                  'user_permission.json': 'auth.user_user_permissions',
                  'action.json': 'assets.action',
                  'age.json': 'assets.age',
-                 #'annual.json': 'report.annual',
+                 'annual.json': 'summary.annual',
                  'breed.json': 'assets.breed',
                  'cerealhay.json': 'assets.cerealhay',
                  'color.json': 'assets.color',
@@ -29,14 +29,13 @@ def get_db_tables():
                  'injury.json': 'assets.injury',
                  'legumehay.json': 'assets.legumehay',
                  'milk.json': 'assets.milk',
+                 'monthly.json': 'summary.monthly',
                  'pasture.json': 'assets.pasture',
                  'season.json': 'assets.season',
                  'seed.json': 'assets.seed',
                  'status.json': 'assets.status',
                  'treatment.json': 'assets.treatment',
                  'vaccine.json': 'assets.vaccine'}
-    db_tables = {'user.json': 'auth.user',
-                 'group.json': 'auth.group'}
     return db_tables
 
 def main():
