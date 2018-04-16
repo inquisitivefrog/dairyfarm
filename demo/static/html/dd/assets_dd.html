@@ -1,0 +1,93 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="//localhost:8000/static/dd/dd/mrd.css"/>
+<title>Assets Design Document</title>
+</head>
+
+<body>
+<h1 style="text-align: center">Nature Dairy Farm Inventory Management Design Document</h1><p></p>
+<div id="contents" class="contents">
+<h2>Contents</h2><p></p><div><ul style="text-align: left">
+<h4><li><span>1</span>
+<span><a href=http://localhost:8000/static/html/dd/dd.html#intro>Introduction</a></span></li>
+<li><span>2</span>
+<span><a href=http://localhost:8000/static/html/dd/dd.html#overview>System Overview</a></span></li>
+<li><span>3</span>
+<span><a href=http://localhost:8000/static/html/dd/dd.html#arch>System Architecture</a></span></li>
+<li><span>4</span>
+<span><a href=http://localhost:8000/static/html/dd/dd.html#component>Component Design</a></span></li>
+<li><span>5</span>
+<span><a href=http://localhost:8000/static/html/dd/dd.html#data>Data Design</a></span></li>
+<li><span>6</span>
+<span><a href=http://localhost:8000/static/html/dd/dd.html#api>API Design</a></span></li>
+<li><span>7</span>
+<span><a href=http://localhost:8000/static/html/dd/dd.html#ui>UI Design</a></span></li>
+<li><span>8</span>
+<span><a href=http://localhost:8000/static/html/dd/dd.html#reqs>Requirements Matrix</a></span></li>
+<li><span>9</span>
+<span><a href=http://localhost:8000/static/html/dd/dd.html#appendix>Appendix</a></span></li>
+</ul></h4></div>
+
+<div id="intro"><h2>Introduction</h2><p></p>
+<h3>Purpose</h3><p></p><p>
+Nature v1.0 is an inventory management system for the dairy farming market segment.  The Assets feature will consist of a user credential protected UI that interacts with a service that manages user registration, and management of dairy farm assets.
+</p><p></p>
+<h3>Scope</h3><p></p><p>
+Two tools will be developed.  A CLI tool for rapid creation of new objects for load testing and a UI tool for CRUD management of all objects.
+
+Back-end Perspective
+
+Each client will be represented by a Customer object.  All users and assets will be mapped to this Customer object to ensure multi-tenancy security.  User registration will require email address as username, password, first_name, last_name, employer, position.
+
+Each organization will be represented by an Agency object.   Currently, the only agency supported is Ampush.
+Each user of the CLI or UI tool must have an User object that provides authorization via login credentials: username and password, and alerting via email address or SMS text message.  Each User is assigned read-only or read-write access to 1:N Partner objects based upon Jason Web Token (JWT) and agency.   
+Partner and Initiative objects will be accessible only by JWT obtained by user login.  ie. username + password = JWT.
+Each User object may be modified or mapped to 1:N Partner objects
+Each Partner object may be modified or mapped to 1:N Initiative objects and 1:4 publishers defined by name, account_id, account_name and access_token
+
+Front-end Perspective
+
+User login trades username/password for authentication token and authorization ACL
+Partner User login loads a landing page listing all Initiatives with attributes hidden.  Every Initiative icon can be expanded to display all attributes.   Many Initiative attributes can be edited.
+Ampush User login loads a landing page listing all mapped Partners with attributes hidden.    Every Partner icon can be expanded to display all attributes including all mapped publishers and all mapped Initiatives.   Many Partner attributes can be edited.
+A click of any Partner loads a new landing page listing all mapped Initiatives with attributes hidden.  Every Initiative icon can be expanded to display all attributes.   Many Initiative attributes can be edited.
+*Historic Initiatives may be retrieved by additional query but objects and attributes are immutable.
+
+</p><p></p>
+<h3>References</h3><p></p><p>
+<a href=http://localhost:8000/static/html/mrd/mrd.html>Nature Dairy Farm MRD</a>
+</p><p></div>
+
+<div id="overview"><h2>System Overview</h2><p></p>
+</p><p></p></div>
+
+<div id="arch"><h2>System Architecture</h2><p></p>
+<h3>Architectural Design</h3><p></p><p>
+</p><p></p>
+<h3>Design Considerations</h3><p></p><p>
+</p><p></p></div>
+
+<div id="component"><h2>Component Design</h2><p></p>
+</p><p></p></div>
+
+<div id="data"><h2>Data Design</h2><p></p>
+<h3>RDBMS Data Description</h3><p></p><p>
+</p><p></p>
+<h3>Data Integration</h3><p></p><p>
+</p><p></p></div>
+
+<div id="api"><h2>API Design</h2><p></p>
+</p><p></p></div>
+
+<div id="ui"><h2>UI Design</h2><p></p>
+</p><p></p></div>
+
+<div id="reqs"><h2>Requirements Matrix</h2><p></p>
+</p><p></p></div>
+
+<div id="appendix"><h2>Appendix</h2><p></p>
+</p><p></p></div>
+
+</body>
+</html>
