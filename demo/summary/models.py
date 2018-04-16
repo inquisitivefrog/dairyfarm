@@ -31,6 +31,7 @@ class Annual(models.Model):
         return objs.filter(age__name='5 years').count()
 
     def _get_pregnant_cows(self, objs):
+        # as HealthRecord measures twice a day, use set to eliminate duplicates
         pregnant = set()
         [ pregnant.add(str(hr.cow.rfid)) for hr in objs.filter(status__name='Pregnant') ]
         return len(pregnant)
@@ -106,6 +107,7 @@ class Monthly(models.Model):
         return objs.filter(age__name='5 years').count()
 
     def _get_pregnant_cows(self, objs):
+        # as HealthRecord measures twice a day, use set to eliminate duplicates
         pregnant = set()
         [ pregnant.add(str(hr.cow.rfid)) for hr in objs.filter(status__name='Pregnant') ]
         return len(pregnant)
