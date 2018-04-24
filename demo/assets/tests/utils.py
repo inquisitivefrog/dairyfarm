@@ -107,6 +107,14 @@ class TestData:
         return breeds[breed]
 
     @classmethod
+    def get_random_client(cls):
+        clients = ['ACME Dairy Farm', 'Kraft Foods Cheese',
+                   'Land O Lakes', 'Nestle USA', 'Dean Foods', 
+                   'Saputo', 'Schreiber Foods']
+        client = randint(0, len(clients) - 1)
+        return clients[client]
+
+    @classmethod
     def get_random_color(cls):
         colors = ['Blue', 'Green', 'Orange', 'Yellow']
         color = randint(0, len(colors) - 1)

@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 from rest_framework.test import APITestCase
 
-from assets.models import Age, Action, Breed, Color, Cow
+from assets.models import Age, Action, Breed, Client, Color, Cow
 from assets.models import CerealHay, GrassHay, Illness, Injury, LegumeHay
 from assets.models import Season, Seed, Status, Treatment
 from assets.models import Vaccine, Pasture, HealthRecord, Milk, Event, Exercise
@@ -216,6 +216,83 @@ class TestBreedModel(APITestCase):
                          actual.name)
         self.assertEqual(expected.url,
                          actual.url)
+
+class TestClientModel(APITestCase):
+    fixtures = ['client']
+
+    def setUp(self):
+        self.name = 'ACME Dairy Farm'
+        self.client_data = {'name': self.name,
+                            'join_date': TestTime.get_date()}
+
+    def tearDown(self):
+        self.name = None
+        self.client_data = None
+
+    def test_00_load_fixtures(self):
+        clients = Client.objects.all()
+        self.assertEqual(5,
+                         len(clients))
+
+    def test_01_object(self):
+        c = Client()
+        self.assertEqual("<class 'assets.models.Client'>",
+                         repr(c))
+        self.assertEqual("<class 'assets.models.Client'>",
+                         str(c))
+        c = Client.objects.get(pk=1)
+        self.assertEqual("<class 'assets.models.Client'>:{}".format(c.id),
+                         repr(c))
+        self.assertEqual(c.name,
+                         str(c))
+ 
+    def test_02_get(self):
+        c = Client.objects.get(id=1)
+        self.assertEqual('Foster Farms Dairy',
+                         c.name)        
+        self.assertRegex(TestTime.convert_date(c.join_date),
+                         '^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+
+    def test_03_filter(self):
+        expected = Client.objects.filter(name=self.name)
+        actual = Client.objects.filter(name__startswith=self.name[0:3])
+        self.assertEqual(len(expected),
+                         len(actual))
+
+    def test_04_create(self):
+        c = Client.objects.create(**self.client_data)
+        self.assertEqual(self.client_data['name'],
+                         c.name)
+
+    def test_05_full_update(self):
+        expected = Client.objects.get(id=1)
+        expected.name = TestData.get_random_client()
+        expected.join_date = TestTime.get_date()
+        expected.save()
+        actual = Client.objects.get(id=expected.id)
+        self.assertEqual(expected.name,
+                         actual.name)
+        self.assertRegex(TestTime.convert_date(actual.join_date),
+                         '^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+
+    def test_06_delete(self):
+        expected = Client.objects.get(id=1)
+        expected.delete()
+        with self.assertRaises(Client.DoesNotExist) as context:
+            Client.objects.get(pk=expected.id)
+        msg = 'Client matching query does not exist'
+        self.assertIn(msg, str(context.exception))
+
+    def test_07_save(self):
+        expected = Client()
+        expected.name = self.client_data['name']
+        expected.join_date = TestTime.get_date()
+        expected.save()
+        actual = Client.objects.get(pk=expected.id)
+        self.assertEqual(expected.name,
+                         actual.name)
+        self.assertEqual(expected.join_date,
+                         actual.join_date)
 
 class TestColorModel(APITestCase):
     fixtures = ['color']
@@ -614,13 +691,15 @@ class TestLegumeHayModel(APITestCase):
                          actual.name)
 
 class TestPastureModel(APITestCase):
-    fixtures = ['pasture']
+    fixtures = ['client', 'pasture']
 
     def setUp(self):
-        self.pasture_data = {'name': TestData.get_pasture(),
-                            'url': TestData.get_pastureimage(),
-                            'fallow': False,
-                            'distance': randint(1, 5)}
+        client = Client.objects.get(pk=1)
+        self.pasture_data = {'client': client,
+                             'name': TestData.get_pasture(),
+                             'url': TestData.get_pastureimage(),
+                             'fallow': False,
+                             'distance': randint(1, 5)}
 
     def tearDown(self):
         self.pasture_data = None
@@ -651,6 +730,8 @@ class TestPastureModel(APITestCase):
         self.assertFalse(p.fallow)
         self.assertLessEqual(1,
                              p.distance)
+        self.assertRegex(p.client.name,
+                         '^\w')
         self.assertRegex(p.link,
                          '/assets/api/pastures/\d+/')
 
@@ -680,6 +761,8 @@ class TestPastureModel(APITestCase):
                          actual.fallow)
         self.assertEqual(expected.distance,
                          actual.distance)
+        self.assertRegex(expected.client.name,
+                         '^\w')
                              
     def test_06_delete(self):
         expected = Pasture.objects.get(id=1)
@@ -693,6 +776,7 @@ class TestPastureModel(APITestCase):
         expected = Pasture()
         expected.name = self.pasture_data['name']
         expected.url = self.pasture_data['url']
+        expected.client = self.pasture_data['client']
         expected.fallow = self.pasture_data['fallow']
         expected.distance = self.pasture_data['distance']
         expected.save()
@@ -701,6 +785,8 @@ class TestPastureModel(APITestCase):
                          actual.name)
         self.assertEqual(expected.url,
                          actual.url)
+        self.assertRegex(expected.client.name,
+                         '^\w')
         self.assertEqual(expected.fallow,
                          actual.fallow)
         self.assertEqual(expected.distance,
@@ -972,13 +1058,15 @@ class TestVaccineModel(APITestCase):
                          actual.name)
 
 class TestCowModel(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'user', 'cow']
+    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow']
 
     def setUp(self):
         self.rfid = TestData.get_rfid()
         self.age_data = {'name': '10 years'}
         self.breed_data = {'name': TestData.get_breed(),
                            'url': TestData.get_image()}
+        self.client_data = {'name': TestData.get_random_client(),
+                            'join_date': TestTime.get_date()}
         self.color_data = {'name': 'blue'}
         self.cow_data = {'purchased_by': User.objects.get(username=TestData.get_random_user()),
                          'purchase_date': TestTime.get_date()}
@@ -987,6 +1075,7 @@ class TestCowModel(APITestCase):
         self.rfid = None
         self.age_data = None
         self.breed_data = None
+        self.client_data = None
         self.color_data = None
 
     def test_00_load_fixtures(self):
@@ -996,6 +1085,9 @@ class TestCowModel(APITestCase):
         breeds = Breed.objects.all()
         self.assertEqual(7,
                          len(breeds))
+        clients = Client.objects.all()
+        self.assertEqual(5,
+                         len(clients))
         colors = Color.objects.all()
         self.assertEqual(9,
                          len(colors))
@@ -1005,9 +1097,6 @@ class TestCowModel(APITestCase):
         users = User.objects.all()
         self.assertEqual(3,
                          len(users))
-        cows = Cow.objects.all()
-        self.assertLessEqual(10,
-                             len(cows))
 
     def test_01_object(self):
         c = Cow()
@@ -1027,6 +1116,8 @@ class TestCowModel(APITestCase):
                          '^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$')
         self.assertRegex(c.age.name,
                          ' year')
+        self.assertRegex(c.client.name,
+                         '^\w')
         self.assertRegex(c.color.name,
                          '_white$')
         self.assertRegex(c.breed.name,
@@ -1047,10 +1138,12 @@ class TestCowModel(APITestCase):
     def test_04_create(self):
         a = Age.objects.create(**self.age_data)
         b = Breed.objects.create(**self.breed_data)
+        cl = Client.objects.create(**self.client_data)
         c = Color.objects.create(**self.color_data)
         self.cow_data.update({'rfid': self.rfid,
                               'age': a,
                               'breed': b,
+                              'client': cl,
                               'color': c})
         actual = Cow.objects.create(**self.cow_data)
         self.assertRegex(str(actual.rfid),
@@ -1061,6 +1154,8 @@ class TestCowModel(APITestCase):
                          actual.breed.name)
         self.assertEqual(self.breed_data['url'],
                          actual.breed.url)
+        self.assertRegex(actual.client.name,
+                         '^\w')
         self.assertEqual(self.color_data['name'],
                          actual.color.name)
         self.assertEqual(self.cow_data['purchase_date'],
@@ -1071,12 +1166,14 @@ class TestCowModel(APITestCase):
     def test_05_full_update(self):
         a = Age.objects.create(**self.age_data)
         b = Breed.objects.create(**self.breed_data)
+        cl = Client.objects.create(**self.client_data)
         c = Color.objects.create(**self.color_data)
         u = User.objects.get(username=TestData.get_random_user())
         d = TestTime.get_date()
         expected = Cow.objects.get(id=1)
         expected.age = a
         expected.breed = b
+        expected.client = cl
         expected.color = c
         expected.purchased_by = u
         expected.purchase_date = d
@@ -1086,6 +1183,8 @@ class TestCowModel(APITestCase):
                          '^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$')
         self.assertEqual(expected.age.name,
                          actual.age.name)
+        self.assertEqual(expected.client.name,
+                         actual.client.name)
         self.assertEqual(expected.color.name,
                          actual.color.name)
         self.assertEqual(expected.breed.name,
@@ -1113,12 +1212,14 @@ class TestCowModel(APITestCase):
     def test_08_save(self):
         a = Age.objects.create(**self.age_data)
         b = Breed.objects.create(**self.breed_data)
+        cl = Client.objects.create(**self.client_data)
         c = Color.objects.create(**self.color_data)
         u = User.objects.get(username=TestData.get_random_user())
         expected = Cow()
         expected.rfid = self.rfid
         expected.age = a
         expected.breed = b 
+        expected.client = cl
         expected.color = c
         expected.purchased_by = u
         expected.purchase_date = TestTime.get_purchase_date()
@@ -1128,6 +1229,8 @@ class TestCowModel(APITestCase):
                          '^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$')
         self.assertEqual(expected.age.name,
                          actual.age.name)
+        self.assertEqual(expected.client.name,
+                         actual.client.name)
         self.assertEqual(expected.color.name,
                          actual.color.name)
         self.assertEqual(expected.breed.name,
@@ -1137,11 +1240,12 @@ class TestCowModel(APITestCase):
 
 class TestSeedModel(APITestCase):
     # Note: loading order does matter
-    fixtures = ['cerealhay', 'grasshay', 'legumehay', 'season',
+    fixtures = ['client', 'cerealhay', 'grasshay', 'legumehay', 'season',
                 'user', 'pasture', 'seed']
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
+        client = Client.objects.get(pk=1)
         pasture = Pasture.objects.get(pk=11)
         season = Season.objects.get(name=TestData.get_season())
         cereal_data = {'name': TestData.get_cereal()}
@@ -1150,7 +1254,8 @@ class TestSeedModel(APITestCase):
         grass = GrassHay.objects.create(**grass_data)
         legume_data = {'name': TestData.get_legume()}
         legume = LegumeHay.objects.create(**legume_data)
-        self.seed_data = {'seeded_by': user,
+        self.seed_data = {'client': client,
+                          'seeded_by': user,
                           'year': TestTime.get_year(),
                           'season': season,
                           'pasture': pasture,
@@ -1162,6 +1267,9 @@ class TestSeedModel(APITestCase):
         self.seed_data = None
 
     def test_00_load_fixtures(self):
+        clients = Client.objects.all()
+        self.assertEqual(5,
+                         len(clients))
         cereals = CerealHay.objects.all()
         self.assertEqual(6,
                          len(cereals))
@@ -1200,6 +1308,8 @@ class TestSeedModel(APITestCase):
                          s.seeded_by.username)        
         self.assertEqual(2015,
                          s.year)
+        self.assertRegex(s.client.name,
+                         '\w+')
         self.assertRegex(s.season.name,
                          '\w+')
         self.assertEqual('North',
@@ -1228,6 +1338,8 @@ class TestSeedModel(APITestCase):
                          actual.year)
         self.assertEqual(s.season.name,
                          actual.season.name)        
+        self.assertRegex(s.client.name,
+                         '\w+')
         self.assertEqual(s.pasture.name,
                          actual.pasture.name)        
         self.assertEqual(s.pasture.url,
@@ -1241,9 +1353,11 @@ class TestSeedModel(APITestCase):
 
     def test_05_full_update(self):
         expected = Seed.objects.get(id=1)
+        expected.client = self.seed_data['client']
         expected.seeded_by = self.seed_data['seeded_by']
         expected.year = self.seed_data['year']
         expected.season = self.seed_data['season']
+        expected.client = self.seed_data['client']
         expected.pasture = self.seed_data['pasture']
         expected.cereal_hay = self.seed_data['cereal_hay']
         expected.grass_hay = self.seed_data['grass_hay']
@@ -1256,6 +1370,8 @@ class TestSeedModel(APITestCase):
                          actual.year)
         self.assertEqual(expected.season.name,
                          actual.season.name)
+        self.assertEqual(expected.client.name,
+                         actual.client.name)
         self.assertEqual(expected.pasture.name,
                          actual.pasture.name)        
         self.assertEqual(expected.pasture.url,
@@ -1278,6 +1394,7 @@ class TestSeedModel(APITestCase):
     def test_07_save(self):
         expected = Seed()
         expected.seeded_by = self.seed_data['seeded_by']
+        expected.client = self.seed_data['client']
         expected.year = self.seed_data['year']
         expected.season = Season.objects.get(name='Spring')
         expected.pasture = Pasture.objects.get(name='North')
@@ -1292,6 +1409,8 @@ class TestSeedModel(APITestCase):
                          actual.year)
         self.assertEqual(expected.season.name,
                          actual.season.name)
+        self.assertEqual(expected.client.name,
+                         actual.client.name)
         self.assertEqual(expected.pasture.name,
                          actual.pasture.name)        
         self.assertEqual(expected.pasture.url,
@@ -1305,7 +1424,7 @@ class TestSeedModel(APITestCase):
 
 class TestEventModel(APITestCase):
     # Note: loading order does matter
-    fixtures = ['action', 'age', 'breed', 'color', 'cow', 'user', 'event']
+    fixtures = ['action', 'age', 'breed', 'client', 'color', 'cow', 'user', 'event']
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
@@ -1313,6 +1432,7 @@ class TestEventModel(APITestCase):
         cow = Cow.objects.get(pk=1)
         self.event_data = {'recorded_by': user,
                            'cow': cow,
+                           'client': cow.client,
                            'event_time': TestTime.get_datetime(),
                            'action': action}
 
@@ -1326,6 +1446,9 @@ class TestEventModel(APITestCase):
         breeds = Breed.objects.all()
         self.assertEqual(7,
                          len(breeds))
+        clients = Client.objects.all()
+        self.assertEqual(5,
+                         len(clients))
         colors = Color.objects.all()
         self.assertEqual(9,
                          len(colors))
@@ -1360,6 +1483,8 @@ class TestEventModel(APITestCase):
                          e.cow.breed.name)        
         self.assertEqual('Wake Up',
                          e.action.name)        
+        self.assertEqual('Clauss Dairy Farms',
+                         e.client.name)        
 
     def test_03_filter(self):
         expected = Event.objects.filter(cow__breed__name='Holstein')
@@ -1378,6 +1503,8 @@ class TestEventModel(APITestCase):
                          actual.cow.breed.name)        
         self.assertEqual(e.cow.breed.url,
                          actual.cow.breed.url)        
+        self.assertEqual(e.client.name,
+                         actual.client.name)        
         self.assertEqual(e.cow.color.name,
                          actual.cow.color.name)        
         self.assertEqual(e.action.name,
@@ -1387,11 +1514,14 @@ class TestEventModel(APITestCase):
         expected = Event.objects.get(id=1)
         expected.recorded_by = self.event_data['recorded_by']
         expected.cow = self.event_data['cow']
+        expected.client = self.event_data['client']
         expected.action = self.event_data['action']
         expected.save()
         actual = Event.objects.get(id=expected.id)
         self.assertEqual(expected.recorded_by.username,
                          actual.recorded_by.username)
+        self.assertEqual(expected.client.name,
+                         actual.client.name)        
         self.assertEqual(expected.cow.breed.name,
                          actual.cow.breed.name)        
         self.assertEqual(expected.action.name,
@@ -1408,6 +1538,7 @@ class TestEventModel(APITestCase):
     def test_07_save(self):
         expected = Event()
         expected.recorded_by = self.event_data['recorded_by']
+        expected.client = self.event_data['client']
         expected.cow = self.event_data['cow']
         expected.event_time = self.event_data['event_time']
         expected.action = self.event_data['action']
@@ -1415,6 +1546,8 @@ class TestEventModel(APITestCase):
         actual = Event.objects.get(pk=expected.id)
         self.assertEqual(expected.recorded_by.username,
                          actual.recorded_by.username)
+        self.assertEqual(expected.client.name,
+                         actual.client.name)        
         self.assertEqual(expected.cow.breed.name,
                          actual.cow.breed.name)        
         self.assertRegex(TestTime.convert_datetime(actual.event_time),
@@ -1424,7 +1557,7 @@ class TestEventModel(APITestCase):
 
 class TestExerciseModel(APITestCase):
     # Note: loading order does matter
-    fixtures = ['age', 'breed', 'color', 'pasture', 'user', 'cow', 'exercise']
+    fixtures = ['age', 'breed', 'client', 'color', 'pasture', 'user', 'cow', 'exercise']
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
@@ -1432,6 +1565,7 @@ class TestExerciseModel(APITestCase):
         pasture = Pasture.objects.get(pk=1)
         self.exercise_data = {'recorded_by': user,
                               'cow': cow,
+                              'client': cow.client,
                               'pasture': pasture,
                               'exercise_time': TestTime.get_datetime()}
 
@@ -1448,6 +1582,9 @@ class TestExerciseModel(APITestCase):
         colors = Color.objects.all()
         self.assertEqual(9,
                          len(colors))
+        clients = Client.objects.all()
+        self.assertEqual(5,
+                         len(clients))
         pastures = Pasture.objects.all()
         self.assertEqual(13,
                          len(pastures))
@@ -1479,6 +1616,8 @@ class TestExerciseModel(APITestCase):
                          e.cow.breed.name)        
         self.assertRegex(str(e.cow.rfid),
                          '^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$')
+        self.assertRegex(e.client.name,
+                         '^\w')
         self.assertRegex(e.pasture.name,
                          '\w{2}')
         self.assertRegex(TestTime.convert_datetime(e.exercise_time),
@@ -1495,12 +1634,16 @@ class TestExerciseModel(APITestCase):
         actual = Exercise.objects.get(pk=e.id)
         self.assertEqual(e.recorded_by.username,
                          actual.recorded_by.username)
+        self.assertEqual(e.client.name,
+                         actual.client.name)        
         self.assertEqual(e.cow.breed.name,
                          actual.cow.breed.name)        
+        self.assertEqual(e.client.name,
+                         actual.client.name)        
         self.assertEqual(e.pasture.name,
                          actual.pasture.name)        
-        self.assertEqual(e.exercise_time,
-                         TestTime.convert_datetime(actual.exercise_time))
+        self.assertRegex(TestTime.convert_datetime(actual.exercise_time),
+                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{5,6}\+[0-9]{2}:[0-9]{2}$')
 
     def test_05_full_update(self):
         expected = Exercise.objects.get(id=1)
@@ -1514,6 +1657,8 @@ class TestExerciseModel(APITestCase):
                          actual.recorded_by.username)
         self.assertEqual(expected.cow.rfid,
                          actual.cow.rfid)        
+        self.assertEqual(expected.client.name,
+                         actual.client.name)
         self.assertEqual(expected.pasture.name,
                          actual.pasture.name)        
         self.assertRegex(TestTime.convert_datetime(actual.exercise_time),
@@ -1531,12 +1676,15 @@ class TestExerciseModel(APITestCase):
         expected = Exercise()
         expected.recorded_by = self.exercise_data['recorded_by']
         expected.cow = self.exercise_data['cow']
+        expected.client = self.exercise_data['client']
         expected.pasture = self.exercise_data['pasture']
         expected.exercise_time = self.exercise_data['exercise_time']
         expected.save()
         actual = Exercise.objects.get(pk=expected.id)
         self.assertEqual(expected.recorded_by.username,
                          actual.recorded_by.username)
+        self.assertEqual(expected.client.name,
+                         actual.client.name)
         self.assertEqual(expected.cow.rfid,
                          actual.cow.rfid)        
         self.assertEqual(expected.pasture.name,
@@ -1546,7 +1694,7 @@ class TestExerciseModel(APITestCase):
 
 class TestMilkModel(APITestCase):
     # Note: loading order does matter
-    fixtures = ['age', 'breed', 'color', 'cow', 'user', 'milk']
+    fixtures = ['age', 'breed', 'client', 'color', 'cow', 'user', 'milk']
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
@@ -1555,6 +1703,7 @@ class TestMilkModel(APITestCase):
         self.milk_data = {'recorded_by': user,
                           'milking_time': TestTime.get_datetime(),
                           'cow': cow,
+                          'client': cow.client,
                           'gallons': gallons}
 
     def tearDown(self):
@@ -1567,6 +1716,9 @@ class TestMilkModel(APITestCase):
         breeds = Breed.objects.all()
         self.assertEqual(7,
                          len(breeds))
+        clients = Client.objects.all()
+        self.assertEqual(5,
+                         len(clients))
         colors = Color.objects.all()
         self.assertEqual(9,
                          len(colors))
@@ -1594,6 +1746,8 @@ class TestMilkModel(APITestCase):
         m = Milk.objects.get(id=1)
         self.assertEqual('vet',
                          m.recorded_by.username)        
+        self.assertRegex(m.client.name,
+                         '^\w')        
         self.assertEqual('Holstein',
                          m.cow.breed.name)        
         self.assertEqual('black_white',
@@ -1616,6 +1770,8 @@ class TestMilkModel(APITestCase):
                          actual.recorded_by.username)
         self.assertEqual(m.cow.breed.name,
                          actual.cow.breed.name)        
+        self.assertEqual(m.client.name,
+                         actual.client.name)        
         self.assertEqual(m.cow.color.name,
                          actual.cow.color.name)        
         self.assertRegex(TestTime.convert_datetime(actual.milking_time),
@@ -1627,6 +1783,7 @@ class TestMilkModel(APITestCase):
         expected = Milk.objects.get(id=1)
         expected.recorded_by = self.milk_data['recorded_by']
         expected.cow = self.milk_data['cow']
+        expected.client = self.milk_data['client']
         expected.milking_time = self.milk_data['milking_time']
         expected.gallons = self.milk_data['gallons']
         expected.save()
@@ -1637,8 +1794,10 @@ class TestMilkModel(APITestCase):
                          actual.cow.breed.name)        
         self.assertEqual(expected.cow.color.name,
                          actual.cow.color.name)        
-        self.assertEqual(expected.milking_time,
-                         TestTime.convert_datetime(actual.milking_time))
+        self.assertEqual(expected.client.name,
+                         actual.client.name)        
+        self.assertRegex(TestTime.convert_datetime(actual.milking_time),
+                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{5,6}\+[0-9]{2}:[0-9]{2}$')
         self.assertEqual(expected.gallons,
                          actual.gallons)
                              
@@ -1654,6 +1813,7 @@ class TestMilkModel(APITestCase):
         expected = Milk()
         expected.recorded_by = self.milk_data['recorded_by']
         expected.cow = self.milk_data['cow']
+        expected.client = self.milk_data['client']
         expected.milking_time = self.milk_data['milking_time']
         expected.gallons = self.milk_data['gallons']
         expected.save()
@@ -1664,6 +1824,8 @@ class TestMilkModel(APITestCase):
                          actual.cow.breed.name)        
         self.assertEqual(expected.cow.color.name,
                          actual.cow.color.name)        
+        self.assertEqual(expected.client.name,
+                         actual.client.name)        
         self.assertRegex(TestTime.convert_datetime(actual.milking_time),
                          '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{5,6}\+[0-9]{2}:[0-9]{2}$')
         self.assertEqual(expected.gallons,
@@ -1671,7 +1833,7 @@ class TestMilkModel(APITestCase):
 
 class TestHealthRecordModel(APITestCase):
     # Note: loading order does matter
-    fixtures = ['age', 'breed', 'color', 'illness', 'injury', 'status',
+    fixtures = ['age', 'breed', 'client', 'color', 'illness', 'injury', 'status',
                 'treatment', 'user', 'vaccine', 'cow', 'healthrecord']
 
     def setUp(self):
@@ -1681,6 +1843,7 @@ class TestHealthRecordModel(APITestCase):
         self.hr_data = {'recorded_by': user,
                         'inspection_time': TestTime.get_datetime(),
                         'cow': cow,
+                        'client': cow.client,
                         'temperature': TestData.get_temp(),
                         'respiratory_rate': TestData.get_resp(),
                         'heart_rate': TestData.get_hr(),
@@ -1699,6 +1862,9 @@ class TestHealthRecordModel(APITestCase):
         breeds = Breed.objects.all()
         self.assertEqual(7,
                          len(breeds))
+        clients = Client.objects.all()
+        self.assertEqual(5,
+                         len(clients))
         colors = Color.objects.all()
         self.assertEqual(9,
                          len(colors))
@@ -1744,6 +1910,7 @@ class TestHealthRecordModel(APITestCase):
                          '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{5,6}\+[0-9]{2}:[0-9]{2}$')
         self.assertRegex(hr.cow.breed.name, '\w')
         self.assertRegex(hr.cow.color.name, '\w')
+        self.assertRegex(hr.client.name, '\w')
         self.assertIsInstance(hr.temperature, float)
         self.assertIsInstance(hr.respiratory_rate, float)
         self.assertIsInstance(hr.heart_rate, float)
@@ -1768,6 +1935,8 @@ class TestHealthRecordModel(APITestCase):
                          actual.cow.breed.name)        
         self.assertEqual(hr.cow.color.name,
                          actual.cow.color.name)        
+        self.assertEqual(hr.client.name,
+                         actual.client.name)        
         self.assertLessEqual(0,
                              actual.temperature)
         self.assertLessEqual(0,
@@ -1787,6 +1956,7 @@ class TestHealthRecordModel(APITestCase):
         expected = HealthRecord.objects.get(id=1)
         expected.recorded_by = self.hr_data['recorded_by']
         expected.cow = self.hr_data['cow']
+        expected.client = self.hr_data['client']
         expected.temperature = self.hr_data['temperature']
         expected.respiratory_rate = self.hr_data['respiratory_rate']
         expected.heart_rate = self.hr_data['heart_rate']
@@ -1806,6 +1976,8 @@ class TestHealthRecordModel(APITestCase):
                          actual.cow.breed.name)        
         self.assertEqual(expected.cow.color.name,
                          actual.cow.color.name)
+        self.assertEqual(expected.client.name,
+                         actual.client.name)
         self.assertLessEqual(0,
                              actual.temperature)
         self.assertLessEqual(0,
@@ -1838,6 +2010,7 @@ class TestHealthRecordModel(APITestCase):
         expected.recorded_by = self.hr_data['recorded_by']
         expected.inspection_time = TestTime.get_datetime()
         expected.cow = self.hr_data['cow']
+        expected.client = self.hr_data['client']
         expected.temperature = self.hr_data['temperature']
         expected.respiratory_rate = self.hr_data['respiratory_rate']
         expected.heart_rate = self.hr_data['heart_rate']
@@ -1857,6 +2030,8 @@ class TestHealthRecordModel(APITestCase):
                          actual.cow.breed.name)        
         self.assertEqual(expected.cow.color.name,
                          actual.cow.color.name)        
+        self.assertEqual(expected.client.name,
+                         actual.client.name)        
         self.assertLessEqual(0,
                              actual.temperature)
         self.assertLessEqual(0,

@@ -28,7 +28,7 @@ class BreedSerializer(serializers.ModelSerializer):
 
 class ClientSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'join_date', 'inactive_date')
         lookup_field = 'pk'
         model = Client
 
