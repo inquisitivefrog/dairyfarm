@@ -651,6 +651,8 @@ class TestPastureModel(APITestCase):
         self.assertFalse(p.fallow)
         self.assertLessEqual(1,
                              p.distance)
+        self.assertRegex(p.link,
+                         '/assets/api/pastures/\d+/')
 
     def test_03_filter(self):
         expected = Pasture.objects.filter(name='Pen')
@@ -1616,8 +1618,8 @@ class TestMilkModel(APITestCase):
                          actual.cow.breed.name)        
         self.assertEqual(m.cow.color.name,
                          actual.cow.color.name)        
-        self.assertEqual(m.milking_time,
-                         TestTime.convert_datetime(actual.milking_time))
+        self.assertRegex(TestTime.convert_datetime(actual.milking_time),
+                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{5,6}\+[0-9]{2}:[0-9]{2}$')
         self.assertEqual(m.gallons,
                          actual.gallons)
 
@@ -1662,8 +1664,8 @@ class TestMilkModel(APITestCase):
                          actual.cow.breed.name)        
         self.assertEqual(expected.cow.color.name,
                          actual.cow.color.name)        
-        self.assertEqual(expected.milking_time,
-                         TestTime.convert_datetime(actual.milking_time))
+        self.assertRegex(TestTime.convert_datetime(actual.milking_time),
+                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{5,6}\+[0-9]{2}:[0-9]{2}$')
         self.assertEqual(expected.gallons,
                          actual.gallons)
 

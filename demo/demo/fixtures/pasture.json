@@ -3,130 +3,156 @@
     "model": "assets.pasture",
     "pk": 1,
     "fields": {
+        "client": 1,
         "name": "North",
         "url": "/static/images/regions/north.png",
         "fallow": false,
-        "distance": 2
+        "distance": 4,
+        "link": "/assets/api/pastures/1/"
     }
 },
 {
     "model": "assets.pasture",
     "pk": 2,
     "fields": {
+        "client": 1,
         "name": "West",
         "url": "/static/images/regions/west.png",
         "fallow": false,
-        "distance": 4
+        "distance": 1,
+        "link": "/assets/api/pastures/2/"
     }
 },
 {
     "model": "assets.pasture",
     "pk": 3,
     "fields": {
+        "client": 1,
         "name": "South",
         "url": "/static/images/regions/south.png",
         "fallow": false,
-        "distance": 4
+        "distance": 8,
+        "link": "/assets/api/pastures/3/"
     }
 },
 {
     "model": "assets.pasture",
     "pk": 4,
     "fields": {
+        "client": 1,
         "name": "East",
         "url": "/static/images/regions/east.png",
         "fallow": false,
-        "distance": 6
+        "distance": 6,
+        "link": "/assets/api/pastures/4/"
     }
 },
 {
     "model": "assets.pasture",
     "pk": 5,
     "fields": {
+        "client": 1,
         "name": "Central North",
         "url": "/static/images/regions/central_north.png",
         "fallow": false,
-        "distance": 7
+        "distance": 7,
+        "link": "/assets/api/pastures/5/"
     }
 },
 {
     "model": "assets.pasture",
     "pk": 6,
     "fields": {
+        "client": 1,
         "name": "Central West",
         "url": "/static/images/regions/central_west.png",
         "fallow": false,
-        "distance": 1
+        "distance": 7,
+        "link": "/assets/api/pastures/6/"
     }
 },
 {
     "model": "assets.pasture",
     "pk": 7,
     "fields": {
+        "client": 1,
         "name": "Central South",
         "url": "/static/images/regions/central_south.png",
         "fallow": false,
-        "distance": 5
+        "distance": 10,
+        "link": "/assets/api/pastures/7/"
     }
 },
 {
     "model": "assets.pasture",
     "pk": 8,
     "fields": {
+        "client": 1,
         "name": "Central East",
         "url": "/static/images/regions/central_east.png",
         "fallow": false,
-        "distance": 6
+        "distance": 10,
+        "link": "/assets/api/pastures/8/"
     }
 },
 {
     "model": "assets.pasture",
     "pk": 9,
     "fields": {
+        "client": 1,
         "name": "North West",
         "url": "/static/images/regions/north_west.png",
         "fallow": false,
-        "distance": 4
+        "distance": 6,
+        "link": "/assets/api/pastures/9/"
     }
 },
 {
     "model": "assets.pasture",
     "pk": 10,
     "fields": {
+        "client": 1,
         "name": "North East",
         "url": "/static/images/regions/north_east.png",
         "fallow": false,
-        "distance": 10
+        "distance": 8,
+        "link": "/assets/api/pastures/10/"
     }
 },
 {
     "model": "assets.pasture",
     "pk": 11,
     "fields": {
+        "client": 1,
         "name": "South West",
         "url": "/static/images/regions/south_west.png",
         "fallow": true,
-        "distance": 5
+        "distance": 9,
+        "link": "/assets/api/pastures/11/"
     }
 },
 {
     "model": "assets.pasture",
     "pk": 12,
     "fields": {
+        "client": 1,
         "name": "South East",
         "url": "/static/images/regions/south_east.png",
         "fallow": true,
-        "distance": 2
+        "distance": 2,
+        "link": "/assets/api/pastures/12/"
     }
 },
 {
     "model": "assets.pasture",
     "pk": 13,
     "fields": {
+        "client": 1,
         "name": "Pen",
         "url": "/static/images/regions/pen.png",
         "fallow": true,
-        "distance": 10
+        "distance": 4,
+        "link": "/assets/api/pastures/13/"
     }
 }
 ]

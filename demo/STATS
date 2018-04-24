@@ -1,0 +1,27 @@
+
+Annual 2015
+-----------
+total_cows: 520		130  130  260  260  260  390  390  390  520  520  520  520
+aged_cows: 101		 29   29   55   55   55   80   80   80  101  101  101  101
+pregnant_cows: 470	 42   50   53   86   82   90  126  122  120  178  177  181
+ill_cows: 381		 14   11   16   29   26   21   43   38   37   50   46   50
+injured_cows: 367	 15   15    6   21   23   27   37   43   33   50   55   42
+gallons_milk: 44463    1481 1488 1462 2911 2959 2999 4403 4457 4469 5909 5977 5948
+
+sum of months 
+-------------
+total_cows: 520
+aged_cows: 101
+pregnant_cows: *1307 aggr(mthly)
+ill_cows: 381 aggr(mthly)
+injured_cows: 367 aggr(mthly)
+gallons_milk: 44463 aggr(mthly)
+
+from django.utils.timezone import timedelta, datetime
+from summary.helpers import ReportTime
+
+dt = ReportTime.sdate_year_month('2016', '04')
+
+* pregnant_cows is the only area no clearly aligned between monthly values and annual value
+  the problem is that there is no easy way to eliminate duplicates across multiple months
+

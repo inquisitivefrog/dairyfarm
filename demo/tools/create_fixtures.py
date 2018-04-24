@@ -19,6 +19,7 @@ def get_db_tables():
                  'annual.json': 'summary.annual',
                  'breed.json': 'assets.breed',
                  'cerealhay.json': 'assets.cerealhay',
+                 'client.json': 'assets.client',
                  'color.json': 'assets.color',
                  'cow.json': 'assets.cow',
                  'event.json': 'assets.event',

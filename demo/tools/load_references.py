@@ -41,6 +41,20 @@ def load_ages():
         print('Defined age: {}'.format(age))
     return
 
+def load_clients():
+    from assets.models import Client
+    from tools.utils import ToolTime
+    clients = ['Foster Farms Dairy',
+               'Berkeley Farms',
+               'McClelland Dairy',
+               'Clauss Dairy Farms',
+               'Dairy Farmers of America']
+    for client in clients:
+        data = {'name': client,
+                'join_date': ToolTime.get_date()}
+        Client.objects.create(**data)
+    return
+
 def load_colors():
     from assets.models import Breed, Color
     colors = ['black_white', 'red_white', 'brown', 'tawny', 'golden_white',
@@ -141,7 +155,9 @@ def load_illnesses():
     return
 
 def load_pastures():
-    from assets.models import Pasture
+    from assets.models import Client, Pasture
+    clients = Client.objects.all() 
+    client = clients[randint(0, len(clients) - 1)]
     pastures = {'North': '/static/images/regions/north.png',
                 'West': '/static/images/regions/west.png',
                 'South': '/static/images/regions/south.png',
@@ -156,7 +172,8 @@ def load_pastures():
                 'South East': '/static/images/regions/south_east.png',
                 'Pen': '/static/images/regions/pen.png'}
     for name, url in pastures.items(): 
-        data = {'name': name,
+        data = {'client': client,
+                'name': name,
                 'url': url,
                 'fallow': False,
                 'distance': randint(1, 10)}
@@ -227,6 +244,7 @@ def main():
     setup()
     load_actions()
     load_ages()
+    load_clients()
     load_colors()
     load_breeds()
     load_cereal_hay()

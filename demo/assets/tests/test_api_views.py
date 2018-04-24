@@ -396,7 +396,7 @@ class TestCowDetailView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_detail_methods(),
+        self.assertEquals(TestData.get_all_allowed_detail_methods(),
                           response.get('allow'))
         self.assertEquals(TestData.get_content_type(),
                           response.get('content-type'))
@@ -491,10 +491,17 @@ class TestCowDetailView(APITestCase):
         self.assertTrue(self.user.is_authenticated)
         response = CowDetail.as_view()(request=request,
                                        pk=self.pk)
-        self.assertEqual(204,
+        self.assertEqual(200,
                          response.status_code)
-        self.assertEqual('No Content',
+        self.assertEqual('OK',
                          response.reason_phrase)
+        if not response.is_rendered:
+             response = response.render()
+        stream = BytesIO(response.content)
+        data = JSONParser().parse(stream)
+        self.assertGreaterEqual('2100-12-31',
+                                data['sell_date'])
+                             
 
 class TestSeedListView(APITestCase):
     fixtures = ['cerealhay', 'grasshay', 'legumehay', 'pasture',
@@ -762,9 +769,9 @@ class TestSeedDetailView(APITestCase):
         self.assertTrue(self.user.is_authenticated)
         response = SeedDetail.as_view()(request=request,
                                         pk=self.pk)
-        self.assertEqual(204,
+        self.assertEqual(405,
                          response.status_code)
-        self.assertEqual('No Content',
+        self.assertEqual('Method Not Allowed',
                          response.reason_phrase)
 
 class TestEventListView(APITestCase):
@@ -920,7 +927,7 @@ class TestEventDetailView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_detail_methods(),
+        self.assertEquals('GET, HEAD, OPTIONS',
                           response.get('allow'))
         self.assertEquals(TestData.get_content_type(),
                           response.get('content-type'))
@@ -954,22 +961,10 @@ class TestEventDetailView(APITestCase):
         self.assertTrue(self.user.is_authenticated)
         response = EventDetail.as_view()(request=request,
                                          pk=self.pk)
-        self.assertEqual(200,
+        self.assertEqual(405,
                          response.status_code)
-        self.assertEqual('OK',
+        self.assertEqual('Method Not Allowed',
                          response.reason_phrase)
-        if not response.is_rendered:
-             response = response.render()
-        stream = BytesIO(response.content)
-        data = JSONParser().parse(stream)
-        self.assertIn('id',
-                      data)
-        self.assertIn(self.data['recorded_by'],
-                      data['recorded_by'])
-        self.assertIn(self.data['cow'],
-                      data['cow'])
-        self.assertEqual(self.data['action'],
-                      data['action'])
 
     def test_04_partial_update(self):
         data = {'action': self.data['action']}
@@ -981,22 +976,10 @@ class TestEventDetailView(APITestCase):
         self.assertTrue(self.user.is_authenticated)
         response = EventDetail.as_view()(request=request,
                                          pk=self.pk)
-        self.assertEqual(200,
+        self.assertEqual(405,
                          response.status_code)
-        self.assertEqual('OK',
+        self.assertEqual('Method Not Allowed',
                          response.reason_phrase)
-        if not response.is_rendered:
-             response = response.render()
-        stream = BytesIO(response.content)
-        data = JSONParser().parse(stream)
-        self.assertIn('id',
-                      data)
-        self.assertIn('recorded_by',
-                      data)
-        self.assertIn('cow',
-                      data)
-        self.assertEqual(self.data['action'],
-                      data['action'])
 
     def test_05_destroy(self):
         request = self.factory.delete(path=self.url,
@@ -1006,9 +989,9 @@ class TestEventDetailView(APITestCase):
         self.assertTrue(self.user.is_authenticated)
         response = EventDetail.as_view()(request=request,
                                          pk=self.pk)
-        self.assertEqual(204,
+        self.assertEqual(405,
                          response.status_code)
-        self.assertEqual('No Content',
+        self.assertEqual('Method Not Allowed',
                          response.reason_phrase)
 
 class TestExerciseListView(APITestCase):
@@ -1164,7 +1147,7 @@ class TestExerciseDetailView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_detail_methods(),
+        self.assertEquals('GET, HEAD, OPTIONS',
                           response.get('allow'))
         self.assertEquals(TestData.get_content_type(),
                           response.get('content-type'))
@@ -1198,24 +1181,10 @@ class TestExerciseDetailView(APITestCase):
         self.assertTrue(self.user.is_authenticated)
         response = ExerciseDetail.as_view()(request=request,
                                             pk=self.pk)
-        self.assertEqual(200,
+        self.assertEqual(405,
                          response.status_code)
-        self.assertEqual('OK',
+        self.assertEqual('Method Not Allowed',
                          response.reason_phrase)
-        if not response.is_rendered:
-             response = response.render()
-        stream = BytesIO(response.content)
-        data = JSONParser().parse(stream)
-        self.assertIn('id',
-                      data)
-        self.assertIn(self.data['recorded_by'],
-                      data['recorded_by'])
-        self.assertIn(self.data['cow'],
-                      data['cow'])
-        self.assertIn('exercise_time',
-                      data)
-        self.assertEqual(self.data['pasture'],
-                      data['pasture'])
 
     def test_04_partial_update(self):
         data = {'pasture': self.data['pasture']}
@@ -1227,24 +1196,10 @@ class TestExerciseDetailView(APITestCase):
         self.assertTrue(self.user.is_authenticated)
         response = ExerciseDetail.as_view()(request=request,
                                             pk=self.pk)
-        self.assertEqual(200,
+        self.assertEqual(405,
                          response.status_code)
-        self.assertEqual('OK',
+        self.assertEqual('Method Not Allowed',
                          response.reason_phrase)
-        if not response.is_rendered:
-             response = response.render()
-        stream = BytesIO(response.content)
-        data = JSONParser().parse(stream)
-        self.assertIn('id',
-                      data)
-        self.assertIn('recorded_by',
-                      data)
-        self.assertIn('cow',
-                      data)
-        self.assertIn('exercise_time',
-                      data)
-        self.assertIn('pasture',
-                      data)
 
     def test_05_destroy(self):
         request = self.factory.delete(path=self.url,
@@ -1254,9 +1209,9 @@ class TestExerciseDetailView(APITestCase):
         self.assertTrue(self.user.is_authenticated)
         response = ExerciseDetail.as_view()(request=request,
                                             pk=self.pk)
-        self.assertEqual(204,
+        self.assertEqual(405,
                          response.status_code)
-        self.assertEqual('No Content',
+        self.assertEqual('Method Not Allowed',
                          response.reason_phrase)
 
 class TestMilkListView(APITestCase):
@@ -1402,7 +1357,7 @@ class TestMilkDetailView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_detail_methods(),
+        self.assertEquals('GET, HEAD, OPTIONS',
                           response.get('allow'))
         self.assertEquals(TestData.get_content_type(),
                           response.get('content-type'))
@@ -1436,17 +1391,10 @@ class TestMilkDetailView(APITestCase):
         self.assertTrue(self.user.is_authenticated)
         response = MilkDetail.as_view()(request=request,
                                         pk=self.pk)
-        self.assertEqual(200,
+        self.assertEqual(405,
                          response.status_code)
-        self.assertEqual('OK',
+        self.assertEqual('Method Not Allowed',
                          response.reason_phrase)
-        if not response.is_rendered:
-             response = response.render()
-        stream = BytesIO(response.content)
-        data = JSONParser().parse(stream)
-        for key in TestData.get_milk_write_keys():
-            self.assertIn(key,
-                          data)
 
     def test_04_partial_update(self):
         data = {'gallons': self.data['gallons']}
@@ -1458,17 +1406,10 @@ class TestMilkDetailView(APITestCase):
         self.assertTrue(self.user.is_authenticated)
         response = MilkDetail.as_view()(request=request,
                                         pk=self.pk)
-        self.assertEqual(200,
+        self.assertEqual(405,
                          response.status_code)
-        self.assertEqual('OK',
+        self.assertEqual('Method Not Allowed',
                          response.reason_phrase)
-        if not response.is_rendered:
-             response = response.render()
-        stream = BytesIO(response.content)
-        data = JSONParser().parse(stream)
-        for key in TestData.get_milk_write_keys():
-            self.assertIn(key,
-                          data)
 
     def test_05_destroy(self):
         request = self.factory.delete(path=self.url,
@@ -1478,9 +1419,9 @@ class TestMilkDetailView(APITestCase):
         self.assertTrue(self.user.is_authenticated)
         response = MilkDetail.as_view()(request=request,
                                         pk=self.pk)
-        self.assertEqual(204,
+        self.assertEqual(405,
                          response.status_code)
-        self.assertEqual('No Content',
+        self.assertEqual('Method Not Allowed',
                          response.reason_phrase)
 
 class TestHealthRecordListView(APITestCase):
@@ -1781,8 +1722,7 @@ class TestHealthRecordDetailView(APITestCase):
         self.assertTrue(self.user.is_authenticated)
         response = HealthRecordDetail.as_view()(request=request,
                                                 pk=self.pk)
-        self.assertEqual(204,
+        self.assertEqual(405,
                          response.status_code)
-        self.assertEqual('No Content',
+        self.assertEqual('Method Not Allowed',
                          response.reason_phrase)
-

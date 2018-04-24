@@ -5,6 +5,8 @@ from django.db import models
 
 from rest_framework.reverse import django_reverse
 
+from assets.helpers import AssetTime
+
 class Action(models.Model):
     name = models.CharField(max_length=20,
                             null=False,
@@ -33,6 +35,27 @@ class Age(models.Model):
     def __str__(self):
         if self.id:
             return '{}'.format(self.name)
+        else:
+            return '{}'.format(self.__class__)
+
+    def __repr__(self):
+        if self.id:
+            return '{}:{}'.format(self.__class__,
+                                  self.id)
+        else:
+            return '{}'.format(self.__class__)
+
+class Client(models.Model):
+    name = models.CharField(max_length=20,
+                            null=False,
+                            blank=False,
+                            unique=True)
+    join_date = models.DateField()
+    inactive_date = models.DateField(default='2100-12-31')
+
+    def __str__(self):
+        if self.id:
+            return self.name
         else:
             return '{}'.format(self.__class__)
 
@@ -107,6 +130,8 @@ class CerealHay(models.Model):
 class Cow(models.Model):
     rfid = models.UUIDField(default=uuid4,
                             unique=True)
+    client = models.ForeignKey(Client,
+                               on_delete=models.CASCADE)
     purchased_by = models.ForeignKey(User,
                                      on_delete=models.CASCADE)
     purchase_date = models.DateField()
@@ -116,8 +141,7 @@ class Cow(models.Model):
                               on_delete=models.CASCADE)
     color = models.ForeignKey(Color,
                               on_delete=models.CASCADE)
-    sell_date = models.DateField(null=False,
-                                 default='2100-12-31')
+    sell_date = models.DateField(default='2100-12-31')
     link = models.URLField(max_length=50,
                            null=True,
                            blank=False)
@@ -143,6 +167,8 @@ class Cow(models.Model):
         return
 
 class Event(models.Model):
+    client = models.ForeignKey(Client,
+                               on_delete=models.CASCADE)
     recorded_by = models.ForeignKey(User,
                                     null=False,
                                     blank=False,
@@ -262,6 +288,8 @@ class LegumeHay(models.Model):
             return '{}'.format(self.__class__)
 
 class Pasture(models.Model):
+    client = models.ForeignKey(Client,
+                               on_delete=models.CASCADE)
     name = models.CharField(max_length=20,
                             null=False,
                             blank=False,
@@ -272,6 +300,9 @@ class Pasture(models.Model):
                            unique=True)
     fallow = models.BooleanField(default=False)
     distance = models.IntegerField(default=0)
+    link = models.URLField(max_length=50,
+                           null=True,
+                           blank=False)
 
     def __str__(self):
         if self.id:
@@ -285,6 +316,13 @@ class Pasture(models.Model):
                                   self.id)
         else:
             return '{}'.format(self.__class__)
+
+    def save(self, *args, **kwargs):
+        super(Pasture, self).save(*args, **kwargs)
+        kwargs = {'link': django_reverse('assets:pasture-detail',
+                                        kwargs = {'pk': self.pk})}
+        Pasture.objects.filter(pk=self.pk).update(**kwargs)
+        return
 
 class Season(models.Model):
     name = models.CharField(max_length=20,
@@ -363,6 +401,8 @@ class Vaccine(models.Model):
             return '{}'.format(self.__class__)
 
 class HealthRecord(models.Model):
+    client = models.ForeignKey(Client,
+                               on_delete=models.CASCADE)
     recorded_by = models.ForeignKey(User,
                                     null=False,
                                     blank=False,
@@ -431,6 +471,8 @@ class HealthRecord(models.Model):
         return
 
 class Milk(models.Model):
+    client = models.ForeignKey(Client,
+                               on_delete=models.CASCADE)
     recorded_by = models.ForeignKey(User,
                                     null=False,
                                     blank=False,
@@ -464,6 +506,8 @@ class Milk(models.Model):
         return
 
 class Seed(models.Model):
+    client = models.ForeignKey(Client,
+                               on_delete=models.CASCADE)
     seeded_by = models.ForeignKey(User,
                                   null=False,
                                   blank=False,
@@ -513,6 +557,8 @@ class Seed(models.Model):
         return
 
 class Exercise(models.Model):
+    client = models.ForeignKey(Client,
+                               on_delete=models.CASCADE)
     recorded_by = models.ForeignKey(User,
                                     null=False,
                                     blank=False,

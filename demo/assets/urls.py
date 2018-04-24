@@ -8,7 +8,7 @@ from assets.api_views import ExerciseDetail, ExerciseList, HealthRecordDetail
 from assets.api_views import HealthRecordList, HealthRecordListByMonth, MilkDetail
 from assets.api_views import MilkList, MilkListByMonth, MilkSummaryByMonth
 from assets.api_views import HealthRecordIllCowsSummary
-from assets.api_views import SeedDetail, SeedList
+from assets.api_views import PastureDetail, PastureList, SeedDetail, SeedList
 from assets.views import IndexView
 
 app_name = 'assets'
@@ -19,10 +19,10 @@ urlpatterns = [
     url(r'^api/cows/$',
         CowList.as_view(),
         name='cow-list'),
-    url(r'^api/cows/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/$',
+    url(r'^api/cows/year/(?P<year>[0-9]{4})/month/(?P<month>[0-9]{2})/$',
         CowListByMonth.as_view(),
         name='cow-list-month'),
-    url(r'^api/cows/(?P<year>[0-9]{4})/$',
+    url(r'^api/cows/year/(?P<year>[0-9]{4})/$',
         CowListByYear.as_view(),
         name='cow-list-year'),
     url(r'^api/cows/(?P<pk>\d+)/$',
@@ -64,6 +64,12 @@ urlpatterns = [
     url(r'^api/milk/(?P<pk>\d+)/$',
         MilkDetail.as_view(),
         name='milk-detail'),
+    url(r'^api/pastures/$',
+        PastureList.as_view(),
+        name='pasture-list'),
+    url(r'^api/pastures/(?P<pk>\d+)/$',
+        PastureDetail.as_view(),
+        name='pasture-detail'),
     url(r'^api/seeds/$',
         SeedList.as_view(),
         name='seed-list'),

@@ -57,115 +57,115 @@ def read_args():
            o.username)
     
 def evening_healthy_routine(cow, dt, user):
-    from tools.utils import TestData
+    from tools.utils import ToolData
 
-    data = TestData.get_healthy_cow_data(cow, dt, user)
-    TestData.log_healthrecord(data, cow, dt, user)
-    TestData.log_event('Get milked', cow, dt, user)
+    data = ToolData.get_healthy_cow_data(cow, dt, user)
+    ToolData.log_healthrecord(data, cow, dt, user)
+    ToolData.log_event('Get milked', cow, dt, user)
     gallons = randint(5, 7)
-    TestData.log_milk(gallons, cow, dt, user)
-    TestData.log_event('Sleep', cow, dt, user)
+    ToolData.log_milk(gallons, cow, dt, user)
+    ToolData.log_event('Sleep', cow, dt, user)
     return
 
 def evening_ill_routine(cow, dt, user):
     from assets.models import Vaccine
-    from tools.utils import TestData
+    from tools.utils import ToolData
 
-    data = TestData.get_ill_cow_data(cow, dt, user)
-    TestData.log_healthrecord(data, cow, dt, user)
-    TestData.log_event('Call Vet', cow, dt, user)
-    TestData.log_event('Get diagnosed', cow, dt, user)
-    TestData.log_event('Get treated', cow, dt, user)
-    TestData.log_event('Sleep', cow, dt, user)
+    data = ToolData.get_ill_cow_data(cow, dt, user)
+    ToolData.log_healthrecord(data, cow, dt, user)
+    ToolData.log_event('Call Vet', cow, dt, user)
+    ToolData.log_event('Get diagnosed', cow, dt, user)
+    ToolData.log_event('Get treated', cow, dt, user)
+    ToolData.log_event('Sleep', cow, dt, user)
     return
 
 def evening_injured_routine(cow, dt, user):
-    from tools.utils import TestData
+    from tools.utils import ToolData
 
-    data = TestData.get_injured_cow_data(cow, dt, user)
-    TestData.log_healthrecord(data, cow, dt, user)
-    TestData.log_event('Call Vet', cow, dt, user)
-    TestData.log_event('Get diagnosed', cow, dt, user)
-    TestData.log_event('Get treated', cow, dt, user)
-    TestData.log_event('Pedicure', cow, dt, user)
+    data = ToolData.get_injured_cow_data(cow, dt, user)
+    ToolData.log_healthrecord(data, cow, dt, user)
+    ToolData.log_event('Call Vet', cow, dt, user)
+    ToolData.log_event('Get diagnosed', cow, dt, user)
+    ToolData.log_event('Get treated', cow, dt, user)
+    ToolData.log_event('Pedicure', cow, dt, user)
     gallons = randint(5, 7)
-    TestData.log_milk(gallons, cow, dt, user)
-    TestData.log_event('Get milked', cow, dt, user)
-    TestData.log_event('Sleep', cow, dt, user)
+    ToolData.log_milk(gallons, cow, dt, user)
+    ToolData.log_event('Get milked', cow, dt, user)
+    ToolData.log_event('Sleep', cow, dt, user)
     return
 
 def morning_healthy_routine(cow, dt, user):
     from assets.models import Pasture
-    from tools.utils import TestData
+    from tools.utils import ToolData
 
-    data = TestData.get_healthy_cow_data(cow, dt, user)
-    TestData.log_healthrecord(data, cow, dt, user)
-    TestData.log_event('Get milked', cow, dt, user)
+    data = ToolData.get_healthy_cow_data(cow, dt, user)
+    ToolData.log_healthrecord(data, cow, dt, user)
+    ToolData.log_event('Get milked', cow, dt, user)
     gallons = randint(5, 7)
-    TestData.log_milk(gallons, cow, dt, user)
-    TestData.log_event('Get milked', cow, dt, user)
+    ToolData.log_milk(gallons, cow, dt, user)
+    ToolData.log_event('Get milked', cow, dt, user)
     # dt should be 1-90d > plant_date but will vary by season due to uneven calendar
     pastures = Pasture.objects.filter(fallow=False)
     pasture = pastures[randint(1, len(pastures) - 1)]
-    TestData.log_exercise(pasture, cow, dt, user)
-    TestData.log_event('Walk to pasture', cow, dt, user)
-    TestData.log_event('Graze', cow, dt, user)
-    TestData.log_event('Drink', cow, dt, user)
-    TestData.log_event('Chew cud', cow, dt, user)
-    TestData.log_event('Nap', cow, dt, user)
-    TestData.log_event('Return to barn', cow, dt, user)
-    TestData.log_exercise(pasture, cow, dt, user)
+    ToolData.log_exercise(pasture, cow, dt, user)
+    ToolData.log_event('Walk to pasture', cow, dt, user)
+    ToolData.log_event('Graze', cow, dt, user)
+    ToolData.log_event('Drink', cow, dt, user)
+    ToolData.log_event('Chew cud', cow, dt, user)
+    ToolData.log_event('Nap', cow, dt, user)
+    ToolData.log_event('Return to barn', cow, dt, user)
+    ToolData.log_exercise(pasture, cow, dt, user)
     return
 
 def morning_ill_routine(cow, dt, user):
     from assets.models import Vaccine
-    from tools.utils import TestData
+    from tools.utils import ToolData
 
-    data = TestData.get_ill_cow_data(cow, dt, user)
-    TestData.log_healthrecord(data, cow, dt, user)
-    TestData.log_event('Call Vet', cow, dt, user)
-    TestData.log_event('Get diagnosed', cow, dt, user)
-    TestData.log_event('Get treated', cow, dt, user)
-    TestData.log_event('Rest in pen', cow, dt, user)
-    TestData.log_event('Graze', cow, dt, user)
-    TestData.log_event('Drink', cow, dt, user)
-    TestData.log_event('Chew cud', cow, dt, user)
-    TestData.log_event('Nap', cow, dt, user)
+    data = ToolData.get_ill_cow_data(cow, dt, user)
+    ToolData.log_healthrecord(data, cow, dt, user)
+    ToolData.log_event('Call Vet', cow, dt, user)
+    ToolData.log_event('Get diagnosed', cow, dt, user)
+    ToolData.log_event('Get treated', cow, dt, user)
+    ToolData.log_event('Rest in pen', cow, dt, user)
+    ToolData.log_event('Graze', cow, dt, user)
+    ToolData.log_event('Drink', cow, dt, user)
+    ToolData.log_event('Chew cud', cow, dt, user)
+    ToolData.log_event('Nap', cow, dt, user)
     return
 
 def morning_injured_routine(cow, dt, user):
     from assets.models import Pasture
-    from tools.utils import TestData
+    from tools.utils import ToolData
 
-    data = TestData.get_injured_cow_data(cow, dt, user)
-    TestData.log_healthrecord(data, cow, dt, user)
-    TestData.log_event('Call Vet', cow, dt, user)
-    TestData.log_event('Get diagnosed', cow, dt, user)
-    TestData.log_event('Get treated', cow, dt, user)
+    data = ToolData.get_injured_cow_data(cow, dt, user)
+    ToolData.log_healthrecord(data, cow, dt, user)
+    ToolData.log_event('Call Vet', cow, dt, user)
+    ToolData.log_event('Get diagnosed', cow, dt, user)
+    ToolData.log_event('Get treated', cow, dt, user)
     gallons = randint(5, 7)
-    TestData.log_milk(gallons, cow, dt, user)
-    TestData.log_event('Get milked', cow, dt, user)
-    TestData.log_event('Exercise in pen', cow, dt, user)
+    ToolData.log_milk(gallons, cow, dt, user)
+    ToolData.log_event('Get milked', cow, dt, user)
+    ToolData.log_event('Exercise in pen', cow, dt, user)
     pasture = Pasture.objects.get(name='Pen')
-    TestData.log_exercise(pasture, cow, dt, user)
-    TestData.log_event('Graze', cow, dt, user)
-    TestData.log_event('Drink', cow, dt, user)
-    TestData.log_event('Chew cud', cow, dt, user)
-    TestData.log_event('Nap', cow, dt, user)
+    ToolData.log_exercise(pasture, cow, dt, user)
+    ToolData.log_event('Graze', cow, dt, user)
+    ToolData.log_event('Drink', cow, dt, user)
+    ToolData.log_event('Chew cud', cow, dt, user)
+    ToolData.log_event('Nap', cow, dt, user)
     return
 
 def daily_routine(cow, date, user, first=False):
     from assets.models import Pasture, Treatment
-    from tools.utils import TestData, TestTime
+    from tools.utils import ToolData, ToolTime
 
     # morning
-    dt = TestTime.get_morning(date)
-    TestData.log_event('Wake Up', cow, dt, user)
-    TestData.log_event('Get inspected', cow, dt, user)
+    dt = ToolTime.get_morning(date)
+    ToolData.log_event('Wake Up', cow, dt, user)
+    ToolData.log_event('Get inspected', cow, dt, user)
     if first:
         health = 'healthy'
     else:
-        health = TestData.get_health()
+        health = ToolData.get_health()
     if health == 'healthy':
         morning_healthy_routine(cow, dt, user)
     elif health == 'injured':
@@ -174,12 +174,12 @@ def daily_routine(cow, date, user, first=False):
         morning_ill_routine(cow, dt, user)
 
     # evening
-    dt = TestTime.get_evening(date)
-    TestData.log_event('Get inspected', cow, dt, user)
+    dt = ToolTime.get_evening(date)
+    ToolData.log_event('Get inspected', cow, dt, user)
     if first:
         health = 'healthy'
     else:
-        health = TestData.get_health()
+        health = ToolData.get_health()
     if health == 'healthy':
         evening_healthy_routine(cow, dt, user)
     elif health == 'injured':
@@ -196,10 +196,10 @@ def main():
     setup()
     from django.contrib.auth.models import User
     from assets.models import Cow
-    from tools.utils import TestData, TestTime
+    from tools.utils import ToolData, ToolTime
     user = User.objects.get(username=username)
     inspected = 0
-    for cow in Cow.objects.filter(breed__name=TestData.convert_name(breed),
+    for cow in Cow.objects.filter(breed__name=ToolData.convert_name(breed),
                                   color__name=color):
         if inspected > 0:
             daily_routine(cow, date, user)

@@ -164,6 +164,10 @@ class TestData:
 
     @classmethod
     def get_allowed_detail_methods(cls):
+        return 'GET, PUT, PATCH, HEAD, OPTIONS'
+
+    @classmethod
+    def get_all_allowed_detail_methods(cls):
         return 'GET, PUT, PATCH, DELETE, HEAD, OPTIONS'
 
     @classmethod

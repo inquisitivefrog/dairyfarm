@@ -26,13 +26,13 @@ class TestAssetsCowAPIURLConf(APITestCase):
                          django_reverse('assets:cow-list'))
 
     def test_02_cow_list_month(self):
-        expected = '/assets/api/cows/2018/03/'
+        expected = '/assets/api/cows/year/2018/month/03/'
         self.assertEqual(expected,
                          django_reverse('assets:cow-list-month',
                                         args=('2018', '03')))
 
     def test_03_cow_list_year(self):
-        expected = '/assets/api/cows/2018/'
+        expected = '/assets/api/cows/year/2018/'
         self.assertEqual(expected,
                          django_reverse('assets:cow-list-year',
                                         args=('2018',)))

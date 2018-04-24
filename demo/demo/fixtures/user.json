@@ -3,7 +3,7 @@
     "model": "auth.user",
     "pk": 1,
     "fields": {
-        "password": "pbkdf2_sha256$100000$6snfQUrPJ0Ea$M7aT4wGckvniY79IFyQ593ssnFgXDsTuiX5nrzM+tXw=",
+        "password": "pbkdf2_sha256$100000$vkRVoY3oY33n$JpjCMCFL1u0k1UGA9rrFYn8ctmy+if8XEFEFwha2DQ0=",
         "last_login": null,
         "is_superuser": false,
         "username": "farmer",
@@ -12,7 +12,7 @@
         "email": "farmer@dairyfarm.org",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2018-04-12T20:48:15.072Z",
+        "date_joined": "2018-04-24T18:17:39.460Z",
         "groups": [],
         "user_permissions": []
     }
@@ -21,7 +21,7 @@
     "model": "auth.user",
     "pk": 2,
     "fields": {
-        "password": "pbkdf2_sha256$100000$vsl4zVvcKoSx$fw0fHvQ7sozUje+yAcNsWz5x79I42OMq1j1pBg/rPsU=",
+        "password": "pbkdf2_sha256$100000$lsfxQM9DWdff$nCi7FxGVPIkA9rwfxZpF2HZE87K4Iiac2UZH9ibpHqs=",
         "last_login": null,
         "is_superuser": false,
         "username": "farmhand",
@@ -30,7 +30,7 @@
         "email": "farmhand@dairyfarm.org",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2018-04-12T20:48:15.448Z",
+        "date_joined": "2018-04-24T18:17:39.850Z",
         "groups": [],
         "user_permissions": []
     }
@@ -39,7 +39,7 @@
     "model": "auth.user",
     "pk": 3,
     "fields": {
-        "password": "pbkdf2_sha256$100000$4ggoPWMS2YP9$5/tRFH8xN9K3HhuvOdbL4EtvMDfp8l9p0LWxdLxJpPA=",
+        "password": "pbkdf2_sha256$100000$y76yTcI70OLN$zNzjjqfne/7HUNnW6WnrcZa5IqFmfeN3WWHZcK7T5F4=",
         "last_login": null,
         "is_superuser": false,
         "username": "vet",
@@ -48,7 +48,7 @@
         "email": "vet@dairyfarm.org",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2018-04-12T20:48:15.847Z",
+        "date_joined": "2018-04-24T18:17:40.264Z",
         "groups": [],
         "user_permissions": []
     }

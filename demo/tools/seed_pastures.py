@@ -104,9 +104,13 @@ def _convert_name(n):
 
 def _get_data(cereal_hay, grass_hay, legume_hay, pasture, season, username, year):
     from django.contrib.auth.models import User
-    from tools.utils import TestTime
+    from assets.models import Client
+    from tools.utils import ToolTime
     user = User.objects.get(username=username)
-    return {'seeded_by': username,
+    clients = Client.objects.all()
+    client = clients[randint(0, len(clients) - 1)]
+    return {'client': client,
+            'seeded_by': username,
             'cereal_hay': cereal_hay,
             'year': year,
             'season': season,

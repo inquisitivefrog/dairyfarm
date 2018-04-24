@@ -4,6 +4,8 @@ from django.conf import settings
 from django.db.utils import IntegrityError
 from django.utils.timezone import datetime, pytz
 
+from sys import path
+
 from assets.models import Action, Cow, Event, HealthRecord
 from assets.models import Illness, Injury, Pasture
 from assets.models import Seed, Status, Treatment, Vaccine
@@ -12,7 +14,12 @@ from assets.serializers import ExerciseWriteSerializer
 from assets.serializers import HealthRecordWriteSerializer
 from assets.serializers import MilkWriteSerializer
 
-class TestTime:
+class ToolTime:
+    @classmethod
+    def get_date(cls):
+        t = datetime.now()
+        return datetime.date(t)
+
     @classmethod
     def add_time(cls, dt, t):
         pass
@@ -61,7 +68,7 @@ class TestTime:
                         tmp.microsecond,
                         tzinfo=pytz.timezone(settings.TIME_ZONE))
 
-class TestData:
+class ToolData:
     @classmethod
     def get_health(cls):
         unhealthy = randint(1, 10)
@@ -96,6 +103,7 @@ class TestData:
         return {'recorded_by': user,
                 'inspection_time': dt,
                 'cow': cow.rfid,
+                'client': cow.client,
                 'temperature': temperature,
                 'respiratory_rate': respiratory_rate,
                 'heart_rate': heart_rate,
@@ -115,6 +123,7 @@ class TestData:
         return {'recorded_by': user,
                 'inspection_time': dt,
                 'cow': cow.rfid,
+                'client': cow.client,
                 'temperature': temperature,
                 'respiratory_rate': respiratory_rate,
                 'heart_rate': heart_rate,
@@ -154,6 +163,7 @@ class TestData:
             c = Cow.objects.get(rfid=cow.rfid)
             data = {'recorded_by': user,
                     'event_time': dt,
+                    'client': c.client,
                     'cow': c.rfid,
                     'action': action}
             es = EventWriteSerializer(data=data)
@@ -172,6 +182,7 @@ class TestData:
             data = {'recorded_by': user,
                     'exercise_time': dt,
                     'cow': cow.rfid,
+                    'client': cow.client,
                     'pasture': pasture.name}
             es = ExerciseWriteSerializer(data=data)
             if es.is_valid() and len(es.errors) == 0:
@@ -198,6 +209,7 @@ class TestData:
             data = {'recorded_by': user,
                     'milking_time': dt,
                     'cow': cow.rfid,
+                    'client': cow.client,
                     'gallons': gallons}
             ms = MilkWriteSerializer(data=data)
             if ms.is_valid() and len(ms.errors) == 0:

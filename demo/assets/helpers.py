@@ -17,6 +17,11 @@ class AssetTime:
         return '{}-01-01'.format(y)
 
     @classmethod
+    def get_today(cls):
+        t = datetime.today()
+        return cls.convert_date(t)
+
+    @classmethod
     def sdate_year_month(cls, y, m):
         t = datetime.strptime('{}-{}-01'.format(y, m),
                               '%Y-%m-%d')

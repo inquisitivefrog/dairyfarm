@@ -12,7 +12,7 @@ from assets.serializers import ActionSerializer, AgeSerializer
 from assets.serializers import BreedSerializer, ColorSerializer
 from assets.serializers import CerealHaySerializer, GrassHaySerializer
 from assets.serializers import IllnessSerializer, InjurySerializer
-from assets.serializers import LegumeHaySerializer, PastureSerializer
+from assets.serializers import LegumeHaySerializer
 from assets.serializers import SeasonSerializer, StatusSerializer
 from assets.serializers import TreatmentSerializer, VaccineSerializer
 from assets.serializers import CowReadSerializer, CowWriteSerializer
@@ -20,6 +20,7 @@ from assets.serializers import EventReadSerializer, EventWriteSerializer
 from assets.serializers import ExerciseReadSerializer, ExerciseWriteSerializer
 from assets.serializers import HealthRecordReadSerializer, HealthRecordWriteSerializer
 from assets.serializers import MilkReadSerializer, MilkWriteSerializer
+from assets.serializers import PastureReadSerializer, PastureWriteSerializer
 from assets.serializers import SeedReadSerializer, SeedWriteSerializer
 from assets.tests.utils import TestData, TestTime
 
@@ -879,7 +880,66 @@ class TestLegumeHaySerializer(APITestCase):
         self.assertEqual(self.legume_data['name'],
                          actual.data['name'])
 
-class TestPastureSerializer(APITestCase):
+class TestPastureReadSerializer(APITestCase):
+    # note: order matters when loading fixtures
+    fixtures = ['pasture']
+
+    def setUp(self):
+        self._load_pasture_data()
+
+    def tearDown(self):
+        self.pasture_data = None
+
+    def _load_pasture_data(self):
+        name = '{}_{}'.format(TestData.get_pasture(), randint(10, 10000))
+        url = '/static/images/regions/{}.png'.format(name.lower())
+        self.pasture_data = {'name': name,
+                            'url': url,
+                            'fallow': False,
+                            'distance': randint(1, 12)}
+
+    def test_00_load_fixtures(self):
+        fields = Pasture.objects.all()
+        self.assertEqual(13,
+                         len(fields))
+
+    def test_01_retrieve(self):
+        pasture = Pasture.objects.get(id=1)
+        actual = PastureReadSerializer(pasture)
+        self.assertRegex(actual.data['name'],
+                         '\w+')
+        self.assertRegex(actual.data['url'],
+                         '/static/images/regions/\w+\.png$')
+        self.assertIsInstance(actual.data['fallow'],
+                              bool)
+        self.assertLessEqual(1,
+                             actual.data['distance'])
+
+    def test_02_list(self):
+        expected = 10
+        fields = []
+        for i in range(expected):
+            self._load_pasture_data()
+            self.pasture_data.update({'name': '{} {}'.format(self.pasture_data['name'], i)})
+            pasture= Pasture.objects.create(**self.pasture_data)
+            fields.append(pasture)
+        actual = PastureReadSerializer(fields,
+                                       many=True)
+        self.assertEqual(expected,
+                         len(actual.data))
+        for i in range(expected):
+            self.assertIn('id',
+                          actual.data[i])
+            self.assertIn('name',
+                          actual.data[i])
+            self.assertIn('url',
+                          actual.data[i])
+            self.assertIn('fallow',
+                          actual.data[i])
+            self.assertIn('distance',
+                          actual.data[i])
+
+class TestPastureWriteSerializer(APITestCase):
     # note: order matters when loading fixtures
     fixtures = ['pasture']
 
@@ -903,7 +963,7 @@ class TestPastureSerializer(APITestCase):
                          len(fields))
 
     def test_01_create(self):
-        actual = PastureSerializer(data=self.pasture_data)
+        actual = PastureWriteSerializer(data=self.pasture_data)
         self.assertTrue(actual.is_valid())
         self.assertEqual(0,
                          len(actual.errors))
@@ -927,8 +987,8 @@ class TestPastureSerializer(APITestCase):
             self.pasture_data.update({'name': '{}_{}'.format(self.pasture_data['name'], i)})
             self.pasture_data.update({'url': '{}_{}'.format(self.pasture_data['url'], i)})
             data.append(self.pasture_data)
-        actual = PastureSerializer(data=data,
-                                   many=True)
+        actual = PastureWriteSerializer(data=data,
+                                        many=True)
         self.assertTrue(actual.is_valid())
         self.assertEqual(0,
                          len(actual.errors))
@@ -947,48 +1007,12 @@ class TestPastureSerializer(APITestCase):
             self.assertIn('distance',
                           actual.data[i])
 
-    def test_03_retrieve(self):
-        pasture = Pasture.objects.get(id=1)
-        actual = PastureSerializer(pasture)
-        self.assertRegex(actual.data['name'],
-                         '\w+')
-        self.assertRegex(actual.data['url'],
-                         '/static/images/regions/\w+\.png$')
-        self.assertIsInstance(actual.data['fallow'],
-                              bool)
-        self.assertLessEqual(1,
-                             actual.data['distance'])
-
-    def test_04_list(self):
-        expected = 10
-        fields = []
-        for i in range(expected):
-            self._load_pasture_data()
-            self.pasture_data.update({'name': '{} {}'.format(self.pasture_data['name'], i)})
-            pasture= Pasture.objects.create(**self.pasture_data)
-            fields.append(pasture)
-        actual = PastureSerializer(fields,
-                                   many=True)
-        self.assertEqual(expected,
-                         len(actual.data))
-        for i in range(expected):
-            self.assertIn('id',
-                          actual.data[i])
-            self.assertIn('name',
-                          actual.data[i])
-            self.assertIn('url',
-                          actual.data[i])
-            self.assertIn('fallow',
-                          actual.data[i])
-            self.assertIn('distance',
-                          actual.data[i])
-
-    def test_05_full_update(self):
+    def test_03_full_update(self):
         pasture = Pasture.objects.get(id=1)
         self._load_pasture_data()
-        actual = PastureSerializer(pasture,
-                                   data=self.pasture_data,
-                                   partial=False)
+        actual = PastureWriteSerializer(pasture,
+                                        data=self.pasture_data,
+                                        partial=False)
         self.assertTrue(actual.is_valid())
         self.assertEqual(0,
                          len(actual.errors))
@@ -1002,33 +1026,14 @@ class TestPastureSerializer(APITestCase):
         self.assertEqual(self.pasture_data['distance'],
                          actual.data['distance'])
 
-    def test_05_full_update(self):
-        pasture = Pasture.objects.get(id=1)
-        self._load_pasture_data()
-        actual = PastureSerializer(pasture,
-                                   data=self.pasture_data,
-                                   partial=False)
-        self.assertTrue(actual.is_valid())
-        self.assertEqual(0,
-                         len(actual.errors))
-        actual.save()
-        self.assertEqual(self.pasture_data['name'],
-                         actual.data['name'])
-        self.assertEqual(self.pasture_data['url'],
-                         actual.data['url'])
-        self.assertEqual(self.pasture_data['fallow'],
-                         actual.data['fallow'])
-        self.assertEqual(self.pasture_data['distance'],
-                         actual.data['distance'])
-
-    def test_06_partial_update(self):
+    def test_04_partial_update(self):
         pasture = Pasture.objects.get(id=1)
         self._load_pasture_data()
         del self.pasture_data['fallow']
         del self.pasture_data['distance']
-        actual = PastureSerializer(pasture,
-                                   data=self.pasture_data,
-                                   partial=True)
+        actual = PastureWriteSerializer(pasture,
+                                        data=self.pasture_data,
+                                        partial=True)
         self.assertTrue(actual.is_valid())
         self.assertEqual(0,
                          len(actual.errors))

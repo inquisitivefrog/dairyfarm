@@ -59,8 +59,8 @@ def _get_colors(breed):
     return cows[breed]
 
 def _get_data(breed, color, date, user):
-    from assets.models import Age, Breed
-    from tools.utils import TestTime
+    from assets.models import Age, Breed, Client
+    from tools.utils import ToolTime
     ages = [ a.name for a in Age.objects.all() ]
     age = ages[randint(0, len(ages) - 1)]
     tmp = []
@@ -68,12 +68,15 @@ def _get_data(breed, color, date, user):
        tmp.append(word.capitalize()) 
     b_name = ' '.join(tmp)
     breed = Breed.objects.get(name=b_name)
+    clients = Client.objects.all()
+    client = clients[randint(0, len(clients) - 1)]
     return {'purchased_by': user,
-            'purchase_date': TestTime.convert_date(date),
+            'purchase_date': ToolTime.convert_date(date),
             'rfid': uuid4(),
             'age': age,
             'breed': breed.name,
-            'color': color}
+            'color': color,
+            'client': client}
 
 def purchase_cow(breed, date, username):
     from django.contrib.auth.models import User

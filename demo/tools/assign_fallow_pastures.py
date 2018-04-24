@@ -38,13 +38,13 @@ def _get_data():
 
 def leave_fallow(pasture):
     from assets.models import Pasture
-    from assets.serializers import PastureSerializer
+    from assets.serializers import PastureWriteSerializer
 
     try:
         instance = Pasture.objects.get(name=pasture)
-        ps = PastureSerializer(instance=instance,
-                               data=_get_data(),
-                               partial=True)
+        ps = PastureWriteSerializer(instance=instance,
+                                    data=_get_data(),
+                                    partial=True)
         if ps.is_valid() and len(ps.errors) == 0:
             ps.save()
             print('Pasture {} left fallow'.format(pasture))
