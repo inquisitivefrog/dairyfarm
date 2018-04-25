@@ -12,9 +12,9 @@ from summary.tests.utils import TestData, TestTime
 
 class TestAnnualReadSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'color', 'illness', 'injury', 'status',
-                'treatment', 'user', 'vaccine', 'cow', 'healthrecord',
-                'milk', 'annual']
+    fixtures = ['age', 'breed', 'client', 'color', 'illness', 'injury',
+                'status', 'treatment', 'user', 'vaccine', 'cow',
+                'healthrecord', 'milk', 'annual']
 
     def setUp(self):
         self._load_model_data()
@@ -98,9 +98,9 @@ class TestAnnualReadSerializer(APITestCase):
 
 class TestAnnualWriteSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'color', 'illness', 'injury', 'status',
-                'treatment', 'user', 'vaccine', 'cow', 'healthrecord',
-                'milk', 'annual']
+    fixtures = ['age', 'breed', 'client', 'color', 'illness', 'injury',
+                'status', 'treatment', 'user', 'vaccine', 'cow',
+                'healthrecord', 'milk', 'annual']
 
 
     def setUp(self):
@@ -183,9 +183,9 @@ class TestAnnualWriteSerializer(APITestCase):
 
 class TestMonthlyReadSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'color', 'illness', 'injury', 'status',
-                'treatment', 'user', 'vaccine', 'cow', 'healthrecord',
-                'milk', 'monthly']
+    fixtures = ['age', 'breed', 'client', 'color', 'illness', 'injury',
+                'status', 'treatment', 'user', 'vaccine', 'cow',
+                'healthrecord', 'milk', 'monthly']
 
     def setUp(self):
         self._load_model_data()
@@ -274,9 +274,9 @@ class TestMonthlyReadSerializer(APITestCase):
 
 class TestMonthlyWriteSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'color', 'illness', 'injury', 'status',
-                'treatment', 'user', 'vaccine', 'cow', 'healthrecord',
-                'milk', 'monthly']
+    fixtures = ['age', 'breed', 'client', 'color', 'illness', 'injury',
+                'status', 'treatment', 'user', 'vaccine', 'cow',
+                'healthrecord', 'milk', 'monthly']
 
     def setUp(self):
         self._load_monthly_data()

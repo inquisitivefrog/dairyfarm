@@ -124,6 +124,14 @@ test_04_create (assets.tests.test_models.TestCerealHayModel) ... ok
 test_05_full_update (assets.tests.test_models.TestCerealHayModel) ... ok
 test_06_delete (assets.tests.test_models.TestCerealHayModel) ... ok
 test_07_save (assets.tests.test_models.TestCerealHayModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestClientModel) ... ok
+test_01_object (assets.tests.test_models.TestClientModel) ... ok
+test_02_get (assets.tests.test_models.TestClientModel) ... ok
+test_03_filter (assets.tests.test_models.TestClientModel) ... ok
+test_04_create (assets.tests.test_models.TestClientModel) ... ok
+test_05_full_update (assets.tests.test_models.TestClientModel) ... ok
+test_06_delete (assets.tests.test_models.TestClientModel) ... ok
+test_07_save (assets.tests.test_models.TestClientModel) ... ok
 test_00_load_fixtures (assets.tests.test_models.TestColorModel) ... ok
 test_01_object (assets.tests.test_models.TestColorModel) ... ok
 test_02_get (assets.tests.test_models.TestColorModel) ... ok
@@ -278,12 +286,12 @@ test_02_bulk_create (assets.tests.test_serializers.TestCerealHaySerializer) ... 
 test_03_retrieve (assets.tests.test_serializers.TestCerealHaySerializer) ... ok
 test_04_list (assets.tests.test_serializers.TestCerealHaySerializer) ... ok
 test_05_full_update (assets.tests.test_serializers.TestCerealHaySerializer) ... ok
-test_00_load_fixtures (assets.tests.test_serializers.TestColorSerializer) ... ok
-test_01_create (assets.tests.test_serializers.TestColorSerializer) ... ok
-test_02_bulk_create (assets.tests.test_serializers.TestColorSerializer) ... ok
-test_03_retrieve (assets.tests.test_serializers.TestColorSerializer) ... ok
-test_04_list (assets.tests.test_serializers.TestColorSerializer) ... ok
-test_05_full_update (assets.tests.test_serializers.TestColorSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestClientSerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestClientSerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestClientSerializer) ... ok
+test_03_retrieve (assets.tests.test_serializers.TestClientSerializer) ... ok
+test_04_list (assets.tests.test_serializers.TestClientSerializer) ... ok
+test_05_full_update (assets.tests.test_serializers.TestClientSerializer) ... ok
 test_00_load_fixtures (assets.tests.test_serializers.TestCowReadSerializer) ... ok
 test_01_retrieve (assets.tests.test_serializers.TestCowReadSerializer) ... ok
 test_02_list (assets.tests.test_serializers.TestCowReadSerializer) ... ok
@@ -350,13 +358,14 @@ test_01_create (assets.tests.test_serializers.TestMilkWriteSerializer) ... ok
 test_02_bulk_create (assets.tests.test_serializers.TestMilkWriteSerializer) ... ok
 test_03_full_update (assets.tests.test_serializers.TestMilkWriteSerializer) ... ok
 test_04_partial_update (assets.tests.test_serializers.TestMilkWriteSerializer) ... ok
-test_00_load_fixtures (assets.tests.test_serializers.TestPastureSerializer) ... ok
-test_01_create (assets.tests.test_serializers.TestPastureSerializer) ... ok
-test_02_bulk_create (assets.tests.test_serializers.TestPastureSerializer) ... ok
-test_03_retrieve (assets.tests.test_serializers.TestPastureSerializer) ... ok
-test_04_list (assets.tests.test_serializers.TestPastureSerializer) ... ok
-test_05_full_update (assets.tests.test_serializers.TestPastureSerializer) ... ok
-test_06_partial_update (assets.tests.test_serializers.TestPastureSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestPastureReadSerializer) ... ok
+test_01_retrieve (assets.tests.test_serializers.TestPastureReadSerializer) ... ok
+test_02_list (assets.tests.test_serializers.TestPastureReadSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestPastureWriteSerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestPastureWriteSerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestPastureWriteSerializer) ... ok
+test_03_full_update (assets.tests.test_serializers.TestPastureWriteSerializer) ... ok
+test_04_partial_update (assets.tests.test_serializers.TestPastureWriteSerializer) ... ok
 test_00_load_fixtures (assets.tests.test_serializers.TestSeasonSerializer) ... ok
 test_01_create (assets.tests.test_serializers.TestSeasonSerializer) ... ok
 test_02_bulk_create (assets.tests.test_serializers.TestSeasonSerializer) ... ok
@@ -457,8 +466,7 @@ test_01_annual (summary.tests.test_urls.TestSummaryAnnualAPIURLConf) ... ok
 test_01_monthly (summary.tests.test_urls.TestSummaryMonthlyAPIURLConf) ... ok
 
 ----------------------------------------------------------------------
-Ran 431 tests in 475.335s
+Ran 440 tests in 496.953s
 
 OK
 Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
-

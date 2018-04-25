@@ -14,7 +14,8 @@ farmApp.controller('AssetController',
       method: 'GET',
       url: '/assets/api/cows/',
     }).then(function (response) {
-      $scope.herd = response.data;
+      $scope.herd = response.data.count();
+      console.log($scope.herd);
     });
 });
 

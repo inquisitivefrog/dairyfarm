@@ -14,7 +14,7 @@ from assets.api_views import EventDetail, EventList, ExerciseDetail
 from assets.api_views import ExerciseList, HealthRecordDetail
 from assets.api_views import HealthRecordList, MilkDetail, MilkList
 from assets.api_views import SeedDetail, SeedList
-from assets.models import Action, Age, Breed, CerealHay, Color, Cow
+from assets.models import Action, Age, Breed, CerealHay, Client, Color, Cow
 from assets.models import Event, Exercise, GrassHay, HealthRecord, Illness
 from assets.models import Injury, LegumeHay, Milk, Pasture
 from assets.models import Season, Seed, Status, Treatment, Vaccine
@@ -22,13 +22,15 @@ from assets.tests.utils import TestData, TestTime
 from assets.views import IndexView
 
 class TestCowListView(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'user', 'cow']
+    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow']
 
     def setUp(self):
+        client = Client.objects.get(pk=1)
         self.data = {'purchased_by': TestData.get_random_user(),
                      'purchase_date': TestTime.get_purchase_date(),
                      'age': TestData.get_age(),
                      'breed': 'Holstein',
+                     'client': client.name, 
                      'color': 'black_white'}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.herd = Cow.objects.all()
@@ -42,6 +44,9 @@ class TestCowListView(APITestCase):
         self.user = None
 
     def test_00_load_fixtures(self):
+        clients = Client.objects.all()
+        self.assertLessEqual(1,
+                             len(clients))
         herd = Cow.objects.all()
         self.assertLessEqual(1,
                              len(herd))
@@ -115,15 +120,17 @@ class TestCowListView(APITestCase):
                           data)
 
 class TestCowListByMonthView(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'user', 'cow']
+    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow']
 
     def setUp(self):
         self.year = '2015'
         self.month = '01'
+        client = Client.objects.get(pk=1)
         self.data = {'purchased_by': TestData.get_random_user(),
                      'purchase_date': TestTime.get_purchase_date(),
                      'age': TestData.get_age(),
                      'breed': 'Holstein',
+                     'client': client.name,
                      'color': 'black_white'}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.herd = Cow.objects.all()
@@ -238,14 +245,16 @@ class TestCowListByMonthView(APITestCase):
                               cow)
 
 class TestCowListByYearView(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'user', 'cow']
+    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow']
 
     def setUp(self):
         self.year = '2015'
+        client = Client.objects.get(pk=1)
         self.data = {'purchased_by': TestData.get_random_user(),
                      'purchase_date': TestTime.get_purchase_date(),
                      'age': TestData.get_age(),
                      'breed': 'Holstein',
+                     'client': client.name,
                      'color': 'black_white'}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.herd = Cow.objects.all()
@@ -355,13 +364,15 @@ class TestCowListByYearView(APITestCase):
                               cow)
 
 class TestCowDetailView(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'user', 'cow']
+    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow']
 
     def setUp(self):
+        client = Client.objects.get(pk=1)
         self.data = {'purchased_by': TestData.get_random_user(),
                      'purchase_date': TestTime.get_purchase_date(),
                      'age': TestData.get_age(),
                      'breed': 'Holstein',
+                     'client': client.name,
                      'color': 'black_white'}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.herd = Cow.objects.all()
@@ -504,11 +515,12 @@ class TestCowDetailView(APITestCase):
                              
 
 class TestSeedListView(APITestCase):
-    fixtures = ['cerealhay', 'grasshay', 'legumehay', 'pasture',
+    fixtures = ['client', 'cerealhay', 'grasshay', 'legumehay', 'pasture',
                 'season', 'user', 'seed']
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
+        client = Client.objects.get(pk=1)
         cereals = CerealHay.objects.all()
         cereal = cereals[randint(0, len(cereals) - 1)]
         grasses = GrassHay.objects.all()
@@ -521,6 +533,7 @@ class TestSeedListView(APITestCase):
         season = seasons[randint(0, len(seasons) - 1)]
         self.data = {'year': TestTime.get_year(),
                      'season': season.name,
+                     'client': client.name,
                      'seeded_by': user.username,
                      'pasture': pasture.name,
                      'cereal_hay': cereal.name,
@@ -624,11 +637,12 @@ class TestSeedListView(APITestCase):
                           data)
 
 class TestSeedDetailView(APITestCase):
-    fixtures = ['cerealhay', 'grasshay', 'legumehay', 'pasture',
+    fixtures = ['client', 'cerealhay', 'grasshay', 'legumehay', 'pasture',
                 'season', 'user', 'seed']
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
+        client = Client.objects.get(pk=1)
         cereals = CerealHay.objects.all()
         cereal = cereals[randint(0, len(cereals) - 1)]
         grasses = GrassHay.objects.all()
@@ -641,6 +655,7 @@ class TestSeedDetailView(APITestCase):
         season = seasons[randint(0, len(seasons) - 1)]
         self.data = {'year': TestTime.get_year(),
                      'season': season.name,
+                     'client': client.name,
                      'seeded_by': user.username,
                      'pasture': pasture.name,
                      'cereal_hay': cereal.name,
@@ -775,7 +790,7 @@ class TestSeedDetailView(APITestCase):
                          response.reason_phrase)
 
 class TestEventListView(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'user', 'cow',
+    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow',
                 'action', 'event']
 
     def setUp(self):
@@ -786,6 +801,7 @@ class TestEventListView(APITestCase):
         cow = herd[randint(0, len(herd) - 1)]
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
+                     'client': cow.client.name,
                      'event_time': TestTime.get_datetime(),
                      'action': action.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
@@ -877,7 +893,7 @@ class TestEventListView(APITestCase):
                           data)
 
 class TestEventDetailView(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'user', 'cow',
+    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow',
                 'action', 'event']
 
     def setUp(self):
@@ -888,6 +904,7 @@ class TestEventDetailView(APITestCase):
         cow = herd[randint(0, len(herd) - 1)]
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
+                     'client': cow.client.name,
                      'event_time': TestTime.get_datetime(),
                      'action': action.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
@@ -995,7 +1012,7 @@ class TestEventDetailView(APITestCase):
                          response.reason_phrase)
 
 class TestExerciseListView(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'user', 'cow',
+    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow',
                 'pasture', 'season', 'exercise']
 
     def setUp(self):
@@ -1006,6 +1023,7 @@ class TestExerciseListView(APITestCase):
         cow = herd[randint(0, len(herd) - 1)]
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
+                     'client': cow.client.name,
                      'exercise_time': TestTime.get_datetime(),
                      'pasture': pasture.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
@@ -1097,7 +1115,7 @@ class TestExerciseListView(APITestCase):
                           data)
 
 class TestExerciseDetailView(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'user', 'cow',
+    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow',
                 'pasture', 'season', 'exercise']
 
     def setUp(self):
@@ -1108,6 +1126,7 @@ class TestExerciseDetailView(APITestCase):
         cow = herd[randint(0, len(herd) - 1)]
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
+                     'client': cow.client.name,
                      'exercise_time': TestTime.get_datetime(),
                      'pasture': pasture.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
@@ -1215,7 +1234,7 @@ class TestExerciseDetailView(APITestCase):
                          response.reason_phrase)
 
 class TestMilkListView(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'user', 'cow', 'milk']
+    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow', 'milk']
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
@@ -1224,6 +1243,7 @@ class TestMilkListView(APITestCase):
         gallons = TestData.get_milk()
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
+                     'client': cow.client.name,
                      'milking_time': TestTime.get_datetime(),
                      'gallons': gallons}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
@@ -1312,7 +1332,7 @@ class TestMilkListView(APITestCase):
                           data)
 
 class TestMilkDetailView(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'user', 'cow', 'milk']
+    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow', 'milk']
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
@@ -1321,6 +1341,7 @@ class TestMilkDetailView(APITestCase):
         gallons = TestData.get_milk()
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
+                     'client': cow.client.name,
                      'milking_time': TestTime.get_datetime(),
                      'gallons': gallons}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
@@ -1425,7 +1446,7 @@ class TestMilkDetailView(APITestCase):
                          response.reason_phrase)
 
 class TestHealthRecordListView(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'user', 'cow', 'illness',
+    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow', 'illness',
                 'injury', 'status', 'treatment', 'vaccine', 'healthrecord']
 
     def setUp(self):
@@ -1442,6 +1463,7 @@ class TestHealthRecordListView(APITestCase):
         vaccine = vaccines[randint(0, len(vaccines) - 1)]
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
+                     'client': cow.client.name,
                      'inspection_time': TestTime.get_datetime(),
                      'temperature': TestData.get_temp(),
                      'respiratory_rate': TestData.get_resp(),
@@ -1549,7 +1571,7 @@ class TestHealthRecordListView(APITestCase):
                           data)
 
 class TestHealthRecordDetailView(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'user', 'cow', 'illness',
+    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow', 'illness',
                 'injury', 'status', 'treatment', 'vaccine', 'healthrecord']
 
     def setUp(self):
@@ -1566,6 +1588,7 @@ class TestHealthRecordDetailView(APITestCase):
         vaccine = vaccines[randint(0, len(vaccines) - 1)]
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
+                     'client': cow.client.name,
                      'inspection_time': TestTime.get_datetime(),
                      'temperature': TestData.get_temp(),
                      'respiratory_rate': TestData.get_resp(),

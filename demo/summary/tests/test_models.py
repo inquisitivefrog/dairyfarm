@@ -9,9 +9,9 @@ from summary.models import Annual, Monthly
 from summary.tests.utils import TestData, TestTime
 
 class TestAnnualModel(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'illness', 'injury', 'status',
-                'treatment', 'user', 'vaccine', 'cow', 'healthrecord',
-                'milk', 'annual']
+    fixtures = ['age', 'breed', 'client', 'color', 'illness', 'injury',
+                'status', 'treatment', 'user', 'vaccine', 'cow',
+                'healthrecord', 'milk', 'annual']
 
 
     def setUp(self):
@@ -121,9 +121,9 @@ class TestAnnualModel(APITestCase):
                              actual.gallons_milk)
 
 class TestMonthlyModel(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'illness', 'injury', 'status',
-                'treatment', 'user', 'vaccine', 'cow', 'healthrecord',
-                'milk', 'monthly']
+    fixtures = ['age', 'breed', 'client', 'color', 'illness', 'injury',
+                'status', 'treatment', 'user', 'vaccine', 'cow',
+                'healthrecord', 'milk', 'monthly']
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_username())

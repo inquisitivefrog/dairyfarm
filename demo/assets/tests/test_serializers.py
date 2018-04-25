@@ -911,12 +911,11 @@ class TestPastureReadSerializer(APITestCase):
         self.pasture_data = None
 
     def _load_pasture_data(self):
-        name = '{}_{}'.format(TestData.get_pasture(), randint(10, 10000))
-        url = '/static/images/regions/{}.png'.format(name.lower())
         client = Client.objects.get(pk=1)
+        pasture = Pasture.objects.get(pk=1)
         self.pasture_data = {'client': client,
-                             'name': name,
-                             'url': url,
+                             'name': pasture.name,
+                             'url': pasture.url,
                              'fallow': False,
                              'distance': randint(1, 12)}
 
@@ -947,7 +946,8 @@ class TestPastureReadSerializer(APITestCase):
         fields = []
         for i in range(expected):
             self._load_pasture_data()
-            self.pasture_data.update({'name': '{} {}'.format(self.pasture_data['name'], i)})
+            self.pasture_data.update({'name': '{} {}'.format(self.pasture_data['name'], i),
+                                      'url': '{}_{}.png'.format(self.pasture_data['url'][0:-4], i)})
             pasture= Pasture.objects.create(**self.pasture_data)
             fields.append(pasture)
         actual = PastureReadSerializer(fields,

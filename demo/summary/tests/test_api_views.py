@@ -16,9 +16,9 @@ from summary.api_views import AnnualSummary, MonthlySummary
 from summary.tests.utils import TestData, TestTime
 
 class TestAnnualSummaryView(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'illness', 'injury', 'status',
-                'treatment', 'user', 'vaccine', 'cow', 'healthrecord',
-                'milk', 'annual']
+    fixtures = ['age', 'breed', 'client', 'color', 'illness', 'injury',
+                'status', 'treatment', 'user', 'vaccine', 'cow',
+                'healthrecord', 'milk', 'annual']
 
     def setUp(self):
         self.user = User.objects.get(username=TestData.get_random_username())
@@ -127,9 +127,9 @@ class TestAnnualSummaryView(APITestCase):
         pass
 
 class TestMonthlySummaryView(APITestCase):
-    fixtures = ['age', 'breed', 'color', 'illness', 'injury', 'status',
-                'treatment', 'user', 'vaccine', 'cow', 'healthrecord',
-                'milk', 'monthly']
+    fixtures = ['age', 'breed', 'client', 'color', 'illness', 'injury',
+                'status', 'treatment', 'user', 'vaccine', 'cow',
+                'healthrecord', 'milk', 'monthly']
 
     def setUp(self):
         self.user = User.objects.get(username=TestData.get_random_username())
