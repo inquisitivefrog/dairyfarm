@@ -4,10 +4,20 @@
     <title>My Dairy Farm</title>
     <script src="{% static 'angular/angular.min.js' %}"></script>
     <script src="{% static 'angular/angular-route.min.js' %}"></script>
-    <script src="{% static 'app.js' %}"></script>
+    <script src="{% static 'js/farmApp.js' %}"></script>
+    <script src="{% static 'js/farmAppAssetsCtrl.js' %}"></script>
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'css/dd.css' %}"/>
+
   </head>
   <body ng-app="farmApp">
       {% verbatim %}
+        <h2>Part 1</h2>
+        <div ng-controller="AssetController">
+          <div ng-view>
+          </div>
+        </div>
+        <h2>Part 2</h2>
         <div ng-controller="AssetController">
           <div ng-view>
           </div>

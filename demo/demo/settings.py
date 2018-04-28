@@ -138,4 +138,4 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
-LOGIN_URL = '/assets/'
+LOGIN_URL = '/login/'

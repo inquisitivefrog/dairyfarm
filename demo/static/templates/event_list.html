@@ -1,0 +1,32 @@
+<h2>Events</h2>
+<table ng-if="events.length > 0">
+  <tr>
+    <th>ID</th>
+    <th>Client</th>
+    <th>Recorder</th>
+    <th>Occurred When</th>
+    <th>RFID</th>
+    <th>Breed</th>
+    <th>Color</th>
+    <th>Age</th>
+    <th>Action</th>
+  </tr>
+  <tr ng-repeat="event in events">
+    <td><a href="#{{event.link}}">{{event.id}}</a></td>
+    <td>{{event.client.name}}</td>
+    <td>{{event.recorded_by}}</td>
+    <td>{{event.event_time}}</td>
+    <td><a href="#{{event.cow.link}}">{{event.cow.rfid}}</a></td>
+    <td>{{event.cow.breed.name}}</td>
+    <td>{{event.cow.color.name}}</td>
+    <td>{{event.cow.age.name}}</td>
+    <td>{{event.action.name}}</td>
+  <tr>
+</table>
+
+<p ng-if="events.length == 0">No events recorded yet.</p>
+
+<div>
+<span text-align:left><a href="{{prev}}">Prev</a></span>
+<span text-align:right><a href="{{next}}">Next</a></span>
+</div>

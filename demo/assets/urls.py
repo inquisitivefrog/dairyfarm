@@ -15,7 +15,7 @@ app_name = 'assets'
 urlpatterns = [
     url(r'^$',
         IndexView.as_view(),
-        name='index'),
+        name='asset-index'),
     url(r'^api/cows/$',
         CowList.as_view(),
         name='cow-list'),

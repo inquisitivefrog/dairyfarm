@@ -1,0 +1,56 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <title>My Django App</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="{% static 'angular/angular.min.js' %}"></script>
+    <script src="{% static 'angular/angular-route.min.js' %}"></script>
+    <script src="{% static 'js/farmApp.js' %}"></script>
+    <script src="{% static 'js/farmAppIndexCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppCowListCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppCowDetailCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppEventListCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppEventDetailCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppHealthRecordListCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppHealthRecordDetailCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppAnnualSummaryCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppMonthlySummaryCtrl.js' %}"></script>
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'css/farmApp.css' %}"/>
+
+  </head>
+<body>
+    <div class="flex-container">
+        <header>Django REST Framework App: Dairy Farm Inventory Management</header>
+        <nav class="nav">
+            <p>User Management</p>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/logout/">Logout User</a></li>
+            </ul>
+            <p>Asset Management</p>
+            <ul>
+                <li><a href="#/assets/api/cows/">Cows</a></li>
+                <li><a href="#/assets/api/events/">Events</a></li>
+                <li><a href="#/assets/api/exercises/">Exercises</a></li>
+                <li><a href="#/assets/api/healthrecords/" %}>Health Records</a></li>
+                <li><a href="#/assets/api/milk/">Milk</a></li>
+                <li><a href="#/assets/api/pastures/">Pasture</a></li>
+                <li><a href="#/assets/api/seeds/">Seed</a></li>
+            </ul>
+            <p>Report Management</p>
+            <ul>
+                <li><a href="#/summary/">Annual Reports</a></li>
+            </ul>
+        </nav>
+        <article class="article" ng-app="farmApp">
+                {% verbatim %}
+                    <div ng-view>
+                    </div>
+                {% endverbatim %}
+        </article>
+        <footer>Copyright 2018 &copy;Tim Stilwell</footer>
+    </div>
+</body>
+</html>
+

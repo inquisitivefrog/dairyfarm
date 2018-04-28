@@ -1,0 +1,42 @@
+div {
+   text-align: center;
+   width: 100%;
+   border: 2px solid gray;
+   padding: 5px;
+}
+
+footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+header {
+    padding: 1em;
+    color: black;
+    background-color: lightblue;
+    clear: left;
+    text-align: center;
+}
+
+table {
+    text-align: center;
+    font-family: arial, sans-serif;
+    font-style: 10px;
+    border: 2px solid black;
+    padding: none;
+    margin: 0 auto 0 auto;
+}
+
+td, th {
+    border: 2px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+

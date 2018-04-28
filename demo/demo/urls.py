@@ -3,17 +3,26 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from django.contrib import admin
+from django.contrib.auth.views import LoginView, LogoutView
+
 from django.urls import path
 
 from demo.api_views import UserCreate, UserDetail
-from demo.views import redirect
+from demo.views import redirect, IndexView
 
 urlpatterns = [
     url(r'^$',
-        redirect,
-        name='redirect'),
-    url(r'^auth/',
-        include('rest_framework.urls')),
+        IndexView.as_view(),
+        name='index'),
+    #url(r'^$',
+    #    redirect,
+    #    name='redirect'),
+    url(r'^login/$',
+        LoginView.as_view(),
+        name='login'),
+    url(r'^logout/$',
+        LogoutView.as_view(),
+        name='logout'),
     url(r'^api/create_user/$',
         UserCreate.as_view(),
         name='user_create'),

@@ -1,0 +1,51 @@
+<h2>Health Record</h2>
+<table ng-if="hr">
+  <tr>
+    <th>ID</th>
+    <th>Client</th>
+    <th>Recorder</th>
+    <th>Inspected When</th>
+    <th>RFID</th>
+    <th>Breed</th>
+    <th>Color</th>
+    <th>Age</th>
+  </tr>
+    <td>{{hr.id}}</td>
+    <td>{{hr.client.name}}</td>
+    <td>{{hr.recorded_by}}</td>
+    <td>{{hr.inspection_time}}</td>
+    <td><a href="#{{hr.cow.link}}">{{hr.cow.rfid}}</a></td>
+    <td>{{hr.cow.breed.name}}</td>
+    <td>{{hr.cow.color.name}}</td>
+    <td>{{hr.cow.age.name}}</td>
+  <tr>
+</table>
+<table ng-if="hr">
+  <tr>
+    <th>Temperature</th>
+    <th>Respiration</th>
+    <th>Heart Rate</th>
+    <th>Blood Pressure</th>
+    <th>Weight</th>
+    <th>BCS</th>
+    <th>Status</th>
+    <th>Illness</th>
+    <th>Injury</th>
+    <th>Treatment</th>
+    <th>Vaccine</th>
+  </tr>
+    <td>{{hr.temperature}}</td>
+    <td>{{hr.respiratory_rate}}</td>
+    <td>{{hr.heart_rate}}</td>
+    <td>{{hr.blood_pressure}}</td>
+    <td>{{hr.weight}}</td>
+    <td>{{hr.body_condition_score}}</td>
+    <td>{{hr.status.name}}</td>
+    <td>{{hr.illness.diagnosis}}</td>
+    <td>{{hr.injury.diagnosis}}</td>
+    <td>{{hr.treatment.name}}</td>
+    <td>{{hr.vaccine.name}}</td>
+  <tr>
+</table>
+<p/>
+<img src="{{hr.cow.breed.url}}" alt="Image failed to load" height="200" width="400">

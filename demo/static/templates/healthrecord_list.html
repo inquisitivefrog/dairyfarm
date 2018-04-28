@@ -1,0 +1,32 @@
+<h2>Health Records</h2>
+<table ng-if="hrs.length > 0">
+  <tr>
+    <th>ID</th>
+    <th>Client</th>
+    <th>Recorder</th>
+    <th>Inspected When</th>
+    <th>RFID</th>
+    <th>Breed</th>
+    <th>Color</th>
+    <th>Age</th>
+    <th>Status</th>
+  </tr>
+  <tr ng-repeat="hr in hrs">
+    <td><a href="#{{hr.link}}">{{hr.id}}</a></td>
+    <td>{{hr.client.name}}</td>
+    <td>{{hr.recorded_by}}</td>
+    <td>{{hr.inspection_time}}</td>
+    <td><a href="#{{hr.cow.link}}">{{hr.cow.rfid}}</a></td>
+    <td>{{hr.cow.breed.name}}</td>
+    <td>{{hr.cow.color.name}}</td>
+    <td>{{hr.cow.age.name}}</td>
+    <td>{{hr.status.name}}</td>
+  <tr>
+</table>
+
+<p ng-if="hrs.length == 0">No cows inspected yet.</p>
+
+<div>
+<span text-align:left><a href="{{prev}}">Prev</a></span>
+<span text-align:right><a href="{{next}}">Next</a></span>
+</div>

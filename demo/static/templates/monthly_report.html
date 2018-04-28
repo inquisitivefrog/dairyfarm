@@ -1,0 +1,23 @@
+<h2>Monthly Reports for {{year}}</h2>
+<table ng-if="rows.length > 0">
+  <tr>
+    <th>Month</th>
+    <th>Total Cows</th>
+    <th>Aged Cows</th>
+    <th>Pregnant Cows</th>
+    <th>Injured Cows</th>
+    <th>Ill Cows</th>
+    <th>Gallons Milked</th>
+  </tr>
+  <tr ng-repeat="row in rows">
+    <td>{{row.month}}</td>
+    <td>{{row.total_cows}}</td>
+    <td>{{row.aged_cows}}</td>
+    <td>{{row.pregnant_cows}}</td>
+    <td>{{row.injured_cows}}</td>
+    <td>{{row.ill_cows}}</td>
+    <td>{{row.gallons_milk}}</td>
+  <tr>
+</table>
+
+<p ng-if="rows.length == 0">No annual records available yet.</p>

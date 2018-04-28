@@ -1,6 +1,9 @@
 from django.db.models import Max
 
 from rest_framework import generics
+from rest_framework.renderers import JSONRenderer
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from summary.models import Annual, Monthly
 from summary.serializers import AnnualReadSerializer
@@ -29,10 +32,19 @@ class MonthlySummary(generics.ListCreateAPIView):
     def get_queryset(self):
         if self.kwargs:
             year = self.kwargs['year']
-            month = self.kwargs['month']
-            obj = Monthly.objects.filter(year=year,
-                                         month=month).aggregate(Max('id'))
-            return Monthly.objects.filter(id=obj['id__max'])
+            if 'month' in self.kwargs:
+                month = self.kwargs['month']
+                obj = Monthly.objects.filter(year=year,
+                                             month=month).aggregate(Max('id'))
+                objs = Monthly.objects.filter(id=obj['id__max'])
+                for o in objs:
+                    o.month = o.get_month_display()
+                return objs
+            else:
+                objs = Monthly.objects.filter(year=year)
+                for o in objs:
+                    o.month = o.get_month_display()
+                return objs
         return Monthly.objects.all()
 
     def get_serializer_class(self):

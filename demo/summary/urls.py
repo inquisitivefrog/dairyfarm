@@ -6,9 +6,15 @@ from summary.api_views import AnnualSummary, MonthlySummary
 
 app_name = 'summary'
 urlpatterns = [
+    url(r'^api/annual/$',
+        AnnualSummary.as_view(),
+        name='annual'),
     url(r'^api/annual/(?P<year>[0-9]{4})/$',
         AnnualSummary.as_view(),
         name='annual'),
+    url(r'^api/monthly/(?P<year>[0-9]{4})/$',
+        MonthlySummary.as_view(),
+        name='monthly-by-year'),
     url(r'^api/monthly/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/$',
         MonthlySummary.as_view(),
         name='monthly'),

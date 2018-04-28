@@ -1,0 +1,22 @@
+
+SPA (Single Page Application) Best Practices
+
+Structure
+01) Store all page related CSS in one file defined and loaded by HTML head
+02) Store Angular app definition is separate app.js
+03) Store each Angular controller definition in separate ctrl.js
+02) Store all page related 
+03) Organize page layout structure using a base template
+04) Define separate html footer and header pages and attach to each page
+05) Divide every page by labeled HTML div and HTML span for easy replacement
+06) Build every replaceable div or span using separate HTML templates
+
+Design
+01) assume multiple devices read the same page so auto scale in HTML head
+01) tables are easier to read if boundaries between rows and columns are visible
+02) tables are easier to read if alternating rows are tinted
+03) unique text within a header, footer, h or p should be wrapped in span
+04) unlike the keyboard, a mouse can select, deselect, or  hover so use this
+    action to alter or update content of web page element tags
+05) avoid too hard to read text
+

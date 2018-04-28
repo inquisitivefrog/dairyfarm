@@ -11,9 +11,21 @@ from assets.models import Cow, HealthRecord, Milk
 from summary.helpers import ReportTime
 
 class Annual(models.Model):
+    Y2015 = 2015
+    Y2016 = 2016
+    Y2017 = 2017
+    Y2018 = 2018
+
+    YEARS = (
+        (Y2015, '2015'),
+        (Y2016, '2016'),
+        (Y2017, '2017'),
+        (Y2018, '2018')
+    )
     created_by = models.ForeignKey(User,
                                    on_delete=models.CASCADE)
-    year = models.SmallIntegerField(default=2015)
+    year = models.SmallIntegerField(choices=YEARS,
+                                    default=Y2015)
     total_cows = models.SmallIntegerField(default=0)
     aged_cows = models.SmallIntegerField(default=0)
     pregnant_cows = models.SmallIntegerField(default=0)
@@ -74,7 +86,7 @@ class Annual(models.Model):
                                               inspection_time__lte=edate)
         milk_objs = Milk.objects.filter(milking_time__gte=sdate,
                                         milking_time__lte=edate)
-        kwargs = {'link': django_reverse('summary:annual',
+        kwargs = {'link': django_reverse('summary:monthly-by-year',
                                          kwargs = {'year': self.year}),
                   'total_cows': self._get_total_cows(cow_objs),
                   'aged_cows': self._get_aged_cows(cow_objs),
@@ -86,10 +98,50 @@ class Annual(models.Model):
         return
 
 class Monthly(models.Model):
+    Y2015 = 2015
+    Y2016 = 2016
+    Y2017 = 2017
+    Y2018 = 2018
+
+    YEARS = (
+        (Y2015, '2015'),
+        (Y2016, '2016'),
+        (Y2017, '2017'),
+        (Y2018, '2018')
+    )
+    JAN = 1
+    FEB = 2 
+    MAR = 3
+    APR = 4
+    MAY = 5
+    JUN = 6
+    JUL = 7
+    AUG = 8 
+    SEP = 9
+    OCT = 10
+    NOV = 11
+    DEC = 12
+
+    MONTHS = (
+        (JAN, 'January'),
+        (FEB, 'February'),
+        (MAR, 'March'),
+        (APR, 'April'),
+        (MAY, 'May'),
+        (JUN, 'June'),
+        (JUL, 'July'),
+        (AUG, 'August'),
+        (SEP, 'September'),
+        (OCT, 'October'),
+        (NOV, 'November'),
+        (DEC, 'December')
+    )
     created_by = models.ForeignKey(User,
                                    on_delete=models.CASCADE)
-    year = models.SmallIntegerField(default=2015)
-    month = models.SmallIntegerField(default=1)
+    year = models.SmallIntegerField(choices=YEARS,
+                                    default=Y2015)
+    month = models.SmallIntegerField(choices=MONTHS,
+                                     default=JAN)
     total_cows = models.SmallIntegerField(default=0)
     aged_cows = models.SmallIntegerField(default=0)
     pregnant_cows = models.SmallIntegerField(default=0)

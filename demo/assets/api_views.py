@@ -18,7 +18,7 @@ from assets.serializers import PastureReadSerializer, PastureWriteSerializer
 from assets.serializers import SeedReadSerializer, SeedWriteSerializer
 
 class CowDetail(generics.RetrieveUpdateDestroyAPIView):
-    # Get / Update a Cow
+    # Get / Update /Destroy a Cow
     queryset = Cow.objects.all()
 
     def delete(self, *args, **kwargs):
@@ -38,7 +38,7 @@ class CowDetail(generics.RetrieveUpdateDestroyAPIView):
 
 class CowList(generics.ListCreateAPIView):
     # Get / Create cows 
-    queryset = Cow.objects.all()
+    queryset = Cow.objects.all().order_by('client');
 
     def get_serializer_class(self):
         if self.request.method in ('GET',):

@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<html>
+  <head>
+    {% block title %}{% endblock %}
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'css/farmApp.css' %}"/>
+  </head>
+<body>
+    <div class="flex-container">
+        <header>My REST Framework Django App</header>
+        <article class="article">
+            {% block login %}{% endblock %}
+        </article>
+        <footer>Copyright 2018 &copy;Tim Stilwell</footer>
+    </div>
+</body>
+</html>
+
