@@ -33,6 +33,14 @@
     footer {-webkit-order:3;order:3;}
 }
 
+div.raw {
+   text-align: left;
+   width: 100%;
+   border: 2px solid gray;
+   padding: 5px;
+   background-color: orange;
+}
+
 div {
    text-align: center;
    width: 100%;
@@ -57,27 +65,7 @@ header {
     text-align: center;
 }
 
-h {
-    text-align: center;
-}
-
-span.filler {
-   text-align: center;
-   width: 20%;
-   border: 2px solid gray;
-   padding: 5px;
-   background-color: orange;
-}
-
-span.left {
-   text-align: center;
-   width: 20%;
-   border: 2px solid gray;
-   padding: 5px;
-   background-color: orange;
-}
-
-#menu {
+table.left {
     text-align: left;
     font-family: arial, sans-serif;
     font-style: 10px;
@@ -85,7 +73,6 @@ span.left {
     padding: none;
     margin: 0 auto 0 auto;
 }
-
 table {
     text-align: center;
     font-family: arial, sans-serif;
@@ -93,6 +80,12 @@ table {
     border: 2px solid black;
     padding: none;
     margin: 0 auto 0 auto;
+}
+
+td.left {
+    border: 2px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
 
 td, th {

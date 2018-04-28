@@ -8,9 +8,12 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 
 from demo.api_views import UserCreate, UserDetail
-from demo.views import IndexView
+from demo.views import redirect, IndexView
 
 urlpatterns = [
+    #url(r'^$',
+    #    redirect,
+    #    name='redirect'),
     url(r'^$',
         IndexView.as_view(),
         name='index'),

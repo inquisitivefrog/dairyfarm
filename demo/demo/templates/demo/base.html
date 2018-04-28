@@ -6,6 +6,10 @@
     <script src="{% static 'angular/angular.min.js' %}"></script>
     <script src="{% static 'angular/angular-route.min.js' %}"></script>
     <script src="{% static 'js/farmApp.js' %}"></script>
+    <script src="{% static 'js/farmAppMRDCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppDDAssetsCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppDDSummaryCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppTestsCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppIndexCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppCowListCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppCowDetailCtrl.js' %}"></script>
@@ -30,9 +34,10 @@
             </ul>
             <p><b>Documentation</b></p>
             <ul>
-                <li><a href="/static/docs/mrd.html">Marketing Requirements</a></li>
-                <li><a href="/static/docs/assets_dd.html">Assets Design Doc</a></li>
-                <li><a href="/static/docs/summary_dd.html">Reporting Design Doc</a></li>
+                <li><a href="#/docs/mrd/">Marketing Requirements</a></li>
+                <li><a href="#/docs/dd_assets/">Assets Design Doc</a></li>
+                <li><a href="#/docs/dd_summary/">Reporting Design Doc</a></li>
+                <li><a href="#/docs/tests/">Unit Test Results</a></li>
             </ul>
             <p><b>Asset Management</b></p>
             <ul>
@@ -51,8 +56,8 @@
         </nav>
         <article class="article" ng-app="farmApp">
                 {% verbatim %}
-                    <div ng-view>
-                    </div>
+                <div ng-view>
+                </div>
                 {% endverbatim %}
         </article>
         <footer>Copyright 2018 &copy;Tim Stilwell</footer>
