@@ -1,0 +1,32 @@
+<h2>Exercises</h2>
+<table ng-if="exercises.length > 0">
+  <tr>
+    <th>ID</th>
+    <th>Client</th>
+    <th>Recorder</th>
+    <th>Occurred When</th>
+    <th>RFID</th>
+    <th>Breed</th>
+    <th>Color</th>
+    <th>Age</th>
+    <th>Pasture</th>
+  </tr>
+  <tr ng-repeat="exercise in exercises">
+    <td><a href="#{{exercise.link}}">{{exercise.id}}</a></td>
+    <td>{{exercise.client.name}}</td>
+    <td>{{exercise.recorded_by}}</td>
+    <td>{{exercise.exercise_time}}</td>
+    <td><a href="#{{exercise.cow.link}}">{{exercise.cow.rfid}}</a></td>
+    <td>{{exercise.cow.breed.name}}</td>
+    <td>{{exercise.cow.color.name}}</td>
+    <td>{{exercise.cow.age.name}}</td>
+    <td><a href="#{{exercise.pasture.link}}">{{exercise.pasture.name}}</a></td>
+  <tr>
+</table>
+
+<p ng-if="exercises.length == 0">No exercises recorded yet.</p>
+
+<div>
+<span text-align:left><a href="{{prev}}">Prev</a></span>
+<span text-align:right><a href="{{next}}">Next</a></span>
+</div>

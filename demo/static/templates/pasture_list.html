@@ -1,0 +1,24 @@
+<h2>Psature</h2>
+<table ng-if="pastures.length > 0">
+  <tr>
+    <th>ID</th>
+    <th>Client</th>
+    <th>Name</th>
+    <th>Fallow</th>
+    <th>Distance</th>
+  </tr>
+  <tr ng-repeat="pasture in pastures">
+    <td><a href="#{{pasture.link}}">{{pasture.id}}</a></td>
+    <td>{{pasture.client.name}}</td>
+    <td>{{pasture.name}}</td>
+    <td>{{pasture.fallow}}</td>
+    <td>{{pasture.distance}}</td>
+  <tr>
+</table>
+
+<p ng-if="pastures.length == 0">No pasture fields on this farm!</p>
+
+<div>
+<span text-align:left><a href="{{prev}}">Prev</a></span>
+<span text-align:right><a href="{{next}}">Next</a></span>
+</div>

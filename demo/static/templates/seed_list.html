@@ -1,0 +1,33 @@
+<h2>Seeds</h2>
+<table ng-if="seeds.length > 0">
+  <tr>
+    <th>ID</th>
+    <th>Client</th>
+    <th>Recorder</th>
+    <th>Year</th>
+    <th>Season</th>
+    <th>Pasture</th>
+    <th>Cereal Planted</th>
+    <th>Grass Planted</th>
+    <th>Legume Planted</th>
+  </tr>
+  <tr>
+  <tr ng-repeat="seed in seeds">
+    <td><a href="#{{seed.link}}">{{seed.id}}</a></td>
+    <td>{{seed.client.name}}</td>
+    <td>{{seed.seeded_by}}</td>
+    <td>{{seed.year}}</td>
+    <td>{{seed.season.name}}</td>
+    <td><a href="#{{seed.pasture.link}}">{{seed.pasture.name}}</a></td>
+    <td>{{seed.cereal_hay.name}}</td>
+    <td>{{seed.grass_hay.name}}</td>
+    <td>{{seed.legume_hay.name}}</td>
+  <tr>
+</table>
+
+<p ng-if="seeds.length == 0">No seeds planted yet.</p>
+
+<div>
+<span text-align:left><a href="{{prev}}">Prev</a></span>
+<span text-align:right><a href="{{next}}">Next</a></span>
+</div>

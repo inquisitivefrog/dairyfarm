@@ -1,0 +1,32 @@
+<h2>Milk</h2>
+<table ng-if="milk.length > 0">
+  <tr>
+    <th>ID</th>
+    <th>Client</th>
+    <th>Recorder</th>
+    <th>Occurred When</th>
+    <th>RFID</th>
+    <th>Breed</th>
+    <th>Color</th>
+    <th>Age</th>
+    <th>Gallons Collected</th>
+  </tr>
+  <tr ng-repeat="m in milk ">
+    <td><a href="#{{m.link}}">{{m.id}}</a></td>
+    <td>{{m.client.name}}</td>
+    <td>{{m.recorded_by}}</td>
+    <td>{{m.milking_time}}</td>
+    <td><a href="#{{m.cow.link}}">{{m.cow.rfid}}</a></td>
+    <td>{{m.cow.breed.name}}</td>
+    <td>{{m.cow.color.name}}</td>
+    <td>{{m.cow.age.name}}</td>
+    <td>{{m.gallons}}</td>
+  <tr>
+</table>
+
+<p ng-if="milk.length == 0">No milk collected yet.</p>
+
+<div>
+<span text-align:left><a href="{{prev}}">Prev</a></span>
+<span text-align:right><a href="{{next}}">Next</a></span>
+</div>

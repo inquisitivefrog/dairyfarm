@@ -1,0 +1,28 @@
+<h2>Milk</h2>
+<table ng-if="milk">
+  <tr>
+    <th>ID</th>
+    <th>Client</th>
+    <th>Recorder</th>
+    <th>Occurred When</th>
+    <th>RFID</th>
+    <th>Breed</th>
+    <th>Color</th>
+    <th>Age</th>
+    <th>Gallons Collected</th>
+  </tr>
+  <tr>
+    <td>{{milk.id}}</td>
+    <td>{{milk.client.name}}</td>
+    <td>{{milk.recorded_by}}</td>
+    <td>{{milk.milking_time}}</td>
+    <td><a href="#{{milk.cow.link}}">{{milk.cow.rfid}}</a></td>
+    <td>{{milk.cow.breed.name}}</td>
+    <td>{{milk.cow.color.name}}</td>
+    <td>{{milk.cow.age.name}}</td>
+    <td>{{milk.gallons}}</td>
+  <tr>
+</table>
+<p/>
+<img src="{{milk.cow.breed.url}}" alt="Image failed to load" height="200" width="400">
+

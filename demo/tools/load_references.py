@@ -158,18 +158,18 @@ def load_pastures():
     from assets.models import Client, Pasture
     clients = Client.objects.all() 
     client = clients[randint(0, len(clients) - 1)]
-    pastures = {'North': '/static/images/regions/north.png',
-                'West': '/static/images/regions/west.png',
-                'South': '/static/images/regions/south.png',
-                'East': '/static/images/regions/east.png',
-                'Central North': '/static/images/regions/central_north.png',
-                'Central West': '/static/images/regions/central_west.png',
-                'Central South': '/static/images/regions/central_south.png',
-                'Central East': '/static/images/regions/central_east.png',
-                'North West': '/static/images/regions/north_west.png',
-                'North East': '/static/images/regions/north_east.png',
-                'South West': '/static/images/regions/south_west.png',
-                'South East': '/static/images/regions/south_east.png',
+    pastures = {'North': '/static/images/regions/north.jpg',
+                'West': '/static/images/regions/west.jpg',
+                'South': '/static/images/regions/south.jpg',
+                'East': '/static/images/regions/east.jpg',
+                'Central North': '/static/images/regions/central_north.jpg',
+                'Central West': '/static/images/regions/central_west.jpg',
+                'Central South': '/static/images/regions/central_south.jpg',
+                'Central East': '/static/images/regions/central_east.jpg',
+                'North West': '/static/images/regions/north_west.jpg',
+                'North East': '/static/images/regions/north_east.jpg',
+                'South West': '/static/images/regions/south_west.jpg',
+                'South East': '/static/images/regions/south_east.jpg',
                 'Pen': '/static/images/regions/pen.png'}
     for name, url in pastures.items(): 
         data = {'client': client,

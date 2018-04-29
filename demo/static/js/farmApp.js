@@ -85,6 +85,14 @@ farmApp.config(function ($routeProvider) {
           templateUrl: "/static/templates/event_detail.html",
           controller: "EventDetailController"
       })
+      .when("/assets/api/exercises/", {
+          templateUrl: "/static/templates/exercise_list.html",
+          controller: "ExerciseListController"
+      })
+      .when("/assets/api/exercises/:exercise_id/", {
+          templateUrl: "/static/templates/exercise_detail.html",
+          controller: "ExerciseDetailController"
+      })
       .when("/assets/api/healthrecords/", {
           templateUrl: "/static/templates/healthrecord_list.html",
           controller: "HealthRecordListController"
@@ -92,6 +100,30 @@ farmApp.config(function ($routeProvider) {
       .when("/assets/api/healthrecords/:hr_id/", {
           templateUrl: "/static/templates/healthrecord_detail.html",
           controller: "HealthRecordDetailController"
+      })
+      .when("/assets/api/milk/", {
+          templateUrl: "/static/templates/milk_list.html",
+          controller: "MilkListController"
+      })
+      .when("/assets/api/milk/:milk_id/", {
+          templateUrl: "/static/templates/milk_detail.html",
+          controller: "MilkDetailController"
+      })
+      .when("/assets/api/pastures/", {
+          templateUrl: "/static/templates/pasture_list.html",
+          controller: "PastureListController"
+      })
+      .when("/assets/api/pastures/:pasture_id/", {
+          templateUrl: "/static/templates/pasture_detail.html",
+          controller: "PastureDetailController"
+      })
+      .when("/assets/api/seeds/", {
+          templateUrl: "/static/templates/seed_list.html",
+          controller: "SeedListController"
+      })
+      .when("/assets/api/seeds/:seed_id/", {
+          templateUrl: "/static/templates/seed_detail.html",
+          controller: "SeedDetailController"
       })
       .when("/assets/api/cows/:cow_id/results/", {
           templateUrl: "/static/templates/herd_results.html",
