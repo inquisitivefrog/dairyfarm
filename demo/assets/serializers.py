@@ -86,6 +86,12 @@ class TreatmentSerializer(serializers.ModelSerializer):
         lookup_field = 'pk'
         model = Treatment 
 
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ('id', 'username')
+        lookup_field = 'pk'
+        model = User
+
 class VaccineSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('id', 'name')

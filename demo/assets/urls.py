@@ -2,6 +2,7 @@ from django.conf import settings
 from django.conf.urls import url
 from django.conf.urls.static import static
 
+from assets.api_views import AgeList, BreedList, ClientList, ColorList, UserList
 from assets.api_views import CowDetail, CowList, CowListByMonth, CowListByYear
 from assets.api_views import EventDetail, EventList
 from assets.api_views import ExerciseDetail, ExerciseList, HealthRecordDetail
@@ -16,6 +17,21 @@ urlpatterns = [
     url(r'^$',
         IndexView.as_view(),
         name='asset-index'),
+    url(r'^api/ages/$',
+        AgeList.as_view(),
+        name='age-list'),
+    url(r'^api/breeds/$',
+        BreedList.as_view(),
+        name='breed-list'),
+    url(r'^api/clients/$',
+        ClientList.as_view(),
+        name='client-list'),
+    url(r'^api/colors/$',
+        ColorList.as_view(),
+        name='color-list'),
+    url(r'^api/users/$',
+        UserList.as_view(),
+        name='user-list'),
     url(r'^api/cows/$',
         CowList.as_view(),
         name='cow-list'),

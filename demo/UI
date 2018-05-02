@@ -1,0 +1,15 @@
+
+Download Desired Libraries
+(demo) $ brew update
+(demo) $ brew install wget
+(demo) $ cd static/
+(demo) $ mkdir angular-1.6.9/
+(demo) $ cd angular-1.6.9/
+(demo) $ wget "http://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"
+(demo) $ wget "http://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"
+(demo) $ wget "http://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-cookies.js"
+NOTE: get angular-auth.js from http://jasonwatmore.com/post/2014/05/26/angularjs-basic-http-authentication-example
+(demo) $ mkdir ../lodash-4.17.10/
+(demo) $ cd ../lodash-4.17.10/
+(demo) $ wget https://raw.githubusercontent.com/lodash/lodash/4.17.10-npm/core.min.js
+

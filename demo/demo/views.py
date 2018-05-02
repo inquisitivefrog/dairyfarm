@@ -1,11 +1,11 @@
 from django.contrib.auth.models import User
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 from django.views import generic
 
 def redirect(request):
     destination = '/summary/'
-    return redirect(destination)
+    return HttpResponseRedirect(destination)
 
 class IndexView(generic.ListView):
     queryset = User.objects.all()

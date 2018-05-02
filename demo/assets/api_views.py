@@ -1,12 +1,15 @@
+from django.contrib.auth.models import User
 from django.db.models import Sum
 
 from rest_framework import generics
 from rest_framework import status
 from rest_framework.response import Response
 
-from assets.models import Cow, Event, Exercise, HealthRecord
-from assets.models import Milk, Pasture, Seed
+from assets.models import Age, Breed, Client, Color, Cow, Event, Exercise
+from assets.models import HealthRecord, Milk, Pasture, Seed
 from assets.helpers import AssetTime
+from assets.serializers import AgeSerializer, BreedSerializer, ColorSerializer
+from assets.serializers import ClientSerializer, UserSerializer
 from assets.serializers import CowReadSerializer, CowWriteSerializer
 from assets.serializers import EventReadSerializer, EventWriteSerializer
 from assets.serializers import ExerciseReadSerializer, ExerciseWriteSerializer
@@ -16,6 +19,34 @@ from assets.serializers import MilkReadSerializer, MilkWriteSerializer
 from assets.serializers import MilkSummaryReadSerializer
 from assets.serializers import PastureReadSerializer, PastureWriteSerializer
 from assets.serializers import SeedReadSerializer, SeedWriteSerializer
+
+from rest_framework.authentication import BasicAuthentication
+from rest_framework.authentication import SessionAuthentication
+
+class CsrfExemptSessionAuthentication(SessionAuthentication):
+
+    def enforce_csrf(self, request):
+        return  # Temporarily bypass CSRF for debugging
+
+class AgeList(generics.ListAPIView):
+    # Get available ages
+    queryset = Age.objects.all()
+    serializer_class = AgeSerializer
+
+class BreedList(generics.ListAPIView):
+    # Get available cattle breeds
+    queryset = Breed.objects.all()
+    serializer_class = BreedSerializer
+
+class ClientList(generics.ListAPIView):
+    # Get available clients
+    queryset = Client.objects.all()
+    serializer_class = ClientSerializer
+
+class ColorList(generics.ListAPIView):
+    # Get available cattle breed colors
+    queryset = Color.objects.all()
+    serializer_class = ColorSerializer
 
 class CowDetail(generics.RetrieveUpdateDestroyAPIView):
     # Get / Update /Destroy a Cow
@@ -37,8 +68,10 @@ class CowDetail(generics.RetrieveUpdateDestroyAPIView):
         return CowWriteSerializer
 
 class CowList(generics.ListCreateAPIView):
-    # Get / Create cows 
+    # Get / Purchase cows 
     queryset = Cow.objects.all().order_by('client');
+    # authentication_classes = (CsrfExemptSessionAuthentication,
+    #                           BasicAuthentication)
 
     def get_serializer_class(self):
         if self.request.method in ('GET',):
@@ -232,3 +265,9 @@ class SeedList(generics.ListCreateAPIView):
         if self.request.method in ('GET',):
             return SeedReadSerializer
         return SeedWriteSerializer
+
+class UserList(generics.ListAPIView):
+    # Get available users
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
