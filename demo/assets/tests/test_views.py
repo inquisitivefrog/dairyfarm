@@ -15,7 +15,7 @@ class TestIndexView(APITestCase):
     def setUp(self):
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.request = None
-        self.url = django_reverse('assets:index')
+        self.url = django_reverse('assets:asset-index')
         self.user = User.objects.get(username=TestData.get_random_user())
 
     def tearDown(self):
@@ -63,7 +63,7 @@ class TestIndexView(APITestCase):
                           soup.findAll('script')[0]['src'])
         self.assertEquals('/static/angular/angular-route.min.js',
                           soup.findAll('script')[1]['src'])
-        self.assertEquals('/static/app.js',
+        self.assertEquals('/static/js/farmApp.js',
                           soup.findAll('script')[2]['src'])
         self.assertEquals('farmApp',
                           soup.find('body')['ng-app'])

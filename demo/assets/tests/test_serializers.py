@@ -935,7 +935,7 @@ class TestPastureReadSerializer(APITestCase):
         self.assertRegex(actual.data['name'],
                          '\w+')
         self.assertRegex(actual.data['url'],
-                         '/static/images/regions/\w+\.png$')
+                         '/static/images/regions/\w+\.jpg$')
         self.assertIsInstance(actual.data['fallow'],
                               bool)
         self.assertLessEqual(1,
@@ -1479,7 +1479,7 @@ class TestCowReadSerializer(APITestCase):
         self.assertEqual(9,
                          len(colors))
         users = User.objects.all()
-        self.assertEqual(3,
+        self.assertEqual(4,
                          len(users))
         herd = Cow.objects.all()
         self.assertLessEqual(10,
@@ -1572,7 +1572,7 @@ class TestCowWriteSerializer(APITestCase):
         self.assertEqual(9,
                          len(colors))
         users = User.objects.all()
-        self.assertEqual(3,
+        self.assertEqual(4,
                          len(users))
         herd = Cow.objects.all()
         self.assertLessEqual(10,
@@ -1710,7 +1710,7 @@ class TestEventReadSerializer(APITestCase):
         self.assertLessEqual(10,
                              len(herd))
         users = User.objects.all()
-        self.assertEqual(3,
+        self.assertEqual(4,
                          len(users))
         events = Event.objects.all()
         self.assertLessEqual(10,
@@ -1819,7 +1819,7 @@ class TestEventWriteSerializer(APITestCase):
         self.assertLessEqual(10,
                              len(herd))
         users = User.objects.all()
-        self.assertEqual(3,
+        self.assertEqual(4,
                          len(users))
         events = Event.objects.all()
         self.assertLessEqual(10,
@@ -1983,7 +1983,7 @@ class TestHealthRecordReadSerializer(APITestCase):
         self.assertEqual(6,
                          len(vaccines))
         users = User.objects.all()
-        self.assertEqual(3,
+        self.assertEqual(4,
                          len(users))
         healthrecords = HealthRecord.objects.all()
         self.assertLessEqual(10,
@@ -2147,7 +2147,7 @@ class TestHealthRecordWriteSerializer(APITestCase):
         self.assertEqual(6,
                          len(vaccines))
         users = User.objects.all()
-        self.assertEqual(3,
+        self.assertEqual(4,
                          len(users))
         healthrecords = HealthRecord.objects.all()
         self.assertLessEqual(10,
@@ -2356,7 +2356,7 @@ class TestMilkReadSerializer(APITestCase):
         self.assertLessEqual(10,
                              len(herd))
         users = User.objects.all()
-        self.assertEqual(3,
+        self.assertEqual(4,
                          len(users))
         dairy = Milk.objects.all()
         self.assertLessEqual(10,
@@ -2461,7 +2461,7 @@ class TestMilkWriteSerializer(APITestCase):
         self.assertLessEqual(10,
                              len(herd))
         users = User.objects.all()
-        self.assertEqual(3,
+        self.assertEqual(4,
                          len(users))
         dairy = Milk.objects.all()
         self.assertLessEqual(10,
@@ -2615,7 +2615,7 @@ class TestSeedReadSerializer(APITestCase):
         self.assertEqual(4,
                          len(seasons))
         users = User.objects.all()
-        self.assertEqual(3,
+        self.assertEqual(4,
                          len(users))
         seeds = Seed.objects.all()
         self.assertLessEqual(10,
@@ -2731,7 +2731,7 @@ class TestSeedWriteSerializer(APITestCase):
         self.assertEqual(4,
                          len(seasons))
         users = User.objects.all()
-        self.assertEqual(3,
+        self.assertEqual(4,
                          len(users))
         seeds = Seed.objects.all()
         self.assertLessEqual(10,
@@ -2889,7 +2889,7 @@ class TestExerciseReadSerializer(APITestCase):
         self.assertEqual(13,
                          len(fields))
         users = User.objects.all()
-        self.assertEqual(3,
+        self.assertEqual(4,
                          len(users))
 
     def test_01_retrieve(self):
@@ -3012,7 +3012,7 @@ class TestExerciseWriteSerializer(APITestCase):
         self.assertEqual(13,
                          len(fields))
         users = User.objects.all()
-        self.assertEqual(3,
+        self.assertEqual(4,
                          len(users))
 
     def test_01_create(self):

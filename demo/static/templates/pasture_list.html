@@ -1,4 +1,35 @@
-<h2>Psature</h2>
+<h2>Pasture</h2>
+<form action="{% url 'assets:pasture-list' %} method="post">
+    <table>
+    <tr>
+        <th>Client:</th>
+        <td>
+            <select ng-init="selectedClient=selectedClient || clients[0].name" 
+                    ng-model="selectedClient" 
+                    ng-options="client.name for client in clients">
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>Name:</th>
+        <td><input type="text" ng-init="inputName=New" ng-model="inputName" ng-trim="false" required/></td>
+    </tr>
+    <tr>
+        <th>Fallow:</th>
+        <td>
+            <input type="radio" ng-model="inputFallow" value="true"/> Yes<br>
+            <input type="radio" ng-model="inputFallow" value="false" ng-checked="true"/> No<br>
+        </td>
+    </tr>
+    <tr>
+        <th>Distance:</th>
+        <td><input type="number" ng-init="inputDistance=1" min=1 max=15 ng-model="inputDistance" required/></td>
+    </tr>
+    </table>
+    <input type="button" ng-click="cultivate(inputName, inputFallow)" value="Cultivate"/>
+</form>
+
+<h2>{{total}} Cultivated Pastures!</h2>
 <table ng-if="pastures.length > 0">
   <tr>
     <th>ID</th>
@@ -19,6 +50,6 @@
 <p ng-if="pastures.length == 0">No pasture fields on this farm!</p>
 
 <div>
-<span text-align:left><a href="{{prev}}">Prev</a></span>
-<span text-align:right><a href="{{next}}">Next</a></span>
+<span text-align:left><a ng-if="prev" href="{{prev}}">Prev</a></span>
+<span text-align:right><a ng-if="next" href="{{next}}">Next</a></span>
 </div>

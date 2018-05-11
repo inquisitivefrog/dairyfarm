@@ -9,11 +9,13 @@ from rest_framework.reverse import django_reverse
 from rest_framework.test import APIRequestFactory, APITestCase
 from rest_framework.test import force_authenticate
 
-from assets.api_views import CowDetail, CowList, CowListByMonth, CowListByYear
-from assets.api_views import EventDetail, EventList, ExerciseDetail
-from assets.api_views import ExerciseList, HealthRecordDetail
-from assets.api_views import HealthRecordList, MilkDetail, MilkList
-from assets.api_views import SeedDetail, SeedList
+from assets.api_views import CowDetailView, CowListView
+from assets.api_views import CowListByMonthView, CowListByYearView
+from assets.api_views import EventDetailView, EventListView
+from assets.api_views import ExerciseDetailView, ExerciseListView
+from assets.api_views import HealthRecordDetailView, HealthRecordListView
+from assets.api_views import MilkDetailView, MilkListView
+from assets.api_views import SeedDetailView, SeedListView
 from assets.models import Action, Age, Breed, CerealHay, Client, Color, Cow
 from assets.models import Event, Exercise, GrassHay, HealthRecord, Illness
 from assets.models import Injury, LegumeHay, Milk, Pasture
@@ -59,7 +61,7 @@ class TestCowListView(APITestCase):
                                        content_type=TestData.get_format())
         force_authenticate(request, user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = CowList.as_view()(request=request)
+        response = CowListView.as_view()(request=request)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -75,7 +77,7 @@ class TestCowListView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = CowList.as_view()(request=request)
+        response = CowListView.as_view()(request=request)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -106,7 +108,7 @@ class TestCowListView(APITestCase):
                            user=self.user)
         request.POST = self.data
         self.assertTrue(self.user.is_authenticated)
-        response = CowList.as_view()(request=request)
+        response = CowListView.as_view()(request=request)
         self.assertEqual(201,
                          response.status_code)
         self.assertEqual('Created',
@@ -160,7 +162,7 @@ class TestCowListByMonthView(APITestCase):
                                        content_type=TestData.get_format())
         force_authenticate(request, user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = CowListByMonth.as_view()(request=request)
+        response = CowListByMonthView.as_view()(request=request)
         if not response.is_rendered:
              response = response.render()
         self.assertEqual(200,
@@ -189,7 +191,7 @@ class TestCowListByMonthView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = CowListByMonth.as_view()(request=request)
+        response = CowListByMonthView.as_view()(request=request)
         if not response.is_rendered:
              response = response.render()
         self.assertEqual(200,
@@ -220,7 +222,7 @@ class TestCowListByMonthView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = CowListByMonth.as_view()(request=request, **kwargs)
+        response = CowListByMonthView.as_view()(request=request, **kwargs)
         if not response.is_rendered:
              response = response.render()
         self.assertEqual(200,
@@ -283,7 +285,7 @@ class TestCowListByYearView(APITestCase):
                                        content_type=TestData.get_format())
         force_authenticate(request, user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = CowListByYear.as_view()(request=request)
+        response = CowListByYearView.as_view()(request=request)
         if not response.is_rendered:
              response = response.render()
         self.assertEqual(200,
@@ -312,7 +314,7 @@ class TestCowListByYearView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = CowListByYear.as_view()(request=request)
+        response = CowListByYearView.as_view()(request=request)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -341,7 +343,7 @@ class TestCowListByYearView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = CowListByYear.as_view()(request=request, **kwargs)
+        response = CowListByYearView.as_view()(request=request, **kwargs)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -401,8 +403,8 @@ class TestCowDetailView(APITestCase):
                                        content_type=TestData.get_format())
         force_authenticate(request, user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = CowDetail.as_view()(request=request,
-                                       pk=self.pk)
+        response = CowDetailView.as_view()(request=request,
+                                           pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -418,8 +420,8 @@ class TestCowDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = CowDetail.as_view()(request=request,
-                                       pk=self.pk)
+        response = CowDetailView.as_view()(request=request,
+                                           pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -439,8 +441,8 @@ class TestCowDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = CowDetail.as_view()(request=request,
-                                       pk=self.pk)
+        response = CowDetailView.as_view()(request=request,
+                                           pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -471,8 +473,8 @@ class TestCowDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = CowDetail.as_view()(request=request,
-                                       pk=self.pk)
+        response = CowDetailView.as_view()(request=request,
+                                           pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -500,8 +502,8 @@ class TestCowDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = CowDetail.as_view()(request=request,
-                                       pk=self.pk)
+        response = CowDetailView.as_view()(request=request,
+                                           pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -576,7 +578,7 @@ class TestSeedListView(APITestCase):
                                        content_type=TestData.get_format())
         force_authenticate(request, user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = SeedList.as_view()(request=request)
+        response = SeedListView.as_view()(request=request)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -592,7 +594,7 @@ class TestSeedListView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = SeedList.as_view()(request=request)
+        response = SeedListView.as_view()(request=request)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -623,7 +625,7 @@ class TestSeedListView(APITestCase):
                            user=self.user)
         request.POST = self.data
         self.assertTrue(self.user.is_authenticated)
-        response = SeedList.as_view()(request=request)
+        response = SeedListView.as_view()(request=request)
         self.assertEqual(201,
                          response.status_code)
         self.assertEqual('Created',
@@ -701,8 +703,8 @@ class TestSeedDetailView(APITestCase):
                                        content_type=TestData.get_format())
         force_authenticate(request, user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = SeedDetail.as_view()(request=request,
-                                        pk=self.pk)
+        response = SeedDetailView.as_view()(request=request,
+                                            pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -718,8 +720,8 @@ class TestSeedDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = SeedDetail.as_view()(request=request,
-                                        pk=self.pk)
+        response = SeedDetailView.as_view()(request=request,
+                                            pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -739,8 +741,8 @@ class TestSeedDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = SeedDetail.as_view()(request=request,
-                                        pk=self.pk)
+        response = SeedDetailView.as_view()(request=request,
+                                            pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -762,8 +764,8 @@ class TestSeedDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = SeedDetail.as_view()(request=request,
-                                        pk=self.pk)
+        response = SeedDetailView.as_view()(request=request,
+                                            pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -782,8 +784,8 @@ class TestSeedDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = SeedDetail.as_view()(request=request,
-                                        pk=self.pk)
+        response = SeedDetailView.as_view()(request=request,
+                                            pk=self.pk)
         self.assertEqual(405,
                          response.status_code)
         self.assertEqual('Method Not Allowed',
@@ -832,7 +834,7 @@ class TestEventListView(APITestCase):
                                        content_type=TestData.get_format())
         force_authenticate(request, user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = EventList.as_view()(request=request)
+        response = EventListView.as_view()(request=request)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -848,7 +850,7 @@ class TestEventListView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = EventList.as_view()(request=request)
+        response = EventListView.as_view()(request=request)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -879,7 +881,7 @@ class TestEventListView(APITestCase):
                            user=self.user)
         request.POST = self.data
         self.assertTrue(self.user.is_authenticated)
-        response = EventList.as_view()(request=request)
+        response = EventListView.as_view()(request=request)
         self.assertEqual(201,
                          response.status_code)
         self.assertEqual('Created',
@@ -938,8 +940,8 @@ class TestEventDetailView(APITestCase):
                                        content_type=TestData.get_format())
         force_authenticate(request, user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = EventDetail.as_view()(request=request,
-                                         pk=self.pk)
+        response = EventDetailView.as_view()(request=request,
+                                             pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -955,8 +957,8 @@ class TestEventDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = EventDetail.as_view()(request=request,
-                                         pk=self.pk)
+        response = EventDetailView.as_view()(request=request,
+                                             pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -976,8 +978,8 @@ class TestEventDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = EventDetail.as_view()(request=request,
-                                         pk=self.pk)
+        response = EventDetailView.as_view()(request=request,
+                                             pk=self.pk)
         self.assertEqual(405,
                          response.status_code)
         self.assertEqual('Method Not Allowed',
@@ -991,8 +993,8 @@ class TestEventDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = EventDetail.as_view()(request=request,
-                                         pk=self.pk)
+        response = EventDetailView.as_view()(request=request,
+                                             pk=self.pk)
         self.assertEqual(405,
                          response.status_code)
         self.assertEqual('Method Not Allowed',
@@ -1004,8 +1006,8 @@ class TestEventDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = EventDetail.as_view()(request=request,
-                                         pk=self.pk)
+        response = EventDetailView.as_view()(request=request,
+                                             pk=self.pk)
         self.assertEqual(405,
                          response.status_code)
         self.assertEqual('Method Not Allowed',
@@ -1054,7 +1056,7 @@ class TestExerciseListView(APITestCase):
                                        content_type=TestData.get_format())
         force_authenticate(request, user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = ExerciseList.as_view()(request=request)
+        response = ExerciseListView.as_view()(request=request)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -1070,7 +1072,7 @@ class TestExerciseListView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = ExerciseList.as_view()(request=request)
+        response = ExerciseListView.as_view()(request=request)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -1101,7 +1103,7 @@ class TestExerciseListView(APITestCase):
                            user=self.user)
         request.POST = self.data
         self.assertTrue(self.user.is_authenticated)
-        response = ExerciseList.as_view()(request=request)
+        response = ExerciseListView.as_view()(request=request)
         self.assertEqual(201,
                          response.status_code)
         self.assertEqual('Created',
@@ -1160,8 +1162,8 @@ class TestExerciseDetailView(APITestCase):
                                        content_type=TestData.get_format())
         force_authenticate(request, user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = ExerciseDetail.as_view()(request=request,
-                                            pk=self.pk)
+        response = ExerciseDetailView.as_view()(request=request,
+                                                pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -1177,8 +1179,8 @@ class TestExerciseDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = ExerciseDetail.as_view()(request=request,
-                                            pk=self.pk)
+        response = ExerciseDetailView.as_view()(request=request,
+                                                pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -1198,8 +1200,8 @@ class TestExerciseDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = ExerciseDetail.as_view()(request=request,
-                                            pk=self.pk)
+        response = ExerciseDetailView.as_view()(request=request,
+                                                pk=self.pk)
         self.assertEqual(405,
                          response.status_code)
         self.assertEqual('Method Not Allowed',
@@ -1213,8 +1215,8 @@ class TestExerciseDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = ExerciseDetail.as_view()(request=request,
-                                            pk=self.pk)
+        response = ExerciseDetailView.as_view()(request=request,
+                                                pk=self.pk)
         self.assertEqual(405,
                          response.status_code)
         self.assertEqual('Method Not Allowed',
@@ -1226,8 +1228,8 @@ class TestExerciseDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = ExerciseDetail.as_view()(request=request,
-                                            pk=self.pk)
+        response = ExerciseDetailView.as_view()(request=request,
+                                                pk=self.pk)
         self.assertEqual(405,
                          response.status_code)
         self.assertEqual('Method Not Allowed',
@@ -1271,7 +1273,7 @@ class TestMilkListView(APITestCase):
                                        content_type=TestData.get_format())
         force_authenticate(request, user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = MilkList.as_view()(request=request)
+        response = MilkListView.as_view()(request=request)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -1287,7 +1289,7 @@ class TestMilkListView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = MilkList.as_view()(request=request)
+        response = MilkListView.as_view()(request=request)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -1318,7 +1320,7 @@ class TestMilkListView(APITestCase):
                            user=self.user)
         request.POST = self.data
         self.assertTrue(self.user.is_authenticated)
-        response = MilkList.as_view()(request=request)
+        response = MilkListView.as_view()(request=request)
         self.assertEqual(201,
                          response.status_code)
         self.assertEqual('Created',
@@ -1372,8 +1374,8 @@ class TestMilkDetailView(APITestCase):
                                        content_type=TestData.get_format())
         force_authenticate(request, user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = MilkDetail.as_view()(request=request,
-                                        pk=self.pk)
+        response = MilkDetailView.as_view()(request=request,
+                                            pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -1389,7 +1391,7 @@ class TestMilkDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = MilkDetail.as_view()(request=request,
+        response = MilkDetailView.as_view()(request=request,
                                             pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
@@ -1410,8 +1412,8 @@ class TestMilkDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = MilkDetail.as_view()(request=request,
-                                        pk=self.pk)
+        response = MilkDetailView.as_view()(request=request,
+                                            pk=self.pk)
         self.assertEqual(405,
                          response.status_code)
         self.assertEqual('Method Not Allowed',
@@ -1425,8 +1427,8 @@ class TestMilkDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = MilkDetail.as_view()(request=request,
-                                        pk=self.pk)
+        response = MilkDetailView.as_view()(request=request,
+                                            pk=self.pk)
         self.assertEqual(405,
                          response.status_code)
         self.assertEqual('Method Not Allowed',
@@ -1438,8 +1440,8 @@ class TestMilkDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = MilkDetail.as_view()(request=request,
-                                        pk=self.pk)
+        response = MilkDetailView.as_view()(request=request,
+                                            pk=self.pk)
         self.assertEqual(405,
                          response.status_code)
         self.assertEqual('Method Not Allowed',
@@ -1510,7 +1512,7 @@ class TestHealthRecordListView(APITestCase):
                                        content_type=TestData.get_format())
         force_authenticate(request, user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = HealthRecordList.as_view()(request=request)
+        response = HealthRecordListView.as_view()(request=request)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -1526,7 +1528,7 @@ class TestHealthRecordListView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = HealthRecordList.as_view()(request=request)
+        response = HealthRecordListView.as_view()(request=request)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -1557,7 +1559,7 @@ class TestHealthRecordListView(APITestCase):
                            user=self.user)
         request.POST = self.data
         self.assertTrue(self.user.is_authenticated)
-        response = HealthRecordList.as_view()(request=request)
+        response = HealthRecordListView.as_view()(request=request)
         self.assertEqual(201,
                          response.status_code)
         self.assertEqual('Created',
@@ -1637,8 +1639,8 @@ class TestHealthRecordDetailView(APITestCase):
                                        content_type=TestData.get_format())
         force_authenticate(request, user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = HealthRecordDetail.as_view()(request=request,
-                                                pk=self.pk)
+        response = HealthRecordDetailView.as_view()(request=request,
+                                                    pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -1654,8 +1656,8 @@ class TestHealthRecordDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = HealthRecordDetail.as_view()(request=request,
-                                                pk=self.pk)
+        response = HealthRecordDetailView.as_view()(request=request,
+                                                    pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -1675,8 +1677,8 @@ class TestHealthRecordDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = HealthRecordDetail.as_view()(request=request,
-                                                pk=self.pk)
+        response = HealthRecordDetailView.as_view()(request=request,
+                                                    pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -1700,8 +1702,8 @@ class TestHealthRecordDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = HealthRecordDetail.as_view()(request=request,
-                                                pk=self.pk)
+        response = HealthRecordDetailView.as_view()(request=request,
+                                                    pk=self.pk)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -1743,8 +1745,8 @@ class TestHealthRecordDetailView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = HealthRecordDetail.as_view()(request=request,
-                                                pk=self.pk)
+        response = HealthRecordDetailView.as_view()(request=request,
+                                                    pk=self.pk)
         self.assertEqual(405,
                          response.status_code)
         self.assertEqual('Method Not Allowed',

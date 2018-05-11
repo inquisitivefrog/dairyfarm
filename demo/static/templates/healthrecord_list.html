@@ -1,32 +1,209 @@
-<h2>Health Records</h2>
-<table ng-if="hrs.length > 0">
+<h2>Inspect a Cow</h2>
+<form action="{% url 'assets:healthrecord-list' %} method="post">
+    <table>
+    <tr>
+        <th>Client:</th>
+        <td>
+            <select ng-init="selectedClient=selectedClient || clients[0].name" 
+                    ng-model="selectedClient" 
+                    ng-options="client.name for client in clients">
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>Recorder:</th>
+        <td>
+            <select ng-init="selectedRecorder=users[0].username" 
+                    ng-model="selectedRecorder" 
+                    ng-options="user.username for user in users">
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>Inspection Time:</th>
+        <td>
+            <input type="datetime-local" ng-init="inputTime=currentDateTime()"
+                   ng-model="inputTime" placeholder="yyyy-MM-ddTHH:mm:ss" required/>
+        </td>
+    </tr>
+    <tr>
+        <th>RFID:</th>
+        <td>
+            <select ng-init="selectedCow=cows[0].rfid" 
+                    ng-model="selectedCow" 
+                    ng-options="cow.rfid for cow in cows">
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>Temperature: 100.4-102.0</th>
+        <td>
+            <input type="number" placeholder="nnn.n" ng-model="inputTemp"
+                   ng-pattern="/^[0-9]{2,3}(\.[0-9])?$/" step="0.1" />
+        </td>
+    </tr>
+    <tr>
+        <th>Respiratory Rate: 26-50</th>
+        <td>
+            <input type="number" placeholder="nn" ng-model="inputRR"
+                   ng-pattern="/^[0-9]{2}?$/" step="1" />
+        </td>
+    </tr>
+    <tr>
+        <th>Heart Rate: 48.0-84.0</th>
+        <td>
+            <input type="number" placeholder="nn.n" ng-model="inputHR"
+                   ng-pattern="/^[0-9]{2}(\.[0-9])?$/" step="0.1" />
+        </td>
+    </tr>
+    <tr>
+        <th>Blood Pressure: 130-150</th>
+        <td>
+            <input type="number" placeholder="nnn" ng-model="inputBP"
+                   ng-pattern="/^[0-9]{2,3}?$/" step="1" />
+        </td>
+    </tr>
+    <tr>
+        <th>Weight: 450-550 lb</th>
+        <td>
+            <input type="number" placeholder="nnn" ng-model="inputWeight"
+                   ng-pattern="/^[0-9]{3}?$/" step="1" />
+        </td>
+    </tr>
+    <tr>
+        <th>Body Condition Status: 3.0-3.5</th>
+        <td>
+            <input type="number" placeholder="n.n" ng-model="inputBCS"
+                   ng-pattern="/^[0-9](\.[0-9])?$/" step="0.1" />
+        </td>
+    </tr>
+    <tr>
+        <th>Status:</th>
+        <td>
+            <select ng-init="selectedStatus=statuses[0].name" 
+                    ng-model="selectedStatus" 
+                    ng-options="status.name for status in statuses">
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>Illness:</th>
+        <td>
+            <select ng-model="selectedIllness" 
+                    ng-options="illness.diagnosis for illness in illnesses">
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>Injury:</th>
+        <td>
+            <select ng-model="selectedInjury" 
+                    ng-options="injury.diagnosis for injury in injuries">
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>Treatment:</th>
+        <td>
+            <select ng-model="selectedTreatment" 
+                    ng-options="treatment.name for treatment in treatments">
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>Vaccine:</th>
+        <td>
+            <select ng-model="selectedVaccine" 
+                    ng-options="vaccine.name for vaccine in vaccines">
+            </select>
+        </td>
+    </tr>
+    </table>
+    <input type="button" ng-click="inspect()" value="Inspect"/>
+</form>
+
+<h2>{{total}} Cattle Inspections!</h2>
+<table ng-if="hrs.length > 0" ng-repeat="hr in hrs">
   <tr>
     <th>ID</th>
-    <th>Client</th>
-    <th>Recorder</th>
-    <th>Inspected When</th>
-    <th>RFID</th>
-    <th>Breed</th>
-    <th>Color</th>
-    <th>Age</th>
-    <th>Status</th>
-  </tr>
-  <tr ng-repeat="hr in hrs">
     <td><a href="#{{hr.link}}">{{hr.id}}</a></td>
-    <td>{{hr.client.name}}</td>
-    <td>{{hr.recorded_by}}</td>
-    <td>{{hr.inspection_time}}</td>
-    <td><a href="#{{hr.cow.link}}">{{hr.cow.rfid}}</a></td>
-    <td>{{hr.cow.breed.name}}</td>
-    <td>{{hr.cow.color.name}}</td>
-    <td>{{hr.cow.age.name}}</td>
-    <td>{{hr.status.name}}</td>
+  </tr>
   <tr>
+    <th>Client</th>
+    <td>{{hr.client.name}}</td>
+  </tr>
+    <th>Recorder</th>
+    <td>{{hr.recorded_by}}</td>
+  </tr>
+  <tr>
+    <th>Inspected When</th>
+    <td>{{hr.inspection_time}}</td>
+  </tr>
+  <tr>
+    <th>RFID</th>
+    <td><a href="#{{hr.cow.link}}">{{hr.cow.rfid}}</a></td>
+  </tr>
+  <tr>
+    <th>Breed</th>
+    <td>{{hr.cow.breed.name}}</td>
+  </tr>
+  <tr>
+    <th>Color</th>
+    <td>{{hr.cow.color.name}}</td>
+  </tr>
+    <th>Age</th>
+    <td>{{hr.cow.age.name}}</td>
+  </tr>
+  <tr>
+    <th>Temperature</th>
+    <td>{{hr.temperature}}</td>
+  </tr>
+  <tr>
+    <th>Respiratory Rate</th>
+    <td>{{hr.respiratory_rate}}</td>
+  </tr>
+  <tr>
+    <th>Heart Rate</th>
+    <td>{{hr.heart_rate}}</td>
+  </tr>
+  <tr>
+    <th>Blood Pressure</th>
+    <td>{{hr.blood_pressure}}</td>
+  </tr>
+  <tr>
+    <th>Weight</th>
+    <td>{{hr.weight}}</td>
+  </tr>
+  <tr>
+    <th>BCS</th>
+    <td>{{hr.body_condition_score}}</td>
+  </tr>
+  <tr>
+    <th>Status</th>
+    <td>{{hr.status.name}}</td>
+  </tr>
+  <tr>
+    <th>Illness</th>
+    <td>{{hr.illness.diagnostic}}</td>
+  </tr>
+  <tr>
+    <th>Injury</th>
+    <td>{{hr.injury.diagnostic}}</td>
+  </tr>
+  <tr>
+    <th>Treatment</th>
+    <td>{{hr.treatment.name}}</td>
+  </tr>
+  <tr>
+    <th>Vaccine</th>
+    <td>{{hr.vaccine.name}}</td>
+  </tr>
 </table>
 
+<h2>{{total}} Recorded Health Inspections</h2>
 <p ng-if="hrs.length == 0">No cows inspected yet.</p>
 
 <div>
-<span text-align:left><a href="{{prev}}">Prev</a></span>
-<span text-align:right><a href="{{next}}">Next</a></span>
+<span text-align:left><a ng-if="prev" href="{{prev}}">Prev</a></span>
+<span text-align:right><a ng-if="next" href="{{next}}">Next</a></span>
 </div>

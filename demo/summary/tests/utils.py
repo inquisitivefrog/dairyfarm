@@ -51,5 +51,10 @@ class TestTime:
     def get_random_month(cls):
         month = randint(1, 12)
         if month < 10:
-            return '0{}'.format(str(month))
+            return '0{}'.format(month)
         return str(month)
+
+    @classmethod
+    def get_random_month_int(cls):
+        month = randint(1, 12)
+        return month

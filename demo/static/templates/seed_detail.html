@@ -1,3 +1,61 @@
+<h2>Plant Seeds</h2>
+<form ng-if="seed" action="{% url 'assets:seed-detail' seed.id %}" method="put">
+    <table>
+    <tr>
+        <th>ID:</th>
+        <td>{{seed.id}}</td>
+    </tr>
+    <tr>
+        <th>Client:</th>
+        <td>{{seed.client.name}}</td>
+    </tr>
+    <tr>
+        <th>Seeded By:</th>
+        <td>{{seed.seeded_by}}</td>
+    </tr>
+    <tr>
+        <th>Year:</th>
+        <td>{{seed.year}}</td>
+    </tr>
+    <tr>
+        <th>Season:</th>
+        <td>{{seed.season.name}}</td>
+    </tr>
+    <tr>
+        <th>Pasture:</th>
+        <td>{{seed.pasture.name}}</td>
+    </tr>
+    <tr>
+        <th>Cereal Seed:</th>
+        <td>
+            <select ng-init="selectedCereal=selectedCereal || cereals[0].name"
+                    ng-model="selectedCereal"
+                    ng-options="cereal.name for cereal in cereals">
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>Grass Seed:</th>
+        <td>
+            <select ng-init="selectedGrass=selectedGrass || grasses[0].name"
+                    ng-model="selectedGrass"
+                    ng-options="grass.name for grass in grasses">
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>Legume Seed:</th>
+        <td>
+            <select ng-init="selectedLegume=selectedLegume || legumes[0].name"
+                    ng-model="selectedLegume"
+                    ng-options="legume.name for legume in legumes">
+            </select>
+        </td>
+    </tr>
+    </table>
+    <input type="button" ng-click="plant(selectedCereal, selectedGrass, selectedLegume)" value="Plant Seeds"/>
+</form>
+
 <h2>Seed</h2>
 <table ng-if="seed">
   <tr>
@@ -24,5 +82,5 @@
   <tr>
 </table>
 <p/>
-<img src="{{seed.pasture.url}}" alt="Image failed to load" height="200" width="400">
+<img src="{{seed.pasture.url || ''}}" alt="Image failed to load" height="200" width="400">
 

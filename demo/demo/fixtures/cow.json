@@ -3,11 +3,11 @@
     "model": "assets.cow",
     "pk": 1,
     "fields": {
-        "rfid": "24b4c89e-ca6a-4c04-bfcf-8f11b24ef867",
-        "client": 4,
+        "rfid": "3c1ff145-e57c-44e9-abf6-4e260ee0ad90",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 1,
         "breed": 1,
         "color": 1,
         "sell_date": "2100-12-31",
@@ -18,11 +18,11 @@
     "model": "assets.cow",
     "pk": 2,
     "fields": {
-        "rfid": "b0320b1d-255d-4a5a-b174-85bb2b5369c4",
-        "client": 1,
+        "rfid": "ddd7119f-21a4-4d84-8a1c-58496cce8748",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 5,
         "breed": 1,
         "color": 2,
         "sell_date": "2100-12-31",
@@ -33,8 +33,8 @@
     "model": "assets.cow",
     "pk": 3,
     "fields": {
-        "rfid": "874ac56a-dca3-48c7-87c7-ae5c250f22fe",
-        "client": 2,
+        "rfid": "9660cdca-c73d-448b-afdd-c9119ea507fc",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 3,
@@ -48,11 +48,11 @@
     "model": "assets.cow",
     "pk": 4,
     "fields": {
-        "rfid": "3b91bd59-ba2c-4dcb-b240-a28fc6cdb740",
-        "client": 3,
+        "rfid": "609a51f0-68c6-4529-afd5-04105e62e81b",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 4,
         "breed": 1,
         "color": 2,
         "sell_date": "2100-12-31",
@@ -63,8 +63,8 @@
     "model": "assets.cow",
     "pk": 5,
     "fields": {
-        "rfid": "09546936-2348-484b-810a-26d7d772bc69",
-        "client": 5,
+        "rfid": "d497d835-8658-4720-9b42-22be94d5d182",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 1,
@@ -78,11 +78,11 @@
     "model": "assets.cow",
     "pk": 6,
     "fields": {
-        "rfid": "d267972d-17de-4ea2-b317-86f111ad9395",
-        "client": 5,
+        "rfid": "b35c248f-1e67-494b-85ac-92c943f5ca32",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 4,
         "breed": 1,
         "color": 2,
         "sell_date": "2100-12-31",
@@ -93,11 +93,11 @@
     "model": "assets.cow",
     "pk": 7,
     "fields": {
-        "rfid": "4b7bae03-92ce-4b1a-9be8-ac7e08df17ea",
-        "client": 5,
+        "rfid": "a7f42425-1423-4099-a2fb-2e45c47b4e2c",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 2,
         "breed": 1,
         "color": 1,
         "sell_date": "2100-12-31",
@@ -108,11 +108,11 @@
     "model": "assets.cow",
     "pk": 8,
     "fields": {
-        "rfid": "a0cb6a6c-1a32-4018-b971-b815039a105a",
+        "rfid": "f0580ad9-2d01-4ff2-a719-20901629834e",
         "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 5,
         "breed": 1,
         "color": 2,
         "sell_date": "2100-12-31",
@@ -123,11 +123,11 @@
     "model": "assets.cow",
     "pk": 9,
     "fields": {
-        "rfid": "cb384d68-09b0-45a7-8b0e-16ca327e614a",
+        "rfid": "cbcc1c8f-71fb-45e4-bdfe-0355f9609480",
         "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 4,
         "breed": 1,
         "color": 1,
         "sell_date": "2100-12-31",
@@ -138,11 +138,11 @@
     "model": "assets.cow",
     "pk": 10,
     "fields": {
-        "rfid": "a2fa0c9b-4410-4888-8c64-24a02f5323ec",
-        "client": 2,
+        "rfid": "6a4b455a-c942-43dc-99a7-d6ac959a1100",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 3,
         "breed": 1,
         "color": 2,
         "sell_date": "2100-12-31",
@@ -153,11 +153,11 @@
     "model": "assets.cow",
     "pk": 11,
     "fields": {
-        "rfid": "e4c844b5-3f3e-45d2-bc97-0926039df4fc",
+        "rfid": "b5289665-6b7a-4b33-8f40-b5809dcdbeaf",
         "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 3,
         "breed": 1,
         "color": 1,
         "sell_date": "2100-12-31",
@@ -168,11 +168,11 @@
     "model": "assets.cow",
     "pk": 12,
     "fields": {
-        "rfid": "2b8e22c2-d13e-4890-a9a2-f405ea360148",
-        "client": 5,
+        "rfid": "f4283d8a-c186-4336-ad94-d950d4d7d159",
+        "client": 1,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 5,
         "breed": 1,
         "color": 2,
         "sell_date": "2100-12-31",
@@ -183,11 +183,11 @@
     "model": "assets.cow",
     "pk": 13,
     "fields": {
-        "rfid": "b32a4f6f-46dd-42e0-ab9c-275419468e2f",
-        "client": 2,
+        "rfid": "0310d95e-158e-4f86-8397-ecb74c71150e",
+        "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 1,
         "breed": 1,
         "color": 1,
         "sell_date": "2100-12-31",
@@ -198,11 +198,11 @@
     "model": "assets.cow",
     "pk": 14,
     "fields": {
-        "rfid": "8c4904aa-6c2a-454c-81eb-785fe503613a",
-        "client": 4,
+        "rfid": "103917f7-1112-4952-a374-925f9b76248e",
+        "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 3,
         "breed": 1,
         "color": 2,
         "sell_date": "2100-12-31",
@@ -213,11 +213,11 @@
     "model": "assets.cow",
     "pk": 15,
     "fields": {
-        "rfid": "9df3246f-41a6-435e-a8af-481a8ecb8fec",
-        "client": 4,
+        "rfid": "79862591-1d95-457a-8f56-156e127ade00",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 1,
         "breed": 1,
         "color": 1,
         "sell_date": "2100-12-31",
@@ -228,11 +228,11 @@
     "model": "assets.cow",
     "pk": 16,
     "fields": {
-        "rfid": "056b55ae-9357-4ffd-8dd3-6e09ee1c734a",
+        "rfid": "30e711e4-1dd5-4752-b210-261a89e1c69f",
         "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 5,
         "breed": 1,
         "color": 2,
         "sell_date": "2100-12-31",
@@ -243,11 +243,11 @@
     "model": "assets.cow",
     "pk": 17,
     "fields": {
-        "rfid": "2a2d636a-d9c7-45ee-8736-115f0f0dd644",
-        "client": 4,
+        "rfid": "16d452d0-f31c-498f-b04b-fa8d7fce565c",
+        "client": 1,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 5,
         "breed": 1,
         "color": 1,
         "sell_date": "2100-12-31",
@@ -258,11 +258,11 @@
     "model": "assets.cow",
     "pk": 18,
     "fields": {
-        "rfid": "d17658f0-c6f8-4bee-b527-2a470fb87d2d",
+        "rfid": "0074bb05-0e07-47b4-819b-7c78e6e6de34",
         "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 2,
         "breed": 1,
         "color": 2,
         "sell_date": "2100-12-31",
@@ -273,11 +273,11 @@
     "model": "assets.cow",
     "pk": 19,
     "fields": {
-        "rfid": "ce7743d5-941e-4fef-bb97-066e0f15e6b6",
-        "client": 4,
+        "rfid": "ebcbbab4-e77f-4594-8fa7-afeb451f5102",
+        "client": 1,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 1,
         "breed": 1,
         "color": 1,
         "sell_date": "2100-12-31",
@@ -288,11 +288,11 @@
     "model": "assets.cow",
     "pk": 20,
     "fields": {
-        "rfid": "300be5ea-caad-4e92-8446-30f633d54a7d",
-        "client": 4,
+        "rfid": "cf649bb5-e069-486d-8017-2df579b1d9a0",
+        "client": 1,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 3,
         "breed": 1,
         "color": 2,
         "sell_date": "2100-12-31",
@@ -303,11 +303,11 @@
     "model": "assets.cow",
     "pk": 21,
     "fields": {
-        "rfid": "14d92a4b-e1d3-4f43-834a-e372e4bbd3cb",
-        "client": 4,
+        "rfid": "c0fab793-b84f-45ba-b48e-c9e33a279792",
+        "client": 1,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 2,
         "breed": 2,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -318,11 +318,11 @@
     "model": "assets.cow",
     "pk": 22,
     "fields": {
-        "rfid": "d2d60fc3-dd04-4765-8bde-ec3565f959af",
-        "client": 2,
+        "rfid": "dd52f84b-93ae-4b14-a49b-59c41386e2e1",
+        "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 5,
         "breed": 2,
         "color": 4,
         "sell_date": "2100-12-31",
@@ -333,11 +333,11 @@
     "model": "assets.cow",
     "pk": 23,
     "fields": {
-        "rfid": "6961bdda-86dd-4f4e-9c4a-a91fbd7f87cf",
+        "rfid": "de92980d-f452-4de7-b73e-5c8d0e658313",
         "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 4,
         "breed": 2,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -348,11 +348,11 @@
     "model": "assets.cow",
     "pk": 24,
     "fields": {
-        "rfid": "a3c4c2f4-0e43-47b9-9ab1-6bfdad493858",
-        "client": 1,
+        "rfid": "954402d4-a209-4b72-8dee-cc76978c2ec8",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 2,
         "breed": 2,
         "color": 4,
         "sell_date": "2100-12-31",
@@ -363,11 +363,11 @@
     "model": "assets.cow",
     "pk": 25,
     "fields": {
-        "rfid": "35a5d503-80cf-4403-b209-4b09eef72d5d",
+        "rfid": "a49d9004-3b0e-400a-a253-533e22b1dd9b",
         "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 5,
         "breed": 2,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -378,11 +378,11 @@
     "model": "assets.cow",
     "pk": 26,
     "fields": {
-        "rfid": "dd845caa-bf21-4048-92c2-6e152242203e",
+        "rfid": "6d506078-1019-4cc3-b947-b478ecb2304b",
         "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 4,
         "breed": 2,
         "color": 4,
         "sell_date": "2100-12-31",
@@ -393,11 +393,11 @@
     "model": "assets.cow",
     "pk": 27,
     "fields": {
-        "rfid": "f4011139-dcf7-41c0-8390-938779ccdb17",
-        "client": 2,
+        "rfid": "666c96d8-11f1-416f-8d19-1afcc13003e5",
+        "client": 1,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 1,
         "breed": 2,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -408,11 +408,11 @@
     "model": "assets.cow",
     "pk": 28,
     "fields": {
-        "rfid": "4af5a729-6713-49de-afed-f247311237b8",
-        "client": 4,
+        "rfid": "d3c0a6c7-bb3d-46c0-a0eb-1bed0d59699a",
+        "client": 1,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 2,
         "breed": 2,
         "color": 4,
         "sell_date": "2100-12-31",
@@ -423,11 +423,11 @@
     "model": "assets.cow",
     "pk": 29,
     "fields": {
-        "rfid": "d73d4b0b-2b00-4aa5-9c0a-e9b1067778af",
-        "client": 1,
+        "rfid": "e6f22c58-2b1e-467c-8f8d-928a9ad375b4",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 1,
         "breed": 2,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -438,11 +438,11 @@
     "model": "assets.cow",
     "pk": 30,
     "fields": {
-        "rfid": "6fffea1f-44ce-4923-94c0-e160f6de439b",
+        "rfid": "4d1ee928-3c61-43ff-8276-005fb5bc8c8c",
         "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 3,
         "breed": 2,
         "color": 4,
         "sell_date": "2100-12-31",
@@ -453,11 +453,11 @@
     "model": "assets.cow",
     "pk": 31,
     "fields": {
-        "rfid": "a4cc9ab9-9864-4a9f-a998-eb334faa12ba",
-        "client": 4,
+        "rfid": "b5583558-297b-4928-870d-4a0f42d95c8d",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 1,
         "breed": 2,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -468,11 +468,11 @@
     "model": "assets.cow",
     "pk": 32,
     "fields": {
-        "rfid": "63030270-e08a-496a-b7eb-8472f8cbc951",
-        "client": 1,
+        "rfid": "cb3c418e-2508-4692-bc5a-9c79c87b2121",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 1,
         "breed": 2,
         "color": 4,
         "sell_date": "2100-12-31",
@@ -483,11 +483,11 @@
     "model": "assets.cow",
     "pk": 33,
     "fields": {
-        "rfid": "100e0c37-b01f-4deb-8095-1e5ab545165f",
-        "client": 1,
+        "rfid": "c7c061a6-e4a2-4080-b6cc-8f71dab8d295",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 3,
         "breed": 2,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -498,11 +498,11 @@
     "model": "assets.cow",
     "pk": 34,
     "fields": {
-        "rfid": "269ca9a6-53e9-4e05-9936-971623d9cc48",
+        "rfid": "236f577e-6c32-40f4-8fc8-a8cbeaae8c32",
         "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 5,
         "breed": 2,
         "color": 4,
         "sell_date": "2100-12-31",
@@ -513,11 +513,11 @@
     "model": "assets.cow",
     "pk": 35,
     "fields": {
-        "rfid": "533566f5-b41d-4e05-b261-a3f83528c148",
-        "client": 1,
+        "rfid": "89ea7201-eb1f-4208-8769-5ff500eb5a1b",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 2,
         "breed": 2,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -528,11 +528,11 @@
     "model": "assets.cow",
     "pk": 36,
     "fields": {
-        "rfid": "e2fb9e89-bd66-4aa0-9cec-709350af3eed",
-        "client": 3,
+        "rfid": "6f511b00-81c5-4fe7-a8ad-8249fde1032f",
+        "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 1,
         "breed": 2,
         "color": 4,
         "sell_date": "2100-12-31",
@@ -543,11 +543,11 @@
     "model": "assets.cow",
     "pk": 37,
     "fields": {
-        "rfid": "7a312a08-ef11-494f-951d-1c87c99e0418",
-        "client": 5,
+        "rfid": "f1789b4c-e83d-4849-8ea5-667822494eda",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 3,
         "breed": 2,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -558,11 +558,11 @@
     "model": "assets.cow",
     "pk": 38,
     "fields": {
-        "rfid": "07691b81-25ae-42f9-9fb6-edb0c182e5d2",
-        "client": 1,
+        "rfid": "2597d1cc-378a-4204-99b1-78c3f887eae1",
+        "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 3,
         "breed": 2,
         "color": 4,
         "sell_date": "2100-12-31",
@@ -573,11 +573,11 @@
     "model": "assets.cow",
     "pk": 39,
     "fields": {
-        "rfid": "0d8040ab-15a0-4af3-995b-2edf7135bc68",
-        "client": 1,
+        "rfid": "a824f6cf-358c-42be-b606-b96ce835520e",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 1,
         "breed": 2,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -588,11 +588,11 @@
     "model": "assets.cow",
     "pk": 40,
     "fields": {
-        "rfid": "ec585389-8fac-40f7-a363-160cd63aabf2",
-        "client": 4,
+        "rfid": "8936230a-a4bc-4618-a991-330491f36ef6",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 2,
         "breed": 2,
         "color": 4,
         "sell_date": "2100-12-31",
@@ -603,11 +603,11 @@
     "model": "assets.cow",
     "pk": 41,
     "fields": {
-        "rfid": "7a477f94-f110-461f-a944-cb0013a82ba6",
-        "client": 2,
+        "rfid": "89cfdd4a-9934-4d99-834e-1dcae76972d0",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 3,
         "breed": 3,
         "color": 5,
         "sell_date": "2100-12-31",
@@ -618,11 +618,11 @@
     "model": "assets.cow",
     "pk": 42,
     "fields": {
-        "rfid": "96e4eedf-f519-4cf8-8404-3000aca2e93f",
-        "client": 2,
+        "rfid": "997fad78-e323-4718-b212-12fa13e608ca",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 3,
         "breed": 3,
         "color": 5,
         "sell_date": "2100-12-31",
@@ -633,11 +633,11 @@
     "model": "assets.cow",
     "pk": 43,
     "fields": {
-        "rfid": "fb802731-fd37-491c-b9ea-40c970fc4782",
-        "client": 5,
+        "rfid": "910b9e26-2525-46a4-81c8-db1908325924",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 2,
         "breed": 3,
         "color": 5,
         "sell_date": "2100-12-31",
@@ -648,11 +648,11 @@
     "model": "assets.cow",
     "pk": 44,
     "fields": {
-        "rfid": "74a96b10-2fde-4b12-8899-3106b22d4ea9",
-        "client": 3,
+        "rfid": "85a26cf4-4507-447e-8792-1a5786c1e9b2",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 4,
         "breed": 3,
         "color": 5,
         "sell_date": "2100-12-31",
@@ -663,11 +663,11 @@
     "model": "assets.cow",
     "pk": 45,
     "fields": {
-        "rfid": "166aae13-4408-4e3c-a007-3dd766293592",
-        "client": 2,
+        "rfid": "42860e98-565c-417a-95e4-f8c477812e56",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 2,
         "breed": 3,
         "color": 5,
         "sell_date": "2100-12-31",
@@ -678,11 +678,11 @@
     "model": "assets.cow",
     "pk": 46,
     "fields": {
-        "rfid": "8941fc59-1188-4d1c-997c-b8c225996cf0",
-        "client": 1,
+        "rfid": "8e1cf446-34f6-458e-86bf-38876a7fd214",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 4,
         "breed": 3,
         "color": 5,
         "sell_date": "2100-12-31",
@@ -693,11 +693,11 @@
     "model": "assets.cow",
     "pk": 47,
     "fields": {
-        "rfid": "a9526a3b-b641-44b3-88f4-e31f04a932c8",
-        "client": 1,
+        "rfid": "74fe765e-a0b6-4b69-9eec-92b7f80a7281",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 1,
         "breed": 3,
         "color": 5,
         "sell_date": "2100-12-31",
@@ -708,8 +708,8 @@
     "model": "assets.cow",
     "pk": 48,
     "fields": {
-        "rfid": "a4a8e277-d759-4b3b-8d40-37afc5456869",
-        "client": 2,
+        "rfid": "5c451e5b-7bfa-45e5-bf17-6dc323851dc8",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 5,
@@ -723,11 +723,11 @@
     "model": "assets.cow",
     "pk": 49,
     "fields": {
-        "rfid": "cda0448a-d984-4403-8738-dfc30a173752",
-        "client": 5,
+        "rfid": "37b69668-b157-48ce-ae4f-92cbdf1dd007",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 2,
         "breed": 3,
         "color": 5,
         "sell_date": "2100-12-31",
@@ -738,11 +738,11 @@
     "model": "assets.cow",
     "pk": 50,
     "fields": {
-        "rfid": "220a2410-fc59-4948-88c7-6831ff0746ae",
-        "client": 5,
+        "rfid": "e2593347-5f39-42f8-9cfa-a26b8a54e715",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 3,
         "breed": 3,
         "color": 5,
         "sell_date": "2100-12-31",
@@ -753,11 +753,11 @@
     "model": "assets.cow",
     "pk": 51,
     "fields": {
-        "rfid": "4f5fb54f-152a-4f3f-91cc-40d6bc446208",
-        "client": 4,
+        "rfid": "11386859-d069-4ddd-baf8-414153772f0d",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 5,
         "breed": 4,
         "color": 5,
         "sell_date": "2100-12-31",
@@ -768,11 +768,11 @@
     "model": "assets.cow",
     "pk": 52,
     "fields": {
-        "rfid": "da860bd2-30a5-430e-a531-1455ef6d1de5",
-        "client": 4,
+        "rfid": "913ae5ea-4e62-4845-af52-c7c123135759",
+        "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 5,
         "breed": 4,
         "color": 5,
         "sell_date": "2100-12-31",
@@ -783,11 +783,11 @@
     "model": "assets.cow",
     "pk": 53,
     "fields": {
-        "rfid": "c6e4035f-b912-4c8f-b9ac-d104b877da9a",
-        "client": 2,
+        "rfid": "02329ee7-31f6-4f22-a037-7d92e73d6c6f",
+        "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 2,
         "breed": 4,
         "color": 5,
         "sell_date": "2100-12-31",
@@ -798,8 +798,8 @@
     "model": "assets.cow",
     "pk": 54,
     "fields": {
-        "rfid": "cbf3e823-2c03-4bf9-9a87-cccd895fc042",
-        "client": 4,
+        "rfid": "a0ba25b5-5f07-4d04-94c9-f56fb920a09b",
+        "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 1,
@@ -813,8 +813,8 @@
     "model": "assets.cow",
     "pk": 55,
     "fields": {
-        "rfid": "09853114-438a-414f-b008-e2d639b5e4f7",
-        "client": 4,
+        "rfid": "330001f9-3882-45f8-bcbc-8cab55cf8d1a",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 3,
@@ -828,7 +828,7 @@
     "model": "assets.cow",
     "pk": 56,
     "fields": {
-        "rfid": "af0c58be-1b2e-4032-b5b0-0a6a8786236c",
+        "rfid": "4d15e685-997c-401b-9599-cf69f26492fa",
         "client": 1,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
@@ -843,8 +843,8 @@
     "model": "assets.cow",
     "pk": 57,
     "fields": {
-        "rfid": "a07cdb09-bbcc-42e2-af54-69d6ae288216",
-        "client": 5,
+        "rfid": "89beee44-1f73-41ea-b7b5-d4793c156ed5",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 4,
@@ -858,11 +858,11 @@
     "model": "assets.cow",
     "pk": 58,
     "fields": {
-        "rfid": "065fd684-9754-4122-9fdb-57fe9c02c4e8",
+        "rfid": "aceb6a52-315f-43f0-80da-b1a9fd7e0f5c",
         "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 2,
         "breed": 4,
         "color": 5,
         "sell_date": "2100-12-31",
@@ -873,8 +873,8 @@
     "model": "assets.cow",
     "pk": 59,
     "fields": {
-        "rfid": "730c19a7-bd55-4695-ad8e-0ace6af47bc4",
-        "client": 2,
+        "rfid": "c396101a-b7f3-4699-a0df-3ec7f05c2028",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 5,
@@ -888,11 +888,11 @@
     "model": "assets.cow",
     "pk": 60,
     "fields": {
-        "rfid": "85101879-5df5-4c07-8633-78cf74d887c6",
-        "client": 1,
+        "rfid": "33ca99a0-2074-4f71-884c-be73c28779b8",
+        "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 2,
         "breed": 4,
         "color": 5,
         "sell_date": "2100-12-31",
@@ -903,7 +903,7 @@
     "model": "assets.cow",
     "pk": 61,
     "fields": {
-        "rfid": "620fa5bd-8ed0-46c0-a839-769eb290318d",
+        "rfid": "7b4acaad-d249-4b54-b02d-ad16402851e4",
         "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
@@ -918,11 +918,11 @@
     "model": "assets.cow",
     "pk": 62,
     "fields": {
-        "rfid": "d49fc43a-30e9-47bc-8148-f2081fa6002e",
-        "client": 3,
+        "rfid": "573ef706-8384-46de-9bad-2ee8b8942f21",
+        "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 1,
         "breed": 5,
         "color": 6,
         "sell_date": "2100-12-31",
@@ -933,11 +933,11 @@
     "model": "assets.cow",
     "pk": 63,
     "fields": {
-        "rfid": "73c2714c-e2bc-4a9d-8902-cc9fb3889e35",
-        "client": 1,
+        "rfid": "fcbc8449-ac1f-4059-a0f1-9b4181bbd97d",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 2,
         "breed": 5,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -948,11 +948,11 @@
     "model": "assets.cow",
     "pk": 64,
     "fields": {
-        "rfid": "b981341d-d82d-4f02-b574-55a2a3d80bff",
-        "client": 1,
+        "rfid": "91e90ddf-6b56-4055-b0d6-28006ae6eed8",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 5,
         "breed": 5,
         "color": 6,
         "sell_date": "2100-12-31",
@@ -963,11 +963,11 @@
     "model": "assets.cow",
     "pk": 65,
     "fields": {
-        "rfid": "695d7379-44e1-4684-9518-a5d3cbd0cae2",
-        "client": 5,
+        "rfid": "03b7782f-064b-4be1-9c5d-78a8cd27caa2",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 2,
         "breed": 5,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -978,11 +978,11 @@
     "model": "assets.cow",
     "pk": 66,
     "fields": {
-        "rfid": "16c6d876-febd-4ae9-9ba8-dab6d1b0d626",
-        "client": 5,
+        "rfid": "9525045c-a918-4c8b-8908-36c45c3189bc",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 1,
         "breed": 5,
         "color": 6,
         "sell_date": "2100-12-31",
@@ -993,11 +993,11 @@
     "model": "assets.cow",
     "pk": 67,
     "fields": {
-        "rfid": "e49f34a5-9cb4-4d14-b0a6-c7bfada558ff",
-        "client": 5,
+        "rfid": "f5567ba2-2061-4843-92ff-f0bdcb8033be",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 5,
         "breed": 5,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -1008,11 +1008,11 @@
     "model": "assets.cow",
     "pk": 68,
     "fields": {
-        "rfid": "03f53a6e-f21b-417e-aec0-66d189361f9d",
-        "client": 3,
+        "rfid": "b7c6a815-58b0-424d-9833-a75401910367",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 5,
         "breed": 5,
         "color": 6,
         "sell_date": "2100-12-31",
@@ -1023,11 +1023,11 @@
     "model": "assets.cow",
     "pk": 69,
     "fields": {
-        "rfid": "5f9f66f2-0af5-4e78-88ef-fc1a2acf5667",
-        "client": 4,
+        "rfid": "1368a79c-0a26-42f6-b926-cb5afb2485cc",
+        "client": 1,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 1,
         "breed": 5,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -1038,11 +1038,11 @@
     "model": "assets.cow",
     "pk": 70,
     "fields": {
-        "rfid": "a6605a2c-eb15-4ecb-84d0-693573c83a12",
-        "client": 1,
+        "rfid": "3bee4a0d-7387-4435-972e-57de41d88362",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 1,
         "breed": 5,
         "color": 6,
         "sell_date": "2100-12-31",
@@ -1053,11 +1053,11 @@
     "model": "assets.cow",
     "pk": 71,
     "fields": {
-        "rfid": "b26fdf80-bb52-4594-8b6b-c593dff8646a",
-        "client": 1,
+        "rfid": "558ccc16-6430-4fc8-a7e7-f9d4bb1e8459",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 5,
         "breed": 5,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -1068,11 +1068,11 @@
     "model": "assets.cow",
     "pk": 72,
     "fields": {
-        "rfid": "f4dbbe0a-9dce-4f13-a24b-6ca2e651aa68",
-        "client": 5,
+        "rfid": "7eae83da-bcd8-4d35-853b-648e046cb715",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 1,
         "breed": 5,
         "color": 6,
         "sell_date": "2100-12-31",
@@ -1083,11 +1083,11 @@
     "model": "assets.cow",
     "pk": 73,
     "fields": {
-        "rfid": "901a6113-6d05-4075-8e1c-74c18cce7d4f",
-        "client": 2,
+        "rfid": "f9d514b2-42af-4a02-85c8-ee5d8e1ea018",
+        "client": 1,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 1,
         "breed": 5,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -1098,11 +1098,11 @@
     "model": "assets.cow",
     "pk": 74,
     "fields": {
-        "rfid": "77e9d0a2-708e-4430-ac50-be7767b84059",
-        "client": 3,
+        "rfid": "b9164a96-a061-4399-8bf9-b13e2b6e41ca",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 1,
         "breed": 5,
         "color": 6,
         "sell_date": "2100-12-31",
@@ -1113,11 +1113,11 @@
     "model": "assets.cow",
     "pk": 75,
     "fields": {
-        "rfid": "f648f4a2-d501-476a-ad39-758def6e0bb2",
+        "rfid": "00e9458f-f80e-42e8-9176-49309180035a",
         "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 5,
         "breed": 5,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -1128,11 +1128,11 @@
     "model": "assets.cow",
     "pk": 76,
     "fields": {
-        "rfid": "efd3dccb-99d3-4e0f-9ecc-ede96e7244db",
+        "rfid": "8ee600e5-1170-4365-9ae8-34bb17d18025",
         "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 3,
         "breed": 5,
         "color": 6,
         "sell_date": "2100-12-31",
@@ -1143,11 +1143,11 @@
     "model": "assets.cow",
     "pk": 77,
     "fields": {
-        "rfid": "92f47828-d810-4d04-b168-5721a69731ce",
-        "client": 1,
+        "rfid": "f53cbe2a-9e54-4057-a67b-df4e1727fe16",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 5,
         "breed": 5,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -1158,11 +1158,11 @@
     "model": "assets.cow",
     "pk": 78,
     "fields": {
-        "rfid": "50bda501-d704-4168-86a7-5219a7024aae",
+        "rfid": "c872f005-3ad2-40c6-9f79-20eab3ae53ff",
         "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 3,
         "breed": 5,
         "color": 6,
         "sell_date": "2100-12-31",
@@ -1173,11 +1173,11 @@
     "model": "assets.cow",
     "pk": 79,
     "fields": {
-        "rfid": "e3befc44-13a3-4350-b970-8ec8c4e64730",
-        "client": 3,
+        "rfid": "758e1ae2-cfb5-45b6-9c0b-ceae499319ea",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 3,
         "breed": 5,
         "color": 3,
         "sell_date": "2100-12-31",
@@ -1188,11 +1188,11 @@
     "model": "assets.cow",
     "pk": 80,
     "fields": {
-        "rfid": "40fdbb22-5f1d-43fc-871c-c093470e9db3",
-        "client": 5,
+        "rfid": "df3aa9d2-863c-4fe1-bb9c-c18cd9b93186",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 3,
         "breed": 5,
         "color": 6,
         "sell_date": "2100-12-31",
@@ -1203,11 +1203,11 @@
     "model": "assets.cow",
     "pk": 81,
     "fields": {
-        "rfid": "f0034901-18e9-4458-b960-19d194deada9",
-        "client": 5,
+        "rfid": "00cae759-d891-4291-b909-70bf25ffa430",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 2,
         "breed": 6,
         "color": 7,
         "sell_date": "2100-12-31",
@@ -1218,11 +1218,11 @@
     "model": "assets.cow",
     "pk": 82,
     "fields": {
-        "rfid": "b076d680-13cb-472a-bcf1-296618c3140a",
+        "rfid": "edaf51dd-88de-4aff-84fe-b3a2ef11e2b8",
         "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 5,
         "breed": 6,
         "color": 8,
         "sell_date": "2100-12-31",
@@ -1233,11 +1233,11 @@
     "model": "assets.cow",
     "pk": 83,
     "fields": {
-        "rfid": "017efc0b-2c1b-4f6b-be84-a277f12acdbc",
-        "client": 3,
+        "rfid": "352ce024-178a-4ea2-bd30-18143d92ac65",
+        "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 4,
         "breed": 6,
         "color": 9,
         "sell_date": "2100-12-31",
@@ -1248,8 +1248,8 @@
     "model": "assets.cow",
     "pk": 84,
     "fields": {
-        "rfid": "4eb524d3-9f29-4cae-b873-b373ae51d91a",
-        "client": 3,
+        "rfid": "0db54816-92d8-4b64-8c2e-58d29f1ed1c4",
+        "client": 1,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 4,
@@ -1263,11 +1263,11 @@
     "model": "assets.cow",
     "pk": 85,
     "fields": {
-        "rfid": "120fda7a-1772-4365-a8a9-d13e8141cfc0",
-        "client": 2,
+        "rfid": "3a01dd35-122d-414f-8ba2-0798fe86619f",
+        "client": 1,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 4,
         "breed": 6,
         "color": 7,
         "sell_date": "2100-12-31",
@@ -1278,11 +1278,11 @@
     "model": "assets.cow",
     "pk": 86,
     "fields": {
-        "rfid": "4eca0d2a-6e56-41f8-94f6-657cf6e6e18e",
-        "client": 1,
+        "rfid": "ccdd1e88-e4ba-4c36-9edd-e6e1add6312b",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 5,
         "breed": 6,
         "color": 8,
         "sell_date": "2100-12-31",
@@ -1293,11 +1293,11 @@
     "model": "assets.cow",
     "pk": 87,
     "fields": {
-        "rfid": "82cb34af-9f8c-4ae7-bf2d-324e630386cc",
-        "client": 3,
+        "rfid": "8d0454b8-b946-4686-b9e5-4fd749611e99",
+        "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 3,
         "breed": 6,
         "color": 9,
         "sell_date": "2100-12-31",
@@ -1308,11 +1308,11 @@
     "model": "assets.cow",
     "pk": 88,
     "fields": {
-        "rfid": "949f8443-d29c-46ff-b117-22cf0cae4f1a",
-        "client": 5,
+        "rfid": "add9194f-a6ed-4179-9542-902f5fe1d0c5",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 5,
         "breed": 6,
         "color": 2,
         "sell_date": "2100-12-31",
@@ -1323,8 +1323,8 @@
     "model": "assets.cow",
     "pk": 89,
     "fields": {
-        "rfid": "d7050aed-9842-49ee-ad3e-2782b11750f5",
-        "client": 3,
+        "rfid": "109294b1-8b7c-4fbf-b045-bde6d0e8339b",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 1,
@@ -1338,11 +1338,11 @@
     "model": "assets.cow",
     "pk": 90,
     "fields": {
-        "rfid": "793c9215-a95d-48bd-9464-d5bdf0e51062",
-        "client": 4,
+        "rfid": "5cde02bd-1671-468a-95bb-aec5c072f576",
+        "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 4,
         "breed": 6,
         "color": 8,
         "sell_date": "2100-12-31",
@@ -1353,11 +1353,11 @@
     "model": "assets.cow",
     "pk": 91,
     "fields": {
-        "rfid": "4968e0ea-d93b-4bde-ab95-6ff6a2fba50e",
-        "client": 1,
+        "rfid": "f871212f-3598-4604-ae06-a94d570cdc70",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 1,
         "breed": 6,
         "color": 9,
         "sell_date": "2100-12-31",
@@ -1368,11 +1368,11 @@
     "model": "assets.cow",
     "pk": 92,
     "fields": {
-        "rfid": "cd9877af-2d8b-4a49-aab0-7100479d77eb",
-        "client": 3,
+        "rfid": "932b3216-a757-4721-a049-f848bf48b327",
+        "client": 1,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 3,
         "breed": 6,
         "color": 2,
         "sell_date": "2100-12-31",
@@ -1383,11 +1383,11 @@
     "model": "assets.cow",
     "pk": 93,
     "fields": {
-        "rfid": "4d8e9478-8ca6-4182-b05f-f1e377c03345",
-        "client": 3,
+        "rfid": "18cce928-1116-483d-8423-86efa94c802e",
+        "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 3,
         "breed": 6,
         "color": 7,
         "sell_date": "2100-12-31",
@@ -1398,8 +1398,8 @@
     "model": "assets.cow",
     "pk": 94,
     "fields": {
-        "rfid": "c2f0c4eb-bea2-42c0-b72c-b4f98c5a818e",
-        "client": 1,
+        "rfid": "e864f227-0298-4752-b9c3-7c20cd72d591",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 5,
@@ -1413,11 +1413,11 @@
     "model": "assets.cow",
     "pk": 95,
     "fields": {
-        "rfid": "21cacbf5-26e3-4b88-a4e2-ecfb213a7891",
+        "rfid": "22fd4ae5-152f-4d06-9c9e-c04c6775c58e",
         "client": 1,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 5,
         "breed": 6,
         "color": 9,
         "sell_date": "2100-12-31",
@@ -1428,8 +1428,8 @@
     "model": "assets.cow",
     "pk": 96,
     "fields": {
-        "rfid": "138b3e97-efec-43d9-a43c-090d02ae3a8c",
-        "client": 1,
+        "rfid": "5cb05fa9-a1ca-4266-bb63-1e95e3f11304",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 2,
@@ -1443,11 +1443,11 @@
     "model": "assets.cow",
     "pk": 97,
     "fields": {
-        "rfid": "53e4b0dc-3d7d-4fe9-a245-065e941d12ea",
+        "rfid": "58b4c33a-a9a1-4ce5-beb8-20f863e5c5ee",
         "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 3,
         "breed": 6,
         "color": 7,
         "sell_date": "2100-12-31",
@@ -1458,11 +1458,11 @@
     "model": "assets.cow",
     "pk": 98,
     "fields": {
-        "rfid": "2bd7fe6f-2b75-4240-a175-2b9f6deb1db6",
+        "rfid": "c512fb04-da4a-49d6-bc82-fee8580c8593",
         "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 5,
         "breed": 6,
         "color": 8,
         "sell_date": "2100-12-31",
@@ -1473,11 +1473,11 @@
     "model": "assets.cow",
     "pk": 99,
     "fields": {
-        "rfid": "47ced4a3-1c7e-444c-82ad-457a345977e8",
-        "client": 4,
+        "rfid": "8a032720-b98c-4c72-a408-25977367fe36",
+        "client": 1,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 3,
         "breed": 6,
         "color": 9,
         "sell_date": "2100-12-31",
@@ -1488,11 +1488,11 @@
     "model": "assets.cow",
     "pk": 100,
     "fields": {
-        "rfid": "ba59130c-63f3-4563-b78f-4ea4e64b20dc",
-        "client": 1,
+        "rfid": "1d652f43-5483-4f0a-ad8e-a7f315eba6ba",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 2,
         "breed": 6,
         "color": 2,
         "sell_date": "2100-12-31",
@@ -1503,8 +1503,8 @@
     "model": "assets.cow",
     "pk": 101,
     "fields": {
-        "rfid": "c99bbe74-cdb5-4587-9909-c7203e0686a0",
-        "client": 5,
+        "rfid": "a80f3307-d10f-4761-b8b7-7d754152c983",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 3,
@@ -1518,8 +1518,8 @@
     "model": "assets.cow",
     "pk": 102,
     "fields": {
-        "rfid": "503b8f3d-e261-4fc6-95a0-afdaaf6502c9",
-        "client": 4,
+        "rfid": "c2595c86-3e81-457a-b9c6-6ca9b7189603",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 2,
@@ -1533,11 +1533,11 @@
     "model": "assets.cow",
     "pk": 103,
     "fields": {
-        "rfid": "74d95d0c-b95c-4884-b176-55393d0d4cac",
+        "rfid": "4be976d2-5170-4397-af0e-9a9002790846",
         "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 2,
         "breed": 6,
         "color": 9,
         "sell_date": "2100-12-31",
@@ -1548,8 +1548,8 @@
     "model": "assets.cow",
     "pk": 104,
     "fields": {
-        "rfid": "8cd3116c-2845-494b-ae8c-40fe9f31d5f4",
-        "client": 3,
+        "rfid": "6d232593-aad4-40ed-ab16-fb24d47d79f3",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 2,
@@ -1563,7 +1563,7 @@
     "model": "assets.cow",
     "pk": 105,
     "fields": {
-        "rfid": "7621cc19-dada-4157-81ba-bfd17c6ad891",
+        "rfid": "13d3307c-a84b-4435-8ef9-003a937448d6",
         "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
@@ -1578,8 +1578,8 @@
     "model": "assets.cow",
     "pk": 106,
     "fields": {
-        "rfid": "5e4a6322-cd94-4bab-a585-5e93734d5d06",
-        "client": 2,
+        "rfid": "450ced0c-55c1-4da8-8aa2-61134aa6708d",
+        "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 4,
@@ -1593,11 +1593,11 @@
     "model": "assets.cow",
     "pk": 107,
     "fields": {
-        "rfid": "1a121e90-5d9e-43e4-a943-bc9afe2cece0",
-        "client": 4,
+        "rfid": "825f39d5-e3e8-4a8d-94b0-fc8ca2828a54",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 3,
         "breed": 6,
         "color": 9,
         "sell_date": "2100-12-31",
@@ -1608,11 +1608,11 @@
     "model": "assets.cow",
     "pk": 108,
     "fields": {
-        "rfid": "2142978f-dfa0-4428-9c20-cf3e49a81230",
-        "client": 4,
+        "rfid": "f4d28f78-de6c-4466-94a3-0a036819db3a",
+        "client": 1,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 4,
         "breed": 6,
         "color": 2,
         "sell_date": "2100-12-31",
@@ -1623,11 +1623,11 @@
     "model": "assets.cow",
     "pk": 109,
     "fields": {
-        "rfid": "08f2f831-e64d-4877-863e-20fea7198951",
-        "client": 1,
+        "rfid": "cd64dbb6-b27f-4faa-ab15-cf5450bec8b4",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 5,
         "breed": 6,
         "color": 7,
         "sell_date": "2100-12-31",
@@ -1638,11 +1638,11 @@
     "model": "assets.cow",
     "pk": 110,
     "fields": {
-        "rfid": "fbf389cd-9775-45a5-af5e-50627a3a2ac5",
-        "client": 2,
+        "rfid": "f5a015ec-9334-404f-9182-390596b43bd6",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 4,
         "breed": 6,
         "color": 8,
         "sell_date": "2100-12-31",
@@ -1653,11 +1653,11 @@
     "model": "assets.cow",
     "pk": 111,
     "fields": {
-        "rfid": "c33ead96-e26e-4835-93e3-75f85f53dbbb",
-        "client": 1,
+        "rfid": "d47b6a54-7c78-43d1-958f-71ec9948d792",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 2,
         "breed": 6,
         "color": 9,
         "sell_date": "2100-12-31",
@@ -1668,8 +1668,8 @@
     "model": "assets.cow",
     "pk": 112,
     "fields": {
-        "rfid": "c32ec47d-1b45-4982-95ef-e8ce4cdc1911",
-        "client": 2,
+        "rfid": "356efdc3-6bcb-415e-818c-0c3ce28611ea",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 1,
@@ -1683,11 +1683,11 @@
     "model": "assets.cow",
     "pk": 113,
     "fields": {
-        "rfid": "a4f5a804-47a6-4d11-b00d-60b214e4fbd9",
+        "rfid": "24e4b652-7fc8-42e7-b4bb-78500a401cbb",
         "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 4,
         "breed": 6,
         "color": 7,
         "sell_date": "2100-12-31",
@@ -1698,11 +1698,11 @@
     "model": "assets.cow",
     "pk": 114,
     "fields": {
-        "rfid": "896acacf-d7c0-425c-84bb-bd4df49939b9",
-        "client": 1,
+        "rfid": "125593e6-ffd3-49b0-b144-e94c8865b3b4",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 2,
         "breed": 6,
         "color": 8,
         "sell_date": "2100-12-31",
@@ -1713,8 +1713,8 @@
     "model": "assets.cow",
     "pk": 115,
     "fields": {
-        "rfid": "44c84904-af54-41ba-8fa3-6dbee11abf96",
-        "client": 3,
+        "rfid": "53443575-80be-4301-be7b-e76120725e5c",
+        "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 4,
@@ -1728,11 +1728,11 @@
     "model": "assets.cow",
     "pk": 116,
     "fields": {
-        "rfid": "2be70891-7bf2-4342-b327-137c2f7dabd0",
-        "client": 1,
+        "rfid": "d8a3b318-d85e-40d7-ad4f-2a0517eb18b7",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 4,
         "breed": 6,
         "color": 2,
         "sell_date": "2100-12-31",
@@ -1743,11 +1743,11 @@
     "model": "assets.cow",
     "pk": 117,
     "fields": {
-        "rfid": "a087a19a-939f-4dca-8f43-fcb61b7d8315",
-        "client": 3,
+        "rfid": "fa6f4566-bbc4-47e5-ac71-dda70a1e8ab8",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 5,
         "breed": 6,
         "color": 7,
         "sell_date": "2100-12-31",
@@ -1758,11 +1758,11 @@
     "model": "assets.cow",
     "pk": 118,
     "fields": {
-        "rfid": "a84367ac-93b3-4297-9c78-c574fe531752",
-        "client": 4,
+        "rfid": "c53b11c6-3efa-41c3-855c-200834ad44dd",
+        "client": 1,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 1,
         "breed": 6,
         "color": 8,
         "sell_date": "2100-12-31",
@@ -1773,11 +1773,11 @@
     "model": "assets.cow",
     "pk": 119,
     "fields": {
-        "rfid": "e00b1382-8eaf-4b52-8eee-b1be8b9f3cdc",
-        "client": 2,
+        "rfid": "06536af0-d36d-4cd3-9283-ec61c39a718a",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 1,
         "breed": 6,
         "color": 9,
         "sell_date": "2100-12-31",
@@ -1788,11 +1788,11 @@
     "model": "assets.cow",
     "pk": 120,
     "fields": {
-        "rfid": "4b83b6a0-2260-459f-98ed-d93a6526567f",
+        "rfid": "af220316-cb08-4c9f-b44b-1869350823cd",
         "client": 5,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 1,
         "breed": 6,
         "color": 2,
         "sell_date": "2100-12-31",
@@ -1803,11 +1803,11 @@
     "model": "assets.cow",
     "pk": 121,
     "fields": {
-        "rfid": "1ed6c02c-2d48-4520-8600-29a14cae107e",
-        "client": 3,
+        "rfid": "f7394318-4753-48db-8c94-cc96bb8054fc",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 1,
         "breed": 7,
         "color": 1,
         "sell_date": "2100-12-31",
@@ -1818,11 +1818,11 @@
     "model": "assets.cow",
     "pk": 122,
     "fields": {
-        "rfid": "f4fdbbac-0eca-4092-a2e5-027133d42df7",
-        "client": 3,
+        "rfid": "e5ffb22b-5484-4389-b62e-80edace8c29d",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 2,
         "breed": 7,
         "color": 1,
         "sell_date": "2100-12-31",
@@ -1833,11 +1833,11 @@
     "model": "assets.cow",
     "pk": 123,
     "fields": {
-        "rfid": "2207831a-bae5-4ad5-9f9a-6357fc34c3e6",
-        "client": 3,
+        "rfid": "5bae9831-651c-497f-8b63-a25047aa65d4",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 3,
         "breed": 7,
         "color": 1,
         "sell_date": "2100-12-31",
@@ -1848,8 +1848,8 @@
     "model": "assets.cow",
     "pk": 124,
     "fields": {
-        "rfid": "104f7340-bf1a-4f3f-be63-cc8037d786c5",
-        "client": 2,
+        "rfid": "149d7efd-2585-4c03-b1e0-1911fb8d6206",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
         "age": 2,
@@ -1863,11 +1863,11 @@
     "model": "assets.cow",
     "pk": 125,
     "fields": {
-        "rfid": "2b397f42-d41a-460c-8755-48ebf8c3781d",
-        "client": 5,
+        "rfid": "0a606623-a74a-4bc6-b04f-e0e178ea844b",
+        "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 1,
         "breed": 7,
         "color": 1,
         "sell_date": "2100-12-31",
@@ -1878,11 +1878,11 @@
     "model": "assets.cow",
     "pk": 126,
     "fields": {
-        "rfid": "1e54a2c3-d7df-4d6a-9a3d-8433246962aa",
+        "rfid": "a3e5679c-94eb-4d9e-b22c-725fc6cef5bf",
         "client": 2,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 3,
+        "age": 4,
         "breed": 7,
         "color": 1,
         "sell_date": "2100-12-31",
@@ -1893,11 +1893,11 @@
     "model": "assets.cow",
     "pk": 127,
     "fields": {
-        "rfid": "34ac9e84-ef15-4e0d-854f-e7ab3e7bac4b",
-        "client": 4,
+        "rfid": "dad8bc56-f3da-45b2-84f8-1fc5e98f39ef",
+        "client": 1,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 2,
+        "age": 1,
         "breed": 7,
         "color": 1,
         "sell_date": "2100-12-31",
@@ -1908,11 +1908,11 @@
     "model": "assets.cow",
     "pk": 128,
     "fields": {
-        "rfid": "d4184b6a-d739-47d0-9e47-3e1fe56a4dd4",
-        "client": 1,
+        "rfid": "ef4f9d28-e38f-4e9c-85b1-f03236e4753b",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 5,
+        "age": 1,
         "breed": 7,
         "color": 1,
         "sell_date": "2100-12-31",
@@ -1923,11 +1923,11 @@
     "model": "assets.cow",
     "pk": 129,
     "fields": {
-        "rfid": "9cca3035-9b07-4445-b8ff-76a22f3f2e47",
-        "client": 5,
+        "rfid": "776088d7-0323-4312-bd76-898b56fa279a",
+        "client": 4,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 4,
+        "age": 5,
         "breed": 7,
         "color": 1,
         "sell_date": "2100-12-31",
@@ -1938,5865 +1938,15 @@
     "model": "assets.cow",
     "pk": 130,
     "fields": {
-        "rfid": "57410d8c-91af-4140-80f9-2550e445d676",
-        "client": 2,
+        "rfid": "ec773b10-8845-4651-a62f-257881fb9026",
+        "client": 3,
         "purchased_by": 2,
         "purchase_date": "2014-12-31",
-        "age": 1,
+        "age": 4,
         "breed": 7,
         "color": 1,
         "sell_date": "2100-12-31",
         "link": "/assets/api/cows/130/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 131,
-    "fields": {
-        "rfid": "4912f5e0-bca2-43fa-978d-1df8b4bf8fa9",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/131/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 132,
-    "fields": {
-        "rfid": "f4a305b6-9acd-49e8-8287-7c8dc79b745a",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/132/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 133,
-    "fields": {
-        "rfid": "92c2acd0-fee4-4cb2-99fd-d62fa8345fbe",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/133/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 134,
-    "fields": {
-        "rfid": "cb5bb631-8de2-4bb8-85ea-06c193256455",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/134/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 135,
-    "fields": {
-        "rfid": "258dae37-2c6f-4fd3-87bb-0fa08bfd2640",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/135/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 136,
-    "fields": {
-        "rfid": "b843f675-cde5-4f2f-a41b-0ba1e81a56aa",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 1,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/136/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 137,
-    "fields": {
-        "rfid": "4810d50a-577f-4001-a63c-f02df29f6674",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 1,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/137/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 138,
-    "fields": {
-        "rfid": "2acb24c9-10bd-46ad-be02-e4c84b2aa331",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/138/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 139,
-    "fields": {
-        "rfid": "fa143cb4-beb1-4e8b-b59d-08fd5a37c34e",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/139/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 140,
-    "fields": {
-        "rfid": "b0dd945a-d64f-4d5b-aa59-5ab8926e17dc",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/140/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 141,
-    "fields": {
-        "rfid": "5b9a14ba-bb9f-47c8-ad04-27be1e474f88",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/141/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 142,
-    "fields": {
-        "rfid": "aa549c14-c71d-47ee-ac03-760774f957d7",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/142/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 143,
-    "fields": {
-        "rfid": "b616d122-b4fb-45f8-9632-bce0fb7fe91c",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 1,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/143/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 144,
-    "fields": {
-        "rfid": "8815e675-861e-466e-b512-508f8bebe3c7",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 1,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/144/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 145,
-    "fields": {
-        "rfid": "f2165a44-6888-4b2f-8eb1-7385e4b83454",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/145/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 146,
-    "fields": {
-        "rfid": "5ca33bac-79f9-44f1-bdf0-4480a51b35d7",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/146/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 147,
-    "fields": {
-        "rfid": "4ba9845b-ba5d-43ba-8f1e-bd583c235882",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/147/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 148,
-    "fields": {
-        "rfid": "c982656a-01c0-4d22-bbc7-fa7acab136e3",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/148/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 149,
-    "fields": {
-        "rfid": "6cce7891-b6bc-47f1-bfa0-16c5aab82453",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/149/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 150,
-    "fields": {
-        "rfid": "6a231ba8-fb81-4cf2-8a94-fa14e0745cf5",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 1,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/150/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 151,
-    "fields": {
-        "rfid": "44ecca89-0933-493b-9ea8-73df0c8fc6ba",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/151/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 152,
-    "fields": {
-        "rfid": "597bc576-f9f4-441b-8e23-45a99372020d",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/152/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 153,
-    "fields": {
-        "rfid": "89517c22-18d0-4be4-95c7-470d4aa05bfc",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 1,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/153/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 154,
-    "fields": {
-        "rfid": "0e04913a-4c8e-413c-9ad2-328445f1928d",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/154/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 155,
-    "fields": {
-        "rfid": "c49ce709-eb62-4819-9fb6-9b09b28d3349",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/155/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 156,
-    "fields": {
-        "rfid": "f59be4ed-6e02-4654-b405-6c2fa2320247",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 1,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/156/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 157,
-    "fields": {
-        "rfid": "442e6d53-8103-431b-8156-8d81d7886da3",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/157/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 158,
-    "fields": {
-        "rfid": "ae788e56-248d-460c-a820-a9e0c73cb580",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/158/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 159,
-    "fields": {
-        "rfid": "a72e839a-54e5-4b37-a4bb-6155e176a943",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 1,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/159/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 160,
-    "fields": {
-        "rfid": "ac662c94-ae1d-43b9-b1d7-ac58028859a8",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 1,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/160/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 161,
-    "fields": {
-        "rfid": "907e69dd-d25f-4d36-86d9-634058d619da",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/161/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 162,
-    "fields": {
-        "rfid": "8d143908-b43d-4916-b985-0d3b94ebf438",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/162/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 163,
-    "fields": {
-        "rfid": "cbd3a4af-731b-4053-827d-011cb05e7074",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/163/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 164,
-    "fields": {
-        "rfid": "da82b3d9-7189-4043-a38e-86c83e86dd0a",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/164/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 165,
-    "fields": {
-        "rfid": "e4c9ba2d-a157-4771-ad1d-d728ae52530d",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/165/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 166,
-    "fields": {
-        "rfid": "a76760d9-9329-45a7-b881-a827f8a880c3",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/166/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 167,
-    "fields": {
-        "rfid": "7ff6c52f-f32d-406b-95bc-651fe206a84c",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/167/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 168,
-    "fields": {
-        "rfid": "7a988b04-d530-496a-a647-1ab60ad08a6d",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/168/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 169,
-    "fields": {
-        "rfid": "0093f367-a3f2-4fcd-b98a-b8d4ddedc736",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/169/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 170,
-    "fields": {
-        "rfid": "e1eb6a4a-5305-4d25-8a0b-753de63d81ee",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/170/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 171,
-    "fields": {
-        "rfid": "a97bea62-f2c7-413d-9615-17d039a062d0",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/171/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 172,
-    "fields": {
-        "rfid": "de8d6590-2e28-4bea-85a9-c899883fb0fb",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/172/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 173,
-    "fields": {
-        "rfid": "620c7e8f-4f64-49a0-bccc-b416f7ca3bcf",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/173/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 174,
-    "fields": {
-        "rfid": "16cd4e39-319e-49da-a7de-662a3948195b",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/174/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 175,
-    "fields": {
-        "rfid": "0b62bf14-47f3-4195-b787-4c8d9ebe3553",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/175/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 176,
-    "fields": {
-        "rfid": "c351ce52-f972-4592-96c0-7c4893ab81b7",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/176/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 177,
-    "fields": {
-        "rfid": "d34df403-87b0-48cf-9d11-93fece25b9dd",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/177/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 178,
-    "fields": {
-        "rfid": "f7081432-453b-44bd-9fda-7724051df65e",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/178/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 179,
-    "fields": {
-        "rfid": "af374c65-d691-469e-8196-e8e945338d4e",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/179/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 180,
-    "fields": {
-        "rfid": "570c75a1-2490-4cb1-af25-c87a3b704be2",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/180/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 181,
-    "fields": {
-        "rfid": "a129571e-a6e5-4d64-bb05-b44f3bd3c8f5",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/181/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 182,
-    "fields": {
-        "rfid": "3f0cef62-4057-4de5-8f1e-c0b0ced25a61",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/182/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 183,
-    "fields": {
-        "rfid": "8396d18f-d0cf-4d19-af63-d204d470bb66",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/183/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 184,
-    "fields": {
-        "rfid": "289e1267-81c3-4703-a2cf-d87cc1303dba",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/184/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 185,
-    "fields": {
-        "rfid": "2efffd53-8a21-4db5-a22a-d78d18cbc5f0",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/185/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 186,
-    "fields": {
-        "rfid": "e63319e5-3a7c-4b69-84a1-cd7f8d977bdc",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/186/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 187,
-    "fields": {
-        "rfid": "ebad654e-93ba-4581-954e-f366e383704a",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/187/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 188,
-    "fields": {
-        "rfid": "bd2e078a-a8f4-43bc-9475-8e53bdc6b808",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/188/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 189,
-    "fields": {
-        "rfid": "75b77a56-e24b-4162-922d-12da88446a1c",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/189/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 190,
-    "fields": {
-        "rfid": "bf519d86-e07b-4432-b2be-d967cd7d2710",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/190/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 191,
-    "fields": {
-        "rfid": "7b756143-6ea6-4708-b45a-902b6249be88",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/191/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 192,
-    "fields": {
-        "rfid": "b6cdb205-f45c-4206-8bf9-40744d7f6244",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/192/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 193,
-    "fields": {
-        "rfid": "cfc6253d-5194-4c30-be29-03048c62fb64",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/193/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 194,
-    "fields": {
-        "rfid": "72f99785-83d0-46d3-8008-b53d87846db0",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/194/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 195,
-    "fields": {
-        "rfid": "c510c7fc-22a9-4168-8efa-7dcfcd7a2166",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/195/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 196,
-    "fields": {
-        "rfid": "f2865ae6-4407-4940-8146-4dccf0c15251",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/196/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 197,
-    "fields": {
-        "rfid": "1860ee83-f942-49c6-acdd-1ceb555aadc5",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/197/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 198,
-    "fields": {
-        "rfid": "93e950ec-bb3e-4550-83a7-eae6145d8052",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/198/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 199,
-    "fields": {
-        "rfid": "154bf8dc-141e-4486-8f9d-0da7537ccec2",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/199/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 200,
-    "fields": {
-        "rfid": "7d503e43-9fdb-4e37-8365-48f5b3d68c6a",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/200/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 201,
-    "fields": {
-        "rfid": "ea524fd9-4108-4539-ab2e-8bdff30c00fa",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/201/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 202,
-    "fields": {
-        "rfid": "489fc2cf-3cca-43a9-a7db-c2110ff81f9b",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/202/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 203,
-    "fields": {
-        "rfid": "366cfef0-8e31-4427-9ca6-82b0c6d141a3",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/203/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 204,
-    "fields": {
-        "rfid": "177c5f7b-b057-442b-985c-7dffbdc239ec",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/204/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 205,
-    "fields": {
-        "rfid": "a7b0e39a-6ceb-4046-8aa8-277890adb374",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/205/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 206,
-    "fields": {
-        "rfid": "5b0bda62-1d16-43a6-9611-9c793a2ad02d",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/206/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 207,
-    "fields": {
-        "rfid": "d38f72ce-ab61-4fb1-92b3-33fb9c3860dd",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/207/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 208,
-    "fields": {
-        "rfid": "1ab28e8b-011d-40ac-b7ea-5d9a724fb231",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/208/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 209,
-    "fields": {
-        "rfid": "e39f2819-0a74-4ea9-b95c-45a98c0fea22",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/209/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 210,
-    "fields": {
-        "rfid": "7a1f6f75-2360-4965-b251-f2bed3e2f051",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/210/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 211,
-    "fields": {
-        "rfid": "59317428-e0f7-4bda-a07c-6beb94d96aff",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 1,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/211/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 212,
-    "fields": {
-        "rfid": "caa532aa-4a28-4e81-9577-9eae4777c7d6",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/212/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 213,
-    "fields": {
-        "rfid": "4bdeabcb-40ea-4724-9224-23246b5b6c40",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/213/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 214,
-    "fields": {
-        "rfid": "3de25632-ed98-4c90-a74f-7c3e64455e76",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/214/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 215,
-    "fields": {
-        "rfid": "9423dc6e-29ee-4b50-ae7f-e32ade1d9d24",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/215/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 216,
-    "fields": {
-        "rfid": "093d1018-a942-44c0-84c3-b2194fd4db60",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/216/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 217,
-    "fields": {
-        "rfid": "a6a2e843-9ebf-408a-9261-1feeeb35cc51",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/217/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 218,
-    "fields": {
-        "rfid": "334b94be-f254-4f73-9414-b2e11527644c",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/218/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 219,
-    "fields": {
-        "rfid": "8ec571bf-5509-4499-96b3-e53cbca1bd15",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/219/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 220,
-    "fields": {
-        "rfid": "a42db784-086e-4490-abf2-b18fd499d521",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/220/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 221,
-    "fields": {
-        "rfid": "6ff00b67-4a37-4be1-9cf4-ce19e2103fa7",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/221/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 222,
-    "fields": {
-        "rfid": "45f3ad90-cd45-4a29-8ab3-3e30f4d9e6d2",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 1,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/222/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 223,
-    "fields": {
-        "rfid": "6b1cce3b-54df-43d6-addd-d5ea52675df3",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/223/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 224,
-    "fields": {
-        "rfid": "a9828877-538c-4e53-ba7d-be184f84515e",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/224/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 225,
-    "fields": {
-        "rfid": "4d0900d2-f179-4e4f-928d-63fd8ffbb768",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/225/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 226,
-    "fields": {
-        "rfid": "c43aba5a-8535-444b-b91f-57b54e3c67f8",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/226/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 227,
-    "fields": {
-        "rfid": "ad9f4885-8084-462c-add5-654cceed2b17",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/227/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 228,
-    "fields": {
-        "rfid": "5fff5c42-0b39-4fa7-8698-685cb3a304b3",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/228/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 229,
-    "fields": {
-        "rfid": "b0578e4c-0a08-41a4-8f0d-92398fa04257",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/229/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 230,
-    "fields": {
-        "rfid": "3310ee0f-a333-4ee2-baaf-e33e6554873a",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/230/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 231,
-    "fields": {
-        "rfid": "c46a1be5-6a70-4ed4-9589-0e1c9a676db3",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/231/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 232,
-    "fields": {
-        "rfid": "5282be05-a490-4744-8ad9-a1d99a5d7986",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/232/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 233,
-    "fields": {
-        "rfid": "b816711f-e526-48cc-a918-1307dc631663",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/233/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 234,
-    "fields": {
-        "rfid": "1e35aba4-37f1-4352-8070-85fd3816e1b7",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 1,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/234/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 235,
-    "fields": {
-        "rfid": "02e442f9-14dc-4812-863c-008977740be6",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 1,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/235/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 236,
-    "fields": {
-        "rfid": "fd1629e9-5eb2-4989-b8c9-c50e8365e7d1",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 1,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/236/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 237,
-    "fields": {
-        "rfid": "f10c8eeb-ab44-4085-8b9a-87ecaaf748f8",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/237/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 238,
-    "fields": {
-        "rfid": "d2c41505-26c0-4840-b065-638d17dfa969",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/238/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 239,
-    "fields": {
-        "rfid": "46eb7067-b8c7-471c-a3e2-07ca3301d095",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 1,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/239/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 240,
-    "fields": {
-        "rfid": "2f74eb0e-0576-4b74-a2fe-cb918840f969",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/240/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 241,
-    "fields": {
-        "rfid": "d1f94b83-cb6d-4992-88bf-554703948a5f",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/241/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 242,
-    "fields": {
-        "rfid": "ebadf473-86b9-47b5-b796-e89423af8d64",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/242/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 243,
-    "fields": {
-        "rfid": "c479ec3d-8f74-4338-b2ae-31e9db6aedbe",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/243/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 244,
-    "fields": {
-        "rfid": "ee5bac70-d73d-4f6f-9b68-9f8c3bf896df",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/244/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 245,
-    "fields": {
-        "rfid": "0110a691-2782-43a7-87be-a465858674f6",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/245/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 246,
-    "fields": {
-        "rfid": "ab825279-2011-465f-8172-8226d73b00aa",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/246/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 247,
-    "fields": {
-        "rfid": "bd362a1e-7dce-4471-86e0-a119cfb9ab46",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/247/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 248,
-    "fields": {
-        "rfid": "350ace9e-6922-44a4-9bd2-9c9f636c8394",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/248/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 249,
-    "fields": {
-        "rfid": "97018f5b-6ae0-4009-85ee-7d62bbc72a1d",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/249/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 250,
-    "fields": {
-        "rfid": "e5cd2fc7-8f68-4d09-b40a-0932f183fa5d",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/250/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 251,
-    "fields": {
-        "rfid": "d19d77b2-8591-4188-a4c8-df744c1153eb",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/251/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 252,
-    "fields": {
-        "rfid": "14612baf-8d5d-47c3-b2c1-bd0329b8735d",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/252/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 253,
-    "fields": {
-        "rfid": "8ce51800-5943-4797-adad-adb86da9fdad",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 2,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/253/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 254,
-    "fields": {
-        "rfid": "b9181910-61ad-48f5-a490-6338a7c28190",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 1,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/254/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 255,
-    "fields": {
-        "rfid": "0093e80a-3f59-496b-848b-008523795d54",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/255/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 256,
-    "fields": {
-        "rfid": "ce4ec408-bfeb-49d6-819e-b792b5f68e73",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/256/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 257,
-    "fields": {
-        "rfid": "c207255a-1a25-48ae-be9a-df089c83b77a",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/257/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 258,
-    "fields": {
-        "rfid": "06860f50-2b82-41d8-85b5-cdc79d4d6229",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 4,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/258/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 259,
-    "fields": {
-        "rfid": "dfd87ab6-9852-40ec-a934-88d0e7c859d0",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 5,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/259/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 260,
-    "fields": {
-        "rfid": "ac913db2-cc67-411e-afd1-4cf6e1ad7983",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-03-31",
-        "age": 3,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/260/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 261,
-    "fields": {
-        "rfid": "313b7522-9299-4b23-acd0-58df54a1892e",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/261/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 262,
-    "fields": {
-        "rfid": "82465ab4-7716-4e77-a931-4f4da9b6f859",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/262/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 263,
-    "fields": {
-        "rfid": "49f251e3-e690-4d6b-bae2-fbe94c65e3fe",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/263/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 264,
-    "fields": {
-        "rfid": "cc9cbd15-a124-4b98-ae06-31c54b44e10b",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/264/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 265,
-    "fields": {
-        "rfid": "09fee128-0e9d-4e2f-9433-f310d56cff02",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/265/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 266,
-    "fields": {
-        "rfid": "ff7070c9-3f1e-42b4-b041-3566e80574cf",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/266/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 267,
-    "fields": {
-        "rfid": "bf18393c-83f6-4907-848f-beb91120d533",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/267/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 268,
-    "fields": {
-        "rfid": "36a4a02f-edc1-4d99-ba36-4a80b59f79c7",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/268/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 269,
-    "fields": {
-        "rfid": "b2a5e6ff-b594-48a3-948b-6c70f144ac69",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/269/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 270,
-    "fields": {
-        "rfid": "df084e8d-6748-47b2-88ac-dbf1bc84df93",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/270/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 271,
-    "fields": {
-        "rfid": "2d4def77-a5d1-4deb-a879-273f8739da6e",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/271/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 272,
-    "fields": {
-        "rfid": "47da16f7-e836-455b-83cc-0b057360b5ea",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/272/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 273,
-    "fields": {
-        "rfid": "eb7f69c6-fd2c-486a-8906-d2614bd42866",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/273/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 274,
-    "fields": {
-        "rfid": "ba6e4921-d125-4564-a7b4-6d027983f9e7",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/274/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 275,
-    "fields": {
-        "rfid": "05f98946-8ceb-4196-bf22-b061b75bbf55",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/275/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 276,
-    "fields": {
-        "rfid": "030173c3-92c4-4f2a-a036-94fda5938080",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/276/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 277,
-    "fields": {
-        "rfid": "17f6407a-22be-44bd-9921-8c3d692076ca",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/277/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 278,
-    "fields": {
-        "rfid": "e2f76685-a799-494b-87ce-ed1db4185373",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/278/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 279,
-    "fields": {
-        "rfid": "d3d958e4-a2ae-4cad-ac86-2b22294be53f",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/279/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 280,
-    "fields": {
-        "rfid": "d16add88-c18f-4528-9964-dbd13f406a85",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/280/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 281,
-    "fields": {
-        "rfid": "ed7419c0-30b4-4474-9e98-665ed2ec68f2",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/281/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 282,
-    "fields": {
-        "rfid": "999ec461-072f-4cca-95bb-b66cd0a9bcc2",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/282/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 283,
-    "fields": {
-        "rfid": "16c28f1a-bb13-4720-a48e-fd6c6ca3f528",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/283/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 284,
-    "fields": {
-        "rfid": "0f0122d8-32d2-4c5b-ae85-f41f2b242f02",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/284/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 285,
-    "fields": {
-        "rfid": "7e81ad1c-d6e5-4f0a-9966-5c529f5eed4a",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/285/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 286,
-    "fields": {
-        "rfid": "d435f7a7-0dd2-4263-ac71-debac1dd7c65",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/286/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 287,
-    "fields": {
-        "rfid": "4602b071-ea25-4caf-b0a3-dd1344ee7513",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/287/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 288,
-    "fields": {
-        "rfid": "2eb3674d-ca4e-4b7f-af50-70867b3d8b84",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/288/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 289,
-    "fields": {
-        "rfid": "0f4c47d4-4755-4d41-88b8-69bc7f73b19d",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/289/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 290,
-    "fields": {
-        "rfid": "f2ee9449-1cb1-4c52-9578-f319f8de3840",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/290/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 291,
-    "fields": {
-        "rfid": "e5d1a6aa-4992-445f-a49d-0ea4c6208c49",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/291/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 292,
-    "fields": {
-        "rfid": "56438a3a-a6ef-467a-a5a7-4a44888425db",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/292/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 293,
-    "fields": {
-        "rfid": "2e773d44-2787-47ea-9335-807848fcbc79",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/293/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 294,
-    "fields": {
-        "rfid": "1a21c427-2439-4e77-a272-6b595766ea81",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/294/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 295,
-    "fields": {
-        "rfid": "43195328-25de-4d26-b41d-3d0857421a38",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/295/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 296,
-    "fields": {
-        "rfid": "70154a6d-4d30-4937-97d5-324189b98f4b",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/296/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 297,
-    "fields": {
-        "rfid": "debb7092-f0d8-470e-93a8-e8e903125090",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/297/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 298,
-    "fields": {
-        "rfid": "4ba44b7c-24e1-477b-9f87-54aa57902fa4",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/298/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 299,
-    "fields": {
-        "rfid": "212c24fd-b36d-4788-909e-0115e90f2471",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/299/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 300,
-    "fields": {
-        "rfid": "d1dbed8c-4b88-418d-bf4d-2c3caad72e08",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/300/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 301,
-    "fields": {
-        "rfid": "aae2d25b-70b5-4828-992e-02daec88a268",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/301/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 302,
-    "fields": {
-        "rfid": "e397c932-aa53-445c-ac00-86f6257d4eff",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/302/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 303,
-    "fields": {
-        "rfid": "e57cb7f7-9cec-406b-8062-91e30a78a3eb",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/303/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 304,
-    "fields": {
-        "rfid": "e6a75ca9-0b5f-41a8-b973-c5d0bfc3c846",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/304/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 305,
-    "fields": {
-        "rfid": "01d8f25b-a996-44e8-8988-11aadd9176a9",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/305/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 306,
-    "fields": {
-        "rfid": "f202ec2c-ecb9-47ef-bda7-3bd4c19d4d55",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/306/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 307,
-    "fields": {
-        "rfid": "05a35f08-0456-4172-9019-9190276f544b",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/307/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 308,
-    "fields": {
-        "rfid": "8432cdf3-46d5-4c78-a0ae-01a3d42dcea0",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/308/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 309,
-    "fields": {
-        "rfid": "85f84a05-0875-4c9b-bebf-8501ee357b34",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/309/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 310,
-    "fields": {
-        "rfid": "dd69f99e-632f-43b6-9e45-5d096c422213",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/310/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 311,
-    "fields": {
-        "rfid": "62fea80d-ebe5-4c9b-87f8-4c43c0079389",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/311/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 312,
-    "fields": {
-        "rfid": "fad17c9b-7834-4063-bc7f-7cb74b713946",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/312/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 313,
-    "fields": {
-        "rfid": "7f3c9815-2089-4fe0-8429-089395243bce",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/313/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 314,
-    "fields": {
-        "rfid": "9b7ebe5c-dc52-4c50-a724-a9f3e937bfa4",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/314/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 315,
-    "fields": {
-        "rfid": "7dd5bd5b-872f-4df0-b70a-ba32bff26f8b",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/315/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 316,
-    "fields": {
-        "rfid": "957fd87b-7bc5-4de3-a4ba-b6c3e5a38f57",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/316/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 317,
-    "fields": {
-        "rfid": "34975a33-fdd5-4489-90df-341efd664a67",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/317/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 318,
-    "fields": {
-        "rfid": "0418f13a-24a9-47bd-a006-0cadd3b1ea10",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/318/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 319,
-    "fields": {
-        "rfid": "5bbd9032-2dfc-4e13-8a33-5ac49ef6598a",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/319/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 320,
-    "fields": {
-        "rfid": "a880bc44-1a6b-45b1-ba11-13554099a68e",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/320/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 321,
-    "fields": {
-        "rfid": "2719b3b9-2427-4750-b3e4-e0b09481997e",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/321/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 322,
-    "fields": {
-        "rfid": "21fb6bae-2959-42cc-83b6-71b8aa7f876c",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/322/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 323,
-    "fields": {
-        "rfid": "15ee6a19-4765-4c2a-b124-ab813313f979",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/323/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 324,
-    "fields": {
-        "rfid": "12e924db-b683-4251-9950-71f233b1ba59",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/324/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 325,
-    "fields": {
-        "rfid": "35e3b8f7-341b-41cb-81be-eaa80854c378",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/325/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 326,
-    "fields": {
-        "rfid": "b51924b0-19e8-4932-9045-4251f96013d6",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/326/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 327,
-    "fields": {
-        "rfid": "a8ea7d8c-6c38-468e-910d-bbb2d24d3a10",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/327/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 328,
-    "fields": {
-        "rfid": "1e292404-7e7c-4f43-9b6c-b03b5d4f83c7",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/328/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 329,
-    "fields": {
-        "rfid": "98abf68e-428d-4cff-a945-2911aa366045",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/329/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 330,
-    "fields": {
-        "rfid": "09cfb77f-228b-4687-a79d-2615a6bcd421",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/330/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 331,
-    "fields": {
-        "rfid": "87e0826d-b3de-4f28-9685-88101eed95f4",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/331/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 332,
-    "fields": {
-        "rfid": "39cc57ce-a7d0-4a27-bf5d-f532de8976ba",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/332/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 333,
-    "fields": {
-        "rfid": "fc68ef59-7661-4e69-ada5-a0b3cd830469",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/333/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 334,
-    "fields": {
-        "rfid": "3db7c400-392a-4f29-90e5-3317f968e274",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/334/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 335,
-    "fields": {
-        "rfid": "fb4e7613-a544-4eee-84f6-7c33cc5c23cb",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/335/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 336,
-    "fields": {
-        "rfid": "6bb6b75e-e169-4dc3-bfe6-5a6fc9b3de61",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/336/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 337,
-    "fields": {
-        "rfid": "8f95f17a-b426-4da4-ad82-5fc0f67f3406",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/337/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 338,
-    "fields": {
-        "rfid": "9cc7aa65-f715-4283-ad39-d128328d752f",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/338/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 339,
-    "fields": {
-        "rfid": "55c9c8e3-14bb-4bb5-a250-1b9296aa307b",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/339/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 340,
-    "fields": {
-        "rfid": "f15533c0-79d6-4a7d-bd1f-35a8ac423ab1",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/340/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 341,
-    "fields": {
-        "rfid": "10af3bec-0a6e-4c8d-8d11-2e3f5b55b6e7",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/341/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 342,
-    "fields": {
-        "rfid": "fa2bf042-7c12-4193-a5ba-bb7a5a840a3c",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/342/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 343,
-    "fields": {
-        "rfid": "3c38a1b5-99f4-43be-8d7f-80e45e5340b1",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/343/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 344,
-    "fields": {
-        "rfid": "98180c61-452d-442a-808e-9fb19aaff604",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/344/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 345,
-    "fields": {
-        "rfid": "c9c6bee6-6831-47b3-a085-1c758a2ad808",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/345/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 346,
-    "fields": {
-        "rfid": "7a42c5bf-b743-4190-a55f-8b71a1c7cac9",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/346/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 347,
-    "fields": {
-        "rfid": "e2fbe35c-6c62-4693-bc95-bd7013f4a34f",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/347/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 348,
-    "fields": {
-        "rfid": "676463ec-29b2-4847-8cc8-3e3f0404512a",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/348/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 349,
-    "fields": {
-        "rfid": "41bbffee-e724-431c-9543-4659a4cc8d92",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/349/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 350,
-    "fields": {
-        "rfid": "0ed915bf-6b0e-4c50-97e8-5b9ad66c5220",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/350/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 351,
-    "fields": {
-        "rfid": "59728d69-68bf-44cc-b4bf-86be52706426",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/351/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 352,
-    "fields": {
-        "rfid": "aefcf662-fce5-4bb2-a210-ff971136505c",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/352/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 353,
-    "fields": {
-        "rfid": "f6ff36f0-4cc6-4924-b56c-4506cb23a8a0",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/353/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 354,
-    "fields": {
-        "rfid": "d23b50b9-2943-41fc-abb3-1214731b08fc",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/354/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 355,
-    "fields": {
-        "rfid": "7c9489ec-2a2f-4c1f-8061-e85dcacb1900",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/355/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 356,
-    "fields": {
-        "rfid": "f890fca8-e24f-4c05-93e3-7de0d5f08191",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/356/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 357,
-    "fields": {
-        "rfid": "90c18f62-ee28-49c1-b68a-58132b1aabfd",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/357/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 358,
-    "fields": {
-        "rfid": "96a69bfe-7ea5-43b1-b747-5a54c180f59f",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/358/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 359,
-    "fields": {
-        "rfid": "f37c98bd-1c4d-472e-9549-6f2e286cea62",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/359/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 360,
-    "fields": {
-        "rfid": "5dcafc54-71de-487c-99bc-e8e1e96386b7",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/360/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 361,
-    "fields": {
-        "rfid": "f8c8af31-2ffb-4d2b-9ac2-c401655b4210",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/361/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 362,
-    "fields": {
-        "rfid": "8794b167-b4e9-4e5e-b09b-73567b51e08d",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/362/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 363,
-    "fields": {
-        "rfid": "68e36930-e83f-4373-8b44-e084fd26a629",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/363/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 364,
-    "fields": {
-        "rfid": "17e5b7ef-f352-4491-b5c0-f3a32131cb4d",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/364/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 365,
-    "fields": {
-        "rfid": "28ffd8b0-e4fe-4238-b5e8-c258b6038042",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/365/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 366,
-    "fields": {
-        "rfid": "48ed41a7-4e1a-4c24-acbe-dbe6a49318d7",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/366/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 367,
-    "fields": {
-        "rfid": "b869f058-6b11-411a-b2ab-091c5e2d70ef",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/367/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 368,
-    "fields": {
-        "rfid": "a102204a-ed03-495b-b8e0-fe66380368b1",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/368/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 369,
-    "fields": {
-        "rfid": "0ff6db48-d2c6-4c90-b730-38136fabb053",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/369/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 370,
-    "fields": {
-        "rfid": "222dd426-7eb6-4303-aec2-6c8a50575310",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/370/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 371,
-    "fields": {
-        "rfid": "851222fb-0bdb-493f-aa23-49d87fc4e9d4",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/371/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 372,
-    "fields": {
-        "rfid": "ea4e4632-4058-4d49-94b9-8d6b3c5d69c5",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/372/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 373,
-    "fields": {
-        "rfid": "7cbe791c-90b4-475f-bcce-54833c5adf6c",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/373/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 374,
-    "fields": {
-        "rfid": "9c740784-e66f-4ba5-a0d6-be331d73d68d",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/374/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 375,
-    "fields": {
-        "rfid": "53cb3a43-fcdc-491f-ac5f-de41b7a902b2",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/375/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 376,
-    "fields": {
-        "rfid": "d2a9f26e-c81e-4a7e-8eaf-72f00e1aac66",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/376/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 377,
-    "fields": {
-        "rfid": "dee1b7a4-ca4a-4f6a-85a7-8c26e5138d04",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/377/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 378,
-    "fields": {
-        "rfid": "e52d4061-947d-4dc0-b672-307743c51f09",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/378/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 379,
-    "fields": {
-        "rfid": "e35024ba-1739-48e7-b90d-06dfa6be2339",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/379/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 380,
-    "fields": {
-        "rfid": "3ddcf8f6-4da5-4463-8363-00bd83eaed68",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/380/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 381,
-    "fields": {
-        "rfid": "8ef5c7ce-a6f0-4c33-9c98-47b29ee04a5a",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/381/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 382,
-    "fields": {
-        "rfid": "52e8f6d8-1a1b-4e4c-9ae0-640a1d2865b7",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/382/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 383,
-    "fields": {
-        "rfid": "436b4e2d-15c4-4428-ac57-45d383663a2d",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/383/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 384,
-    "fields": {
-        "rfid": "fc5ce352-1d13-451b-8435-b0f77f89b164",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/384/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 385,
-    "fields": {
-        "rfid": "1a2f5c77-4f01-4cc1-80a8-42cf58028623",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/385/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 386,
-    "fields": {
-        "rfid": "96799054-ace6-49f3-b419-fe82b60cfe48",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 3,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/386/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 387,
-    "fields": {
-        "rfid": "3ab3989f-b5c4-41e7-b77f-0c1ac87aaf51",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 2,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/387/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 388,
-    "fields": {
-        "rfid": "76a08ae0-54f6-4e34-806c-a84e39778c60",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 5,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/388/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 389,
-    "fields": {
-        "rfid": "34ea243b-a589-4526-97ee-4c2378e49a11",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 1,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/389/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 390,
-    "fields": {
-        "rfid": "443e77ab-83c5-4469-834b-0c3fb3174947",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-06-30",
-        "age": 4,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/390/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 391,
-    "fields": {
-        "rfid": "02ce2036-efac-4a5d-b33b-59df67269a2b",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/391/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 392,
-    "fields": {
-        "rfid": "05219aff-e08d-4dd5-b4fa-7d96e464ad07",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/392/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 393,
-    "fields": {
-        "rfid": "0c9df1e7-c9ac-4cb5-84f3-0ea2e7222ba1",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/393/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 394,
-    "fields": {
-        "rfid": "4e1c91a9-1622-40b6-bdd6-96c516b5d094",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/394/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 395,
-    "fields": {
-        "rfid": "637304b8-94b3-40d4-bc74-2bfac5becec7",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/395/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 396,
-    "fields": {
-        "rfid": "f174a722-6015-4951-ad85-bf06fa83dc5a",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/396/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 397,
-    "fields": {
-        "rfid": "fcc72623-b5d0-4e05-a91f-07685ed77a57",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/397/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 398,
-    "fields": {
-        "rfid": "6ef8bbe8-7eec-402b-92dc-d154a810e78a",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/398/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 399,
-    "fields": {
-        "rfid": "2e7a4a14-f9be-472d-93c0-4a05c59226fd",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/399/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 400,
-    "fields": {
-        "rfid": "da02c0c8-07a0-45a1-aaa5-5efba9354bc2",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/400/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 401,
-    "fields": {
-        "rfid": "18467e19-ef86-458c-b4ba-1e6fb5e1e345",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/401/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 402,
-    "fields": {
-        "rfid": "7c3cb878-30e5-4d31-8af3-5f859681b9c0",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/402/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 403,
-    "fields": {
-        "rfid": "3ed16c3d-223f-466e-b3c8-3a4102d07f64",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/403/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 404,
-    "fields": {
-        "rfid": "dbebede6-7616-4b2e-bb49-69d3cc07e5ce",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/404/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 405,
-    "fields": {
-        "rfid": "d477e6c9-853c-437b-ae6c-53582fa82e1f",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/405/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 406,
-    "fields": {
-        "rfid": "297e9c08-431e-438f-9014-b26a707523ce",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/406/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 407,
-    "fields": {
-        "rfid": "620451c3-9db8-48a8-a207-7963106a3f90",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/407/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 408,
-    "fields": {
-        "rfid": "9a2d6a17-c222-43a7-a0f8-4bf3b87e1204",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/408/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 409,
-    "fields": {
-        "rfid": "b5817150-5110-4e81-976e-53fe4e59f15c",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 1,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/409/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 410,
-    "fields": {
-        "rfid": "5c7b7848-0cc7-44ac-941b-b62c5b952e0d",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 1,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/410/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 411,
-    "fields": {
-        "rfid": "04c0e23e-8cce-4a49-a5f9-fc84e3c406e0",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/411/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 412,
-    "fields": {
-        "rfid": "6e9f7663-6fcd-4c01-a746-5ea6186d422c",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/412/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 413,
-    "fields": {
-        "rfid": "5c803e92-2be1-47b5-8050-35994904732d",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/413/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 414,
-    "fields": {
-        "rfid": "f828fb01-a603-4374-a873-a67eb490eb6c",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/414/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 415,
-    "fields": {
-        "rfid": "ef076821-038f-4015-abfc-c589fa511bfc",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/415/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 416,
-    "fields": {
-        "rfid": "171388e8-ce92-4d61-b954-3dbd5db38a04",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/416/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 417,
-    "fields": {
-        "rfid": "d7ef5b58-a7eb-4710-80c8-c3ff4af24ba7",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/417/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 418,
-    "fields": {
-        "rfid": "26d236a3-d80d-418f-81b4-746b9b01f275",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/418/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 419,
-    "fields": {
-        "rfid": "916a8683-2b99-4f91-9570-0216bb1531f5",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/419/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 420,
-    "fields": {
-        "rfid": "99202d5f-2a92-423e-a406-a2903b5d2b6a",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/420/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 421,
-    "fields": {
-        "rfid": "eb59a3fb-9ae9-4bff-9bda-d2dff96a8e65",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/421/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 422,
-    "fields": {
-        "rfid": "bf410a1a-843c-40cb-9bf8-576b0e5e684f",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/422/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 423,
-    "fields": {
-        "rfid": "27df69f0-36d7-4342-8055-2f3ef8d65058",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/423/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 424,
-    "fields": {
-        "rfid": "8cb71efe-c450-4740-9e23-c17e4a80df93",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/424/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 425,
-    "fields": {
-        "rfid": "132099c0-df16-48d4-a117-93335c6b66ae",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/425/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 426,
-    "fields": {
-        "rfid": "bc1ae156-e294-4e60-8e63-05337effc8f8",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/426/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 427,
-    "fields": {
-        "rfid": "e3ebe3d7-3719-4f5a-856e-6a4ba43e1fed",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/427/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 428,
-    "fields": {
-        "rfid": "cc1f5951-a0ac-409b-9c82-a96e028dd4ea",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/428/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 429,
-    "fields": {
-        "rfid": "b73c2daa-5e83-4482-8e46-2f3d76909a7b",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 2,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/429/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 430,
-    "fields": {
-        "rfid": "6e3674e8-cc18-4fcc-b023-bf810d59c9da",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 2,
-        "color": 4,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/430/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 431,
-    "fields": {
-        "rfid": "67575dc5-3204-4456-895b-d096e3632152",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/431/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 432,
-    "fields": {
-        "rfid": "a00eb055-04b5-4704-a656-9bb6b26ca160",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/432/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 433,
-    "fields": {
-        "rfid": "4036186b-647a-4cd3-82e9-cb74a2117e36",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/433/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 434,
-    "fields": {
-        "rfid": "1329a1a8-0a7c-429f-968b-42ba51cd2fee",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/434/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 435,
-    "fields": {
-        "rfid": "896775e7-fa50-4062-abef-15968ba61929",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/435/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 436,
-    "fields": {
-        "rfid": "ab083bd8-1e6b-42e9-bcb3-65ded0c6804a",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/436/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 437,
-    "fields": {
-        "rfid": "47a5dbf2-7ef4-4c35-8c3e-8904ad03c764",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/437/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 438,
-    "fields": {
-        "rfid": "acfb2cb8-ff66-48ab-8ee2-5bdcb2e5e0e6",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/438/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 439,
-    "fields": {
-        "rfid": "d0c0c043-851e-42d3-9500-59ae529dec32",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/439/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 440,
-    "fields": {
-        "rfid": "67a33ca1-126e-4daa-989d-3baf45902591",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 3,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/440/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 441,
-    "fields": {
-        "rfid": "a91d30cb-1ccf-4b91-8b61-eee7fd821103",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/441/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 442,
-    "fields": {
-        "rfid": "58168086-3390-4eba-bd8b-ecc89c58f7a6",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/442/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 443,
-    "fields": {
-        "rfid": "ac5958e7-48c6-4d59-9662-dafaec799318",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/443/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 444,
-    "fields": {
-        "rfid": "490f9641-b267-42dd-93cc-2ce274814b81",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/444/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 445,
-    "fields": {
-        "rfid": "64a5531b-c2c0-4ec0-927d-d6b66665501e",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/445/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 446,
-    "fields": {
-        "rfid": "452af2b0-91ba-40aa-b290-363b8e8946f1",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/446/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 447,
-    "fields": {
-        "rfid": "9852faf0-b1ee-4b56-89d3-4808acb128b9",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/447/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 448,
-    "fields": {
-        "rfid": "e54300e2-8155-4e42-bff9-dbbe27be2bcc",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/448/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 449,
-    "fields": {
-        "rfid": "442bd049-7f54-4d98-89e0-c789ecca17c0",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/449/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 450,
-    "fields": {
-        "rfid": "97c66c26-c31a-48fb-9acc-eb3f189a2be6",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 4,
-        "color": 5,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/450/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 451,
-    "fields": {
-        "rfid": "d1450e7d-db3e-4465-9e79-205240341c41",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/451/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 452,
-    "fields": {
-        "rfid": "8c0afc3a-f0af-4963-8e29-1f3ab87802fb",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/452/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 453,
-    "fields": {
-        "rfid": "a88cd4cb-e700-4a26-8874-dd13b1ef6eb3",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/453/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 454,
-    "fields": {
-        "rfid": "761b7d98-df0c-4f7b-a2cb-b85a507eb5ed",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/454/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 455,
-    "fields": {
-        "rfid": "f05ae8a5-b394-44f5-81f0-4fcf8008be14",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/455/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 456,
-    "fields": {
-        "rfid": "e7bf3466-6be9-4e5c-9e47-85517d8fc1c1",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/456/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 457,
-    "fields": {
-        "rfid": "ff3d761d-c64e-4438-a77d-e6afffc58f43",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/457/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 458,
-    "fields": {
-        "rfid": "ee5b6a55-9b5c-46bd-b52b-1dd3ef1113cc",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/458/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 459,
-    "fields": {
-        "rfid": "d07625f4-6296-4f1d-afcf-3c9c031d1a28",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/459/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 460,
-    "fields": {
-        "rfid": "ca6b0a09-b764-4e11-8147-b733f40d8cdd",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/460/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 461,
-    "fields": {
-        "rfid": "75bd89ff-b1a1-43ac-bd0c-71fc796d5c5c",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/461/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 462,
-    "fields": {
-        "rfid": "14f1dd5a-7908-428f-8322-bcd7826435d1",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/462/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 463,
-    "fields": {
-        "rfid": "bbc2ddf0-21a9-41f5-ae76-395fc39afa36",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/463/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 464,
-    "fields": {
-        "rfid": "8a7a445d-bcee-4da8-b0e2-9f38c1ae9eb8",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/464/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 465,
-    "fields": {
-        "rfid": "c8de21fb-9a37-4d7c-8033-127d2af8fc27",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/465/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 466,
-    "fields": {
-        "rfid": "39e05c3c-dc92-441c-b31e-d85f6579fecb",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/466/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 467,
-    "fields": {
-        "rfid": "3129dce0-1163-4db6-ac5d-e1d6d575dcfe",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/467/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 468,
-    "fields": {
-        "rfid": "ee3b7793-a138-4c65-9fa9-cc8d9caa798f",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/468/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 469,
-    "fields": {
-        "rfid": "2377d333-f62d-4193-97c8-38f06e0d3933",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 5,
-        "color": 3,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/469/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 470,
-    "fields": {
-        "rfid": "1fd056ce-afce-462c-a6b6-be24167ad7e6",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 5,
-        "color": 6,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/470/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 471,
-    "fields": {
-        "rfid": "efa52fbb-9df6-4e46-bd3a-910f413adcf8",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/471/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 472,
-    "fields": {
-        "rfid": "4ec9d612-b72f-4fb5-a9bc-da83f0a46dc5",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/472/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 473,
-    "fields": {
-        "rfid": "f0d28384-e1ca-4027-98c1-04b24add7f81",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/473/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 474,
-    "fields": {
-        "rfid": "bdfad6e8-7cd4-4123-af0a-b8e57e3cb938",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/474/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 475,
-    "fields": {
-        "rfid": "7d949d4c-c83d-48ec-a991-55fe75a59fc6",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/475/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 476,
-    "fields": {
-        "rfid": "63395e56-8b91-44ba-bb21-176105361bb2",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/476/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 477,
-    "fields": {
-        "rfid": "72d7e7fb-42ec-463f-93f1-d0cc89f1b916",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/477/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 478,
-    "fields": {
-        "rfid": "bceea6d7-a3bd-49fb-b0f4-525d2caa0ced",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/478/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 479,
-    "fields": {
-        "rfid": "26e9d5b8-d1b5-4fc3-8399-7eeb46aa3080",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/479/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 480,
-    "fields": {
-        "rfid": "3e24dd29-6499-4e5d-aca7-9bad863be970",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/480/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 481,
-    "fields": {
-        "rfid": "9f113b2d-aaac-448c-8720-a4a4345e08ce",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/481/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 482,
-    "fields": {
-        "rfid": "58f12fbf-979f-4c79-9d9e-ce0f6ce43d97",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/482/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 483,
-    "fields": {
-        "rfid": "0a424786-30ea-4284-8b56-5a74d26dfaef",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/483/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 484,
-    "fields": {
-        "rfid": "ed8b559e-8ecf-4b46-ba46-eeee0d662b0e",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/484/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 485,
-    "fields": {
-        "rfid": "cd558b82-e5e3-41d7-ace4-db2ca392b6ed",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/485/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 486,
-    "fields": {
-        "rfid": "b70e2c52-dd54-485f-8c42-5c6a544b5e0e",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/486/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 487,
-    "fields": {
-        "rfid": "ff352fd2-a98e-4063-a068-8d8d40cbe846",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/487/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 488,
-    "fields": {
-        "rfid": "6092dc30-8216-4ff1-9fdc-63de8efd08b9",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/488/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 489,
-    "fields": {
-        "rfid": "d2946882-3466-4a2e-8f3e-ebc2939a5da5",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/489/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 490,
-    "fields": {
-        "rfid": "1f80ce02-f979-474b-9ea3-bc7263a69251",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/490/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 491,
-    "fields": {
-        "rfid": "75b2f1a1-d1a8-4523-aea4-93fc336ad303",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/491/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 492,
-    "fields": {
-        "rfid": "6771ab36-9845-41f3-acbf-16e18adfe04b",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/492/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 493,
-    "fields": {
-        "rfid": "1a12635a-a5af-448a-bb27-e7ecbaf03ff1",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/493/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 494,
-    "fields": {
-        "rfid": "abe46ad9-291d-42fe-8284-b874a45938bc",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/494/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 495,
-    "fields": {
-        "rfid": "6129f97e-c734-4865-8af7-045a184fcf10",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/495/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 496,
-    "fields": {
-        "rfid": "cc70738c-a89d-4251-9d2b-4176a260e64f",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/496/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 497,
-    "fields": {
-        "rfid": "625a1919-a071-438d-82a6-7c341821c2fc",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/497/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 498,
-    "fields": {
-        "rfid": "a1936538-02cd-4a56-9ec0-3b4fcf3ce474",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/498/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 499,
-    "fields": {
-        "rfid": "98eaf5b3-ef2c-48da-adff-e7c0f0833a50",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/499/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 500,
-    "fields": {
-        "rfid": "8c68bf20-a763-48fe-bf44-cf5cb6bb9beb",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/500/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 501,
-    "fields": {
-        "rfid": "b98bf649-73b4-45d0-b8a8-c6dd66547885",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/501/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 502,
-    "fields": {
-        "rfid": "49ad74a6-2767-470b-84fa-fa11e540911c",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/502/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 503,
-    "fields": {
-        "rfid": "88a763f8-d14a-44bf-bfd9-a923f4af64e0",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/503/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 504,
-    "fields": {
-        "rfid": "bf704e5c-d957-416c-ac79-3e698f5e41ab",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/504/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 505,
-    "fields": {
-        "rfid": "410b310a-d835-48d8-8d09-95cd71158177",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/505/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 506,
-    "fields": {
-        "rfid": "831a73f9-624b-4313-a4ae-ccf16af7dca9",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/506/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 507,
-    "fields": {
-        "rfid": "07487e3a-0324-4aa8-9e1f-b1e921d4a8ab",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 6,
-        "color": 7,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/507/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 508,
-    "fields": {
-        "rfid": "f9134196-af4b-4701-aaa9-fa1b068a91c0",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 6,
-        "color": 8,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/508/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 509,
-    "fields": {
-        "rfid": "9341ed54-eca8-4c9b-a2b9-aca2ace47db2",
-        "client": 3,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 6,
-        "color": 9,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/509/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 510,
-    "fields": {
-        "rfid": "e3ef9065-0e4b-4da0-a3ea-6fc37c637328",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 6,
-        "color": 2,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/510/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 511,
-    "fields": {
-        "rfid": "8f3e8962-aa04-43ad-acb6-2ddb8b88e26c",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/511/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 512,
-    "fields": {
-        "rfid": "9146b57c-7bf2-4137-ba6e-ffc28a381581",
-        "client": 2,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/512/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 513,
-    "fields": {
-        "rfid": "e03061ca-b44c-4158-8aaf-31241b21af3e",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/513/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 514,
-    "fields": {
-        "rfid": "87138cda-125d-46c6-a834-761f9416c847",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/514/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 515,
-    "fields": {
-        "rfid": "d55a7f43-016f-4f7c-835d-6cb155a426a5",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 2,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/515/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 516,
-    "fields": {
-        "rfid": "9967b945-d910-4e0a-8d72-35bd890eaa63",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 1,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/516/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 517,
-    "fields": {
-        "rfid": "75b0a5f4-35a1-4ca4-8721-de01a2ea1129",
-        "client": 1,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/517/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 518,
-    "fields": {
-        "rfid": "545d57d0-6260-49d1-8f00-c7ad7be53683",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 4,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/518/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 519,
-    "fields": {
-        "rfid": "dbb18039-e686-4a95-8a87-bb173e627898",
-        "client": 5,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 5,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/519/"
-    }
-},
-{
-    "model": "assets.cow",
-    "pk": 520,
-    "fields": {
-        "rfid": "a0ca6a18-8d72-4857-a51f-b6b00d2932da",
-        "client": 4,
-        "purchased_by": 2,
-        "purchase_date": "2015-09-30",
-        "age": 3,
-        "breed": 7,
-        "color": 1,
-        "sell_date": "2100-12-31",
-        "link": "/assets/api/cows/520/"
     }
 }
 ]

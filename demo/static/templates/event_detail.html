@@ -1,4 +1,38 @@
 <h2>Event</h2>
+<form ng-if="event" action="{% url 'assets:event-detail' event.id %}" method="put">
+    <table>
+        <tr>
+            <th>ID:</th>
+            <td>{{event.id}}</td>
+        </tr>
+        <tr>
+            <th>Client:</th>
+            <td>{{event.client.name}}</td>
+        </tr>
+        <tr>
+            <th>Recorder:</th>
+            <td>{{event.recorded_by}}</td>
+        </tr>
+        <tr>
+            <th>Event Time:</th>
+            <td>{{event.event_time}}</td>
+        <tr>
+            <th>RFID:</th>
+            <td>{{event.cow.rfid}}</td>
+        </tr>
+        <tr>
+            <th>Action:</th>
+            <td>
+                <select ng-init="selectedAction=actions[0].name"
+                        ng-model="selectedAction"
+                        ng-options="action.name for action in actions">
+                </select>
+            </td>
+        </tr>
+    </table>
+    <input type="button" ng-click="update(selectedAction)" value="Update"/>
+</form>
+
 <table ng-if="event">
   <tr>
     <th>ID</th>
@@ -24,5 +58,5 @@
   <tr>
 </table>
 <p/>
-<img src="{{event.cow.breed.url}}" alt="Image failed to load" height="200" width="400">
+<img src="{{event.cow.breed.url || ''}}" alt="Image failed to load" height="200" width="400">
 

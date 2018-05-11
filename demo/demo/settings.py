@@ -139,3 +139,17 @@ REST_FRAMEWORK = {
 }
 
 LOGIN_URL = '/login/'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'farmapp@localhost.com'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAUIL_USE_TLS = False
+EMAIL_PORT = 1025

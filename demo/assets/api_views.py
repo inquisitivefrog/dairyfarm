@@ -1,15 +1,24 @@
 from django.contrib.auth.models import User
 from django.db.models import Sum
+from django.views.decorators.cache import cache_page
+from django.utils.decorators import method_decorator
 
 from rest_framework import generics
 from rest_framework import status
 from rest_framework.response import Response
 
-from assets.models import Age, Breed, Client, Color, Cow, Event, Exercise
-from assets.models import HealthRecord, Milk, Pasture, Seed
+from assets.models import Action, Age, Breed, CerealHay, Client, Color, Cow
+from assets.models import Event, Exercise, GrassHay, HealthRecord, Illness
+from assets.models import Injury, LegumeHay, Milk, Pasture, Season, Seed
+from assets.models import Status, Treatment, Vaccine
 from assets.helpers import AssetTime
-from assets.serializers import AgeSerializer, BreedSerializer, ColorSerializer
-from assets.serializers import ClientSerializer, UserSerializer
+from assets.serializers import AgeSerializer, ActionSerializer, BreedSerializer
+from assets.serializers import CerealHaySerializer, ColorSerializer
+from assets.serializers import ClientSerializer, GrassHaySerializer
+from assets.serializers import LegumeHaySerializer, SeasonSerializer
+from assets.serializers import IllnessSerializer, InjurySerializer
+from assets.serializers import StatusSerializer, TreatmentSerializer
+from assets.serializers import UserSerializer, VaccineSerializer
 from assets.serializers import CowReadSerializer, CowWriteSerializer
 from assets.serializers import EventReadSerializer, EventWriteSerializer
 from assets.serializers import ExerciseReadSerializer, ExerciseWriteSerializer
@@ -28,27 +37,61 @@ class CsrfExemptSessionAuthentication(SessionAuthentication):
     def enforce_csrf(self, request):
         return  # Temporarily bypass CSRF for debugging
 
-class AgeList(generics.ListAPIView):
+class ActionListView(generics.ListAPIView):
+    # Get available actions
+    queryset = Action.objects.all()
+    serializer_class = ActionSerializer
+
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super(ActionListView, self).dispatch(*args, **kwargs)
+
+class AgeListView(generics.ListAPIView):
     # Get available ages
     queryset = Age.objects.all()
     serializer_class = AgeSerializer
 
-class BreedList(generics.ListAPIView):
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super(AgeListView, self).dispatch(*args, **kwargs)
+
+class BreedListView(generics.ListAPIView):
     # Get available cattle breeds
     queryset = Breed.objects.all()
     serializer_class = BreedSerializer
 
-class ClientList(generics.ListAPIView):
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super(BreedListView, self).dispatch(*args, **kwargs)
+
+class CerealListView(generics.ListAPIView):
+    # Get available cereal hays
+    queryset = CerealHay.objects.all()
+    serializer_class = CerealHaySerializer
+
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super(CerealListView, self).dispatch(*args, **kwargs)
+
+class ClientListView(generics.ListAPIView):
     # Get available clients
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
 
-class ColorList(generics.ListAPIView):
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super(ClientListView, self).dispatch(*args, **kwargs)
+
+class ColorListView(generics.ListAPIView):
     # Get available cattle breed colors
     queryset = Color.objects.all()
     serializer_class = ColorSerializer
 
-class CowDetail(generics.RetrieveUpdateDestroyAPIView):
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super(ColorListView, self).dispatch(*args, **kwargs)
+
+class CowDetailView(generics.RetrieveUpdateDestroyAPIView):
     # Get / Update /Destroy a Cow
     queryset = Cow.objects.all()
 
@@ -67,7 +110,7 @@ class CowDetail(generics.RetrieveUpdateDestroyAPIView):
             return CowReadSerializer
         return CowWriteSerializer
 
-class CowList(generics.ListCreateAPIView):
+class CowListView(generics.ListCreateAPIView):
     # Get / Purchase cows 
     queryset = Cow.objects.all().order_by('client');
     # authentication_classes = (CsrfExemptSessionAuthentication,
@@ -78,7 +121,7 @@ class CowList(generics.ListCreateAPIView):
             return CowReadSerializer
         return CowWriteSerializer
 
-class CowListByMonth(generics.ListAPIView):
+class CowListByMonthView(generics.ListAPIView):
     # Get report of cows 
     serializer_class = CowReadSerializer
 
@@ -91,7 +134,7 @@ class CowListByMonth(generics.ListAPIView):
                                       purchase_date__lte=end_date)
         return Cow.objects.all()
 
-class CowListByYear(generics.ListAPIView):
+class CowListByYearView(generics.ListAPIView):
     # Get report of cows 
     serializer_class = CowReadSerializer
 
@@ -103,12 +146,16 @@ class CowListByYear(generics.ListAPIView):
                                       purchase_date__lte=end_date)
         return Cow.objects.all()
 
-class EventDetail(generics.RetrieveAPIView):
+class EventDetailView(generics.RetrieveUpdateAPIView):
     # Get an Event
     queryset = Event.objects.all()
-    serializer_class = EventReadSerializer
 
-class EventList(generics.ListCreateAPIView):
+    def get_serializer_class(self):
+        if self.request.method in ('GET',):
+            return EventReadSerializer
+        return EventWriteSerializer
+
+class EventListView(generics.ListCreateAPIView):
     # Get / Create Event
     queryset = Event.objects.all()
 
@@ -117,12 +164,16 @@ class EventList(generics.ListCreateAPIView):
             return EventReadSerializer
         return EventWriteSerializer
 
-class ExerciseDetail(generics.RetrieveAPIView):
+class ExerciseDetailView(generics.RetrieveUpdateAPIView):
     # Get an Exercise
     queryset = Exercise.objects.all()
-    serializer_class = ExerciseReadSerializer
 
-class ExerciseList(generics.ListCreateAPIView):
+    def get_serializer_class(self):
+        if self.request.method in ('GET',):
+            return ExerciseReadSerializer
+        return ExerciseWriteSerializer
+
+class ExerciseListView(generics.ListCreateAPIView):
     # Get / Create Exercise
     queryset = Exercise.objects.all()
 
@@ -131,7 +182,34 @@ class ExerciseList(generics.ListCreateAPIView):
             return ExerciseReadSerializer
         return ExerciseWriteSerializer
 
-class HealthRecordDetail(generics.RetrieveUpdateAPIView):
+class GrassListView(generics.ListAPIView):
+    # Get available grass hays
+    queryset = GrassHay.objects.all()
+    serializer_class = GrassHaySerializer
+
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super(GrassListView, self).dispatch(*args, **kwargs)
+
+class IllnessListView(generics.ListAPIView):
+    # Get available illnesses
+    queryset = Illness.objects.all()
+    serializer_class = IllnessSerializer
+
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super(IllnessListView, self).dispatch(*args, **kwargs)
+
+class InjuryListView(generics.ListAPIView):
+    # Get available injuries
+    queryset = Injury.objects.all()
+    serializer_class = InjurySerializer
+
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super(InjuryListView, self).dispatch(*args, **kwargs)
+
+class HealthRecordDetailView(generics.RetrieveUpdateAPIView):
     # Get / Update a HealthRecord
     queryset = HealthRecord.objects.all()
 
@@ -140,7 +218,7 @@ class HealthRecordDetail(generics.RetrieveUpdateAPIView):
             return HealthRecordReadSerializer
         return HealthRecordWriteSerializer
 
-class HealthRecordList(generics.ListCreateAPIView):
+class HealthRecordListView(generics.ListCreateAPIView):
     # Get / Create HealthRecord
     queryset = HealthRecord.objects.all()
 
@@ -149,7 +227,7 @@ class HealthRecordList(generics.ListCreateAPIView):
             return HealthRecordReadSerializer
         return HealthRecordWriteSerializer
 
-class HealthRecordListByMonth(generics.ListCreateAPIView):
+class HealthRecordListByMonthView(generics.ListCreateAPIView):
     # Get report of cow health records
     serializer_class = HealthRecordReadSerializer
 
@@ -164,7 +242,7 @@ class HealthRecordListByMonth(generics.ListCreateAPIView):
         print('no kwargs')
         return HealthRecord.objects.all()
 
-class HealthRecordIllCowsSummary(generics.ListAPIView):
+class HealthRecordIllCowsSummaryView(generics.ListAPIView):
     # Get summary of ill cows
     serializer_class = HealthRecordReadSerializer
     pagination_class = None
@@ -185,12 +263,25 @@ class HealthRecordIllCowsSummary(generics.ListAPIView):
         print('total cows: {}'.format(total_cows))
         return [{'status': total_cows}]
 
-class MilkDetail(generics.RetrieveAPIView):
+class LegumeListView(generics.ListAPIView):
+    # Get available legume hays
+    queryset = LegumeHay.objects.all()
+    serializer_class = LegumeHaySerializer
+
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super(LegumeListView, self).dispatch(*args, **kwargs)
+
+class MilkDetailView(generics.RetrieveUpdateAPIView):
     # Get a Milk
     queryset = Milk.objects.all()
-    serializer_class = MilkReadSerializer
 
-class MilkList(generics.ListCreateAPIView):
+    def get_serializer_class(self):
+        if self.request.method in ('GET',):
+            return MilkReadSerializer
+        return MilkWriteSerializer
+
+class MilkListView(generics.ListCreateAPIView):
     # Get / Create Milk
     queryset = Milk.objects.all()
 
@@ -199,7 +290,7 @@ class MilkList(generics.ListCreateAPIView):
             return MilkReadSerializer
         return MilkWriteSerializer
 
-class MilkListByMonth(generics.ListAPIView):
+class MilkListByMonthView(generics.ListAPIView):
     # Get list of milk production by month
     serializer_class = MilkReadSerializer
 
@@ -213,7 +304,7 @@ class MilkListByMonth(generics.ListAPIView):
                                        milking_time__lte=end_date)
         return Milk.objects.all()
 
-class MilkSummaryByMonth(generics.ListAPIView):
+class MilkSummaryByMonthView(generics.ListAPIView):
     # Get summary of milk production
     serializer_class = MilkSummaryReadSerializer
     pagination_class = None
@@ -230,7 +321,7 @@ class MilkSummaryByMonth(generics.ListAPIView):
             total_gallons = (Milk.objects.all().aggregate(Sum('gallons')))
         return [{'gallons': total_gallons}]
 
-class PastureDetail(generics.RetrieveUpdateAPIView):
+class PastureDetailView(generics.RetrieveUpdateAPIView):
     # Get / Update a Seed
     queryset = Pasture.objects.all()
 
@@ -239,7 +330,7 @@ class PastureDetail(generics.RetrieveUpdateAPIView):
             return PastureReadSerializer
         return PastureWriteSerializer
 
-class PastureList(generics.ListCreateAPIView):
+class PastureListView(generics.ListCreateAPIView):
     # Get / Create pastures
     queryset = Pasture.objects.all()
 
@@ -248,7 +339,16 @@ class PastureList(generics.ListCreateAPIView):
             return PastureReadSerializer
         return PastureWriteSerializer
 
-class SeedDetail(generics.RetrieveUpdateAPIView):
+class SeasonListView(generics.ListAPIView):
+    # Get available seasons
+    queryset = Season.objects.all()
+    serializer_class = SeasonSerializer
+
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super(SeasonListView, self).dispatch(*args, **kwargs)
+
+class SeedDetailView(generics.RetrieveUpdateAPIView):
     # Get / Update a Seed
     queryset = Seed.objects.all()
 
@@ -257,7 +357,7 @@ class SeedDetail(generics.RetrieveUpdateAPIView):
             return SeedReadSerializer
         return SeedWriteSerializer
 
-class SeedList(generics.ListCreateAPIView):
+class SeedListView(generics.ListCreateAPIView):
     # Get / Create pastures
     queryset = Seed.objects.all()
 
@@ -266,8 +366,43 @@ class SeedList(generics.ListCreateAPIView):
             return SeedReadSerializer
         return SeedWriteSerializer
 
-class UserList(generics.ListAPIView):
-    # Get available users
-    queryset = User.objects.all()
+class StatusListView(generics.ListAPIView):
+    # Get available statuses
+    queryset = Status.objects.all()
+    serializer_class = StatusSerializer
+
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super(StatusListView, self).dispatch(*args, **kwargs)
+
+class TreatmentListView(generics.ListAPIView):
+    # Get available treatments
+    queryset = Treatment.objects.all()
+    serializer_class = TreatmentSerializer
+
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super(TreatmentListView, self).dispatch(*args, **kwargs)
+ 
+class UserListView(generics.ListAPIView):
+    # Get and cache available users 
+    queryset = User.objects.filter(is_active=True).values('id',
+                                                          'username',
+                                                          'first_name',
+                                                          'last_name',
+                                                          'email')
     serializer_class = UserSerializer
+
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super(UserListView, self).dispatch(*args, **kwargs)
+
+class VaccineListView(generics.ListAPIView):
+    # Get available vaccines
+    queryset = Vaccine.objects.all()
+    serializer_class = VaccineSerializer
+
+    @method_decorator(cache_page(60))
+    def dispatch(self, *args, **kwargs):
+        return super(VaccineListView, self).dispatch(*args, **kwargs)
 

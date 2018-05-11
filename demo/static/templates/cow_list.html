@@ -1,52 +1,61 @@
 <h2>Purchase a Cow</h2>
-<form action="{% url 'assets:cow-list' %} method="post">
+<form action="{% url 'assets:cow-list' %}" method="post">
     <table>
     <tr>
         <th>Client:</th>
         <td>
-            <select ng-init="selectedClient=clients[0].name" ng-model="selectedClient" ng-options="client.name for client in clients">
+            <select ng-init="selectedClient=selectedClient || clients[0].name" 
+                    ng-model="selectedClient" 
+                    ng-options="client.name for client in clients">
             </select>
         </td>
     </tr>
     <tr>
         <th>Purchaser:</th>
         <td>
-            <select ng-init="selectedPurchaser=users[0].username" ng-model="selectedPurchaser" ng-options="user.username for user in users">
+            <select ng-init="selectedPurchaser=users[0].username" 
+                    ng-model="selectedPurchaser" 
+                    ng-options="user.username for user in users">
             </select>
         </td>
     </tr>
     <tr>
         <th>Date:</th>
         <td>
-            <input type="date" name="inputDate" ng-model=inputDate placeholder="yyyy-MM-dd" min="2015-01-01" max="2021-12-31" required />
+            <input type="date" ng-init="inputDate=currentDate()" ng-model="inputDate" placeholder="yyyy-MM-dd" required/>
         </td>
     </tr>
     <tr>
         <th>Breed:</th>
         <td>
-            <select ng-init="selectedBreed=breeds[0].name" ng-model="selectedBreed" ng-options="breed.name for breed in breeds">
+            <select ng-init="selectedBreed=breeds[0].name" 
+                    ng-model="selectedBreed" 
+                    ng-options="breed.name for breed in breeds">
             </select>
         </td>
     </tr>
     <tr>
         <th>Color:</th>
         <td>
-            <select ng-init="selectedColor=colors[0].name" ng-model="selectedColor" ng-options="color.name for color in colors">
+            <select ng-init="selectedColor=colors[0].name" 
+                    ng-model="selectedColor" 
+                    ng-options="color.name for color in colors">
             </select>
         </td>
     <tr>
         <th>Age:</th>
         <td>
-            <select ng-init="selectedAge=ages[0].name" ng-model="selectedAge" ng-options="age.name for age in ages">
+            <select ng-init="selectedAge=selectedAge || ages[0].name" 
+                    ng-model="selectedAge" 
+                    ng-options="age.name for age in ages">
             </select>
         </td>
     </tr>
     </table>
-    <!-- input type="button" ng-click="purchase(selectedClient, selectedPurchaser, inputDate, selectedBreed, selectedColor, selectedAge)" value="Purchase"/ -->
     <input type="button" ng-click="purchase()" value="Purchase"/>
 </form>
 
-<h2>Herd of {{total_cows}}</h2>
+<h2>Herd of {{total}}</h2>
 <table ng-if="herd.length > 0">
   <tr>
     <th>ID</th>
@@ -75,6 +84,6 @@
 <p ng-if="herd.length == 0">No cows purchased yet.</p>
 
 <div>
-<span text-align:left><a href="{{prev}}">Prev</a></span>
-<span text-align:right><a href="{{next}}">Next</a></span>
+<span text-align:left><a ng-if="prev" href="{{prev}}">Prev</a></span>
+<span text-align:right><a ng-if="next" href="{{next}}">Next</a></span>
 </div>

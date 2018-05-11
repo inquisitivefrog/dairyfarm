@@ -3,13 +3,16 @@
   <head>
     <title>My Django App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <script src="{% static 'angular/angular.min.js' %}"></script>
-    <script src="{% static 'angular/angular-route.min.js' %}"></script>
-    <script src="{% static 'angular/angular-cookies.js' %}"></script>
-    <script src="{% static 'angular/angular-auth.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-cookies.js"></script>
     <script src="{% static 'js/timeUtils.js' %}"></script>
     <script src="{% static 'js/stringUtils.js' %}"></script>
     <script src="{% static 'js/farmApp.js' %}"></script>
+    <script src="{% static 'js/farmAppLoginCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppLogoutCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppMenuAboutCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppMenuContactCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppMRDCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppDDAssetsCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppDDSummaryCtrl.js' %}"></script>
@@ -17,18 +20,25 @@
     <script src="{% static 'js/farmAppIndexCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppCowListCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppCowDetailCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppCowResultsCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppEventListCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppEventDetailCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppEventResultsCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppExerciseListCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppExerciseDetailCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppExerciseResultsCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppHealthRecordListCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppHealthRecordDetailCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppHealthRecordResultsCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppMilkListCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppMilkDetailCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppMilkResultsCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppPastureListCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppPastureDetailCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppPastureResultsCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppSeedListCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppSeedDetailCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppSeedResultsCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppAnnualSummaryCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppMonthlySummaryCtrl.js' %}"></script>
     <link rel="stylesheet" type="text/css"
@@ -39,9 +49,16 @@
     <div class="flex-container">
         <header>Django REST Framework App: Dairy Farm Inventory Management</header>
         <nav class="nav">
+            <div class="menu">
+            <ul>
+                <li><a href="#/">Home</a></li>
+                <li><a href="#/about/">About</a></li>
+                <li><a href="#/contact/">Contact</a></li>
+            </ul>
+            </div>
+            <p></p>
             <p><b>User Management</b></p>
             <ul>
-                <li><a href="/">Home</a></li>
                 <li><a href="/logout/">Logout User</a></li>
             </ul>
             <p><b>Documentation</b></p>

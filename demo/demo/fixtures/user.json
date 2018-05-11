@@ -3,7 +3,7 @@
     "model": "auth.user",
     "pk": 1,
     "fields": {
-        "password": "pbkdf2_sha256$100000$vkRVoY3oY33n$JpjCMCFL1u0k1UGA9rrFYn8ctmy+if8XEFEFwha2DQ0=",
+        "password": "pbkdf2_sha256$100000$0x0596zx1JA0$i0MI+mV+pIcC3rcmL8HRdZl8Bm989eG/VuHkIH1pvAo=",
         "last_login": null,
         "is_superuser": false,
         "username": "farmer",
@@ -12,7 +12,7 @@
         "email": "farmer@dairyfarm.org",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2018-04-24T18:17:39.460Z",
+        "date_joined": "2018-05-11T19:12:42.741Z",
         "groups": [],
         "user_permissions": []
     }
@@ -21,7 +21,7 @@
     "model": "auth.user",
     "pk": 2,
     "fields": {
-        "password": "pbkdf2_sha256$100000$lsfxQM9DWdff$nCi7FxGVPIkA9rwfxZpF2HZE87K4Iiac2UZH9ibpHqs=",
+        "password": "pbkdf2_sha256$100000$VIPteTLXhR11$lYjcizboUyZkj11Gm5Z8H1gOZ8dsCZx0u6OIJ1LY834=",
         "last_login": null,
         "is_superuser": false,
         "username": "farmhand",
@@ -30,7 +30,7 @@
         "email": "farmhand@dairyfarm.org",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2018-04-24T18:17:39.850Z",
+        "date_joined": "2018-05-11T19:12:43.157Z",
         "groups": [],
         "user_permissions": []
     }
@@ -39,7 +39,7 @@
     "model": "auth.user",
     "pk": 3,
     "fields": {
-        "password": "pbkdf2_sha256$100000$y76yTcI70OLN$zNzjjqfne/7HUNnW6WnrcZa5IqFmfeN3WWHZcK7T5F4=",
+        "password": "pbkdf2_sha256$100000$FSXvZSAByXHr$c7SLnxzcHqyMrbdzIkLOyHbhYCiuvmCPEQCoHa5K+a0=",
         "last_login": null,
         "is_superuser": false,
         "username": "vet",
@@ -48,7 +48,25 @@
         "email": "vet@dairyfarm.org",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2018-04-24T18:17:40.264Z",
+        "date_joined": "2018-05-11T19:12:43.578Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$100000$Hcn1PPyeglhN$A1WvmNYhXa2IGqiejFlwRRsWLD3vnp0Qhvl/by+k37c=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "kama",
+        "first_name": "kama",
+        "last_name": "kamahameka",
+        "email": "kama@dairyfarm.org",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2018-05-11T19:12:43.971Z",
         "groups": [],
         "user_permissions": []
     }

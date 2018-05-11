@@ -5,9 +5,9 @@
     "fields": {
         "client": 1,
         "name": "North",
-        "url": "/static/images/regions/north.png",
+        "url": "/static/images/regions/north.jpg",
         "fallow": false,
-        "distance": 4,
+        "distance": 1,
         "link": "/assets/api/pastures/1/"
     }
 },
@@ -17,7 +17,7 @@
     "fields": {
         "client": 1,
         "name": "West",
-        "url": "/static/images/regions/west.png",
+        "url": "/static/images/regions/west.jpg",
         "fallow": false,
         "distance": 1,
         "link": "/assets/api/pastures/2/"
@@ -29,9 +29,9 @@
     "fields": {
         "client": 1,
         "name": "South",
-        "url": "/static/images/regions/south.png",
+        "url": "/static/images/regions/south.jpg",
         "fallow": false,
-        "distance": 8,
+        "distance": 7,
         "link": "/assets/api/pastures/3/"
     }
 },
@@ -41,7 +41,7 @@
     "fields": {
         "client": 1,
         "name": "East",
-        "url": "/static/images/regions/east.png",
+        "url": "/static/images/regions/east.jpg",
         "fallow": false,
         "distance": 6,
         "link": "/assets/api/pastures/4/"
@@ -53,9 +53,9 @@
     "fields": {
         "client": 1,
         "name": "Central North",
-        "url": "/static/images/regions/central_north.png",
+        "url": "/static/images/regions/central_north.jpg",
         "fallow": false,
-        "distance": 7,
+        "distance": 1,
         "link": "/assets/api/pastures/5/"
     }
 },
@@ -65,9 +65,9 @@
     "fields": {
         "client": 1,
         "name": "Central West",
-        "url": "/static/images/regions/central_west.png",
+        "url": "/static/images/regions/central_west.jpg",
         "fallow": false,
-        "distance": 7,
+        "distance": 10,
         "link": "/assets/api/pastures/6/"
     }
 },
@@ -77,9 +77,9 @@
     "fields": {
         "client": 1,
         "name": "Central South",
-        "url": "/static/images/regions/central_south.png",
+        "url": "/static/images/regions/central_south.jpg",
         "fallow": false,
-        "distance": 10,
+        "distance": 6,
         "link": "/assets/api/pastures/7/"
     }
 },
@@ -89,9 +89,9 @@
     "fields": {
         "client": 1,
         "name": "Central East",
-        "url": "/static/images/regions/central_east.png",
+        "url": "/static/images/regions/central_east.jpg",
         "fallow": false,
-        "distance": 10,
+        "distance": 8,
         "link": "/assets/api/pastures/8/"
     }
 },
@@ -101,9 +101,9 @@
     "fields": {
         "client": 1,
         "name": "North West",
-        "url": "/static/images/regions/north_west.png",
+        "url": "/static/images/regions/north_west.jpg",
         "fallow": false,
-        "distance": 6,
+        "distance": 2,
         "link": "/assets/api/pastures/9/"
     }
 },
@@ -113,7 +113,7 @@
     "fields": {
         "client": 1,
         "name": "North East",
-        "url": "/static/images/regions/north_east.png",
+        "url": "/static/images/regions/north_east.jpg",
         "fallow": false,
         "distance": 8,
         "link": "/assets/api/pastures/10/"
@@ -125,9 +125,9 @@
     "fields": {
         "client": 1,
         "name": "South West",
-        "url": "/static/images/regions/south_west.png",
+        "url": "/static/images/regions/south_west.jpg",
         "fallow": true,
-        "distance": 9,
+        "distance": 4,
         "link": "/assets/api/pastures/11/"
     }
 },
@@ -137,9 +137,9 @@
     "fields": {
         "client": 1,
         "name": "South East",
-        "url": "/static/images/regions/south_east.png",
+        "url": "/static/images/regions/south_east.jpg",
         "fallow": true,
-        "distance": 2,
+        "distance": 8,
         "link": "/assets/api/pastures/12/"
     }
 },
@@ -151,7 +151,7 @@
         "name": "Pen",
         "url": "/static/images/regions/pen.png",
         "fallow": true,
-        "distance": 4,
+        "distance": 1,
         "link": "/assets/api/pastures/13/"
     }
 }

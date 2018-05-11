@@ -2,14 +2,22 @@ from django.conf import settings
 from django.conf.urls import url
 from django.conf.urls.static import static
 
-from assets.api_views import AgeList, BreedList, ClientList, ColorList, UserList
-from assets.api_views import CowDetail, CowList, CowListByMonth, CowListByYear
-from assets.api_views import EventDetail, EventList
-from assets.api_views import ExerciseDetail, ExerciseList, HealthRecordDetail
-from assets.api_views import HealthRecordList, HealthRecordListByMonth, MilkDetail
-from assets.api_views import MilkList, MilkListByMonth, MilkSummaryByMonth
-from assets.api_views import HealthRecordIllCowsSummary
-from assets.api_views import PastureDetail, PastureList, SeedDetail, SeedList
+from assets.api_views import ActionListView, AgeListView, BreedListView
+from assets.api_views import CerealListView, ClientListView, ColorListView
+from assets.api_views import GrassListView, IllnessListView, InjuryListView
+from assets.api_views import LegumeListView, SeasonListView, StatusListView
+from assets.api_views import TreatmentListView, UserListView, VaccineListView
+from assets.api_views import CowDetailView, CowListView
+from assets.api_views import CowListByMonthView, CowListByYearView
+from assets.api_views import EventDetailView, EventListView
+from assets.api_views import ExerciseDetailView, ExerciseListView
+from assets.api_views import HealthRecordDetailView, HealthRecordListView
+from assets.api_views import HealthRecordListByMonthView
+from assets.api_views import HealthRecordIllCowsSummaryView
+from assets.api_views import MilkDetailView, MilkListView
+from assets.api_views import MilkListByMonthView, MilkSummaryByMonthView
+from assets.api_views import PastureDetailView, PastureListView
+from assets.api_views import SeedDetailView, SeedListView
 from assets.views import IndexView
 
 app_name = 'assets'
@@ -17,79 +25,109 @@ urlpatterns = [
     url(r'^$',
         IndexView.as_view(),
         name='asset-index'),
+    url(r'^api/actions/$',
+        ActionListView.as_view(),
+        name='action-list'),
     url(r'^api/ages/$',
-        AgeList.as_view(),
+        AgeListView.as_view(),
         name='age-list'),
     url(r'^api/breeds/$',
-        BreedList.as_view(),
+        BreedListView.as_view(),
         name='breed-list'),
+    url(r'^api/cereals/$',
+        CerealListView.as_view(),
+        name='cereal-list'),
     url(r'^api/clients/$',
-        ClientList.as_view(),
+        ClientListView.as_view(),
         name='client-list'),
     url(r'^api/colors/$',
-        ColorList.as_view(),
+        ColorListView.as_view(),
         name='color-list'),
+    url(r'^api/grasses/$',
+        GrassListView.as_view(),
+        name='grass-list'),
+    url(r'^api/illnesses/$',
+        IllnessListView.as_view(),
+        name='illness-list'),
+    url(r'^api/injuries/$',
+        InjuryListView.as_view(),
+        name='injury-list'),
+    url(r'^api/legumes/$',
+        LegumeListView.as_view(),
+        name='legume-list'),
+    url(r'^api/seasons/$',
+        SeasonListView.as_view(),
+        name='season-list'),
+    url(r'^api/statuses/$',
+        StatusListView.as_view(),
+        name='status-list'),
+    url(r'^api/treatments/$',
+        TreatmentListView.as_view(),
+        name='treatment-list'),
     url(r'^api/users/$',
-        UserList.as_view(),
+        UserListView.as_view(),
         name='user-list'),
+    url(r'^api/vaccines/$',
+        VaccineListView.as_view(),
+        name='vaccine-list'),
     url(r'^api/cows/$',
-        CowList.as_view(),
+        CowListView.as_view(),
         name='cow-list'),
     url(r'^api/cows/year/(?P<year>[0-9]{4})/month/(?P<month>[0-9]{2})/$',
-        CowListByMonth.as_view(),
+        CowListByMonthView.as_view(),
         name='cow-list-month'),
     url(r'^api/cows/year/(?P<year>[0-9]{4})/$',
-        CowListByYear.as_view(),
+        CowListByYearView.as_view(),
         name='cow-list-year'),
     url(r'^api/cows/(?P<pk>\d+)/$',
-        CowDetail.as_view(),
+        CowDetailView.as_view(),
         name='cow-detail'),
     url(r'^api/events/$',
-        EventList.as_view(),
+        EventListView.as_view(),
         name='event-list'),
     url(r'^api/events/(?P<pk>\d+)/$',
-        EventDetail.as_view(),
+        EventDetailView.as_view(),
         name='event-detail'),
     url(r'^api/exercises/$',
-        ExerciseList.as_view(),
+        ExerciseListView.as_view(),
         name='exercise-list'),
     url(r'^api/exercises/(?P<pk>\d+)/$',
-        ExerciseDetail.as_view(),
+        ExerciseDetailView.as_view(),
         name='exercise-detail'),
     url(r'^api/healthrecords/$',
-        HealthRecordList.as_view(),
+        HealthRecordListView.as_view(),
         name='healthrecord-list'),
     url(r'^api/healthrecords/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/$',
-        HealthRecordListByMonth.as_view(),
+        HealthRecordListByMonthView.as_view(),
         name='healthrecord-list-month'),
     url(r'^api/healthrecords/illness/summary/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/$',
-        HealthRecordIllCowsSummary.as_view(),
+        HealthRecordIllCowsSummaryView.as_view(),
         name='healthrecord-illness-summary-month'),
     url(r'^api/healthrecords/(?P<pk>\d+)/$',
-        HealthRecordDetail.as_view(),
+        HealthRecordDetailView.as_view(),
         name='healthrecord-detail'),
     url(r'^api/milk/$',
-        MilkList.as_view(),
+        MilkListView.as_view(),
         name='milk-list'),
     url(r'^api/milk/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/$',
-        MilkListByMonth.as_view(),
+        MilkListByMonthView.as_view(),
         name='milk-list-month'),
     url(r'^api/milk/summary/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/$',
-        MilkSummaryByMonth.as_view(),
+        MilkSummaryByMonthView.as_view(),
         name='milk-summary-month'),
     url(r'^api/milk/(?P<pk>\d+)/$',
-        MilkDetail.as_view(),
+        MilkDetailView.as_view(),
         name='milk-detail'),
     url(r'^api/pastures/$',
-        PastureList.as_view(),
+        PastureListView.as_view(),
         name='pasture-list'),
     url(r'^api/pastures/(?P<pk>\d+)/$',
-        PastureDetail.as_view(),
+        PastureDetailView.as_view(),
         name='pasture-detail'),
     url(r'^api/seeds/$',
-        SeedList.as_view(),
+        SeedListView.as_view(),
         name='seed-list'),
     url(r'^api/seeds/(?P<pk>\d+)/$',
-        SeedDetail.as_view(),
+        SeedDetailView.as_view(),
         name='seed-detail'),
 ]

@@ -1,0 +1,27 @@
+<h2>Cow</h2>
+<table ng-if="cow">
+  <tr>
+    <th>ID</th>
+    <th>RFID tag</th>
+    <th>Client</th>
+    <th>Procurer</th>
+    <th>Bought When</th>
+    <th>Breed</th>
+    <th>Color</th>
+    <th>Age</th>
+    <th>Date Sold</th>
+  </tr>
+  <tr>
+    <td>{{cow.id}}</td>
+    <td>{{cow.rfid}}</td>
+    <td>{{cow.client.name}}</td>
+    <td>{{cow.purchased_by}}</td>
+    <td>{{cow.purchase_date}}</td>
+    <td>{{cow.breed.name}}</td>
+    <td>{{cow.color.name}}</td>
+    <td>{{cow.age.name}}</td>
+    <td>{{cow.sell_date}}</td>
+  <tr>
+</table>
+<p/>
+<img ng-if="cow" ng-src="{{cow.breed.url || ''}}" alt="Image failed to load" height="200" width="400"/>

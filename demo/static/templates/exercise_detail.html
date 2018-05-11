@@ -1,4 +1,38 @@
 <h2>Exercise</h2>
+<form ng-if="exercise" action="{% url 'assets:exercise-detail' exercise.id %}" method="put">
+    <table>
+        <tr>
+            <th>ID:</th>
+            <td>{{exercise.id}}</td>
+        </tr>
+        <tr>
+            <th>Client:</th>
+            <td>{{exercise.client.name}}</td>
+        </tr>
+        <tr>
+            <th>Recorder:</th>
+            <td>{{exercise.recorded_by}}</td>
+        </tr>
+        <tr>
+            <th>Exercise Time:</th>
+            <td>{{exercise.exercise_time}}</td>
+        <tr>
+            <th>RFID:</th>
+            <td>{{exercise.cow.rfid}}</td>
+        </tr>
+        <tr>
+            <th>Pasture:</th>
+            <td>
+                <select ng-init="selectedPasture=pastures[0].name"
+                        ng-model="selectedPasture"
+                        ng-options="pasture.name for pasture in pastures">
+                </select>
+            </td>
+        </tr>
+    </table>
+    <input type="button" ng-click="update(selectedPasture)" value="Update"/>
+</form>
+
 <table ng-if="exercise">
   <tr>
     <th>ID</th>
@@ -24,6 +58,5 @@
   <tr>
 </table>
 <p/>
-<img src="{{exercise.cow.breed.url}}" alt="Image failed to load" height="200" width="400">
-<img src="{{exercise.pasture.url}}" alt="Image failed to load" height="200" width="400">
-
+<img src="{{exercise.cow.breed.url || ''}}" alt="Image failed to load" height="200" width="400"/>
+<img src="{{exercise.pasture.url || ''}}" alt="Image failed to load" height="200" width="400"/>

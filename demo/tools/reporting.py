@@ -52,7 +52,8 @@ def generate_annual_report(data):
 def display_annual_report(year):
     from django.db.models import Max
     from summary.models import Annual
-    return Annual.objects.filter(year=year).aggregate(Max('id'))
+    a = Annual.objects.filter(year=year).aggregate(Max('id'))
+    return
 
 def generate_monthly_report(data):
     from summary.models import Monthly
@@ -62,8 +63,9 @@ def generate_monthly_report(data):
 def display_monthly_report(year, month):
     from django.db.models import Max
     from summary.models import Monthly
-    return Monthly.objects.filter(year=year,
-                                  month=month).aggregate(Max('id'))
+    m = Monthly.objects.filter(year=year,
+                               month=month).aggregate(Max('id'))
+    return
 
 def main():
     (duration, username, year, month) = read_args()

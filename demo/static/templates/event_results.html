@@ -1,0 +1,27 @@
+<h2>Event Recorded!</h2>
+<table ng-if="event">
+  <tr>
+    <th>ID</th>
+    <th>Client</th>
+    <th>Recorder</th>
+    <th>Occurred When</th>
+    <th>RFID</th>
+    <th>Breed</th>
+    <th>Color</th>
+    <th>Age</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+    <td>{{event.id}}</td>
+    <td>{{event.client.name}}</td>
+    <td>{{event.recorded_by}}</td>
+    <td>{{event.event_time}}</td>
+    <td><a href="#{{event.cow.link}}">{{event.cow.rfid}}</a></td>
+    <td>{{event.cow.breed.name}}</td>
+    <td>{{event.cow.color.name}}</td>
+    <td>{{event.cow.age.name}}</td>
+    <td>{{event.action.name}}</td>
+  <tr>
+</table>
+<p/>
+<img src="{{event.cow.breed.url || ''}}" alt="Image failed to load" height="200" width="400"/>

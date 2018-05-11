@@ -27,6 +27,33 @@
     text-decoration: none;
 }
 
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: white;
+    background-color: black;
+}
+
+.menu ul li {
+    float: left;
+}
+
+.menu ul li a {
+    display: block;
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li.menu a:hover {
+    color: white;
+    background-color: black;
+}
+
 @media all and (min-width: 768px) {
     .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
     .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
@@ -34,19 +61,19 @@
 }
 
 div.raw {
-   text-align: left;
-   width: 100%;
-   border: 2px solid gray;
-   padding: 5px;
-   background-color: orange;
+    text-align: left;
+    width: 100%;
+    border: 2px solid gray;
+    padding: 5px;
+    background-color: orange;
 }
 
 div {
-   text-align: center;
-   width: 100%;
-   border: 2px solid gray;
-   padding: 5px;
-   background-color: orange;
+    text-align: center;
+    width: 100%;
+    border: 2px solid gray;
+    padding: 5px;
+    background-color: orange;
 }
 
 footer {

@@ -38,14 +38,20 @@ def read_args():
                         type=str,
                         required=True,
                         help='password for security')
+    parser.add_argument('-s',
+                        '--superuser',
+                        action='store_true',
+                        required=False,
+                        help='enable superuser privileges')
     o = parser.parse_args()
     return(o.firstname,
            o.lastname,
            o.email,
            o.username,
-           o.password)
+           o.password,
+           o.superuser)
     
-def create_user(first_name, last_name, email, username, password):
+def create_user(first_name, last_name, email, username, password, superuser):
     data = {'email': email,
             'username': username}
     if first_name:
@@ -58,6 +64,8 @@ def create_user(first_name, last_name, email, username, password):
         user.set_password(password)
         user.is_active = True
         user.is_staff = True
+        if superuser:
+            user.is_superuser = True
         user.save()
         return
     except PermissionDenied as e:
@@ -68,12 +76,12 @@ def create_user(first_name, last_name, email, username, password):
         exit(1)
 
 def main():
-    (firstname, lastname, email, username, password) = read_args()
+    (firstname, lastname, email, username, password, superuser) = read_args()
     path.append('/Users/tim/Documents/workspace/python3/dairyfarm/demo/')
     environ.setdefault('DJANGO_SETTINGS_MODULE',
                        'demo.settings')
     setup()
-    create_user(firstname, lastname, email, username, password)
+    create_user(firstname, lastname, email, username, password, superuser)
     return
 
 if __name__ == '__main__':

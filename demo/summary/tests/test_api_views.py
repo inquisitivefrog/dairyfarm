@@ -207,6 +207,7 @@ class TestMonthlySummaryView(APITestCase):
                           data[0])
 
     def test_04_create(self):
+        self.data.update({'month': int(self.data['month'])})
         request = self.factory.post(path=self.url,
                                     data=dumps(self.data),
                                     content_type=TestData.get_format(),

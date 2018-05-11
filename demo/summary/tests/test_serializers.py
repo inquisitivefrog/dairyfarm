@@ -197,7 +197,7 @@ class TestMonthlyReadSerializer(APITestCase):
         user = User.objects.get(username=TestData.get_random_username())
         self.model_data = {'created_by': user,
                            'year': TestTime.get_random_year(),
-                           'month': TestTime.get_random_month()}
+                           'month': TestTime.get_random_month_int()}
 
     def test_00_load_fixtures(self):
         herd = Cow.objects.all()
@@ -288,7 +288,7 @@ class TestMonthlyWriteSerializer(APITestCase):
         user = User.objects.get(username=TestData.get_random_username())
         self.monthly_data = {'created_by': user,
                              'year': TestTime.get_random_year(),
-                             'month': TestTime.get_random_month()}
+                             'month': TestTime.get_random_month_int()}
 
     def test_00_load_fixtures(self):
         herd = Cow.objects.all()

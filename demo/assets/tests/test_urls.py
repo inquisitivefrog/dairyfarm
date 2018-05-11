@@ -11,7 +11,7 @@ class TestAssetsURLConf(APITestCase):
     def test_01_index(self):
         expected = '/assets/'
         self.assertEqual(expected,
-                         django_reverse('assets:index'))
+                         django_reverse('assets:asset-index'))
 
 class TestAssetsCowAPIURLConf(APITestCase):
     def setUp(self):

@@ -14,83 +14,10 @@ fallow_pastures Spring farmhand 2015
 generate_daily_activity vet 2015-01-01
 generate_daily_activity vet 2015-02-01
 generate_daily_activity vet 2015-03-01
-purchase_cows farmhand 2015-03-31 10
-seed_pastures Summer farmhand 2015
-fallow_pastures Summer farmhand 2015
-generate_daily_activity vet 2015-04-01
-generate_daily_activity vet 2015-05-01
-generate_daily_activity vet 2015-06-01
-purchase_cows farmhand 2015-06-30 10
-seed_pastures Autumn farmhand 2015
-fallow_pastures Autumn farmhand 2015
-generate_daily_activity vet 2015-07-01
-generate_daily_activity vet 2015-08-01
-generate_daily_activity vet 2015-09-01
-purchase_cows farmhand 2015-09-30 10
-seed_pastures Winter farmhand 2015
-fallow_pastures Winter farmhand 2015
-generate_daily_activity vet 2015-10-01
-generate_daily_activity vet 2015-11-01
-generate_daily_activity vet 2015-12-01
-seed_pastures Spring farmhand 2016
-fallow_pastures Spring farmhand 2016
-generate_daily_activity vet 2016-01-01
-generate_daily_activity vet 2016-02-01
-generate_daily_activity vet 2016-03-01
-purchase_cows farmhand 2016-03-31 10
-seed_pastures Summer farmhand 2016
-fallow_pastures Summer farmhand 2016
-generate_daily_activity vet 2016-04-01
-generate_daily_activity vet 2016-05-01
-generate_daily_activity vet 2016-06-01
-purchase_cows farmhand 2016-06-30 10
-seed_pastures Autumn farmhand 2016
-fallow_pastures Autumn farmhand 2016
-generate_daily_activity vet 2016-07-01
-generate_daily_activity vet 2016-08-01
-generate_daily_activity vet 2016-09-01
-purchase_cows farmhand 2016-09-30 10
-seed_pastures Winter farmhand 2016
-fallow_pastures Winter farmhand 2016
-generate_daily_activity vet 2016-10-01
-generate_daily_activity vet 2016-11-01
-generate_daily_activity vet 2016-12-01
-purchase_cows farmhand 2016-12-30 10
-seed_pastures Spring farmhand 2017
-fallow_pastures Spring farmhand 2017
-generate_daily_activity vet 2017-01-01
-generate_daily_activity vet 2017-02-01
-generate_daily_activity vet 2017-03-01
 reporting monthly farmer 2015 01
 reporting monthly farmer 2015 02
 reporting monthly farmer 2015 03
-reporting monthly farmer 2015 04
-reporting monthly farmer 2015 05
-reporting monthly farmer 2015 06
-reporting monthly farmer 2015 07
-reporting monthly farmer 2015 08
-reporting monthly farmer 2015 09
-reporting monthly farmer 2015 10
-reporting monthly farmer 2015 11
-reporting monthly farmer 2015 12
 reporting annual farmer 2015
-reporting monthly farmer 2016 01
-reporting monthly farmer 2016 02
-reporting monthly farmer 2016 03
-reporting monthly farmer 2016 04
-reporting monthly farmer 2016 05
-reporting monthly farmer 2016 06
-reporting monthly farmer 2016 07
-reporting monthly farmer 2016 08
-reporting monthly farmer 2016 09
-reporting monthly farmer 2016 10
-reporting monthly farmer 2016 11
-reporting monthly farmer 2016 12
-reporting annual farmer 2016
-reporting monthly farmer 2017 01
-reporting monthly farmer 2017 02
-reporting monthly farmer 2017 03
-reporting annual farmer 2017
 preserve_reference_data
 test
 

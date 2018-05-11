@@ -725,7 +725,7 @@ class TestPastureModel(APITestCase):
         p = Pasture.objects.get(id=1)
         self.assertEqual('North',
                          p.name)
-        self.assertEqual('/static/images/regions/north.png',
+        self.assertEqual('/static/images/regions/north.jpg',
                          p.url)
         self.assertFalse(p.fallow)
         self.assertLessEqual(1,
@@ -1095,7 +1095,7 @@ class TestCowModel(APITestCase):
         self.assertLessEqual(10,
                              len(cows))
         users = User.objects.all()
-        self.assertEqual(3,
+        self.assertEqual(4,
                          len(users))
 
     def test_01_object(self):
@@ -1289,7 +1289,7 @@ class TestSeedModel(APITestCase):
         self.assertLessEqual(10,
                              len(seeds))
         users = User.objects.all()
-        self.assertEqual(3,
+        self.assertEqual(4,
                          len(users))
 
     def test_01_object(self):
@@ -1314,7 +1314,7 @@ class TestSeedModel(APITestCase):
                          '\w+')
         self.assertEqual('North',
                          s.pasture.name)        
-        self.assertEqual('/static/images/regions/north.png',
+        self.assertEqual('/static/images/regions/north.jpg',
                          s.pasture.url)        
         self.assertEqual('alfalfa',
                          s.cereal_hay.name)        
@@ -1456,7 +1456,7 @@ class TestEventModel(APITestCase):
         self.assertLessEqual(10,
                              len(cows))
         users = User.objects.all()
-        self.assertEqual(3,
+        self.assertEqual(4,
                          len(users))
         events = Event.objects.filter(id__lte=10)
         self.assertLessEqual(10,
@@ -1483,7 +1483,7 @@ class TestEventModel(APITestCase):
                          e.cow.breed.name)        
         self.assertEqual('Wake Up',
                          e.action.name)        
-        self.assertEqual('Clauss Dairy Farms',
+        self.assertEqual('Berkeley Farms',
                          e.client.name)        
 
     def test_03_filter(self):
@@ -1589,7 +1589,7 @@ class TestExerciseModel(APITestCase):
         self.assertEqual(13,
                          len(pastures))
         users = User.objects.all()
-        self.assertEqual(3,
+        self.assertEqual(4,
                          len(users))
         cows = Cow.objects.all()
         self.assertLessEqual(10,
@@ -1726,7 +1726,7 @@ class TestMilkModel(APITestCase):
         self.assertLessEqual(10,
                              len(cows))
         users = User.objects.all()
-        self.assertEqual(3,
+        self.assertEqual(4,
                          len(users))
         milk = Milk.objects.all()
         self.assertLessEqual(10,
@@ -1884,7 +1884,7 @@ class TestHealthRecordModel(APITestCase):
         self.assertEqual(6,
                          len(vaccines))
         users = User.objects.all()
-        self.assertEqual(3,
+        self.assertEqual(4,
                          len(users))
         cows = Cow.objects.all()
         self.assertLessEqual(10,

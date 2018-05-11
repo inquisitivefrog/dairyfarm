@@ -90,7 +90,7 @@ class ToolData:
         # ideal healthy HR range: 48 - 84
         heart_rate = randint(480, 840) * 10.0 / 100
         # ideal healthy BP range: 130 - 150
-        blood_pressure = randint(1300, 1500) * 10.0 / 100
+        blood_pressure = randint(1300, 1500) * 10 / 100
         # ideal healthy BCS range: 3.0 - 3.5
         body_condition_score = randint(30, 35) * 10.0 / 100
         # ideal healthy weight range: 450 - 550 

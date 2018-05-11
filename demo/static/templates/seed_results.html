@@ -1,0 +1,27 @@
+<h2>Seeds Planted!</h2>
+<table ng-if="seed">
+  <tr>
+    <th>ID</th>
+    <th>Client</th>
+    <th>Recorder</th>
+    <th>Year</th>
+    <th>Season</th>
+    <th>Pasture</th>
+    <th>Cereal Planted</th>
+    <th>Grass Planted</th>
+    <th>Legume Planted</th>
+  </tr>
+  <tr>
+    <td>{{seed.id}}</td>
+    <td>{{seed.client.name}}</td>
+    <td>{{seed.seeded_by}}</td>
+    <td>{{seed.year}}</td>
+    <td>{{seed.season.name}}</td>
+    <td><a href="#{{seed.pasture.link}}">{{seed.pasture.name}}</a></td>
+    <td>{{seed.cereal_hay.name}}</td>
+    <td>{{seed.grass_hay.name}}</td>
+    <td>{{seed.legume_hay.name}}</td>
+  <tr>
+</table>
+<p/>
+<img src="{{seed.pasture.url || ''}}" alt="Image failed to load" height="200" width="400">

@@ -1,4 +1,36 @@
 <h2>Milk</h2>
+<form ng-if="milk" action="{% url 'assets:milk-detail' milk.id %}" method="put">
+    <table>
+        <tr>
+            <th>ID:</th>
+            <td>{{milk.id}}</td>
+        </tr>
+        <tr>
+            <th>Client:</th>
+            <td>{{milk.client.name}}</td>
+        </tr>
+        <tr>
+            <th>Recorder:</th>
+            <td>{{milk.recorded_by}}</td>
+        </tr>
+        <tr>
+            <th>Milking Time:</th>
+            <td>{{milk.milking_time}}</td>
+        <tr>
+            <th>RFID:</th>
+            <td>{{milk.cow.rfid}}</td>
+        </tr>
+        <tr>
+            <th>Gallons:</th>
+            <td>
+                <input ng-init="inputGallons=0"
+                       ng-model="inputGallons" min=0 max=10 required/>
+            </td>
+        </tr>
+    </table>
+    <input type="button" ng-click="update(inputGallons)" value="Update"/>
+</form>
+
 <table ng-if="milk">
   <tr>
     <th>ID</th>

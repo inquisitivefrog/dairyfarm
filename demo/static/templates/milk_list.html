@@ -1,4 +1,50 @@
 <h2>Milk</h2>
+<form action="{% url 'assets:milk-list' %} method="post">
+    <table>
+    <tr>
+        <th>Client:</th>
+        <td>
+            <select ng-init="selectedClient=selectedClient || clients[0].name" 
+                    ng-model="selectedClient" 
+                    ng-options="client.name for client in clients">
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>Recorder:</th>
+        <td>
+            <select ng-init="selectedRecorder=users[0].username" 
+                    ng-model="selectedRecorder" 
+                    ng-options="user.username for user in users">
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>Event Time:</th>
+        <td>
+            <input type="datetime-local" ng-init="inputTime=currentDateTime()" ng-model="inputTime" placeholder="yyyy-MM-ddTHH:mm:ss" required/>
+        </td>
+    </tr>
+    <tr>
+        <th>RFID:</th>
+        <td>
+            <select ng-init="selectedCow=cows[0].rfid" 
+                    ng-model="selectedCow" 
+                    ng-options="cow.rfid for cow in cows">
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>Gallons Milked:</th>
+        <td>
+            <input type="number" ng-init="inputGallons=0" ng-model="inputGallons" min="0" max="10" required/>
+        </td>
+    </tr>
+    </table>
+    <input type="button" ng-click="record()" value="Record"/>
+</form>
+
+<h2>{{total}} Recorded Milkings</h2>
 <table ng-if="milk.length > 0">
   <tr>
     <th>ID</th>
@@ -27,6 +73,6 @@
 <p ng-if="milk.length == 0">No milk collected yet.</p>
 
 <div>
-<span text-align:left><a href="{{prev}}">Prev</a></span>
-<span text-align:right><a href="{{next}}">Next</a></span>
+<span text-align:left><a ng-if="prev" href="{{prev}}">Prev</a></span>
+<span text-align:right><a ng-if="next" href="{{next}}">Next</a></span>
 </div>

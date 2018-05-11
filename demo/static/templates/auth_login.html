@@ -1,32 +1,10 @@
-{% extends "auth_base.html" %}
+<form method="post" action="{% url 'demo:login' %}">
+    <input type="hidden" name="csrfmiddlewaretoken" ng-model="token"/>
+    <p><label for="id_username">Username:</label>
+    <input type="text" id="id_username" ng-model="username" autofocus maxlength="254" required/></p>
+    <p><label for="id_password">Password:</label>
+    <input type="password" id="id_password" ng-model="password" required/></p>
+    <input type="hidden" name="next" value="/"/>
+    <input type="button" ng-click="login()" value="Login"/>
 
-{% block title %}
-    <title>Login</title>
-{% endblock %}
-
-{% block login %}
-    <div text-align="center">
-        {% if form.has_errors %}
-            <p>Your username and password didn't match. Please try again.</p>
-        {% endif %}
-
-        {% if next %}
-            {% if user.is_authenticated %}
-                <p>Your account doesn't have access to this page. To proceed, please login with an account that has access.</p>
-            {% else %}
-                <p>Please login to see this page.</p>
-            {% endif %}
-        {% endif %}
-
-        <form method="post" action=".">
-            {% csrf_token %}
-            <p><label for="id_username">Username:</label>
-            {{ form.username }}</p>
-            <p><label for="id_password">Password:</label>
-            {{ form.password }}</p>
-            <input type="hidden" name="next" value="/" />
-            <input type="submit" value="login" />
-        </form>
-    </div>
-{% endblock %}
-
+</form>

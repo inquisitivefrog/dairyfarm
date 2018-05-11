@@ -6,7 +6,9 @@ Download Desired Libraries
 (demo) $ mkdir angular-1.6.9/
 (demo) $ cd angular-1.6.9/
 (demo) $ wget "http://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"
-(demo) $ wget "http://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"
+(demo) $ wget "http://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js.map"
+(demo) $ wget "http://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"
+(demo) $ wget "http://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js.map"
 (demo) $ wget "http://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-cookies.js"
 NOTE: get angular-auth.js from http://jasonwatmore.com/post/2014/05/26/angularjs-basic-http-authentication-example
 (demo) $ mkdir ../lodash-4.17.10/

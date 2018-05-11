@@ -1,58 +1,49 @@
 farmApp.controller("CowDetailController",
-  function($scope, $http, $routeParams, $location) {
-    $scope.cow_id = $routeParams.cow_id;
-    $scope.cow = null;
-    console.log("Entered CowDetailController");
+    function($scope, $rootScope, $http, $routeParams, $location) {
+        $scope.inputId = $routeParams.cow_id;
+        $scope.cow = null;
+        $scope.base_url = "/assets/api/cows/";
+        console.log("Entered CowDetailController");
 
-    $http({
-      method: "GET",
-      url: "/assets/api/cows/" + $scope.cow_id + "/",
-    }).then(function (response) {
-      $scope.cow = response.data;
-      $scope.inputId = $scope.cow_id;
-      $scope.inputClient = $scope.cow.client.name;
-      $scope.inputPurchaser = $scope.cow.purchased_by;
-      $scope.inputDate = $scope.cow.purchase_date;
+        $scope.breeds = $rootScope.globals.breeds;
+        $scope.colors = $rootScope.globals.colors;
+        $scope.ages = $rootScope.globals.ages;
+
+        $http({
+            method: "GET",
+            url: $scope.base_url + $scope.inputId + "/",
+        }).then(function (response) {
+            $scope.cow = response.data;
+        });
+
+        $scope.update = function (selectedBreed, selectedColor, selectedAge) {
+            var data = {"id": $scope.cow.id,
+                        "rfid": $scope.cow.rfid,
+                        "client": $scope.cow.client.name,
+                        "purchased_by": $scope.cow.purchased_by,
+                        "purchase_date": $scope.cow.purchase_date,
+                        "breed": selectedBreed.name,
+                        "color": selectedColor.name,
+                        "age": selectedAge.name}
+            $http({
+                method: 'PUT',
+                url: $scope.base_url + $scope.inputId + "/",
+                data: JSON.stringify(data)
+            }).then(function (response) {
+                $scope.cow = response.data;
+                console.log("Updated Cow ID: " + $scope.inputId);
+                $location.url($scope.base_url + $scope.inputId + "/results/");
+            });
+        };
+
+        $scope.sell = function () {
+            $http({
+                method: 'DELETE',
+                url: $scope.base_url + $scope.inputId + "/",
+            }).then(function (response) {
+                $scope.cow = response.data;
+                console.log("Sold Cow ID: " + $scope.inputId);
+                $location.url($scope.base_url + $scope.inputId + "/results/");
+            });
+        };
     });
-
-
-    $http({
-      method: 'GET',
-      url: '/assets/api/ages/',
-    }).then(function (response) {
-      $scope.ages = response.data.results;
-    });
-
-    $http({
-      method: 'GET',
-      url: '/assets/api/breeds/',
-    }).then(function (response) {
-      $scope.breeds = response.data.results;
-    });
-
-    $http({
-      method: 'GET',
-      url: '/assets/api/colors/',
-    }).then(function (response) {
-      $scope.colors = response.data.results;
-    });
-
-    $scope.update = function (selectedBreed, selectedColor, selectedAge) {
-      var data = {"client": $scope.cow.client.name,
-                  "purchased_by": $scope.cow.purchased_by,
-                  "purchase_date": $scope.cow.purchase_date,
-                  "breed": selectedBreed.name,
-                  "color": selectedColor.name,
-                  "age": selectedAge.name}
-      $http({
-        method: 'PUT',
-        url: "/assets/api/cows/" + $scope.cow.id + "/",
-        data: JSON.stringify(data)
-      }).then(function (response) {
-        $scope.cow = response.data;
-        $location.url("/assets/api/cows/" + $scope.cow.id + "/");
-      });
-   };
-
-});
-

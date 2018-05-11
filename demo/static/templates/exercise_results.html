@@ -1,0 +1,28 @@
+<h2>Exercise Recorded!</h2>
+<table ng-if="exercise">
+  <tr>
+    <th>ID</th>
+    <th>Client</th>
+    <th>Recorder</th>
+    <th>Occurred When</th>
+    <th>RFID</th>
+    <th>Breed</th>
+    <th>Color</th>
+    <th>Age</th>
+    <th>Pasture</th>
+  </tr>
+  <tr>
+    <td>{{exercise.id}}</td>
+    <td>{{exercise.client.name}}</td>
+    <td>{{exercise.recorded_by}}</td>
+    <td>{{exercise.exercise_time}}</td>
+    <td><a href="#{{exercise.cow.link}}">{{exercise.cow.rfid}}</a></td>
+    <td>{{exercise.cow.breed.name}}</td>
+    <td>{{exercise.cow.color.name}}</td>
+    <td>{{exercise.cow.age.name}}</td>
+    <td>{{exercise.pasture.name}}</td>
+  <tr>
+</table>
+<p/>
+<img src="{{exercise.cow.breed.url || ''}}" alt="Image failed to load" height="200" width="400"/>
+<img src="{{exercise.pasture.url || ''}}" alt="Image failed to load" height="200" width="400"/>

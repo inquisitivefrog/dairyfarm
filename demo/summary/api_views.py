@@ -15,9 +15,8 @@ class AnnualSummary(generics.ListCreateAPIView):
     pagination_class = None
 
     def get_queryset(self):
-        self.request.session['username'] = self.request.user.username
-        print('username: {}'.format(self.request.user.username))
-        print('Session expires on: {}'.format(self.request.session.get_expiry_date()))
+        #self.request.session['username'] = self.request.user.username
+        #print('username: {}'.format(self.request.user.username))
         if self.kwargs:
             year = self.kwargs['year']
             obj = Annual.objects.filter(year=year).aggregate(Max('id'))

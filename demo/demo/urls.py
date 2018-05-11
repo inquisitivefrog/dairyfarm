@@ -8,7 +8,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 
 from demo.api_views import UserCreate, UserDetail
-from demo.views import redirect, IndexView
+from demo.views import contact, redirect, IndexView
 
 urlpatterns = [
     #url(r'^$',
@@ -23,6 +23,9 @@ urlpatterns = [
     url(r'^logout/$',
         LogoutView.as_view(),
         name='logout'),
+    url(r'^contact/$',
+        contact,
+        name='contact'),
     url(r'^api/create_user/$',
         UserCreate.as_view(),
         name='user_create'),

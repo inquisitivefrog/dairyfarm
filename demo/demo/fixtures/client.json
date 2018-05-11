@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
         "name": "Foster Farms Dairy",
-        "join_date": "2018-04-24",
+        "join_date": "2018-05-11",
         "inactive_date": "2100-12-31"
     }
 },
@@ -13,7 +13,7 @@
     "pk": 2,
     "fields": {
         "name": "Berkeley Farms",
-        "join_date": "2018-04-24",
+        "join_date": "2018-05-11",
         "inactive_date": "2100-12-31"
     }
 },
@@ -22,7 +22,7 @@
     "pk": 3,
     "fields": {
         "name": "McClelland Dairy",
-        "join_date": "2018-04-24",
+        "join_date": "2018-05-11",
         "inactive_date": "2100-12-31"
     }
 },
@@ -31,7 +31,7 @@
     "pk": 4,
     "fields": {
         "name": "Clauss Dairy Farms",
-        "join_date": "2018-04-24",
+        "join_date": "2018-05-11",
         "inactive_date": "2100-12-31"
     }
 },
@@ -40,7 +40,7 @@
     "pk": 5,
     "fields": {
         "name": "Dairy Farmers of America",
-        "join_date": "2018-04-24",
+        "join_date": "2018-05-11",
         "inactive_date": "2100-12-31"
     }
 }

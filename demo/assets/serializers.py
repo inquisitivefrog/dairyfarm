@@ -88,7 +88,7 @@ class TreatmentSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ('id', 'username')
+        fields = ('id', 'username', 'first_name', 'last_name', 'email')
         lookup_field = 'pk'
         model = User
 

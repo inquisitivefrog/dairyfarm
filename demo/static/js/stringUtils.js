@@ -49,3 +49,16 @@ farmAppString.setQueryString = function (offset, limit) {
     var qs = "?offset=" + offset + "&limit=" + limit;
     return qs
 }
+
+farmAppString.bs2uc = function(s1) {
+    var s2 = s1.toLowerCase();
+    var s3 = "";
+    for (var i = 0; i < s2.length; i++) {
+        if (s2[i] == " ") {
+            s3 = s3.concat("_");
+        } else {
+            s3 = s3.concat(s2[i]);
+        }
+    }
+    return s3;
+}

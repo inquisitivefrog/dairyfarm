@@ -1,55 +1,80 @@
 <h2>Manage a Cow</h2>
-<span>
-<form action="{% url 'assets:cow-detail' cow.id %}" method="put">
+<form ng-if="cow" action="{% url 'assets:cow-detail' cow.id %}" method="put">
     <table>
-    <tr>
-        <th>ID:</th>
-        <td>
-            <input type="number" name="inputId" value={{cow.id}}>
-        </td>
-    </tr>
-    <tr>
-        <th>Client:</th>
-        <td>
-            <input type="text" name="inputClient" value={{cow.client.name}}>
-        </td>
-    </tr>
-    <tr>
-        <th>Purchaser:</th>
-        <td>
-            <input type="text" name="inputPurchaser" value={{cow.purchased_by}}>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <th>Date:</th>
-        <td>
-            <input type="date" name="inputDate" value={{cow.purchased_date}}>
-        </td>
-    </tr>
-    <tr>
-        <th>Breed:</th>
-        <td>
-            <select ng-init="selectedBreed=breeds[0].name" ng-model="selectedBreed" ng-options="breed.name for breed in breeds">
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <th>Color:</th>
-        <td>
-            <select ng-model="selectedColor" ng-options="color.name for color in colors">
-            </select>
-        </td>
-    <tr>
-    <tr>
-        <th>Age:</th>
-        <td>
-            <select ng-model="selectedAge" ng-options="age.name for age in ages">
-            </select>
-        </td>
-    </tr>
+        <tr>
+            <th>ID:</th>
+            <td>{{cow.id}}</td>
+        </tr>
+        <tr>
+            <th>Client:</th>
+            <td>{{cow.client.name}}</td>
+        </tr>
+        <tr>
+            <th>Purchaser:</th>
+            <td>{{cow.purchased_by}}</td>
+        </tr>
+        <tr>
+            <th>Date:</th>
+            <td>{{cow.purchase_date}}</td>
+        </tr>
+        <tr>
+            <th>RFID:</th>
+            <td>{{cow.rfid}}</td>
+        </tr>
+        <tr>
+            <th>Breed:</th>
+            <td>
+                <select ng-init="selectedBreed=breeds[0].name"
+                        ng-model="selectedBreed"
+                        ng-options="breed.name for breed in breeds">
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Color:</th>
+            <td>
+                <select ng-init="selectedColor=colors[0].name"
+                        ng-model="selectedColor"
+                        ng-options="color.name for color in colors">
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Age:</th>
+            <td>
+                <select ng-init="selectedAge=ages[0].name"
+                        ng-model="selectedAge"
+                        ng-options="age.name for age in ages">
+                </select>
+            </td>
+        </tr>
     </table>
     <input type="button" ng-click="update(selectedBreed, selectedColor, selectedAge)" value="Update"/>
+</form>
+<form ng-if="cow" action="{% url 'assets:cow-detail' cow.id %} method="delete">
+    <table>
+        <tr>
+            <th>ID:</th>
+            <td>{{cow.id}}</td>
+        </tr>
+        <tr>
+            <th>Client:</th>
+            <td>{{cow.client.name}}</td>
+        </tr>
+        <tr>
+            <th>Purchaser:</th>
+            <td>{{cow.purchased_by}}</td>
+        </tr>
+        <tr>
+            <th>RFID:</th>
+            <td>{{cow.rfid}}</td>
+        </tr>
+        <tr>
+            <th>Date Sold:</th>
+            <td>{{cow.sell_date}}</td>
+        </tr>
+    </table>
+    <input type="button" ng-click="sell()" value="Sell"/>
 </form>
 
 <h2>Cow</h2>
@@ -78,5 +103,5 @@
   <tr>
 </table>
 <p/>
-<img ng-if="cow" src="{{cow.breed.url}}" alt="Image failed to load" height="200" width="400">
+<img src="{{cow.breed.url || ''}}" alt="Image failed to load" height="200" width="400">
 

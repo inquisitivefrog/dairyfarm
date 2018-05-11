@@ -1,0 +1,19 @@
+<h2>Pasture Allocated!</h2>
+<table ng-if="pasture">
+  <tr>
+    <th>ID</th>
+    <th>Client</th>
+    <th>Name</th>
+    <th>Fallow</th>
+    <th>Distance</th>
+  </tr>
+  <tr>
+    <td>{{pasture.id}}</td>
+    <td>{{pasture.client.name}}</td>
+    <td>{{pasture.name}}</td>
+    <td>{{pasture.fallow}}</td>
+    <td>{{pasture.distance}}</td>
+  <tr>
+</table>
+<p/>
+<img src="{{pasture.url || ''}}" alt="Image failed to load" height="200" width="400"/>

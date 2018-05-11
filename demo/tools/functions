@@ -16,6 +16,7 @@ function load_dependencies() {
     ./tools/create_user.py -f old -l mcdonald -e farmer@dairyfarm.org -u farmer -p milk
     ./tools/create_user.py -f mister -l greenjeans -e farmhand@dairyfarm.org -u farmhand -p butter
     ./tools/create_user.py -f doctor -l fixmeup -e vet@dairyfarm.org -u vet -p cheese
+    ./tools/create_user.py -f kama -l kamahameka -e kama@dairyfarm.org -u kama -p kama -s
     ./tools/load_references.py
 }
 
