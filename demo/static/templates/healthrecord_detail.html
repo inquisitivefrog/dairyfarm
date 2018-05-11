@@ -1,5 +1,99 @@
-<h2>Health Record</h2>
+<h2>Update Health Record</h2>
+<form ng-if="hr" action="{% url 'assets:healthrecord-detail' hr.id %}" method="put">
+    <table>
+        <tr>
+            <th>ID:</th>
+            <td>{{hr.id}}</td>
+        </tr>
+        <tr>
+            <th>Client:</th>
+            <td>{{hr.client.name}}</td>
+        </tr>
+        <tr>
+            <th>Recorder:</th>
+            <td>{{hr.recorded_by}}</td>
+        </tr>
+        <tr>
+            <th>Inspection Time:</th>
+            <td>{{hr.inspection_time}}</td>
+        <tr>
+            <th>RFID:</th>
+            <td>{{hr.cow.rfid}}</td>
+        </tr>
+        <tr>
+            <th>Temperature:</th>
+            <td>{{hr.temperature}}</td>
+        </tr>
+        <tr>
+            <th>Respiratory Rate:</th>
+            <td>{{hr.respiratory_rate}}</td>
+        </tr>
+        <tr>
+            <th>Heart Rate:</th>
+            <td>{{hr.heart_rate}}</td>
+        </tr>
+        <tr>
+            <th>Blood Pressure:</th>
+            <td>{{hr.blood_pressure}}</td>
+        </tr>
+        <tr>
+            <th>Weight:</th>
+            <td>{{hr.weight}}</td>
+        </tr>
+        <tr>
+            <th>BCS:</th>
+            <td>{{hr.body_condition_score}}</td>
+        </tr>
+        <tr>
+            <th>Status:</th>
+            <td>
+                <select ng-model="selectedStatus"
+                        ng-options="status.name for status in statuses">
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Illness:</th>
+            <td>
+                <select ng-init="selectedIllness==hr.illness.diagnosis || ''"
+                        ng-model="selectedIllness"
+                        ng-options="illness.diagnosis for illness in illnesses">
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Injury:</th>
+            <td>
+                <select ng-init="selectedInjury==hr.injury.diagnosis || ''"
+                        ng-model="selectedInjury"
+                        ng-options="injury.diagnosis for injury in injuries">
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Treatment:</th>
+            <td>
+                <select ng-init="selectedTreatment==hr.treatment.name || ''"
+                        ng-model="selectedTreatment"
+                        ng-options="treatment.name for treatment in treatments">
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Vaccine:</th>
+            <td>
+                <select ng-init="selectedVaccine==hr.vaccine.name || ''"
+                        ng-model="selectedVaccine"
+                        ng-options="vaccine.name for vaccine in vaccines">
+                </select>
+            </td>
+        </tr>
+    </table>
+    <input type="button" ng-click="update(selectedStatus, selectedIllness, selectedInjury, selectedTreatment, selectedVaccine)" value="Update"/>
+</form>
 
+
+<h2>Health Record</h2>
 <table ng-if="hr">
   <tr>
     <th>ID</th>
