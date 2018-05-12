@@ -58,11 +58,11 @@
     <th>Gallons Collected</th>
   </tr>
   <tr ng-repeat="m in milk ">
-    <td><a href="#{{m.link}}">{{m.id}}</a></td>
+    <td><a href="#!{{m.link}}">{{m.id}}</a></td>
     <td>{{m.client.name}}</td>
     <td>{{m.recorded_by}}</td>
     <td>{{m.milking_time}}</td>
-    <td><a href="#{{m.cow.link}}">{{m.cow.rfid}}</a></td>
+    <td><a href="#!{{m.cow.link}}">{{m.cow.rfid}}</a></td>
     <td>{{m.cow.breed.name}}</td>
     <td>{{m.cow.color.name}}</td>
     <td>{{m.cow.age.name}}</td>

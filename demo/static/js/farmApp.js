@@ -10,8 +10,12 @@ farmApp.config(function ($httpProvider) {
 
 farmApp.config(function ($routeProvider, $locationProvider) {
     //$locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('');
+    $locationProvider.hashPrefix('!');
     $routeProvider
+    //.when("/", {
+    //      templateUrl: "/static/templates/index_blank.html",
+    //      controller: "IndexController"
+    //})
     .when("/", {
           templateUrl: "/static/templates/index.html",
           controller: "IndexController"
@@ -37,38 +41,6 @@ farmApp.config(function ($routeProvider, $locationProvider) {
     .when("/docs/mrd/", {
           templateUrl: "/static/templates/docs_mrd.html",
           controller: "MRDController"
-    })
-    .when("/docs/mrd/strategy/", {
-          templateUrl: "/static/templates/docs_mrd.html#strategy",
-          controller: "MRDController"
-    })
-    .when("/docs/mrd/bm/", {
-          templateUrl: "/static/templates/docs_mrd.html#bm",
-          controller: "MRDController"
-    })
-    .when("/docs/mrd/groups/", {
-          templateUrl: "/static/templates/docs_mrd.html#groups",
-          controller: "MRDController"
-    })
-    .when("/docs/mrd/bom/", {
-          templateUrl: "/static/templates/docs_mrd.html#bom",
-          controller: "MRDController"
-    })
-    .when("/docs/mrd/internal/", {
-          templateUrl: "/static/templates/docs_mrd.html#internal",
-          controller: "MRDController"
-    })
-    .when("/docs/mrd/external/", {
-          templateUrl: "/static/templates/docs_mrd.html#external",
-          controller: "MRDController"
-    })
-    .when("/docs/mrd/tbd/", {
-          templateUrl: "/static/templates/docs_mrd.html#tbm",
-          controller: "MRDController"
-    })
-    .when("/docs/dd_assets/", {
-          templateUrl: "/static/templates/docs_dd_assets.html",
-          controller: "DDAssetsController"
     })
     .when("/docs/dd_assets/", {
           templateUrl: "/static/templates/docs_dd_assets.html",
