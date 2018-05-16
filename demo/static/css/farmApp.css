@@ -60,6 +60,23 @@ li.menu a:hover {
     footer {-webkit-order:3;order:3;}
 }
 
+div.auth {
+    border: 0px;
+}
+
+div.auth table {
+    border: 0px;
+    float: right;
+}
+
+div.auth table tr td {
+    border: 0px;
+}
+
+div.auth table tr {
+    border: 0px;
+}
+
 div.raw {
     text-align: left;
     width: 100%;

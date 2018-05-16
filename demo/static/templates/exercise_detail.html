@@ -1,3 +1,12 @@
+<div class="auth" ng-if="globals">
+<table>
+    <tr>
+        <td><p style="color:blue">{{globals.currentUser.username}}</p></td>
+        <td><p> logged in at </p></td>
+        <td><p style="color:blue">{{globals.login}}</p></td>
+    </tr>
+</table>
+</div>
 <h2>Exercise</h2>
 <form ng-if="exercise" action="{% url 'assets:exercise-detail' exercise.id %}" method="put">
     <table>

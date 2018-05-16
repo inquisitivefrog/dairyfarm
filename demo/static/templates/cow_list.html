@@ -1,23 +1,22 @@
+<div class="auth" ng-if="globals">
+<table>
+    <tr>
+        <td><p style="color:blue">{{globals.currentUser.username}}</p></td>
+        <td><p> logged in at </p></td>
+        <td><p style="color:blue">{{globals.login}}</p></td>
+    </tr>
+</table>
+</div>
 <h2>Purchase a Cow</h2>
 <form action="{% url 'assets:cow-list' %}" method="post">
     <table>
     <tr>
         <th>Client:</th>
-        <td>
-            <select ng-init="selectedClient=selectedClient || clients[0].name" 
-                    ng-model="selectedClient" 
-                    ng-options="client.name for client in clients">
-            </select>
-        </td>
+        <td>{{globals.currentUser.client.name}}</td>
     </tr>
     <tr>
         <th>Purchaser:</th>
-        <td>
-            <select ng-init="selectedPurchaser=users[0].username" 
-                    ng-model="selectedPurchaser" 
-                    ng-options="user.username for user in users">
-            </select>
-        </td>
+        <td>{{globals.currentUser.username}}</td>
     </tr>
     <tr>
         <th>Date:</th>

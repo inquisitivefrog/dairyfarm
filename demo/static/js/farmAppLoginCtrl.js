@@ -35,8 +35,13 @@ farmApp.controller("LoginController",
                 } else {
                     var user = response.data.user;
                     $rootScope.globals.currentUser = user;
-                    console.log("Successfully logged in");
-                    $location.url("/index/");
+                    $rootScope.globals["login"] = currentDateTime();
+                    console.log("globals set: " + Object.getOwnPropertyNames($rootScope.globals));
+                    var greeting = $rootScope.globals.currentUser.username
+                                 + " successfully logged in at "
+                                 + $rootScope.globals.login;
+                    console.log(greeting);
+                    $location.url("/cache/");
                 }
             });
         };

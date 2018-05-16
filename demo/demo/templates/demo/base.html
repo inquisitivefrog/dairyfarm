@@ -7,18 +7,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-cookies.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.js"></script>
-    <script src="{% static 'js/timeUtils.js' %}"></script>
+    <script src="{% static 'js/cacheUtils.js' %}"></script>
     <script src="{% static 'js/stringUtils.js' %}"></script>
+    <script src="{% static 'js/timeUtils.js' %}"></script>
     <script src="{% static 'js/farmApp.js' %}"></script>
     <script src="{% static 'js/farmAppLoginCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppLogoutCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppReloadCacheCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppMenuAboutCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppMenuContactCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppMRDCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppDDAssetsCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppDDSummaryCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppTestsCtrl.js' %}"></script>
-    <script src="{% static 'js/farmAppIndexCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppCowListCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppCowDetailCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppCowResultsCtrl.js' %}"></script>
@@ -52,12 +53,13 @@
         <nav class="nav">
             <div class="menu">
             <ul>
-                <li><a href="#!/">Home</a></li>
+                <li><a href="#!/home/">Home</a></li>
                 <li><a href="#!/about/">About</a></li>
                 <li><a href="#!/contact/">Contact</a></li>
             </ul>
             </div>
             <p></p>
+            <p><b><a href="#!/cache/quiet/">Reload Cache</a></b></p>
             <p><b>User Management</b></p>
             <ul>
                 <li><a href="#!/logout/">Logout User</a></li>

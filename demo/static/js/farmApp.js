@@ -11,16 +11,11 @@ farmApp.config(function ($httpProvider) {
 farmApp.config(function ($routeProvider, $locationProvider) {
     //$locationProvider.html5Mode(true);
     $locationProvider.hashPrefix('!');
+    //$httpProvider.defaults.cache = true;
     $routeProvider
-    //.when("/", {
-    //      templateUrl: "/static/templates/index_blank.html",
-    //      controller: "IndexController"
-    //})
-    .when("/index/", {
-          templateUrl: "/static/templates/index.html",
-          controller: "IndexController"
-          //templateUrl: "/static/templates/annual_report.html",
-          //controller: "AnnualSummaryController"
+    .when("/home/", {
+          templateUrl: "/static/templates/annual_report.html",
+          controller: "AnnualSummaryController"
     })
     .when("/login/", {
           templateUrl: "/static/templates/auth_login.html",
@@ -29,6 +24,14 @@ farmApp.config(function ($routeProvider, $locationProvider) {
     .when("/logout/", {
           templateUrl: "/static/templates/auth_logged_out.html",
           controller: "LogoutController"
+    })
+    .when("/cache/", {
+          templateUrl: "/static/templates/cache.html",
+          controller: "ReloadCacheController"
+    })
+    .when("/cache/:quiet/", {
+          templateUrl: "/static/templates/cache.html",
+          controller: "ReloadCacheController"
     })
     .when("/about/", {
           templateUrl: "/static/templates/menu_about.html",
@@ -215,8 +218,7 @@ farmApp.config(function ($routeProvider, $locationProvider) {
 farmApp.run(function($rootScope, $location, $http, $cookies) {
     $rootScope.globals = $cookies.get('globals') || {};
     $rootScope.globals["limit"] = 10;
-    console.log("globals: " + Object.getOwnPropertyNames($rootScope.globals));
-    console.log("globals limit: " + $rootScope.globals.limit);
+    console.log("globals set: " + Object.getOwnPropertyNames($rootScope.globals));
 
     if ($rootScope.globals.currentUser) {
         var auth = 'Basic ' + $rootScope.globals.currentUser.authdata;

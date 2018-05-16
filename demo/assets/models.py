@@ -46,6 +46,8 @@ class Age(models.Model):
             return '{}'.format(self.__class__)
 
 class Client(models.Model):
+    user = models.ForeignKey(User,
+                             on_delete=models.CASCADE)
     name = models.CharField(max_length=20,
                             null=False,
                             blank=False,

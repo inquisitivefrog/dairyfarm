@@ -1,5 +1,15 @@
-<h2>Dependent Objects Loaded</h2>
+<div class="auth" ng-if="globals">
 <table>
+    <tr>
+        <td><p style="color:blue">{{globals.currentUser.username}}</p></td>
+        <td><p> logged in at </p></td>
+        <td><p style="color:blue">{{globals.login}}</p></td>
+    </tr>
+</table>
+</div>
+
+<h2 ng-show="{{debug}}">Dependent Objects Loaded</h2>
+<table ng-if"globals" ng-show="{{debug}}">
     <tr>
         <th>Clients</th>
         <td>{{ globals.clients.length }}</td>
@@ -67,5 +77,21 @@
     <tr>
         <th>Vaccines</th>
         <td>{{ globals.vaccines.length }}</td>
+    </tr>
+</table>
+<p></p>
+<h2 ng-show="{{debug}}">Authentication</h2>
+<table ng-if"globals" ng-show="{{debug}}">
+    <tr>
+        <th>User ID</th>
+        <td>{{ globals.currentUser.id }}</td>
+    </tr>
+    <tr>
+        <th>User</th>
+        <td>{{ globals.currentUser.username }}</td>
+    </tr>
+    <tr>
+        <th>Client</th>
+        <td>{{ globals.currentUser.client.name }}</td>
     </tr>
 </table>
