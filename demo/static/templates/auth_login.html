@@ -1,10 +1,22 @@
-<form method="post" action="{% url 'demo:login' %}">
+<p ng-if="error">{{ error }}</p>
+
+<form method="post" action=".">
     <input type="hidden" name="csrfmiddlewaretoken" ng-model="token"/>
     <p><label for="id_username">Username:</label>
-    <input type="text" id="id_username" ng-model="username" autofocus maxlength="254" required/></p>
+    <input type="text"
+           name="username"
+           ng-model="username"
+           ng-minlength="6"
+           ng-maxlength="15"
+           autofocus
+           required/></p>
     <p><label for="id_password">Password:</label>
-    <input type="password" id="id_password" ng-model="password" required/></p>
+    <input type="password"
+           name="password"
+           ng-model="password"
+           ng-minlength="4"
+           ng-maxlength="12"
+           required/></p>
     <input type="hidden" name="next" value="/"/>
     <input type="button" ng-click="login()" value="Login"/>
-
 </form>

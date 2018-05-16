@@ -1,7 +1,9 @@
-farmApp.controller('IndexController',
+farmApp.controller('ReloadCacheController',
   function($scope, $rootScope, $http, $routeParams, $location) {
-      $scope.users = null;
-      console.log('Entered IndexController');
+      $scope.quiet = $routeParams.quiet;
+      $scope.globals = null;
+      $scope.debug = false;
+      console.log('Entered ReloadCacheController');
 
     $http({
         method: 'GET',
@@ -123,5 +125,8 @@ farmApp.controller('IndexController',
     });
 
     $scope.globals = $rootScope.globals;
-    console.log("globals: " + Object.getOwnPropertyNames($rootScope.globals));
+    console.log("globals set: " + Object.getOwnPropertyNames($rootScope.globals));
+    if ($scope.quiet == null) {
+        $location.url("/home/");
+    }
 });

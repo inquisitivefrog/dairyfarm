@@ -1,0 +1,12 @@
+<div id="arch" style="text-align: left">
+<h2>3. System Architecture</h2><p></p><div style="text-align: left">
+<h3>3.1 Architectural Design</h3><p></p><p>
+<img width="25%" src="/static/images/docs/farmApp_architecture.png"/><p></p>
+<h3>3.2 Design Considerations</h3><p></p><p><ul>
+<li>PostgreSQL will be the only source of truth providing near-instant data replication with a master-slave configuration</li>
+<li>All PostgreSQL table rows will be accessible by key id except Cow table which will reference key rfid, of type UUID</li>
+<li>No PostgreSQL table data will ever be deleted but unwanted records will be tagged by date or deleted field to remove from regular search</li>
+<li>Commonly requested data will be cached in Redis</li>
+<li>Summary reporting will assume low volume same day row creation so table rows will be accessible by keys year, month and id with only the highest id row returned</li>
+<li>Because disk space is cheap even when rented and historic data must be preserved for the Summary reporting web service, each table will include a delete column with a boolean value rather than actually deleting a table row</li>
+</ul></div></div>

@@ -1,3 +1,12 @@
+<div class="auth" ng-if="globals">
+<table>
+    <tr>
+        <td><p style="color:blue">{{globals.currentUser.username}}</p></td>
+        <td><p> logged in at </p></td>
+        <td><p style="color:blue">{{globals.login}}</p></td>
+    </tr>
+</table>
+</div>
 <h2>Milk</h2>
 <form action="{% url 'assets:milk-list' %} method="post">
     <table>

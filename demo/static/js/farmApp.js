@@ -16,7 +16,7 @@ farmApp.config(function ($routeProvider, $locationProvider) {
     //      templateUrl: "/static/templates/index_blank.html",
     //      controller: "IndexController"
     //})
-    .when("/", {
+    .when("/index/", {
           templateUrl: "/static/templates/index.html",
           controller: "IndexController"
           //templateUrl: "/static/templates/annual_report.html",
@@ -27,7 +27,7 @@ farmApp.config(function ($routeProvider, $locationProvider) {
           controller: "LoginController"
     })
     .when("/logout/", {
-          templateUrl: "/static/templates/auth_logout.html",
+          templateUrl: "/static/templates/auth_logged_out.html",
           controller: "LogoutController"
     })
     .when("/about/", {
@@ -43,6 +43,10 @@ farmApp.config(function ($routeProvider, $locationProvider) {
           controller: "MRDController"
     })
     .when("/docs/dd_assets/", {
+          templateUrl: "/static/templates/docs_dd_assets.html",
+          controller: "DDAssetsController"
+    })
+    .when("/docs/dd_assets/:section/", {
           templateUrl: "/static/templates/docs_dd_assets.html",
           controller: "DDAssetsController"
     })
@@ -214,14 +218,16 @@ farmApp.run(function($rootScope, $location, $http, $cookies) {
     console.log("globals: " + Object.getOwnPropertyNames($rootScope.globals));
     console.log("globals limit: " + $rootScope.globals.limit);
 
-    //if ($rootScope.globals.currentUser) {
-    //    $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
-    //}
+    if ($rootScope.globals.currentUser) {
+        var auth = 'Basic ' + $rootScope.globals.currentUser.authdata;
+        $http.defaults.headers.common['Authorization'] = auth;
+        console.log("auth: " + auth);
+    }
  
-    //$rootScope.$on('$locationChangeStart', function (event, next, current) {
-    //    // redirect to login page if not logged in
-    //    if ($location.path() !== '/login/' && !$rootScope.globals.currentUser) {
-    //        $location.path('/login/');
-    //    }
-    //});
+    $rootScope.$on('$locationChangeStart', function (event, next, current) {
+        // redirect to login page if not logged in
+        if ($location.path() !== '/login/' && !$rootScope.globals.currentUser) {
+            $location.path('/login/');
+        }
+    });
 });

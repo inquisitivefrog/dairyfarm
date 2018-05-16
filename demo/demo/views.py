@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import redirect, render
 from django.template.loader import get_template
 from django.views import generic
@@ -42,7 +42,23 @@ def redirect(request):
     destination = '/summary/'
     return HttpResponseRedirect(destination)
 
+def ui_login(request):
+    return render(request, 'registration/ui_login.html', {})
+
+def ui_logged_in(request):
+    data = {"user": {"id": request.user.id,
+                     "username": request.user.username,
+                     "first_name": request.user.first_name,
+                     "last_name": request.user.last_name,
+                     "email": request.user.email},
+            "auth": None}
+    return JsonResponse(data)
+
+def ui_logout(request):
+    return render(request, 'registration/ui_logged_out.html', {})
+
 class IndexView(generic.ListView):
     queryset = User.objects.all()
     template_name = 'demo/index.html'
+
 

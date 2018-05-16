@@ -1,0 +1,21 @@
+<div id="intro" style="text-align: left">
+<h2>1. Introduction</h2><p></p><div><ul style="text-align: left">
+<h3>1.1 Purpose</h3><p></p><p>
+Nature v1.0 is an inventory management system for the dairy farming market segment.  The Assets feature will consist of a user credential protected UI that interacts with a service that manages all dairy farm assets.
+</p><p></p>
+<h3>1.2 Scope</h3><p></p><p>
+Two tools will be developed.  A CLI tool for rapid creation of new asset objects for load testing and a UI tool for CRUD management of all asset objects.
+</p><p>
+<h4>1.2.1 Back-end Perspective</h4>
+</p><p>
+Assets consist of the following objects: Cow, Pasture, Seed, and Milk.  Actions taken on certain assets are healthcheck before milking, milking, planting seed in pastures and allowing pastures to fallow a season using additional objects: HealthRecord, Event, Exercise.
+Each Asset is mapped to 1:1 Account objects and either 1:1 User objects or 1:1 User and 1:1 Cow objects.
+</p><p>
+<h4>1.2.2 Front-end Perspective</h4>
+</p><p>
+User login by username/password enables access to account mapped objects in all other pages.
+Account User login loads a landing page listing current year assets with menu selection of other time periods or access to management of other assets.
+</p><p></p>
+<h3>1.3 References</h3><p></p><p>
+<ul><li><a href="#/docs/mrd/">Nature Dairy Farm MRD</a></li></ul>
+</p><p></div></div>

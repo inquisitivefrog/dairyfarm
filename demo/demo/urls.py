@@ -9,6 +9,7 @@ from django.urls import path
 
 from demo.api_views import UserCreate, UserDetail
 from demo.views import contact, redirect, IndexView
+from demo.views import ui_login, ui_logged_in, ui_logout
 
 urlpatterns = [
     #url(r'^$',
@@ -17,6 +18,15 @@ urlpatterns = [
     url(r'^$',
         IndexView.as_view(),
         name='index'),
+    url(r'^ui_login/$',
+        ui_login,
+        name='ui_login'),
+    url(r'^ui_logged_in/$',
+        ui_logged_in,
+        name='ui_logged_in'),
+    url(r'^ui_logout/$',
+        ui_logout,
+        name='ui_logout'),
     url(r'^login/$',
         LoginView.as_view(),
         name='login'),
