@@ -1,23 +1,13 @@
-<div class="auth" ng-if="globals">
-<table>
+<table class="login" ng-if="globals">
     <tr>
         <td><p style="color:blue">{{globals.currentUser.username}}</p></td>
         <td><p> logged in at </p></td>
         <td><p style="color:blue">{{globals.login}}</p></td>
     </tr>
 </table>
-</div>
 
 <h2 ng-show="{{debug}}">Dependent Objects Loaded</h2>
 <table ng-if"globals" ng-show="{{debug}}">
-    <tr>
-        <th>Clients</th>
-        <td>{{ globals.clients.length }}</td>
-    </tr>
-    <tr>
-        <th>Users</th>
-        <td>{{ globals.users.length }}</td>
-    </tr>
     <tr>
         <th>Breeds</th>
         <td>{{ globals.breeds.length }}</td>

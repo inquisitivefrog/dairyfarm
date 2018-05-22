@@ -1,32 +1,21 @@
-<div class="auth" ng-if="globals">
-<table>
+<table class="login" ng-if="globals">
     <tr>
         <td><p style="color:blue">{{globals.currentUser.username}}</p></td>
         <td><p> logged in at </p></td>
         <td><p style="color:blue">{{globals.login}}</p></td>
     </tr>
 </table>
-</div>
-<h2>Inspect a Cow</h2>
+
+<h2>{{inspect_header}}</h2>
 <form action="{% url 'assets:healthrecord-list' %} method="post">
     <table>
     <tr>
         <th>Client:</th>
-        <td>
-            <select ng-init="selectedClient=selectedClient || clients[0].name" 
-                    ng-model="selectedClient" 
-                    ng-options="client.name for client in clients">
-            </select>
-        </td>
+        <td>{{globals.currentUser.client.name}}</td>
     </tr>
     <tr>
         <th>Recorder:</th>
-        <td>
-            <select ng-init="selectedRecorder=users[0].username" 
-                    ng-model="selectedRecorder" 
-                    ng-options="user.username for user in users">
-            </select>
-        </td>
+        <td>{{globals.currentUser.username}}</td>
     </tr>
     <tr>
         <th>Inspection Time:</th>
@@ -38,9 +27,9 @@
     <tr>
         <th>RFID:</th>
         <td>
-            <select ng-init="selectedCow=cows[0].rfid" 
+            <select ng-init="selectedCow=globals.cows[0].rfid" 
                     ng-model="selectedCow" 
-                    ng-options="cow.rfid for cow in cows">
+                    ng-options="cow.rfid for cow in globals.cows">
             </select>
         </td>
     </tr>
@@ -89,9 +78,9 @@
     <tr>
         <th>Status:</th>
         <td>
-            <select ng-init="selectedStatus=statuses[0].name" 
+            <select ng-init="selectedStatus=globals.statuses[0].name" 
                     ng-model="selectedStatus" 
-                    ng-options="status.name for status in statuses">
+                    ng-options="status.name for status in globals.statuses">
             </select>
         </td>
     </tr>
@@ -99,7 +88,7 @@
         <th>Illness:</th>
         <td>
             <select ng-model="selectedIllness" 
-                    ng-options="illness.diagnosis for illness in illnesses">
+                    ng-options="illness.diagnosis for illness in globals.illnesses">
             </select>
         </td>
     </tr>
@@ -107,7 +96,7 @@
         <th>Injury:</th>
         <td>
             <select ng-model="selectedInjury" 
-                    ng-options="injury.diagnosis for injury in injuries">
+                    ng-options="injury.diagnosis for injury in globals.injuries">
             </select>
         </td>
     </tr>
@@ -115,7 +104,7 @@
         <th>Treatment:</th>
         <td>
             <select ng-model="selectedTreatment" 
-                    ng-options="treatment.name for treatment in treatments">
+                    ng-options="treatment.name for treatment in globals.treatments">
             </select>
         </td>
     </tr>
@@ -123,7 +112,7 @@
         <th>Vaccine:</th>
         <td>
             <select ng-model="selectedVaccine" 
-                    ng-options="vaccine.name for vaccine in vaccines">
+                    ng-options="vaccine.name for vaccine in globals.vaccines">
             </select>
         </td>
     </tr>
@@ -132,7 +121,7 @@
 </form>
 
 <h2>{{total}} Cattle Inspections!</h2>
-<table ng-if="hrs.length > 0" ng-repeat="hr in hrs">
+<table ng-if="total > 0" ng-repeat="hr in hrs">
   <tr>
     <th>ID</th>
     <td><a href="#!{{hr.link}}">{{hr.id}}</a></td>
@@ -147,10 +136,6 @@
   <tr>
     <th>Inspected When</th>
     <td>{{hr.inspection_time}}</td>
-  </tr>
-  <tr>
-    <th>RFID</th>
-    <td><a href="#!{{hr.cow.link}}">{{hr.cow.rfid}}</a></td>
   </tr>
   <tr>
     <th>Breed</th>
@@ -210,7 +195,7 @@
 </table>
 
 <h2>{{total}} Recorded Health Inspections</h2>
-<p ng-if="hrs.length == 0">No cows inspected yet.</p>
+<p ng-if="total == 0">No cows inspected yet.</p>
 
 <div>
 <span text-align:left><a ng-if="prev" href="{{prev}}">Prev</a></span>

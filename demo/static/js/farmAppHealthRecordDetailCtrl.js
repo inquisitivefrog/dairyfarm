@@ -3,6 +3,8 @@ farmApp.controller("HealthRecordDetailController",
         $scope.inputId = $routeParams.hr_id;
         $scope.hr = null;
         $scope.update = null;
+        $scope.update_header = "Update Health Record for "
+                             + $rootScope.globals.currentUser.client.name;
         $scope.base_url = "/assets/api/healthrecords/";
         console.log("Entered HealthRecordDetailController");
 
@@ -13,12 +15,7 @@ farmApp.controller("HealthRecordDetailController",
             $scope.hr = response.data;
         });
 
-        $scope.statuses = $rootScope.globals.statuses;
-        $scope.illnesses = $rootScope.globals.illnesses;
-        $scope.injuries = $rootScope.globals.injuries;
-        $scope.treatments = $rootScope.globals.treatments;
-        $scope.vaccines = $rootScope.globals.vaccines;
-
+        $scope.globals = $rootScope.globals;
         $scope.update = function (selectedStatus, selectedIllness, selectedInjury, selectedTreatment, selectedVaccine) {
             var data = {"id": $scope.hr.id,
                         "cow": $scope.hr.cow.rfid,

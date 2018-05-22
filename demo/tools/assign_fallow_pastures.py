@@ -16,22 +16,16 @@ def read_args():
                         '--pasture',
                         type=str,
                         required=True,
-                        choices=['North',
-                                 'West',
-                                 'South',
-                                 'East',
-                                 'Central North',
-                                 'Central West',
-                                 'Central South',
-                                 'Central East',
-                                 'North West',
-                                 'North East',
-                                 'South West',
-                                 'South East',
-                                 'Pen'],
                         help='pasture allocation')
+    parser.add_argument('-u',
+                        '--username',
+                        type=str,
+                        required=True,
+                        choices=['foster',
+                                 'berkeley'],
+                        help='user')
     o = parser.parse_args()
-    return(o.pasture)
+    return(o.pasture, o.username)
     
 def _get_data():
     return {'fallow': True}
@@ -61,12 +55,17 @@ def leave_fallow(pasture):
         exit(1)
 
 def main():
-    (pasture) = read_args()
+    (pasture, username) = read_args()
     path.append('/Users/tim/Documents/workspace/python3/dairyfarm/demo/')
     environ.setdefault('DJANGO_SETTINGS_MODULE',
                        'demo.settings')
     setup()
-    leave_fallow(pasture)
+    from tools.utils import ToolData
+    if ToolData.valid_pasture(pasture, username):
+        leave_fallow(pasture)
+    else:
+        exit('ERROR: user: {} does not have access to {} pasture'.format(
+            username, pasture))
     return
 
 if __name__ == '__main__':

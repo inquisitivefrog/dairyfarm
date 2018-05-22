@@ -17,6 +17,11 @@ function load_dependencies() {
     ./tools/create_user.py -f mister -l greenjeans -e farmhand@dairyfarm.org -u farmhand -p butter
     ./tools/create_user.py -f doctor -l fixmeup -e vet@dairyfarm.org -u vet -p cheese
     ./tools/create_user.py -f kama -l kamahameka -e kama@dairyfarm.org -u kama -p kama -s
+    ./tools/create_user.py -f foster -l farms -e foster_farms@ff.org -u foster -p farms
+    ./tools/create_user.py -f berkeley -l farms -e berkeley_farms@bf.org -u berkeley -p farms
+    ./tools/create_user.py -f mcclelland -l dairy -e mcclelland_dairy@md.org -u mcclelland -p dairy
+    ./tools/create_user.py -f clauss -l dairy -e clauss_dairy_farms@cdf.org -u clauss -p dairy
+    ./tools/create_user.py -f dairy -l farmers -e dairy_farmers@dfoa.org -u dairy -p farmers
     ./tools/load_references.py
 }
 
@@ -34,22 +39,38 @@ function seed_pastures() {
     season=$1
     user=$2
     year=$3
-    ./tools/seed_pastures.py -c alfalfa -g bermuda -l clover -p North -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c barley -g bluegrass -l cowpeas -p West -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c oat -g brome -l lespedeza -p South -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c rye -g fescue -l soybean -p East -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c wheat -g orchardgrass -l trefoil -p 'Central North' -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c alfalfa -g 'reed canary grass' -l vetch -p 'Central West' -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c barley -g ryegrass -l clover -p 'Central South' -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c oat -g sudangrass -l cowpeas -p 'Central East' -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c rye -g timothy -l lespedeza -p 'North West' -s $season -u $user -y $year
-    ./tools/seed_pastures.py -c wheat -g bermuda -l soybean -p 'North East' -s $season -u $user -y $year
+    if [ $user == "foster" ]; then
+        ./tools/seed_pastures.py -c alfalfa -g bermuda -l clover -p North -s $season -u $user -y $year
+        ./tools/seed_pastures.py -c barley -g bluegrass -l cowpeas -p West -s $season -u $user -y $year
+        ./tools/seed_pastures.py -c oat -g brome -l lespedeza -p South -s $season -u $user -y $year
+        ./tools/seed_pastures.py -c rye -g fescue -l soybean -p East -s $season -u $user -y $year
+        ./tools/seed_pastures.py -c wheat -g orchardgrass -l trefoil -p 'Central North' -s $season -u $user -y $year
+        ./tools/seed_pastures.py -c alfalfa -g 'reed canary grass' -l vetch -p 'Central West' -s $season -u $user -y $year
+        ./tools/seed_pastures.py -c barley -g ryegrass -l clover -p 'Central South' -s $season -u $user -y $year
+        ./tools/seed_pastures.py -c oat -g sudangrass -l cowpeas -p 'Central East' -s $season -u $user -y $year
+        ./tools/seed_pastures.py -c rye -g timothy -l lespedeza -p 'North West' -s $season -u $user -y $year
+        ./tools/seed_pastures.py -c wheat -g bermuda -l soybean -p 'North East' -s $season -u $user -y $year
+    elif [ $user == "berkeley" ]; then
+        ./tools/seed_pastures.py -c alfalfa -g bermuda -l clover -p Lot_1 -s $season -u $user -y $year
+        ./tools/seed_pastures.py -c barley -g bluegrass -l cowpeas -p Lot_2  -s $season -u $user -y $year
+        ./tools/seed_pastures.py -c oat -g brome -l lespedeza -p Lot_3 -s $season -u $user -y $year
+        ./tools/seed_pastures.py -c rye -g fescue -l soybean -p Lot_4 -s $season -u $user -y $year
+        ./tools/seed_pastures.py -c wheat -g orchardgrass -l trefoil -p Lot_5 -s $season -u $user -y $year
+        ./tools/seed_pastures.py -c alfalfa -g 'reed canary grass' -l vetch -p Lot_6 -s $season -u $user -y $year
+        ./tools/seed_pastures.py -c barley -g ryegrass -l clover -p Lot_7 -s $season -u $user -y $year
+        ./tools/seed_pastures.py -c oat -g sudangrass -l cowpeas -p Lot_8 -s $season -u $user -y $year
+    fi
 }
 
 function fallow_pastures() {
-    ./tools/assign_fallow_pastures.py -p "South West" 
-    ./tools/assign_fallow_pastures.py -p "South East" 
-    ./tools/assign_fallow_pastures.py -p "Pen" 
+    user=$1
+    if [ $user == "foster" ]; then
+        ./tools/assign_fallow_pastures.py -p "South West" -u $user
+        ./tools/assign_fallow_pastures.py -p "South East" -u $user
+        ./tools/assign_fallow_pastures.py -p "Pen" -u $user
+    elif [ $user == "berkeley" ]; then
+        ./tools/assign_fallow_pastures.py -p Lot_9 -u $user
+    fi
 }
 
 function generate_daily_activity() {

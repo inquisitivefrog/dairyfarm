@@ -3,48 +3,204 @@
     "model": "summary.monthly",
     "pk": 1,
     "fields": {
-        "created_by": 1,
+        "client": 1,
+        "created_by": 5,
         "year": 2015,
         "month": 1,
         "total_cows": 130,
-        "aged_cows": 27,
-        "pregnant_cows": 48,
-        "ill_cows": 17,
-        "injured_cows": 7,
-        "gallons_milk": 1448,
-        "link": "/summary/api/monthly/2015/01/"
+        "aged_cows": 26,
+        "pregnant_cows": 0,
+        "ill_cows": 9,
+        "injured_cows": 12,
+        "gallons_milk": 1480,
+        "link": "/summary/api/monthly/client/1/year/2015/month/01/"
     }
 },
 {
     "model": "summary.monthly",
     "pk": 2,
     "fields": {
-        "created_by": 1,
+        "client": 2,
+        "created_by": 6,
         "year": 2015,
-        "month": 2,
-        "total_cows": 130,
-        "aged_cows": 27,
-        "pregnant_cows": 46,
+        "month": 1,
+        "total_cows": 104,
+        "aged_cows": 17,
+        "pregnant_cows": 0,
         "ill_cows": 12,
-        "injured_cows": 6,
-        "gallons_milk": 1502,
-        "link": "/summary/api/monthly/2015/02/"
+        "injured_cows": 12,
+        "gallons_milk": 1169,
+        "link": "/summary/api/monthly/client/2/year/2015/month/01/"
     }
 },
 {
     "model": "summary.monthly",
     "pk": 3,
     "fields": {
-        "created_by": 1,
+        "client": 1,
+        "created_by": 5,
+        "year": 2015,
+        "month": 2,
+        "total_cows": 130,
+        "aged_cows": 26,
+        "pregnant_cows": 0,
+        "ill_cows": 8,
+        "injured_cows": 15,
+        "gallons_milk": 1516,
+        "link": "/summary/api/monthly/client/1/year/2015/month/02/"
+    }
+},
+{
+    "model": "summary.monthly",
+    "pk": 4,
+    "fields": {
+        "client": 2,
+        "created_by": 6,
+        "year": 2015,
+        "month": 2,
+        "total_cows": 104,
+        "aged_cows": 17,
+        "pregnant_cows": 0,
+        "ill_cows": 15,
+        "injured_cows": 8,
+        "gallons_milk": 1147,
+        "link": "/summary/api/monthly/client/2/year/2015/month/02/"
+    }
+},
+{
+    "model": "summary.monthly",
+    "pk": 5,
+    "fields": {
+        "client": 1,
+        "created_by": 5,
         "year": 2015,
         "month": 3,
         "total_cows": 130,
-        "aged_cows": 27,
-        "pregnant_cows": 35,
-        "ill_cows": 9,
-        "injured_cows": 8,
-        "gallons_milk": 1493,
-        "link": "/summary/api/monthly/2015/03/"
+        "aged_cows": 26,
+        "pregnant_cows": 0,
+        "ill_cows": 5,
+        "injured_cows": 7,
+        "gallons_milk": 1536,
+        "link": "/summary/api/monthly/client/1/year/2015/month/03/"
+    }
+},
+{
+    "model": "summary.monthly",
+    "pk": 6,
+    "fields": {
+        "client": 2,
+        "created_by": 6,
+        "year": 2015,
+        "month": 3,
+        "total_cows": 104,
+        "aged_cows": 17,
+        "pregnant_cows": 0,
+        "ill_cows": 12,
+        "injured_cows": 5,
+        "gallons_milk": 1181,
+        "link": "/summary/api/monthly/client/2/year/2015/month/03/"
+    }
+},
+{
+    "model": "summary.monthly",
+    "pk": 7,
+    "fields": {
+        "client": 1,
+        "created_by": 5,
+        "year": 2016,
+        "month": 1,
+        "total_cows": 130,
+        "aged_cows": 26,
+        "pregnant_cows": 0,
+        "ill_cows": 11,
+        "injured_cows": 13,
+        "gallons_milk": 1501,
+        "link": "/summary/api/monthly/client/1/year/2016/month/01/"
+    }
+},
+{
+    "model": "summary.monthly",
+    "pk": 8,
+    "fields": {
+        "client": 2,
+        "created_by": 6,
+        "year": 2016,
+        "month": 1,
+        "total_cows": 104,
+        "aged_cows": 17,
+        "pregnant_cows": 0,
+        "ill_cows": 18,
+        "injured_cows": 12,
+        "gallons_milk": 1114,
+        "link": "/summary/api/monthly/client/2/year/2016/month/01/"
+    }
+},
+{
+    "model": "summary.monthly",
+    "pk": 9,
+    "fields": {
+        "client": 1,
+        "created_by": 5,
+        "year": 2016,
+        "month": 2,
+        "total_cows": 130,
+        "aged_cows": 26,
+        "pregnant_cows": 0,
+        "ill_cows": 10,
+        "injured_cows": 12,
+        "gallons_milk": 1506,
+        "link": "/summary/api/monthly/client/1/year/2016/month/02/"
+    }
+},
+{
+    "model": "summary.monthly",
+    "pk": 10,
+    "fields": {
+        "client": 2,
+        "created_by": 6,
+        "year": 2016,
+        "month": 2,
+        "total_cows": 104,
+        "aged_cows": 17,
+        "pregnant_cows": 0,
+        "ill_cows": 12,
+        "injured_cows": 13,
+        "gallons_milk": 1200,
+        "link": "/summary/api/monthly/client/2/year/2016/month/02/"
+    }
+},
+{
+    "model": "summary.monthly",
+    "pk": 11,
+    "fields": {
+        "client": 1,
+        "created_by": 5,
+        "year": 2016,
+        "month": 3,
+        "total_cows": 130,
+        "aged_cows": 26,
+        "pregnant_cows": 0,
+        "ill_cows": 19,
+        "injured_cows": 16,
+        "gallons_milk": 1463,
+        "link": "/summary/api/monthly/client/1/year/2016/month/03/"
+    }
+},
+{
+    "model": "summary.monthly",
+    "pk": 12,
+    "fields": {
+        "client": 2,
+        "created_by": 6,
+        "year": 2016,
+        "month": 3,
+        "total_cows": 104,
+        "aged_cows": 17,
+        "pregnant_cows": 0,
+        "ill_cows": 10,
+        "injured_cows": 16,
+        "gallons_milk": 1176,
+        "link": "/summary/api/monthly/client/2/year/2016/month/03/"
     }
 }
 ]

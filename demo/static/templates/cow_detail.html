@@ -1,13 +1,12 @@
-<div class="auth" ng-if="globals">
-<table>
+<table class="login" ng-if="globals">
     <tr>
         <td><p style="color:blue">{{globals.currentUser.username}}</p></td>
         <td><p> logged in at </p></td>
         <td><p style="color:blue">{{globals.login}}</p></td>
     </tr>
 </table>
-</div>
-<h2>Manage a Cow</h2>
+
+<h2>{{globals.currentUser.client.name}} Cow Management</h2>
 <form ng-if="cow" action="{% url 'assets:cow-detail' cow.id %}" method="put">
     <table>
         <tr>
@@ -33,27 +32,27 @@
         <tr>
             <th>Breed:</th>
             <td>
-                <select ng-init="selectedBreed=breeds[0].name"
+                <select ng-init="selectedBreed=globals.breeds[0].name"
                         ng-model="selectedBreed"
-                        ng-options="breed.name for breed in breeds">
+                        ng-options="breed.name for breed in globals.breeds">
                 </select>
             </td>
         </tr>
         <tr>
             <th>Color:</th>
             <td>
-                <select ng-init="selectedColor=colors[0].name"
+                <select ng-init="selectedColor=globals.colors[0].name"
                         ng-model="selectedColor"
-                        ng-options="color.name for color in colors">
+                        ng-options="color.name for color in globals.colors">
                 </select>
             </td>
         </tr>
         <tr>
             <th>Age:</th>
             <td>
-                <select ng-init="selectedAge=ages[0].name"
+                <select ng-init="selectedAge=globals.ages[0].name"
                         ng-model="selectedAge"
-                        ng-options="age.name for age in ages">
+                        ng-options="age.name for age in globals.ages">
                 </select>
             </td>
         </tr>
@@ -80,7 +79,7 @@
         </tr>
         <tr>
             <th>Date Sold:</th>
-            <td>{{cow.sell_date}}</td>
+            <td>{{cow.sell_date != "2100-12-31" ? cow.sell_date : today }}</td>
         </tr>
     </table>
     <input type="button" ng-click="sell()" value="Sell"/>
@@ -108,7 +107,7 @@
     <td>{{cow.breed.name}}</td>
     <td>{{cow.color.name}}</td>
     <td>{{cow.age.name}}</td>
-    <td>{{cow.sell_date}}</td>
+    <td>{{cow.sell_date != "2100-12-31" ? cow.sell_date : "Not Yet" }}</td>
   <tr>
 </table>
 <p/>

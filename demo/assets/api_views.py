@@ -121,6 +121,24 @@ class CowListView(generics.ListCreateAPIView):
             return CowReadSerializer
         return CowWriteSerializer
 
+class CowListByClientView(generics.ListCreateAPIView):
+    # Get / Purchase cows 
+    # authentication_classes = (CsrfExemptSessionAuthentication,
+    #                           BasicAuthentication)
+
+    def get_queryset(self):
+        today = AssetTime.get_today()
+        if self.kwargs:
+            pk = self.kwargs['pk']
+            return Cow.objects.filter(client_id=pk,
+                                      sell_date__gte=today)
+        return Cow.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method in ('GET',):
+            return CowReadSerializer
+        return CowWriteSerializer
+
 class CowListByMonthView(generics.ListAPIView):
     # Get report of cows 
     serializer_class = CowReadSerializer
@@ -164,6 +182,20 @@ class EventListView(generics.ListCreateAPIView):
             return EventReadSerializer
         return EventWriteSerializer
 
+class EventListByClientView(generics.ListCreateAPIView):
+    # Get / Create Event
+
+    def get_queryset(self):
+        if self.kwargs:
+            pk = self.kwargs['pk']
+            return Event.objects.filter(client_id=pk)
+        return Event.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method in ('GET',):
+            return EventReadSerializer
+        return EventWriteSerializer
+
 class ExerciseDetailView(generics.RetrieveUpdateAPIView):
     # Get an Exercise
     queryset = Exercise.objects.all()
@@ -176,6 +208,20 @@ class ExerciseDetailView(generics.RetrieveUpdateAPIView):
 class ExerciseListView(generics.ListCreateAPIView):
     # Get / Create Exercise
     queryset = Exercise.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method in ('GET',):
+            return ExerciseReadSerializer
+        return ExerciseWriteSerializer
+
+class ExerciseListByClientView(generics.ListCreateAPIView):
+    # Get / Create Exercise
+
+    def get_queryset(self):
+        if self.kwargs:
+            pk = self.kwargs['pk']
+            return Exercise.objects.filter(client_id=pk)
+        return Exercise.objects.all()
 
     def get_serializer_class(self):
         if self.request.method in ('GET',):
@@ -221,6 +267,20 @@ class HealthRecordDetailView(generics.RetrieveUpdateAPIView):
 class HealthRecordListView(generics.ListCreateAPIView):
     # Get / Create HealthRecord
     queryset = HealthRecord.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method in ('GET',):
+            return HealthRecordReadSerializer
+        return HealthRecordWriteSerializer
+
+class HealthRecordListByClientView(generics.ListCreateAPIView):
+    # Get / Create HealthRecord
+
+    def get_queryset(self):
+        if self.kwargs:
+            pk = self.kwargs['pk']
+            return HealthRecord.objects.filter(client_id=pk)
+        return HealthRecord.objects.all()
 
     def get_serializer_class(self):
         if self.request.method in ('GET',):
@@ -290,6 +350,19 @@ class MilkListView(generics.ListCreateAPIView):
             return MilkReadSerializer
         return MilkWriteSerializer
 
+class MilkListByClientView(generics.ListCreateAPIView):
+    # Get / Create Milk
+    def get_queryset(self):
+        if self.kwargs:
+            pk = self.kwargs['pk']
+            return Milk.objects.filter(client_id=pk)
+        return Milk.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method in ('GET',):
+            return MilkReadSerializer
+        return MilkWriteSerializer
+
 class MilkListByMonthView(generics.ListAPIView):
     # Get list of milk production by month
     serializer_class = MilkReadSerializer
@@ -339,6 +412,20 @@ class PastureListView(generics.ListCreateAPIView):
             return PastureReadSerializer
         return PastureWriteSerializer
 
+class PastureListByClientView(generics.ListCreateAPIView):
+    # Get / Create pastures
+
+    def get_queryset(self):
+        if self.kwargs:
+            pk = self.kwargs['pk']
+            return Pasture.objects.filter(client_id=pk)
+        return Pasture.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method in ('GET',):
+            return PastureReadSerializer
+        return PastureWriteSerializer
+
 class SeasonListView(generics.ListAPIView):
     # Get available seasons
     queryset = Season.objects.all()
@@ -360,6 +447,20 @@ class SeedDetailView(generics.RetrieveUpdateAPIView):
 class SeedListView(generics.ListCreateAPIView):
     # Get / Create pastures
     queryset = Seed.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method in ('GET',):
+            return SeedReadSerializer
+        return SeedWriteSerializer
+
+class SeedListByClientView(generics.ListCreateAPIView):
+    # Get / Create pastures
+
+    def get_queryset(self):
+        if self.kwargs:
+            pk = self.kwargs['pk']
+            return Seed.objects.filter(client_id=pk)
+        return Seed.objects.all()
 
     def get_serializer_class(self):
         if self.request.method in ('GET',):

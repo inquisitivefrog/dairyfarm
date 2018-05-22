@@ -2,7 +2,6 @@ farmApp.controller("LoginController",
     function ($scope, $rootScope, $http, $location) {
         $scope.username = null;
         $scope.password = null;
-        $scope.token = null;
         console.log("Entered LoginController");
 
         $http({
@@ -11,14 +10,14 @@ farmApp.controller("LoginController",
         }).then(function (response) {
             // hack as angular.element(document.forms).scope() fails to drill down as needed
             var html = response.data;
-            $scope.token = html.split("input")[1].split(" ")[3].split("=")[1];
-            console.log("token: " + $scope.token);
+            $rootScope.globals["token"] = html.split("input")[1].split(" ")[3].split("=")[1];
+            $rootScope.globals["limit"] = 10;
         });
 
+        $scope.globals = $rootScope.globals;
         $scope.login = function() {
             var data = "username=" + $scope.username + "&"
                      + "password=" + $scope.password;
-            console.log("data: " + data);
             $http({
                 method: 'POST',
                 url: "/login/?next=/ui_logged_in/",
@@ -34,7 +33,7 @@ farmApp.controller("LoginController",
                     }
                 } else {
                     var user = response.data.user;
-                    $rootScope.globals.currentUser = user;
+                    $rootScope.globals["currentUser"] = user;
                     $rootScope.globals["login"] = currentDateTime();
                     console.log("globals set: " + Object.getOwnPropertyNames($rootScope.globals));
                     var greeting = $rootScope.globals.currentUser.username

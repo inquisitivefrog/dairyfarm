@@ -1,13 +1,12 @@
-<div class="auth" ng-if="globals">
-<table>
+<table class="login" ng-if="globals">
     <tr>
         <td><p style="color:blue">{{globals.currentUser.username}}</p></td>
         <td><p> logged in at </p></td>
         <td><p style="color:blue">{{globals.login}}</p></td>
     </tr>
 </table>
-</div>
-<h2>Exercise Recorded!</h2>
+
+<h2>Exercise Recorded for {{globals.currentUser.client.name}}!</h2>
 <table ng-if="exercise">
   <tr>
     <th>ID</th>

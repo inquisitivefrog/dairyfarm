@@ -29,7 +29,7 @@ class ReportTime:
                             tzinfo=pytz.timezone('UTC'))
 
     @classmethod
-    def edate_year_month(cls, y, m):
+    def edate_year_month(cls, y, m, dt=True):
         if isinstance(y, int):
             y = str(y)
         if isinstance(m, int):
@@ -51,14 +51,20 @@ class ReportTime:
             m = int(m) + 1
             t = datetime.strptime('{}-{}-01'.format(y, m),
                                   '%Y-%m-%d')
-        return datetime(t.year,
-                        t.month,
-                        t.day,
-                        t.hour,
-                        t.minute,
-                        t.second,
-                        t.microsecond,
-                        tzinfo=pytz.timezone('UTC'))
+        if dt:
+            return datetime.date(datetime(t.year,
+                                          t.month,
+                                          t.day,
+                                          tzinfo=pytz.timezone('UTC')))
+        else:
+            return datetime(t.year,
+                            t.month,
+                            t.day,
+                            t.hour,
+                            t.minute,
+                            t.second,
+                            t.microsecond,
+                            tzinfo=pytz.timezone('UTC'))
 
     @classmethod
     def get_datetime(cls, y, m):
@@ -89,15 +95,20 @@ class ReportTime:
                             tzinfo=pytz.timezone('UTC'))
 
     @classmethod
-    def sdate_year_month(cls, y, m):
+    def sdate_year_month(cls, y, m, dt=True):
         t = datetime.strptime('{}-{}-01'.format(y, m),
                               '%Y-%m-%d')
-        return datetime(t.year,
-                        t.month,
-                        t.day,
-                        t.hour,
-                        t.minute,
-                        t.second,
-                        t.microsecond,
-                        tzinfo=pytz.timezone('UTC'))
-
+        if dt:
+            return datetime.date(datetime(t.year,
+                                          t.month,
+                                          t.day,
+                                          tzinfo=pytz.timezone('UTC')))
+        else:
+            return datetime(t.year,
+                            t.month,
+                            t.day,
+                            t.hour,
+                            t.minute,
+                            t.second,
+                            t.microsecond,
+                            tzinfo=pytz.timezone('UTC'))

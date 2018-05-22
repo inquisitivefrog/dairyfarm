@@ -1,7 +1,7 @@
 <p ng-if="error">{{ error }}</p>
 
 <form method="post" action=".">
-    <input type="hidden" name="csrfmiddlewaretoken" ng-model="token"/>
+    <input type="hidden" name="csrfmiddlewaretoken" ng-model="globals.token"/>
     <p><label for="id_username">Username:</label>
     <input type="text"
            name="username"

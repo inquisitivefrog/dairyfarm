@@ -95,11 +95,11 @@ class ToolData:
         body_condition_score = randint(30, 35) * 10.0 / 100
         # ideal healthy weight range: 450 - 550 
         weight = randint(450, 550)
-        pregnant = randint(1, 10)
-        if pregnant < 3:
-            status = Status.objects.get(pk=2).name
-        else:
-            status = Status.objects.get(pk=1).name
+        #pregnant = randint(1, 10)
+        #if pregnant < 3:
+        #    status = Status.objects.get(pk=2).name
+        #else:
+        status = Status.objects.get(pk=1).name
         return {'recorded_by': user,
                 'inspection_time': dt,
                 'cow': cow.rfid,
@@ -225,3 +225,22 @@ class ToolData:
         for word in name.split('_'):
             new_name.append(word.capitalize())
         return ' '.join(new_name)
+
+    @classmethod
+    def valid_pasture(cls, pasture, username):
+        ff_pastures = ['North', 'West', 'South', 'East', 'Central North',
+                       'Central West', 'Central South', 'Central East',
+                       'North West', 'North East', 'South West',
+                       'South East', 'Pen']
+        b_pastures = ['Lot_1', 'Lot_2', 'Lot_3', 'Lot_4', 'Lot_5', 'Lot_6',
+                      'Lot_7', 'Lot_8', 'Lot_9']
+        if username == 'foster':
+            if pasture in ff_pastures:
+                return True
+            else:
+                return False
+        if username == 'berkeley':
+            if pasture in b_pastures:
+                return True
+            else:
+                return False

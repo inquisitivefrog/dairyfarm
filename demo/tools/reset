@@ -8,18 +8,38 @@ export STIME=`date`
 clean_up
 start_fresh
 load_dependencies
-purchase_cows farmhand 2014-12-31 10
-seed_pastures Spring farmhand 2015
-fallow_pastures Spring farmhand 2015
+purchase_cows foster 2014-12-31 10
+purchase_cows berkeley 2014-12-31 8
+seed_pastures Spring foster 2015
+seed_pastures Spring berkeley 2015
+fallow_pastures foster
+fallow_pastures berkeley 
 generate_daily_activity vet 2015-01-01
 generate_daily_activity vet 2015-02-01
 generate_daily_activity vet 2015-03-01
-reporting monthly farmer 2015 01
-reporting monthly farmer 2015 02
-reporting monthly farmer 2015 03
-reporting annual farmer 2015
+reporting monthly foster 2015 01
+reporting monthly berkeley 2015 01
+reporting monthly foster 2015 02
+reporting monthly berkeley 2015 02
+reporting monthly foster 2015 03
+reporting monthly berkeley 2015 03
+reporting annual foster 2015
+reporting annual berkeley 2015
+seed_pastures Spring foster 2016
+seed_pastures Spring berkeley 2016
+generate_daily_activity vet 2016-01-01
+generate_daily_activity vet 2016-02-01
+generate_daily_activity vet 2016-03-01
+reporting monthly foster 2016 01
+reporting monthly berkeley 2016 01
+reporting monthly foster 2016 02
+reporting monthly berkeley 2016 02
+reporting monthly foster 2016 03
+reporting monthly berkeley 2016 03
+reporting annual foster 2016
+reporting annual berkeley 2016
 preserve_reference_data
-test
+#test
 
 export ETIME=`date`
 echo started $STIME

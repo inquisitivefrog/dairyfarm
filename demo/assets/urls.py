@@ -7,17 +7,17 @@ from assets.api_views import CerealListView, ClientListView, ColorListView
 from assets.api_views import GrassListView, IllnessListView, InjuryListView
 from assets.api_views import LegumeListView, SeasonListView, StatusListView
 from assets.api_views import TreatmentListView, UserListView, VaccineListView
-from assets.api_views import CowDetailView, CowListView
+from assets.api_views import CowDetailView, CowListView, CowListByClientView
 from assets.api_views import CowListByMonthView, CowListByYearView
-from assets.api_views import EventDetailView, EventListView
-from assets.api_views import ExerciseDetailView, ExerciseListView
+from assets.api_views import EventDetailView, EventListView, EventListByClientView
+from assets.api_views import ExerciseDetailView, ExerciseListView, ExerciseListByClientView
 from assets.api_views import HealthRecordDetailView, HealthRecordListView
-from assets.api_views import HealthRecordListByMonthView
+from assets.api_views import HealthRecordListByClientView, HealthRecordListByMonthView
 from assets.api_views import HealthRecordIllCowsSummaryView
-from assets.api_views import MilkDetailView, MilkListView
+from assets.api_views import MilkDetailView, MilkListView, MilkListByClientView
 from assets.api_views import MilkListByMonthView, MilkSummaryByMonthView
-from assets.api_views import PastureDetailView, PastureListView
-from assets.api_views import SeedDetailView, SeedListView
+from assets.api_views import PastureDetailView, PastureListView, PastureListByClientView
+from assets.api_views import SeedDetailView, SeedListView, SeedListByClientView
 from assets.views import IndexView
 
 app_name = 'assets'
@@ -73,6 +73,9 @@ urlpatterns = [
     url(r'^api/cows/$',
         CowListView.as_view(),
         name='cow-list'),
+    url(r'^api/cows/client/(?P<pk>\d+)/$',
+        CowListByClientView.as_view(),
+        name='cow-list-client'),
     url(r'^api/cows/year/(?P<year>[0-9]{4})/month/(?P<month>[0-9]{2})/$',
         CowListByMonthView.as_view(),
         name='cow-list-month'),
@@ -85,18 +88,27 @@ urlpatterns = [
     url(r'^api/events/$',
         EventListView.as_view(),
         name='event-list'),
+    url(r'^api/events/client/(?P<pk>\d+)/$',
+        EventListByClientView.as_view(),
+        name='event-list-client'),
     url(r'^api/events/(?P<pk>\d+)/$',
         EventDetailView.as_view(),
         name='event-detail'),
     url(r'^api/exercises/$',
         ExerciseListView.as_view(),
         name='exercise-list'),
+    url(r'^api/exercises/client/(?P<pk>\d+)/$',
+        ExerciseListByClientView.as_view(),
+        name='exercise-list-client'),
     url(r'^api/exercises/(?P<pk>\d+)/$',
         ExerciseDetailView.as_view(),
         name='exercise-detail'),
     url(r'^api/healthrecords/$',
         HealthRecordListView.as_view(),
         name='healthrecord-list'),
+    url(r'^api/healthrecords/client/(?P<pk>\d+)/$',
+        HealthRecordListByClientView.as_view(),
+        name='healthrecord-list-client'),
     url(r'^api/healthrecords/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/$',
         HealthRecordListByMonthView.as_view(),
         name='healthrecord-list-month'),
@@ -109,6 +121,9 @@ urlpatterns = [
     url(r'^api/milk/$',
         MilkListView.as_view(),
         name='milk-list'),
+    url(r'^api/milk/client/(?P<pk>\d+)/$',
+        MilkListByClientView.as_view(),
+        name='milk-list-client'),
     url(r'^api/milk/(?P<year>[0-9]{4})/(?P<month>[0-9]{2})/$',
         MilkListByMonthView.as_view(),
         name='milk-list-month'),
@@ -121,12 +136,18 @@ urlpatterns = [
     url(r'^api/pastures/$',
         PastureListView.as_view(),
         name='pasture-list'),
+    url(r'^api/pastures/client/(?P<pk>\d+)/$',
+        PastureListByClientView.as_view(),
+        name='pasture-list-client'),
     url(r'^api/pastures/(?P<pk>\d+)/$',
         PastureDetailView.as_view(),
         name='pasture-detail'),
     url(r'^api/seeds/$',
         SeedListView.as_view(),
         name='seed-list'),
+    url(r'^api/seeds/client/(?P<pk>\d+)/$',
+        SeedListByClientView.as_view(),
+        name='seed-list-client'),
     url(r'^api/seeds/(?P<pk>\d+)/$',
         SeedDetailView.as_view(),
         name='seed-detail'),

@@ -42,6 +42,7 @@ def load_ages():
     return
 
 def load_clients():
+    from django.contrib.auth.models import User
     from assets.models import Client
     from tools.utils import ToolTime
     clients = ['Foster Farms Dairy',
@@ -50,8 +51,11 @@ def load_clients():
                'Clauss Dairy Farms',
                'Dairy Farmers of America']
     for client in clients:
+        username = client.split()[0].lower()
+        user = User.objects.get(username=username)        
         data = {'name': client,
-                'join_date': ToolTime.get_date()}
+                'join_date': ToolTime.get_date(),
+                'user': user}
         Client.objects.create(**data)
     return
 
@@ -155,29 +159,53 @@ def load_illnesses():
     return
 
 def load_pastures():
+    from django.contrib.auth.models import User
     from assets.models import Client, Pasture
-    clients = Client.objects.all() 
-    client = clients[randint(0, len(clients) - 1)]
-    pastures = {'North': '/static/images/regions/north.jpg',
-                'West': '/static/images/regions/west.jpg',
-                'South': '/static/images/regions/south.jpg',
-                'East': '/static/images/regions/east.jpg',
-                'Central North': '/static/images/regions/central_north.jpg',
-                'Central West': '/static/images/regions/central_west.jpg',
-                'Central South': '/static/images/regions/central_south.jpg',
-                'Central East': '/static/images/regions/central_east.jpg',
-                'North West': '/static/images/regions/north_west.jpg',
-                'North East': '/static/images/regions/north_east.jpg',
-                'South West': '/static/images/regions/south_west.jpg',
-                'South East': '/static/images/regions/south_east.jpg',
-                'Pen': '/static/images/regions/pen.png'}
-    for name, url in pastures.items(): 
+    user = User.objects.get(username='foster')
+    client = Client.objects.get(user=user)
+    ff_pastures = {'North': '/static/images/regions/north.jpg',
+                   'West': '/static/images/regions/west.jpg',
+                   'South': '/static/images/regions/south.jpg',
+                   'East': '/static/images/regions/east.jpg',
+                   'Central North': '/static/images/regions/central_north.jpg',
+                   'Central West': '/static/images/regions/central_west.jpg',
+                   'Central South': '/static/images/regions/central_south.jpg',
+                   'Central East': '/static/images/regions/central_east.jpg',
+                   'North West': '/static/images/regions/north_west.jpg',
+                   'North East': '/static/images/regions/north_east.jpg',
+                   'South West': '/static/images/regions/south_west.jpg',
+                   'South East': '/static/images/regions/south_east.jpg',
+                   'Pen': '/static/images/regions/pen.png'}
+    for name, url in ff_pastures.items(): 
         data = {'client': client,
                 'name': name,
                 'url': url,
                 'fallow': False,
                 'distance': randint(1, 10)}
         if name not in ['South West', 'South East', 'Pen']:
+            Pasture.objects.create(**data)
+        else:
+            data.update({'fallow': True})
+            Pasture.objects.create(**data)
+        print('Defined pasture: {}'.format(name))
+    user = User.objects.get(username='berkeley')
+    client = Client.objects.get(user=user)
+    b_pastures = {'Lot_1': '/static/images/regions/lot_1.png',
+                  'Lot_2': '/static/images/regions/lot_2.png',
+                  'Lot_3': '/static/images/regions/lot_3.png',
+                  'Lot_4': '/static/images/regions/lot_4.png',
+                  'Lot_5': '/static/images/regions/lot_5.png',
+                  'Lot_6': '/static/images/regions/lot_6.png',
+                  'Lot_7': '/static/images/regions/lot_7.png',
+                  'Lot_8': '/static/images/regions/lot_8.png',
+                  'Lot_9': '/static/images/regions/lot_9.png'}
+    for name, url in b_pastures.items(): 
+        data = {'client': client,
+                'name': name,
+                'url': url,
+                'fallow': False,
+                'distance': randint(1, 10)}
+        if name not in ['Lot_9']:
             Pasture.objects.create(**data)
         else:
             data.update({'fallow': True})

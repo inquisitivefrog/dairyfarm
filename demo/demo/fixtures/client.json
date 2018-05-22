@@ -3,8 +3,9 @@
     "model": "assets.client",
     "pk": 1,
     "fields": {
+        "user": 5,
         "name": "Foster Farms Dairy",
-        "join_date": "2018-05-11",
+        "join_date": "2018-05-22",
         "inactive_date": "2100-12-31"
     }
 },
@@ -12,8 +13,9 @@
     "model": "assets.client",
     "pk": 2,
     "fields": {
+        "user": 6,
         "name": "Berkeley Farms",
-        "join_date": "2018-05-11",
+        "join_date": "2018-05-22",
         "inactive_date": "2100-12-31"
     }
 },
@@ -21,8 +23,9 @@
     "model": "assets.client",
     "pk": 3,
     "fields": {
+        "user": 7,
         "name": "McClelland Dairy",
-        "join_date": "2018-05-11",
+        "join_date": "2018-05-22",
         "inactive_date": "2100-12-31"
     }
 },
@@ -30,8 +33,9 @@
     "model": "assets.client",
     "pk": 4,
     "fields": {
+        "user": 8,
         "name": "Clauss Dairy Farms",
-        "join_date": "2018-05-11",
+        "join_date": "2018-05-22",
         "inactive_date": "2100-12-31"
     }
 },
@@ -39,8 +43,9 @@
     "model": "assets.client",
     "pk": 5,
     "fields": {
+        "user": 9,
         "name": "Dairy Farmers of America",
-        "join_date": "2018-05-11",
+        "join_date": "2018-05-22",
         "inactive_date": "2100-12-31"
     }
 }

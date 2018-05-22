@@ -68,9 +68,7 @@ def _get_data(breed, color, date, user):
        tmp.append(word.capitalize()) 
     b_name = ' '.join(tmp)
     breed = Breed.objects.get(name=b_name)
-    clients = Client.objects.all()
-    client = clients[randint(0, len(clients) - 1)]
-    client = Client.objects.get(pk=1)
+    client = Client.objects.get(user__username=user.username)
     return {'purchased_by': user,
             'purchase_date': ToolTime.convert_date(date),
             'rfid': uuid4(),

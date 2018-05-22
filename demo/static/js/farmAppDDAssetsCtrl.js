@@ -1,6 +1,7 @@
 farmApp.controller("DDAssetsController",
     function($scope, $http, $routeParams, $location) {
         $scope.section = $routeParams.section;
+        $scope.path = "#!" + $location.path();
         console.log("Entered DDAssetsController");
 
         if (typeof($scope.section) == "string") {

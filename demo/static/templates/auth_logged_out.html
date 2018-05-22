@@ -1,4 +1,12 @@
-<div text-align="center">
-    <p>You are now officially logged out</p>
-    <p><a href="#!/login/">Log in again</a></p>
-</div>
+<table class="logout" ng-if="logout">
+    <tr>
+        <td><p style="color:blue">{{ username }}</p></td>
+        <td><p> logged out at </p></td>
+        <td><p style="color:blue">{{ logout }}</p></td>
+    </tr>
+    <tr>
+        <td><p/></td>
+        <td><a href="#!/login/"><p>Log in again</p></a></td>
+        <td><p/></td>
+    </tr>
+</table>

@@ -1,14 +1,12 @@
-<div class="auth" ng-if="globals">
-<table>
+<table class="login" ng-if="globals">
     <tr>
         <td><p style="color:blue">{{globals.currentUser.username}}</p></td>
         <td><p> logged in at </p></td>
         <td><p style="color:blue">{{globals.login}}</p></td>
     </tr>
 </table>
-</div>
 
-<h2>Monthly Reports for {{year}}</h2>
+<h2>{{report_header}}</h2>
 <table ng-if="rows.length > 0">
   <tr>
     <th>Month</th>
@@ -20,7 +18,7 @@
     <th>Gallons Milked</th>
   </tr>
   <tr ng-repeat="row in rows">
-    <td><a href="#!{{row.link}}">{{row.month}}</a></td>
+    <td>{{row.month}}</td>
     <td>{{row.total_cows}}</td>
     <td>{{row.aged_cows}}</td>
     <td>{{row.pregnant_cows}}</td>

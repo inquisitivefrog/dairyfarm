@@ -53,20 +53,6 @@ def read_args():
     parser.add_argument('-p',
                         '--pasture',
                         type=str,
-                        required=True,
-                        choices=['North',
-                                 'West',
-                                 'South',
-                                 'East',
-                                 'Central North',
-                                 'Central West',
-                                 'Central South',
-                                 'Central East',
-                                 'North West',
-                                 'North East',
-                                 'South West',
-                                 'South East',
-                                 'Pen'],
                         help='which pasture to seed')
     parser.add_argument('-s',
                         '--season',
@@ -103,12 +89,9 @@ def _convert_name(n):
     return prefix + new_word + suffix
 
 def _get_data(cereal_hay, grass_hay, legume_hay, pasture, season, username, year):
-    from django.contrib.auth.models import User
     from assets.models import Client
     from tools.utils import ToolTime
-    user = User.objects.get(username=username)
-    clients = Client.objects.all()
-    client = clients[randint(0, len(clients) - 1)]
+    client = Client.objects.get(user__username=username)
     return {'client': client,
             'seeded_by': username,
             'cereal_hay': cereal_hay,
@@ -150,13 +133,18 @@ def main():
     environ.setdefault('DJANGO_SETTINGS_MODULE',
                        'demo.settings')
     setup()
-    plant_pasture(cereal_hay,
-                  grass_hay,
-                  legume_hay,
-                  pasture,
-                  season,
-                  username,
-                  year)
+    from tools.utils import ToolData
+    if ToolData.valid_pasture(pasture, username):
+        plant_pasture(cereal_hay,
+                      grass_hay,
+                      legume_hay,
+                      pasture,
+                      season,
+                      username,
+                      year)
+    else:
+        exit('ERROR: user: {} does not have access to {} pasture'.format(
+            username, pasture))
     return
 
 if __name__ == '__main__':

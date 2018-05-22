@@ -60,7 +60,7 @@ def create_user(first_name, last_name, email, username, password, superuser):
         data.update({'last_name': last_name})
     from django.contrib.auth.models import User
     try:
-        user = User(**data)
+        user = User.objects.create(**data)
         user.set_password(password)
         user.is_active = True
         user.is_staff = True
@@ -72,6 +72,7 @@ def create_user(first_name, last_name, email, username, password, superuser):
         print('ERROR: unable to create username: {}!'.format(username))
         exit(1)
     except IntegrityError as e:
+        print('ERROR: {}'.format(e))
         print('ERROR: username: {} already exists!'.format(username))
         exit(1)
 

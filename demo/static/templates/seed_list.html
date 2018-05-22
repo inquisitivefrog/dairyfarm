@@ -1,79 +1,69 @@
-<div class="auth" ng-if="globals">
-<table>
+<table class="login" ng-if="globals">
     <tr>
         <td><p style="color:blue">{{globals.currentUser.username}}</p></td>
         <td><p> logged in at </p></td>
         <td><p style="color:blue">{{globals.login}}</p></td>
     </tr>
 </table>
-</div>
-<h2>Seed a Pasture</h2>
+
+<h2>{{plant_header}}</h2>
 <form action="{% url 'assets:seed-list' %} method="post">
     <table>
     <tr>
         <th>Client:</th>
-        <td>
-            <select ng-init="selectedClient=selectedClient || clients[0].name" 
-                    ng-model="selectedClient" 
-                    ng-options="client.name for client in clients">
-            </select>
-        </td>
+        <td>{{globals.currentUser.client.name}}</td>
     </tr>
     <tr>
         <th>Seeded By:</th>
-        <td>
-            <select ng-init="selectedSeededBy=selectedSeededBy || users[0].username" 
-                    ng-model="selectedSeededBy" 
-                    ng-options="user.username for user in users">
-            </select>
-        </td>
+        <td>{{globals.currentUser.username}}</td>
     </tr>
     <tr>
         <th>Year:</th>
-        <td><input type="number" min=2015 max=2020 ng-model="inputYear" required/></td>
+        <td><input type="number" min=2015 max=2020
+                   ng-model="inputYear" required/></td>
     </tr>
     <tr>
         <th>Season:</th>
         <td>
-            <select ng-init="selectedSeason=selectedSeason || seasons[0].name" 
+            <select ng-init="selectedSeason=selectedSeason || globals.seasons[0].name" 
                     ng-model="selectedSeason"
-                    ng-options="season.name for season in seasons">
+                    ng-options="season.name for season in globals.seasons">
             </select>
         </td>
     </tr>
     <tr>
         <th>Pasture:</th>
         <td>
-            <select ng-init="selectedPasture=selectedPasture || pastures[0].name" 
+            <select ng-init="selectedPasture=selectedPasture || globals.pastures[0].name" 
                     ng-model="selectedPasture"
-                    ng-options="pasture.name for pasture in pastures">
+                    ng-options="pasture.name for pasture in globals.pastures">
             </select>
         </td>
     </tr>
     <tr>
         <th>Cereal Seed:</th>
         <td>
-            <select ng-init="selectedCereal=selectedCereal || cereals[0].name" 
+            <select ng-init="selectedCereal=selectedCereal || globals.cereals[0].name" 
                     ng-model="selectedCereal"
-                    ng-options="cereal.name for cereal in cereals">
+                    ng-options="cereal.name for cereal in globals.cereals">
             </select>
         </td>
     </tr>
     <tr>
         <th>Grass Seed:</th>
         <td>
-            <select ng-init="selectedGrass=selectedGrass || grasses[0].name" 
+            <select ng-init="selectedGrass=selectedGrass || globals.grasses[0].name" 
                     ng-model="selectedGrass"
-                    ng-options="grass.name for grass in grasses">
+                    ng-options="grass.name for grass in globals.grasses">
             </select>
         </td>
     </tr>
     <tr>
         <th>Legume Seed:</th>
         <td>
-            <select ng-init="selectedLegume=selectedLegume || legumes[0].name" 
+            <select ng-init="selectedLegume=selectedLegume || globals.legumes[0].name" 
                     ng-model="selectedLegume"
-                    ng-options="legume.name for legume in legumes">
+                    ng-options="legume.name for legume in globals.legumes">
             </select>
         </td>
     </tr>
@@ -82,7 +72,7 @@
 </form>
 
 <h2>{{total}} Seeds</h2>
-<table ng-if="seeds.length > 0">
+<table ng-if="total > 0">
   <tr>
     <th>ID</th>
     <th>Client</th>
@@ -108,7 +98,7 @@
   <tr>
 </table>
 
-<p ng-if="seeds.length == 0">No seeds planted yet.</p>
+<p ng-if="total == 0">No seeds planted yet.</p>
 
 <div>
 <span text-align:left><a ng-if="prev" href="{{prev}}">Prev</a></span>

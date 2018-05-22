@@ -1,13 +1,12 @@
-<div class="auth" ng-if="globals">
-<table>
+<table class="login" ng-if="globals">
     <tr>
         <td><p style="color:blue">{{globals.currentUser.username}}</p></td>
         <td><p> logged in at </p></td>
         <td><p style="color:blue">{{globals.login}}</p></td>
     </tr>
 </table>
-</div>
-<h2>Update Health Record</h2>
+
+<h2>{{inspect_header}}</h2>
 <form ng-if="hr" action="{% url 'assets:healthrecord-detail' hr.id %}" method="put">
     <table>
         <tr>

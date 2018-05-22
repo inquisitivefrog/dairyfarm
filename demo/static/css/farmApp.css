@@ -17,6 +17,10 @@
     text-align: left;
 }
 
+h2 {
+    text-align: center;
+}
+
 .nav {background:#eee;}
 
 .nav ul {
@@ -58,23 +62,6 @@ li.menu a:hover {
     .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
     .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
     footer {-webkit-order:3;order:3;}
-}
-
-div.auth {
-    border: 0px;
-}
-
-div.auth table {
-    border: 0px;
-    float: right;
-}
-
-div.auth table tr td {
-    border: 0px;
-}
-
-div.auth table tr {
-    border: 0px;
 }
 
 div.raw {
@@ -124,6 +111,37 @@ table {
     border: 2px solid black;
     padding: none;
     margin: 0 auto 0 auto;
+}
+
+table.login {
+    border: 0px;
+    float: right;
+    background-color: orange;
+}
+
+table.login tr {
+    border: 0px;
+    background-color: orange;
+}
+
+table.login tr td {
+    border: 0px;
+    background-color: orange;
+}
+
+table.logout {
+    border: 0px;
+    align: center;
+    background-color: orange;
+}
+
+table.logout tr {
+    border: 0px;
+    background-color: orange;
+}
+table.logout tr td {
+    border: 0px;
+    background-color: orange;
 }
 
 td.left {

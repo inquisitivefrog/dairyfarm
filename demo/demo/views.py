@@ -46,11 +46,14 @@ def ui_login(request):
     return render(request, 'registration/ui_login.html', {})
 
 def ui_logged_in(request):
+    clients = [ (c.id, c.name) for c in request.user.client_set.all() ]
     data = {"user": {"id": request.user.id,
                      "username": request.user.username,
                      "first_name": request.user.first_name,
                      "last_name": request.user.last_name,
-                     "email": request.user.email},
+                     "email": request.user.email,
+                     "client": {"id": clients[0][0],
+                                "name": clients[0][1]}},
             "auth": None}
     return JsonResponse(data)
 

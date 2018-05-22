@@ -21,21 +21,21 @@ def read_args():
                         '--username',
                         required=False,
                         type=str,
-                        choices=['farmer', 'farmhand', 'vet'],
+                        choices=['farmer', 'farmhand', 'vet', 'foster', 'berkeley'],
                         default='',
                         help='existing user by username')
     parser.add_argument('-y',
                         '--year',
                         required=False,
-                        type=str,
-                        choices=['2015', '2016', '2017', '2018'],
+                        type=int,
+                        choices=[2015, 2016, 2017, 2018],
                         default=None,
                         help='year in %Y format')
     parser.add_argument('-m',
                         '--month',
                         required=False,
-                        type=str,
-                        choices=['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+                        type=int,
+                        choices=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
                         default=None,
                         help='month in %m format')
     o = parser.parse_args()
@@ -45,26 +45,35 @@ def read_args():
             o.month)
 
 def generate_annual_report(data):
-    from summary.models import Annual
-    a = Annual.objects.create(**data)
-    return
+    from summary.serializers import AnnualWriteSerializer
+    aws = AnnualWriteSerializer(data=data)
+    if aws.is_valid():
+        aws.save()
+        return
+    else:
+        exit('ERROR: AnnualWriteSerializer failed: '.format(aws.errors))
 
 def display_annual_report(year):
     from django.db.models import Max
     from summary.models import Annual
-    a = Annual.objects.filter(year=year).aggregate(Max('id'))
+    print(Annual.objects.filter(year=year).aggregate(Max('id')))
     return
 
 def generate_monthly_report(data):
-    from summary.models import Monthly
-    m = Monthly.objects.create(**data)
-    return
+    from summary.serializers import MonthlyWriteSerializer
+
+    mws = MonthlyWriteSerializer(data=data)
+    if mws.is_valid():
+        mws.save()
+        return
+    else:
+        exit('ERROR: MonthlyWriteSerializer failed: '.format(mws.errors))
 
 def display_monthly_report(year, month):
     from django.db.models import Max
     from summary.models import Monthly
-    m = Monthly.objects.filter(year=year,
-                               month=month).aggregate(Max('id'))
+    print(Monthly.objects.filter(year=year,
+                                 month=month).aggregate(Max('id')))
     return
 
 def main():
@@ -74,17 +83,17 @@ def main():
                        'demo.settings')
     setup()
     from django.contrib.auth.models import User
+    from assets.models import Client
     user = User.objects.get(username=username)
-    data = {'created_by': user,
+    data = {'created_by': username,
             'year': year} 
     if duration == 'annual':
         generate_annual_report(data)
-        print(display_annual_report(year))
+        display_annual_report(year)
     elif duration == 'monthly':
         data.update({'month': month}) 
         generate_monthly_report(data)
-        print(display_monthly_report(year,
-                                     month))
+        display_monthly_report(year, month)
     return
 
 if __name__ == '__main__':

@@ -5,7 +5,7 @@ farmApp.controller("EventDetailController",
         $scope.base_url = "/assets/api/events/";
         console.log("Entered EventDetailController");
 
-        $scope.actions = $rootScope.globals.actions;
+        $scope.globals = $rootScope.globals;
 
         $http({
             method: "GET",

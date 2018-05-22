@@ -3,11 +3,10 @@ farmApp.controller("CowDetailController",
         $scope.inputId = $routeParams.cow_id;
         $scope.cow = null;
         $scope.base_url = "/assets/api/cows/";
+        $scope.today = currentDate();
         console.log("Entered CowDetailController");
 
-        $scope.breeds = $rootScope.globals.breeds;
-        $scope.colors = $rootScope.globals.colors;
-        $scope.ages = $rootScope.globals.ages;
+        $scope.globals = $rootScope.globals;
 
         $http({
             method: "GET",

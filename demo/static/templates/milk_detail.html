@@ -1,13 +1,12 @@
-<div class="auth" ng-if="globals">
-<table>
+<table class="login" ng-if="globals">
     <tr>
         <td><p style="color:blue">{{globals.currentUser.username}}</p></td>
         <td><p> logged in at </p></td>
         <td><p style="color:blue">{{globals.login}}</p></td>
     </tr>
 </table>
-</div>
-<h2>Milk</h2>
+
+<h2>{{globals.currentUser.client.name}} Milk</h2>
 <form ng-if="milk" action="{% url 'assets:milk-detail' milk.id %}" method="put">
     <table>
         <tr>
@@ -30,10 +29,11 @@
             <td>{{milk.cow.rfid}}</td>
         </tr>
         <tr>
-            <th>Gallons:</th>
+            <th>Gallons Milked:</th>
             <td>
-                <input ng-init="inputGallons=0"
-                       ng-model="inputGallons" min=0 max=10 required/>
+                 <input type="number" ng-init="inputGallons=0"
+                        ng-model="inputGallons"
+                        min="0" max="10" required/>
             </td>
         </tr>
     </table>

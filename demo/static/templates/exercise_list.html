@@ -1,54 +1,47 @@
-<div class="auth" ng-if="globals">
-<table>
+<table class="login" ng-if="globals">
     <tr>
         <td><p style="color:blue">{{globals.currentUser.username}}</p></td>
         <td><p> logged in at </p></td>
         <td><p style="color:blue">{{globals.login}}</p></td>
     </tr>
 </table>
-</div>
-<h2>Exercises</h2>
+
+<h2>{{record_header}}</h2>
+
 <form action="{% url 'assets:exercise-list' %} method="post">
     <table>
     <tr>
         <th>Client:</th>
-        <td>
-            <select ng-init="selectedClient=selectedClient || clients[0].name"
-                    ng-model="selectedClient"
-                    ng-options="client.name for client in clients">
-            </select>
-        </td>
+        <td>{{globals.currentUser.client.name}}</td>
     </tr>
     <tr>
         <th>Recorder:</th>
-        <td>
-            <select ng-init="selectedRecorder=users[0].username"
-                    ng-model="selectedRecorder"
-                    ng-options="user.username for user in users">
-            </select>
-        </td>
+        <td>{{globals.currentUser.username}}</td>
     </tr>
     <tr>
         <th>Exercise Time:</th>
         <td>
-            <input type="datetime-local" ng-init="inputTime=currentDateTime()" ng-model="inputTime" placeholder="yyyy-MM-ddTHH:mm:ss" required/>
+            <input type="datetime-local"
+                   ng-init="inputTime=currentDateTime()"
+                   ng-model="inputTime" 
+                   placeholder="yyyy-MM-ddTHH:mm:ss" required/>
         </td>
     </tr>
     <tr>
         <th>RFID:</th>
         <td>
-            <select ng-init="selectedCow=cows[0].rfid"
+            <select ng-init="selectedCow=globals.cows[0].rfid"
                     ng-model="selectedCow"
-                    ng-options="cow.rfid for cow in cows">
+                    ng-options="cow.rfid for cow in globals.cows">
             </select>
         </td>
     </tr>
     <tr>
         <th>Pasture:</th>
         <td>
-            <select ng-init="selectedPasture=pastures[0].name"
+            <select ng-init="selectedPasture=globals.pastures[0].name"
                     ng-model="selectedPasture"
-                    ng-options="pasture.name for pasture in pastures">
+                    ng-options="pasture.name for pasture in globals.pastures">
             </select>
         </td>
     </table>
@@ -56,7 +49,7 @@
 </form>
 
 <h2>{{total}} Recorded Exercises</h2>
-<table ng-if="exercises.length > 0">
+<table ng-if="total > 0">
   <tr>
     <th>ID</th>
     <th>Client</th>
@@ -81,7 +74,7 @@
   <tr>
 </table>
 
-<p ng-if="exercises.length == 0">No exercises recorded yet.</p>
+<p ng-if="total == 0">No exercises recorded yet.</p>
 
 <div>
 <span text-align:left><a ng-if="prev" href="{{prev}}">Prev</a></span>

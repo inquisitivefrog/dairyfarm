@@ -15,7 +15,7 @@ farmApp.config(function ($routeProvider, $locationProvider) {
     $routeProvider
     .when("/home/", {
           templateUrl: "/static/templates/annual_report.html",
-          controller: "AnnualSummaryController"
+          controller: "AnnualSummaryByClientController"
     })
     .when("/login/", {
           templateUrl: "/static/templates/auth_login.html",
@@ -61,29 +61,41 @@ farmApp.config(function ($routeProvider, $locationProvider) {
           templateUrl: "/static/templates/docs_tests.html",
           controller: "TestsController"
     })
-    .when("/summary/", {
+    .when("/summary/api/annual/", {
           templateUrl: "/static/templates/annual_report.html",
-          controller: "AnnualSummaryController"
+          controller: "AnnualSummaryByClientController"
     })
-    .when("/summary/api/monthly/:year/", {
+    .when("/summary/api/annual/client/:client/", {
+          templateUrl: "/static/templates/annual_report.html",
+          controller: "AnnualSummaryByClientController"
+    })
+    //.when("/summary/api/annual/client/:client/year/:year/", {
+    //      templateUrl: "/static/templates/annual_report.html",
+    //      controller: "AnnualSummaryByClientController"
+    //})
+    .when("/summary/api/monthly/client/:client/year/:year/", {
           templateUrl: "/static/templates/annual_by_month_report.html",
-          controller: "MonthlySummaryController"
+          controller: "MonthlySummaryByClientController"
     })
-    .when("/summary/api/monthly/:year/:month/", {
+    .when("/summary/api/monthly/client/:client/year/:year/month/:month/", {
           templateUrl: "/static/templates/monthly_report.html",
-          controller: "MonthlySummaryController"
+          controller: "MonthlySummaryByClientController"
+    })
+    .when("/assets/api/cows/client/:client/", {
+          templateUrl: "/static/templates/cow_list.html",
+          controller: "CowListByClientController"
+    })
+    .when("/assets/api/cows/client/:client/limit/:limit/", {
+          templateUrl: "/static/templates/cow_list.html",
+          controller: "CowListByClientController"
+    })
+    .when("/assets/api/cows/client/:client/limit/:limit/offset/:offset/", {
+          templateUrl: "/static/templates/cow_list.html",
+          controller: "CowListByClientController"
     })
     .when("/assets/api/cows/", {
           templateUrl: "/static/templates/cow_list.html",
-          controller: "CowListController"
-    })
-    .when("/assets/api/cows/limit/:limit/", {
-          templateUrl: "/static/templates/cow_list.html",
-          controller: "CowListController"
-    })
-    .when("/assets/api/cows/limit/:limit/offset/:offset/", {
-          templateUrl: "/static/templates/cow_list.html",
-          controller: "CowListController"
+          controller: "CowListByClientController"
     })
     .when("/assets/api/cows/:cow_id/results/", {
           templateUrl: "/static/templates/cow_results.html",
@@ -93,17 +105,21 @@ farmApp.config(function ($routeProvider, $locationProvider) {
           templateUrl: "/static/templates/cow_detail.html",
           controller: "CowDetailController"
     })
+    .when("/assets/api/events/client/:client/", {
+          templateUrl: "/static/templates/event_list.html",
+          controller: "EventListByClientController"
+    })
+    .when("/assets/api/events/client/:client/limit/:limit/", {
+          templateUrl: "/static/templates/event_list.html",
+          controller: "EventListByClientController"
+    })
+    .when("/assets/api/events/client/:client/limit/:limit/offset/:offset/", {
+          templateUrl: "/static/templates/event_list.html",
+          controller: "EventListByClientController"
+    })
     .when("/assets/api/events/", {
           templateUrl: "/static/templates/event_list.html",
-          controller: "EventListController"
-    })
-    .when("/assets/api/events/limit/:limit/", {
-          templateUrl: "/static/templates/event_list.html",
-          controller: "EventListController"
-    })
-    .when("/assets/api/events/limit/:limit/offset/:offset/", {
-          templateUrl: "/static/templates/event_list.html",
-          controller: "EventListController"
+          controller: "EventListByClientController"
     })
     .when("/assets/api/events/:event_id/", {
           templateUrl: "/static/templates/event_detail.html",
@@ -113,17 +129,21 @@ farmApp.config(function ($routeProvider, $locationProvider) {
           templateUrl: "/static/templates/event_results.html",
           controller: "EventResultsController"
     })
+    .when("/assets/api/exercises/client/:client/", {
+          templateUrl: "/static/templates/exercise_list.html",
+          controller: "ExerciseListByClientController"
+    })
+    .when("/assets/api/exercises/client/:client/limit/:limit/", {
+          templateUrl: "/static/templates/exercise_list.html",
+          controller: "ExerciseListByClientController"
+    })
+    .when("/assets/api/exercises/client/:client/limit/:limit/offset/:offset/", {
+          templateUrl: "/static/templates/exercise_list.html",
+          controller: "ExerciseListByClientController"
+    })
     .when("/assets/api/exercises/", {
           templateUrl: "/static/templates/exercise_list.html",
-          controller: "ExerciseListController"
-    })
-    .when("/assets/api/exercises/limit/:limit/", {
-          templateUrl: "/static/templates/exercise_list.html",
-          controller: "ExerciseListController"
-    })
-    .when("/assets/api/exercises/limit/:limit/offset/:offset/", {
-          templateUrl: "/static/templates/exercise_list.html",
-          controller: "ExerciseListController"
+          controller: "ExerciseListByClientController"
     })
     .when("/assets/api/exercises/:exercise_id/", {
           templateUrl: "/static/templates/exercise_detail.html",
@@ -133,17 +153,21 @@ farmApp.config(function ($routeProvider, $locationProvider) {
           templateUrl: "/static/templates/exercise_results.html",
           controller: "ExerciseResultsController"
     })
+    .when("/assets/api/healthrecords/client/:client/", {
+          templateUrl: "/static/templates/healthrecord_list.html",
+          controller: "HealthRecordListByClientController"
+    })
+    .when("/assets/api/healthrecords/client/:client/limit/:limit/", {
+          templateUrl: "/static/templates/healthrecord_list.html",
+          controller: "HealthRecordListByClientController"
+    })
+    .when("/assets/api/healthrecords/client/:client/limit/:limit/offset/:offset/", {
+          templateUrl: "/static/templates/healthrecord_list.html",
+          controller: "HealthRecordListByClientController"
+    })
     .when("/assets/api/healthrecords/", {
           templateUrl: "/static/templates/healthrecord_list.html",
-          controller: "HealthRecordListController"
-    })
-    .when("/assets/api/healthrecords/limit/:limit/", {
-          templateUrl: "/static/templates/healthrecord_list.html",
-          controller: "HealthRecordListController"
-    })
-    .when("/assets/api/healthrecords/limit/:limit/offset/:offset/", {
-          templateUrl: "/static/templates/healthrecord_list.html",
-          controller: "HealthRecordListController"
+          controller: "HealthRecordListByClientController"
     })
     .when("/assets/api/healthrecords/:hr_id/", {
           templateUrl: "/static/templates/healthrecord_detail.html",
@@ -153,17 +177,21 @@ farmApp.config(function ($routeProvider, $locationProvider) {
           templateUrl: "/static/templates/healthrecord_results.html",
           controller: "HealthRecordResultsController"
     })
+    .when("/assets/api/milk/client/:client/", {
+          templateUrl: "/static/templates/milk_list.html",
+          controller: "MilkListByClientController"
+    })
+    .when("/assets/api/milk/client/:client/limit/:limit/", {
+          templateUrl: "/static/templates/milk_list.html",
+          controller: "MilkListByClientController"
+    })
+    .when("/assets/api/milk/client/:client/limit/:limit/offset/:offset/", {
+          templateUrl: "/static/templates/milk_list.html",
+          controller: "MilkListByClientController"
+    })
     .when("/assets/api/milk/", {
           templateUrl: "/static/templates/milk_list.html",
-          controller: "MilkListController"
-    })
-    .when("/assets/api/milk/limit/:limit/", {
-          templateUrl: "/static/templates/milk_list.html",
-          controller: "MilkListController"
-    })
-    .when("/assets/api/milk/limit/:limit/offset/:offset/", {
-          templateUrl: "/static/templates/milk_list.html",
-          controller: "MilkListController"
+          controller: "MilkListByClientController"
     })
     .when("/assets/api/milk/:milk_id/", {
           templateUrl: "/static/templates/milk_detail.html",
@@ -173,17 +201,21 @@ farmApp.config(function ($routeProvider, $locationProvider) {
           templateUrl: "/static/templates/milk_results.html",
           controller: "MilkResultsController"
     })
+    .when("/assets/api/pastures/client/:client/", {
+          templateUrl: "/static/templates/pasture_list.html",
+          controller: "PastureListByClientController"
+    })
+    .when("/assets/api/pastures/client/:client/limit/:limit/", {
+          templateUrl: "/static/templates/pasture_list.html",
+          controller: "PastureListByClientController"
+    })
+    .when("/assets/api/pastures/client/:client/limit/:limit/offset/:offset/", {
+          templateUrl: "/static/templates/pasture_list.html",
+          controller: "PastureListByClientController"
+    })
     .when("/assets/api/pastures/", {
           templateUrl: "/static/templates/pasture_list.html",
-          controller: "PastureListController"
-    })
-    .when("/assets/api/pastures/limit/:limit/", {
-          templateUrl: "/static/templates/pasture_list.html",
-          controller: "PastureListController"
-    })
-    .when("/assets/api/pastures/limit/:limit/offset/:offset/", {
-          templateUrl: "/static/templates/pasture_list.html",
-          controller: "PastureListController"
+          controller: "PastureListByClientController"
     })
     .when("/assets/api/pastures/:pasture_id/", {
           templateUrl: "/static/templates/pasture_detail.html",
@@ -193,17 +225,21 @@ farmApp.config(function ($routeProvider, $locationProvider) {
           templateUrl: "/static/templates/pasture_results.html",
           controller: "PastureResultsController"
     })
+    .when("/assets/api/seeds/client/:client/", {
+          templateUrl: "/static/templates/seed_list.html",
+          controller: "SeedListByClientController"
+    })
+    .when("/assets/api/seeds/client/:client/limit/:limit/", {
+          templateUrl: "/static/templates/seed_list.html",
+          controller: "SeedListByClientController"
+    })
+    .when("/assets/api/seeds/client/:client/limit/:limit/offset/:offset/", {
+          templateUrl: "/static/templates/seed_list.html",
+          controller: "SeedListByClientController"
+    })
     .when("/assets/api/seeds/", {
           templateUrl: "/static/templates/seed_list.html",
-          controller: "SeedListController"
-    })
-    .when("/assets/api/seeds/limit/:limit/", {
-          templateUrl: "/static/templates/seed_list.html",
-          controller: "SeedListController"
-    })
-    .when("/assets/api/seeds/limit/:limit/offset/:offset/", {
-          templateUrl: "/static/templates/seed_list.html",
-          controller: "SeedListController"
+          controller: "SeedListByClientController"
     })
     .when("/assets/api/seeds/:seed_id/", {
           templateUrl: "/static/templates/seed_detail.html",
@@ -217,18 +253,13 @@ farmApp.config(function ($routeProvider, $locationProvider) {
 
 farmApp.run(function($rootScope, $location, $http, $cookies) {
     $rootScope.globals = $cookies.get('globals') || {};
-    $rootScope.globals["limit"] = 10;
     console.log("globals set: " + Object.getOwnPropertyNames($rootScope.globals));
 
-    if ($rootScope.globals.currentUser) {
-        var auth = 'Basic ' + $rootScope.globals.currentUser.authdata;
-        $http.defaults.headers.common['Authorization'] = auth;
-        console.log("auth: " + auth);
-    }
- 
+    console.log("currentUser: " + $rootScope.globals.currentUser);
     $rootScope.$on('$locationChangeStart', function (event, next, current) {
-        // redirect to login page if not logged in
+        // redirect to login page if not logged in or attempts page refresh
         if ($location.path() !== '/login/' && !$rootScope.globals.currentUser) {
+            console.log("forced relogin");
             $location.path('/login/');
         }
     });

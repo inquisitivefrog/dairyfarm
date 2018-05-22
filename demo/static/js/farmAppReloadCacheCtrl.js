@@ -7,20 +7,6 @@ farmApp.controller('ReloadCacheController',
 
     $http({
         method: 'GET',
-        url: '/assets/api/clients/?limit=50',
-    }).then(function (response) {
-        $rootScope.globals.clients = response.data.results;
-    });
-
-    $http({
-        method: 'GET',
-        url: '/assets/api/users/?limit=30',
-    }).then(function (response) {
-        $rootScope.globals.users = response.data.results;
-    });
-
-    $http({
-        method: 'GET',
         url: '/assets/api/breeds/?limit=20',
     }).then(function (response) {
         $rootScope.globals.breeds = response.data.results;
@@ -45,20 +31,6 @@ farmApp.controller('ReloadCacheController',
         url: '/assets/api/actions/?limit=50',
     }).then(function (response) {
         $rootScope.globals.actions = response.data.results;
-    });
-
-    $http({
-        method: 'GET',
-        url: '/assets/api/pastures/?limit=50',
-    }).then(function (response) {
-        $rootScope.globals.pastures = response.data.results;
-    });
-
-    $http({
-        method: 'GET',
-        url: '/assets/api/cows/?limit=2000',
-    }).then(function (response) {
-        $rootScope.globals.cows = response.data.results;
     });
 
     $http({
@@ -124,8 +96,25 @@ farmApp.controller('ReloadCacheController',
         $rootScope.globals.vaccines = response.data.results;
     });
 
+    $http({
+        method: 'GET',
+        url: "/assets/api/cows/client/"
+             + $rootScope.globals.currentUser.client.id + "/",
+    }).then(function (response) {
+        $rootScope.globals.cows = response.data.results;
+    });
+
+    $http({
+        method: 'GET',
+        url: "/assets/api/pastures/client/"
+             + $rootScope.globals.currentUser.client.id + "/",
+    }).then(function (response) {
+        $rootScope.globals.pastures = response.data.results;
+    });
+
     $scope.globals = $rootScope.globals;
     console.log("globals set: " + Object.getOwnPropertyNames($rootScope.globals));
+    console.log("currentUser: " + Object.getOwnPropertyNames($rootScope.globals.currentUser));
     if ($scope.quiet == null) {
         $location.url("/home/");
     }

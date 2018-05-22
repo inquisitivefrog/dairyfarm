@@ -1,15 +1,13 @@
-<div class="auth" ng-if="globals">
-<table>
+<table class="login" ng-if="globals">
     <tr>
         <td><p style="color:blue">{{globals.currentUser.username}}</p></td>
         <td><p> logged in at </p></td>
         <td><p style="color:blue">{{globals.login}}</p></td>
     </tr>
 </table>
-</div>
 
-<h2>Annual Reports</h2>
-<table ng-if="rows.length > 0">
+<h2>{{report_header}}</h2>
+<table ng-if="total > 0">
   <tr>
     <th>Year</th>
     <th>Total Cows</th>
@@ -30,4 +28,4 @@
   <tr>
 </table>
 
-<p ng-if="rows.length == 0">No annual records available yet.</p>
+<p ng-if="total == 0">No annual records available yet.</p>

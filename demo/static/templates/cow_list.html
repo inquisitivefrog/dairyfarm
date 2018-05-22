@@ -1,13 +1,12 @@
-<div class="auth" ng-if="globals">
-<table>
+<table class="login" ng-if="globals">
     <tr>
         <td><p style="color:blue">{{globals.currentUser.username}}</p></td>
         <td><p> logged in at </p></td>
         <td><p style="color:blue">{{globals.login}}</p></td>
     </tr>
 </table>
-</div>
-<h2>Purchase a Cow</h2>
+
+<h2>{{purchase_header}}</h2>
 <form action="{% url 'assets:cow-list' %}" method="post">
     <table>
     <tr>
@@ -21,32 +20,34 @@
     <tr>
         <th>Date:</th>
         <td>
-            <input type="date" ng-init="inputDate=currentDate()" ng-model="inputDate" placeholder="yyyy-MM-dd" required/>
+            <input type="date" ng-init="inputDate=currentDate()" 
+                   ng-model="inputDate" 
+                   placeholder="yyyy-MM-dd" required/>
         </td>
     </tr>
     <tr>
         <th>Breed:</th>
         <td>
-            <select ng-init="selectedBreed=breeds[0].name" 
+            <select ng-init="selectedBreed=globals.breeds[0].name" 
                     ng-model="selectedBreed" 
-                    ng-options="breed.name for breed in breeds">
+                    ng-options="breed.name for breed in globals.breeds">
             </select>
         </td>
     </tr>
     <tr>
         <th>Color:</th>
         <td>
-            <select ng-init="selectedColor=colors[0].name" 
+            <select ng-init="selectedColor=globals.colors[0].name" 
                     ng-model="selectedColor" 
-                    ng-options="color.name for color in colors">
+                    ng-options="color.name for color in globals.colors">
             </select>
         </td>
     <tr>
         <th>Age:</th>
         <td>
-            <select ng-init="selectedAge=selectedAge || ages[0].name" 
+            <select ng-init="selectedAge=selectedAge || globals.ages[0].name" 
                     ng-model="selectedAge" 
-                    ng-options="age.name for age in ages">
+                    ng-options="age.name for age in globals.ages">
             </select>
         </td>
     </tr>
@@ -55,7 +56,7 @@
 </form>
 
 <h2>Herd of {{total}}</h2>
-<table ng-if="herd.length > 0">
+<table ng-if="total > 0">
   <tr>
     <th>ID</th>
     <th>RFID tag</th>
@@ -76,11 +77,11 @@
     <td>{{cow.breed.name}}</td>
     <td>{{cow.color.name}}</td>
     <td>{{cow.age.name}}</td>
-    <td>{{cow.sell_date}}</td>
+    <td>{{cow.sell_date != "2100-12-31" ? cow.sell_date : "Not Yet"}}</td>
   <tr>
 </table>
 
-<p ng-if="herd.length == 0">No cows purchased yet.</p>
+<p ng-if="total == 0">No cows purchased yet.</p>
 
 <div>
 <span text-align:left><a ng-if="prev" href="{{prev}}">Prev</a></span>

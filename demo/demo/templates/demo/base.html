@@ -20,32 +20,31 @@
     <script src="{% static 'js/farmAppDDAssetsCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppDDSummaryCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppTestsCtrl.js' %}"></script>
-    <script src="{% static 'js/farmAppCowListCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppCowListByClientCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppCowDetailCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppCowResultsCtrl.js' %}"></script>
-    <script src="{% static 'js/farmAppEventListCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppEventListByClientCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppEventDetailCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppEventResultsCtrl.js' %}"></script>
-    <script src="{% static 'js/farmAppExerciseListCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppExerciseListByClientCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppExerciseDetailCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppExerciseResultsCtrl.js' %}"></script>
-    <script src="{% static 'js/farmAppHealthRecordListCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppHealthRecordListByClientCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppHealthRecordDetailCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppHealthRecordResultsCtrl.js' %}"></script>
-    <script src="{% static 'js/farmAppMilkListCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppMilkListByClientCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppMilkDetailCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppMilkResultsCtrl.js' %}"></script>
-    <script src="{% static 'js/farmAppPastureListCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppPastureListByClientCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppPastureDetailCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppPastureResultsCtrl.js' %}"></script>
-    <script src="{% static 'js/farmAppSeedListCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppSeedListByClientCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppSeedDetailCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppSeedResultsCtrl.js' %}"></script>
-    <script src="{% static 'js/farmAppAnnualSummaryCtrl.js' %}"></script>
-    <script src="{% static 'js/farmAppMonthlySummaryCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppAnnualSummaryByClientCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppMonthlySummaryByClientCtrl.js' %}"></script>
     <link rel="stylesheet" type="text/css"
           href="{% static 'css/farmApp.css' %}"/>
-
   </head>
 <body>
     <div class="flex-container">
@@ -83,17 +82,16 @@
             </ul>
             <p><b>Report Management</b></p>
             <ul>
-                <li><a href="#!/summary/">Annual Reports</a></li>
+                <li><a href="#!/summary/api/annual/">Annual Reports</a></li>
             </ul>
         </nav>
         <article class="article" ng-app="farmApp">
-                {% verbatim %}
-                <div ng-view>
-                </div>
-                {% endverbatim %}
+            {% verbatim %}
+            <div ng-view>
+            </div>
+            {% endverbatim %}
         </article>
         <footer>Copyright 2018 &copy;Tim Stilwell</footer>
     </div>
 </body>
 </html>
-

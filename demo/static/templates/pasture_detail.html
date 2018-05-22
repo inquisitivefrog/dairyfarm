@@ -1,12 +1,11 @@
-<div class="auth" ng-if="globals">
-<table>
+<table class="login" ng-if="globals">
     <tr>
         <td><p style="color:blue">{{globals.currentUser.username}}</p></td>
         <td><p> logged in at </p></td>
         <td><p style="color:blue">{{globals.login}}</p></td>
     </tr>
 </table>
-</div>
+
 <h2>Cultivate a Pasture</h2>
 <form ng-if="pasture" action="{% url 'assets:pasture-detail' pasture.id %}" method="put">
     <table>
@@ -20,19 +19,23 @@
     </tr>
     <tr>
         <th>Name:</th>
-        <td><input type="text" ng-init="inputName=pasture.name" ng-model="inputName" ng-trim="false" required/></td>
+        <td><input type="text" ng-init="inputName=pasture.name" 
+                   ng-model="inputName" ng-trim="false" required/></td>
     </tr>
     <tr>
         <th>Fallow:</th>
         <td>
-            <input type="radio" ng-init="inputFallow=pasture.fallow" ng-model="inputFallow" value="true"/> Yes<br>
-            <input type="radio" ng-init="inputFallow=pasture.fallow" ng-model="inputFallow" value="false"/> No<br>
+            <input type="radio" ng-init="inputFallow=pasture.fallow" 
+                   ng-model="inputFallow" value="true"/> Yes<br>
+            <input type="radio" ng-init="inputFallow=pasture.fallow" 
+                   ng-model="inputFallow" value="false"/> No<br>
         </td>
     </tr>
     <tr>
         <th>Distance:</th>
         <td>
-            <input type="number" ng-init="inputDistance=pasture.distance" min=1 max=15 ng-model="inputDistance" required/>
+            <input type="number" ng-init="inputDistance=pasture.distance" 
+                   min=1 max=15 ng-model="inputDistance" required/>
         </td>
     </tr>
     </table>
@@ -57,5 +60,5 @@
   <tr>
 </table>
 <p/>
-<img src="{{pasture.url}}" alt="Image failed to load" height="200" width="400">
+<img src="{{pasture.url || ''}}" alt="Image failed to load" height="200" width="400">
 
