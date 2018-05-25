@@ -40,7 +40,7 @@ User login by username/password enables access to client mapped objects in all o
 Client User login loads a landing page listing current year assets with menu selection of other time periods or access to management of other assets.
 </p><p></p>
 <h3>1.3 References</h3><p></p><p>
-<ul><li><a href="#/docs/mrd/">Nature Dairy Farm MRD</a></li></ul>
+<ul><li><a href="#!/docs/mrd/">Nature Dairy Farm MRD</a></li></ul>
 </p><p></div></div>
 
 <div id="overview" style="text-align: left">
@@ -59,7 +59,7 @@ The reporting service is a web service that provides</p><ul>
 <div id="arch" style="text-align: left">
 <h2>3. System Architecture</h2><p></p><div style="text-align: left">
 <h3>3.1 Architectural Design</h3><p></p><p>
-<img width="50%" src="/static/images/docs/farmApp_architecture.png"/><p></p>
+<img width="80%" src="/static/images/docs/farmApp_architecture.png"/><p></p>
 <h3>3.2 Design Considerations</h3><p></p><p><ul>
 <li>PostgreSQL will be the only source of truth providing near-instant data replication with a master-slave configuration</li>
 <li>All PostgreSQL table rows will be accessible by key id except Cow table which will reference key rfid, of type UUID</li>
@@ -71,14 +71,14 @@ The reporting service is a web service that provides</p><ul>
 
 <div id="component" style="text-align: left">
 <h2>4. Component Design</h2><p></p><div style="text-align: left">
-<img width="50%" src="/static/images/docs/summary_components.png"/><p></p></div></div>
+<img width="80%" src="/static/images/docs/summary_components.png"/><p></p></div></div>
 
 <div id="data" style="text-align: left">
 <h2>5. Data Design</h2><p></p><div style="text-align: left">
 <h3>5.1 UML Diagram</h3><p></p>
-<img width="50%" src="/static/images/docs/summary_UML.png"/><p></p>
+<img width="80%" src="/static/images/docs/summary_UML.png"/><p></p>
 <h3>5.2 RDBMS Data Description</h3><p></p>
-<img width="50%" src="/static/images/docs/summary_ERD.png"/><p></p></div></div>
+<img width="80%" src="/static/images/docs/summary_ERD.png"/><p></p></div></div>
 
 <div id="api" style="text-align: left">
 <h2>6. API Design</h2><p></p>
@@ -104,35 +104,22 @@ The reporting service is a web service that provides</p><ul>
   </tr>
   <tr>
     <th>Valid HTTP Response</th>
-    <td>{"status_code": 200, "reason_phrase": "OK", "data": [{"id":1,"client":"Foster Farms Dairy","created_by":"foster","year":2015,"total_cows":130,"aged_cows":26,"pregnant_cows":0,"ill_cows":22,"injured_cows":34,"gallons_milk":4532,"link":"/summary/api/monthly/client/1/year/2015/"},{"id":3,"client":"Foster Farms Dairy","created_by":"foster","year":2016,"total_cows":130,"aged_cows":26,"pregnant_cows":0,"ill_cows":40,"injured_cows":41,"gallons_milk":4470,"link":"/summary/api/monthly/client/1/year/2016/"}]}</td>
+    <td>{"status_code": 200, "reason_phrase": "OK", "data": [{"id": 1, "client": "Foster Farms Dairy", "created_by": "foster", "year": 2015, "total_cows": 520, "aged_cows": l109, "pregnant_cows": 0, "ill_cows": 374, "injured_cows": 364, "gallons_milk": 44477, "link": "/summary/api/monthly/client/1/year/2015/"}, {"id": 3, "client": "Foster Farms Dairy", "created_by": "foster", "year": 2016, "total_cows": 1040, "aged_cows": 220, "pregnant_cows": 0, "ill_cows": 965, "injured_cows": 1005, "gallons_milk": 115697, "link": "/summary/api/monthly/client/1/year/2016/"}]}</td>
   </tr>
   <tr>
     <th>Invalid HTTP Response</th>
     <td>{"status_code": 405, "reason_phrase": "Method Not Allowed"}</td>
   </tr>
-  <tr>
-    <th>HTTP Method</th>
-    <td><img width="60" src="/static/images/methods/post.png"/></td>
-  </tr>
-  <tr>
-    <th>PUT/POST data</th>
-    <td>{"rfid": "6f26758c-dc19-4a99-b708-f3f7b0eda66c", "client": "Clover Dairy LTD", "purchased_by": "farmer", "purchase_date": "2015-01-02", "breed": "Holstein", "color": "black_white", "age": "3 years"}</td>
-  </tr>
-  <tr>
-    <th>Valid HTTP Response</th>
-    <td>{"status_code": 200, "reason_phrase": "OK", "data": {"count": 1, "prev": null, "next": null, results: [{"id": 1, "rfid": "6f26758c-dc19-4a99-b708-f3f7b0eda66c", "purchased_by": {"id": 1, "username": "farmer", "first_name": "old", "last_name": "mcdonald", "email": "farmer@dairyfarm.org"}, "client": {"id": 1, "name": "Clover Dairy LTD", "join_date": "2015-01-01"}, "purchase_date": "2015-01-02", "sell_date": "2100-12-31", "breed": {"id": 1, "name": "Holstein", "url": "/static/images/breeds/holstein.png"}, "color": {"id", "name": "black_white"}, "age": {"id": 3, "3 years"}}]}}</td>
-  </tr>
-  <tr>
-    <th>Invalid HTTP Response</th>
-    <td><code>{"status_code": 404, "reason_phrase": "Not Found", "content": "{'detail': 'Not found.'}"}</code><p></p><code>{"status_code": 400, "reason_phrase": "Bad Request", "content": "{'purchased_by': ['This field is required.'], 'purchase_date': ['This field is required.'], 'age': ['This field is required.'], 'color': ['This field is required.'], 'client': ['This field is required.']}"}</code></td>
-  </tr>
+</table><p></p>
+<h4>6.2.2 Monthly</h4><p></p>
+<table class="left">
   <tr>
     <th>Action</th>
-    <td>Retrieve an Annual object</td>
+    <td>List all Monthly objects for a year</td>
   </tr>
   <tr>
     <th>URL Path</th>
-    <td>/summary/api/annual/1/</td>
+    <td>/summary/api/monthly/client/1/year/2015/</td>
   </tr>
   <tr>
     <th>HTTP Method</th>
@@ -144,37 +131,13 @@ The reporting service is a web service that provides</p><ul>
   </tr>
   <tr>
     <th>Valid HTTP Response</th>
-    <td>{"status_code": 200, "reason_phrase": "OK", "data": {"count": 1, "prev": null, "next": null, results: [{"id": 1, "rfid": "6f26758c-dc19-4a99-b708-f3f7b0eda66c", "purchased_by": {"id": 1, "username": "farmer", "first_name": "old", "last_name": "mcdonald", "email": "farmer@dairyfarm.org"}, "client": {"id": 1, "name": "Clover Dairy LTD", "join_date": "2015-01-01"}, "purchase_date": "2015-01-02", "sell_date": "2100-12-31", "breed": {"id": 1, "name": "Holstein", "url": "/static/images/breeds/holstein.png"}, "color": {"id": 1, "name": "black_white"}, "age": {"id": 3, "3 years"}}]}}</td>
+    <td>{"status_code": 200, "reason_phrase": "OK", "data": [{"id": 1, "client": "Foster Farms Dairy", "created_by": "foster", "year": 2015, "month": "January", "total_cows": 130, "aged_cows": 34, "pregnant_cows": 0, "ill_cows": 12, "injured_cows": 10, "gallons_milk": 1481, "link": "/summary/api/monthly/client/1/year/2015/month/01/"}, {"id": 2, "client": "Foster Farms Dairy", "created_by": "foster", "year": 2015, "month": "February", "total_cows": 130, "aged_cows": 34, "pregnant_cows": 0, "ill_cows": 10, "injured_cows": 15, "gallons_milk": 1485, "link": "/summary/api/monthly/client/1/year/2015/month/02/"}, {"id": 3, "client": "Foster Farms Dairy", "created_by": "foster", "year": 2015, "month": "March", "total_cows": 130, "aged_cows": 34, "pregnant_cows": 0, "ill_cows": 19, "injured_cows": 11, "gallons_milk": 1434, "link": "/summary/api/monthly/client/1/year/2015/month/03/"}, {"id": 7, "client": "Foster Farms Dairy", "created_by": "foster", "year": 2015, "month": "April", "total_cows": 260, "aged_cows": 54, "pregnant_cows": 0, "ill_cows": 28, "injured_cows": 21, "gallons_milk": 2962, "link": "/summary/api/monthly/client/1/year/2015/month/04/"}, {"id": 8, "client": "Foster Farms Dairy", "created_by": "foster", "year": 2015, "month": "May", "total_cows": 260, "aged_cows": 54, "pregnant_cows": 0, "ill_cows": 22, "injured_cows": 29, "gallons_milk": 3003, "link": "/summary/api/monthly/client/1/year/2015/month/05/"}, {"id": 9, "client": "Foster Farms Dairy", "created_by": "foster", "year": 2015, "month": "June", "total_cows": 260, "aged_cows": 54, "pregnant_cows": 0, "ill_cows": 28, "injured_cows": 19, "gallons_milk": 2962, "link": "/summary/api/monthly/client/1/year/2015/month/06/"}, {"id": 13, "client": "Foster Farms Dairy", "created_by": "foster", "year": 2015, "month": "July", "total_cows": 390, "aged_cows": 81, "pregnant_cows": 0, "ill_cows": 36, "injured_cows": 38, "gallons_milk": 4435, "link": "/summary/api/monthly/client/1/year/2015/month/07/"}, {"id": 14, "client": "Foster Farms Dairy", "created_by": "foster", "year": 2015, "month": "August", "total_cows": 390, "aged_cows": 81, "pregnant_cows": 0, "ill_cows": 32, "injured_cows": 32, "gallons_milk": 4478, "link": "/summary/api/monthly/client/1/year/2015/month/08/"}, {"id": 15, "client": "Foster Farms Dairy", "created_by": "foster", "year": 2015, "month": "September", "total_cows": 390, "aged_cows": 81, "pregnant_cows": 0, "ill_cows": 31, "injured_cows": 34, "gallons_milk": 4502, "link": "/summary/api/monthly/client/1/year/2015/month/09/"}, {"id": 19, "client": "Foster Farms Dairy", "created_by": "foster", "year": 2015, "month": "October", "total_cows": 520, "aged_cows": 109, "pregnant_cows": 0, "ill_cows": 53, "injured_cows": 46, "gallons_milk": 5936, "link": "/summary/api/monthly/client/1/year/2015/month/10/"}, {"id": 20, "client": "Foster Farms Dairy", "created_by": "foster", "year": 2015, "month": "November", "total_cows": 520, "aged_cows": 109, "pregnant_cows": 0, "ill_cows": 42, "injured_cows": 57, "gallons_milk": 5943, "link": "/summary/api/monthly/client/1/year/2015/month/11/"}, {"id": 21, "client": "Foster Farms Dairy", "created_by": "foster", "year": 2015, "month": "December", "total_cows": 520, "aged_cows": 109, "pregnant_cows": 0, "ill_cows": 61, "injured_cows": 52, "gallons_milk": 5856, "link": "/summary/api/monthly/client/1/year/2015/month/12/"}]</td>
   </tr>
   <tr>
     <th>Invalid HTTP Response</th>
     <td>{"status_code": 405, "reason_phrase": "Method Not Allowed"}</td>
   </tr>
-  <tr>
-    <th>Action</th>
-    <td>Update an Annual object</td>
-  </tr>
-  <tr>
-    <th>URL Path</th>
-    <td>/summary/api/annual/1/</td>
-  </tr>
-  <tr>
-    <th>HTTP Method</th>
-    <td><img width="60" src="/static/images/methods/put.png"/></td>
-  </tr>
-  <tr>
-    <th>PUT/POST data</th>
-    <td>{"id": 1, "rfid": "6f26758c-dc19-4a99-b708-f3f7b0eda66c", "purchased_by": "farmhand", "client": "Clover Dairy LTD", "purchase_date": "2015-01-02", "breed": "Guernsey", "color": "tawny", "age": "3 years"}</td>
-  </tr>
-  <tr>
-    <th>Valid HTTP Response</th>
-    <td>{"status_code": 200, "reason_phrase": "OK", "data": {"count": 1, "prev": null, "next": null, results: [{"id": 1, "rfid": "6f26758c-dc19-4a99-b708-f3f7b0eda66c", "purchased_by": {"id": 1, "username": "farmer", "first_name": "old", "last_name": "mcdonald", "email": "farmer@dairyfarm.org"}, "client": {"id": 1, "name": "Clover Dairy LTD", "join_date": "2015-01-01"}, "purchase_date": "2015-01-02", "sell_date": "2100-12-31", "breed": {"id": 2, "name": "Guernsey", "url": "/static/images/breeds/guernsey.png"}, "color": {"id": 3, "name": "tawny"}, "age": {"id": 3, "3 years"}}]}}</td>
-  </tr>
-  <tr>
-    <th>Invalid HTTP Response</th>
-    <td><code>{"status_code": 404, "reason_phrase": "Not Found", "content": "{'detail': 'Not found.'}"}</code><p></p><code>{"status_code": 400, "reason_phrase": "Bad Request", "content": "{'purchased_by': ['This field is required.'], 'purchase_date': ['This field is required.'], 'age': ['This field is required.'], 'color': ['This field is required.'], 'client': ['This field is required.']}"}</code></td>
-  </tr>
-</table><p></p>
+</table><p></p></div>
 
 <div id="ui" style="text-align: left">
 <h2>7. UI Design</h2><p></p>
@@ -182,8 +145,8 @@ The reporting service is a web service that provides</p><ul>
 <img width="80%" src="/static/images/docs/spa_framework.png"/><p></p>
 <h3>7.2 Summary List all Reports</h3>
 <img width="80%" src="/static/images/docs/spa_list_reports.png"/><p></p>
-<h3>7.3 Summary Refresh an existing Report</h3>
-<img width="80%" src="/static/images/docs/spa_refresh_report.png"/><p>
+<h3>7.3 Summary List all Months of an existing Report</h3>
+<img width="80%" src="/static/images/docs/spa_list_months.png"/><p>
 </p><p></p></div>
 
 <div id="appendix"><h2>8. Appendix</h2><p></p>

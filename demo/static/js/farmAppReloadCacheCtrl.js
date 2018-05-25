@@ -2,7 +2,11 @@ farmApp.controller('ReloadCacheController',
   function($scope, $rootScope, $http, $routeParams, $location) {
       $scope.quiet = $routeParams.quiet;
       $scope.globals = null;
-      $scope.debug = true;
+      if ($scope.quiet == null) {
+          $scope.debug = false;
+      } else {
+          $scope.debug = true;
+      }
       console.log('Entered ReloadCacheController');
 
     $http({
@@ -99,7 +103,7 @@ farmApp.controller('ReloadCacheController',
     $http({
         method: 'GET',
         url: "/assets/api/cows/client/"
-             + $rootScope.globals.currentUser.client.id + "/",
+             + $rootScope.globals.currentUser.client.id + "/?limit=50",
     }).then(function (response) {
         $rootScope.globals.cows = response.data.results;
     });

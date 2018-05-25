@@ -31,7 +31,7 @@ farmApp.controller('HealthRecordListByClientController',
             method: 'GET',
             url: $scope.url,
         }).then(function (response) {
-            $scope.herd = response.data.results;
+            $scope.hrs = response.data.results;
             $scope.total = response.data.count;
             if (($scope.offset == null) && ($scope.limit == null)) {
                 // set beginning

@@ -6,15 +6,16 @@ farmApp.controller("DDAssetsController",
 
         if (typeof($scope.section) == "string") {
             $scope.url = "/static/templates/docs_dd_assets_" + $scope.section + ".html";
-            $http({
-                method: 'GET',
-                url: $scope.url,
-            }).then(function (response) {
-                $scope.data = response.data;
-            });
-            console.log("table of contents loaded");
-            console.log("calling url: " + $scope.url);
+            console.log("loading url: " + $scope.url);
+            $location.url($scope.url);
+            //$http({
+            //    method: 'GET',
+            //    url: $scope.url,
+            //}).then(function (response) {
+            //    $scope.data = response.data;
+            //});
         } else {
+            console.log("table of contents loaded");
             console.log("full page loaded");
         }
 });

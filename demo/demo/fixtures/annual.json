@@ -5,14 +5,14 @@
     "fields": {
         "client": 1,
         "created_by": 5,
-        "year": 2016,
-        "total_cows": 260,
-        "aged_cows": 57,
+        "year": 2015,
+        "total_cows": 520,
+        "aged_cows": 109,
         "pregnant_cows": 0,
-        "ill_cows": 334,
-        "injured_cows": 297,
-        "gallons_milk": 35483,
-        "link": "/summary/api/monthly/client/1/year/2016/"
+        "ill_cows": 374,
+        "injured_cows": 364,
+        "gallons_milk": 44477,
+        "link": "/summary/api/monthly/client/1/year/2015/"
     }
 },
 {
@@ -21,14 +21,14 @@
     "fields": {
         "client": 2,
         "created_by": 6,
-        "year": 2016,
-        "total_cows": 208,
-        "aged_cows": 39,
+        "year": 2015,
+        "total_cows": 416,
+        "aged_cows": 80,
         "pregnant_cows": 0,
-        "ill_cows": 246,
-        "injured_cows": 265,
-        "gallons_milk": 28475,
-        "link": "/summary/api/monthly/client/2/year/2016/"
+        "ill_cows": 330,
+        "injured_cows": 339,
+        "gallons_milk": 35475,
+        "link": "/summary/api/monthly/client/2/year/2015/"
     }
 },
 {
@@ -37,14 +37,30 @@
     "fields": {
         "client": 1,
         "created_by": 5,
-        "year": 2015,
-        "total_cows": 260,
-        "aged_cows": 57,
+        "year": 2016,
+        "total_cows": 1040,
+        "aged_cows": 220,
         "pregnant_cows": 0,
-        "ill_cows": 132,
-        "injured_cows": 141,
-        "gallons_milk": 17869,
-        "link": "/summary/api/monthly/client/1/year/2015/"
+        "ill_cows": 965,
+        "injured_cows": 1005,
+        "gallons_milk": 115697,
+        "link": "/summary/api/monthly/client/1/year/2016/"
+    }
+},
+{
+    "model": "summary.annual",
+    "pk": 4,
+    "fields": {
+        "client": 2,
+        "created_by": 6,
+        "year": 2016,
+        "total_cows": 832,
+        "aged_cows": 169,
+        "pregnant_cows": 0,
+        "ill_cows": 817,
+        "injured_cows": 803,
+        "gallons_milk": 92314,
+        "link": "/summary/api/monthly/client/2/year/2016/"
     }
 }
 ]

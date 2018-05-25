@@ -38,7 +38,7 @@ User login by username/password enables access to client mapped objects in all o
 Client User login loads a landing page listing current year assets with menu selection of other time periods or access to management of other assets.
 </p><p></p>
 <h3>1.3 References</h3><p></p><p>
-<ul><li><a href="#/docs/mrd/">Nature Dairy Farm MRD</a></li></ul>
+<ul><li><a href="#!/docs/mrd/">Nature Dairy Farm MRD</a></li></ul>
 </p><p></div></div>
 
 <div id="overview" style="text-align: left">
@@ -82,7 +82,7 @@ The assets service is a web service that provides</p><ul>
 <div id="arch" style="text-align: left">
 <h2>3. System Architecture</h2><p></p><div style="text-align: left">
 <h3>3.1 Architectural Design</h3><p></p><p>
-<img width="50%" src="/static/images/docs/farmApp_architecture.png"/><p></p>
+<img width="80%" src="/static/images/docs/farmApp_architecture.png"/><p></p>
 <h3>3.2 Design Considerations</h3><p></p><p><ul>
 <li>PostgreSQL will be the only source of truth providing near-instant data replication with a master-slave configuration</li>
 <li>All PostgreSQL table rows will be accessible by key id except Cow table which will reference key rfid, of type UUID</li>
@@ -94,14 +94,14 @@ The assets service is a web service that provides</p><ul>
 
 <div id="component" style="text-align: left">
 <h2>4. Component Design</h2><p></p><div style="text-align: left">
-<img width="50%" src="/static/images/docs/assets_components.png"/><p></p></div></div>
+<img width="80%" src="/static/images/docs/assets_components.png"/><p></p></div></div>
 
 <div id="data" style="text-align: left">
 <h2>5. Data Design</h2><p></p><div style="text-align: left">
 <h3>5.1 UML Diagram</h3><p></p>
-<img width="50%" src="/static/images/docs/assets_UML.png"/><p></p>
+<img width="80%" src="/static/images/docs/assets_UML.png"/><p></p>
 <h3>5.2 RDBMS Data Description</h3><p></p>
-<img width="50%" src="/static/images/docs/assets_ERD.png"/><p></p></div></div>
+<img width="80%" src="/static/images/docs/assets_ERD.png"/><p></p></div></div>
 
 <div id="api" style="text-align: left">
 <h2>6. API Design</h2><p></p>
@@ -1185,6 +1185,105 @@ The assets service is a web service that provides</p><ul>
     <td><code>{"status_code": 404, "reason_phrase": "Not Found", "content": "{'detail': 'Not found.'}"}</code><p></p><code>{"status_code": 400, "reason_phrase": "Bad Request", "content": "{'client': ['This field is required.'], 'recorded_by': ['This field is required.'], 'cow': ['This field is required.'], 'exercise_time': ['This field is required.'], 'pasture': ['This field is required.']}"}</code></td>
   </tr>
 </table><p></p>
+<h4>6.2.9 HealthRecord</h4><p></p>
+<table class="left">
+  <tr>
+    <th>Action</th>
+    <td>List all HealthRecord objects</td>
+  </tr>
+  <tr>
+    <th>URL Path</th>
+    <td>/assets/api/healthrecords/</td>
+  </tr>
+  <tr>
+    <th>HTTP Method</th>
+    <td><img width="60" src="/static/images/methods/get.png"/></td>
+  </tr>
+  <tr>
+    <th>PUT/POST data</th>
+    <td>None</td>
+  </tr>
+  <tr>
+    <th>Valid HTTP Response</th>
+    <td>{"status_code": 200, "reason_phrase": "OK", "data": {"count": 1, "next": "http://localhost:8000/assets/api/healthrecords/client/1/?limit=10&offset=10", "previous": null, "results": [{"id": 1, "client": {"id": 1, "name": "Foster Farms Dairy", "join_date": "2018-05-25", "inactive_date": "2100-12-31"}, "recorded_by": "vet", "inspection_time": "2015-01-01T03:53:00-08:00", "cow": {"id": 1, "rfid": "53769440-0848-46e1-bfe5-449e42ee4fa2", "client": {"id": 1, "name": "Foster Farms Dairy", "join_date": "2018-05-25", "inactive_date": "2100-12-31"}, "purchased_by": "foster", "purchase_date": "2014-12-31", "age": {"id": 1, "name": "1 year"}, "breed": {"id": 1, "name": "Holstein", "url": "/static/images/breeds/holstein.png"}, "color": {"id": 1, "name": "black_white"}, "sell_date": "2100-12-31", "link": "/assets/api/cows/1/"}, "temperature": 100.6, "respiratory_rate": 26.2, "heart_rate": 82.9, "blood_pressure": 142.3, "weight": 512, "body_condition_score": 3.3, "status": {"id": 1, "name": "Healthy"}, "illness": null, "injury": null, "treatment": null, "vaccine": null, "link": "/assets/api/healthrecords/1/"}]}}</td>
+  </tr>
+  <tr>
+    <th>Invalid HTTP Response</th>
+    <td>{"status_code": 405, "reason_phrase": "Method Not Allowed"}</td>
+  </tr>
+  <tr>
+    <th>Action</th>
+    <td>Create a HealthRecord object</td>
+  </tr>
+  <tr>
+    <th>URL Path</th>
+    <td>/assets/api/healthrecords/</td>
+  </tr>
+  <tr>
+    <th>HTTP Method</th>
+    <td><img width="60" src="/static/images/methods/post.png"/></td>
+  </tr>
+  <tr>
+    <th>PUT/POST data</th>
+    <td>{"client": "Foster Farms Dairy", "recorded_by":"vet", inspection_time": "2015-01-01T03:53:00-08:00", "cow": "53769440-0848-46e1-bfe5-449e42ee4fa2", "temperature": 100.6, "respiratory_rate": 26.2, "heart_rate": l82.9, "blood_pressure": 142.3, "weight": 512, "body_condition_score": 3.3, "status": "Healthy"}</td>
+  </tr>
+  <tr>
+    <th>Valid HTTP Response</th>
+    <td>{"status_code": 200, "reason_phrase": "OK", "data": {"id": 1, "client": {"id": 1, "name": "Foster Farms Dairy", "join_date": "2018-05-25", "inactive_date": "2100-12-31"}, "recorded_by": "vet", "inspection_time": "2015-01-01T03:53:00-08:00", "cow": {"id": 1, "rfid": "53769440-0848-46e1-bfe5-449e42ee4fa2", "client": {"id": 1, "name": "Foster Farms Dairy", "join_date": "2018-05-25", "inactive_date": "2100-12-31"}, "purchased_by": "foster", "purchase_date": "2014-12-31", "age": {"id": 1, "name": "1 year"}, "breed": {"id": 1, "name": "Holstein", "url": "/static/images/breeds/holstein.png"}, "color": {"id": 1, "name": "black_white"}, "sell_date": "2100-12-31", "link": "/assets/api/cows/1/"}, "temperature": 100.6, "respiratory_rate": 26.2, "heart_rate": 82.9, "blood_pressure": 142.3, "weight": 512, "body_condition_score": 3.3, "status": {"id": 1, "name": "Healthy"}, "illness": null, "injury": null, "treatment": null, "vaccine": null, "link": "/assets/api/healthrecords/1/"}}</td>
+  </tr>
+  <tr>
+    <th>Invalid HTTP Response</th>
+    <td><code>{"status_code": 404, "reason_phrase": "Not Found", "content": "{'detail': 'Not found.'}"}</code><p></p><code>{"status_code": 400, "reason_phrase": "Bad Request", "content": "{'client': ['This field is required.'], 'recorded_by': ['This field is required.'], 'cow': ['This field is required.'], 'inspection_time': ['This field is required.'], 'temperature': ['This field is required.'], 'temperature': ['This field is required.'], 'respiratory_rate': ['This field is required.'], 'heart_rate': ['This field is required.'], 'blood_pressure': ['This field is required.'], 'weight': ['This field is required.'], 'body_condition_score': ['This field is required.'], 'status': ['This field is required.']}"</code></td>
+  </tr>
+  <tr>
+    <th>Action</th>
+    <td>Retrieve a HealthRecord object</td>
+  </tr>
+  <tr>
+    <th>URL Path</th>
+    <td>/assets/api/healthrecords/1/</td>
+  </tr>
+  <tr>
+    <th>HTTP Method</th>
+    <td><img width="60" src="/static/images/methods/get.png"/></td>
+  </tr>
+  <tr>
+    <th>PUT/POST data</th>
+    <td>None</td>
+  </tr>
+  <tr>
+    <th>Valid HTTP Response</th>
+    <td>{"status_code": 200, "reason_phrase": "OK", "data": {"id": 1, "client": {"id": 1, "name": "Foster Farms Dairy", "join_date": "2018-05-25", "inactive_date": "2100-12-31"}, "recorded_by": "vet", "inspection_time": "2015-01-01T03:53:00-08:00", "cow": {"id": 1, "rfid": "53769440-0848-46e1-bfe5-449e42ee4fa2", "client": {"id": 1, "name": "Foster Farms Dairy", "join_date": "2018-05-25", "inactive_date": "2100-12-31"}, "purchased_by": "foster", "purchase_date": "2014-12-31", "age": {"id": 1, "name": "1 year"}, "breed": {"id": 1, "name": "Holstein", "url": "/static/images/breeds/holstein.png"}, "color": {"id": 1, "name": "black_white"}, "sell_date": "2100-12-31", "link": "/assets/api/cows/1/"}, "temperature": 100.6, "respiratory_rate": 26.2, "heart_rate": 82.9, "blood_pressure": 142.3, "weight": 512, "body_condition_score": 3.3, "status": {"id" :1, "name": "Healthy"}, "illness": null, "injury": null, "treatment": null, "vaccine": null, "link": "/assets/api/healthrecords/1/"}}</td>
+  </tr>
+  <tr>
+    <th>Invalid HTTP Response</th>
+    <td>{"status_code": 405, "reason_phrase": "Method Not Allowed"}</td>
+  </tr>
+  <tr>
+    <th>Action</th>
+    <td>Update a HealthRecord object</td>
+  </tr>
+  <tr>
+    <th>URL Path</th>
+    <td>/assets/api/healthrecords/1/</td>
+  </tr>
+  <tr>
+    <th>HTTP Method</th>
+    <td><img width="60" src="/static/images/methods/put.png"/></td>
+  </tr>
+  <tr>
+    <th>PUT/POST data</th>
+    <td>{"id": 21, "client": "Berkeley Farms", "cow": "6b5900fc-6751-4fc4-822b-1627bd3ab53f", "recorded_by": "vet", "inspection_time": "2015-01-01T03:53:00-08:00", "status": "Viral Illness", "illness": "MAP", "vaccine": "MAP vaccine"}
+  </tr>
+  <tr>
+    <th>Valid HTTP Response</th>
+    <td>{"status_code": 200, "reason_phrase": "OK", "data": {"id": 21, "client": {"id": 2, "name": "Berkeley Farms", "join_date": "2018-05-25", "inactive_date": "2100-12-31"}, "recorded_by": "vet", "inspection_time": "2015-01-01T03:53:00-08:00", "cow": {"id": 131, "rfid": "6b5900fc-6751-4fc4-822b-1627bd3ab53f", "client": {"id": 2, "name": "Berkeley Farms", "join_date": "2018-05-25", "inactive_date": "2100-12-31"}, "purchased_by": "berkeley", "purchase_date": "2014-12-31", "age": {"id": 4, "name": "4 years"}, "breed": {"id": 1, "name": "Holstein", "url": "/static/images/breeds/holstein.png"}, "color": {"id": 1, "name": "black_white"}, "sell_date": "2100-12-31", "link": "/assets/api/cows/131/"}, "temperature": 101.4, "respiratory_rate": 31.5, "heart_rate": 50.5, "blood_pressure": 149.5, "weight": 470, "body_condition_score": 3.4, "status": {"id": 4, "name": "Viral Illness"}, "illness": {"id": 5, "diagnosis": "MAP", "treatment": "feed antimicrobials"}, "injury": null, "treatment": null, "vaccine": {"id": 2, "name": "MAP vaccine"}, "link":"/assets/api/healthrecords/21/"}}</td>
+  </tr>
+  <tr>
+    <th>Invalid HTTP Response</th>
+    <td><code>{"status_code": 404, "reason_phrase": "Not Found", "content": "{'detail': 'Not found.'}"}</code><p></p><code>{"status_code": 400, "reason_phrase": "Bad Request", "content": "{'client': ['This field is required.'], 'recorded_by': ['This field is required.'], 'cow': ['This field is required.'], 'inspection_time': ['This field is required.'], 'temperature': ['This field is required.'], 'temperature': ['This field is required.'], 'respiratory_rate': ['This field is required.'], 'heart_rate': ['This field is required.'], 'blood_pressure': ['This field is required.'], 'weight': ['This field is required.'], 'body_condition_score': ['This field is required.'], 'status': ['This field is required.']}"</code></td>
+  </tr>
+</table><p></p></div>
 
 <div id="ui" style="text-align: left">
 <h2>7. UI Design</h2><p></p>

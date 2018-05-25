@@ -6,7 +6,7 @@
     </tr>
 </table>
 
-<h2>{{inspect_header}}</h2>
+<h2>{{update_header}}</h2>
 <form ng-if="hr" action="{% url 'assets:healthrecord-detail' hr.id %}" method="put">
     <table>
         <tr>
@@ -55,44 +55,41 @@
         <tr>
             <th>Status:</th>
             <td>
-                <select ng-model="selectedStatus"
-                        ng-options="status.name for status in statuses">
+                <select ng-init="selectedStatus=globals.statuses[0].name"
+                        ng-model="selectedStatus"
+                        ng-options="status.name for status in globals.statuses">
                 </select>
             </td>
         </tr>
         <tr>
             <th>Illness:</th>
             <td>
-                <select ng-init="selectedIllness==hr.illness.diagnosis || ''"
-                        ng-model="selectedIllness"
-                        ng-options="illness.diagnosis for illness in illnesses">
+                <select ng-model="selectedIllness"
+                        ng-options="illness.diagnosis for illness in globals.illnesses">
                 </select>
             </td>
         </tr>
         <tr>
             <th>Injury:</th>
             <td>
-                <select ng-init="selectedInjury==hr.injury.diagnosis || ''"
-                        ng-model="selectedInjury"
-                        ng-options="injury.diagnosis for injury in injuries">
+                <select ng-model="selectedInjury"
+                        ng-options="injury.diagnosis for injury in globals.injuries">
                 </select>
             </td>
         </tr>
         <tr>
             <th>Treatment:</th>
             <td>
-                <select ng-init="selectedTreatment==hr.treatment.name || ''"
-                        ng-model="selectedTreatment"
-                        ng-options="treatment.name for treatment in treatments">
+                <select ng-model="selectedTreatment"
+                        ng-options="treatment.name for treatment in globals.treatments">
                 </select>
             </td>
         </tr>
         <tr>
             <th>Vaccine:</th>
             <td>
-                <select ng-init="selectedVaccine==hr.vaccine.name || ''"
-                        ng-model="selectedVaccine"
-                        ng-options="vaccine.name for vaccine in vaccines">
+                <select ng-model="selectedVaccine"
+                        ng-options="vaccine.name for vaccine in globals.vaccines">
                 </select>
             </td>
         </tr>
@@ -178,6 +175,3 @@
     <td>{{hr.vaccine.name}}</td>
   </tr>
 </table>
-
-<p/>
-<img src="{{hr.cow.breed.url}}" alt="Image failed to load" height="200" width="400">
