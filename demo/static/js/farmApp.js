@@ -69,10 +69,10 @@ farmApp.config(function ($routeProvider, $locationProvider) {
           templateUrl: "/static/templates/annual_report.html",
           controller: "AnnualSummaryByClientController"
     })
-    //.when("/summary/api/annual/client/:client/year/:year/", {
-    //      templateUrl: "/static/templates/annual_report.html",
-    //      controller: "AnnualSummaryByClientController"
-    //})
+    .when("/summary/api/annual/client/:client/year/:year/", {
+          templateUrl: "/static/templates/annual_report.html",
+          controller: "AnnualSummaryByClientController"
+    })
     .when("/summary/api/monthly/client/:client/year/:year/", {
           templateUrl: "/static/templates/annual_by_month_report.html",
           controller: "MonthlySummaryByClientController"

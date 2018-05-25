@@ -5,14 +5,14 @@
     "fields": {
         "client": 1,
         "created_by": 5,
-        "year": 2015,
-        "total_cows": 130,
-        "aged_cows": 26,
+        "year": 2016,
+        "total_cows": 260,
+        "aged_cows": 57,
         "pregnant_cows": 0,
-        "ill_cows": 22,
-        "injured_cows": 34,
-        "gallons_milk": 4532,
-        "link": "/summary/api/monthly/client/1/year/2015/"
+        "ill_cows": 334,
+        "injured_cows": 297,
+        "gallons_milk": 35483,
+        "link": "/summary/api/monthly/client/1/year/2016/"
     }
 },
 {
@@ -21,14 +21,14 @@
     "fields": {
         "client": 2,
         "created_by": 6,
-        "year": 2015,
-        "total_cows": 104,
-        "aged_cows": 17,
+        "year": 2016,
+        "total_cows": 208,
+        "aged_cows": 39,
         "pregnant_cows": 0,
-        "ill_cows": 39,
-        "injured_cows": 25,
-        "gallons_milk": 3497,
-        "link": "/summary/api/monthly/client/2/year/2015/"
+        "ill_cows": 246,
+        "injured_cows": 265,
+        "gallons_milk": 28475,
+        "link": "/summary/api/monthly/client/2/year/2016/"
     }
 },
 {
@@ -37,30 +37,14 @@
     "fields": {
         "client": 1,
         "created_by": 5,
-        "year": 2016,
-        "total_cows": 130,
-        "aged_cows": 26,
+        "year": 2015,
+        "total_cows": 260,
+        "aged_cows": 57,
         "pregnant_cows": 0,
-        "ill_cows": 40,
-        "injured_cows": 41,
-        "gallons_milk": 4470,
-        "link": "/summary/api/monthly/client/1/year/2016/"
-    }
-},
-{
-    "model": "summary.annual",
-    "pk": 4,
-    "fields": {
-        "client": 2,
-        "created_by": 6,
-        "year": 2016,
-        "total_cows": 104,
-        "aged_cows": 17,
-        "pregnant_cows": 0,
-        "ill_cows": 40,
-        "injured_cows": 41,
-        "gallons_milk": 3490,
-        "link": "/summary/api/monthly/client/2/year/2016/"
+        "ill_cows": 132,
+        "injured_cows": 141,
+        "gallons_milk": 17869,
+        "link": "/summary/api/monthly/client/1/year/2015/"
     }
 }
 ]

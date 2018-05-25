@@ -7,7 +7,7 @@
         "name": "North",
         "url": "/static/images/regions/north.jpg",
         "fallow": false,
-        "distance": 7,
+        "distance": 10,
         "link": "/assets/api/pastures/1/"
     }
 },
@@ -19,7 +19,7 @@
         "name": "West",
         "url": "/static/images/regions/west.jpg",
         "fallow": false,
-        "distance": 3,
+        "distance": 9,
         "link": "/assets/api/pastures/2/"
     }
 },
@@ -31,7 +31,7 @@
         "name": "South",
         "url": "/static/images/regions/south.jpg",
         "fallow": false,
-        "distance": 2,
+        "distance": 6,
         "link": "/assets/api/pastures/3/"
     }
 },
@@ -43,7 +43,7 @@
         "name": "East",
         "url": "/static/images/regions/east.jpg",
         "fallow": false,
-        "distance": 3,
+        "distance": 8,
         "link": "/assets/api/pastures/4/"
     }
 },
@@ -55,7 +55,7 @@
         "name": "Central North",
         "url": "/static/images/regions/central_north.jpg",
         "fallow": false,
-        "distance": 6,
+        "distance": 8,
         "link": "/assets/api/pastures/5/"
     }
 },
@@ -67,7 +67,7 @@
         "name": "Central West",
         "url": "/static/images/regions/central_west.jpg",
         "fallow": false,
-        "distance": 7,
+        "distance": 6,
         "link": "/assets/api/pastures/6/"
     }
 },
@@ -79,7 +79,7 @@
         "name": "Central South",
         "url": "/static/images/regions/central_south.jpg",
         "fallow": false,
-        "distance": 9,
+        "distance": 2,
         "link": "/assets/api/pastures/7/"
     }
 },
@@ -91,7 +91,7 @@
         "name": "Central East",
         "url": "/static/images/regions/central_east.jpg",
         "fallow": false,
-        "distance": 10,
+        "distance": 3,
         "link": "/assets/api/pastures/8/"
     }
 },
@@ -103,7 +103,7 @@
         "name": "North West",
         "url": "/static/images/regions/north_west.jpg",
         "fallow": false,
-        "distance": 2,
+        "distance": 10,
         "link": "/assets/api/pastures/9/"
     }
 },
@@ -115,7 +115,7 @@
         "name": "North East",
         "url": "/static/images/regions/north_east.jpg",
         "fallow": false,
-        "distance": 6,
+        "distance": 1,
         "link": "/assets/api/pastures/10/"
     }
 },
@@ -127,7 +127,7 @@
         "name": "South West",
         "url": "/static/images/regions/south_west.jpg",
         "fallow": true,
-        "distance": 6,
+        "distance": 7,
         "link": "/assets/api/pastures/11/"
     }
 },
@@ -139,7 +139,7 @@
         "name": "South East",
         "url": "/static/images/regions/south_east.jpg",
         "fallow": true,
-        "distance": 5,
+        "distance": 10,
         "link": "/assets/api/pastures/12/"
     }
 },
@@ -151,7 +151,7 @@
         "name": "Pen",
         "url": "/static/images/regions/pen.png",
         "fallow": true,
-        "distance": 5,
+        "distance": 2,
         "link": "/assets/api/pastures/13/"
     }
 },
@@ -163,7 +163,7 @@
         "name": "Lot_1",
         "url": "/static/images/regions/lot_1.png",
         "fallow": false,
-        "distance": 1,
+        "distance": 5,
         "link": "/assets/api/pastures/14/"
     }
 },
@@ -175,7 +175,7 @@
         "name": "Lot_2",
         "url": "/static/images/regions/lot_2.png",
         "fallow": false,
-        "distance": 2,
+        "distance": 9,
         "link": "/assets/api/pastures/15/"
     }
 },
@@ -187,7 +187,7 @@
         "name": "Lot_3",
         "url": "/static/images/regions/lot_3.png",
         "fallow": false,
-        "distance": 8,
+        "distance": 9,
         "link": "/assets/api/pastures/16/"
     }
 },
@@ -199,7 +199,7 @@
         "name": "Lot_4",
         "url": "/static/images/regions/lot_4.png",
         "fallow": false,
-        "distance": 6,
+        "distance": 3,
         "link": "/assets/api/pastures/17/"
     }
 },
@@ -211,7 +211,7 @@
         "name": "Lot_5",
         "url": "/static/images/regions/lot_5.png",
         "fallow": false,
-        "distance": 6,
+        "distance": 9,
         "link": "/assets/api/pastures/18/"
     }
 },
@@ -223,7 +223,7 @@
         "name": "Lot_6",
         "url": "/static/images/regions/lot_6.png",
         "fallow": false,
-        "distance": 10,
+        "distance": 1,
         "link": "/assets/api/pastures/19/"
     }
 },
@@ -235,7 +235,7 @@
         "name": "Lot_7",
         "url": "/static/images/regions/lot_7.png",
         "fallow": false,
-        "distance": 10,
+        "distance": 2,
         "link": "/assets/api/pastures/20/"
     }
 },
@@ -247,7 +247,7 @@
         "name": "Lot_8",
         "url": "/static/images/regions/lot_8.png",
         "fallow": false,
-        "distance": 3,
+        "distance": 10,
         "link": "/assets/api/pastures/21/"
     }
 },
@@ -259,7 +259,7 @@
         "name": "Lot_9",
         "url": "/static/images/regions/lot_9.png",
         "fallow": true,
-        "distance": 3,
+        "distance": 10,
         "link": "/assets/api/pastures/22/"
     }
 }

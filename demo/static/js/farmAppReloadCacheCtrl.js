@@ -2,7 +2,7 @@ farmApp.controller('ReloadCacheController',
   function($scope, $rootScope, $http, $routeParams, $location) {
       $scope.quiet = $routeParams.quiet;
       $scope.globals = null;
-      $scope.debug = false;
+      $scope.debug = true;
       console.log('Entered ReloadCacheController');
 
     $http({

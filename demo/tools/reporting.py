@@ -53,10 +53,9 @@ def generate_annual_report(data):
     else:
         exit('ERROR: AnnualWriteSerializer failed: '.format(aws.errors))
 
-def display_annual_report(year):
-    from django.db.models import Max
+def display_annual_report(client, year):
     from summary.models import Annual
-    print(Annual.objects.filter(year=year).aggregate(Max('id')))
+    print([ a.id for a in Annual.objects.filter(client=client, year=year)])
     return
 
 def generate_monthly_report(data):
@@ -69,11 +68,9 @@ def generate_monthly_report(data):
     else:
         exit('ERROR: MonthlyWriteSerializer failed: '.format(mws.errors))
 
-def display_monthly_report(year, month):
-    from django.db.models import Max
+def display_monthly_report(client, year, month):
     from summary.models import Monthly
-    print(Monthly.objects.filter(year=year,
-                                 month=month).aggregate(Max('id')))
+    print([ m.id for m in Monthly.objects.filter(client=client, year=year, month=month)])
     return
 
 def main():
@@ -85,15 +82,17 @@ def main():
     from django.contrib.auth.models import User
     from assets.models import Client
     user = User.objects.get(username=username)
+    client = Client.objects.get(user=user)
     data = {'created_by': username,
+            'client': client.name,
             'year': year} 
     if duration == 'annual':
         generate_annual_report(data)
-        display_annual_report(year)
+        display_annual_report(client.id, year)
     elif duration == 'monthly':
         data.update({'month': month}) 
         generate_monthly_report(data)
-        display_monthly_report(year, month)
+        display_monthly_report(client.id, year, month)
     return
 
 if __name__ == '__main__':

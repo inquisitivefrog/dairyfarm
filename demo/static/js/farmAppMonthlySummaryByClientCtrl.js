@@ -12,7 +12,6 @@ farmApp.controller('MonthlySummaryByClientController',
                         + $scope.client + "/";
 
         $scope.rows = [];
-        $scope.total = null;
         console.log('Entered MonthlySummaryByClientController');
 
         $scope.globals = $rootScope.globals;

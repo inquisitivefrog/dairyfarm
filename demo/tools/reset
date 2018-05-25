@@ -8,39 +8,122 @@ export STIME=`date`
 clean_up
 start_fresh
 load_dependencies
+# 2015
 purchase_cows foster 2014-12-31 10
 purchase_cows berkeley 2014-12-31 8
 seed_pastures Spring foster 2015
 seed_pastures Spring berkeley 2015
-fallow_pastures foster
-fallow_pastures berkeley 
+fallow_pastures foster 2015
+fallow_pastures berkeley 2015
 generate_daily_activity vet 2015-01-01
 generate_daily_activity vet 2015-02-01
 generate_daily_activity vet 2015-03-01
 reporting monthly foster 2015 01
-reporting monthly berkeley 2015 01
 reporting monthly foster 2015 02
-reporting monthly berkeley 2015 02
 reporting monthly foster 2015 03
+reporting monthly berkeley 2015 01
+reporting monthly berkeley 2015 02
 reporting monthly berkeley 2015 03
+purchase_cows foster 2015-03-31 10
+purchase_cows berkeley 2015-03-31 8
+seed_pastures Summer foster 2015
+seed_pastures Summer berkeley 2015
+generate_daily_activity vet 2015-04-01
+generate_daily_activity vet 2015-05-01
+generate_daily_activity vet 2015-06-01
+reporting monthly foster 2015 04
+reporting monthly foster 2015 05
+reporting monthly foster 2015 06
+reporting monthly berkeley 2015 04
+reporting monthly berkeley 2015 05
+reporting monthly berkeley 2015 06
+purchase_cows foster 2015-06-30 10
+purchase_cows berkeley 2015-06-30 8
+seed_pastures Autumn foster 2015
+seed_pastures Autumn berkeley 2015
+generate_daily_activity vet 2015-07-01
+generate_daily_activity vet 2015-08-01
+generate_daily_activity vet 2015-09-01
+reporting monthly foster 2015 07
+reporting monthly foster 2015 08
+reporting monthly foster 2015 09
+reporting monthly berkeley 2015 07
+reporting monthly berkeley 2015 08
+reporting monthly berkeley 2015 09
+purchase_cows foster 2015-09-30 10
+purchase_cows berkeley 2015-09-30 8
+seed_pastures Winter foster 2015
+seed_pastures Winter berkeley 2015
+generate_daily_activity vet 2015-10-01
+generate_daily_activity vet 2015-11-01
+generate_daily_activity vet 2015-12-01
+reporting monthly foster 2015 10
+reporting monthly foster 2015 11
+reporting monthly foster 2015 12
+reporting monthly berkeley 2015 10
+reporting monthly berkeley 2015 11
+reporting monthly berkeley 2015 12
 reporting annual foster 2015
 reporting annual berkeley 2015
+# 2016
+purchase_cows foster 2015-12-31 10
+purchase_cows berkeley 2015-12-31 8
 seed_pastures Spring foster 2016
 seed_pastures Spring berkeley 2016
+fallow_pastures foster 2016
+fallow_pastures berkeley 2016
 generate_daily_activity vet 2016-01-01
 generate_daily_activity vet 2016-02-01
 generate_daily_activity vet 2016-03-01
 reporting monthly foster 2016 01
-reporting monthly berkeley 2016 01
 reporting monthly foster 2016 02
-reporting monthly berkeley 2016 02
 reporting monthly foster 2016 03
+reporting monthly berkeley 2016 01
+reporting monthly berkeley 2016 02
 reporting monthly berkeley 2016 03
+purchase_cows foster 2016-03-31 10
+purchase_cows berkeley 2016-03-31 8
+seed_pastures Summer foster 2016
+seed_pastures Summer berkeley 2016
+generate_daily_activity vet 2016-04-01
+generate_daily_activity vet 2016-05-01
+generate_daily_activity vet 2016-06-01
+reporting monthly foster 2016 04
+reporting monthly foster 2016 05
+reporting monthly foster 2016 06
+reporting monthly berkeley 2016 04
+reporting monthly berkeley 2016 05
+reporting monthly berkeley 2016 06
+purchase_cows foster 2016-06-30 10
+purchase_cows berkeley 2016-06-30 8
+seed_pastures Autumn foster 2016
+seed_pastures Autumn berkeley 2016
+generate_daily_activity vet 2016-07-01
+generate_daily_activity vet 2016-08-01
+generate_daily_activity vet 2016-09-01
+reporting monthly foster 2016 07
+reporting monthly foster 2016 08
+reporting monthly foster 2016 09
+reporting monthly berkeley 2016 07
+reporting monthly berkeley 2016 08
+reporting monthly berkeley 2016 09
+purchase_cows foster 2016-09-30 10
+purchase_cows berkeley 2016-09-30 8
+seed_pastures Winter foster 2016
+seed_pastures Winter berkeley 2016
+generate_daily_activity vet 2016-10-01
+generate_daily_activity vet 2016-11-01
+generate_daily_activity vet 2016-12-01
+reporting monthly foster 2016 10
+reporting monthly foster 2016 11
+reporting monthly foster 2016 12
+reporting monthly berkeley 2016 10
+reporting monthly berkeley 2016 11
+reporting monthly berkeley 2016 12
 reporting annual foster 2016
 reporting annual berkeley 2016
 preserve_reference_data
-#test
-
+test
 export ETIME=`date`
 echo started $STIME
 echo finished $ETIME

@@ -1,7 +1,7 @@
 <div id="arch" style="text-align: left">
 <h2>3. System Architecture</h2><p></p><div style="text-align: left">
 <h3>3.1 Architectural Design</h3><p></p><p>
-<img width="25%" src="/static/images/docs/farmApp_architecture.png"/><p></p>
+<img width="50%" src="/static/images/docs/farmApp_architecture.png"/><p></p>
 <h3>3.2 Design Considerations</h3><p></p><p><ul>
 <li>PostgreSQL will be the only source of truth providing near-instant data replication with a master-slave configuration</li>
 <li>All PostgreSQL table rows will be accessible by key id except Cow table which will reference key rfid, of type UUID</li>

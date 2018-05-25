@@ -1,63 +1,201 @@
-<h1 style="text-align: center">Summary Design Document</h1><p></p>
-<div id="contents" class="contents">
+<h1 style="text-align: center">Reporting Design Document</h1><p></p>
+<div id="contents" style="text-align: left">
 <h2>Contents</h2><p></p><div><ul style="text-align: left">
 <h4><li><span>1</span>
-<span><a href=//localhost:8000/static/html/dd.html#intro>Introduction</a></span></li>
+<span><a href="{{path}}#intro">Introduction</a></span></li>
 <li><span>2</span>
-<span><a href=//localhost:8000/static/html/dd.html#overview>System Overview</a></span></li>
+<span><a href="{{path}}#overview">System Overview</a></span></li>
 <li><span>3</span>
-<span><a href=//localhost:8000/static/html/dd.html#arch>System Architecture</a></span></li>
+<span><a href="{{path}}#arch">System Architecture</a></span></li>
 <li><span>4</span>
-<span><a href=//localhost:8000/static/html/dd.html#component>Component Design</a></span></li>
+<span><a href="{{path}}#component">Component Design</a></span></li>
 <li><span>5</span>
-<span><a href=//localhost:8000/static/html/dd.html#data>Data Design</a></span></li>
+<span><a href="{{path}}#data">Data Design</a></span></li>
 <li><span>6</span>
-<span><a href=//localhost:8000/static/html/dd.html#api>API Design</a></span></li>
+<span><a href="{{path}}#api">API Design</a></span></li>
 <li><span>7</span>
-<span><a href=//localhost:8000/static/html/dd.html#ui>UI Design</a></span></li>
+<span><a href="{{path}}#ui">UI Design</a></span></li>
 <li><span>8</span>
-<span><a href=//localhost:8000/static/html/dd.html#reqs>Requirements Matrix</a></span></li>
-<li><span>9</span>
-<span><a href=//localhost:8000/static/html/dd.html#appendix>Appendix</a></span></li>
+<span><a href="{{path}}#appendix">Appendix</a></span></li>
 </ul></h4></div>
 
 <div id="intro"><h2>Introduction</h2><p></p>
 <h3>Purpose</h3><p></p><p>
-Nature v1.0 is an inventory management system for the dairy farming market segment.  The Assets feature will consist of a user credential protected UI that interacts with a service that manages user registration, asset 
 
-Nature will consist of next generation AMP collection of tools for managing social media advertising.   The Onboard feature will be a UI that interacts with a service that manages mappings between Agencies, Users, Partners and Initiatives enabling registration and management of all publishers from the same tool.   This is similar to the earlier AMP feature: Client Onboarding. 
+<div id="intro" style="text-align: left">
+<h2>1. Introduction</h2><p></p><div><ul style="text-align: left">
+<h3>1.1 Purpose</h3><p></p><p>
+Nature v1.0 is an inventory management system for the dairy farming market segment.  The Reporting feature will consist of a user credential protected UI that interacts with a service that manages aggregates dairy farm performance monthly and annually. 
 </p><p></p>
-<h3>Scope</h3><p></p><p>
+<h3>1.2 Scope</h3><p></p><p>
+Two tools will be developed.  A CLI tool for rapid creation of new report objects for load testing and a UI tool for display of all report objects.
+</p><p>
+<h4>1.2.1 Back-end Perspective</h4>
+</p><p>
+Reporting consist of the following objects: Annual and Monthly but aggregates sequences of these Asset objects: Cow, HealthRecord, and Milk.  Each Report is mapped to 1:1 Client objects and either 1:1 User objects or 1:1 User and 1:1 Cow objects.
+</p><p>
+<h4>1.2.2 Front-end Perspective</h4>
+</p><p>
+User login by username/password enables access to client mapped objects in all other pages.
+Client User login loads a landing page listing current year assets with menu selection of other time periods or access to management of other assets.
 </p><p></p>
-<h3>References</h3><p></p><p>
-</p><p></div>
+<h3>1.3 References</h3><p></p><p>
+<ul><li><a href="#/docs/mrd/">Nature Dairy Farm MRD</a></li></ul>
+</p><p></div></div>
 
-<div id="overview"><h2>System Overview</h2><p></p>
+<div id="overview" style="text-align: left">
+<h2>2. System Overview</h2><p></p><div><ul style="text-align: left">
+The reporting service is a web service that provides</p><ul>
+<li>CRUD operations on Annual objects</li><ul>
+<li>look up multiple years of farm activity</li>
+<li>aggregation of a single year of farm activity</li>
+<li>look up a single year of farm activity</li></ul>
+<li>CRUD operations on Monthly objects</li><ul>
+<li>aggregation of a single month of farm activity</li>
+<li>look up of a single month of farm activity</li></ul>
+</ul>
+<p></p></div></div>
+
+<div id="arch" style="text-align: left">
+<h2>3. System Architecture</h2><p></p><div style="text-align: left">
+<h3>3.1 Architectural Design</h3><p></p><p>
+<img width="50%" src="/static/images/docs/farmApp_architecture.png"/><p></p>
+<h3>3.2 Design Considerations</h3><p></p><p><ul>
+<li>PostgreSQL will be the only source of truth providing near-instant data replication with a master-slave configuration</li>
+<li>All PostgreSQL table rows will be accessible by key id except Cow table which will reference key rfid, of type UUID</li>
+<li>No PostgreSQL table data will ever be deleted but unwanted records will be tagged by date or deleted field to remove from regular search</li>
+<li>Commonly requested data will be cached in Redis</li>
+<li>Summary reporting will assume low volume single day row creation so table rows will be accessible by keys year, month and id</li>
+<li>Because disk space is cheap even when rented and historic data must be preserved for the Summary reporting web service, each table will include a delete column with a boolean value rather than actually deleting a table row</li>
+</ul></div></div>
+
+<div id="component" style="text-align: left">
+<h2>4. Component Design</h2><p></p><div style="text-align: left">
+<img width="50%" src="/static/images/docs/summary_components.png"/><p></p></div></div>
+
+<div id="data" style="text-align: left">
+<h2>5. Data Design</h2><p></p><div style="text-align: left">
+<h3>5.1 UML Diagram</h3><p></p>
+<img width="50%" src="/static/images/docs/summary_UML.png"/><p></p>
+<h3>5.2 RDBMS Data Description</h3><p></p>
+<img width="50%" src="/static/images/docs/summary_ERD.png"/><p></p></div></div>
+
+<div id="api" style="text-align: left">
+<h2>6. API Design</h2><p></p>
+<h3>6.1 Reference Data</h3><p></p>
+<h3>6.2 Dynamic Data</h3><p></p>
+<h4>6.2.1 Annual</h4><p></p>
+<table class="left">
+  <tr>
+    <th>Action</th>
+    <td>List all Annual objects</td>
+  </tr>
+  <tr>
+    <th>URL Path</th>
+    <td>/summary/api/annual/client/1/</td>
+  </tr>
+  <tr>
+    <th>HTTP Method</th>
+    <td><img width="60" src="/static/images/methods/get.png"/></td>
+  </tr>
+  <tr>
+    <th>PUT/POST data</th>
+    <td>None</td>
+  </tr>
+  <tr>
+    <th>Valid HTTP Response</th>
+    <td>{"status_code": 200, "reason_phrase": "OK", "data": [{"id":1,"client":"Foster Farms Dairy","created_by":"foster","year":2015,"total_cows":130,"aged_cows":26,"pregnant_cows":0,"ill_cows":22,"injured_cows":34,"gallons_milk":4532,"link":"/summary/api/monthly/client/1/year/2015/"},{"id":3,"client":"Foster Farms Dairy","created_by":"foster","year":2016,"total_cows":130,"aged_cows":26,"pregnant_cows":0,"ill_cows":40,"injured_cows":41,"gallons_milk":4470,"link":"/summary/api/monthly/client/1/year/2016/"}]}</td>
+  </tr>
+  <tr>
+    <th>Invalid HTTP Response</th>
+    <td>{"status_code": 405, "reason_phrase": "Method Not Allowed"}</td>
+  </tr>
+  <tr>
+    <th>HTTP Method</th>
+    <td><img width="60" src="/static/images/methods/post.png"/></td>
+  </tr>
+  <tr>
+    <th>PUT/POST data</th>
+    <td>{"rfid": "6f26758c-dc19-4a99-b708-f3f7b0eda66c", "client": "Clover Dairy LTD", "purchased_by": "farmer", "purchase_date": "2015-01-02", "breed": "Holstein", "color": "black_white", "age": "3 years"}</td>
+  </tr>
+  <tr>
+    <th>Valid HTTP Response</th>
+    <td>{"status_code": 200, "reason_phrase": "OK", "data": {"count": 1, "prev": null, "next": null, results: [{"id": 1, "rfid": "6f26758c-dc19-4a99-b708-f3f7b0eda66c", "purchased_by": {"id": 1, "username": "farmer", "first_name": "old", "last_name": "mcdonald", "email": "farmer@dairyfarm.org"}, "client": {"id": 1, "name": "Clover Dairy LTD", "join_date": "2015-01-01"}, "purchase_date": "2015-01-02", "sell_date": "2100-12-31", "breed": {"id": 1, "name": "Holstein", "url": "/static/images/breeds/holstein.png"}, "color": {"id", "name": "black_white"}, "age": {"id": 3, "3 years"}}]}}</td>
+  </tr>
+  <tr>
+    <th>Invalid HTTP Response</th>
+    <td><code>{"status_code": 404, "reason_phrase": "Not Found", "content": "{'detail': 'Not found.'}"}</code><p></p><code>{"status_code": 400, "reason_phrase": "Bad Request", "content": "{'purchased_by': ['This field is required.'], 'purchase_date': ['This field is required.'], 'age': ['This field is required.'], 'color': ['This field is required.'], 'client': ['This field is required.']}"}</code></td>
+  </tr>
+  <tr>
+    <th>Action</th>
+    <td>Retrieve an Annual object</td>
+  </tr>
+  <tr>
+    <th>URL Path</th>
+    <td>/summary/api/annual/1/</td>
+  </tr>
+  <tr>
+    <th>HTTP Method</th>
+    <td><img width="60" src="/static/images/methods/get.png"/></td>
+  </tr>
+  <tr>
+    <th>PUT/POST data</th>
+    <td>None</td>
+  </tr>
+  <tr>
+    <th>Valid HTTP Response</th>
+    <td>{"status_code": 200, "reason_phrase": "OK", "data": {"count": 1, "prev": null, "next": null, results: [{"id": 1, "rfid": "6f26758c-dc19-4a99-b708-f3f7b0eda66c", "purchased_by": {"id": 1, "username": "farmer", "first_name": "old", "last_name": "mcdonald", "email": "farmer@dairyfarm.org"}, "client": {"id": 1, "name": "Clover Dairy LTD", "join_date": "2015-01-01"}, "purchase_date": "2015-01-02", "sell_date": "2100-12-31", "breed": {"id": 1, "name": "Holstein", "url": "/static/images/breeds/holstein.png"}, "color": {"id": 1, "name": "black_white"}, "age": {"id": 3, "3 years"}}]}}</td>
+  </tr>
+  <tr>
+    <th>Invalid HTTP Response</th>
+    <td>{"status_code": 405, "reason_phrase": "Method Not Allowed"}</td>
+  </tr>
+  <tr>
+    <th>Action</th>
+    <td>Update an Annual object</td>
+  </tr>
+  <tr>
+    <th>URL Path</th>
+    <td>/summary/api/annual/1/</td>
+  </tr>
+  <tr>
+    <th>HTTP Method</th>
+    <td><img width="60" src="/static/images/methods/put.png"/></td>
+  </tr>
+  <tr>
+    <th>PUT/POST data</th>
+    <td>{"id": 1, "rfid": "6f26758c-dc19-4a99-b708-f3f7b0eda66c", "purchased_by": "farmhand", "client": "Clover Dairy LTD", "purchase_date": "2015-01-02", "breed": "Guernsey", "color": "tawny", "age": "3 years"}</td>
+  </tr>
+  <tr>
+    <th>Valid HTTP Response</th>
+    <td>{"status_code": 200, "reason_phrase": "OK", "data": {"count": 1, "prev": null, "next": null, results: [{"id": 1, "rfid": "6f26758c-dc19-4a99-b708-f3f7b0eda66c", "purchased_by": {"id": 1, "username": "farmer", "first_name": "old", "last_name": "mcdonald", "email": "farmer@dairyfarm.org"}, "client": {"id": 1, "name": "Clover Dairy LTD", "join_date": "2015-01-01"}, "purchase_date": "2015-01-02", "sell_date": "2100-12-31", "breed": {"id": 2, "name": "Guernsey", "url": "/static/images/breeds/guernsey.png"}, "color": {"id": 3, "name": "tawny"}, "age": {"id": 3, "3 years"}}]}}</td>
+  </tr>
+  <tr>
+    <th>Invalid HTTP Response</th>
+    <td><code>{"status_code": 404, "reason_phrase": "Not Found", "content": "{'detail': 'Not found.'}"}</code><p></p><code>{"status_code": 400, "reason_phrase": "Bad Request", "content": "{'purchased_by': ['This field is required.'], 'purchase_date': ['This field is required.'], 'age': ['This field is required.'], 'color': ['This field is required.'], 'client': ['This field is required.']}"}</code></td>
+  </tr>
+</table><p></p>
+
+<div id="ui" style="text-align: left">
+<h2>7. UI Design</h2><p></p>
+<h3>7.1 SPA Framework</h3>
+<img width="80%" src="/static/images/docs/spa_framework.png"/><p></p>
+<h3>7.2 Summary List all Reports</h3>
+<img width="80%" src="/static/images/docs/spa_list_reports.png"/><p></p>
+<h3>7.3 Summary Refresh an existing Report</h3>
+<img width="80%" src="/static/images/docs/spa_refresh_report.png"/><p>
 </p><p></p></div>
 
-<div id="arch"><h2>System Architecture</h2><p></p>
-<h3>Architectural Design</h3><p></p><p>
-<img width="750" src="https://www.lucidchart.com/publicSegments/view/033d7d2c-b642-48be-adc6-49e8529dd7c3/image.png"/><p></p>
-<h3>Design Considerations</h3><p></p><p>
-</p><p></p></div>
+<div id="appendix"><h2>8. Appendix</h2><p></p>
+<table>
+  <tr>
+    <th>Word or Phrase</th>
+    <th>Definition</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+</div>
 
-<div id="component"><h2>Component Design</h2><p></p>
-</p><p></p></div>
-
-<div id="data"><h2>Data Design</h2><p></p>
-<h3>RDBMS Data Description</h3><p></p><p>
-</p><p></p>
-<h3>Data Integration</h3><p></p><p>
-</p><p></p></div>
-
-<div id="api"><h2>API Design</h2><p></p>
-</p><p></p></div>
-
-<div id="ui"><h2>UI Design</h2><p></p>
-</p><p></p></div>
-
-<div id="reqs"><h2>Requirements Matrix</h2><p></p>
-</p><p></p></div>
-
-<div id="appendix"><h2>Appendix</h2><p></p>
-</p><p></p></div>
