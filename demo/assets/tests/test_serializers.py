@@ -39,8 +39,8 @@ class TestActionSerializer(APITestCase):
 
     def test_00_load_fixtures(self):
         actions = Action.objects.all()
-        self.assertEqual(17,
-                         len(actions))
+        self.assertLessEqual(17,
+                             len(actions))
 
     def test_01_create(self):
         actual = ActionSerializer(data=self.action_data)
@@ -127,8 +127,8 @@ class TestAgeSerializer(APITestCase):
 
     def test_00_load_fixtures(self):
         ages = Age.objects.all()
-        self.assertEqual(5,
-                         len(ages))
+        self.assertLessEqual(5,
+                             len(ages))
 
     def test_01_create(self):
         actual = AgeSerializer(data=self.age_data)
@@ -214,8 +214,8 @@ class TestBreedSerializer(APITestCase):
 
     def test_00_load_fixtures(self):
         breeds = Breed.objects.all()
-        self.assertEqual(7,
-                         len(breeds))
+        self.assertLessEqual(7,
+                             len(breeds))
 
     def test_01_create(self):
         actual = BreedSerializer(data=self.breed_data)
@@ -308,7 +308,7 @@ class TestBreedSerializer(APITestCase):
 
 class TestClientSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['client']
+    fixtures = ['user', 'client']
 
     def setUp(self):
         self._load_client_data()
@@ -317,13 +317,16 @@ class TestClientSerializer(APITestCase):
         self.client_data = None
 
     def _load_client_data(self):
-        self.client_data = {'name': TestData.get_random_client(),
+        username = TestData.get_random_user()
+        user = User.objects.get(username=username)
+        self.client_data = {'user': TestData.get_random_user(),
+                            'name': TestData.get_random_client(),
                             'join_date': TestTime.get_date()}
 
     def test_00_load_fixtures(self):
         clients = Client.objects.all()
-        self.assertEqual(5,
-                         len(clients))
+        self.assertLessEqual(5,
+                             len(clients))
 
     def test_01_create(self):
         actual = ClientSerializer(data=self.client_data)
@@ -381,6 +384,7 @@ class TestClientSerializer(APITestCase):
         for i in range(expected):
             self._load_client_data()
             self.client_data.update({'name': '{} {}'.format(self.client_data['name'], i)})
+            self.client_data.update({'user': User.objects.get(username=self.client_data['user'])})
             client = Client.objects.create(**self.client_data)
             clients.append(client)
         actual = ClientSerializer(clients,
@@ -430,8 +434,8 @@ class TestCerealHaySerializer(APITestCase):
 
     def test_00_load_fixtures(self):
         cereals = CerealHay.objects.all()
-        self.assertEqual(5,
-                         len(cereals))
+        self.assertLessEqual(5,
+                             len(cereals))
 
     def test_01_create(self):
         actual = CerealHaySerializer(data=self.cereal_data)
@@ -516,8 +520,8 @@ class TestGrassHaySerializer(APITestCase):
 
     def test_00_load_fixtures(self):
         grasses = GrassHay.objects.all()
-        self.assertEqual(9,
-                         len(grasses))
+        self.assertLessEqual(9,
+                             len(grasses))
 
     def test_01_create(self):
         actual = GrassHaySerializer(data=self.grass_data)
@@ -604,8 +608,8 @@ class TestIllnessSerializer(APITestCase):
 
     def test_00_load_fixtures(self):
         illnesses = Illness.objects.all()
-        self.assertEqual(15,
-                         len(illnesses))
+        self.assertLessEqual(15,
+                             len(illnesses))
 
     def test_01_create(self):
         actual = IllnessSerializer(data=self.illness_data)
@@ -718,8 +722,8 @@ class TestInjurySerializer(APITestCase):
 
     def test_00_load_fixtures(self):
         injuries = Injury.objects.all()
-        self.assertEqual(5,
-                         len(injuries))
+        self.assertLessEqual(5,
+                             len(injuries))
 
     def test_01_create(self):
         actual = InjurySerializer(data=self.injury_data)
@@ -830,8 +834,8 @@ class TestLegumeHaySerializer(APITestCase):
 
     def test_00_load_fixtures(self):
         legumes = LegumeHay.objects.all()
-        self.assertEqual(6,
-                         len(legumes))
+        self.assertLessEqual(6,
+                             len(legumes))
 
     def test_01_create(self):
         actual = LegumeHaySerializer(data=self.legume_data)
@@ -902,7 +906,7 @@ class TestLegumeHaySerializer(APITestCase):
 
 class TestPastureReadSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['client', 'pasture']
+    fixtures = ['user', 'client', 'pasture']
 
     def setUp(self):
         self._load_pasture_data()
@@ -920,12 +924,15 @@ class TestPastureReadSerializer(APITestCase):
                              'distance': randint(1, 12)}
 
     def test_00_load_fixtures(self):
+        users = User.objects.all()
+        self.assertLessEqual(5,
+                             len(users))
         clients = Client.objects.all()
-        self.assertEqual(5,
-                         len(clients))
+        self.assertLessEqual(5,
+                             len(clients))
         fields = Pasture.objects.all()
-        self.assertEqual(13,
-                         len(fields))
+        self.assertLessEqual(13,
+                             len(fields))
 
     def test_01_retrieve(self):
         pasture = Pasture.objects.get(id=1)
@@ -970,7 +977,7 @@ class TestPastureReadSerializer(APITestCase):
 
 class TestPastureWriteSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['client', 'pasture']
+    fixtures = ['user', 'client', 'pasture']
 
     def setUp(self):
         self._load_pasture_data()
@@ -989,12 +996,15 @@ class TestPastureWriteSerializer(APITestCase):
                              'distance': randint(1, 12)}
 
     def test_00_load_fixtures(self):
+        users = User.objects.all()
+        self.assertLessEqual(5,
+                             len(users))
         clients = Client.objects.all()
-        self.assertEqual(5,
-                         len(clients))
+        self.assertLessEqual(5,
+                             len(clients))
         fields = Pasture.objects.all()
-        self.assertEqual(13,
-                         len(fields))
+        self.assertLessEqual(13,
+                             len(fields))
 
     def test_01_create(self):
         actual = PastureWriteSerializer(data=self.pasture_data)
@@ -1105,8 +1115,8 @@ class TestSeasonSerializer(APITestCase):
 
     def test_00_load_fixtures(self):
         seasons = Season.objects.all()
-        self.assertEqual(4,
-                         len(seasons))
+        self.assertLessEqual(4,
+                             len(seasons))
 
     def test_01_create(self):
         actual = SeasonSerializer(data=self.season_data)
@@ -1439,7 +1449,7 @@ class TestVaccineSerializer(APITestCase):
 
 class TestCowReadSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow']
+    fixtures = ['age', 'breed', 'user', 'color', 'client', 'cow']
 
     def setUp(self):
         self._load_model_data()
@@ -1467,20 +1477,20 @@ class TestCowReadSerializer(APITestCase):
 
     def test_00_load_fixtures(self):
         ages = Age.objects.all()
-        self.assertEqual(5,
-                         len(ages))
+        self.assertLessEqual(5,
+                             len(ages))
         breeds = Breed.objects.all()
-        self.assertEqual(7,
-                         len(breeds))
+        self.assertLessEqual(7,
+                             len(breeds))
         clients = Client.objects.all()
-        self.assertEqual(5,
-                         len(clients))
+        self.assertLessEqual(5,
+                             len(clients))
         colors = Color.objects.all()
-        self.assertEqual(9,
-                         len(colors))
+        self.assertLessEqual(9,
+                             len(colors))
         users = User.objects.all()
-        self.assertEqual(4,
-                         len(users))
+        self.assertLessEqual(4,
+                             len(users))
         herd = Cow.objects.all()
         self.assertLessEqual(10,
                              len(herd))
@@ -1532,7 +1542,7 @@ class TestCowReadSerializer(APITestCase):
 
 class TestCowWriteSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow']
+    fixtures = ['age', 'breed', 'user', 'color', 'client', 'cow']
 
     def setUp(self):
         self._load_cow_data()
@@ -1560,20 +1570,20 @@ class TestCowWriteSerializer(APITestCase):
 
     def test_00_load_fixtures(self):
         ages = Age.objects.all()
-        self.assertEqual(5,
-                         len(ages))
+        self.assertLessEqual(5,
+                             len(ages))
         breeds = Breed.objects.all()
-        self.assertEqual(7,
-                         len(breeds))
+        self.assertLessEqual(7,
+                             len(breeds))
         clients = Client.objects.all()
-        self.assertEqual(5,
-                         len(clients))
+        self.assertLessEqual(5,
+                             len(clients))
         colors = Color.objects.all()
-        self.assertEqual(9,
-                         len(colors))
+        self.assertLessEqual(9,
+                             len(colors))
         users = User.objects.all()
-        self.assertEqual(4,
-                         len(users))
+        self.assertLessEqual(4,
+                             len(users))
         herd = Cow.objects.all()
         self.assertLessEqual(10,
                              len(herd))
@@ -1679,7 +1689,7 @@ class TestCowWriteSerializer(APITestCase):
 
 class TestEventReadSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow', 'action', 'event']
+    fixtures = ['age', 'breed', 'user', 'color', 'client', 'cow', 'action', 'event']
 
     def setUp(self):
         self._load_model_data()
@@ -1701,8 +1711,8 @@ class TestEventReadSerializer(APITestCase):
 
     def test_00_load_fixtures(self):
         actions = Action.objects.all()
-        self.assertEqual(17,
-                         len(actions))
+        self.assertLessEqual(17,
+                             len(actions))
         clients = Client.objects.all()
         self.assertLessEqual(5,
                              len(clients))
@@ -1710,8 +1720,8 @@ class TestEventReadSerializer(APITestCase):
         self.assertLessEqual(10,
                              len(herd))
         users = User.objects.all()
-        self.assertEqual(4,
-                         len(users))
+        self.assertLessEqual(4,
+                             len(users))
         events = Event.objects.all()
         self.assertLessEqual(10,
                              len(events))
@@ -1724,7 +1734,7 @@ class TestEventReadSerializer(APITestCase):
         self.assertRegex(actual.data['recorded_by'],
                          '\w')
         self.assertRegex(actual.data['event_time'],
-                         '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$')
+                         '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}-\d{2}:\d{2}$')
         self.assertGreaterEqual(10,
                                 actual.data['cow']['id'])
         self.assertRegex(actual.data['cow']['rfid'],
@@ -1787,7 +1797,7 @@ class TestEventReadSerializer(APITestCase):
 
 class TestEventWriteSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow',
+    fixtures = ['age', 'breed', 'user', 'color', 'client', 'cow',
                 'action', 'event']
 
     def setUp(self):
@@ -1810,8 +1820,8 @@ class TestEventWriteSerializer(APITestCase):
 
     def test_00_load_fixtures(self):
         actions = Action.objects.all()
-        self.assertEqual(17,
-                         len(actions))
+        self.assertLessEqual(17,
+                             len(actions))
         clients = Client.objects.all()
         self.assertLessEqual(5,
                              len(clients))
@@ -1819,8 +1829,8 @@ class TestEventWriteSerializer(APITestCase):
         self.assertLessEqual(10,
                              len(herd))
         users = User.objects.all()
-        self.assertEqual(4,
-                         len(users))
+        self.assertLessEqual(4,
+                             len(users))
         events = Event.objects.all()
         self.assertLessEqual(10,
                              len(events))
@@ -1921,7 +1931,7 @@ class TestEventWriteSerializer(APITestCase):
 
 class TestHealthRecordReadSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow', 'illness',
+    fixtures = ['age', 'breed', 'user', 'color', 'client', 'cow', 'illness',
                 'injury', 'status', 'treatment', 'vaccine', 'healthrecord']
 
     def setUp(self):
@@ -1968,23 +1978,23 @@ class TestHealthRecordReadSerializer(APITestCase):
         self.assertLessEqual(10,
                              len(herd))
         illnesses = Illness.objects.all()
-        self.assertEqual(15,
-                         len(illnesses))
+        self.assertLessEqual(15,
+                             len(illnesses))
         injuries = Injury.objects.all()
-        self.assertEqual(5,
-                         len(injuries))
+        self.assertLessEqual(5,
+                             len(injuries))
         statuses = Status.objects.all()
-        self.assertEqual(5,
-                         len(statuses))
+        self.assertLessEqual(5,
+                             len(statuses))
         treatments = Treatment.objects.all()
-        self.assertEqual(14,
-                         len(treatments))
+        self.assertLessEqual(14,
+                             len(treatments))
         vaccines = Vaccine.objects.all()
-        self.assertEqual(6,
-                         len(vaccines))
+        self.assertLessEqual(6,
+                             len(vaccines))
         users = User.objects.all()
-        self.assertEqual(4,
-                         len(users))
+        self.assertLessEqual(4,
+                             len(users))
         healthrecords = HealthRecord.objects.all()
         self.assertLessEqual(10,
                              len(healthrecords))
@@ -2003,7 +2013,7 @@ class TestHealthRecordReadSerializer(APITestCase):
                              '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}Z$')
         else:
             self.assertRegex(actual.data['inspection_time'],
-                             '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$')
+                             '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}-\d{2}:\d{2}$')
         self.assertGreaterEqual(10,
                                 actual.data['cow']['id'])
         self.assertRegex(actual.data['cow']['rfid'],
@@ -2102,7 +2112,7 @@ class TestHealthRecordReadSerializer(APITestCase):
 
 class TestHealthRecordWriteSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow', 'illness',
+    fixtures = ['age', 'breed', 'user', 'color', 'client', 'cow', 'illness',
                 'injury', 'status', 'treatment', 'vaccine', 'healthrecord']
 
     def setUp(self):
@@ -2135,20 +2145,20 @@ class TestHealthRecordWriteSerializer(APITestCase):
         self.assertLessEqual(10,
                              len(herd))
         illnesses = Illness.objects.all()
-        self.assertEqual(15,
-                         len(illnesses))
+        self.assertLessEqual(15,
+                             len(illnesses))
         injuries = Injury.objects.all()
-        self.assertEqual(5,
-                         len(injuries))
+        self.assertLessEqual(5,
+                             len(injuries))
         statuses = Status.objects.all()
-        self.assertEqual(5,
-                         len(statuses))
+        self.assertLessEqual(5,
+                             len(statuses))
         vaccines = Vaccine.objects.all()
-        self.assertEqual(6,
-                         len(vaccines))
+        self.assertLessEqual(6,
+                             len(vaccines))
         users = User.objects.all()
-        self.assertEqual(4,
-                         len(users))
+        self.assertLessEqual(4,
+                             len(users))
         healthrecords = HealthRecord.objects.all()
         self.assertLessEqual(10,
                              len(healthrecords))
@@ -2260,7 +2270,7 @@ class TestHealthRecordWriteSerializer(APITestCase):
         self.assertEqual(self.hr_data['cow'],
                          actual.data['cow'])
         self.assertRegex(actual.data['inspection_time'],
-                         '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}Z$')
+                         '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}-\d{2}:\d{2}$')
         self.assertRegex(str(actual.data['temperature']),
                          '\d{3}\.\d')
         self.assertRegex(str(actual.data['respiratory_rate']),
@@ -2308,7 +2318,7 @@ class TestHealthRecordWriteSerializer(APITestCase):
         self.assertEqual(self.hr_data['cow'],
                          actual.data['cow'])
         self.assertRegex(actual.data['inspection_time'],
-                         '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}Z$')
+                         '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}-\d{2}:\d{2}$')
         self.assertRegex(str(health_record.temperature),
                          '\d{3}\.\d')
         self.assertRegex(str(actual.data['respiratory_rate']),
@@ -2330,7 +2340,7 @@ class TestHealthRecordWriteSerializer(APITestCase):
 
 class TestMilkReadSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow', 'milk']
+    fixtures = ['age', 'breed', 'user', 'color', 'client', 'cow', 'milk']
 
     def setUp(self):
         self._load_model_data()
@@ -2356,8 +2366,8 @@ class TestMilkReadSerializer(APITestCase):
         self.assertLessEqual(10,
                              len(herd))
         users = User.objects.all()
-        self.assertEqual(4,
-                         len(users))
+        self.assertLessEqual(4,
+                             len(users))
         dairy = Milk.objects.all()
         self.assertLessEqual(10,
                              len(dairy))
@@ -2372,7 +2382,7 @@ class TestMilkReadSerializer(APITestCase):
         self.assertRegex(actual.data['recorded_by'],
                          '\w')
         self.assertRegex(actual.data['milking_time'],
-                         '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$')
+                         '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}-\d{2}:\d{2}$')
         self.assertGreaterEqual(10,
                                 actual.data['cow']['id'])
         self.assertRegex(actual.data['cow']['rfid'],
@@ -2435,7 +2445,7 @@ class TestMilkReadSerializer(APITestCase):
 
 class TestMilkWriteSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow', 'milk']
+    fixtures = ['age', 'breed', 'user', 'color', 'client', 'cow', 'milk']
 
     def setUp(self):
         self._load_milk_data()
@@ -2461,8 +2471,8 @@ class TestMilkWriteSerializer(APITestCase):
         self.assertLessEqual(10,
                              len(herd))
         users = User.objects.all()
-        self.assertEqual(4,
-                         len(users))
+        self.assertLessEqual(4,
+                             len(users))
         dairy = Milk.objects.all()
         self.assertLessEqual(10,
                              len(dairy))
@@ -2563,8 +2573,8 @@ class TestMilkWriteSerializer(APITestCase):
 
 class TestSeedReadSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['client', 'cerealhay', 'grasshay', 'legumehay', 'pasture',
-                'season', 'user', 'seed']
+    fixtures = ['user', 'cerealhay', 'grasshay', 'legumehay', 'pasture',
+                'season', 'client', 'seed']
 
     def setUp(self):
         self._load_model_data()
@@ -2597,26 +2607,26 @@ class TestSeedReadSerializer(APITestCase):
 
     def test_00_load_fixtures(self):
         clients = Client.objects.all()
-        self.assertEqual(5,
-                         len(clients))
+        self.assertLessEqual(5,
+                             len(clients))
         cereals = CerealHay.objects.all()
-        self.assertEqual(5,
-                         len(cereals))
+        self.assertLessEqual(5,
+                             len(cereals))
         grasses = GrassHay.objects.all()
-        self.assertEqual(9,
-                         len(grasses))
+        self.assertLessEqual(9,
+                             len(grasses))
         legumes = LegumeHay.objects.all()
-        self.assertEqual(6,
-                         len(legumes))
+        self.assertLessEqual(6,
+                             len(legumes))
         pastures = Pasture.objects.all()
-        self.assertEqual(13,
-                         len(pastures))
+        self.assertLessEqual(13,
+                             len(pastures))
         seasons = Season.objects.all()
-        self.assertEqual(4,
-                         len(seasons))
+        self.assertLessEqual(4,
+                             len(seasons))
         users = User.objects.all()
-        self.assertEqual(4,
-                         len(users))
+        self.assertLessEqual(4,
+                             len(users))
         seeds = Seed.objects.all()
         self.assertLessEqual(10,
                              len(seeds))
@@ -2679,8 +2689,8 @@ class TestSeedReadSerializer(APITestCase):
 
 class TestSeedWriteSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['client', 'cerealhay', 'grasshay', 'legumehay', 'pasture',
-                'season', 'user', 'seed']
+    fixtures = ['user', 'cerealhay', 'grasshay', 'legumehay', 'pasture',
+                'season', 'client', 'seed']
 
     def setUp(self):
         self._load_seed_data()
@@ -2713,26 +2723,26 @@ class TestSeedWriteSerializer(APITestCase):
 
     def test_00_load_fixtures(self):
         clients = Client.objects.all()
-        self.assertEqual(5,
-                         len(clients))
+        self.assertLessEqual(5,
+                             len(clients))
         cereals = CerealHay.objects.all()
-        self.assertEqual(5,
-                         len(cereals))
+        self.assertLessEqual(5,
+                             len(cereals))
         grasses = GrassHay.objects.all()
-        self.assertEqual(9,
-                         len(grasses))
+        self.assertLessEqual(9,
+                             len(grasses))
         legumes = LegumeHay.objects.all()
-        self.assertEqual(6,
-                         len(legumes))
+        self.assertLessEqual(6,
+                             len(legumes))
         pastures = Pasture.objects.all()
-        self.assertEqual(13,
-                         len(pastures))
+        self.assertLessEqual(13,
+                             len(pastures))
         seasons = Season.objects.all()
-        self.assertEqual(4,
-                         len(seasons))
+        self.assertLessEqual(4,
+                             len(seasons))
         users = User.objects.all()
-        self.assertEqual(4,
-                         len(users))
+        self.assertLessEqual(4,
+                             len(users))
         seeds = Seed.objects.all()
         self.assertLessEqual(10,
                              len(seeds))
@@ -2853,7 +2863,7 @@ class TestSeedWriteSerializer(APITestCase):
 
 class TestExerciseReadSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow', 'pasture',
+    fixtures = ['age', 'breed', 'user', 'color', 'client', 'cow', 'pasture',
                 'exercise']
 
     def setUp(self):
@@ -2886,11 +2896,11 @@ class TestExerciseReadSerializer(APITestCase):
         self.assertLessEqual(10,
                              len(exercises))
         fields = Pasture.objects.all()
-        self.assertEqual(13,
-                         len(fields))
+        self.assertLessEqual(13,
+                             len(fields))
         users = User.objects.all()
-        self.assertEqual(4,
-                         len(users))
+        self.assertLessEqual(4,
+                             len(users))
 
     def test_01_retrieve(self):
         exercise = Exercise.objects.get(pk=1)
@@ -2902,7 +2912,7 @@ class TestExerciseReadSerializer(APITestCase):
         self.assertRegex(actual.data['recorded_by'],
                          '\w')
         self.assertRegex(actual.data['exercise_time'],
-                         '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$')
+                         '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}-\d{2}:\d{2}$')
         self.assertGreaterEqual(10,
                                 actual.data['cow']['id'])
         self.assertRegex(actual.data['cow']['rfid'],
@@ -2977,7 +2987,7 @@ class TestExerciseReadSerializer(APITestCase):
 
 class TestExerciseWriteSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow', 'pasture',
+    fixtures = ['age', 'breed', 'user', 'color', 'client', 'cow', 'pasture',
                 'exercise']
 
     def setUp(self):
@@ -3009,11 +3019,11 @@ class TestExerciseWriteSerializer(APITestCase):
         self.assertLessEqual(10,
                              len(exercises))
         fields = Pasture.objects.all()
-        self.assertEqual(13,
-                         len(fields))
+        self.assertLessEqual(13,
+                             len(fields))
         users = User.objects.all()
-        self.assertEqual(4,
-                         len(users))
+        self.assertLessEqual(4,
+                             len(users))
 
     def test_01_create(self):
         actual = ExerciseWriteSerializer(data=self.exercise_data)

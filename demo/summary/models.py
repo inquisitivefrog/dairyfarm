@@ -66,7 +66,7 @@ class Annual(models.Model):
             view_name = 'summary:monthly-client-year'
             kwargs.update({'client': self.client,
                            'link': django_reverse(view_name,
-                                                  kwargs = {'pk': self.client.pk,
+                                                  kwargs = {'pk': self.pk,
                                                             'year': self.year})})
             Annual.objects.filter(pk=self.pk).update(**kwargs)
             return
@@ -137,13 +137,13 @@ class Monthly(models.Model):
                 month = '0{}'.format(self.month)
                 kwargs.update({'client': self.client,
                                'link': django_reverse(view_name,
-                                                      kwargs = {'pk': self.client.pk,
+                                                      kwargs = {'pk': self.pk,
                                                                 'year': self.year,
                                                                 'month': month})})
             else:
                 kwargs.update({'client': self.client,
                                'link': django_reverse(view_name,
-                                                      kwargs = {'pk': self.client.pk,
+                                                      kwargs = {'pk': self.pk,
                                                                 'year': self.year,
                                                                 'month': self.month})})
             Monthly.objects.filter(pk=self.pk).update(**kwargs)

@@ -134,7 +134,7 @@ class TestData:
 
     @classmethod
     def get_random_user(cls):
-        return 'farmhand'
+        return 'foster'
 
     @classmethod
     def get_temp(cls):

@@ -27,8 +27,11 @@ class BreedSerializer(serializers.ModelSerializer):
         model = Breed
 
 class ClientSerializer(serializers.ModelSerializer):
+    user = serializers.SlugRelatedField(queryset=User.objects.all(),
+                                        slug_field='username')
+
     class Meta:
-        fields = ('id', 'name', 'join_date', 'inactive_date')
+        fields = ('id', 'user', 'name', 'join_date', 'inactive_date')
         lookup_field = 'pk'
         model = Client
 

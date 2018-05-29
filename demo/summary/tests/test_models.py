@@ -2,22 +2,25 @@ from django.contrib.auth.models import User
 
 from rest_framework.test import APITestCase
 
-from assets.models import Age, Breed, Color, Cow, HealthRecord, Illness
+from assets.models import Age, Breed, Client, Color, Cow, HealthRecord, Illness
 from assets.models import Injury, Milk, Status, Treatment, Vaccine
 
 from summary.models import Annual, Monthly
 from summary.tests.utils import TestData, TestTime
 
 class TestAnnualModel(APITestCase):
-    fixtures = ['age', 'breed', 'client', 'color', 'illness', 'injury',
-                'status', 'treatment', 'user', 'vaccine', 'cow',
-                'healthrecord', 'milk', 'annual']
+    fixtures = ['age', 'breed', 'user', 'color', 'illness', 'injury',
+                'status', 'treatment', 'client', 'vaccine', 'cow',
+                'healthrecord', 'milk', 'monthly', 'annual']
 
 
     def setUp(self):
+        client = Client.objects.get(name=TestData.get_random_client())
         user = User.objects.get(username=TestData.get_random_username())
-        self.annual_data = {'created_by': user,
-                            'year': '2015'}
+        self.annual_data = {'client': client, 
+                            'created_by': user,
+                            'year': 2015}
+        self.pk = 1
 
     def tearDown(self):
         self.annual_data = None
@@ -49,10 +52,10 @@ class TestAnnualModel(APITestCase):
                          str(a))
  
     def test_02_get(self):
-        a = Annual.objects.get(id=1)
+        a = Annual.objects.get(id=self.pk)
         self.assertRegex(a.created_by.username,
                          '\w')
-        self.assertLessEqual(2014,
+        self.assertLessEqual(2015,
                              a.year)
         self.assertLessEqual(1,
                              a.total_cows)
@@ -81,7 +84,7 @@ class TestAnnualModel(APITestCase):
                          a.year)
 
     def test_05_partial_update(self):
-        expected = Annual.objects.get(id=1)
+        expected = Annual.objects.get(id=self.pk)
         user = User.objects.get(username='vet')
         expected.created_by = user
         expected.save()
@@ -90,7 +93,7 @@ class TestAnnualModel(APITestCase):
                          actual.created_by.username)
                              
     def test_06_delete(self):
-        expected = Annual.objects.get(id=1)
+        expected = Annual.objects.get(id=self.pk)
         expected.delete()
         with self.assertRaises(Annual.DoesNotExist) as context:
             Annual.objects.get(pk=expected.id)
@@ -98,16 +101,18 @@ class TestAnnualModel(APITestCase):
         self.assertIn(msg, str(context.exception))
 
     def test_07_save(self):
+        year = 2025
         expected = Annual()
+        expected.client = self.annual_data['client']
         expected.created_by = self.annual_data['created_by']
-        expected.year = self.annual_data['year']
+        expected.year = year
         expected.save()
         actual = Annual.objects.get(pk=expected.id)
         self.assertEqual(expected.created_by,
                          actual.created_by)
         self.assertEqual(expected.year,
-                         str(actual.year))
-        self.assertLessEqual(1,
+                         year)
+        self.assertLessEqual(0,
                              actual.total_cows)
         self.assertLessEqual(0,
                              actual.aged_cows)
@@ -117,19 +122,22 @@ class TestAnnualModel(APITestCase):
                              actual.ill_cows)
         self.assertLessEqual(0,
                              actual.injured_cows)
-        self.assertLessEqual(1,
+        self.assertLessEqual(0,
                              actual.gallons_milk)
 
 class TestMonthlyModel(APITestCase):
-    fixtures = ['age', 'breed', 'client', 'color', 'illness', 'injury',
-                'status', 'treatment', 'user', 'vaccine', 'cow',
+    fixtures = ['age', 'breed', 'user', 'color', 'illness', 'injury',
+                'status', 'treatment', 'client', 'vaccine', 'cow',
                 'healthrecord', 'milk', 'monthly']
 
     def setUp(self):
+        client = Client.objects.get(name=TestData.get_random_client())
         user = User.objects.get(username=TestData.get_random_username())
-        self.monthly_data = {'created_by': user,
-                             'year': '2017',
-                             'month': '01'}
+        self.pk = 1
+        self.monthly_data = {'client': client,
+                             'created_by': user,
+                             'year': 2017,
+                             'month': 1}
 
     def tearDown(self):
         self.monthly_data = None
@@ -161,7 +169,7 @@ class TestMonthlyModel(APITestCase):
                          str(m))
  
     def test_02_get(self):
-        m = Monthly.objects.get(id=1)
+        m = Monthly.objects.get(id=self.pk)
         self.assertRegex(m.created_by.username,
                          '\w')
         self.assertLessEqual(2014,
@@ -199,7 +207,7 @@ class TestMonthlyModel(APITestCase):
                          m.month)
 
     def test_05_partial_update(self):
-        expected = Monthly.objects.get(id=1)
+        expected = Monthly.objects.get(id=self.pk)
         user = User.objects.get(username='vet')
         expected.created_by = user
         expected.save()
@@ -212,7 +220,7 @@ class TestMonthlyModel(APITestCase):
                          actual.month)
                              
     def test_06_delete(self):
-        expected = Monthly.objects.get(id=1)
+        expected = Monthly.objects.get(id=self.pk)
         expected.delete()
         with self.assertRaises(Monthly.DoesNotExist) as context:
             Monthly.objects.get(pk=expected.id)
@@ -229,10 +237,10 @@ class TestMonthlyModel(APITestCase):
         self.assertEqual(expected.created_by,
                          actual.created_by)
         self.assertEqual(expected.year,
-                         str(actual.year))
+                         actual.year)
         self.assertEqual(int(expected.month),
                          actual.month)
-        self.assertLessEqual(1,
+        self.assertLessEqual(0,
                              actual.total_cows)
         self.assertLessEqual(0,
                              actual.aged_cows)

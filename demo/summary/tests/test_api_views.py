@@ -9,24 +9,28 @@ from rest_framework.reverse import django_reverse
 from rest_framework.test import APIRequestFactory, APITestCase
 from rest_framework.test import force_authenticate
 
-from assets.models import Cow, HealthRecord, Milk
+from assets.models import Client, Cow, HealthRecord, Milk
 
 from summary.models import Annual, Monthly
-from summary.api_views import AnnualSummary, MonthlySummary
+from summary.api_views import AnnualSummaryByClientView, MonthlySummaryByClientView
 from summary.tests.utils import TestData, TestTime
 
-class TestAnnualSummaryView(APITestCase):
-    fixtures = ['age', 'breed', 'client', 'color', 'illness', 'injury',
-                'status', 'treatment', 'user', 'vaccine', 'cow',
+class TestAnnualSummaryByClientView(APITestCase):
+    fixtures = ['age', 'breed', 'user', 'color', 'illness', 'injury',
+                'status', 'treatment', 'client', 'vaccine', 'cow',
                 'healthrecord', 'milk', 'annual']
 
     def setUp(self):
+        self.client = Client.objects.get(name=TestData.get_random_client())
         self.user = User.objects.get(username=TestData.get_random_username())
-        self.data = {'created_by': self.user.username,
+        self.data = {'client': self.client.name,
+                     'created_by': self.user.username,
                      'year': TestTime.get_random_year()}
+        self.pk = 1
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
-        self.url = django_reverse('summary:annual',
-                                  args=(self.data['year'],))
+        self.url = django_reverse('summary:annual-client-year',
+                                  kwargs={'pk': self.pk,
+                                          'year': self.data['year']})
 
     def tearDown(self):
         self.data = None
@@ -55,7 +59,7 @@ class TestAnnualSummaryView(APITestCase):
                                        content_type=TestData.get_format())
         force_authenticate(request, user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = AnnualSummary.as_view()(request=request)
+        response = AnnualSummaryByClientView.as_view()(request=request)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -77,9 +81,10 @@ class TestAnnualSummaryView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        kwargs = {'year': str(annual.year)}
-        response = AnnualSummary.as_view()(request=request,
-                                           **kwargs)
+        kwargs = {'year': str(annual.year),
+                  'pk': self.pk}
+        response = AnnualSummaryByClientView.as_view()(request=request,
+                                                       **kwargs)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -101,7 +106,7 @@ class TestAnnualSummaryView(APITestCase):
                            user=self.user)
         request.POST = self.data
         self.assertTrue(self.user.is_authenticated)
-        response = AnnualSummary.as_view()(request=request)
+        response = AnnualSummaryByClientView.as_view()(request=request)
         self.assertEqual(201,
                          response.status_code)
         self.assertEqual('Created',
@@ -126,9 +131,9 @@ class TestAnnualSummaryView(APITestCase):
         # unnecessary by design in favor of creating a replacement with newer data
         pass
 
-class TestMonthlySummaryView(APITestCase):
-    fixtures = ['age', 'breed', 'client', 'color', 'illness', 'injury',
-                'status', 'treatment', 'user', 'vaccine', 'cow',
+class TestMonthlySummaryByClientView(APITestCase):
+    fixtures = ['age', 'breed', 'user', 'color', 'illness', 'injury',
+                'status', 'treatment', 'client', 'vaccine', 'cow',
                 'healthrecord', 'milk', 'monthly']
 
     def setUp(self):
@@ -137,9 +142,10 @@ class TestMonthlySummaryView(APITestCase):
                      'year': TestTime.get_random_year(),
                      'month': TestTime.get_random_month()}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
-        self.url = django_reverse('summary:monthly',
-                                  args=(self.data['year'],
-                                        self.data['month']))
+        self.url = django_reverse('summary:monthly-client-year-month',
+                                  kwargs={'pk': 1,
+                                          'year': self.data['year'],
+                                          'month': self.data['month']})
 
     def tearDown(self):
         self.data = None
@@ -168,7 +174,7 @@ class TestMonthlySummaryView(APITestCase):
                                        content_type=TestData.get_format())
         force_authenticate(request, user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        response = MonthlySummary.as_view()(request=request)
+        response = MonthlySummaryByClientView.as_view()(request=request)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -190,10 +196,11 @@ class TestMonthlySummaryView(APITestCase):
         force_authenticate(request,
                            user=self.user)
         self.assertTrue(self.user.is_authenticated)
-        kwargs = {'year': str(instance.year),
+        kwargs = {'pk': 1,
+                  'year': str(instance.year),
                   'month': str(instance.month)}
-        response = MonthlySummary.as_view()(request=request,
-                                            **kwargs)
+        response = MonthlySummaryByClientView.as_view()(request=request,
+                                                        **kwargs)
         self.assertEqual(200,
                          response.status_code)
         self.assertEqual('OK',
@@ -216,7 +223,7 @@ class TestMonthlySummaryView(APITestCase):
                            user=self.user)
         request.POST = self.data
         self.assertTrue(self.user.is_authenticated)
-        response = MonthlySummary.as_view()(request=request)
+        response = MonthlySummaryByClientView.as_view()(request=request)
         self.assertEqual(201,
                          response.status_code)
         self.assertEqual('Created',

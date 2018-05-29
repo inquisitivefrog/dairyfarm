@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 
 from rest_framework.test import APITestCase
 
-from assets.models import Age, Breed, Color, Cow, HealthRecord, Illness
+from assets.models import Age, Breed, Client, Color, Cow, HealthRecord, Illness
 from assets.models import Injury, Milk, Status, Treatment, Vaccine
 
 from summary.models import Annual, Monthly
@@ -12,8 +12,8 @@ from summary.tests.utils import TestData, TestTime
 
 class TestAnnualReadSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'client', 'color', 'illness', 'injury',
-                'status', 'treatment', 'user', 'vaccine', 'cow',
+    fixtures = ['age', 'breed', 'user', 'color', 'illness', 'injury',
+                'status', 'treatment', 'client', 'vaccine', 'cow',
                 'healthrecord', 'milk', 'annual']
 
     def setUp(self):
@@ -23,8 +23,10 @@ class TestAnnualReadSerializer(APITestCase):
         self.model_data = None
 
     def _load_model_data(self):
+        client = Client.objects.get(name=TestData.get_random_client())
         user = User.objects.get(username=TestData.get_random_username())
-        self.model_data = {'created_by': user,
+        self.model_data = {'client': client,
+                           'created_by': user,
                            'year': TestTime.get_random_year()}
 
     def test_00_load_fixtures(self):
@@ -98,8 +100,8 @@ class TestAnnualReadSerializer(APITestCase):
 
 class TestAnnualWriteSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'client', 'color', 'illness', 'injury',
-                'status', 'treatment', 'user', 'vaccine', 'cow',
+    fixtures = ['age', 'breed', 'user', 'color', 'illness', 'injury',
+                'status', 'treatment', 'client', 'vaccine', 'cow',
                 'healthrecord', 'milk', 'annual']
 
 
@@ -110,8 +112,10 @@ class TestAnnualWriteSerializer(APITestCase):
         self.annual_data = None
 
     def _load_annual_data(self):
+        client = Client.objects.get(name=TestData.get_random_client())
         user = User.objects.get(username=TestData.get_random_username())
-        self.annual_data = {'created_by': user,
+        self.annual_data = {'client': client,
+                            'created_by': user,
                             'year': TestTime.get_random_year()}
 
     def test_00_load_fixtures(self):
@@ -183,8 +187,8 @@ class TestAnnualWriteSerializer(APITestCase):
 
 class TestMonthlyReadSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'client', 'color', 'illness', 'injury',
-                'status', 'treatment', 'user', 'vaccine', 'cow',
+    fixtures = ['age', 'breed', 'user', 'color', 'illness', 'injury',
+                'status', 'treatment', 'client', 'vaccine', 'cow',
                 'healthrecord', 'milk', 'monthly']
 
     def setUp(self):
@@ -194,8 +198,10 @@ class TestMonthlyReadSerializer(APITestCase):
         self.model_data = None
 
     def _load_model_data(self):
+        client = Client.objects.get(name=TestData.get_random_client())
         user = User.objects.get(username=TestData.get_random_username())
-        self.model_data = {'created_by': user,
+        self.model_data = {'client': client,
+                           'created_by': user,
                            'year': TestTime.get_random_year(),
                            'month': TestTime.get_random_month_int()}
 
@@ -274,8 +280,8 @@ class TestMonthlyReadSerializer(APITestCase):
 
 class TestMonthlyWriteSerializer(APITestCase):
     # note: order matters when loading fixtures
-    fixtures = ['age', 'breed', 'client', 'color', 'illness', 'injury',
-                'status', 'treatment', 'user', 'vaccine', 'cow',
+    fixtures = ['age', 'breed', 'user', 'color', 'illness', 'injury',
+                'status', 'treatment', 'client', 'vaccine', 'cow',
                 'healthrecord', 'milk', 'monthly']
 
     def setUp(self):
@@ -285,8 +291,10 @@ class TestMonthlyWriteSerializer(APITestCase):
         self.monthly_data = None
 
     def _load_monthly_data(self):
+        client = Client.objects.get(name=TestData.get_random_client())
         user = User.objects.get(username=TestData.get_random_username())
-        self.monthly_data = {'created_by': user,
+        self.monthly_data = {'client': client,
+                             'created_by': user,
                              'year': TestTime.get_random_year(),
                              'month': TestTime.get_random_month_int()}
 

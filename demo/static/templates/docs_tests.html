@@ -1,6 +1,6 @@
 <div class="raw">
 <pre><code>
-(demo) TIMOTHYs-MacBook-Pro:demo tim$ python manage.py test -v 2
+(demo) TIMOTHYs-MacBook-Pro:demo tim$ python manage.py test -v 2 
 Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
 Operations to perform:
   Synchronize unmigrated apps: messages, rest_framework, staticfiles
@@ -418,22 +418,22 @@ test_01_index (assets.tests.test_urls.TestAssetsURLConf) ... ok
 test_00_load_fixtures (assets.tests.test_views.TestIndexView) ... ok
 test_01_options (assets.tests.test_views.TestIndexView) ... ok
 test_02_get (assets.tests.test_views.TestIndexView) ... ok
-test_00_load_fixtures (summary.tests.test_api_views.TestAnnualSummaryView) ... ok
-test_01_options (summary.tests.test_api_views.TestAnnualSummaryView) ... ok
-test_02_list (summary.tests.test_api_views.TestAnnualSummaryView) ... ok
-test_03_retrieve (summary.tests.test_api_views.TestAnnualSummaryView) ... ok
-test_04_create (summary.tests.test_api_views.TestAnnualSummaryView) ... ok
-test_05_destroy (summary.tests.test_api_views.TestAnnualSummaryView) ... ok
-test_06_full_update (summary.tests.test_api_views.TestAnnualSummaryView) ... ok
-test_07_partial_update (summary.tests.test_api_views.TestAnnualSummaryView) ... ok
-test_00_load_fixtures (summary.tests.test_api_views.TestMonthlySummaryView) ... ok
-test_01_options (summary.tests.test_api_views.TestMonthlySummaryView) ... ok
-test_02_list (summary.tests.test_api_views.TestMonthlySummaryView) ... ok
-test_03_retrieve (summary.tests.test_api_views.TestMonthlySummaryView) ... ok
-test_04_create (summary.tests.test_api_views.TestMonthlySummaryView) ... ok
-test_05_destroy (summary.tests.test_api_views.TestMonthlySummaryView) ... ok
-test_06_full_update (summary.tests.test_api_views.TestMonthlySummaryView) ... ok
-test_07_partial_update (summary.tests.test_api_views.TestMonthlySummaryView) ... ok
+test_00_load_fixtures (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
+test_01_options (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
+test_02_list (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
+test_03_retrieve (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
+test_04_create (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
+test_05_destroy (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
+test_06_full_update (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
+test_07_partial_update (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
+test_00_load_fixtures (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok
+test_01_options (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok
+test_02_list (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok
+test_03_retrieve (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok
+test_04_create (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok
+test_05_destroy (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok
+test_06_full_update (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok
+test_07_partial_update (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok
 test_00_load_fixtures (summary.tests.test_models.TestAnnualModel) ... ok
 test_01_object (summary.tests.test_models.TestAnnualModel) ... ok
 test_02_get (summary.tests.test_models.TestAnnualModel) ... ok
@@ -464,11 +464,13 @@ test_00_load_fixtures (summary.tests.test_serializers.TestMonthlyWriteSerializer
 test_01_create (summary.tests.test_serializers.TestMonthlyWriteSerializer) ... ok
 test_02_bulk_create (summary.tests.test_serializers.TestMonthlyWriteSerializer) ... ok
 test_03_partial_update (summary.tests.test_serializers.TestMonthlyWriteSerializer) ... ok
-test_01_annual (summary.tests.test_urls.TestSummaryAnnualAPIURLConf) ... ok
-test_01_monthly (summary.tests.test_urls.TestSummaryMonthlyAPIURLConf) ... ok
+test_01_annual_client (summary.tests.test_urls.TestSummaryAnnualAPIURLConf) ... ok
+test_02_annual_client_year (summary.tests.test_urls.TestSummaryAnnualAPIURLConf) ... ok
+test_01_monthly_client_year (summary.tests.test_urls.TestSummaryMonthlyAPIURLConf) ... ok
+test_02_monthly_client_year_month (summary.tests.test_urls.TestSummaryMonthlyAPIURLConf) ... ok
 
 ----------------------------------------------------------------------
-Ran 440 tests in 496.953s
+Ran 442 tests in 69.790s
 
 OK
 Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

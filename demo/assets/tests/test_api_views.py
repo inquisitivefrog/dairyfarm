@@ -1,5 +1,6 @@
 from json import dumps
 from random import randint
+from uuid import UUID
 
 from django.contrib.auth.models import User
 from django.utils.six import BytesIO
@@ -946,7 +947,7 @@ class TestEventDetailView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals('GET, HEAD, OPTIONS',
+        self.assertEquals(TestData.get_allowed_detail_methods(),
                           response.get('allow'))
         self.assertEquals(TestData.get_content_type(),
                           response.get('content-type'))
@@ -980,10 +981,26 @@ class TestEventDetailView(APITestCase):
         self.assertTrue(self.user.is_authenticated)
         response = EventDetailView.as_view()(request=request,
                                              pk=self.pk)
-        self.assertEqual(405,
+        self.assertEqual(200,
                          response.status_code)
-        self.assertEqual('Method Not Allowed',
+        self.assertEqual('OK',
                          response.reason_phrase)
+        if not response.is_rendered:
+             response = response.render()
+        stream = BytesIO(response.content)
+        data = JSONParser().parse(stream)
+        self.assertIn('id',
+                      data)
+        self.assertEqual(self.data['recorded_by'],
+                         data['recorded_by'])
+        self.assertEqual(self.data['client'],
+                         data['client'])
+        self.assertEqual(self.data['cow'],
+                         data['cow'])
+        self.assertRegex(data['event_time'],
+                         '\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}-\d{2}:\d{2}')
+        self.assertEqual(self.data['action'],
+                         data['action'])
 
     def test_04_partial_update(self):
         data = {'action': self.data['action']}
@@ -995,10 +1012,26 @@ class TestEventDetailView(APITestCase):
         self.assertTrue(self.user.is_authenticated)
         response = EventDetailView.as_view()(request=request,
                                              pk=self.pk)
-        self.assertEqual(405,
+        self.assertEqual(200,
                          response.status_code)
-        self.assertEqual('Method Not Allowed',
+        self.assertEqual('OK',
                          response.reason_phrase)
+        if not response.is_rendered:
+             response = response.render()
+        stream = BytesIO(response.content)
+        data = JSONParser().parse(stream)
+        self.assertIn('id',
+                      data)
+        self.assertRegex(data['recorded_by'],
+                         '\w')
+        self.assertRegex(data['client'],
+                         '\w+')
+        self.assertTrue(isinstance(UUID(data['cow']),
+                        UUID))
+        self.assertRegex(data['event_time'],
+                         '\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}-\d{2}:\d{2}')
+        self.assertEqual(self.data['action'],
+                         data['action'])
 
     def test_05_destroy(self):
         request = self.factory.delete(path=self.url,
@@ -1168,7 +1201,7 @@ class TestExerciseDetailView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals('GET, HEAD, OPTIONS',
+        self.assertEquals(TestData.get_allowed_detail_methods(),
                           response.get('allow'))
         self.assertEquals(TestData.get_content_type(),
                           response.get('content-type'))
@@ -1202,10 +1235,26 @@ class TestExerciseDetailView(APITestCase):
         self.assertTrue(self.user.is_authenticated)
         response = ExerciseDetailView.as_view()(request=request,
                                                 pk=self.pk)
-        self.assertEqual(405,
+        self.assertEqual(200,
                          response.status_code)
-        self.assertEqual('Method Not Allowed',
+        self.assertEqual('OK',
                          response.reason_phrase)
+        if not response.is_rendered:
+             response = response.render()
+        stream = BytesIO(response.content)
+        data = JSONParser().parse(stream)
+        self.assertIn('id',
+                      data)
+        self.assertEqual(self.data['recorded_by'],
+                         data['recorded_by'])
+        self.assertEqual(self.data['client'],
+                         data['client'])
+        self.assertEqual(self.data['cow'],
+                         data['cow'])
+        self.assertRegex(data['exercise_time'],
+                         '\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}-\d{2}:\d{2}')
+        self.assertEqual(self.data['pasture'],
+                         data['pasture'])
 
     def test_04_partial_update(self):
         data = {'pasture': self.data['pasture']}
@@ -1217,10 +1266,26 @@ class TestExerciseDetailView(APITestCase):
         self.assertTrue(self.user.is_authenticated)
         response = ExerciseDetailView.as_view()(request=request,
                                                 pk=self.pk)
-        self.assertEqual(405,
+        self.assertEqual(200,
                          response.status_code)
-        self.assertEqual('Method Not Allowed',
+        self.assertEqual('OK',
                          response.reason_phrase)
+        if not response.is_rendered:
+             response = response.render()
+        stream = BytesIO(response.content)
+        data = JSONParser().parse(stream)
+        self.assertIn('id',
+                      data)
+        self.assertRegex(data['recorded_by'],
+                         '\w')
+        self.assertRegex(data['client'],
+                         '\w+')
+        self.assertTrue(isinstance(UUID(data['cow']),
+                        UUID))
+        self.assertRegex(data['exercise_time'],
+                         '\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}-\d{2}:\d{2}')
+        self.assertEqual(self.data['pasture'],
+                         data['pasture'])
 
     def test_05_destroy(self):
         request = self.factory.delete(path=self.url,
@@ -1380,7 +1445,7 @@ class TestMilkDetailView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals('GET, HEAD, OPTIONS',
+        self.assertEquals(TestData.get_allowed_detail_methods(),
                           response.get('allow'))
         self.assertEquals(TestData.get_content_type(),
                           response.get('content-type'))
@@ -1414,10 +1479,26 @@ class TestMilkDetailView(APITestCase):
         self.assertTrue(self.user.is_authenticated)
         response = MilkDetailView.as_view()(request=request,
                                             pk=self.pk)
-        self.assertEqual(405,
+        self.assertEqual(200,
                          response.status_code)
-        self.assertEqual('Method Not Allowed',
+        self.assertEqual('OK',
                          response.reason_phrase)
+        if not response.is_rendered:
+             response = response.render()
+        stream = BytesIO(response.content)
+        data = JSONParser().parse(stream)
+        self.assertIn('id',
+                      data)
+        self.assertEqual(self.data['recorded_by'],
+                         data['recorded_by'])
+        self.assertEqual(self.data['client'],
+                         data['client'])
+        self.assertEqual(self.data['cow'],
+                         data['cow'])
+        self.assertRegex(data['milking_time'],
+                         '\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}-\d{2}:\d{2}')
+        self.assertEqual(self.data['gallons'],
+                         data['gallons'])
 
     def test_04_partial_update(self):
         data = {'gallons': self.data['gallons']}
@@ -1429,10 +1510,26 @@ class TestMilkDetailView(APITestCase):
         self.assertTrue(self.user.is_authenticated)
         response = MilkDetailView.as_view()(request=request,
                                             pk=self.pk)
-        self.assertEqual(405,
+        self.assertEqual(200,
                          response.status_code)
-        self.assertEqual('Method Not Allowed',
+        self.assertEqual('OK',
                          response.reason_phrase)
+        if not response.is_rendered:
+             response = response.render()
+        stream = BytesIO(response.content)
+        data = JSONParser().parse(stream)
+        self.assertIn('id',
+                      data)
+        self.assertRegex(data['recorded_by'],
+                         '\w')
+        self.assertRegex(data['client'],
+                         '\w+')
+        self.assertTrue(isinstance(UUID(data['cow']),
+                        UUID))
+        self.assertRegex(data['milking_time'],
+                         '\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}-\d{2}:\d{2}')
+        self.assertEqual(self.data['gallons'],
+                         data['gallons'])
 
     def test_05_destroy(self):
         request = self.factory.delete(path=self.url,

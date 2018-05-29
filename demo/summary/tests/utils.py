@@ -37,9 +37,12 @@ class TestData:
         return ['id', 'created_by', 'year', 'month']
 
     @classmethod
+    def get_random_client(cls):
+        return 'Foster Farms Dairy'
+
+    @classmethod
     def get_random_username(cls):
-        users = [ u.username for u in User.objects.all() ]
-        return users[randint(0, len(users) - 1)]
+        return 'foster'
 
 class TestTime:
     @classmethod
