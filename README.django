@@ -48,9 +48,9 @@ ENABLE SECURITY
 (demo) $ python manage.py check
 (demo) $ python manage.py collecstatic
 (demo) $ python manage.py test
-(demo) $ ./tools/create_user.py -f old -l macdonald -e farmer@dairyfarm.org -u farmer -p milk
-(demo) $ ./tools/create_user.py -f mister -l greenjeans -e farmhand@dairyfarm.org -u farmhand -p cheese
-(demo) $ ./tools/create_user.py -f doctor -l fixmeup -e doctor@dairyfarm.org -u vet -p cream
+(demo) $ ./tools/create_user.py -f old -l macdonald -e farmer@dairyfarm.org -u farmer
+(demo) $ ./tools/create_user.py -f mister -l greenjeans -e farmhand@dairyfarm.org -u farmhand
+(demo) $ ./tools/create_user.py -f doctor -l fixmeup -e doctor@dairyfarm.org -u vet
 (demo) $ ./tools/load_references.py 
 (demo) $ ./tools/purchase_herd.py -b holstein -c 10 -u farmhand
 holstein purchased 10 holsteins
@@ -60,4 +60,14 @@ jersey purchased 10 jerseys
 guernsey purchased 10 guernseys
 
 
-NOTE: all users have permissions of is_active, is_staff
+NOTE: users are regular accounts by default. Use --staff only when Django
+admin-site access is needed, or --superuser for a deliberately privileged
+administrator. Passwords are entered interactively rather than on the command
+line. The historical credentials in earlier revisions must be considered
+compromised and must not be reused.
+
+For a database that was previously seeded with the demo accounts, first review
+the target database and then run `python tools/disable_demo_accounts.py` from
+`demo/` for a dry run. Add `--apply` to deactivate those fixture accounts, remove
+their privileges, and invalidate their passwords/sessions. This command affects
+only usernames in `demo/demo/fixtures/user.json`.

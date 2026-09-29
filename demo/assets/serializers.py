@@ -7,6 +7,36 @@ from assets.models import Cow, Event, Exercise, GrassHay, HealthRecord
 from assets.models import Illness, Injury, LegumeHay, Milk, Pasture
 from assets.models import Season, Seed, Status, Treatment, Vaccine
 
+
+class ClientScopedSerializerMixin(object):
+    def __init__(self, *args, **kwargs):
+        super(ClientScopedSerializerMixin, self).__init__(*args, **kwargs)
+        request = self.context.get('request')
+        if request is None or not request.user.is_authenticated:
+            return
+        if request.user.is_staff:
+            return
+
+        scoped_querysets = {
+            'client': lambda queryset: queryset.filter(user=request.user),
+            'cow': lambda queryset: queryset.filter(client__user=request.user),
+            'pasture': lambda queryset: queryset.filter(
+                client__user=request.user),
+            'purchased_by': lambda queryset: queryset.filter(
+                pk=request.user.pk),
+            'recorded_by': lambda queryset: queryset.filter(
+                pk=request.user.pk),
+            'seeded_by': lambda queryset: queryset.filter(
+                pk=request.user.pk),
+            'created_by': lambda queryset: queryset.filter(
+                pk=request.user.pk),
+        }
+        for field_name, filter_queryset in scoped_querysets.items():
+            field = self.fields.get(field_name)
+            if field is not None and field.queryset is not None:
+                field.queryset = filter_queryset(field.queryset)
+
+
 # dependent serializers
 class ActionSerializer(serializers.ModelSerializer):
     class Meta:
@@ -117,7 +147,8 @@ class CowReadSerializer(serializers.ModelSerializer):
         model = Cow
         read_only_fields = ('rfid', 'link',)
 
-class CowWriteSerializer(serializers.ModelSerializer):
+class CowWriteSerializer(ClientScopedSerializerMixin,
+                         serializers.ModelSerializer):
     purchased_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                 slug_field='username')
     age = serializers.SlugRelatedField(queryset=Age.objects.all(),
@@ -162,7 +193,8 @@ class EventReadSerializer(serializers.ModelSerializer):
         model = Event
         read_only_fields = ('link',)
 
-class EventWriteSerializer(serializers.ModelSerializer):
+class EventWriteSerializer(ClientScopedSerializerMixin,
+                           serializers.ModelSerializer):
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                slug_field='username')
     client = serializers.SlugRelatedField(queryset=Client.objects.all(),
@@ -209,7 +241,11 @@ class HealthRecordReadSerializer(serializers.ModelSerializer):
         model = HealthRecord
         read_only_fields = ('link',)
 
-class HealthRecordWriteSerializer(serializers.ModelSerializer):
+class HealthRecordIllCowsSummarySerializer(serializers.Serializer):
+    status = serializers.IntegerField()
+
+class HealthRecordWriteSerializer(ClientScopedSerializerMixin,
+                                  serializers.ModelSerializer):
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                slug_field='username')
     client = serializers.SlugRelatedField(queryset=Client.objects.all(),
@@ -290,7 +326,8 @@ class MilkSummaryReadSerializer(serializers.ModelSerializer):
         lookup_field = 'pk'
         model = Milk
 
-class MilkWriteSerializer(serializers.ModelSerializer):
+class MilkWriteSerializer(ClientScopedSerializerMixin,
+                          serializers.ModelSerializer):
     client = serializers.SlugRelatedField(queryset=Client.objects.all(),
                                          slug_field='name')
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
@@ -323,7 +360,8 @@ class PastureReadSerializer(serializers.ModelSerializer):
         model = Pasture
         read_only_fields = ('link',)
 
-class PastureWriteSerializer(serializers.ModelSerializer):
+class PastureWriteSerializer(ClientScopedSerializerMixin,
+                             serializers.ModelSerializer):
     client = serializers.SlugRelatedField(queryset=Client.objects.all(),
                                          slug_field='name')
 
@@ -357,7 +395,8 @@ class SeedReadSerializer(serializers.ModelSerializer):
         model = Seed
         read_only_fields = ('link',)
 
-class SeedWriteSerializer(serializers.ModelSerializer):
+class SeedWriteSerializer(ClientScopedSerializerMixin,
+                          serializers.ModelSerializer):
     client = serializers.SlugRelatedField(queryset=Client.objects.all(),
                                          slug_field='name')
     seeded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
@@ -415,7 +454,8 @@ class ExerciseReadSerializer(serializers.ModelSerializer):
                   'pasture', 'link')
         read_only_fields = ('link',)
 
-class ExerciseWriteSerializer(serializers.ModelSerializer):
+class ExerciseWriteSerializer(ClientScopedSerializerMixin,
+                              serializers.ModelSerializer):
     client = serializers.SlugRelatedField(queryset=Client.objects.all(),
                                          slug_field='name')
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),

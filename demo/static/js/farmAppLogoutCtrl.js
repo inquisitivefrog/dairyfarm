@@ -1,5 +1,5 @@
 farmApp.controller("LogoutController",
-    function ($scope, $http, $rootScope, $cookies) {
+    function ($scope, $http, $rootScope, $location) {
         // reset login status
         $scope.logout = null;
         $scope.username = $rootScope.globals.currentUser.username;
@@ -7,10 +7,11 @@ farmApp.controller("LogoutController",
         console.log("Entered LogoutController");
 
         $http({
-            method: 'GET',
+            method: 'POST',
             url: '/ui_logout/',
         }).then(function (response) {
-            $rootScope.globals = $cookies.get('globals') || {};
+            $rootScope.globals = {};
             console.log("globals unset");
+            $location.path('/login/');
         });
     });

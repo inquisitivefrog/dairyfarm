@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 
 from rest_framework import serializers
 
+from assets.serializers import ClientScopedSerializerMixin
 from assets.models import Client
 from summary.models import Annual, Monthly
 
@@ -19,7 +20,8 @@ class AnnualReadSerializer(serializers.ModelSerializer):
         model = Annual
         read_only_fields = ('link',)
 
-class AnnualWriteSerializer(serializers.ModelSerializer):
+class AnnualWriteSerializer(ClientScopedSerializerMixin,
+                            serializers.ModelSerializer):
     created_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                               slug_field='username')
     class Meta:
@@ -48,7 +50,8 @@ class MonthlyReadSerializer(serializers.ModelSerializer):
         model = Monthly
         read_only_fields = ('link',)
 
-class MonthlyWriteSerializer(serializers.ModelSerializer):
+class MonthlyWriteSerializer(ClientScopedSerializerMixin,
+                             serializers.ModelSerializer):
     created_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                               slug_field='username')
 

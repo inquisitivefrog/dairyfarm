@@ -13,15 +13,15 @@ function start_fresh() {
 }
 
 function load_dependencies() {
-    ./tools/create_user.py -f old -l mcdonald -e farmer@dairyfarm.org -u farmer -p milk
-    ./tools/create_user.py -f mister -l greenjeans -e farmhand@dairyfarm.org -u farmhand -p butter
-    ./tools/create_user.py -f doctor -l fixmeup -e vet@dairyfarm.org -u vet -p cheese
-    ./tools/create_user.py -f kama -l kamahameka -e kama@dairyfarm.org -u kama -p kama -s
-    ./tools/create_user.py -f foster -l farms -e foster_farms@ff.org -u foster -p farms
-    ./tools/create_user.py -f berkeley -l farms -e berkeley_farms@bf.org -u berkeley -p farms
-    ./tools/create_user.py -f mcclelland -l dairy -e mcclelland_dairy@md.org -u mcclelland -p dairy
-    ./tools/create_user.py -f clauss -l dairy -e clauss_dairy_farms@cdf.org -u clauss -p dairy
-    ./tools/create_user.py -f dairy -l farmers -e dairy_farmers@dfoa.org -u dairy -p farmers
+    ./tools/create_user.py -f old -l mcdonald -e farmer@dairyfarm.org -u farmer
+    ./tools/create_user.py -f mister -l greenjeans -e farmhand@dairyfarm.org -u farmhand
+    ./tools/create_user.py -f doctor -l fixmeup -e vet@dairyfarm.org -u vet
+    ./tools/create_user.py -f kama -l kamahameka -e kama@dairyfarm.org -u kama --superuser
+    ./tools/create_user.py -f foster -l farms -e foster_farms@ff.org -u foster
+    ./tools/create_user.py -f berkeley -l farms -e berkeley_farms@bf.org -u berkeley
+    ./tools/create_user.py -f mcclelland -l dairy -e mcclelland_dairy@md.org -u mcclelland
+    ./tools/create_user.py -f clauss -l dairy -e clauss_dairy_farms@cdf.org -u clauss
+    ./tools/create_user.py -f dairy -l farmers -e dairy_farmers@dfoa.org -u dairy
     ./tools/load_references.py
 }
 

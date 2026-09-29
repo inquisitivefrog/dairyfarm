@@ -11,6 +11,7 @@ RUN python -m pip install --upgrade 'pip<22' \
     && python -m pip install --no-cache-dir -r /app/requirements.txt
 
 COPY demo /app/demo
+COPY sre-tools /app/sre-tools
 WORKDIR /app/demo
 
 EXPOSE 8000

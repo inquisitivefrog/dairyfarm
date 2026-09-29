@@ -12,6 +12,7 @@ from assets.models import Event, Exercise, GrassHay, HealthRecord, Illness
 from assets.models import Injury, LegumeHay, Milk, Pasture, Season, Seed
 from assets.models import Status, Treatment, Vaccine
 from assets.helpers import AssetTime
+from demo.permissions import ClientScopedQuerysetMixin
 from assets.serializers import AgeSerializer, ActionSerializer, BreedSerializer
 from assets.serializers import CerealHaySerializer, ColorSerializer
 from assets.serializers import ClientSerializer, GrassHaySerializer
@@ -23,19 +24,12 @@ from assets.serializers import CowReadSerializer, CowWriteSerializer
 from assets.serializers import EventReadSerializer, EventWriteSerializer
 from assets.serializers import ExerciseReadSerializer, ExerciseWriteSerializer
 from assets.serializers import HealthRecordReadSerializer
+from assets.serializers import HealthRecordIllCowsSummarySerializer
 from assets.serializers import HealthRecordWriteSerializer
 from assets.serializers import MilkReadSerializer, MilkWriteSerializer
 from assets.serializers import MilkSummaryReadSerializer
 from assets.serializers import PastureReadSerializer, PastureWriteSerializer
 from assets.serializers import SeedReadSerializer, SeedWriteSerializer
-
-from rest_framework.authentication import BasicAuthentication
-from rest_framework.authentication import SessionAuthentication
-
-class CsrfExemptSessionAuthentication(SessionAuthentication):
-
-    def enforce_csrf(self, request):
-        return  # Temporarily bypass CSRF for debugging
 
 class ActionListView(generics.ListAPIView):
     # Get available actions
@@ -73,14 +67,10 @@ class CerealListView(generics.ListAPIView):
     def dispatch(self, *args, **kwargs):
         return super(CerealListView, self).dispatch(*args, **kwargs)
 
-class ClientListView(generics.ListAPIView):
+class ClientListView(ClientScopedQuerysetMixin, generics.ListAPIView):
     # Get available clients
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
-
-    @method_decorator(cache_page(60))
-    def dispatch(self, *args, **kwargs):
-        return super(ClientListView, self).dispatch(*args, **kwargs)
 
 class ColorListView(generics.ListAPIView):
     # Get available cattle breed colors
@@ -91,16 +81,16 @@ class ColorListView(generics.ListAPIView):
     def dispatch(self, *args, **kwargs):
         return super(ColorListView, self).dispatch(*args, **kwargs)
 
-class CowDetailView(generics.RetrieveUpdateDestroyAPIView):
+class CowDetailView(ClientScopedQuerysetMixin,
+                    generics.RetrieveUpdateDestroyAPIView):
     # Get / Update /Destroy a Cow
     queryset = Cow.objects.all()
 
     def delete(self, *args, **kwargs):
         if self.kwargs:
-            pk = self.kwargs['pk']
-            kwargs = {'sell_date': AssetTime.get_today()}
-            Cow.objects.filter(pk=pk).update(**kwargs)
-            instance = Cow.objects.get(pk=pk)
+            instance = self.get_object()
+            instance.sell_date = AssetTime.get_today()
+            instance.save(update_fields=['sell_date'])
             serializer = self.get_serializer(instance)
             return Response(serializer.data)
         return Response(status=status.HTTP_404_BAD_REQUEST)
@@ -110,22 +100,17 @@ class CowDetailView(generics.RetrieveUpdateDestroyAPIView):
             return CowReadSerializer
         return CowWriteSerializer
 
-class CowListView(generics.ListCreateAPIView):
+class CowListView(ClientScopedQuerysetMixin, generics.ListCreateAPIView):
     # Get / Purchase cows 
     queryset = Cow.objects.all().order_by('client');
-    # authentication_classes = (CsrfExemptSessionAuthentication,
-    #                           BasicAuthentication)
-
     def get_serializer_class(self):
         if self.request.method in ('GET',):
             return CowReadSerializer
         return CowWriteSerializer
 
-class CowListByClientView(generics.ListCreateAPIView):
+class CowListByClientView(ClientScopedQuerysetMixin,
+                          generics.ListCreateAPIView):
     # Get / Purchase cows 
-    # authentication_classes = (CsrfExemptSessionAuthentication,
-    #                           BasicAuthentication)
-
     def get_queryset(self):
         today = AssetTime.get_today()
         if self.kwargs:
@@ -139,7 +124,7 @@ class CowListByClientView(generics.ListCreateAPIView):
             return CowReadSerializer
         return CowWriteSerializer
 
-class CowListByMonthView(generics.ListAPIView):
+class CowListByMonthView(ClientScopedQuerysetMixin, generics.ListAPIView):
     # Get report of cows 
     serializer_class = CowReadSerializer
 
@@ -152,7 +137,7 @@ class CowListByMonthView(generics.ListAPIView):
                                       purchase_date__lte=end_date)
         return Cow.objects.all()
 
-class CowListByYearView(generics.ListAPIView):
+class CowListByYearView(ClientScopedQuerysetMixin, generics.ListAPIView):
     # Get report of cows 
     serializer_class = CowReadSerializer
 
@@ -164,7 +149,8 @@ class CowListByYearView(generics.ListAPIView):
                                       purchase_date__lte=end_date)
         return Cow.objects.all()
 
-class EventDetailView(generics.RetrieveUpdateAPIView):
+class EventDetailView(ClientScopedQuerysetMixin,
+                      generics.RetrieveUpdateAPIView):
     # Get an Event
     queryset = Event.objects.all()
 
@@ -173,7 +159,7 @@ class EventDetailView(generics.RetrieveUpdateAPIView):
             return EventReadSerializer
         return EventWriteSerializer
 
-class EventListView(generics.ListCreateAPIView):
+class EventListView(ClientScopedQuerysetMixin, generics.ListCreateAPIView):
     # Get / Create Event
     queryset = Event.objects.all()
 
@@ -182,7 +168,8 @@ class EventListView(generics.ListCreateAPIView):
             return EventReadSerializer
         return EventWriteSerializer
 
-class EventListByClientView(generics.ListCreateAPIView):
+class EventListByClientView(ClientScopedQuerysetMixin,
+                            generics.ListCreateAPIView):
     # Get / Create Event
 
     def get_queryset(self):
@@ -196,7 +183,8 @@ class EventListByClientView(generics.ListCreateAPIView):
             return EventReadSerializer
         return EventWriteSerializer
 
-class ExerciseDetailView(generics.RetrieveUpdateAPIView):
+class ExerciseDetailView(ClientScopedQuerysetMixin,
+                         generics.RetrieveUpdateAPIView):
     # Get an Exercise
     queryset = Exercise.objects.all()
 
@@ -205,7 +193,7 @@ class ExerciseDetailView(generics.RetrieveUpdateAPIView):
             return ExerciseReadSerializer
         return ExerciseWriteSerializer
 
-class ExerciseListView(generics.ListCreateAPIView):
+class ExerciseListView(ClientScopedQuerysetMixin, generics.ListCreateAPIView):
     # Get / Create Exercise
     queryset = Exercise.objects.all()
 
@@ -214,7 +202,8 @@ class ExerciseListView(generics.ListCreateAPIView):
             return ExerciseReadSerializer
         return ExerciseWriteSerializer
 
-class ExerciseListByClientView(generics.ListCreateAPIView):
+class ExerciseListByClientView(ClientScopedQuerysetMixin,
+                               generics.ListCreateAPIView):
     # Get / Create Exercise
 
     def get_queryset(self):
@@ -255,7 +244,8 @@ class InjuryListView(generics.ListAPIView):
     def dispatch(self, *args, **kwargs):
         return super(InjuryListView, self).dispatch(*args, **kwargs)
 
-class HealthRecordDetailView(generics.RetrieveUpdateAPIView):
+class HealthRecordDetailView(ClientScopedQuerysetMixin,
+                             generics.RetrieveUpdateAPIView):
     # Get / Update a HealthRecord
     queryset = HealthRecord.objects.all()
 
@@ -264,7 +254,8 @@ class HealthRecordDetailView(generics.RetrieveUpdateAPIView):
             return HealthRecordReadSerializer
         return HealthRecordWriteSerializer
 
-class HealthRecordListView(generics.ListCreateAPIView):
+class HealthRecordListView(ClientScopedQuerysetMixin,
+                           generics.ListCreateAPIView):
     # Get / Create HealthRecord
     queryset = HealthRecord.objects.all()
 
@@ -273,7 +264,8 @@ class HealthRecordListView(generics.ListCreateAPIView):
             return HealthRecordReadSerializer
         return HealthRecordWriteSerializer
 
-class HealthRecordListByClientView(generics.ListCreateAPIView):
+class HealthRecordListByClientView(ClientScopedQuerysetMixin,
+                                   generics.ListCreateAPIView):
     # Get / Create HealthRecord
 
     def get_queryset(self):
@@ -287,7 +279,8 @@ class HealthRecordListByClientView(generics.ListCreateAPIView):
             return HealthRecordReadSerializer
         return HealthRecordWriteSerializer
 
-class HealthRecordListByMonthView(generics.ListCreateAPIView):
+class HealthRecordListByMonthView(ClientScopedQuerysetMixin,
+                                  generics.ListCreateAPIView):
     # Get report of cow health records
     serializer_class = HealthRecordReadSerializer
 
@@ -304,7 +297,7 @@ class HealthRecordListByMonthView(generics.ListCreateAPIView):
 
 class HealthRecordIllCowsSummaryView(generics.ListAPIView):
     # Get summary of ill cows
-    serializer_class = HealthRecordReadSerializer
+    serializer_class = HealthRecordIllCowsSummarySerializer
     pagination_class = None
 
     def get_queryset(self):
@@ -314,13 +307,15 @@ class HealthRecordIllCowsSummaryView(generics.ListAPIView):
             month = self.kwargs['month']
             sdate = AssetTime.sdate_year_month(year, month)
             edate = AssetTime.edate_year_month(year, month)
-          
-            total_cows = HealthRecord.objects.filter(status__name__in=illnesses,
-                                                     inspection_time__gte=sdate,
-                                                     inspection_time__lte=edate).count()
+            records = HealthRecord.objects.filter(
+                status__name__in=illnesses,
+                inspection_time__gte=sdate,
+                inspection_time__lte=edate)
         else:
-            total_cows = HealthRecord.objects.all().count()
-        print('total cows: {}'.format(total_cows))
+            records = HealthRecord.objects.filter(status__name__in=illnesses)
+        if not self.request.user.is_staff:
+            records = records.filter(client__user=self.request.user)
+        total_cows = records.count()
         return [{'status': total_cows}]
 
 class LegumeListView(generics.ListAPIView):
@@ -332,7 +327,8 @@ class LegumeListView(generics.ListAPIView):
     def dispatch(self, *args, **kwargs):
         return super(LegumeListView, self).dispatch(*args, **kwargs)
 
-class MilkDetailView(generics.RetrieveUpdateAPIView):
+class MilkDetailView(ClientScopedQuerysetMixin,
+                     generics.RetrieveUpdateAPIView):
     # Get a Milk
     queryset = Milk.objects.all()
 
@@ -341,7 +337,7 @@ class MilkDetailView(generics.RetrieveUpdateAPIView):
             return MilkReadSerializer
         return MilkWriteSerializer
 
-class MilkListView(generics.ListCreateAPIView):
+class MilkListView(ClientScopedQuerysetMixin, generics.ListCreateAPIView):
     # Get / Create Milk
     queryset = Milk.objects.all()
 
@@ -350,7 +346,8 @@ class MilkListView(generics.ListCreateAPIView):
             return MilkReadSerializer
         return MilkWriteSerializer
 
-class MilkListByClientView(generics.ListCreateAPIView):
+class MilkListByClientView(ClientScopedQuerysetMixin,
+                           generics.ListCreateAPIView):
     # Get / Create Milk
     def get_queryset(self):
         if self.kwargs:
@@ -363,7 +360,7 @@ class MilkListByClientView(generics.ListCreateAPIView):
             return MilkReadSerializer
         return MilkWriteSerializer
 
-class MilkListByMonthView(generics.ListAPIView):
+class MilkListByMonthView(ClientScopedQuerysetMixin, generics.ListAPIView):
     # Get list of milk production by month
     serializer_class = MilkReadSerializer
 
@@ -388,13 +385,17 @@ class MilkSummaryByMonthView(generics.ListAPIView):
             month = self.kwargs['month']
             start_date = AssetTime.sdate_year_month(year, month)
             end_date = AssetTime.edate_year_month(year, month)
-            total_gallons = Milk.objects.filter(milking_time__gte=start_date,
-                                                milking_time__lte=end_date).aggregate(Sum('gallons'))['gallons__sum']
+            records = Milk.objects.filter(milking_time__gte=start_date,
+                                          milking_time__lte=end_date)
         else:
-            total_gallons = (Milk.objects.all().aggregate(Sum('gallons')))
+            records = Milk.objects.all()
+        if not self.request.user.is_staff:
+            records = records.filter(client__user=self.request.user)
+        total_gallons = records.aggregate(Sum('gallons'))['gallons__sum']
         return [{'gallons': total_gallons}]
 
-class PastureDetailView(generics.RetrieveUpdateAPIView):
+class PastureDetailView(ClientScopedQuerysetMixin,
+                        generics.RetrieveUpdateAPIView):
     # Get / Update a Seed
     queryset = Pasture.objects.all()
 
@@ -403,7 +404,7 @@ class PastureDetailView(generics.RetrieveUpdateAPIView):
             return PastureReadSerializer
         return PastureWriteSerializer
 
-class PastureListView(generics.ListCreateAPIView):
+class PastureListView(ClientScopedQuerysetMixin, generics.ListCreateAPIView):
     # Get / Create pastures
     queryset = Pasture.objects.all()
 
@@ -412,7 +413,8 @@ class PastureListView(generics.ListCreateAPIView):
             return PastureReadSerializer
         return PastureWriteSerializer
 
-class PastureListByClientView(generics.ListCreateAPIView):
+class PastureListByClientView(ClientScopedQuerysetMixin,
+                              generics.ListCreateAPIView):
     # Get / Create pastures
 
     def get_queryset(self):
@@ -435,7 +437,8 @@ class SeasonListView(generics.ListAPIView):
     def dispatch(self, *args, **kwargs):
         return super(SeasonListView, self).dispatch(*args, **kwargs)
 
-class SeedDetailView(generics.RetrieveUpdateAPIView):
+class SeedDetailView(ClientScopedQuerysetMixin,
+                     generics.RetrieveUpdateAPIView):
     # Get / Update a Seed
     queryset = Seed.objects.all()
 
@@ -444,7 +447,7 @@ class SeedDetailView(generics.RetrieveUpdateAPIView):
             return SeedReadSerializer
         return SeedWriteSerializer
 
-class SeedListView(generics.ListCreateAPIView):
+class SeedListView(ClientScopedQuerysetMixin, generics.ListCreateAPIView):
     # Get / Create pastures
     queryset = Seed.objects.all()
 
@@ -453,7 +456,8 @@ class SeedListView(generics.ListCreateAPIView):
             return SeedReadSerializer
         return SeedWriteSerializer
 
-class SeedListByClientView(generics.ListCreateAPIView):
+class SeedListByClientView(ClientScopedQuerysetMixin,
+                           generics.ListCreateAPIView):
     # Get / Create pastures
 
     def get_queryset(self):
@@ -486,17 +490,16 @@ class TreatmentListView(generics.ListAPIView):
         return super(TreatmentListView, self).dispatch(*args, **kwargs)
  
 class UserListView(generics.ListAPIView):
-    # Get and cache available users 
-    queryset = User.objects.filter(is_active=True).values('id',
-                                                          'username',
-                                                          'first_name',
-                                                          'last_name',
-                                                          'email')
+    # Only staff can enumerate users; regular users can see their own profile.
     serializer_class = UserSerializer
 
-    @method_decorator(cache_page(60))
-    def dispatch(self, *args, **kwargs):
-        return super(UserListView, self).dispatch(*args, **kwargs)
+    def get_queryset(self):
+        queryset = User.objects.filter(is_active=True)
+        if self.request.user.is_staff:
+            return queryset.values('id', 'username', 'first_name',
+                                   'last_name', 'email')
+        return queryset.filter(pk=self.request.user.pk).values(
+            'id', 'username', 'first_name', 'last_name', 'email')
 
 class VaccineListView(generics.ListAPIView):
     # Get available vaccines
@@ -506,4 +509,3 @@ class VaccineListView(generics.ListAPIView):
     @method_decorator(cache_page(60))
     def dispatch(self, *args, **kwargs):
         return super(VaccineListView, self).dispatch(*args, **kwargs)
-

@@ -2,14 +2,15 @@ from django.db.models import Max
 
 from rest_framework import generics
 
-from assets.models import Client
 from summary.models import Annual, Monthly
 from summary.serializers import AnnualReadSerializer
 from summary.serializers import AnnualWriteSerializer
 from summary.serializers import MonthlyReadSerializer
 from summary.serializers import MonthlyWriteSerializer
+from demo.permissions import ClientScopedQuerysetMixin
 
-class AnnualSummaryByClientView(generics.ListCreateAPIView):
+class AnnualSummaryByClientView(ClientScopedQuerysetMixin,
+                                generics.ListCreateAPIView):
     pagination_class = None
 
     def get_queryset(self):
@@ -28,14 +29,13 @@ class AnnualSummaryByClientView(generics.ListCreateAPIView):
             return AnnualReadSerializer
         return AnnualWriteSerializer
 
-class MonthlySummaryByClientView(generics.ListCreateAPIView):
+class MonthlySummaryByClientView(ClientScopedQuerysetMixin,
+                                 generics.ListCreateAPIView):
     pagination_class = None
 
     def get_queryset(self):
         if self.kwargs:
             pk = self.kwargs['pk']
-            obj = Client.objects.get(pk=pk)
-            created_by = obj.user.username
             year = self.kwargs['year']
             if 'month' in self.kwargs:
                 month = self.kwargs['month']

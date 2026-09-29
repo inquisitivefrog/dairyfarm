@@ -1,90 +1,108 @@
-#!/Users/tim/demo/bin/python3
+#!/usr/bin/env python3
 
 from argparse import ArgumentParser
-from os import environ
-from sys import exit, path
+from getpass import getpass
+import os
+import sys
 
 from django import setup
-from django.conf import settings
-from django.core.exceptions import PermissionDenied
+from django.contrib.auth.password_validation import validate_password
+from django.core.exceptions import ValidationError
 from django.db.utils import IntegrityError
 
+
 def read_args():
-    parser = ArgumentParser(description='Create User for Authentication')
-    parser.add_argument('-f',
-                        '--firstname',
-                        type=str,
-                        required=False,
-                        default=None,
+    parser = ArgumentParser(description='Create a Django user account')
+    parser.add_argument('-f', '--firstname', default=None,
                         help='first name of user')
-    parser.add_argument('-l',
-                        '--lastname',
-                        type=str,
-                        required=False,
-                        default=None,
+    parser.add_argument('-l', '--lastname', default=None,
                         help='last name of user')
-    parser.add_argument('-e',
-                        '--email',
-                        type=str,
-                        required=True,
+    parser.add_argument('-e', '--email', required=True,
                         help='email address of user')
-    parser.add_argument('-u',
-                        '--username',
-                        type=str,
-                        required=True,
+    parser.add_argument('-u', '--username', required=True,
                         help='username of user')
-    parser.add_argument('-p',
-                        '--password',
-                        type=str,
-                        required=True,
-                        help='password for security')
-    parser.add_argument('-s',
-                        '--superuser',
-                        action='store_true',
-                        required=False,
-                        help='enable superuser privileges')
-    o = parser.parse_args()
-    return(o.firstname,
-           o.lastname,
-           o.email,
-           o.username,
-           o.password,
-           o.superuser)
-    
-def create_user(first_name, last_name, email, username, password, superuser):
-    data = {'email': email,
-            'username': username}
-    if first_name:
-        data.update({'first_name': first_name})
-    if last_name:
-        data.update({'last_name': last_name})
+    parser.add_argument('--staff', action='store_true',
+                        help='grant Django admin-site staff access')
+    parser.add_argument('-s', '--superuser', action='store_true',
+                        help='grant all Django permissions')
+    return parser.parse_args()
+
+
+def create_user(first_name, last_name, email, username, password,
+                staff=False, superuser=False):
     from django.contrib.auth.models import User
+
+    if User.objects.filter(username=username).exists():
+        raise ValueError('username already exists')
+    if len(password) < 12:
+        raise ValueError('password must be at least 12 characters')
+
+    user_data = {
+        'username': username,
+        'email': email,
+        'first_name': first_name or '',
+        'last_name': last_name or '',
+    }
     try:
-        user = User.objects.create(**data)
-        user.set_password(password)
-        user.is_active = True
-        user.is_staff = True
+        validate_password(password, user=User(**user_data))
+    except ValidationError as error:
+        raise ValueError('; '.join(error.messages))
+    try:
         if superuser:
-            user.is_superuser = True
-        user.save()
-        return
-    except PermissionDenied as e:
-        print('ERROR: unable to create username: {}!'.format(username))
-        exit(1)
-    except IntegrityError as e:
-        print('ERROR: {}'.format(e))
-        print('ERROR: username: {} already exists!'.format(username))
-        exit(1)
+            user = User.objects.create_superuser(
+                password=password,
+                **user_data
+            )
+        else:
+            user = User.objects.create_user(
+                password=password,
+                **user_data
+            )
+            if staff:
+                user.is_staff = True
+                user.save(update_fields=['is_staff'])
+    except IntegrityError:
+        raise ValueError(
+            'account could not be created; check username and email')
+    return user
+
 
 def main():
-    (firstname, lastname, email, username, password, superuser) = read_args()
-    path.append('/Users/tim/Documents/workspace/python3/dairyfarm/demo/')
-    environ.setdefault('DJANGO_SETTINGS_MODULE',
-                       'demo.settings')
+    args = read_args()
+    password = getpass('Password: ')
+    confirmation = getpass('Confirm password: ')
+    if not password:
+        print('ERROR: password must not be empty', file=sys.stderr)
+        return 1
+    if password != confirmation:
+        print('ERROR: passwords do not match', file=sys.stderr)
+        return 1
+
+    project_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    sys.path.insert(0, project_path)
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'demo.settings')
     setup()
-    create_user(firstname, lastname, email, username, password, superuser)
-    return
+
+    try:
+        user = create_user(
+            args.firstname,
+            args.lastname,
+            args.email,
+            args.username,
+            password,
+            staff=args.staff,
+            superuser=args.superuser,
+        )
+    except ValueError as error:
+        print('ERROR: {}'.format(error), file=sys.stderr)
+        return 1
+    print('Created {} account: {}'.format(
+        'superuser' if user.is_superuser else (
+            'staff' if user.is_staff else 'regular'),
+        user.username,
+    ))
+    return 0
+
 
 if __name__ == '__main__':
-    main()
-    exit(0)
+    sys.exit(main())

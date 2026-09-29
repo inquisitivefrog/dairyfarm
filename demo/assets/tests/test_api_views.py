@@ -28,7 +28,8 @@ class TestCowListView(APITestCase):
     fixtures = ['age', 'breed', 'client', 'color', 'user', 'cow']
 
     def setUp(self):
-        client = Client.objects.get(pk=1)
+        user = User.objects.get(username=TestData.get_random_user())
+        client = Client.objects.get(user=user)
         self.data = {'purchased_by': TestData.get_random_user(),
                      'purchase_date': TestTime.get_purchase_date(),
                      'age': TestData.get_age(),
@@ -38,7 +39,7 @@ class TestCowListView(APITestCase):
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.herd = Cow.objects.all()
         self.url = django_reverse('assets:cow-list')
-        self.user = User.objects.get(username=TestData.get_random_user())
+        self.user = user
 
     def tearDown(self):
         self.data = None
@@ -523,14 +524,14 @@ class TestSeedListView(APITestCase):
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
-        client = Client.objects.get(pk=1)
+        client = Client.objects.get(user=user)
         cereals = CerealHay.objects.all()
         cereal = cereals[randint(0, len(cereals) - 1)]
         grasses = GrassHay.objects.all()
         grass = grasses[randint(0, len(grasses) - 1)]
         legumes = LegumeHay.objects.all()
         legume = legumes[randint(0, len(legumes) - 1)]
-        fields = Pasture.objects.all()
+        fields = Pasture.objects.filter(client=client)
         pasture = fields[randint(0, len(fields) - 1)]
         seasons = Season.objects.all()
         season = seasons[randint(0, len(seasons) - 1)]
@@ -544,7 +545,7 @@ class TestSeedListView(APITestCase):
                      'legume_hay': legume.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.url = django_reverse('assets:seed-list')
-        self.user = User.objects.get(username=TestData.get_random_user())
+        self.user = user
 
     def tearDown(self):
         self.data = None
@@ -645,14 +646,14 @@ class TestSeedDetailView(APITestCase):
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
-        client = Client.objects.get(pk=1)
+        client = Client.objects.get(user=user)
         cereals = CerealHay.objects.all()
         cereal = cereals[randint(0, len(cereals) - 1)]
         grasses = GrassHay.objects.all()
         grass = grasses[randint(0, len(grasses) - 1)]
         legumes = LegumeHay.objects.all()
         legume = legumes[randint(0, len(legumes) - 1)]
-        fields = Pasture.objects.all()
+        fields = Pasture.objects.filter(client=client)
         pasture = fields[randint(0, len(fields) - 1)]
         seasons = Season.objects.all()
         season = seasons[randint(0, len(seasons) - 1)]
@@ -668,7 +669,7 @@ class TestSeedDetailView(APITestCase):
         self.pk = Seed.objects.get(pk=1).id
         self.url = django_reverse('assets:seed-detail',
                                   args=(self.pk,))
-        self.user = User.objects.get(username=TestData.get_random_user())
+        self.user = user
 
     def tearDown(self):
         self.data = None
@@ -800,8 +801,7 @@ class TestEventListView(APITestCase):
         user = User.objects.get(username=TestData.get_random_user())
         actions = Action.objects.all()
         action = actions[randint(0, len(actions) - 1)]
-        herd = Cow.objects.all()
-        cow = herd[randint(0, len(herd) - 1)]
+        cow = Cow.objects.filter(client__user=user).first()
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
                      'client': cow.client.name,
@@ -809,7 +809,7 @@ class TestEventListView(APITestCase):
                      'action': action.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.url = django_reverse('assets:event-list')
-        self.user = User.objects.get(username=TestData.get_random_user())
+        self.user = user
 
     def tearDown(self):
         self.data = None
@@ -903,8 +903,7 @@ class TestEventDetailView(APITestCase):
         user = User.objects.get(username=TestData.get_random_user())
         actions = Action.objects.all()
         action = actions[randint(0, len(actions) - 1)]
-        herd = Cow.objects.all()
-        cow = herd[randint(0, len(herd) - 1)]
+        cow = Cow.objects.filter(client__user=user).first()
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
                      'client': cow.client.name,
@@ -914,7 +913,7 @@ class TestEventDetailView(APITestCase):
         self.pk = Event.objects.get(pk=1).id
         self.url = django_reverse('assets:event-detail',
                                   args=(self.pk,))
-        self.user = User.objects.get(username=TestData.get_random_user())
+        self.user = user
 
     def tearDown(self):
         self.data = None
@@ -1052,10 +1051,8 @@ class TestExerciseListView(APITestCase):
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
-        fields = Pasture.objects.all()
-        pasture = fields[randint(0, len(fields) - 1)]
-        herd = Cow.objects.all()
-        cow = herd[randint(0, len(herd) - 1)]
+        cow = Cow.objects.filter(client__user=user).first()
+        pasture = Pasture.objects.filter(client=cow.client).first()
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
                      'client': cow.client.name,
@@ -1063,7 +1060,7 @@ class TestExerciseListView(APITestCase):
                      'pasture': pasture.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.url = django_reverse('assets:exercise-list')
-        self.user = User.objects.get(username=TestData.get_random_user())
+        self.user = user
 
     def tearDown(self):
         self.data = None
@@ -1155,10 +1152,8 @@ class TestExerciseDetailView(APITestCase):
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
-        fields = Pasture.objects.all()
-        pasture = fields[randint(0, len(fields) - 1)]
-        herd = Cow.objects.all()
-        cow = herd[randint(0, len(herd) - 1)]
+        cow = Cow.objects.filter(client__user=user).first()
+        pasture = Pasture.objects.filter(client=cow.client).first()
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
                      'client': cow.client.name,
@@ -1168,7 +1163,7 @@ class TestExerciseDetailView(APITestCase):
         self.pk = Exercise.objects.get(pk=1).id
         self.url = django_reverse('assets:exercise-detail',
                                   args=(self.pk,))
-        self.user = User.objects.get(username=TestData.get_random_user())
+        self.user = user
 
     def tearDown(self):
         self.data = None
@@ -1305,8 +1300,7 @@ class TestMilkListView(APITestCase):
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
-        herd = Cow.objects.all()
-        cow = herd[randint(0, len(herd) - 1)]
+        cow = Cow.objects.filter(client__user=user).first()
         gallons = TestData.get_milk()
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
@@ -1315,7 +1309,7 @@ class TestMilkListView(APITestCase):
                      'gallons': gallons}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.url = django_reverse('assets:milk-list')
-        self.user = User.objects.get(username=TestData.get_random_user())
+        self.user = user
 
     def tearDown(self):
         self.data = None
@@ -1403,8 +1397,7 @@ class TestMilkDetailView(APITestCase):
 
     def setUp(self):
         user = User.objects.get(username=TestData.get_random_user())
-        herd = Cow.objects.all()
-        cow = herd[randint(0, len(herd) - 1)]
+        cow = Cow.objects.filter(client__user=user).first()
         gallons = TestData.get_milk()
         self.data = {'recorded_by': user.username,
                      'cow': str(cow.rfid),
@@ -1415,7 +1408,7 @@ class TestMilkDetailView(APITestCase):
         self.pk = Milk.objects.get(pk=1).id
         self.url = django_reverse('assets:milk-detail',
                                   args=(self.pk,))
-        self.user = User.objects.get(username=TestData.get_random_user())
+        self.user = user
 
     def tearDown(self):
         self.data = None
@@ -1549,15 +1542,14 @@ class TestHealthRecordListView(APITestCase):
                 'injury', 'status', 'treatment', 'vaccine', 'healthrecord']
 
     def setUp(self):
-        herd = Cow.objects.all()
-        cow = herd[randint(0, len(herd) - 1)]
+        user = User.objects.get(username=TestData.get_random_user())
+        cow = Cow.objects.filter(client__user=user).first()
         illnesses = Illness.objects.all()
         illness = illnesses[randint(0, len(illnesses) - 1)]
         injuries = Injury.objects.all()
         injury = injuries[randint(0, len(injuries) - 1)]
         statuses = Status.objects.all()
         status = statuses[randint(0, len(statuses) - 1)]
-        user = User.objects.get(username=TestData.get_random_user())
         vaccines = Vaccine.objects.all()
         vaccine = vaccines[randint(0, len(vaccines) - 1)]
         self.data = {'recorded_by': user.username,
@@ -1576,7 +1568,7 @@ class TestHealthRecordListView(APITestCase):
                      'vaccine': vaccine.name}
         self.factory = APIRequestFactory(enforce_csrf_checks=True)
         self.url = django_reverse('assets:healthrecord-list')
-        self.user = User.objects.get(username=TestData.get_random_user())
+        self.user = user
 
     def tearDown(self):
         self.data = None
@@ -1674,15 +1666,14 @@ class TestHealthRecordDetailView(APITestCase):
                 'injury', 'status', 'treatment', 'vaccine', 'healthrecord']
 
     def setUp(self):
-        herd = Cow.objects.all()
-        cow = herd[randint(0, len(herd) - 1)]
+        user = User.objects.get(username=TestData.get_random_user())
+        cow = Cow.objects.filter(client__user=user).first()
         illnesses = Illness.objects.all()
         illness = illnesses[randint(0, len(illnesses) - 1)]
         injuries = Injury.objects.all()
         injury = injuries[randint(0, len(injuries) - 1)]
         statuses = Status.objects.all()
         status = statuses[randint(0, len(statuses) - 1)]
-        user = User.objects.get(username=TestData.get_random_user())
         vaccines = Vaccine.objects.all()
         vaccine = vaccines[randint(0, len(vaccines) - 1)]
         self.data = {'recorded_by': user.username,
@@ -1703,7 +1694,7 @@ class TestHealthRecordDetailView(APITestCase):
         self.pk = HealthRecord.objects.get(pk=1).id
         self.url = django_reverse('assets:healthrecord-detail',
                                   args=(self.pk,))
-        self.user = User.objects.get(username=TestData.get_random_user())
+        self.user = user
 
     def tearDown(self):
         self.data = None

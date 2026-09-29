@@ -1,9 +1,12 @@
 from django.contrib.auth.models import User
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 from django.core.mail import EmailMessage
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import redirect, render
 from django.template.loader import get_template
 from django.views import generic
+from django.views.decorators.http import require_POST
 
 from demo.forms import ContactForm
 
@@ -45,23 +48,29 @@ def redirect(request):
 def ui_login(request):
     return render(request, 'registration/ui_login.html', {})
 
+@login_required
 def ui_logged_in(request):
-    clients = [ (c.id, c.name) for c in request.user.client_set.all() ]
+    clients = [
+        {'id': client.id, 'name': client.name}
+        for client in request.user.client_set.all()
+    ]
     data = {"user": {"id": request.user.id,
                      "username": request.user.username,
                      "first_name": request.user.first_name,
                      "last_name": request.user.last_name,
                      "email": request.user.email,
-                     "client": {"id": clients[0][0],
-                                "name": clients[0][1]}},
+                     "client": clients[0] if clients else None,
+                     "clients": clients},
             "auth": None}
     return JsonResponse(data)
 
+@login_required
+@require_POST
 def ui_logout(request):
-    return render(request, 'registration/ui_logged_out.html', {})
+    logout(request)
+    return JsonResponse({'detail': 'Logged out.'})
 
 class IndexView(generic.ListView):
     queryset = User.objects.all()
     template_name = 'demo/index.html'
-
 

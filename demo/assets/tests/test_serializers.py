@@ -146,6 +146,9 @@ class TestAgeSerializer(APITestCase):
         data = []
         for i in range(expected):
             self._load_age_data()
+            self.age_data.update({
+                'name': '{} years'.format(i + 10),
+            })
             data.append(self.age_data)
         actual = AgeSerializer(data=data,
                                many=True)
@@ -172,6 +175,9 @@ class TestAgeSerializer(APITestCase):
         ages = []
         for i in range(expected):
             self._load_age_data()
+            self.age_data.update({
+                'name': '{} years'.format(i + 10),
+            })
             age = Age.objects.create(**self.age_data)
             ages.append(age)
         actual = AgeSerializer(ages,
@@ -3118,5 +3124,3 @@ class TestExerciseWriteSerializer(APITestCase):
                          actual.data['pasture'])
         self.assertIn('exercise_time',
                       actual.data)
-
-
