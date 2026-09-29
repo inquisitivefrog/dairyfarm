@@ -48,7 +48,7 @@ class Age(models.Model):
 class Client(models.Model):
     user = models.ForeignKey(User,
                              on_delete=models.CASCADE)
-    name = models.CharField(max_length=20,
+    name = models.CharField(max_length=50,
                             null=False,
                             blank=False,
                             unique=True)
@@ -88,7 +88,7 @@ class Color(models.Model):
             return '{}'.format(self.__class__)
 
 class Breed(models.Model):
-    name = models.CharField(max_length=20,
+    name = models.CharField(max_length=50,
                             null=False,
                             blank=False,
                             unique=False)
@@ -365,7 +365,7 @@ class Status(models.Model):
             return '{}'.format(self.__class__)
 
 class Treatment(models.Model):
-    name = models.CharField(max_length=20,
+    name = models.CharField(max_length=100,
                             null=False,
                             blank=False,
                             unique=True)

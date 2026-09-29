@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
+from django.core.exceptions import ImproperlyConfigured
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FIXTURE_DIRS = (os.path.join(BASE_DIR, 'demo/fixtures'),)
@@ -21,12 +23,20 @@ FIXTURE_DIRS = (os.path.join(BASE_DIR, 'demo/fixtures'),)
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!&f7my!sev%mvb13q4zu5ndp$ffer15z9$sned0r02$=w@x8d_'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+if not SECRET_KEY:
+    raise ImproperlyConfigured(
+        'DJANGO_SECRET_KEY must be set in the environment')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', 'true').lower() in (
+    'true', '1', 'yes', 'on')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    host.strip()
+    for host in os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(',')
+    if host.strip()
+]
 
 
 # Application definition
@@ -83,6 +93,30 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+if os.environ.get('DJANGO_DB_ENGINE'):
+    required_database_settings = (
+        'DJANGO_DB_NAME',
+        'DJANGO_DB_USER',
+        'DJANGO_DB_PASSWORD',
+        'DJANGO_DB_HOST',
+        'DJANGO_DB_PORT',
+    )
+    missing_database_settings = [
+        setting for setting in required_database_settings
+        if not os.environ.get(setting)
+    ]
+    if missing_database_settings:
+        raise ImproperlyConfigured(
+            'Missing database environment variables: {}'.format(
+                ', '.join(missing_database_settings)))
+    DATABASES['default'] = {
+        'ENGINE': os.environ['DJANGO_DB_ENGINE'],
+        'NAME': os.environ['DJANGO_DB_NAME'],
+        'USER': os.environ['DJANGO_DB_USER'],
+        'PASSWORD': os.environ['DJANGO_DB_PASSWORD'],
+        'HOST': os.environ['DJANGO_DB_HOST'],
+        'PORT': os.environ['DJANGO_DB_PORT'],
+    }
 
 
 # Password validation
@@ -123,6 +157,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
@@ -144,7 +179,8 @@ LOGIN_URL = '/login/'
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': '127.0.0.1:11211',
+        'LOCATION': os.environ.get(
+            'MEMCACHED_LOCATION', '127.0.0.1:11211'),
     }
 }
 
