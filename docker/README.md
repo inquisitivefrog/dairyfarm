@@ -53,12 +53,13 @@ Compose PostgreSQL database starts empty; safe demo account/data setup is
 separate and is not performed by container startup. The full PostgreSQL test
 suite currently passes.
 
-GitHub Actions runs these checks on pull requests and pushes to `main`. It also
-reviews dependency changes for high-severity vulnerabilities and scans the
-checked-out source tree for secrets. The lint gate is limited to `sre-tools/`
-while the legacy application-wide flake8 backlog is addressed. This workflow
-does not deploy; production deployment remains blocked until the supported
-runtime/framework baseline and deployment preflight are satisfied.
+GitHub Actions runs these checks on pull requests and pushes to `ai-assisted`
+and `master`. It also reviews dependency changes for high-severity
+vulnerabilities and scans the checked-out source tree for secrets. The lint
+gate is limited to `sre-tools/` while the legacy application-wide flake8
+backlog is addressed. This workflow does not deploy; production deployment
+remains blocked until the supported runtime/framework baseline and deployment
+preflight are satisfied.
 Enable GitHub's dependency graph/Dependabot alerts and secret scanning with
 push protection in repository settings as well; workflow configuration cannot
 turn on those repository-level features.

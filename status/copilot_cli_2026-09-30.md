@@ -22,3 +22,29 @@
   skipped on the branch-push run.
 - The first run warned that checkout v4's Node.js 20 runtime is deprecated.
   The workflow now pins checkout v7.0.1 by immutable commit SHA.
+- The active default branch is `master`, not `main`; CI push filters and
+  documentation now use `ai-assisted` and `master`.
+
+## Dependency modernization discovery
+
+- GitHub reports 55 open Dependabot alerts from `requirements.txt`. These are
+  advisory records, not 55 distinct affected packages; several are multiple
+  advisories against the same pinned legacy package.
+- Direct application use includes Django 2.0.1, Django REST Framework 3.7.7,
+  the PostgreSQL driver, python-memcached, and pytz. BeautifulSoup is used by
+  tests; flake8 is used for SRE-tool linting.
+- Initial source search found no direct use of NumPy, Requests, django-heroku,
+  dj-database-url, or Gunicorn in the current Docker startup path. Confirm
+  tooling/deployment needs before removing them; transitive requirements should
+  be regenerated rather than manually guessed.
+- Django 2.0 compatibility blockers include old `django.utils.six` test imports
+  and deprecated `django.conf.urls.url` routes. There is no need to rewrite
+  these until the staged framework upgrade exposes the exact failures.
+- Python 3.10 reaches end of life in October 2026, so the existing preflight
+  minimum of Python 3.10 is too weak as a future deployment target. Candidate
+  target: Python 3.13 with the maintained Django 5.2 LTS line, after validating
+  dependency compatibility and the hosting platform.
+- Next technical step: remove confirmed unused dependencies, separate runtime
+  from test/lint dependencies, generate reproducible constraints, then upgrade
+  the runtime and framework under CI. Do not try to silence the alert count
+  with blind package bumps.
