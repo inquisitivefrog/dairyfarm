@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - ai-assisted
   workflow_dispatch:
 
 permissions:
