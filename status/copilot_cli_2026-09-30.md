@@ -16,5 +16,9 @@
 
 ## CI status
 
-- The workflow update adds push validation for `ai-assisted`. GitHub Actions
-  should run after this change is pushed; a run has not yet been observed.
+- CI ran successfully on the `ai-assisted` push as workflow run `36750053646`:
+  the PostgreSQL-backed Django tests/checks and Gitleaks scan passed.
+- Dependency review is configured for pull requests only and was therefore
+  skipped on the branch-push run.
+- The first run warned that checkout v4's Node.js 20 runtime is deprecated.
+  The workflow now pins checkout v7.0.1 by immutable commit SHA.
