@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.conf import settings
 from django.db.models import Sum
 from django.views.decorators.cache import cache_page
 from django.utils.decorators import method_decorator
@@ -313,7 +314,11 @@ class HealthRecordIllCowsSummaryView(generics.ListAPIView):
                 inspection_time__lte=edate)
         else:
             records = HealthRecord.objects.filter(status__name__in=illnesses)
-        if not self.request.user.is_staff:
+        if settings.PUBLIC_DEMO_READ_ONLY:
+            records = records.filter(
+                client__user__username=settings.PUBLIC_DEMO_OWNER_USERNAME,
+                client__name=settings.PUBLIC_DEMO_CLIENT_NAME)
+        elif not self.request.user.is_staff:
             records = records.filter(client__user=self.request.user)
         total_cows = records.count()
         return [{'status': total_cows}]
@@ -389,7 +394,11 @@ class MilkSummaryByMonthView(generics.ListAPIView):
                                           milking_time__lte=end_date)
         else:
             records = Milk.objects.all()
-        if not self.request.user.is_staff:
+        if settings.PUBLIC_DEMO_READ_ONLY:
+            records = records.filter(
+                client__user__username=settings.PUBLIC_DEMO_OWNER_USERNAME,
+                client__name=settings.PUBLIC_DEMO_CLIENT_NAME)
+        elif not self.request.user.is_staff:
             records = records.filter(client__user=self.request.user)
         total_gallons = records.aggregate(Sum('gallons'))['gallons__sum']
         return [{'gallons': total_gallons}]
@@ -494,6 +503,8 @@ class UserListView(generics.ListAPIView):
     serializer_class = UserSerializer
 
     def get_queryset(self):
+        if settings.PUBLIC_DEMO_READ_ONLY:
+            return User.objects.none()
         queryset = User.objects.filter(is_active=True)
         if self.request.user.is_staff:
             return queryset.values('id', 'username', 'first_name',

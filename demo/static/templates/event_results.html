@@ -9,7 +9,7 @@
 <h2>{{globals.currentUser.client.name}} Event Recorded!</h2>
 <table ng-if="event">
   <tr>
-    <th>ID</th>
+    <th>Event #</th>
     <th>Client</th>
     <th>Recorder</th>
     <th>Occurred When</th>
@@ -20,7 +20,7 @@
     <th>Action</th>
   </tr>
   <tr>
-    <td>{{event.id}}</td>
+    <td>{{event.farm_number}}</td>
     <td>{{event.client.name}}</td>
     <td>{{event.recorded_by}}</td>
     <td>{{event.event_time}}</td>

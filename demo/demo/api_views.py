@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 
+from demo.permissions import PublicDemoReadOnlyPermission
 from demo.serializers import UserSerializer
 
 from rest_framework.generics import CreateAPIView, RetrieveAPIView
@@ -9,7 +10,7 @@ class UserCreate(CreateAPIView):
     '''
     Create a user from an authenticated staff-only workflow.
     '''
-    permission_classes = (IsAdminUser,)
+    permission_classes = (IsAdminUser, PublicDemoReadOnlyPermission)
     serializer_class = UserSerializer
 
 class UserDetail(RetrieveAPIView):
@@ -17,5 +18,5 @@ class UserDetail(RetrieveAPIView):
     Retrieve a user from an authenticated staff-only workflow.
     '''
     queryset = User.objects.all()
-    permission_classes = (IsAdminUser,)
+    permission_classes = (IsAdminUser, PublicDemoReadOnlyPermission)
     serializer_class = UserSerializer

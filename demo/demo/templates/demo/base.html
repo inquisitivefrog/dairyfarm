@@ -10,7 +10,7 @@
     <script src="{% static 'js/cacheUtils.js' %}"></script>
     <script src="{% static 'js/stringUtils.js' %}"></script>
     <script src="{% static 'js/timeUtils.js' %}"></script>
-    <script src="{% static 'js/farmApp.js' %}?v=about-paragraphs-2"></script>
+    <script src="{% static 'js/farmApp.js' %}?v=farm-number-1"></script>
     <script src="{% static 'js/farmAppLoginCtrl.js' %}?v=csrf-cookie-1"></script>
     <script src="{% static 'js/farmAppLogoutCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppReloadCacheCtrl.js' %}"></script>
@@ -44,11 +44,14 @@
     <script src="{% static 'js/farmAppAnnualSummaryByClientCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppMonthlySummaryByClientCtrl.js' %}"></script>
     <link rel="stylesheet" type="text/css"
-          href="{% static 'css/farmApp.css' %}?v=content-border-box-1"/>
+          href="{% static 'css/farmApp.css' %}?v=public-demo-1"/>
   </head>
 <body>
     <div class="flex-container" ng-app="farmApp"
-         ng-controller="ClientSelectionController">
+         ng-controller="ClientSelectionController"
+         data-public-demo="{{ public_demo_enabled|yesno:'true,false' }}"
+         data-public-demo-client-id="{{ public_demo_client.id|default:'' }}"
+         data-public-demo-client-name="{{ public_demo_client.name|default:'' }}">
         <header>Django REST Framework App: Dairy Farm Inventory Management</header>
         <nav class="nav">
             <div class="menu">
@@ -60,8 +63,9 @@
             </details>
             </div>
             <p></p>
-            <p><b><a href="#!/cache/quiet/">Reload Cache</a></b></p>
-            <details class="sidebar-category" data-sidebar-accordion>
+            <p ng-if="!globals.publicDemo"><b><a href="#!/cache/quiet/">Reload Cache</a></b></p>
+            <details class="sidebar-category" data-sidebar-accordion
+                     ng-if="!globals.publicDemo">
                 <summary>User Management</summary>
                 <ul>
                     <li><a href="#!/logout/">Logout User</a></li>
@@ -196,9 +200,14 @@
             </details>
         </nav>
         <article class="article">
+            <p class="public-demo-banner" ng-if="globals.publicDemo">
+                Public read-only demo — synthetic data
+            </p>
             {% verbatim %}
-            <div ng-view>
-            </div>
+            <fieldset class="article-content"
+                      ng-disabled="globals.publicDemo">
+                <div ng-view></div>
+            </fieldset>
             {% endverbatim %}
         </article>
         <footer>Copyright 2018 &copy;Tim Stilwell</footer>

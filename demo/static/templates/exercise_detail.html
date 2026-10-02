@@ -10,8 +10,8 @@
 <form ng-if="exercise" action="{% url 'assets:exercise-detail' exercise.id %}" method="put">
     <table>
         <tr>
-            <th>ID:</th>
-            <td>{{exercise.id}}</td>
+            <th>Exercise #:</th>
+            <td>{{exercise.farm_number}}</td>
         </tr>
         <tr>
             <th>Client:</th>
@@ -43,7 +43,7 @@
 
 <table ng-if="exercise">
   <tr>
-    <th>ID</th>
+    <th>Exercise #</th>
     <th>Client</th>
     <th>Recorder</th>
     <th>Occurred When</th>
@@ -54,7 +54,7 @@
     <th>Pasture</th>
   </tr>
   <tr>
-    <td>{{exercise.id}}</td>
+    <td>{{exercise.farm_number}}</td>
     <td>{{exercise.client.name}}</td>
     <td>{{exercise.recorded_by}}</td>
     <td>{{exercise.exercise_time}}</td>

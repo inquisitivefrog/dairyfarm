@@ -10,8 +10,8 @@
 <form ng-if="seed" action="{% url 'assets:seed-detail' seed.id %}" method="put">
     <table>
     <tr>
-        <th>ID:</th>
-        <td>{{seed.id}}</td>
+        <th>Seed #:</th>
+        <td>{{seed.farm_number}}</td>
     </tr>
     <tr>
         <th>Client:</th>
@@ -67,7 +67,7 @@
 <h2>Seed</h2>
 <table ng-if="seed">
   <tr>
-    <th>ID</th>
+    <th>Seed #</th>
     <th>Client</th>
     <th>Recorder</th>
     <th>Year</th>
@@ -78,7 +78,7 @@
     <th>Legume Planted</th>
   </tr>
   <tr>
-    <td>{{seed.id}}</td>
+    <td>{{seed.farm_number}}</td>
     <td>{{seed.client.name}}</td>
     <td>{{seed.seeded_by}}</td>
     <td>{{seed.year}}</td>
@@ -91,4 +91,3 @@
 </table>
 <p/>
 <img src="{{seed.pasture.url || ''}}" alt="Image failed to load" height="200" width="400">
-

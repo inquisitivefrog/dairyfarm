@@ -10,8 +10,8 @@
 <form ng-if="event" action="{% url 'assets:event-detail' event.id %}" method="put">
     <table>
         <tr>
-            <th>ID:</th>
-            <td>{{event.id}}</td>
+            <th>Event #:</th>
+            <td>{{event.farm_number}}</td>
         </tr>
         <tr>
             <th>Client:</th>
@@ -43,7 +43,7 @@
 
 <table ng-if="event">
   <tr>
-    <th>ID</th>
+    <th>Event #</th>
     <th>Client</th>
     <th>Recorder</th>
     <th>Occurred When</th>
@@ -54,7 +54,7 @@
     <th>Action</th>
   </tr>
   <tr>
-    <td>{{event.id}}</td>
+    <td>{{event.farm_number}}</td>
     <td>{{event.client.name}}</td>
     <td>{{event.recorded_by}}</td>
     <td>{{event.event_time}}</td>
@@ -67,4 +67,3 @@
 </table>
 <p/>
 <img src="{{event.cow.breed.url || ''}}" alt="Image failed to load" height="200" width="400">
-

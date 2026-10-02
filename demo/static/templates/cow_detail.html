@@ -10,8 +10,8 @@
 <form ng-if="cow" action="{% url 'assets:cow-detail' cow.id %}" method="put">
     <table>
         <tr>
-            <th>ID:</th>
-            <td>{{cow.id}}</td>
+            <th>Herd #:</th>
+            <td>{{cow.farm_number}}</td>
         </tr>
         <tr>
             <th>Client:</th>
@@ -62,8 +62,8 @@
 <form ng-if="cow" action="{% url 'assets:cow-detail' cow.id %} method="delete">
     <table>
         <tr>
-            <th>ID:</th>
-            <td>{{cow.id}}</td>
+            <th>Herd #:</th>
+            <td>{{cow.farm_number}}</td>
         </tr>
         <tr>
             <th>Client:</th>
@@ -88,7 +88,7 @@
 <h2>Cow</h2>
 <table ng-if="cow">
   <tr>
-    <th>ID</th>
+    <th>Herd #</th>
     <th>RFID tag</th>
     <th>Client</th>
     <th>Procurer</th>
@@ -99,7 +99,7 @@
     <th>Date Sold</th>
   </tr>
   <tr>
-    <td>{{cow.id}}</td>
+    <td>{{cow.farm_number}}</td>
     <td>{{cow.rfid}}</td>
     <td>{{cow.client.name}}</td>
     <td>{{cow.purchased_by}}</td>
@@ -112,4 +112,3 @@
 </table>
 <p/>
 <img src="{{cow.breed.url || ''}}" alt="Image failed to load" height="200" width="400">
-

@@ -9,7 +9,7 @@
 <h2>Gallons Recorded for {{globals.currentUser.client.name}}!</h2>
 <table ng-if="milk">
   <tr>
-    <th>ID</th>
+    <th>Milking #</th>
     <th>Client</th>
     <th>Recorder</th>
     <th>Occurred When</th>
@@ -20,7 +20,7 @@
     <th>Gallons Collected</th>
   </tr>
   <tr>
-    <td>{{milk.id}}</td>
+    <td>{{milk.farm_number}}</td>
     <td>{{milk.client.name}}</td>
     <td>{{milk.recorded_by}}</td>
     <td>{{milk.milking_time}}</td>

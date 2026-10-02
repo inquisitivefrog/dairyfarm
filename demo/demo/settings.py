@@ -177,6 +177,11 @@ USE_I18N = True
 
 USE_TZ = True
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+PUBLIC_DEMO_READ_ONLY = os.environ.get(
+    'DJANGO_PUBLIC_DEMO_READ_ONLY', 'false').lower() in (
+        'true', '1', 'yes', 'on')
+PUBLIC_DEMO_OWNER_USERNAME = 'ai-managed'
+PUBLIC_DEMO_CLIENT_NAME = 'AI-Assisted Demo Farm (2019-2026)'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -194,7 +199,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
+        'demo.permissions.PublicDemoReadOnlyPermission',
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 10

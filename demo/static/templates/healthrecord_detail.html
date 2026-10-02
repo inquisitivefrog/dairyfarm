@@ -10,8 +10,8 @@
 <form ng-if="hr" action="{% url 'assets:healthrecord-detail' hr.id %}" method="put">
     <table>
         <tr>
-            <th>ID:</th>
-            <td>{{hr.id}}</td>
+            <th>Inspection #:</th>
+            <td>{{hr.farm_number}}</td>
         </tr>
         <tr>
             <th>Client:</th>
@@ -101,8 +101,8 @@
 <h2>Health Record</h2>
 <table ng-if="hr">
   <tr>
-    <th>ID</th>
-    <td>{{hr.id}}</td>
+    <th>Inspection #</th>
+    <td>{{hr.farm_number}}</td>
   </tr>
   <tr>
     <th>Client</th>

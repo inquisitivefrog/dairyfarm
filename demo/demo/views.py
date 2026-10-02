@@ -1,15 +1,19 @@
 from django.contrib.auth.models import User
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import redirect_to_login
 from django.conf import settings
 from django.core.mail import EmailMessage
-from django.http import HttpResponseRedirect, JsonResponse
+from django.core.exceptions import ImproperlyConfigured
+from django.http import HttpResponseForbidden, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 from django.template.loader import get_template
 from django.views import generic
+from django.contrib.auth.views import LoginView
 from django.views.decorators.http import require_POST
 
 from demo.forms import ContactForm
+from assets.models import Client
 
 def contact(request):
     form_class = ContactForm
@@ -47,8 +51,14 @@ def redirect(request):
 def ui_login(request):
     return render(request, 'registration/ui_login.html', {})
 
-@login_required
 def ui_logged_in(request):
+    if settings.PUBLIC_DEMO_READ_ONLY:
+        return JsonResponse(
+            {'detail': 'Authentication is disabled for the public demo.'},
+            status=403,
+        )
+    if not request.user.is_authenticated:
+        return redirect_to_login(request.get_full_path())
     clients = [
         {'id': client.id, 'name': client.name}
         for client in request.user.client_set.all()
@@ -72,3 +82,32 @@ def ui_logout(request):
 class IndexView(generic.ListView):
     queryset = User.objects.all()
     template_name = 'demo/index.html'
+
+    def get_queryset(self):
+        if settings.PUBLIC_DEMO_READ_ONLY:
+            return User.objects.none()
+        return super(IndexView, self).get_queryset()
+
+    def get_context_data(self, **kwargs):
+        context = super(IndexView, self).get_context_data(**kwargs)
+        context['public_demo_enabled'] = settings.PUBLIC_DEMO_READ_ONLY
+        if settings.PUBLIC_DEMO_READ_ONLY:
+            client = Client.objects.filter(
+                user__username=settings.PUBLIC_DEMO_OWNER_USERNAME,
+                name=settings.PUBLIC_DEMO_CLIENT_NAME
+            ).values('id', 'name').first()
+            if client is None:
+                raise ImproperlyConfigured(
+                    'Public demo is enabled but its synthetic client is '
+                    'missing. Load the synthetic dataset first.')
+            context['public_demo_client'] = client
+        return context
+
+
+class DemoLoginView(LoginView):
+    def dispatch(self, request, *args, **kwargs):
+        if settings.PUBLIC_DEMO_READ_ONLY:
+            return HttpResponseForbidden(
+                'Authentication is disabled for the public demo.')
+        return super(DemoLoginView, self).dispatch(
+            request, *args, **kwargs)

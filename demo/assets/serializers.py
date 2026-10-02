@@ -8,6 +8,19 @@ from assets.models import Illness, Injury, LegumeHay, Milk, Pasture
 from assets.models import Season, Seed, Status, Treatment, Vaccine
 
 
+class FarmNumberModelSerializer(serializers.ModelSerializer):
+    farm_number = serializers.SerializerMethodField()
+
+    def get_farm_number(self, instance):
+        farm_number = getattr(instance, 'farm_number', None)
+        if farm_number is not None:
+            return farm_number
+        return instance.__class__.objects.filter(
+            client_id=instance.client_id,
+            pk__lte=instance.pk,
+        ).count()
+
+
 class ClientScopedSerializerMixin(object):
     def __init__(self, *args, **kwargs):
         super(ClientScopedSerializerMixin, self).__init__(*args, **kwargs)
@@ -132,7 +145,7 @@ class VaccineSerializer(serializers.ModelSerializer):
         model = Vaccine
 
 # independent serializers
-class CowReadSerializer(serializers.ModelSerializer):
+class CowReadSerializer(FarmNumberModelSerializer):
     purchased_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                 slug_field='username')
     age = AgeSerializer(read_only=True)
@@ -141,7 +154,8 @@ class CowReadSerializer(serializers.ModelSerializer):
     color = ColorSerializer(read_only=True)
 
     class Meta:
-        fields = ('id', 'rfid', 'client', 'purchased_by', 'purchase_date',
+        fields = ('id', 'farm_number', 'rfid', 'client', 'purchased_by',
+                  'purchase_date',
                   'age', 'breed', 'color', 'sell_date', 'link')
         lookup_field = 'pk'
         model = Cow
@@ -180,7 +194,7 @@ class CowWriteSerializer(ClientScopedSerializerMixin,
     
     # update() does not need to be overridden
     
-class EventReadSerializer(serializers.ModelSerializer):
+class EventReadSerializer(FarmNumberModelSerializer):
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                slug_field='username')
     client = ClientSerializer(read_only=True)
@@ -188,7 +202,8 @@ class EventReadSerializer(serializers.ModelSerializer):
     action = ActionSerializer(read_only=True)
 
     class Meta:
-        fields = ('id', 'client', 'recorded_by', 'event_time', 'cow', 'action', 'link')
+        fields = ('id', 'farm_number', 'client', 'recorded_by', 'event_time',
+                  'cow', 'action', 'link')
         lookup_field = 'pk'
         model = Event
         read_only_fields = ('link',)
@@ -221,7 +236,7 @@ class EventWriteSerializer(ClientScopedSerializerMixin,
     
     # update() does not need to be overridden
     
-class HealthRecordReadSerializer(serializers.ModelSerializer):
+class HealthRecordReadSerializer(FarmNumberModelSerializer):
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                slug_field='username')
     client = ClientSerializer(read_only=True)
@@ -233,7 +248,8 @@ class HealthRecordReadSerializer(serializers.ModelSerializer):
     vaccine = VaccineSerializer(read_only=True)
 
     class Meta:
-        fields = ('id', 'client', 'recorded_by', 'inspection_time', 'cow',
+        fields = ('id', 'farm_number', 'client', 'recorded_by',
+                  'inspection_time', 'cow',
                   'temperature', 'respiratory_rate', 'heart_rate',
                   'blood_pressure', 'weight', 'body_condition_score', 'status',
                   'illness', 'injury', 'treatment', 'vaccine', 'link')
@@ -307,14 +323,15 @@ class HealthRecordWriteSerializer(ClientScopedSerializerMixin,
     
     # update() does not need to be overridden
     
-class MilkReadSerializer(serializers.ModelSerializer):
+class MilkReadSerializer(FarmNumberModelSerializer):
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                slug_field='username')
     client = ClientSerializer(read_only=True)
     cow = CowReadSerializer(read_only=True)
 
     class Meta:
-        fields = ('id', 'client', 'recorded_by', 'milking_time', 'cow',
+        fields = ('id', 'farm_number', 'client', 'recorded_by',
+                  'milking_time', 'cow',
                   'gallons', 'link')
         lookup_field = 'pk'
         model = Milk
@@ -351,11 +368,12 @@ class MilkWriteSerializer(ClientScopedSerializerMixin,
     
     # update() does not need to be overridden
 
-class PastureReadSerializer(serializers.ModelSerializer):
+class PastureReadSerializer(FarmNumberModelSerializer):
     client = ClientSerializer(read_only=True)
 
     class Meta:
-        fields = ('id', 'client', 'name', 'url', 'fallow', 'distance', 'link')
+        fields = ('id', 'farm_number', 'client', 'name', 'url', 'fallow',
+                  'distance', 'link')
         lookup_field = 'pk'
         model = Pasture
         read_only_fields = ('link',)
@@ -378,7 +396,7 @@ class PastureWriteSerializer(ClientScopedSerializerMixin,
     
     # update() does not need to be overridden
 
-class SeedReadSerializer(serializers.ModelSerializer):
+class SeedReadSerializer(FarmNumberModelSerializer):
     client = ClientSerializer(read_only=True)
     seeded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                              slug_field='username')
@@ -389,7 +407,8 @@ class SeedReadSerializer(serializers.ModelSerializer):
     legume_hay = LegumeHaySerializer(read_only=True)
 
     class Meta:
-        fields = ('id', 'client', 'seeded_by', 'pasture', 'season', 'year',
+        fields = ('id', 'farm_number', 'client', 'seeded_by', 'pasture',
+                  'season', 'year',
                   'cereal_hay', 'grass_hay', 'legume_hay', 'link')
         lookup_field = 'pk'
         model = Seed
@@ -440,7 +459,7 @@ class SeedWriteSerializer(ClientScopedSerializerMixin,
     
     # update() does not need to be overridden
 
-class ExerciseReadSerializer(serializers.ModelSerializer):
+class ExerciseReadSerializer(FarmNumberModelSerializer):
     client = ClientSerializer(read_only=True)
     recorded_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                                slug_field='username')
@@ -450,7 +469,8 @@ class ExerciseReadSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exercise
         lookup_field = 'pk'
-        fields = ('id', 'client', 'recorded_by', 'exercise_time', 'cow',
+        fields = ('id', 'farm_number', 'client', 'recorded_by',
+                  'exercise_time', 'cow',
                   'pasture', 'link')
         read_only_fields = ('link',)
 

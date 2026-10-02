@@ -93,177 +93,194 @@ farmApp.config(function ($routeProvider, $locationProvider) {
           controller: "MonthlySummaryByClientController"
     })
     .when("/assets/api/cows/client/:client/", {
-          templateUrl: "/static/templates/cow_list_herd.html",
+          templateUrl: "/static/templates/cow_list_herd.html?v=farm-number-1",
           controller: "CowListByClientController"
     })
     .when("/assets/api/cows/client/:client/limit/:limit/", {
-          templateUrl: "/static/templates/cow_list_herd.html",
+          templateUrl: "/static/templates/cow_list_herd.html?v=farm-number-1",
           controller: "CowListByClientController"
     })
     .when("/assets/api/cows/client/:client/limit/:limit/offset/:offset/", {
-          templateUrl: "/static/templates/cow_list_herd.html",
+          templateUrl: "/static/templates/cow_list_herd.html?v=farm-number-1",
           controller: "CowListByClientController"
     })
     .when("/assets/api/cows/", {
-          templateUrl: "/static/templates/cow_list_herd.html",
+          templateUrl: "/static/templates/cow_list_herd.html?v=farm-number-1",
           controller: "CowListByClientController"
     })
     .when("/assets/api/cows/:cow_id/results/", {
-          templateUrl: "/static/templates/cow_results.html",
+          templateUrl: "/static/templates/cow_results.html?v=farm-number-1",
           controller: "CowResultsController"
     })
     .when("/assets/api/cows/:cow_id/", {
-          templateUrl: "/static/templates/cow_detail.html",
+          templateUrl: "/static/templates/cow_detail.html?v=farm-number-1",
           controller: "CowDetailController"
     })
     .when("/assets/api/events/client/:client/", {
-          templateUrl: "/static/templates/event_list.html",
+          templateUrl: "/static/templates/event_list.html?v=farm-number-1",
           controller: "EventListByClientController"
     })
     .when("/assets/api/events/client/:client/limit/:limit/", {
-          templateUrl: "/static/templates/event_list.html",
+          templateUrl: "/static/templates/event_list.html?v=farm-number-1",
           controller: "EventListByClientController"
     })
     .when("/assets/api/events/client/:client/limit/:limit/offset/:offset/", {
-          templateUrl: "/static/templates/event_list.html",
+          templateUrl: "/static/templates/event_list.html?v=farm-number-1",
           controller: "EventListByClientController"
     })
     .when("/assets/api/events/", {
-          templateUrl: "/static/templates/event_list.html",
+          templateUrl: "/static/templates/event_list.html?v=farm-number-1",
           controller: "EventListByClientController"
     })
     .when("/assets/api/events/:event_id/", {
-          templateUrl: "/static/templates/event_detail.html",
+          templateUrl: "/static/templates/event_detail.html?v=farm-number-1",
           controller: "EventDetailController"
     })
     .when("/assets/api/events/:event_id/results/", {
-          templateUrl: "/static/templates/event_results.html",
+          templateUrl: "/static/templates/event_results.html?v=farm-number-1",
           controller: "EventResultsController"
     })
     .when("/assets/api/exercises/client/:client/", {
-          templateUrl: "/static/templates/exercise_list.html",
+          templateUrl: "/static/templates/exercise_list.html?v=farm-number-1",
           controller: "ExerciseListByClientController"
     })
     .when("/assets/api/exercises/client/:client/limit/:limit/", {
-          templateUrl: "/static/templates/exercise_list.html",
+          templateUrl: "/static/templates/exercise_list.html?v=farm-number-1",
           controller: "ExerciseListByClientController"
     })
     .when("/assets/api/exercises/client/:client/limit/:limit/offset/:offset/", {
-          templateUrl: "/static/templates/exercise_list.html",
+          templateUrl: "/static/templates/exercise_list.html?v=farm-number-1",
           controller: "ExerciseListByClientController"
     })
     .when("/assets/api/exercises/", {
-          templateUrl: "/static/templates/exercise_list.html",
+          templateUrl: "/static/templates/exercise_list.html?v=farm-number-1",
           controller: "ExerciseListByClientController"
     })
     .when("/assets/api/exercises/:exercise_id/", {
-          templateUrl: "/static/templates/exercise_detail.html",
+          templateUrl: "/static/templates/exercise_detail.html?v=farm-number-1",
           controller: "ExerciseDetailController"
     })
     .when("/assets/api/exercises/:exercise_id/results/", {
-          templateUrl: "/static/templates/exercise_results.html",
+          templateUrl: "/static/templates/exercise_results.html?v=farm-number-1",
           controller: "ExerciseResultsController"
     })
     .when("/assets/api/healthrecords/client/:client/", {
-          templateUrl: "/static/templates/healthrecord_list.html",
+          templateUrl: "/static/templates/healthrecord_list.html?v=farm-number-1",
           controller: "HealthRecordListByClientController"
     })
     .when("/assets/api/healthrecords/client/:client/limit/:limit/", {
-          templateUrl: "/static/templates/healthrecord_list.html",
+          templateUrl: "/static/templates/healthrecord_list.html?v=farm-number-1",
           controller: "HealthRecordListByClientController"
     })
     .when("/assets/api/healthrecords/client/:client/limit/:limit/offset/:offset/", {
-          templateUrl: "/static/templates/healthrecord_list.html",
+          templateUrl: "/static/templates/healthrecord_list.html?v=farm-number-1",
           controller: "HealthRecordListByClientController"
     })
     .when("/assets/api/healthrecords/", {
-          templateUrl: "/static/templates/healthrecord_list.html",
+          templateUrl: "/static/templates/healthrecord_list.html?v=farm-number-1",
           controller: "HealthRecordListByClientController"
     })
     .when("/assets/api/healthrecords/:hr_id/", {
-          templateUrl: "/static/templates/healthrecord_detail.html",
+          templateUrl: "/static/templates/healthrecord_detail.html?v=farm-number-1",
           controller: "HealthRecordDetailController"
     })
     .when("/assets/api/healthrecords/:hr_id/results/", {
-          templateUrl: "/static/templates/healthrecord_results.html",
+          templateUrl: "/static/templates/healthrecord_results.html?v=farm-number-1",
           controller: "HealthRecordResultsController"
     })
     .when("/assets/api/milk/client/:client/", {
-          templateUrl: "/static/templates/milk_list.html",
+          templateUrl: "/static/templates/milk_list.html?v=farm-number-1",
           controller: "MilkListByClientController"
     })
     .when("/assets/api/milk/client/:client/limit/:limit/", {
-          templateUrl: "/static/templates/milk_list.html",
+          templateUrl: "/static/templates/milk_list.html?v=farm-number-1",
           controller: "MilkListByClientController"
     })
     .when("/assets/api/milk/client/:client/limit/:limit/offset/:offset/", {
-          templateUrl: "/static/templates/milk_list.html",
+          templateUrl: "/static/templates/milk_list.html?v=farm-number-1",
           controller: "MilkListByClientController"
     })
     .when("/assets/api/milk/", {
-          templateUrl: "/static/templates/milk_list.html",
+          templateUrl: "/static/templates/milk_list.html?v=farm-number-1",
           controller: "MilkListByClientController"
     })
     .when("/assets/api/milk/:milk_id/", {
-          templateUrl: "/static/templates/milk_detail.html",
+          templateUrl: "/static/templates/milk_detail.html?v=farm-number-1",
           controller: "MilkDetailController"
     })
     .when("/assets/api/milk/:milk_id/results/", {
-          templateUrl: "/static/templates/milk_results.html",
+          templateUrl: "/static/templates/milk_results.html?v=farm-number-1",
           controller: "MilkResultsController"
     })
     .when("/assets/api/pastures/client/:client/", {
-          templateUrl: "/static/templates/pasture_list.html",
+          templateUrl: "/static/templates/pasture_list.html?v=farm-number-1",
           controller: "PastureListByClientController"
     })
     .when("/assets/api/pastures/client/:client/limit/:limit/", {
-          templateUrl: "/static/templates/pasture_list.html",
+          templateUrl: "/static/templates/pasture_list.html?v=farm-number-1",
           controller: "PastureListByClientController"
     })
     .when("/assets/api/pastures/client/:client/limit/:limit/offset/:offset/", {
-          templateUrl: "/static/templates/pasture_list.html",
+          templateUrl: "/static/templates/pasture_list.html?v=farm-number-1",
           controller: "PastureListByClientController"
     })
     .when("/assets/api/pastures/", {
-          templateUrl: "/static/templates/pasture_list.html",
+          templateUrl: "/static/templates/pasture_list.html?v=farm-number-1",
           controller: "PastureListByClientController"
     })
     .when("/assets/api/pastures/:pasture_id/", {
-          templateUrl: "/static/templates/pasture_detail.html",
+          templateUrl: "/static/templates/pasture_detail.html?v=farm-number-1",
           controller: "PastureDetailController"
     })
     .when("/assets/api/pastures/:pasture_id/results/", {
-          templateUrl: "/static/templates/pasture_results.html",
+          templateUrl: "/static/templates/pasture_results.html?v=farm-number-1",
           controller: "PastureResultsController"
     })
     .when("/assets/api/seeds/client/:client/", {
-          templateUrl: "/static/templates/seed_list.html",
+          templateUrl: "/static/templates/seed_list.html?v=farm-number-1",
           controller: "SeedListByClientController"
     })
     .when("/assets/api/seeds/client/:client/limit/:limit/", {
-          templateUrl: "/static/templates/seed_list.html",
+          templateUrl: "/static/templates/seed_list.html?v=farm-number-1",
           controller: "SeedListByClientController"
     })
     .when("/assets/api/seeds/client/:client/limit/:limit/offset/:offset/", {
-          templateUrl: "/static/templates/seed_list.html",
+          templateUrl: "/static/templates/seed_list.html?v=farm-number-1",
           controller: "SeedListByClientController"
     })
     .when("/assets/api/seeds/", {
-          templateUrl: "/static/templates/seed_list.html",
+          templateUrl: "/static/templates/seed_list.html?v=farm-number-1",
           controller: "SeedListByClientController"
     })
     .when("/assets/api/seeds/:seed_id/", {
-          templateUrl: "/static/templates/seed_detail.html",
+          templateUrl: "/static/templates/seed_detail.html?v=farm-number-1",
           controller: "SeedDetailController"
     })
     .when("/assets/api/seeds/:seed_id/results/", {
-          templateUrl: "/static/templates/seed_results.html",
+          templateUrl: "/static/templates/seed_results.html?v=farm-number-1",
           controller: "SeedResultsController"
     })
 });
 
 farmApp.run(function($rootScope, $location, $http, $cookies) {
     $rootScope.globals = $cookies.get('globals') || {};
+    var appElement = document.querySelector("[data-public-demo]");
+    if (appElement && appElement.getAttribute("data-public-demo") === "true") {
+        if (typeof $rootScope.globals !== "object") {
+            $rootScope.globals = {};
+        }
+        var clientId = Number(
+            appElement.getAttribute("data-public-demo-client-id"));
+        var clientName = appElement.getAttribute(
+            "data-public-demo-client-name");
+        var client = {id: clientId, name: clientName};
+        $rootScope.globals.publicDemo = true;
+        $rootScope.globals.currentUser = {
+            username: "Public demo visitor",
+            client: client,
+            clients: [client]
+        };
+    }
     console.log("globals set: " + Object.getOwnPropertyNames($rootScope.globals));
 
     console.log("currentUser: " + $rootScope.globals.currentUser);

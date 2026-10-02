@@ -9,7 +9,7 @@
 <h2>{{globals.currentUser.client.name}} Cow</h2>
 <table ng-if="cow">
   <tr>
-    <th>ID</th>
+    <th>Herd #</th>
     <th>RFID tag</th>
     <th>Client</th>
     <th>Procurer</th>
@@ -20,7 +20,7 @@
     <th>Date Sold</th>
   </tr>
   <tr>
-    <td>{{cow.id}}</td>
+    <td>{{cow.farm_number}}</td>
     <td>{{cow.rfid}}</td>
     <td>{{cow.client.name}}</td>
     <td>{{cow.purchased_by}}</td>

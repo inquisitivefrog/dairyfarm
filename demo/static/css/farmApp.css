@@ -277,13 +277,29 @@ div.raw {
     margin-top: 0.5em;
 }
 
-.article > div {
+.article > fieldset {
     box-sizing: border-box;
     text-align: center;
     width: 100%;
     border: 2px solid gray;
     padding: 5px;
     background-color: orange;
+    min-width: 0;
+}
+
+.article-content > div {
+    border: 0;
+    padding: 0;
+    width: auto;
+    background: transparent;
+}
+
+.public-demo-banner {
+    margin: 0;
+    padding: 0.65em;
+    border: 1px solid #777;
+    background: #fff4d6;
+    font-weight: bold;
 }
 
 footer {

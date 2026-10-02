@@ -2,12 +2,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from django.contrib import admin
-from django.contrib.auth.views import LoginView
-
 from django.urls import include, path, re_path
 
 from demo.api_views import UserCreate, UserDetail
-from demo.views import contact, redirect, IndexView
+from demo.views import contact, redirect, DemoLoginView, IndexView
 from demo.views import ui_login, ui_logged_in, ui_logout
 
 urlpatterns = [
@@ -27,7 +25,7 @@ urlpatterns = [
         ui_logout,
         name='ui_logout'),
     re_path(r'^login/$',
-        LoginView.as_view(),
+        DemoLoginView.as_view(),
         name='login'),
     re_path(r'^logout/$',
         ui_logout,

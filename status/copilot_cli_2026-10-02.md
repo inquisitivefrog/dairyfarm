@@ -30,7 +30,7 @@
 
 ## Validation
 
-- Full PostgreSQL-backed test suite passes: **480 tests**.
+- Full PostgreSQL-backed test suite passes: **491 tests**.
 - Django system and migration checks pass; `pip check` reports no broken
   requirements; SRE-tool flake8 passes.
 - Python compilation passes with `SyntaxWarning` treated as an error; frontend
@@ -51,12 +51,27 @@
   separately owned AI-assisted synthetic farm. The original farm data's
   provenance is not explicit enough to assume it is safe to publish; prefer a
   fresh public database seeded only with reviewed, explicitly synthetic data.
+- The AI-assisted dataset loader now creates its own minimal reference data and
+  synthetic-only owner/farm on an otherwise empty migrated database. It does
+  not need or import historical user/client fixtures, refuses to take over a
+  farm owned by another account, and leaves its new owner's password unusable.
+  This was validated with clean-database, ownership-conflict, and idempotency
+  tests; the existing local database was not modified.
+- The user chose a public, read-only demo model. An opt-in
+  `DJANGO_PUBLIC_DEMO_READ_ONLY` mode now allows safe anonymous reads scoped to
+  the configured synthetic farm, rejects API writes even for authenticated
+  users, and displays a read-only UI state. The flag defaults off; this has
+  been tested locally and temporarily enabled on the localhost-only Docker UI
+  for user review. It has not been publicly deployed.
+- Farm-local sequence numbers now appear consistently in asset lists, detail
+  views, and result views. They start at one per farm and asset type, continue
+  across pagination, and do not alter database primary keys or object links.
 - An additional active `login-probe` account and empty farm are present only in
   the local database, not in source or fixtures. Its origin is unknown; it was
   left unchanged.
-- Public deployment remains paused. Before it is reconsidered, review/disable
-  historical demo accounts and credentials out-of-band, decide what safe demo
-  dataset and account model to expose, finish domain-specific production
-  security configuration, and confirm operational/backup requirements.
+- Public deployment remains paused. Before it is reconsidered, revoke any
+  historical credentials shared externally, provision a fresh database with
+  only reviewed synthetic data, finish domain-specific production security
+  configuration, and confirm operational/backup requirements.
 - The existing Django/Gunicorn/Docker upgrade is local only; there is no
   Terraform or cloud deployment configuration for DairyFarm yet.

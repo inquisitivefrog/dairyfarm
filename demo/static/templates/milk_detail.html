@@ -10,8 +10,8 @@
 <form ng-if="milk" action="{% url 'assets:milk-detail' milk.id %}" method="put">
     <table>
         <tr>
-            <th>ID:</th>
-            <td>{{milk.id}}</td>
+            <th>Milking #:</th>
+            <td>{{milk.farm_number}}</td>
         </tr>
         <tr>
             <th>Client:</th>
@@ -42,7 +42,7 @@
 
 <table ng-if="milk">
   <tr>
-    <th>ID</th>
+    <th>Milking #</th>
     <th>Client</th>
     <th>Recorder</th>
     <th>Occurred When</th>
@@ -53,7 +53,7 @@
     <th>Gallons Collected</th>
   </tr>
   <tr>
-    <td>{{milk.id}}</td>
+    <td>{{milk.farm_number}}</td>
     <td>{{milk.client.name}}</td>
     <td>{{milk.recorded_by}}</td>
     <td>{{milk.milking_time}}</td>
@@ -66,4 +66,3 @@
 </table>
 <p/>
 <img src="{{milk.cow.breed.url}}" alt="Image failed to load" height="200" width="400">
-
