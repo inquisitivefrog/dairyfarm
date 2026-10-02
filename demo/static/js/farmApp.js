@@ -34,7 +34,7 @@ farmApp.config(function ($routeProvider, $locationProvider) {
           controller: "ReloadCacheController"
     })
     .when("/about/", {
-          templateUrl: "/static/templates/menu_about.html",
+          templateUrl: "/static/templates/menu_about.html?v=about-paragraphs-2",
           controller: "MenuAboutController"
     })
     .when("/contact/", {

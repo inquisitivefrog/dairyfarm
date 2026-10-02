@@ -277,7 +277,8 @@ div.raw {
     margin-top: 0.5em;
 }
 
-div {
+.article > div {
+    box-sizing: border-box;
     text-align: center;
     width: 100%;
     border: 2px solid gray;
