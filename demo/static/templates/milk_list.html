@@ -50,7 +50,7 @@
 <h2>{{total}} Recorded Milkings</h2>
 <table ng-if="total > 0">
   <tr>
-    <th>ID</th>
+    <th>Milking #</th>
     <th>Client</th>
     <th>Recorder</th>
     <th>Occurred When</th>
@@ -61,7 +61,7 @@
     <th>Gallons Collected</th>
   </tr>
   <tr ng-repeat="m in milk ">
-    <td><a href="#!{{m.link}}">{{m.id}}</a></td>
+    <td><a href="#!{{m.link}}">{{recordNumber($index)}}</a></td>
     <td>{{m.client.name}}</td>
     <td>{{m.recorded_by}}</td>
     <td>{{m.milking_time}}</td>
@@ -70,7 +70,7 @@
     <td>{{m.cow.color.name}}</td>
     <td>{{m.cow.age.name}}</td>
     <td>{{m.gallons}}</td>
-  <tr>
+  </tr>
 </table>
 
 <p ng-if="total == 0">No milk collected yet.</p>

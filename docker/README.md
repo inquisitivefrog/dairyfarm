@@ -33,6 +33,22 @@ requests to Django, preserving the existing same-origin routes. Django runs as
 the API service. PostgreSQL data persists in the `postgres-data` volume;
 Memcached is a separate cache service.
 
+For a temporary BusyBox shell with network access to the Compose services, run
+`docker compose run --rm debug`. Compose starts the API dependencies and
+attaches the debug container to the same network. Use BusyBox tools such as
+`nslookup api` or `wget -S -O- --header='Host: localhost' http://api:8000/`.
+The debug service is profile-gated and is not started by the normal `up`
+command.
+
+`requirements.txt` lists the packages currently needed by the app runtime.
+`requirements-dev.txt` includes those packages plus test and quality tools.
+The local Compose build opts into the development dependencies so it can run
+tests; a direct Docker build installs runtime requirements only by default.
+These pins reproduce the legacy app and are not suitable for production. The
+Compose API build targets `linux/amd64`, because the pinned legacy psycopg2
+release has no native ARM64 wheel; on Apple Silicon, direct Docker builds also
+need `--platform=linux/amd64`.
+
 ## Checks and tests
 
 Run the Django system check:

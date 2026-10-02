@@ -10,17 +10,17 @@
     <script src="{% static 'js/cacheUtils.js' %}"></script>
     <script src="{% static 'js/stringUtils.js' %}"></script>
     <script src="{% static 'js/timeUtils.js' %}"></script>
-    <script src="{% static 'js/farmApp.js' %}"></script>
+    <script src="{% static 'js/farmApp.js' %}?v=contact-details-1"></script>
     <script src="{% static 'js/farmAppLoginCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppLogoutCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppReloadCacheCtrl.js' %}"></script>
-    <script src="{% static 'js/farmAppMenuAboutCtrl.js' %}"></script>
-    <script src="{% static 'js/farmAppMenuContactCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppMenuAboutCtrl.js' %}?v=about-fix-1"></script>
     <script src="{% static 'js/farmAppMRDCtrl.js' %}"></script>
-    <script src="{% static 'js/farmAppDDAssetsCtrl.js' %}"></script>
-    <script src="{% static 'js/farmAppDDSummaryCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppDDAssetsCtrl.js' %}?v=docs-nav-2"></script>
+    <script src="{% static 'js/farmAppDDSummaryCtrl.js' %}?v=docs-nav-2"></script>
     <script src="{% static 'js/farmAppTestsCtrl.js' %}"></script>
-    <script src="{% static 'js/farmAppCowListByClientCtrl.js' %}"></script>
+    <script src="{% static 'js/farmAppClientSelectionCtrl.js' %}?v=document-scroll-1"></script>
+    <script src="{% static 'js/farmAppCowListByClientCtrlHerd.js' %}"></script>
     <script src="{% static 'js/farmAppCowDetailCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppCowResultsCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppEventListByClientCtrl.js' %}"></script>
@@ -44,10 +44,11 @@
     <script src="{% static 'js/farmAppAnnualSummaryByClientCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppMonthlySummaryByClientCtrl.js' %}"></script>
     <link rel="stylesheet" type="text/css"
-          href="{% static 'css/farmApp.css' %}"/>
+          href="{% static 'css/farmApp.css' %}?v=document-sidebar-2"/>
   </head>
 <body>
-    <div class="flex-container">
+    <div class="flex-container" ng-app="farmApp"
+         ng-controller="ClientSelectionController">
         <header>Django REST Framework App: Dairy Farm Inventory Management</header>
         <nav class="nav">
             <div class="menu">
@@ -63,12 +64,61 @@
             <ul>
                 <li><a href="#!/logout/">Logout User</a></li>
             </ul>
+            <div ng-if="globals.currentUser && globals.currentUser.clients.length > 1">
+                <label for="active-client"><b>Viewing farm:</b></label>
+                <select id="active-client"
+                        ng-model="clientSelection.selectedClientId"
+                        ng-options="client.id as client.name for client in globals.currentUser.clients"
+                        ng-change="selectClient()">
+                </select>
+            </div>
             <p><b>Documentation</b></p>
-            <ul>
-                <li><a href="#!/docs/mrd/">Marketing Requirements</a></li>
-                <li><a href="#!/docs/dd_assets/">Assets Design Doc</a></li>
-                <li><a href="#!/docs/dd_summary/">Reporting Design Doc</a></li>
-                <li><a href="#!/docs/tests/">Unit Test Results</a></li>
+            <ul class="documentation-nav">
+                <li>
+                    <a href="#!/docs/mrd/" ng-click="openDocumentation('/docs/mrd/', null, $event)">Marketing Requirements</a>
+                    <ul class="documentation-toc">
+                        <li><a href="#!/docs/mrd/#strategy" ng-click="openDocumentation('/docs/mrd/', 'strategy', $event)">Strategy and Overview</a></li>
+                        <li><a href="#!/docs/mrd/#bm" ng-click="openDocumentation('/docs/mrd/', 'bm', $event)">Business Model</a></li>
+                        <li><a href="#!/docs/mrd/#groups" ng-click="openDocumentation('/docs/mrd/', 'groups', $event)">Affected Groups</a></li>
+                        <li><a href="#!/docs/mrd/#bom" ng-click="openDocumentation('/docs/mrd/', 'bom', $event)">Bill of Materials</a></li>
+                        <li><a href="#!/docs/mrd/#internal" ng-click="openDocumentation('/docs/mrd/', 'internal', $event)">Internal Commitments</a></li>
+                        <li><a href="#!/docs/mrd/#external" ng-click="openDocumentation('/docs/mrd/', 'external', $event)">External Commitments</a></li>
+                        <li><a href="#!/docs/mrd/#tbd" ng-click="openDocumentation('/docs/mrd/', 'tbd', $event)">Features Not Implemented</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#!/docs/dd_assets/" ng-click="openDocumentation('/docs/dd_assets/', null, $event)">Assets Design Doc</a>
+                    <ul class="documentation-toc">
+                        <li><a href="#!/docs/dd_assets/#intro" ng-click="openDocumentation('/docs/dd_assets/', 'intro', $event)">Introduction</a></li>
+                        <li><a href="#!/docs/dd_assets/#overview" ng-click="openDocumentation('/docs/dd_assets/', 'overview', $event)">System Overview</a></li>
+                        <li><a href="#!/docs/dd_assets/#arch" ng-click="openDocumentation('/docs/dd_assets/', 'arch', $event)">System Architecture</a></li>
+                        <li><a href="#!/docs/dd_assets/#component" ng-click="openDocumentation('/docs/dd_assets/', 'component', $event)">Component Design</a></li>
+                        <li><a href="#!/docs/dd_assets/#data" ng-click="openDocumentation('/docs/dd_assets/', 'data', $event)">Data Design</a></li>
+                        <li><a href="#!/docs/dd_assets/#api" ng-click="openDocumentation('/docs/dd_assets/', 'api', $event)">API Design</a></li>
+                        <li><a href="#!/docs/dd_assets/#ui" ng-click="openDocumentation('/docs/dd_assets/', 'ui', $event)">UI Design</a></li>
+                        <li><a href="#!/docs/dd_assets/#appendix" ng-click="openDocumentation('/docs/dd_assets/', 'appendix', $event)">Appendix</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#!/docs/dd_summary/" ng-click="openDocumentation('/docs/dd_summary/', null, $event)">Reporting Design Doc</a>
+                    <ul class="documentation-toc">
+                        <li><a href="#!/docs/dd_summary/#intro" ng-click="openDocumentation('/docs/dd_summary/', 'intro', $event)">Introduction</a></li>
+                        <li><a href="#!/docs/dd_summary/#overview" ng-click="openDocumentation('/docs/dd_summary/', 'overview', $event)">System Overview</a></li>
+                        <li><a href="#!/docs/dd_summary/#arch" ng-click="openDocumentation('/docs/dd_summary/', 'arch', $event)">System Architecture</a></li>
+                        <li><a href="#!/docs/dd_summary/#component" ng-click="openDocumentation('/docs/dd_summary/', 'component', $event)">Component Design</a></li>
+                        <li><a href="#!/docs/dd_summary/#data" ng-click="openDocumentation('/docs/dd_summary/', 'data', $event)">Data Design</a></li>
+                        <li><a href="#!/docs/dd_summary/#api" ng-click="openDocumentation('/docs/dd_summary/', 'api', $event)">API Design</a></li>
+                        <li><a href="#!/docs/dd_summary/#ui" ng-click="openDocumentation('/docs/dd_summary/', 'ui', $event)">UI Design</a></li>
+                        <li><a href="#!/docs/dd_summary/#appendix" ng-click="openDocumentation('/docs/dd_summary/', 'appendix', $event)">Appendix</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="documentation-category">Unit Test Results</span>
+                    <ul class="documentation-toc">
+                        <li><a href="#!/docs/tests/2018/">2018 Historical Run</a></li>
+                        <li><a href="#!/docs/tests/2026/">2026 Test Run</a></li>
+                    </ul>
+                </li>
             </ul>
             <p><b>Asset Management</b></p>
             <ul>
@@ -85,7 +135,7 @@
                 <li><a href="#!/summary/api/annual/">Annual Reports</a></li>
             </ul>
         </nav>
-        <article class="article" ng-app="farmApp">
+        <article class="article">
             {% verbatim %}
             <div ng-view>
             </div>

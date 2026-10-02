@@ -202,6 +202,7 @@ CACHES = {
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'farmapp@localhost.com'
+CONTACT_EMAIL = os.environ.get('CONTACT_EMAIL', 'farmapp@localhost')
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAUIL_USE_TLS = False

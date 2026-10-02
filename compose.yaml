@@ -17,10 +17,21 @@ services:
     image: memcached:1.6-alpine
     command: ["memcached", "-m", "64", "-I", "2m"]
 
+  debug:
+    image: busybox:1.37.0@sha256:bdf57e528e45e4433820e045b29b4597825a1c9e38353532d90a01445013f82e
+    profiles: ["debug"]
+    entrypoint: ["/bin/sh"]
+    stdin_open: true
+    tty: true
+    depends_on:
+      - api
+
   api:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        INSTALL_DEV_DEPENDENCIES: "true"
     platform: linux/amd64
     environment:
       DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY:?Set DJANGO_SECRET_KEY in .env}
@@ -34,6 +45,7 @@ services:
       DJANGO_DB_HOST: db
       DJANGO_DB_PORT: "5432"
       MEMCACHED_LOCATION: cache:11211
+      CONTACT_EMAIL: ${CONTACT_EMAIL:-farmapp@localhost}
     depends_on:
       db:
         condition: service_healthy

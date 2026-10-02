@@ -7,6 +7,7 @@ farmApp.controller('CowListByClientController',
         }
         $scope.purchase_header = "Purchase a Cow for "
                                + $rootScope.globals.currentUser.client.name;
+        $scope.pageOffset = parseInt($routeParams.offset || "0", 10);
         $scope.offset = $routeParams.offset;
         $scope.limit = $routeParams.limit;
         $scope.herd = {};
@@ -19,6 +20,10 @@ farmApp.controller('CowListByClientController',
         $scope.next = null;
         $scope.prev = null;
         console.log("Entered CowListByClientController");
+
+        $scope.herdNumber = function (index) {
+            return $scope.pageOffset + index + 1;
+        };
 
         if (($scope.offset != null) && ($scope.limit != null)) {
             $scope.url = $scope.client_url

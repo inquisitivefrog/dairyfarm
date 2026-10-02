@@ -116,8 +116,8 @@ class CowListByClientView(ClientScopedQuerysetMixin,
         if self.kwargs:
             pk = self.kwargs['pk']
             return Cow.objects.filter(client_id=pk,
-                                      sell_date__gte=today)
-        return Cow.objects.all()
+                                      sell_date__gte=today).order_by('id')
+        return Cow.objects.all().order_by('id')
 
     def get_serializer_class(self):
         if self.request.method in ('GET',):
@@ -175,8 +175,8 @@ class EventListByClientView(ClientScopedQuerysetMixin,
     def get_queryset(self):
         if self.kwargs:
             pk = self.kwargs['pk']
-            return Event.objects.filter(client_id=pk)
-        return Event.objects.all()
+            return Event.objects.filter(client_id=pk).order_by('id')
+        return Event.objects.all().order_by('id')
 
     def get_serializer_class(self):
         if self.request.method in ('GET',):
@@ -209,8 +209,8 @@ class ExerciseListByClientView(ClientScopedQuerysetMixin,
     def get_queryset(self):
         if self.kwargs:
             pk = self.kwargs['pk']
-            return Exercise.objects.filter(client_id=pk)
-        return Exercise.objects.all()
+            return Exercise.objects.filter(client_id=pk).order_by('id')
+        return Exercise.objects.all().order_by('id')
 
     def get_serializer_class(self):
         if self.request.method in ('GET',):
@@ -271,8 +271,8 @@ class HealthRecordListByClientView(ClientScopedQuerysetMixin,
     def get_queryset(self):
         if self.kwargs:
             pk = self.kwargs['pk']
-            return HealthRecord.objects.filter(client_id=pk)
-        return HealthRecord.objects.all()
+            return HealthRecord.objects.filter(client_id=pk).order_by('id')
+        return HealthRecord.objects.all().order_by('id')
 
     def get_serializer_class(self):
         if self.request.method in ('GET',):
@@ -352,8 +352,8 @@ class MilkListByClientView(ClientScopedQuerysetMixin,
     def get_queryset(self):
         if self.kwargs:
             pk = self.kwargs['pk']
-            return Milk.objects.filter(client_id=pk)
-        return Milk.objects.all()
+            return Milk.objects.filter(client_id=pk).order_by('id')
+        return Milk.objects.all().order_by('id')
 
     def get_serializer_class(self):
         if self.request.method in ('GET',):
@@ -420,8 +420,8 @@ class PastureListByClientView(ClientScopedQuerysetMixin,
     def get_queryset(self):
         if self.kwargs:
             pk = self.kwargs['pk']
-            return Pasture.objects.filter(client_id=pk)
-        return Pasture.objects.all()
+            return Pasture.objects.filter(client_id=pk).order_by('id')
+        return Pasture.objects.all().order_by('id')
 
     def get_serializer_class(self):
         if self.request.method in ('GET',):
@@ -463,8 +463,8 @@ class SeedListByClientView(ClientScopedQuerysetMixin,
     def get_queryset(self):
         if self.kwargs:
             pk = self.kwargs['pk']
-            return Seed.objects.filter(client_id=pk)
-        return Seed.objects.all()
+            return Seed.objects.filter(client_id=pk).order_by('id')
+        return Seed.objects.all().order_by('id')
 
     def get_serializer_class(self):
         if self.request.method in ('GET',):

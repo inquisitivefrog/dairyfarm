@@ -12,7 +12,6 @@ farmApp.controller("MenuAboutController",
                     "I enjoy working as an independent contributor but have also led small Agile teams."];
 
     $scope.text = thoughts.join(" ");
-    console.log("text: " + $scookie.text);
     $scope.url = "/static/images/menu/about.jpg";
     console.log("url: " + $scope.url);
 });

@@ -1,7 +1,7 @@
 farmApp.controller('ReloadCacheController',
-  function($scope, $rootScope, $http, $routeParams, $location) {
+  function($scope, $rootScope, $http, $routeParams, $location, $q) {
       $scope.quiet = $routeParams.quiet;
-      $scope.globals = null;
+      $scope.globals = $rootScope.globals;
       if ($scope.quiet == null) {
           $scope.debug = false;
       } else {
@@ -9,117 +9,46 @@ farmApp.controller('ReloadCacheController',
       }
       console.log('Entered ReloadCacheController');
 
-    $http({
-        method: 'GET',
-        url: '/assets/api/breeds/?limit=20',
-    }).then(function (response) {
-        $rootScope.globals.breeds = response.data.results;
-    });
+      var requests = [];
+      function load(url, key) {
+          requests.push($http({
+              method: 'GET',
+              url: url,
+          }).then(function (response) {
+              $rootScope.globals[key] = response.data.results;
+          }));
+      }
 
-    $http({
-        method: 'GET',
-        url: '/assets/api/colors/?limit=20',
-    }).then(function (response) {
-        $rootScope.globals.colors = response.data.results;
-    });
+      load('/assets/api/breeds/?limit=20', 'breeds');
+      load('/assets/api/colors/?limit=20', 'colors');
+      load('/assets/api/ages/', 'ages');
+      load('/assets/api/actions/?limit=50', 'actions');
+      load('/assets/api/seasons/?limit=20', 'seasons');
+      load('/assets/api/cereals/?limit=20', 'cereals');
+      load('/assets/api/grasses/?limit=20', 'grasses');
+      load('/assets/api/legumes/?limit=20', 'legumes');
+      load('/assets/api/statuses/?limit=20', 'statuses');
+      load('/assets/api/illnesses/?limit=20', 'illnesses');
+      load('/assets/api/injuries/?limit=20', 'injuries');
+      load('/assets/api/treatments/?limit=20', 'treatments');
+      load('/assets/api/vaccines/?limit=20', 'vaccines');
+      load(
+          "/assets/api/cows/client/"
+              + $rootScope.globals.currentUser.client.id + "/?limit=50",
+          'cows'
+      );
+      load(
+          "/assets/api/pastures/client/"
+              + $rootScope.globals.currentUser.client.id + "/",
+          'pastures'
+      );
 
-    $http({
-        method: 'GET',
-        url: '/assets/api/ages/',
-    }).then(function (response) {
-        $rootScope.globals.ages = response.data.results;
-    });
-
-    $http({
-        method: 'GET',
-        url: '/assets/api/actions/?limit=50',
-    }).then(function (response) {
-        $rootScope.globals.actions = response.data.results;
-    });
-
-    $http({
-        method: 'GET',
-        url: '/assets/api/seasons/?limit=20',
-    }).then(function (response) {
-        $rootScope.globals.seasons = response.data.results;
-    });
-
-    $http({
-        method: 'GET',
-        url: '/assets/api/cereals/?limit=20',
-    }).then(function (response) {
-        $rootScope.globals.cereals = response.data.results;
-    });
-
-    $http({
-        method: 'GET',
-        url: '/assets/api/grasses/?limit=20',
-    }).then(function (response) {
-        $rootScope.globals.grasses = response.data.results;
-    });
-
-    $http({
-        method: 'GET',
-        url: '/assets/api/legumes/?limit=20',
-    }).then(function (response) {
-        $rootScope.globals.legumes = response.data.results;
-    });
-
-    $http({
-        method: 'GET',
-        url: '/assets/api/statuses/?limit=20',
-    }).then(function (response) {
-        $rootScope.globals.statuses = response.data.results;
-    });
-
-    $http({
-        method: 'GET',
-        url: '/assets/api/illnesses/?limit=20',
-    }).then(function (response) {
-        $rootScope.globals.illnesses = response.data.results;
-    });
-
-    $http({
-        method: 'GET',
-        url: '/assets/api/injuries/?limit=20',
-    }).then(function (response) {
-        $rootScope.globals.injuries = response.data.results;
-    });
-
-    $http({
-        method: 'GET',
-        url: '/assets/api/treatments/?limit=20',
-    }).then(function (response) {
-        $rootScope.globals.treatments = response.data.results;
-    });
-
-    $http({
-        method: 'GET',
-        url: '/assets/api/vaccines/?limit=20',
-    }).then(function (response) {
-        $rootScope.globals.vaccines = response.data.results;
-    });
-
-    $http({
-        method: 'GET',
-        url: "/assets/api/cows/client/"
-             + $rootScope.globals.currentUser.client.id + "/?limit=50",
-    }).then(function (response) {
-        $rootScope.globals.cows = response.data.results;
-    });
-
-    $http({
-        method: 'GET',
-        url: "/assets/api/pastures/client/"
-             + $rootScope.globals.currentUser.client.id + "/",
-    }).then(function (response) {
-        $rootScope.globals.pastures = response.data.results;
-    });
-
-    $scope.globals = $rootScope.globals;
-    console.log("globals set: " + Object.getOwnPropertyNames($rootScope.globals));
-    console.log("currentUser: " + Object.getOwnPropertyNames($rootScope.globals.currentUser));
-    if ($scope.quiet == null) {
-        $location.url("/home/");
-    }
+      $q.all(requests).then(function () {
+          console.log(
+              "globals set: "
+                  + Object.getOwnPropertyNames($rootScope.globals));
+          if ($scope.quiet == null || $scope.quiet === 'switch') {
+              $location.url("/home/");
+          }
+      });
 });

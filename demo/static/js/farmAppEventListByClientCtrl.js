@@ -7,6 +7,7 @@ farmApp.controller('EventListByClientController',
         }
         $scope.record_header = "Record an Event for "
                              + $rootScope.globals.currentUser.client.name;
+        $scope.pageOffset = parseInt($routeParams.offset || "0", 10);
         $scope.offset = $routeParams.offset;
         $scope.limit = $routeParams.limit;
         $scope.events = {};
@@ -18,6 +19,9 @@ farmApp.controller('EventListByClientController',
         $scope.record = null;
         $scope.next = null;
         $scope.prev = null;
+        $scope.recordNumber = function (index) {
+            return $scope.pageOffset + index + 1;
+        };
         console.log("Entered EventListByClientController");
 
         if (($scope.offset != null) && ($scope.limit != null)) {

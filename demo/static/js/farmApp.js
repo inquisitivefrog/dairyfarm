@@ -38,27 +38,34 @@ farmApp.config(function ($routeProvider, $locationProvider) {
           controller: "MenuAboutController"
     })
     .when("/contact/", {
-          templateUrl: "/static/templates/menu_contact.html",
-          controller: "MenuContactController"
+          templateUrl: "/static/templates/menu_contact.html?v=contact-details-1"
     })
     .when("/docs/mrd/", {
-          templateUrl: "/static/templates/docs_mrd.html",
+          templateUrl: "/static/templates/docs_mrd_links.html",
           controller: "MRDController"
     })
     .when("/docs/dd_assets/", {
-          templateUrl: "/static/templates/docs_dd_assets.html",
+          templateUrl: "/static/templates/docs_dd_assets_full.html?v=docs-nav-2",
           controller: "DDAssetsController"
     })
     .when("/docs/dd_assets/:section/", {
-          templateUrl: "/static/templates/docs_dd_assets.html",
+          templateUrl: "/static/templates/docs_dd_assets_full.html?v=docs-nav-2",
           controller: "DDAssetsController"
     })
     .when("/docs/dd_summary/", {
-          templateUrl: "/static/templates/docs_dd_summary.html",
+          templateUrl: "/static/templates/docs_dd_summary.html?v=docs-nav-2",
           controller: "DDSummaryController"
     })
     .when("/docs/tests/", {
           templateUrl: "/static/templates/docs_tests.html",
+          controller: "TestsController"
+    })
+    .when("/docs/tests/2018/", {
+          templateUrl: "/static/templates/docs_tests_2018.html",
+          controller: "TestsController"
+    })
+    .when("/docs/tests/2026/", {
+          templateUrl: "/static/templates/docs_tests_2026.html",
           controller: "TestsController"
     })
     .when("/summary/api/annual/", {
@@ -82,19 +89,19 @@ farmApp.config(function ($routeProvider, $locationProvider) {
           controller: "MonthlySummaryByClientController"
     })
     .when("/assets/api/cows/client/:client/", {
-          templateUrl: "/static/templates/cow_list.html",
+          templateUrl: "/static/templates/cow_list_herd.html",
           controller: "CowListByClientController"
     })
     .when("/assets/api/cows/client/:client/limit/:limit/", {
-          templateUrl: "/static/templates/cow_list.html",
+          templateUrl: "/static/templates/cow_list_herd.html",
           controller: "CowListByClientController"
     })
     .when("/assets/api/cows/client/:client/limit/:limit/offset/:offset/", {
-          templateUrl: "/static/templates/cow_list.html",
+          templateUrl: "/static/templates/cow_list_herd.html",
           controller: "CowListByClientController"
     })
     .when("/assets/api/cows/", {
-          templateUrl: "/static/templates/cow_list.html",
+          templateUrl: "/static/templates/cow_list_herd.html",
           controller: "CowListByClientController"
     })
     .when("/assets/api/cows/:cow_id/results/", {

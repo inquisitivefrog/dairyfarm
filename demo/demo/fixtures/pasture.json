@@ -161,7 +161,7 @@
     "fields": {
         "client": 2,
         "name": "Lot_1",
-        "url": "/static/images/regions/lot_1.png",
+        "url": "/static/images/regions/Lot_1.png",
         "fallow": false,
         "distance": 3,
         "link": "/assets/api/pastures/14/"
@@ -173,7 +173,7 @@
     "fields": {
         "client": 2,
         "name": "Lot_2",
-        "url": "/static/images/regions/lot_2.png",
+        "url": "/static/images/regions/Lot_2.png",
         "fallow": false,
         "distance": 3,
         "link": "/assets/api/pastures/15/"
@@ -185,7 +185,7 @@
     "fields": {
         "client": 2,
         "name": "Lot_3",
-        "url": "/static/images/regions/lot_3.png",
+        "url": "/static/images/regions/Lot_3.png",
         "fallow": false,
         "distance": 10,
         "link": "/assets/api/pastures/16/"
@@ -197,7 +197,7 @@
     "fields": {
         "client": 2,
         "name": "Lot_4",
-        "url": "/static/images/regions/lot_4.png",
+        "url": "/static/images/regions/Lot_4.png",
         "fallow": false,
         "distance": 2,
         "link": "/assets/api/pastures/17/"
@@ -209,7 +209,7 @@
     "fields": {
         "client": 2,
         "name": "Lot_5",
-        "url": "/static/images/regions/lot_5.png",
+        "url": "/static/images/regions/Lot_5.png",
         "fallow": false,
         "distance": 5,
         "link": "/assets/api/pastures/18/"
@@ -221,7 +221,7 @@
     "fields": {
         "client": 2,
         "name": "Lot_6",
-        "url": "/static/images/regions/lot_6.png",
+        "url": "/static/images/regions/Lot_6.png",
         "fallow": false,
         "distance": 6,
         "link": "/assets/api/pastures/19/"
@@ -233,7 +233,7 @@
     "fields": {
         "client": 2,
         "name": "Lot_7",
-        "url": "/static/images/regions/lot_7.png",
+        "url": "/static/images/regions/Lot_7.png",
         "fallow": false,
         "distance": 5,
         "link": "/assets/api/pastures/20/"
@@ -245,7 +245,7 @@
     "fields": {
         "client": 2,
         "name": "Lot_8",
-        "url": "/static/images/regions/lot_8.png",
+        "url": "/static/images/regions/Lot_8.png",
         "fallow": false,
         "distance": 10,
         "link": "/assets/api/pastures/21/"
@@ -257,7 +257,7 @@
     "fields": {
         "client": 2,
         "name": "Lot_9",
-        "url": "/static/images/regions/lot_9.png",
+        "url": "/static/images/regions/Lot_9.png",
         "fallow": true,
         "distance": 3,
         "link": "/assets/api/pastures/22/"

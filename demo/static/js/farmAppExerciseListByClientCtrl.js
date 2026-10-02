@@ -7,6 +7,7 @@ farmApp.controller('ExerciseListByClientController',
         }
         $scope.record_header = "Record Exercise for "
                              + $rootScope.globals.currentUser.client.name;
+        $scope.pageOffset = parseInt($routeParams.offset || "0", 10);
         $scope.offset = $routeParams.offset;
         $scope.limit = $routeParams.limit;
         $scope.exercises = {};
@@ -18,6 +19,9 @@ farmApp.controller('ExerciseListByClientController',
         $scope.record = null;
         $scope.next = null;
         $scope.prev = null;
+        $scope.recordNumber = function (index) {
+            return $scope.pageOffset + index + 1;
+        };
         console.log("Entered ExerciseListByClientController");
 
         if (($scope.offset != null) && ($scope.limit != null)) {

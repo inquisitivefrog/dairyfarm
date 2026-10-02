@@ -39,18 +39,12 @@ class MonthlySummaryByClientView(ClientScopedQuerysetMixin,
             year = self.kwargs['year']
             if 'month' in self.kwargs:
                 month = self.kwargs['month']
-                objs = Monthly.objects.filter(client_id=pk,
+                return Monthly.objects.filter(client_id=pk,
                                               year=year,
-                                              month=month)
-                for o in objs:
-                    o.month = o.get_month_display()
-                return objs
+                                              month=month).order_by('month')
             else:
-                objs = Monthly.objects.filter(client_id=pk,
-                                              year=year)
-                for o in objs:
-                    o.month = o.get_month_display()
-                return objs
+                return Monthly.objects.filter(client_id=pk,
+                                              year=year).order_by('month')
         return []
 
     def get_serializer_class(self):

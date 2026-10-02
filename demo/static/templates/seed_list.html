@@ -74,7 +74,7 @@
 <h2>{{total}} Seeds</h2>
 <table ng-if="total > 0">
   <tr>
-    <th>ID</th>
+    <th>Seed #</th>
     <th>Client</th>
     <th>Recorder</th>
     <th>Year</th>
@@ -84,9 +84,8 @@
     <th>Grass Planted</th>
     <th>Legume Planted</th>
   </tr>
-  <tr>
   <tr ng-repeat="seed in seeds">
-    <td><a href="#!{{seed.link}}">{{seed.id}}</a></td>
+    <td><a href="#!{{seed.link}}">{{recordNumber($index)}}</a></td>
     <td>{{seed.client.name}}</td>
     <td>{{seed.seeded_by}}</td>
     <td>{{seed.year}}</td>
@@ -95,7 +94,7 @@
     <td>{{seed.cereal_hay.name}}</td>
     <td>{{seed.grass_hay.name}}</td>
     <td>{{seed.legume_hay.name}}</td>
-  <tr>
+  </tr>
 </table>
 
 <p ng-if="total == 0">No seeds planted yet.</p>

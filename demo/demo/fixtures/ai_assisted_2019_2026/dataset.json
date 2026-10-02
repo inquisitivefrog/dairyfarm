@@ -1,0 +1,49 @@
+{
+  "provenance": "Copilot-assisted synthetic demo data, created 2026-10-01",
+  "owner_username": "ai-managed",
+  "previous_owner_username": "foster",
+  "client_name": "AI-Assisted Demo Farm (2019-2026)",
+  "client_join_date": "2019-01-01",
+  "years": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+  "cow_count": 8,
+  "cow_rfid_namespace": "https://example.invalid/dairyfarm/ai-assisted/2019-2026/cow/",
+  "pastures": [
+    {"name": "AI North", "url": "/static/images/regions/north.jpg?ai=1", "distance": 4},
+    {"name": "AI West", "url": "/static/images/regions/west.jpg?ai=1", "distance": 7},
+    {"name": "AI South", "url": "/static/images/regions/south.jpg?ai=1", "distance": 9},
+    {"name": "AI East", "url": "/static/images/regions/east.jpg?ai=1", "distance": 5}
+  ],
+  "records_per_cow_per_year": {
+    "milkings_per_month": 2,
+    "events_per_month": 1,
+    "exercises_per_month": 1,
+    "health_inspections_per_year": 4
+  },
+  "milk_year_adjustments": {
+    "2019": 0.0,
+    "2020": -0.035,
+    "2021": 0.025,
+    "2022": -0.015,
+    "2023": 0.045,
+    "2024": -0.005,
+    "2025": -0.04,
+    "2026": 0.02
+  },
+  "milk_month_adjustments": [0, 0, 1, 1, 0, -1, -2, -1, 0, 1, 1, 0],
+  "annual_health_case_counts": {
+    "2019": {"illnesses": 1, "injuries": 1},
+    "2020": {"illnesses": 2, "injuries": 1},
+    "2021": {"illnesses": 1, "injuries": 3},
+    "2022": {"illnesses": 3, "injuries": 2},
+    "2023": {"illnesses": 2, "injuries": 1},
+    "2024": {"illnesses": 1, "injuries": 2},
+    "2025": {"illnesses": 2, "injuries": 3},
+    "2026": {"illnesses": 3, "injuries": 1}
+  },
+  "seed_seasons": ["Spring", "Summer", "Autumn", "Winter"],
+  "seed_types": {
+    "cereal": "alfalfa",
+    "grass": "bermuda",
+    "legume": "clover"
+  }
+}

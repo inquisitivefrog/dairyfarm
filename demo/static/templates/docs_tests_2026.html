@@ -1,0 +1,568 @@
+<div class="raw">
+  <h1>Django Test Results — 2026-10-01</h1>
+  <p>Command: <code>python manage.py test -v 2</code></p>
+  <h2>Results by app and test module</h2>
+  <details class="test-setup">
+    <summary>Test database and setup output</summary>
+    <pre><code>Creating test database for alias &#x27;default&#x27; (&#x27;test_dairyfarm&#x27;)...
+Operations to perform:
+  Synchronize unmigrated apps: messages, rest_framework, staticfiles
+  Apply all migrations: admin, assets, auth, contenttypes, sessions, summary
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying assets.0001_initial... OK
+  Applying assets.0002_auto_20260929_1033... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying sessions.0001_initial... OK
+  Applying summary.0001_initial... OK
+System check identified no issues (0 silenced).</code></pre>
+  </details>
+
+  <details class="test-area">
+    <summary>Assets and inventory — 427 tests across 9 modules</summary>
+    <details class="test-module">
+      <summary>API views — 68 tests</summary>
+      <pre><code>test_00_load_fixtures (assets.tests.test_api_views.TestCowDetailView) ... ok
+test_01_options (assets.tests.test_api_views.TestCowDetailView) ... ok
+test_02_retrieve (assets.tests.test_api_views.TestCowDetailView) ... ok
+test_03_full_update (assets.tests.test_api_views.TestCowDetailView) ... ok
+test_04_partial_update (assets.tests.test_api_views.TestCowDetailView) ... ok
+test_05_destroy (assets.tests.test_api_views.TestCowDetailView) ... ok
+test_00_load_fixtures (assets.tests.test_api_views.TestCowListByMonthView) ... ok
+test_01_options (assets.tests.test_api_views.TestCowListByMonthView) ... ok
+test_02_list_no_args_kwargs (assets.tests.test_api_views.TestCowListByMonthView) ... ok
+test_03_list_kwargs (assets.tests.test_api_views.TestCowListByMonthView) ... ok
+test_00_load_fixtures (assets.tests.test_api_views.TestCowListByYearView) ... ok
+test_01_options (assets.tests.test_api_views.TestCowListByYearView) ... ok
+test_02_list_no_args_kwargs (assets.tests.test_api_views.TestCowListByYearView) ... ok
+test_03_list_kwargs (assets.tests.test_api_views.TestCowListByYearView) ... ok
+test_00_load_fixtures (assets.tests.test_api_views.TestCowListView) ... ok
+test_01_options (assets.tests.test_api_views.TestCowListView) ... ok
+test_02_list (assets.tests.test_api_views.TestCowListView) ... ok
+test_03_create (assets.tests.test_api_views.TestCowListView) ... ok
+test_00_load_fixtures (assets.tests.test_api_views.TestEventDetailView) ... ok
+test_01_options (assets.tests.test_api_views.TestEventDetailView) ... ok
+test_02_retrieve (assets.tests.test_api_views.TestEventDetailView) ... ok
+test_03_full_update (assets.tests.test_api_views.TestEventDetailView) ... ok
+test_04_partial_update (assets.tests.test_api_views.TestEventDetailView) ... ok
+test_05_destroy (assets.tests.test_api_views.TestEventDetailView) ... ok
+test_00_load_fixtures (assets.tests.test_api_views.TestEventListView) ... ok
+test_01_options (assets.tests.test_api_views.TestEventListView) ... ok
+test_02_list (assets.tests.test_api_views.TestEventListView) ... ok
+test_03_create (assets.tests.test_api_views.TestEventListView) ... ok
+test_00_load_fixtures (assets.tests.test_api_views.TestExerciseDetailView) ... ok
+test_01_options (assets.tests.test_api_views.TestExerciseDetailView) ... ok
+test_02_retrieve (assets.tests.test_api_views.TestExerciseDetailView) ... ok
+test_03_full_update (assets.tests.test_api_views.TestExerciseDetailView) ... ok
+test_04_partial_update (assets.tests.test_api_views.TestExerciseDetailView) ... ok
+test_05_destroy (assets.tests.test_api_views.TestExerciseDetailView) ... ok
+test_00_load_fixtures (assets.tests.test_api_views.TestExerciseListView) ... ok
+test_01_options (assets.tests.test_api_views.TestExerciseListView) ... ok
+test_02_list (assets.tests.test_api_views.TestExerciseListView) ... ok
+test_03_create (assets.tests.test_api_views.TestExerciseListView) ... ok
+test_00_load_fixtures (assets.tests.test_api_views.TestHealthRecordDetailView) ... ok
+test_01_options (assets.tests.test_api_views.TestHealthRecordDetailView) ... ok
+test_02_retrieve (assets.tests.test_api_views.TestHealthRecordDetailView) ... ok
+test_03_full_update (assets.tests.test_api_views.TestHealthRecordDetailView) ... ok
+test_04_partial_update (assets.tests.test_api_views.TestHealthRecordDetailView) ... ok
+test_05_destroy (assets.tests.test_api_views.TestHealthRecordDetailView) ... ok
+test_00_load_fixtures (assets.tests.test_api_views.TestHealthRecordListView) ... ok
+test_01_options (assets.tests.test_api_views.TestHealthRecordListView) ... ok
+test_02_list (assets.tests.test_api_views.TestHealthRecordListView) ... ok
+test_03_create (assets.tests.test_api_views.TestHealthRecordListView) ... ok
+test_00_load_fixtures (assets.tests.test_api_views.TestMilkDetailView) ... ok
+test_01_options (assets.tests.test_api_views.TestMilkDetailView) ... ok
+test_02_retrieve (assets.tests.test_api_views.TestMilkDetailView) ... ok
+test_03_full_update (assets.tests.test_api_views.TestMilkDetailView) ... ok
+test_04_partial_update (assets.tests.test_api_views.TestMilkDetailView) ... ok
+test_05_destroy (assets.tests.test_api_views.TestMilkDetailView) ... ok
+test_00_load_fixtures (assets.tests.test_api_views.TestMilkListView) ... ok
+test_01_options (assets.tests.test_api_views.TestMilkListView) ... ok
+test_02_list (assets.tests.test_api_views.TestMilkListView) ... ok
+test_03_create (assets.tests.test_api_views.TestMilkListView) ... ok
+test_00_load_fixtures (assets.tests.test_api_views.TestSeedDetailView) ... ok
+test_01_options (assets.tests.test_api_views.TestSeedDetailView) ... ok
+test_02_retrieve (assets.tests.test_api_views.TestSeedDetailView) ... ok
+test_03_full_update (assets.tests.test_api_views.TestSeedDetailView) ... ok
+test_04_partial_update (assets.tests.test_api_views.TestSeedDetailView) ... ok
+test_05_destroy (assets.tests.test_api_views.TestSeedDetailView) ... ok
+test_00_load_fixtures (assets.tests.test_api_views.TestSeedListView) ... ok
+test_01_options (assets.tests.test_api_views.TestSeedListView) ... ok
+test_02_list (assets.tests.test_api_views.TestSeedListView) ... ok
+test_03_create (assets.tests.test_api_views.TestSeedListView) ... ok</code></pre>
+    </details>
+    <details class="test-module">
+      <summary>Models — 169 tests</summary>
+      <pre><code>test_00_load_fixtures (assets.tests.test_models.TestActionModel) ... ok
+test_01_object (assets.tests.test_models.TestActionModel) ... ok
+test_02_get (assets.tests.test_models.TestActionModel) ... ok
+test_03_filter (assets.tests.test_models.TestActionModel) ... ok
+test_04_create (assets.tests.test_models.TestActionModel) ... ok
+test_05_full_update (assets.tests.test_models.TestActionModel) ... ok
+test_06_delete (assets.tests.test_models.TestActionModel) ... ok
+test_07_save (assets.tests.test_models.TestActionModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestAgeModel) ... ok
+test_01_object (assets.tests.test_models.TestAgeModel) ... ok
+test_02_get (assets.tests.test_models.TestAgeModel) ... ok
+test_03_filter (assets.tests.test_models.TestAgeModel) ... ok
+test_04_create (assets.tests.test_models.TestAgeModel) ... ok
+test_05_full_update (assets.tests.test_models.TestAgeModel) ... ok
+test_06_delete (assets.tests.test_models.TestAgeModel) ... ok
+test_07_save (assets.tests.test_models.TestAgeModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestBreedModel) ... ok
+test_01_object (assets.tests.test_models.TestBreedModel) ... ok
+test_02_get (assets.tests.test_models.TestBreedModel) ... ok
+test_03_filter (assets.tests.test_models.TestBreedModel) ... ok
+test_04_create (assets.tests.test_models.TestBreedModel) ... ok
+test_05_full_update (assets.tests.test_models.TestBreedModel) ... ok
+test_06_delete (assets.tests.test_models.TestBreedModel) ... ok
+test_07_save (assets.tests.test_models.TestBreedModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestCerealHayModel) ... ok
+test_01_object (assets.tests.test_models.TestCerealHayModel) ... ok
+test_02_get (assets.tests.test_models.TestCerealHayModel) ... ok
+test_03_filter (assets.tests.test_models.TestCerealHayModel) ... ok
+test_04_create (assets.tests.test_models.TestCerealHayModel) ... ok
+test_05_full_update (assets.tests.test_models.TestCerealHayModel) ... ok
+test_06_delete (assets.tests.test_models.TestCerealHayModel) ... ok
+test_07_save (assets.tests.test_models.TestCerealHayModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestClientModel) ... ok
+test_01_object (assets.tests.test_models.TestClientModel) ... ok
+test_02_get (assets.tests.test_models.TestClientModel) ... ok
+test_03_filter (assets.tests.test_models.TestClientModel) ... ok
+test_04_create (assets.tests.test_models.TestClientModel) ... ok
+test_05_full_update (assets.tests.test_models.TestClientModel) ... ok
+test_06_delete (assets.tests.test_models.TestClientModel) ... ok
+test_07_save (assets.tests.test_models.TestClientModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestColorModel) ... ok
+test_01_object (assets.tests.test_models.TestColorModel) ... ok
+test_02_get (assets.tests.test_models.TestColorModel) ... ok
+test_03_filter (assets.tests.test_models.TestColorModel) ... ok
+test_04_create (assets.tests.test_models.TestColorModel) ... ok
+test_05_full_update (assets.tests.test_models.TestColorModel) ... ok
+test_06_delete (assets.tests.test_models.TestColorModel) ... ok
+test_07_save (assets.tests.test_models.TestColorModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestCowModel) ... ok
+test_01_object (assets.tests.test_models.TestCowModel) ... ok
+test_02_get (assets.tests.test_models.TestCowModel) ... ok
+test_03_filter (assets.tests.test_models.TestCowModel) ... ok
+test_04_create (assets.tests.test_models.TestCowModel) ... ok
+test_05_full_update (assets.tests.test_models.TestCowModel) ... ok
+test_06_partial_update (assets.tests.test_models.TestCowModel) ... ok
+test_07_delete (assets.tests.test_models.TestCowModel) ... ok
+test_08_save (assets.tests.test_models.TestCowModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestEventModel) ... ok
+test_01_object (assets.tests.test_models.TestEventModel) ... ok
+test_02_get (assets.tests.test_models.TestEventModel) ... ok
+test_03_filter (assets.tests.test_models.TestEventModel) ... ok
+test_04_create (assets.tests.test_models.TestEventModel) ... ok
+test_05_full_update (assets.tests.test_models.TestEventModel) ... ok
+test_06_delete (assets.tests.test_models.TestEventModel) ... ok
+test_07_save (assets.tests.test_models.TestEventModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestExerciseModel) ... ok
+test_01_object (assets.tests.test_models.TestExerciseModel) ... ok
+test_02_get (assets.tests.test_models.TestExerciseModel) ... ok
+test_03_filter (assets.tests.test_models.TestExerciseModel) ... ok
+test_04_create (assets.tests.test_models.TestExerciseModel) ... ok
+test_05_full_update (assets.tests.test_models.TestExerciseModel) ... ok
+test_06_delete (assets.tests.test_models.TestExerciseModel) ... ok
+test_07_save (assets.tests.test_models.TestExerciseModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestGrassHayModel) ... ok
+test_01_object (assets.tests.test_models.TestGrassHayModel) ... ok
+test_02_get (assets.tests.test_models.TestGrassHayModel) ... ok
+test_03_filter (assets.tests.test_models.TestGrassHayModel) ... ok
+test_04_create (assets.tests.test_models.TestGrassHayModel) ... ok
+test_05_full_update (assets.tests.test_models.TestGrassHayModel) ... ok
+test_06_delete (assets.tests.test_models.TestGrassHayModel) ... ok
+test_07_save (assets.tests.test_models.TestGrassHayModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestHealthRecordModel) ... ok
+test_01_object (assets.tests.test_models.TestHealthRecordModel) ... ok
+test_02_get (assets.tests.test_models.TestHealthRecordModel) ... ok
+test_03_filter (assets.tests.test_models.TestHealthRecordModel) ... ok
+test_04_create (assets.tests.test_models.TestHealthRecordModel) ... ok
+test_05_full_update (assets.tests.test_models.TestHealthRecordModel) ... ok
+test_06_delete (assets.tests.test_models.TestHealthRecordModel) ... ok
+test_07_save (assets.tests.test_models.TestHealthRecordModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestIllnessModel) ... ok
+test_01_object (assets.tests.test_models.TestIllnessModel) ... ok
+test_02_get (assets.tests.test_models.TestIllnessModel) ... ok
+test_03_filter (assets.tests.test_models.TestIllnessModel) ... ok
+test_04_create (assets.tests.test_models.TestIllnessModel) ... ok
+test_05_full_update (assets.tests.test_models.TestIllnessModel) ... ok
+test_06_delete (assets.tests.test_models.TestIllnessModel) ... ok
+test_07_save (assets.tests.test_models.TestIllnessModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestInjuryModel) ... ok
+test_01_object (assets.tests.test_models.TestInjuryModel) ... ok
+test_02_get (assets.tests.test_models.TestInjuryModel) ... ok
+test_03_filter (assets.tests.test_models.TestInjuryModel) ... ok
+test_04_create (assets.tests.test_models.TestInjuryModel) ... ok
+test_05_full_update (assets.tests.test_models.TestInjuryModel) ... ok
+test_06_delete (assets.tests.test_models.TestInjuryModel) ... ok
+test_07_save (assets.tests.test_models.TestInjuryModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestLegumeHayModel) ... ok
+test_01_object (assets.tests.test_models.TestLegumeHayModel) ... ok
+test_02_get (assets.tests.test_models.TestLegumeHayModel) ... ok
+test_03_filter (assets.tests.test_models.TestLegumeHayModel) ... ok
+test_04_create (assets.tests.test_models.TestLegumeHayModel) ... ok
+test_05_full_update (assets.tests.test_models.TestLegumeHayModel) ... ok
+test_06_delete (assets.tests.test_models.TestLegumeHayModel) ... ok
+test_07_save (assets.tests.test_models.TestLegumeHayModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestMilkModel) ... ok
+test_01_object (assets.tests.test_models.TestMilkModel) ... ok
+test_02_get (assets.tests.test_models.TestMilkModel) ... ok
+test_03_filter (assets.tests.test_models.TestMilkModel) ... ok
+test_04_create (assets.tests.test_models.TestMilkModel) ... ok
+test_05_full_update (assets.tests.test_models.TestMilkModel) ... ok
+test_06_delete (assets.tests.test_models.TestMilkModel) ... ok
+test_07_save (assets.tests.test_models.TestMilkModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestPastureModel) ... ok
+test_01_object (assets.tests.test_models.TestPastureModel) ... ok
+test_02_get (assets.tests.test_models.TestPastureModel) ... ok
+test_03_filter (assets.tests.test_models.TestPastureModel) ... ok
+test_04_create (assets.tests.test_models.TestPastureModel) ... ok
+test_05_full_update (assets.tests.test_models.TestPastureModel) ... ok
+test_06_delete (assets.tests.test_models.TestPastureModel) ... ok
+test_07_save (assets.tests.test_models.TestPastureModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestSeasonModel) ... ok
+test_01_object (assets.tests.test_models.TestSeasonModel) ... ok
+test_02_get (assets.tests.test_models.TestSeasonModel) ... ok
+test_03_filter (assets.tests.test_models.TestSeasonModel) ... ok
+test_04_create (assets.tests.test_models.TestSeasonModel) ... ok
+test_05_full_update (assets.tests.test_models.TestSeasonModel) ... ok
+test_06_delete (assets.tests.test_models.TestSeasonModel) ... ok
+test_07_save (assets.tests.test_models.TestSeasonModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestSeedModel) ... ok
+test_01_object (assets.tests.test_models.TestSeedModel) ... ok
+test_02_get (assets.tests.test_models.TestSeedModel) ... ok
+test_03_filter (assets.tests.test_models.TestSeedModel) ... ok
+test_04_create (assets.tests.test_models.TestSeedModel) ... ok
+test_05_full_update (assets.tests.test_models.TestSeedModel) ... ok
+test_06_delete (assets.tests.test_models.TestSeedModel) ... ok
+test_07_save (assets.tests.test_models.TestSeedModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestStatusModel) ... ok
+test_01_object (assets.tests.test_models.TestStatusModel) ... ok
+test_02_get (assets.tests.test_models.TestStatusModel) ... ok
+test_03_filter (assets.tests.test_models.TestStatusModel) ... ok
+test_04_create (assets.tests.test_models.TestStatusModel) ... ok
+test_05_full_update (assets.tests.test_models.TestStatusModel) ... ok
+test_06_delete (assets.tests.test_models.TestStatusModel) ... ok
+test_07_save (assets.tests.test_models.TestStatusModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestTreatmentModel) ... ok
+test_01_object (assets.tests.test_models.TestTreatmentModel) ... ok
+test_02_get (assets.tests.test_models.TestTreatmentModel) ... ok
+test_03_filter (assets.tests.test_models.TestTreatmentModel) ... ok
+test_04_create (assets.tests.test_models.TestTreatmentModel) ... ok
+test_05_full_update (assets.tests.test_models.TestTreatmentModel) ... ok
+test_06_delete (assets.tests.test_models.TestTreatmentModel) ... ok
+test_07_save (assets.tests.test_models.TestTreatmentModel) ... ok
+test_00_load_fixtures (assets.tests.test_models.TestVaccineModel) ... ok
+test_01_object (assets.tests.test_models.TestVaccineModel) ... ok
+test_02_get (assets.tests.test_models.TestVaccineModel) ... ok
+test_03_filter (assets.tests.test_models.TestVaccineModel) ... ok
+test_04_create (assets.tests.test_models.TestVaccineModel) ... ok
+test_05_full_update (assets.tests.test_models.TestVaccineModel) ... ok
+test_06_delete (assets.tests.test_models.TestVaccineModel) ... ok
+test_07_save (assets.tests.test_models.TestVaccineModel) ... ok</code></pre>
+    </details>
+    <details class="test-module">
+      <summary>Serializers — 137 tests</summary>
+      <pre><code>test_00_load_fixtures (assets.tests.test_serializers.TestActionSerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestActionSerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestActionSerializer) ... ok
+test_03_retrieve (assets.tests.test_serializers.TestActionSerializer) ... ok
+test_04_list (assets.tests.test_serializers.TestActionSerializer) ... ok
+test_05_full_update (assets.tests.test_serializers.TestActionSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestAgeSerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestAgeSerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestAgeSerializer) ... ok
+test_03_retrieve (assets.tests.test_serializers.TestAgeSerializer) ... ok
+test_04_list (assets.tests.test_serializers.TestAgeSerializer) ... ok
+test_05_full_update (assets.tests.test_serializers.TestAgeSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestBreedSerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestBreedSerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestBreedSerializer) ... ok
+test_03_retrieve (assets.tests.test_serializers.TestBreedSerializer) ... ok
+test_04_list (assets.tests.test_serializers.TestBreedSerializer) ... ok
+test_05_full_update (assets.tests.test_serializers.TestBreedSerializer) ... ok
+test_06_partial_update (assets.tests.test_serializers.TestBreedSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestCerealHaySerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestCerealHaySerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestCerealHaySerializer) ... ok
+test_03_retrieve (assets.tests.test_serializers.TestCerealHaySerializer) ... ok
+test_04_list (assets.tests.test_serializers.TestCerealHaySerializer) ... ok
+test_05_full_update (assets.tests.test_serializers.TestCerealHaySerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestClientSerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestClientSerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestClientSerializer) ... ok
+test_03_retrieve (assets.tests.test_serializers.TestClientSerializer) ... ok
+test_04_list (assets.tests.test_serializers.TestClientSerializer) ... ok
+test_05_full_update (assets.tests.test_serializers.TestClientSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestCowReadSerializer) ... ok
+test_01_retrieve (assets.tests.test_serializers.TestCowReadSerializer) ... ok
+test_02_list (assets.tests.test_serializers.TestCowReadSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestCowWriteSerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestCowWriteSerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestCowWriteSerializer) ... ok
+test_03_full_update (assets.tests.test_serializers.TestCowWriteSerializer) ... ok
+test_04_partial_update (assets.tests.test_serializers.TestCowWriteSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestEventReadSerializer) ... ok
+test_01_retrieve (assets.tests.test_serializers.TestEventReadSerializer) ... ok
+test_02_list (assets.tests.test_serializers.TestEventReadSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestEventWriteSerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestEventWriteSerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestEventWriteSerializer) ... ok
+test_03_full_update (assets.tests.test_serializers.TestEventWriteSerializer) ... ok
+test_04_partial_update (assets.tests.test_serializers.TestEventWriteSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestExerciseReadSerializer) ... ok
+test_01_retrieve (assets.tests.test_serializers.TestExerciseReadSerializer) ... ok
+test_02_list (assets.tests.test_serializers.TestExerciseReadSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestExerciseWriteSerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestExerciseWriteSerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestExerciseWriteSerializer) ... ok
+test_03_full_update (assets.tests.test_serializers.TestExerciseWriteSerializer) ... ok
+test_04_partial_update (assets.tests.test_serializers.TestExerciseWriteSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestGrassHaySerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestGrassHaySerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestGrassHaySerializer) ... ok
+test_03_retrieve (assets.tests.test_serializers.TestGrassHaySerializer) ... ok
+test_04_list (assets.tests.test_serializers.TestGrassHaySerializer) ... ok
+test_05_full_update (assets.tests.test_serializers.TestGrassHaySerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestHealthRecordReadSerializer) ... ok
+test_01_retrieve (assets.tests.test_serializers.TestHealthRecordReadSerializer) ... ok
+test_02_list (assets.tests.test_serializers.TestHealthRecordReadSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestHealthRecordWriteSerializer) ... ok
+test_01_create_healthy (assets.tests.test_serializers.TestHealthRecordWriteSerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestHealthRecordWriteSerializer) ... ok
+test_03_full_update (assets.tests.test_serializers.TestHealthRecordWriteSerializer) ... ok
+test_04_partial_update (assets.tests.test_serializers.TestHealthRecordWriteSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestIllnessSerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestIllnessSerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestIllnessSerializer) ... ok
+test_03_retrieve (assets.tests.test_serializers.TestIllnessSerializer) ... ok
+test_04_list (assets.tests.test_serializers.TestIllnessSerializer) ... ok
+test_05_full_update (assets.tests.test_serializers.TestIllnessSerializer) ... ok
+test_06_partial_update (assets.tests.test_serializers.TestIllnessSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestInjurySerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestInjurySerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestInjurySerializer) ... ok
+test_03_retrieve (assets.tests.test_serializers.TestInjurySerializer) ... ok
+test_04_list (assets.tests.test_serializers.TestInjurySerializer) ... ok
+test_05_full_update (assets.tests.test_serializers.TestInjurySerializer) ... ok
+test_06_partial_update (assets.tests.test_serializers.TestInjurySerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestLegumeHaySerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestLegumeHaySerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestLegumeHaySerializer) ... ok
+test_03_retrieve (assets.tests.test_serializers.TestLegumeHaySerializer) ... ok
+test_04_list (assets.tests.test_serializers.TestLegumeHaySerializer) ... ok
+test_05_full_update (assets.tests.test_serializers.TestLegumeHaySerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestMilkReadSerializer) ... ok
+test_01_retrieve (assets.tests.test_serializers.TestMilkReadSerializer) ... ok
+test_02_list (assets.tests.test_serializers.TestMilkReadSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestMilkWriteSerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestMilkWriteSerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestMilkWriteSerializer) ... ok
+test_03_full_update (assets.tests.test_serializers.TestMilkWriteSerializer) ... ok
+test_04_partial_update (assets.tests.test_serializers.TestMilkWriteSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestPastureReadSerializer) ... ok
+test_01_retrieve (assets.tests.test_serializers.TestPastureReadSerializer) ... ok
+test_02_list (assets.tests.test_serializers.TestPastureReadSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestPastureWriteSerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestPastureWriteSerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestPastureWriteSerializer) ... ok
+test_03_full_update (assets.tests.test_serializers.TestPastureWriteSerializer) ... ok
+test_04_partial_update (assets.tests.test_serializers.TestPastureWriteSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestSeasonSerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestSeasonSerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestSeasonSerializer) ... ok
+test_03_retrieve (assets.tests.test_serializers.TestSeasonSerializer) ... ok
+test_04_list (assets.tests.test_serializers.TestSeasonSerializer) ... ok
+test_05_full_update (assets.tests.test_serializers.TestSeasonSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestSeedReadSerializer) ... ok
+test_01_retrieve (assets.tests.test_serializers.TestSeedReadSerializer) ... ok
+test_02_list (assets.tests.test_serializers.TestSeedReadSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestSeedWriteSerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestSeedWriteSerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestSeedWriteSerializer) ... ok
+test_03_full_update (assets.tests.test_serializers.TestSeedWriteSerializer) ... ok
+test_04_partial_update (assets.tests.test_serializers.TestSeedWriteSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestStatusSerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestStatusSerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestStatusSerializer) ... ok
+test_03_retrieve (assets.tests.test_serializers.TestStatusSerializer) ... ok
+test_04_list (assets.tests.test_serializers.TestStatusSerializer) ... ok
+test_05_full_update (assets.tests.test_serializers.TestStatusSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestTreatmentSerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestTreatmentSerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestTreatmentSerializer) ... ok
+test_03_retrieve (assets.tests.test_serializers.TestTreatmentSerializer) ... ok
+test_04_list (assets.tests.test_serializers.TestTreatmentSerializer) ... ok
+test_05_full_update (assets.tests.test_serializers.TestTreatmentSerializer) ... ok
+test_00_load_fixtures (assets.tests.test_serializers.TestVaccineSerializer) ... ok
+test_01_create (assets.tests.test_serializers.TestVaccineSerializer) ... ok
+test_02_bulk_create (assets.tests.test_serializers.TestVaccineSerializer) ... ok
+test_03_retrieve (assets.tests.test_serializers.TestVaccineSerializer) ... ok
+test_04_list (assets.tests.test_serializers.TestVaccineSerializer) ... ok
+test_05_full_update (assets.tests.test_serializers.TestVaccineSerializer) ... ok</code></pre>
+    </details>
+    <details class="test-module">
+      <summary>Tenant isolation — 17 tests</summary>
+      <pre><code>test_client_list_contains_only_the_authenticated_users_clients (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
+test_monthly_health_aggregate_excludes_other_clients (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
+test_monthly_milk_aggregate_excludes_other_clients (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
+test_other_clients_annual_summary_is_empty (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
+test_other_clients_cow_cannot_be_soft_deleted (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
+test_other_clients_cow_detail_is_not_found (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
+test_other_clients_cow_list_is_empty (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
+test_other_clients_event_detail_is_not_found (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
+test_other_clients_event_list_is_empty (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
+test_other_clients_health_record_detail_is_not_found (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
+test_other_clients_milk_detail_is_not_found (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
+test_other_clients_pasture_detail_is_not_found (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
+test_staff_can_access_all_tenants (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
+test_unfiltered_cow_list_contains_only_the_authenticated_users_cows (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
+test_user_cannot_create_cow_for_another_clients_farm (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
+test_user_cannot_move_a_cow_to_another_clients_farm (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
+test_user_list_does_not_disclose_other_users (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok</code></pre>
+    </details>
+    <details class="test-module">
+      <summary>UI authentication — 5 tests</summary>
+      <pre><code>test_logged_in_endpoint_reports_only_the_current_users_clients (assets.tests.test_ui_auth.TestUIAuthentication) ... ok
+test_logged_in_endpoint_requires_authentication (assets.tests.test_ui_auth.TestUIAuthentication) ... ok
+test_logged_in_endpoint_supports_users_without_a_client (assets.tests.test_ui_auth.TestUIAuthentication) ... ok
+test_logout_enforces_csrf_for_session_authentication (assets.tests.test_ui_auth.TestUIAuthentication) ... ok
+test_logout_requires_post_and_clears_the_session (assets.tests.test_ui_auth.TestUIAuthentication) ... ok</code></pre>
+    </details>
+    <details class="test-module">
+      <summary>URL routing — 15 tests</summary>
+      <pre><code>test_01_cow_list (assets.tests.test_urls.TestAssetsCowAPIURLConf) ... ok
+test_02_cow_list_month (assets.tests.test_urls.TestAssetsCowAPIURLConf) ... ok
+test_03_cow_list_year (assets.tests.test_urls.TestAssetsCowAPIURLConf) ... ok
+test_04_cow_detail (assets.tests.test_urls.TestAssetsCowAPIURLConf) ... ok
+test_01_event_list (assets.tests.test_urls.TestAssetsEventAPIURLConf) ... ok
+test_02_event_detail (assets.tests.test_urls.TestAssetsEventAPIURLConf) ... ok
+test_01_exercise_list (assets.tests.test_urls.TestAssetsExerciseAPIURLConf) ... ok
+test_02_exercise_detail (assets.tests.test_urls.TestAssetsExerciseAPIURLConf) ... ok
+test_01_healthrecord_list (assets.tests.test_urls.TestAssetsHealthRecordAPIURLConf) ... ok
+test_02_healthrecord_detail (assets.tests.test_urls.TestAssetsHealthRecordAPIURLConf) ... ok
+test_01_milk_list (assets.tests.test_urls.TestAssetsMilkAPIURLConf) ... ok
+test_02_milk_detail (assets.tests.test_urls.TestAssetsMilkAPIURLConf) ... ok
+test_01_seed_list (assets.tests.test_urls.TestAssetsSeedAPIURLConf) ... ok
+test_02_seed_detail (assets.tests.test_urls.TestAssetsSeedAPIURLConf) ... ok
+test_01_index (assets.tests.test_urls.TestAssetsURLConf) ... ok</code></pre>
+    </details>
+    <details class="test-module">
+      <summary>User API — 6 tests</summary>
+      <pre><code>test_anonymous_user_cannot_create_accounts (assets.tests.test_user_api.TestUserAPI) ... ok
+test_authenticated_non_staff_user_cannot_create_accounts (assets.tests.test_user_api.TestUserAPI) ... ok
+test_authenticated_non_staff_user_cannot_retrieve_user_details (assets.tests.test_user_api.TestUserAPI) ... ok
+test_staff_cannot_create_account_with_short_password (assets.tests.test_user_api.TestUserAPI) ... ok
+test_staff_user_can_create_non_staff_account (assets.tests.test_user_api.TestUserAPI) ... ok
+test_staff_user_can_retrieve_user_details (assets.tests.test_user_api.TestUserAPI) ... ok</code></pre>
+    </details>
+    <details class="test-module">
+      <summary>User creation — 7 tests</summary>
+      <pre><code>test_default_account_is_not_privileged (assets.tests.test_user_creation_tool.TestUserCreationTool) ... ok
+test_demo_account_disabling_is_dry_run_by_default (assets.tests.test_user_creation_tool.TestUserCreationTool) ... ok
+test_demo_account_disabling_removes_access_and_password (assets.tests.test_user_creation_tool.TestUserCreationTool) ... ok
+test_duplicate_usernames_are_rejected (assets.tests.test_user_creation_tool.TestUserCreationTool) ... ok
+test_short_passwords_are_rejected (assets.tests.test_user_creation_tool.TestUserCreationTool) ... ok
+test_staff_access_must_be_explicit (assets.tests.test_user_creation_tool.TestUserCreationTool) ... ok
+test_superuser_access_must_be_explicit (assets.tests.test_user_creation_tool.TestUserCreationTool) ... ok</code></pre>
+    </details>
+    <details class="test-module">
+      <summary>Page views — 3 tests</summary>
+      <pre><code>test_00_load_fixtures (assets.tests.test_views.TestIndexView) ... ok
+test_01_options (assets.tests.test_views.TestIndexView) ... ok
+test_02_get (assets.tests.test_views.TestIndexView) ... ok</code></pre>
+    </details>
+  </details>
+  <details class="test-area">
+    <summary>Reporting — 50 tests across 4 modules</summary>
+    <details class="test-module">
+      <summary>API views — 16 tests</summary>
+      <pre><code>test_00_load_fixtures (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
+test_01_options (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
+test_02_list (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
+test_03_retrieve (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
+test_04_create (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
+test_05_destroy (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
+test_06_full_update (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
+test_07_partial_update (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
+test_00_load_fixtures (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok
+test_01_options (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok
+test_02_list (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok
+test_03_retrieve (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok
+test_04_create (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok
+test_05_destroy (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok
+test_06_full_update (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok
+test_07_partial_update (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok</code></pre>
+    </details>
+    <details class="test-module">
+      <summary>Models — 16 tests</summary>
+      <pre><code>test_00_load_fixtures (summary.tests.test_models.TestAnnualModel) ... ok
+test_01_object (summary.tests.test_models.TestAnnualModel) ... ok
+test_02_get (summary.tests.test_models.TestAnnualModel) ... ok
+test_03_filter (summary.tests.test_models.TestAnnualModel) ... ok
+test_04_create (summary.tests.test_models.TestAnnualModel) ... ok
+test_05_partial_update (summary.tests.test_models.TestAnnualModel) ... ok
+test_06_delete (summary.tests.test_models.TestAnnualModel) ... ok
+test_07_save (summary.tests.test_models.TestAnnualModel) ... ok
+test_00_load_fixtures (summary.tests.test_models.TestMonthlyModel) ... ok
+test_01_object (summary.tests.test_models.TestMonthlyModel) ... ok
+test_02_get (summary.tests.test_models.TestMonthlyModel) ... ok
+test_03_filter (summary.tests.test_models.TestMonthlyModel) ... ok
+test_04_create (summary.tests.test_models.TestMonthlyModel) ... ok
+test_05_partial_update (summary.tests.test_models.TestMonthlyModel) ... ok
+test_06_delete (summary.tests.test_models.TestMonthlyModel) ... ok
+test_07_save (summary.tests.test_models.TestMonthlyModel) ... ok</code></pre>
+    </details>
+    <details class="test-module">
+      <summary>Serializers — 14 tests</summary>
+      <pre><code>test_00_load_fixtures (summary.tests.test_serializers.TestAnnualReadSerializer) ... ok
+test_01_retrieve (summary.tests.test_serializers.TestAnnualReadSerializer) ... ok
+test_02_list (summary.tests.test_serializers.TestAnnualReadSerializer) ... ok
+test_00_load_fixtures (summary.tests.test_serializers.TestAnnualWriteSerializer) ... ok
+test_01_create (summary.tests.test_serializers.TestAnnualWriteSerializer) ... ok
+test_02_bulk_create (summary.tests.test_serializers.TestAnnualWriteSerializer) ... ok
+test_03_partial_update (summary.tests.test_serializers.TestAnnualWriteSerializer) ... ok
+test_00_load_fixtures (summary.tests.test_serializers.TestMonthlyReadSerializer) ... ok
+test_01_retrieve (summary.tests.test_serializers.TestMonthlyReadSerializer) ... ok
+test_02_list (summary.tests.test_serializers.TestMonthlyReadSerializer) ... ok
+test_00_load_fixtures (summary.tests.test_serializers.TestMonthlyWriteSerializer) ... ok
+test_01_create (summary.tests.test_serializers.TestMonthlyWriteSerializer) ... ok
+test_02_bulk_create (summary.tests.test_serializers.TestMonthlyWriteSerializer) ... ok
+test_03_partial_update (summary.tests.test_serializers.TestMonthlyWriteSerializer) ... ok</code></pre>
+    </details>
+    <details class="test-module">
+      <summary>URL routing — 4 tests</summary>
+      <pre><code>test_01_annual_client (summary.tests.test_urls.TestSummaryAnnualAPIURLConf) ... ok
+test_02_annual_client_year (summary.tests.test_urls.TestSummaryAnnualAPIURLConf) ... ok
+test_01_monthly_client_year (summary.tests.test_urls.TestSummaryMonthlyAPIURLConf) ... ok
+test_02_monthly_client_year_month (summary.tests.test_urls.TestSummaryMonthlyAPIURLConf) ... ok
+
+----------------------------------------------------------------------
+Destroying test database for alias &#x27;default&#x27; (&#x27;test_dairyfarm&#x27;)...
+
+Back to saved test runs
+
+</code></pre>
+    </details>
+  </details>
+  <h2>Run summary</h2>
+<p><strong>Ran 477 tests</strong></p>
+<p><strong>OK</strong></p>
+  <p><a href="#!/docs/tests/">Back to saved test runs</a></p>
+</div>

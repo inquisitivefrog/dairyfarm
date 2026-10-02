@@ -1,9 +1,10 @@
 from django.contrib.auth.models import User
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
 from django.core.mail import EmailMessage
 from django.http import HttpResponseRedirect, JsonResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import render
 from django.template.loader import get_template
 from django.views import generic
 from django.views.decorators.http import require_POST
@@ -12,34 +13,32 @@ from demo.forms import ContactForm
 
 def contact(request):
     form_class = ContactForm
+    form = form_class(request.POST or None)
 
     if request.method == 'POST':
-        form = form_class(data=request.POST)
         if form.is_valid():
-            contact_name = request.POST.get('contact_name', '')
-            contact_email = request.POST.get('contact_email', '')
-            form_content = request.POST.get('content', '')
+            contact_name = form.cleaned_data['contact_name']
+            contact_email = form.cleaned_data['contact_email']
+            form_content = form.cleaned_data['content']
             template = get_template('demo/contact_template.txt')
             context = {
                 'contact_name': contact_name,
                 'contact_email': contact_email,
-                'form_content': form_content, 
+                'form_content': form_content,
             }
             content = template.render(context)
-        
+
             email = EmailMessage(
                'new contact form submission',
                content,
-               'Your website' + '',
-               ['your_email@gmail.com'],
-               headers = {'Reply=To': contact_email}
+               settings.DEFAULT_FROM_EMAIL,
+               [settings.CONTACT_EMAIL],
+               reply_to=[contact_email]
             )
             email.send()
-            return redirect('contact')
+            return HttpResponseRedirect('/contact/')
 
-    return render(request, 'demo/contact.html', {
-        'form': form_class,
-    })
+    return render(request, 'demo/contact.html', {'form': form})
 
 def redirect(request):
     destination = '/summary/'
@@ -73,4 +72,3 @@ def ui_logout(request):
 class IndexView(generic.ListView):
     queryset = User.objects.all()
     template_name = 'demo/index.html'
-

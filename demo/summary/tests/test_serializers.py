@@ -226,7 +226,7 @@ class TestMonthlyReadSerializer(APITestCase):
                          actual.data['created_by'])
         self.assertEqual(expected.year,
                          actual.data['year'])
-        self.assertEqual(expected.month,
+        self.assertEqual(expected.get_month_display(),
                          actual.data['month'])
         self.assertEqual(expected.total_cows,
                          actual.data['total_cows'])
@@ -370,4 +370,3 @@ class TestMonthlyWriteSerializer(APITestCase):
                          str(actual.data['year']))
         self.assertEqual(int(self.monthly_data['month']),
                          actual.data['month'])
-

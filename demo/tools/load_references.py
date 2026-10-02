@@ -190,15 +190,15 @@ def load_pastures():
         print('Defined pasture: {}'.format(name))
     user = User.objects.get(username='berkeley')
     client = Client.objects.get(user=user)
-    b_pastures = {'Lot_1': '/static/images/regions/lot_1.png',
-                  'Lot_2': '/static/images/regions/lot_2.png',
-                  'Lot_3': '/static/images/regions/lot_3.png',
-                  'Lot_4': '/static/images/regions/lot_4.png',
-                  'Lot_5': '/static/images/regions/lot_5.png',
-                  'Lot_6': '/static/images/regions/lot_6.png',
-                  'Lot_7': '/static/images/regions/lot_7.png',
-                  'Lot_8': '/static/images/regions/lot_8.png',
-                  'Lot_9': '/static/images/regions/lot_9.png'}
+    b_pastures = {'Lot_1': '/static/images/regions/Lot_1.png',
+                  'Lot_2': '/static/images/regions/Lot_2.png',
+                  'Lot_3': '/static/images/regions/Lot_3.png',
+                  'Lot_4': '/static/images/regions/Lot_4.png',
+                  'Lot_5': '/static/images/regions/Lot_5.png',
+                  'Lot_6': '/static/images/regions/Lot_6.png',
+                  'Lot_7': '/static/images/regions/Lot_7.png',
+                  'Lot_8': '/static/images/regions/Lot_8.png',
+                  'Lot_9': '/static/images/regions/Lot_9.png'}
     for name, url in b_pastures.items(): 
         data = {'client': client,
                 'name': name,

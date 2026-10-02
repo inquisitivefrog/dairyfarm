@@ -1,5 +1,5 @@
 farmApp.controller("LoginController",
-    function ($scope, $rootScope, $http, $location) {
+    function ($scope, $rootScope, $http, $httpParamSerializer, $location) {
         $scope.username = null;
         $scope.password = null;
         console.log("Entered LoginController");
@@ -21,16 +21,16 @@ farmApp.controller("LoginController",
             $http({
                 method: 'POST',
                 url: "/login/?next=/ui_logged_in/",
-                data: data
+                data: $httpParamSerializer({
+                    username: $scope.username,
+                    password: $scope.password,
+                    csrfmiddlewaretoken: $rootScope.globals.token,
+                    next: "/ui_logged_in/"
+                })
             }).then(function (response) {
                 if (typeof(response.data) == "string") {
-                    var parser = new DOMParser();
-                    var html = parser.parseFromString(response.data, 'text/html');
-                    var p = html.firstChild.querySelectorAll("p");
-                    if (p[0].innerHTML = "Please login to see this page.") {
-                        console.log("p0: " + p[0].innerHTML);
-                        $scope.error = "Username, password mismatch. Try again.";
-                    }
+                    $scope.error =
+                        "Login failed. Check the username and password and try again.";
                 } else {
                     var user = response.data.user;
                     $rootScope.globals["currentUser"] = user;

@@ -7,6 +7,7 @@ farmApp.controller('PastureListByClientController',
         }
         $scope.cultivate_header = "Cultivate a Pasture for "
                                 + $rootScope.globals.currentUser.client.name;
+        $scope.pageOffset = parseInt($routeParams.offset || "0", 10);
         $scope.offset = $routeParams.offset;
         $scope.limit = $routeParams.limit;
 
@@ -19,6 +20,9 @@ farmApp.controller('PastureListByClientController',
         $scope.cultivate = null;
         $scope.next = null;
         $scope.prev = null;
+        $scope.recordNumber = function (index) {
+            return $scope.pageOffset + index + 1;
+        };
         console.log("Entered CowListByClientController");
 
         if (($scope.offset != null) && ($scope.limit != null)) {

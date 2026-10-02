@@ -58,7 +58,7 @@
 <h2>Herd of {{total}}</h2>
 <table ng-if="total > 0">
   <tr>
-    <th>ID</th>
+    <th>Herd #</th>
     <th>RFID tag</th>
     <th>Client</th>
     <th>Procurer</th>
@@ -69,7 +69,7 @@
     <th>Date Sold</th>
   </tr>
   <tr ng-repeat="cow in herd">
-    <td><a href="#!{{cow.link}}">{{cow.id}}</a></td>
+    <td><a href="#!{{cow.link}}">{{herdNumber($index)}}</a></td>
     <td>{{cow.rfid}}</td>
     <td>{{cow.client.name}}</td>
     <td>{{cow.purchased_by}}</td>

@@ -31,6 +31,29 @@ h2 {
     text-decoration: none;
 }
 
+.documentation-nav > li {
+    margin: 0 0 0.7em;
+    text-align: left;
+}
+
+.documentation-category {
+    font-weight: bold;
+}
+
+.nav ul.documentation-toc {
+    margin: 0.25em 0 0.5em 1em;
+    padding-left: 1em;
+    font-size: 0.9em;
+}
+
+.documentation-toc li {
+    margin: 0.2em 0;
+}
+
+.article #contents {
+    display: none;
+}
+
 .menu ul {
     list-style-type: none;
     margin: 0;
@@ -59,9 +82,44 @@ li.menu a:hover {
 }
 
 @media all and (min-width: 768px) {
-    .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
-    .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
-    footer {-webkit-order:3;order:3;}
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
+
+    .flex-container {
+        display: grid;
+        grid-template-columns: minmax(230px, 1fr) minmax(0, 3fr);
+        grid-template-rows: auto minmax(0, 1fr) auto;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .flex-container > * {
+        min-width: 0;
+    }
+
+    header {
+        grid-column: 1 / -1;
+    }
+
+    .nav {
+        grid-column: 1;
+        grid-row: 2;
+        text-align: left;
+        overflow-y: auto;
+    }
+
+    .article {
+        grid-column: 2;
+        grid-row: 2;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    footer {
+        grid-column: 1 / -1;
+    }
 }
 
 div.raw {
@@ -70,6 +128,25 @@ div.raw {
     border: 2px solid gray;
     padding: 5px;
     background-color: orange;
+}
+
+.raw details {
+    margin: 0.5em 0;
+    border: 1px solid #777;
+    padding: 0.5em;
+    text-align: left;
+}
+
+.raw details summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.raw details pre {
+    max-height: 32em;
+    overflow: auto;
+    background-color: #f4f4f4;
+    padding: 0.75em;
 }
 
 div {

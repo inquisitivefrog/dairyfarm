@@ -50,7 +50,7 @@
 <h2>{{total}} Recorded Events</h2>
 <table ng-if="total > 0">
   <tr>
-    <th>ID</th>
+    <th>Event #</th>
     <th>Client</th>
     <th>Recorder</th>
     <th>Occurred When</th>
@@ -61,7 +61,7 @@
     <th>Action</th>
   </tr>
   <tr ng-repeat="event in events">
-    <td><a href="#!{{event.link}}">{{event.id}}</a></td>
+    <td><a href="#!{{event.link}}">{{recordNumber($index)}}</a></td>
     <td>{{event.client.name}}</td>
     <td>{{event.recorded_by}}</td>
     <td>{{event.event_time}}</td>
@@ -70,7 +70,7 @@
     <td>{{event.cow.color.name}}</td>
     <td>{{event.cow.age.name}}</td>
     <td>{{event.action.name}}</td>
-  <tr>
+  </tr>
 </table>
 
 <p ng-if="total == 0">No events recorded yet.</p>

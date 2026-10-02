@@ -42,6 +42,8 @@ class MonthlyReadSerializer(serializers.ModelSerializer):
                                           slug_field='name')
     created_by = serializers.SlugRelatedField(queryset=User.objects.all(),
                                               slug_field='username')
+    month = serializers.CharField(source='get_month_display', read_only=True)
+
     class Meta:
         fields = ('id', 'client', 'created_by', 'year', 'month', 'total_cows',
                   'aged_cows', 'pregnant_cows', 'ill_cows', 'injured_cows',

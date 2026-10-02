@@ -6,16 +6,12 @@
     <input type="text"
            name="username"
            ng-model="username"
-           ng-minlength="6"
-           ng-maxlength="15"
            autofocus
            required/></p>
     <p><label for="id_password">Password:</label>
     <input type="password"
            name="password"
            ng-model="password"
-           ng-minlength="4"
-           ng-maxlength="12"
            required/></p>
     <input type="hidden" name="next" value="/"/>
     <input type="button" ng-click="login()" value="Login"/>
