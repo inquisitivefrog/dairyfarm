@@ -3,6 +3,7 @@ from datetime import date
 from django.contrib.auth.models import User
 from django.test import Client as DjangoClient
 from django.test import TestCase
+from django.test import override_settings
 from django.urls import reverse
 
 from assets.models import Client
@@ -76,3 +77,26 @@ class TestUIAuthentication(TestCase):
         )
         self.assertEqual(200, logged_out.status_code)
         self.assertEqual('', client.cookies['sessionid'].value)
+
+    @override_settings(CSRF_TRUSTED_ORIGINS=['http://testserver'])
+    def test_login_accepts_trusted_same_origin_csrf_post(self):
+        client = DjangoClient(enforce_csrf_checks=True)
+        login_page = client.get(reverse('ui_login'))
+        csrf_token = login_page.cookies['csrftoken'].value
+
+        response = client.post(
+            reverse('login'),
+            {
+                'username': self.user.username,
+                'password': 'test-password',
+                'csrfmiddlewaretoken': csrf_token,
+                'next': reverse('ui_logged_in'),
+            },
+            HTTP_ORIGIN='http://testserver',
+        )
+
+        self.assertEqual(302, response.status_code)
+        self.assertEqual(
+            200,
+            client.get(reverse('ui_logged_in')).status_code,
+        )

@@ -32,12 +32,12 @@ services:
       dockerfile: Dockerfile
       args:
         INSTALL_DEV_DEPENDENCIES: "true"
-    platform: linux/amd64
     environment:
       DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY:?Set DJANGO_SECRET_KEY in .env}
       DJANGO_ENVIRONMENT: ${DJANGO_ENVIRONMENT:-development}
       DJANGO_DEBUG: ${DJANGO_DEBUG:-true}
       DJANGO_ALLOWED_HOSTS: ${DJANGO_ALLOWED_HOSTS:-localhost,127.0.0.1}
+      DJANGO_CSRF_TRUSTED_ORIGINS: ${DJANGO_CSRF_TRUSTED_ORIGINS:-http://localhost:8000,http://127.0.0.1:8000}
       DJANGO_DB_ENGINE: django.db.backends.postgresql
       DJANGO_DB_NAME: ${POSTGRES_DB}
       DJANGO_DB_USER: ${POSTGRES_USER}

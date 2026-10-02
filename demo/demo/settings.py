@@ -39,6 +39,13 @@ ALLOWED_HOSTS = [
     for host in os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(',')
     if host.strip()
 ]
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in os.environ.get(
+        'DJANGO_CSRF_TRUSTED_ORIGINS', ''
+    ).split(',')
+    if origin.strip()
+]
 
 SECURE_SSL_REDIRECT = os.environ.get(
     'DJANGO_SECURE_SSL_REDIRECT', 'false').lower() in (
@@ -50,7 +57,12 @@ CSRF_COOKIE_SECURE = os.environ.get(
     'DJANGO_CSRF_COOKIE_SECURE', 'false').lower() in (
         'true', '1', 'yes', 'on')
 SECURE_HSTS_SECONDS = int(os.environ.get('DJANGO_HSTS_SECONDS', '0'))
-SECURE_BROWSER_XSS_FILTER = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = os.environ.get(
+    'DJANGO_HSTS_INCLUDE_SUBDOMAINS', 'false').lower() in (
+        'true', '1', 'yes', 'on')
+SECURE_HSTS_PRELOAD = os.environ.get(
+    'DJANGO_HSTS_PRELOAD', 'false').lower() in (
+        'true', '1', 'yes', 'on')
 SECURE_CONTENT_TYPE_NOSNIFF = True
 X_FRAME_OPTIONS = 'DENY'
 
@@ -159,14 +171,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-#TIME_ZONE = 'UTC'
-TIME_ZONE = 'US/Pacific'
+TIME_ZONE = 'America/Los_Angeles'
 
 USE_I18N = True
 
-USE_L10N = True
-
 USE_TZ = True
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -194,7 +204,7 @@ LOGIN_URL = '/login/'
 
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
         'LOCATION': os.environ.get(
             'MEMCACHED_LOCATION', '127.0.0.1:11211'),
     }

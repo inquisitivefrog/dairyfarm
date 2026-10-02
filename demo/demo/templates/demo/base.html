@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 <html>
   <head>
     <title>My Django App</title>
@@ -10,16 +10,16 @@
     <script src="{% static 'js/cacheUtils.js' %}"></script>
     <script src="{% static 'js/stringUtils.js' %}"></script>
     <script src="{% static 'js/timeUtils.js' %}"></script>
-    <script src="{% static 'js/farmApp.js' %}?v=contact-details-1"></script>
-    <script src="{% static 'js/farmAppLoginCtrl.js' %}"></script>
+    <script src="{% static 'js/farmApp.js' %}?v=test-results-suites-1"></script>
+    <script src="{% static 'js/farmAppLoginCtrl.js' %}?v=csrf-cookie-1"></script>
     <script src="{% static 'js/farmAppLogoutCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppReloadCacheCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppMenuAboutCtrl.js' %}?v=about-fix-1"></script>
     <script src="{% static 'js/farmAppMRDCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppDDAssetsCtrl.js' %}?v=docs-nav-2"></script>
     <script src="{% static 'js/farmAppDDSummaryCtrl.js' %}?v=docs-nav-2"></script>
-    <script src="{% static 'js/farmAppTestsCtrl.js' %}"></script>
-    <script src="{% static 'js/farmAppClientSelectionCtrl.js' %}?v=document-scroll-1"></script>
+    <script src="{% static 'js/farmAppTestsCtrl.js' %}?v=test-results-suites-1"></script>
+    <script src="{% static 'js/farmAppClientSelectionCtrl.js' %}?v=exclusive-sidebar-1"></script>
     <script src="{% static 'js/farmAppCowListByClientCtrlHerd.js' %}"></script>
     <script src="{% static 'js/farmAppCowDetailCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppCowResultsCtrl.js' %}"></script>
@@ -44,7 +44,7 @@
     <script src="{% static 'js/farmAppAnnualSummaryByClientCtrl.js' %}"></script>
     <script src="{% static 'js/farmAppMonthlySummaryByClientCtrl.js' %}"></script>
     <link rel="stylesheet" type="text/css"
-          href="{% static 'css/farmApp.css' %}?v=document-sidebar-2"/>
+          href="{% static 'css/farmApp.css' %}?v=exclusive-sidebar-1"/>
   </head>
 <body>
     <div class="flex-container" ng-app="farmApp"
@@ -56,14 +56,17 @@
                 <li><a href="#!/home/">Home</a></li>
                 <li><a href="#!/about/">About</a></li>
                 <li><a href="#!/contact/">Contact</a></li>
-            </ul>
+                </ul>
+            </details>
             </div>
             <p></p>
             <p><b><a href="#!/cache/quiet/">Reload Cache</a></b></p>
-            <p><b>User Management</b></p>
-            <ul>
-                <li><a href="#!/logout/">Logout User</a></li>
-            </ul>
+            <details class="sidebar-category" data-sidebar-accordion>
+                <summary>User Management</summary>
+                <ul>
+                    <li><a href="#!/logout/">Logout User</a></li>
+                </ul>
+            </details>
             <div ng-if="globals.currentUser && globals.currentUser.clients.length > 1">
                 <label for="active-client"><b>Viewing farm:</b></label>
                 <select id="active-client"
@@ -72,68 +75,125 @@
                         ng-change="selectClient()">
                 </select>
             </div>
-            <p><b>Documentation</b></p>
-            <ul class="documentation-nav">
+            <details class="sidebar-category" data-sidebar-accordion>
+                <summary>Documentation</summary>
+                <ul class="documentation-nav">
                 <li>
-                    <a href="#!/docs/mrd/" ng-click="openDocumentation('/docs/mrd/', null, $event)">Marketing Requirements</a>
-                    <ul class="documentation-toc">
-                        <li><a href="#!/docs/mrd/#strategy" ng-click="openDocumentation('/docs/mrd/', 'strategy', $event)">Strategy and Overview</a></li>
-                        <li><a href="#!/docs/mrd/#bm" ng-click="openDocumentation('/docs/mrd/', 'bm', $event)">Business Model</a></li>
-                        <li><a href="#!/docs/mrd/#groups" ng-click="openDocumentation('/docs/mrd/', 'groups', $event)">Affected Groups</a></li>
-                        <li><a href="#!/docs/mrd/#bom" ng-click="openDocumentation('/docs/mrd/', 'bom', $event)">Bill of Materials</a></li>
-                        <li><a href="#!/docs/mrd/#internal" ng-click="openDocumentation('/docs/mrd/', 'internal', $event)">Internal Commitments</a></li>
-                        <li><a href="#!/docs/mrd/#external" ng-click="openDocumentation('/docs/mrd/', 'external', $event)">External Commitments</a></li>
-                        <li><a href="#!/docs/mrd/#tbd" ng-click="openDocumentation('/docs/mrd/', 'tbd', $event)">Features Not Implemented</a></li>
-                    </ul>
+                    <details class="sidebar-category" data-sidebar-accordion>
+                        <summary>Marketing Requirements</summary>
+                        <ul class="documentation-toc">
+                            <li><a href="#!/docs/mrd/" ng-click="openDocumentation('/docs/mrd/', null, $event)">Overview</a></li>
+                            <li><a href="#!/docs/mrd/#strategy" ng-click="openDocumentation('/docs/mrd/', 'strategy', $event)">Strategy and Overview</a></li>
+                            <li><a href="#!/docs/mrd/#bm" ng-click="openDocumentation('/docs/mrd/', 'bm', $event)">Business Model</a></li>
+                            <li><a href="#!/docs/mrd/#groups" ng-click="openDocumentation('/docs/mrd/', 'groups', $event)">Affected Groups</a></li>
+                            <li><a href="#!/docs/mrd/#bom" ng-click="openDocumentation('/docs/mrd/', 'bom', $event)">Bill of Materials</a></li>
+                            <li><a href="#!/docs/mrd/#internal" ng-click="openDocumentation('/docs/mrd/', 'internal', $event)">Internal Commitments</a></li>
+                            <li><a href="#!/docs/mrd/#external" ng-click="openDocumentation('/docs/mrd/', 'external', $event)">External Commitments</a></li>
+                            <li><a href="#!/docs/mrd/#tbd" ng-click="openDocumentation('/docs/mrd/', 'tbd', $event)">Features Not Implemented</a></li>
+                        </ul>
+                    </details>
                 </li>
                 <li>
-                    <a href="#!/docs/dd_assets/" ng-click="openDocumentation('/docs/dd_assets/', null, $event)">Assets Design Doc</a>
-                    <ul class="documentation-toc">
-                        <li><a href="#!/docs/dd_assets/#intro" ng-click="openDocumentation('/docs/dd_assets/', 'intro', $event)">Introduction</a></li>
-                        <li><a href="#!/docs/dd_assets/#overview" ng-click="openDocumentation('/docs/dd_assets/', 'overview', $event)">System Overview</a></li>
-                        <li><a href="#!/docs/dd_assets/#arch" ng-click="openDocumentation('/docs/dd_assets/', 'arch', $event)">System Architecture</a></li>
-                        <li><a href="#!/docs/dd_assets/#component" ng-click="openDocumentation('/docs/dd_assets/', 'component', $event)">Component Design</a></li>
-                        <li><a href="#!/docs/dd_assets/#data" ng-click="openDocumentation('/docs/dd_assets/', 'data', $event)">Data Design</a></li>
-                        <li><a href="#!/docs/dd_assets/#api" ng-click="openDocumentation('/docs/dd_assets/', 'api', $event)">API Design</a></li>
-                        <li><a href="#!/docs/dd_assets/#ui" ng-click="openDocumentation('/docs/dd_assets/', 'ui', $event)">UI Design</a></li>
-                        <li><a href="#!/docs/dd_assets/#appendix" ng-click="openDocumentation('/docs/dd_assets/', 'appendix', $event)">Appendix</a></li>
-                    </ul>
+                    <details class="sidebar-category" data-sidebar-accordion>
+                        <summary>Assets Design Doc</summary>
+                        <ul class="documentation-toc">
+                            <li><a href="#!/docs/dd_assets/" ng-click="openDocumentation('/docs/dd_assets/', null, $event)">Overview</a></li>
+                            <li><a href="#!/docs/dd_assets/#intro" ng-click="openDocumentation('/docs/dd_assets/', 'intro', $event)">Introduction</a></li>
+                            <li><a href="#!/docs/dd_assets/#overview" ng-click="openDocumentation('/docs/dd_assets/', 'overview', $event)">System Overview</a></li>
+                            <li><a href="#!/docs/dd_assets/#arch" ng-click="openDocumentation('/docs/dd_assets/', 'arch', $event)">System Architecture</a></li>
+                            <li><a href="#!/docs/dd_assets/#component" ng-click="openDocumentation('/docs/dd_assets/', 'component', $event)">Component Design</a></li>
+                            <li><a href="#!/docs/dd_assets/#data" ng-click="openDocumentation('/docs/dd_assets/', 'data', $event)">Data Design</a></li>
+                            <li><a href="#!/docs/dd_assets/#api" ng-click="openDocumentation('/docs/dd_assets/', 'api', $event)">API Design</a></li>
+                            <li><a href="#!/docs/dd_assets/#ui" ng-click="openDocumentation('/docs/dd_assets/', 'ui', $event)">UI Design</a></li>
+                            <li><a href="#!/docs/dd_assets/#appendix" ng-click="openDocumentation('/docs/dd_assets/', 'appendix', $event)">Appendix</a></li>
+                        </ul>
+                    </details>
                 </li>
                 <li>
-                    <a href="#!/docs/dd_summary/" ng-click="openDocumentation('/docs/dd_summary/', null, $event)">Reporting Design Doc</a>
-                    <ul class="documentation-toc">
-                        <li><a href="#!/docs/dd_summary/#intro" ng-click="openDocumentation('/docs/dd_summary/', 'intro', $event)">Introduction</a></li>
-                        <li><a href="#!/docs/dd_summary/#overview" ng-click="openDocumentation('/docs/dd_summary/', 'overview', $event)">System Overview</a></li>
-                        <li><a href="#!/docs/dd_summary/#arch" ng-click="openDocumentation('/docs/dd_summary/', 'arch', $event)">System Architecture</a></li>
-                        <li><a href="#!/docs/dd_summary/#component" ng-click="openDocumentation('/docs/dd_summary/', 'component', $event)">Component Design</a></li>
-                        <li><a href="#!/docs/dd_summary/#data" ng-click="openDocumentation('/docs/dd_summary/', 'data', $event)">Data Design</a></li>
-                        <li><a href="#!/docs/dd_summary/#api" ng-click="openDocumentation('/docs/dd_summary/', 'api', $event)">API Design</a></li>
-                        <li><a href="#!/docs/dd_summary/#ui" ng-click="openDocumentation('/docs/dd_summary/', 'ui', $event)">UI Design</a></li>
-                        <li><a href="#!/docs/dd_summary/#appendix" ng-click="openDocumentation('/docs/dd_summary/', 'appendix', $event)">Appendix</a></li>
-                    </ul>
+                    <details class="sidebar-category" data-sidebar-accordion>
+                        <summary>Reporting Design Doc</summary>
+                        <ul class="documentation-toc">
+                            <li><a href="#!/docs/dd_summary/" ng-click="openDocumentation('/docs/dd_summary/', null, $event)">Overview</a></li>
+                            <li><a href="#!/docs/dd_summary/#intro" ng-click="openDocumentation('/docs/dd_summary/', 'intro', $event)">Introduction</a></li>
+                            <li><a href="#!/docs/dd_summary/#overview" ng-click="openDocumentation('/docs/dd_summary/', 'overview', $event)">System Overview</a></li>
+                            <li><a href="#!/docs/dd_summary/#arch" ng-click="openDocumentation('/docs/dd_summary/', 'arch', $event)">System Architecture</a></li>
+                            <li><a href="#!/docs/dd_summary/#component" ng-click="openDocumentation('/docs/dd_summary/', 'component', $event)">Component Design</a></li>
+                            <li><a href="#!/docs/dd_summary/#data" ng-click="openDocumentation('/docs/dd_summary/', 'data', $event)">Data Design</a></li>
+                            <li><a href="#!/docs/dd_summary/#api" ng-click="openDocumentation('/docs/dd_summary/', 'api', $event)">API Design</a></li>
+                            <li><a href="#!/docs/dd_summary/#ui" ng-click="openDocumentation('/docs/dd_summary/', 'ui', $event)">UI Design</a></li>
+                            <li><a href="#!/docs/dd_summary/#appendix" ng-click="openDocumentation('/docs/dd_summary/', 'appendix', $event)">Appendix</a></li>
+                        </ul>
+                    </details>
                 </li>
                 <li>
-                    <span class="documentation-category">Unit Test Results</span>
-                    <ul class="documentation-toc">
-                        <li><a href="#!/docs/tests/2018/">2018 Historical Run</a></li>
-                        <li><a href="#!/docs/tests/2026/">2026 Test Run</a></li>
-                    </ul>
+                    <details class="test-results-nav" data-sidebar-accordion>
+                        <summary class="documentation-category">Test Coverage</summary>
+                        <ul class="documentation-toc">
+                            <li>
+                                <details class="test-results-nav" data-sidebar-accordion>
+                                    <summary>2018 Historical Run</summary>
+                                    <ul class="documentation-toc">
+                                        <li><a href="#!/docs/tests/2018/">All test suites</a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details class="test-results-nav" data-sidebar-accordion>
+                                    <summary>2026 Run</summary>
+                                    <ul class="documentation-toc">
+                                        <li><a href="#!/docs/tests/2026/">Run Dashboard</a></li>
+                                        <li>
+                                            <details class="test-results-nav" data-sidebar-accordion>
+                                                <summary>Assets</summary>
+                                                <ul class="documentation-toc">
+                                                    <li><a href="#!/docs/tests/2026/suite/suite-assets-tests-test-api-views/">API views</a></li>
+                                                    <li><a href="#!/docs/tests/2026/suite/suite-assets-tests-test-models/">Models</a></li>
+                                                    <li><a href="#!/docs/tests/2026/suite/suite-assets-tests-test-serializers/">Serializers</a></li>
+                                                    <li><a href="#!/docs/tests/2026/suite/suite-assets-tests-test-tenant-isolation/">Tenant isolation</a></li>
+                                                    <li><a href="#!/docs/tests/2026/suite/suite-assets-tests-test-ui-auth/">UI authentication</a></li>
+                                                    <li><a href="#!/docs/tests/2026/suite/suite-assets-tests-test-urls/">URL routing</a></li>
+                                                    <li><a href="#!/docs/tests/2026/suite/suite-assets-tests-test-user-api/">User API</a></li>
+                                                    <li><a href="#!/docs/tests/2026/suite/suite-assets-tests-test-user-creation-tool/">User creation</a></li>
+                                                    <li><a href="#!/docs/tests/2026/suite/suite-assets-tests-test-views/">Page views</a></li>
+                                                </ul>
+                                            </details>
+                                        </li>
+                                        <li>
+                                            <details class="test-results-nav" data-sidebar-accordion>
+                                                <summary>Reporting</summary>
+                                                <ul class="documentation-toc">
+                                                    <li><a href="#!/docs/tests/2026/suite/suite-summary-tests-test-api-views/">API views</a></li>
+                                                    <li><a href="#!/docs/tests/2026/suite/suite-summary-tests-test-models/">Models</a></li>
+                                                    <li><a href="#!/docs/tests/2026/suite/suite-summary-tests-test-serializers/">Serializers</a></li>
+                                                    <li><a href="#!/docs/tests/2026/suite/suite-summary-tests-test-urls/">URL routing</a></li>
+                                                </ul>
+                                            </details>
+                                        </li>
+                                    </ul>
+                                </details>
+                            </li>
+                        </ul>
+                    </details>
                 </li>
             </ul>
-            <p><b>Asset Management</b></p>
-            <ul>
-                <li><a href="#!/assets/api/cows/">Cows</a></li>
-                <li><a href="#!/assets/api/events/">Events</a></li>
-                <li><a href="#!/assets/api/exercises/">Exercises</a></li>
-                <li><a href="#!/assets/api/healthrecords/" %}>Health Records</a></li>
-                <li><a href="#!/assets/api/milk/">Milk</a></li>
-                <li><a href="#!/assets/api/pastures/">Pasture</a></li>
-                <li><a href="#!/assets/api/seeds/">Seed</a></li>
-            </ul>
-            <p><b>Report Management</b></p>
-            <ul>
-                <li><a href="#!/summary/api/annual/">Annual Reports</a></li>
-            </ul>
+            <details class="sidebar-category" data-sidebar-accordion>
+                <summary>Asset Management</summary>
+                <ul>
+                    <li><a href="#!/assets/api/cows/">Cows</a></li>
+                    <li><a href="#!/assets/api/events/">Events</a></li>
+                    <li><a href="#!/assets/api/exercises/">Exercises</a></li>
+                    <li><a href="#!/assets/api/healthrecords/">Health Records</a></li>
+                    <li><a href="#!/assets/api/milk/">Milk</a></li>
+                    <li><a href="#!/assets/api/pastures/">Pasture</a></li>
+                    <li><a href="#!/assets/api/seeds/">Seed</a></li>
+                </ul>
+            </details>
+            <details class="sidebar-category" data-sidebar-accordion>
+                <summary>Report Management</summary>
+                <ul>
+                    <li><a href="#!/summary/api/annual/">Annual Reports</a></li>
+                </ul>
+            </details>
         </nav>
         <article class="article">
             {% verbatim %}

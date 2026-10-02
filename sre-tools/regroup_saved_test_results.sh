@@ -182,5 +182,6 @@ if not expected or actual != expected:
         'found {}.'.format(len(expected), len(actual)))
 print('Verified all {} saved test cases are present.'.format(len(actual)))
 PY
+chmod 644 "$staged_report"
 mv "$staged_report" "$report"
 printf 'Updated saved test report: %s\n' "$report"

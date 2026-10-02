@@ -1,4 +1,4 @@
-from django.utils.timezone import datetime, pytz
+from datetime import datetime, timezone
 from django.db.models import Sum
 
 from assets.models import Cow, HealthRecord, Milk
@@ -24,12 +24,12 @@ class ReportTime:
             return datetime.date(datetime(t.year,
                                           t.month,
                                           t.day,
-                                          tzinfo=pytz.timezone('UTC')))
+                                          tzinfo=timezone.utc))
         else:
             return datetime(t.year,
                             t.month,
                             t.day,
-                            tzinfo=pytz.timezone('UTC'))
+                            tzinfo=timezone.utc)
 
     @classmethod
     def edate_year_month(cls, y, m, dt=True):
@@ -58,7 +58,7 @@ class ReportTime:
             return datetime.date(datetime(t.year,
                                           t.month,
                                           t.day,
-                                          tzinfo=pytz.timezone('UTC')))
+                                          tzinfo=timezone.utc))
         else:
             return datetime(t.year,
                             t.month,
@@ -67,7 +67,7 @@ class ReportTime:
                             t.minute,
                             t.second,
                             t.microsecond,
-                            tzinfo=pytz.timezone('UTC'))
+                            tzinfo=timezone.utc)
 
     @classmethod
     def get_datetime(cls, y, m):
@@ -80,7 +80,7 @@ class ReportTime:
                         t.minute,
                         t.second,
                         t.microsecond,
-                        tzinfo=pytz.timezone('UTC'))
+                        tzinfo=timezone.utc)
 
     @classmethod
     def sdate_year(cls, y, dt=True):
@@ -90,12 +90,12 @@ class ReportTime:
             return datetime.date(datetime(t.year,
                                           t.month,
                                           t.day,
-                                          tzinfo=pytz.timezone('UTC')))
+                                          tzinfo=timezone.utc))
         else:
             return datetime(t.year,
                             t.month,
                             t.day,
-                            tzinfo=pytz.timezone('UTC'))
+                            tzinfo=timezone.utc)
 
     @classmethod
     def sdate_year_month(cls, y, m, dt=True):
@@ -105,7 +105,7 @@ class ReportTime:
             return datetime.date(datetime(t.year,
                                           t.month,
                                           t.day,
-                                          tzinfo=pytz.timezone('UTC')))
+                                          tzinfo=timezone.utc))
         else:
             return datetime(t.year,
                             t.month,
@@ -114,7 +114,7 @@ class ReportTime:
                             t.minute,
                             t.second,
                             t.microsecond,
-                            tzinfo=pytz.timezone('UTC'))
+                            tzinfo=timezone.utc)
 
 class ReportStats:
     @classmethod
@@ -228,5 +228,4 @@ class ReportStats:
             return objs.aggregate(Sum('gallons'))['gallons__sum']
         else:
             return 0
-
 

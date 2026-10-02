@@ -37,11 +37,11 @@ class TestIndexView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_methods(),
+        self.assertEqual(TestData.get_allowed_methods(),
                           response.get('allow'))
-        self.assertEquals(TestData.get_content_length(),
+        self.assertEqual(TestData.get_content_length(),
                           response.get('content-length'))
-        self.assertEquals(TestData.get_content_type(),
+        self.assertEqual(TestData.get_content_type(),
                           response.get('content-type'))
 
     def test_02_get(self):
@@ -57,15 +57,15 @@ class TestIndexView(APITestCase):
         response.render()
         soup = BeautifulSoup(response.content,
                              'html.parser')
-        self.assertEquals('My Dairy Farm',
+        self.assertEqual('My Dairy Farm',
                           soup.title.string)
-        self.assertEquals('/static/angular/angular.min.js',
+        self.assertEqual('/static/angular/angular.min.js',
                           soup.findAll('script')[0]['src'])
-        self.assertEquals('/static/angular/angular-route.min.js',
+        self.assertEqual('/static/angular/angular-route.min.js',
                           soup.findAll('script')[1]['src'])
-        self.assertEquals('/static/js/farmApp.js',
+        self.assertEqual('/static/js/farmApp.js',
                           soup.findAll('script')[2]['src'])
-        self.assertEquals('farmApp',
+        self.assertEqual('farmApp',
                           soup.find('body')['ng-app'])
-        self.assertEquals('AssetController',
+        self.assertEqual('AssetController',
                           soup.findAll('div')[0]['ng-controller'])

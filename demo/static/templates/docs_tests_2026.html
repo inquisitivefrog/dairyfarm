@@ -1,7 +1,49 @@
 <div class="raw">
   <h1>Django Test Results — 2026-10-01</h1>
   <p>Command: <code>python manage.py test -v 2</code></p>
-  <h2>Results by app and test module</h2>
+  <h2>Test results dashboard</h2>
+  <nav class="test-results-nav"
+       aria-label="Test result filters">
+    <div class="test-results-nav-row">
+      <strong>View:</strong>
+      <button type="button" ng-click="setTestResultsFilter('all')" ng-class="{ active: testResultsFilter === 'all' }">Dashboard</button>
+    </div>
+    <div class="test-results-nav-row">
+      <strong>Test area:</strong>
+      <button type="button" ng-click="setTestResultsFilter('area-assets')" ng-class="{ active: testResultsFilter === 'area-assets' }">Assets and inventory</button>
+      <button type="button" ng-click="setTestResultsFilter('area-summary')" ng-class="{ active: testResultsFilter === 'area-summary' }">Reporting</button>
+    </div>
+    <div class="test-results-nav-row">
+      <strong>Test type:</strong>
+      <button type="button" ng-click="setTestResultsFilter('type-rest-api')" ng-class="{ active: testResultsFilter === 'type-rest-api' }">REST API</button>
+      <button type="button" ng-click="setTestResultsFilter('type-models-and-database')" ng-class="{ active: testResultsFilter === 'type-models-and-database' }">Models and database</button>
+      <button type="button" ng-click="setTestResultsFilter('type-api-serializers')" ng-class="{ active: testResultsFilter === 'type-api-serializers' }">API serializers</button>
+      <button type="button" ng-click="setTestResultsFilter('type-tenant-isolation')" ng-class="{ active: testResultsFilter === 'type-tenant-isolation' }">Tenant isolation</button>
+      <button type="button" ng-click="setTestResultsFilter('type-server-side-ui-authentication')" ng-class="{ active: testResultsFilter === 'type-server-side-ui-authentication' }">Server-side UI authentication</button>
+      <button type="button" ng-click="setTestResultsFilter('type-url-routing')" ng-class="{ active: testResultsFilter === 'type-url-routing' }">URL routing</button>
+      <button type="button" ng-click="setTestResultsFilter('type-management-tool')" ng-class="{ active: testResultsFilter === 'type-management-tool' }">Management tool</button>
+      <button type="button" ng-click="setTestResultsFilter('type-server-rendered-views')" ng-class="{ active: testResultsFilter === 'type-server-rendered-views' }">Server-rendered views</button>
+    </div>
+    <div class="test-results-nav-row">
+      <strong>Test suite:</strong>
+      <button type="button" ng-click="setTestResultsFilter('suite-assets-tests-test-api-views')" ng-class="{ active: testResultsFilter === 'suite-assets-tests-test-api-views' }">Assets and inventory · API views</button>
+      <button type="button" ng-click="setTestResultsFilter('suite-assets-tests-test-models')" ng-class="{ active: testResultsFilter === 'suite-assets-tests-test-models' }">Assets and inventory · Models</button>
+      <button type="button" ng-click="setTestResultsFilter('suite-assets-tests-test-serializers')" ng-class="{ active: testResultsFilter === 'suite-assets-tests-test-serializers' }">Assets and inventory · Serializers</button>
+      <button type="button" ng-click="setTestResultsFilter('suite-assets-tests-test-tenant-isolation')" ng-class="{ active: testResultsFilter === 'suite-assets-tests-test-tenant-isolation' }">Assets and inventory · Tenant isolation</button>
+      <button type="button" ng-click="setTestResultsFilter('suite-assets-tests-test-ui-auth')" ng-class="{ active: testResultsFilter === 'suite-assets-tests-test-ui-auth' }">Assets and inventory · UI authentication</button>
+      <button type="button" ng-click="setTestResultsFilter('suite-assets-tests-test-urls')" ng-class="{ active: testResultsFilter === 'suite-assets-tests-test-urls' }">Assets and inventory · URL routing</button>
+      <button type="button" ng-click="setTestResultsFilter('suite-assets-tests-test-user-api')" ng-class="{ active: testResultsFilter === 'suite-assets-tests-test-user-api' }">Assets and inventory · User API</button>
+      <button type="button" ng-click="setTestResultsFilter('suite-assets-tests-test-user-creation-tool')" ng-class="{ active: testResultsFilter === 'suite-assets-tests-test-user-creation-tool' }">Assets and inventory · User creation</button>
+      <button type="button" ng-click="setTestResultsFilter('suite-assets-tests-test-views')" ng-class="{ active: testResultsFilter === 'suite-assets-tests-test-views' }">Assets and inventory · Page views</button>
+      <button type="button" ng-click="setTestResultsFilter('suite-summary-tests-test-api-views')" ng-class="{ active: testResultsFilter === 'suite-summary-tests-test-api-views' }">Reporting · API views</button>
+      <button type="button" ng-click="setTestResultsFilter('suite-summary-tests-test-models')" ng-class="{ active: testResultsFilter === 'suite-summary-tests-test-models' }">Reporting · Models</button>
+      <button type="button" ng-click="setTestResultsFilter('suite-summary-tests-test-serializers')" ng-class="{ active: testResultsFilter === 'suite-summary-tests-test-serializers' }">Reporting · Serializers</button>
+      <button type="button" ng-click="setTestResultsFilter('suite-summary-tests-test-urls')" ng-class="{ active: testResultsFilter === 'suite-summary-tests-test-urls' }">Reporting · URL routing</button>
+    </div>
+  </nav>
+  <p class="test-results-help">Choose an area, test type, or suite to see its
+  cases. The dashboard lists coverage and counts; filtered views show each
+  case, class, and result.</p>
   <details class="test-setup">
     <summary>Test database and setup output</summary>
     <pre><code>Creating test database for alias &#x27;default&#x27; (&#x27;test_dairyfarm&#x27;)...
@@ -32,11 +74,87 @@ Running migrations:
 System check identified no issues (0 silenced).</code></pre>
   </details>
 
-  <details class="test-area">
-    <summary>Assets and inventory — 427 tests across 9 modules</summary>
-    <details class="test-module">
-      <summary>API views — 68 tests</summary>
-      <pre><code>test_00_load_fixtures (assets.tests.test_api_views.TestCowDetailView) ... ok
+  <section class="test-area" ng-show="testResultsFilter === 'all' || testResultsFilter === 'area-assets' || testResultsFilter === 'type-rest-api' || testResultsFilter === 'suite-assets-tests-test-api-views' || testResultsFilter === 'type-models-and-database' || testResultsFilter === 'suite-assets-tests-test-models' || testResultsFilter === 'type-api-serializers' || testResultsFilter === 'suite-assets-tests-test-serializers' || testResultsFilter === 'type-tenant-isolation' || testResultsFilter === 'suite-assets-tests-test-tenant-isolation' || testResultsFilter === 'type-server-side-ui-authentication' || testResultsFilter === 'suite-assets-tests-test-ui-auth' || testResultsFilter === 'type-url-routing' || testResultsFilter === 'suite-assets-tests-test-urls' || testResultsFilter === 'type-rest-api' || testResultsFilter === 'suite-assets-tests-test-user-api' || testResultsFilter === 'type-management-tool' || testResultsFilter === 'suite-assets-tests-test-user-creation-tool' || testResultsFilter === 'type-server-rendered-views' || testResultsFilter === 'suite-assets-tests-test-views'">
+    <h3>Assets and inventory — 427 cases across 9 suites</h3>
+      <section class="test-module" ng-show="testResultsFilter === 'all' || testResultsFilter === 'area-assets' || testResultsFilter === 'type-rest-api' || testResultsFilter === 'suite-assets-tests-test-api-views'">
+        <h4>API views</h4>
+        <p class="test-module-meta">REST API · 68 cases · 68 passed · 0 skipped · 0 problems</p>
+        <table class="test-case-table" ng-show="testResultsFilter !== 'all'">
+          <thead><tr><th>Test case</th><th>Test class</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_api_views.TestCowDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_options</td><td>assets.tests.test_api_views.TestCowDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_retrieve</td><td>assets.tests.test_api_views.TestCowDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_full_update</td><td>assets.tests.test_api_views.TestCowDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_partial_update</td><td>assets.tests.test_api_views.TestCowDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_destroy</td><td>assets.tests.test_api_views.TestCowDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_api_views.TestCowListByMonthView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_options</td><td>assets.tests.test_api_views.TestCowListByMonthView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list_no_args_kwargs</td><td>assets.tests.test_api_views.TestCowListByMonthView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_list_kwargs</td><td>assets.tests.test_api_views.TestCowListByMonthView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_api_views.TestCowListByYearView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_options</td><td>assets.tests.test_api_views.TestCowListByYearView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list_no_args_kwargs</td><td>assets.tests.test_api_views.TestCowListByYearView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_list_kwargs</td><td>assets.tests.test_api_views.TestCowListByYearView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_api_views.TestCowListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_options</td><td>assets.tests.test_api_views.TestCowListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list</td><td>assets.tests.test_api_views.TestCowListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_create</td><td>assets.tests.test_api_views.TestCowListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_api_views.TestEventDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_options</td><td>assets.tests.test_api_views.TestEventDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_retrieve</td><td>assets.tests.test_api_views.TestEventDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_full_update</td><td>assets.tests.test_api_views.TestEventDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_partial_update</td><td>assets.tests.test_api_views.TestEventDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_destroy</td><td>assets.tests.test_api_views.TestEventDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_api_views.TestEventListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_options</td><td>assets.tests.test_api_views.TestEventListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list</td><td>assets.tests.test_api_views.TestEventListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_create</td><td>assets.tests.test_api_views.TestEventListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_api_views.TestExerciseDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_options</td><td>assets.tests.test_api_views.TestExerciseDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_retrieve</td><td>assets.tests.test_api_views.TestExerciseDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_full_update</td><td>assets.tests.test_api_views.TestExerciseDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_partial_update</td><td>assets.tests.test_api_views.TestExerciseDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_destroy</td><td>assets.tests.test_api_views.TestExerciseDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_api_views.TestExerciseListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_options</td><td>assets.tests.test_api_views.TestExerciseListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list</td><td>assets.tests.test_api_views.TestExerciseListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_create</td><td>assets.tests.test_api_views.TestExerciseListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_api_views.TestHealthRecordDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_options</td><td>assets.tests.test_api_views.TestHealthRecordDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_retrieve</td><td>assets.tests.test_api_views.TestHealthRecordDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_full_update</td><td>assets.tests.test_api_views.TestHealthRecordDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_partial_update</td><td>assets.tests.test_api_views.TestHealthRecordDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_destroy</td><td>assets.tests.test_api_views.TestHealthRecordDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_api_views.TestHealthRecordListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_options</td><td>assets.tests.test_api_views.TestHealthRecordListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list</td><td>assets.tests.test_api_views.TestHealthRecordListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_create</td><td>assets.tests.test_api_views.TestHealthRecordListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_api_views.TestMilkDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_options</td><td>assets.tests.test_api_views.TestMilkDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_retrieve</td><td>assets.tests.test_api_views.TestMilkDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_full_update</td><td>assets.tests.test_api_views.TestMilkDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_partial_update</td><td>assets.tests.test_api_views.TestMilkDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_destroy</td><td>assets.tests.test_api_views.TestMilkDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_api_views.TestMilkListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_options</td><td>assets.tests.test_api_views.TestMilkListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list</td><td>assets.tests.test_api_views.TestMilkListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_create</td><td>assets.tests.test_api_views.TestMilkListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_api_views.TestSeedDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_options</td><td>assets.tests.test_api_views.TestSeedDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_retrieve</td><td>assets.tests.test_api_views.TestSeedDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_full_update</td><td>assets.tests.test_api_views.TestSeedDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_partial_update</td><td>assets.tests.test_api_views.TestSeedDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_destroy</td><td>assets.tests.test_api_views.TestSeedDetailView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_api_views.TestSeedListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_options</td><td>assets.tests.test_api_views.TestSeedListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list</td><td>assets.tests.test_api_views.TestSeedListView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_create</td><td>assets.tests.test_api_views.TestSeedListView</td><td class="test-status passed">ok</td></tr>
+          </tbody>
+        </table>
+        <details class="test-raw-output" ng-show="testResultsFilter !== 'all'">
+          <summary>Raw output</summary>
+          <pre><code>test_00_load_fixtures (assets.tests.test_api_views.TestCowDetailView) ... ok
 test_01_options (assets.tests.test_api_views.TestCowDetailView) ... ok
 test_02_retrieve (assets.tests.test_api_views.TestCowDetailView) ... ok
 test_03_full_update (assets.tests.test_api_views.TestCowDetailView) ... ok
@@ -104,10 +222,188 @@ test_00_load_fixtures (assets.tests.test_api_views.TestSeedListView) ... ok
 test_01_options (assets.tests.test_api_views.TestSeedListView) ... ok
 test_02_list (assets.tests.test_api_views.TestSeedListView) ... ok
 test_03_create (assets.tests.test_api_views.TestSeedListView) ... ok</code></pre>
-    </details>
-    <details class="test-module">
-      <summary>Models — 169 tests</summary>
-      <pre><code>test_00_load_fixtures (assets.tests.test_models.TestActionModel) ... ok
+        </details>
+      </section>
+      <section class="test-module" ng-show="testResultsFilter === 'all' || testResultsFilter === 'area-assets' || testResultsFilter === 'type-models-and-database' || testResultsFilter === 'suite-assets-tests-test-models'">
+        <h4>Models</h4>
+        <p class="test-module-meta">Models and database · 169 cases · 169 passed · 0 skipped · 0 problems</p>
+        <table class="test-case-table" ng-show="testResultsFilter !== 'all'">
+          <thead><tr><th>Test case</th><th>Test class</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestActionModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestActionModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestActionModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestActionModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestActionModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestActionModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestActionModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestActionModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestAgeModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestAgeModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestAgeModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestAgeModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestAgeModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestAgeModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestAgeModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestAgeModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestBreedModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestBreedModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestBreedModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestBreedModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestBreedModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestBreedModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestBreedModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestBreedModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestCerealHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestCerealHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestCerealHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestCerealHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestCerealHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestCerealHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestCerealHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestCerealHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestClientModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestClientModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestClientModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestClientModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestClientModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestClientModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestClientModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestClientModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestColorModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestColorModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestColorModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestColorModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestColorModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestColorModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestColorModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestColorModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestCowModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestCowModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestCowModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestCowModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestCowModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestCowModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_partial_update</td><td>assets.tests.test_models.TestCowModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_delete</td><td>assets.tests.test_models.TestCowModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_08_save</td><td>assets.tests.test_models.TestCowModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestEventModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestEventModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestEventModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestEventModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestEventModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestEventModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestEventModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestEventModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestExerciseModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestExerciseModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestExerciseModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestExerciseModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestExerciseModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestExerciseModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestExerciseModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestExerciseModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestGrassHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestGrassHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestGrassHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestGrassHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestGrassHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestGrassHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestGrassHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestGrassHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestHealthRecordModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestHealthRecordModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestHealthRecordModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestHealthRecordModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestHealthRecordModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestHealthRecordModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestHealthRecordModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestHealthRecordModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestIllnessModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestIllnessModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestIllnessModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestIllnessModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestIllnessModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestIllnessModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestIllnessModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestIllnessModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestInjuryModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestInjuryModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestInjuryModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestInjuryModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestInjuryModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestInjuryModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestInjuryModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestInjuryModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestLegumeHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestLegumeHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestLegumeHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestLegumeHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestLegumeHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestLegumeHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestLegumeHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestLegumeHayModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestMilkModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestMilkModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestMilkModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestMilkModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestMilkModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestMilkModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestMilkModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestMilkModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestPastureModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestPastureModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestPastureModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestPastureModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestPastureModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestPastureModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestPastureModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestPastureModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestSeasonModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestSeasonModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestSeasonModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestSeasonModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestSeasonModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestSeasonModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestSeasonModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestSeasonModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestSeedModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestSeedModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestSeedModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestSeedModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestSeedModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestSeedModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestSeedModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestSeedModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestStatusModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestStatusModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestStatusModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestStatusModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestStatusModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestStatusModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestStatusModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestStatusModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestTreatmentModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestTreatmentModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestTreatmentModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestTreatmentModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestTreatmentModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestTreatmentModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestTreatmentModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestTreatmentModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_models.TestVaccineModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>assets.tests.test_models.TestVaccineModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_models.TestVaccineModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>assets.tests.test_models.TestVaccineModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>assets.tests.test_models.TestVaccineModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_models.TestVaccineModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>assets.tests.test_models.TestVaccineModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>assets.tests.test_models.TestVaccineModel</td><td class="test-status passed">ok</td></tr>
+          </tbody>
+        </table>
+        <details class="test-raw-output" ng-show="testResultsFilter !== 'all'">
+          <summary>Raw output</summary>
+          <pre><code>test_00_load_fixtures (assets.tests.test_models.TestActionModel) ... ok
 test_01_object (assets.tests.test_models.TestActionModel) ... ok
 test_02_get (assets.tests.test_models.TestActionModel) ... ok
 test_03_filter (assets.tests.test_models.TestActionModel) ... ok
@@ -276,10 +572,156 @@ test_04_create (assets.tests.test_models.TestVaccineModel) ... ok
 test_05_full_update (assets.tests.test_models.TestVaccineModel) ... ok
 test_06_delete (assets.tests.test_models.TestVaccineModel) ... ok
 test_07_save (assets.tests.test_models.TestVaccineModel) ... ok</code></pre>
-    </details>
-    <details class="test-module">
-      <summary>Serializers — 137 tests</summary>
-      <pre><code>test_00_load_fixtures (assets.tests.test_serializers.TestActionSerializer) ... ok
+        </details>
+      </section>
+      <section class="test-module" ng-show="testResultsFilter === 'all' || testResultsFilter === 'area-assets' || testResultsFilter === 'type-api-serializers' || testResultsFilter === 'suite-assets-tests-test-serializers'">
+        <h4>Serializers</h4>
+        <p class="test-module-meta">API serializers · 137 cases · 137 passed · 0 skipped · 0 problems</p>
+        <table class="test-case-table" ng-show="testResultsFilter !== 'all'">
+          <thead><tr><th>Test case</th><th>Test class</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestActionSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestActionSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestActionSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_retrieve</td><td>assets.tests.test_serializers.TestActionSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_list</td><td>assets.tests.test_serializers.TestActionSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_serializers.TestActionSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestAgeSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestAgeSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestAgeSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_retrieve</td><td>assets.tests.test_serializers.TestAgeSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_list</td><td>assets.tests.test_serializers.TestAgeSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_serializers.TestAgeSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestBreedSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestBreedSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestBreedSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_retrieve</td><td>assets.tests.test_serializers.TestBreedSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_list</td><td>assets.tests.test_serializers.TestBreedSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_serializers.TestBreedSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_partial_update</td><td>assets.tests.test_serializers.TestBreedSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestCerealHaySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestCerealHaySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestCerealHaySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_retrieve</td><td>assets.tests.test_serializers.TestCerealHaySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_list</td><td>assets.tests.test_serializers.TestCerealHaySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_serializers.TestCerealHaySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestClientSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestClientSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestClientSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_retrieve</td><td>assets.tests.test_serializers.TestClientSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_list</td><td>assets.tests.test_serializers.TestClientSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_serializers.TestClientSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestCowReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_retrieve</td><td>assets.tests.test_serializers.TestCowReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list</td><td>assets.tests.test_serializers.TestCowReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestCowWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestCowWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestCowWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_full_update</td><td>assets.tests.test_serializers.TestCowWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_partial_update</td><td>assets.tests.test_serializers.TestCowWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestEventReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_retrieve</td><td>assets.tests.test_serializers.TestEventReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list</td><td>assets.tests.test_serializers.TestEventReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestEventWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestEventWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestEventWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_full_update</td><td>assets.tests.test_serializers.TestEventWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_partial_update</td><td>assets.tests.test_serializers.TestEventWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestExerciseReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_retrieve</td><td>assets.tests.test_serializers.TestExerciseReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list</td><td>assets.tests.test_serializers.TestExerciseReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestExerciseWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestExerciseWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestExerciseWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_full_update</td><td>assets.tests.test_serializers.TestExerciseWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_partial_update</td><td>assets.tests.test_serializers.TestExerciseWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestGrassHaySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestGrassHaySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestGrassHaySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_retrieve</td><td>assets.tests.test_serializers.TestGrassHaySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_list</td><td>assets.tests.test_serializers.TestGrassHaySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_serializers.TestGrassHaySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestHealthRecordReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_retrieve</td><td>assets.tests.test_serializers.TestHealthRecordReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list</td><td>assets.tests.test_serializers.TestHealthRecordReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestHealthRecordWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create_healthy</td><td>assets.tests.test_serializers.TestHealthRecordWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestHealthRecordWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_full_update</td><td>assets.tests.test_serializers.TestHealthRecordWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_partial_update</td><td>assets.tests.test_serializers.TestHealthRecordWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestIllnessSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestIllnessSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestIllnessSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_retrieve</td><td>assets.tests.test_serializers.TestIllnessSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_list</td><td>assets.tests.test_serializers.TestIllnessSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_serializers.TestIllnessSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_partial_update</td><td>assets.tests.test_serializers.TestIllnessSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestInjurySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestInjurySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestInjurySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_retrieve</td><td>assets.tests.test_serializers.TestInjurySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_list</td><td>assets.tests.test_serializers.TestInjurySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_serializers.TestInjurySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_partial_update</td><td>assets.tests.test_serializers.TestInjurySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestLegumeHaySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestLegumeHaySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestLegumeHaySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_retrieve</td><td>assets.tests.test_serializers.TestLegumeHaySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_list</td><td>assets.tests.test_serializers.TestLegumeHaySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_serializers.TestLegumeHaySerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestMilkReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_retrieve</td><td>assets.tests.test_serializers.TestMilkReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list</td><td>assets.tests.test_serializers.TestMilkReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestMilkWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestMilkWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestMilkWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_full_update</td><td>assets.tests.test_serializers.TestMilkWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_partial_update</td><td>assets.tests.test_serializers.TestMilkWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestPastureReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_retrieve</td><td>assets.tests.test_serializers.TestPastureReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list</td><td>assets.tests.test_serializers.TestPastureReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestPastureWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestPastureWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestPastureWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_full_update</td><td>assets.tests.test_serializers.TestPastureWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_partial_update</td><td>assets.tests.test_serializers.TestPastureWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestSeasonSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestSeasonSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestSeasonSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_retrieve</td><td>assets.tests.test_serializers.TestSeasonSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_list</td><td>assets.tests.test_serializers.TestSeasonSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_serializers.TestSeasonSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestSeedReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_retrieve</td><td>assets.tests.test_serializers.TestSeedReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list</td><td>assets.tests.test_serializers.TestSeedReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestSeedWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestSeedWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestSeedWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_full_update</td><td>assets.tests.test_serializers.TestSeedWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_partial_update</td><td>assets.tests.test_serializers.TestSeedWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestStatusSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestStatusSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestStatusSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_retrieve</td><td>assets.tests.test_serializers.TestStatusSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_list</td><td>assets.tests.test_serializers.TestStatusSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_serializers.TestStatusSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestTreatmentSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestTreatmentSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestTreatmentSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_retrieve</td><td>assets.tests.test_serializers.TestTreatmentSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_list</td><td>assets.tests.test_serializers.TestTreatmentSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_serializers.TestTreatmentSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_serializers.TestVaccineSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>assets.tests.test_serializers.TestVaccineSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>assets.tests.test_serializers.TestVaccineSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_retrieve</td><td>assets.tests.test_serializers.TestVaccineSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_list</td><td>assets.tests.test_serializers.TestVaccineSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_full_update</td><td>assets.tests.test_serializers.TestVaccineSerializer</td><td class="test-status passed">ok</td></tr>
+          </tbody>
+        </table>
+        <details class="test-raw-output" ng-show="testResultsFilter !== 'all'">
+          <summary>Raw output</summary>
+          <pre><code>test_00_load_fixtures (assets.tests.test_serializers.TestActionSerializer) ... ok
 test_01_create (assets.tests.test_serializers.TestActionSerializer) ... ok
 test_02_bulk_create (assets.tests.test_serializers.TestActionSerializer) ... ok
 test_03_retrieve (assets.tests.test_serializers.TestActionSerializer) ... ok
@@ -416,10 +858,36 @@ test_02_bulk_create (assets.tests.test_serializers.TestVaccineSerializer) ... ok
 test_03_retrieve (assets.tests.test_serializers.TestVaccineSerializer) ... ok
 test_04_list (assets.tests.test_serializers.TestVaccineSerializer) ... ok
 test_05_full_update (assets.tests.test_serializers.TestVaccineSerializer) ... ok</code></pre>
-    </details>
-    <details class="test-module">
-      <summary>Tenant isolation — 17 tests</summary>
-      <pre><code>test_client_list_contains_only_the_authenticated_users_clients (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
+        </details>
+      </section>
+      <section class="test-module" ng-show="testResultsFilter === 'all' || testResultsFilter === 'area-assets' || testResultsFilter === 'type-tenant-isolation' || testResultsFilter === 'suite-assets-tests-test-tenant-isolation'">
+        <h4>Tenant isolation</h4>
+        <p class="test-module-meta">Tenant isolation · 17 cases · 17 passed · 0 skipped · 0 problems</p>
+        <table class="test-case-table" ng-show="testResultsFilter !== 'all'">
+          <thead><tr><th>Test case</th><th>Test class</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>test_client_list_contains_only_the_authenticated_users_clients</td><td>assets.tests.test_tenant_isolation.TestTenantIsolation</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_monthly_health_aggregate_excludes_other_clients</td><td>assets.tests.test_tenant_isolation.TestTenantIsolation</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_monthly_milk_aggregate_excludes_other_clients</td><td>assets.tests.test_tenant_isolation.TestTenantIsolation</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_other_clients_annual_summary_is_empty</td><td>assets.tests.test_tenant_isolation.TestTenantIsolation</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_other_clients_cow_cannot_be_soft_deleted</td><td>assets.tests.test_tenant_isolation.TestTenantIsolation</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_other_clients_cow_detail_is_not_found</td><td>assets.tests.test_tenant_isolation.TestTenantIsolation</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_other_clients_cow_list_is_empty</td><td>assets.tests.test_tenant_isolation.TestTenantIsolation</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_other_clients_event_detail_is_not_found</td><td>assets.tests.test_tenant_isolation.TestTenantIsolation</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_other_clients_event_list_is_empty</td><td>assets.tests.test_tenant_isolation.TestTenantIsolation</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_other_clients_health_record_detail_is_not_found</td><td>assets.tests.test_tenant_isolation.TestTenantIsolation</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_other_clients_milk_detail_is_not_found</td><td>assets.tests.test_tenant_isolation.TestTenantIsolation</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_other_clients_pasture_detail_is_not_found</td><td>assets.tests.test_tenant_isolation.TestTenantIsolation</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_staff_can_access_all_tenants</td><td>assets.tests.test_tenant_isolation.TestTenantIsolation</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_unfiltered_cow_list_contains_only_the_authenticated_users_cows</td><td>assets.tests.test_tenant_isolation.TestTenantIsolation</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_user_cannot_create_cow_for_another_clients_farm</td><td>assets.tests.test_tenant_isolation.TestTenantIsolation</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_user_cannot_move_a_cow_to_another_clients_farm</td><td>assets.tests.test_tenant_isolation.TestTenantIsolation</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_user_list_does_not_disclose_other_users</td><td>assets.tests.test_tenant_isolation.TestTenantIsolation</td><td class="test-status passed">ok</td></tr>
+          </tbody>
+        </table>
+        <details class="test-raw-output" ng-show="testResultsFilter !== 'all'">
+          <summary>Raw output</summary>
+          <pre><code>test_client_list_contains_only_the_authenticated_users_clients (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
 test_monthly_health_aggregate_excludes_other_clients (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
 test_monthly_milk_aggregate_excludes_other_clients (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
 test_other_clients_annual_summary_is_empty (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
@@ -436,18 +904,56 @@ test_unfiltered_cow_list_contains_only_the_authenticated_users_cows (assets.test
 test_user_cannot_create_cow_for_another_clients_farm (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
 test_user_cannot_move_a_cow_to_another_clients_farm (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok
 test_user_list_does_not_disclose_other_users (assets.tests.test_tenant_isolation.TestTenantIsolation) ... ok</code></pre>
-    </details>
-    <details class="test-module">
-      <summary>UI authentication — 5 tests</summary>
-      <pre><code>test_logged_in_endpoint_reports_only_the_current_users_clients (assets.tests.test_ui_auth.TestUIAuthentication) ... ok
+        </details>
+      </section>
+      <section class="test-module" ng-show="testResultsFilter === 'all' || testResultsFilter === 'area-assets' || testResultsFilter === 'type-server-side-ui-authentication' || testResultsFilter === 'suite-assets-tests-test-ui-auth'">
+        <h4>UI authentication</h4>
+        <p class="test-module-meta">Server-side UI authentication · 5 cases · 5 passed · 0 skipped · 0 problems</p>
+        <table class="test-case-table" ng-show="testResultsFilter !== 'all'">
+          <thead><tr><th>Test case</th><th>Test class</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>test_logged_in_endpoint_reports_only_the_current_users_clients</td><td>assets.tests.test_ui_auth.TestUIAuthentication</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_logged_in_endpoint_requires_authentication</td><td>assets.tests.test_ui_auth.TestUIAuthentication</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_logged_in_endpoint_supports_users_without_a_client</td><td>assets.tests.test_ui_auth.TestUIAuthentication</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_logout_enforces_csrf_for_session_authentication</td><td>assets.tests.test_ui_auth.TestUIAuthentication</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_logout_requires_post_and_clears_the_session</td><td>assets.tests.test_ui_auth.TestUIAuthentication</td><td class="test-status passed">ok</td></tr>
+          </tbody>
+        </table>
+        <details class="test-raw-output" ng-show="testResultsFilter !== 'all'">
+          <summary>Raw output</summary>
+          <pre><code>test_logged_in_endpoint_reports_only_the_current_users_clients (assets.tests.test_ui_auth.TestUIAuthentication) ... ok
 test_logged_in_endpoint_requires_authentication (assets.tests.test_ui_auth.TestUIAuthentication) ... ok
 test_logged_in_endpoint_supports_users_without_a_client (assets.tests.test_ui_auth.TestUIAuthentication) ... ok
 test_logout_enforces_csrf_for_session_authentication (assets.tests.test_ui_auth.TestUIAuthentication) ... ok
 test_logout_requires_post_and_clears_the_session (assets.tests.test_ui_auth.TestUIAuthentication) ... ok</code></pre>
-    </details>
-    <details class="test-module">
-      <summary>URL routing — 15 tests</summary>
-      <pre><code>test_01_cow_list (assets.tests.test_urls.TestAssetsCowAPIURLConf) ... ok
+        </details>
+      </section>
+      <section class="test-module" ng-show="testResultsFilter === 'all' || testResultsFilter === 'area-assets' || testResultsFilter === 'type-url-routing' || testResultsFilter === 'suite-assets-tests-test-urls'">
+        <h4>URL routing</h4>
+        <p class="test-module-meta">URL routing · 15 cases · 15 passed · 0 skipped · 0 problems</p>
+        <table class="test-case-table" ng-show="testResultsFilter !== 'all'">
+          <thead><tr><th>Test case</th><th>Test class</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>test_01_cow_list</td><td>assets.tests.test_urls.TestAssetsCowAPIURLConf</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_cow_list_month</td><td>assets.tests.test_urls.TestAssetsCowAPIURLConf</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_cow_list_year</td><td>assets.tests.test_urls.TestAssetsCowAPIURLConf</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_cow_detail</td><td>assets.tests.test_urls.TestAssetsCowAPIURLConf</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_event_list</td><td>assets.tests.test_urls.TestAssetsEventAPIURLConf</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_event_detail</td><td>assets.tests.test_urls.TestAssetsEventAPIURLConf</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_exercise_list</td><td>assets.tests.test_urls.TestAssetsExerciseAPIURLConf</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_exercise_detail</td><td>assets.tests.test_urls.TestAssetsExerciseAPIURLConf</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_healthrecord_list</td><td>assets.tests.test_urls.TestAssetsHealthRecordAPIURLConf</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_healthrecord_detail</td><td>assets.tests.test_urls.TestAssetsHealthRecordAPIURLConf</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_milk_list</td><td>assets.tests.test_urls.TestAssetsMilkAPIURLConf</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_milk_detail</td><td>assets.tests.test_urls.TestAssetsMilkAPIURLConf</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_seed_list</td><td>assets.tests.test_urls.TestAssetsSeedAPIURLConf</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_seed_detail</td><td>assets.tests.test_urls.TestAssetsSeedAPIURLConf</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_index</td><td>assets.tests.test_urls.TestAssetsURLConf</td><td class="test-status passed">ok</td></tr>
+          </tbody>
+        </table>
+        <details class="test-raw-output" ng-show="testResultsFilter !== 'all'">
+          <summary>Raw output</summary>
+          <pre><code>test_01_cow_list (assets.tests.test_urls.TestAssetsCowAPIURLConf) ... ok
 test_02_cow_list_month (assets.tests.test_urls.TestAssetsCowAPIURLConf) ... ok
 test_03_cow_list_year (assets.tests.test_urls.TestAssetsCowAPIURLConf) ... ok
 test_04_cow_detail (assets.tests.test_urls.TestAssetsCowAPIURLConf) ... ok
@@ -462,38 +968,106 @@ test_02_milk_detail (assets.tests.test_urls.TestAssetsMilkAPIURLConf) ... ok
 test_01_seed_list (assets.tests.test_urls.TestAssetsSeedAPIURLConf) ... ok
 test_02_seed_detail (assets.tests.test_urls.TestAssetsSeedAPIURLConf) ... ok
 test_01_index (assets.tests.test_urls.TestAssetsURLConf) ... ok</code></pre>
-    </details>
-    <details class="test-module">
-      <summary>User API — 6 tests</summary>
-      <pre><code>test_anonymous_user_cannot_create_accounts (assets.tests.test_user_api.TestUserAPI) ... ok
+        </details>
+      </section>
+      <section class="test-module" ng-show="testResultsFilter === 'all' || testResultsFilter === 'area-assets' || testResultsFilter === 'type-rest-api' || testResultsFilter === 'suite-assets-tests-test-user-api'">
+        <h4>User API</h4>
+        <p class="test-module-meta">REST API · 6 cases · 6 passed · 0 skipped · 0 problems</p>
+        <table class="test-case-table" ng-show="testResultsFilter !== 'all'">
+          <thead><tr><th>Test case</th><th>Test class</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>test_anonymous_user_cannot_create_accounts</td><td>assets.tests.test_user_api.TestUserAPI</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_authenticated_non_staff_user_cannot_create_accounts</td><td>assets.tests.test_user_api.TestUserAPI</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_authenticated_non_staff_user_cannot_retrieve_user_details</td><td>assets.tests.test_user_api.TestUserAPI</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_staff_cannot_create_account_with_short_password</td><td>assets.tests.test_user_api.TestUserAPI</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_staff_user_can_create_non_staff_account</td><td>assets.tests.test_user_api.TestUserAPI</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_staff_user_can_retrieve_user_details</td><td>assets.tests.test_user_api.TestUserAPI</td><td class="test-status passed">ok</td></tr>
+          </tbody>
+        </table>
+        <details class="test-raw-output" ng-show="testResultsFilter !== 'all'">
+          <summary>Raw output</summary>
+          <pre><code>test_anonymous_user_cannot_create_accounts (assets.tests.test_user_api.TestUserAPI) ... ok
 test_authenticated_non_staff_user_cannot_create_accounts (assets.tests.test_user_api.TestUserAPI) ... ok
 test_authenticated_non_staff_user_cannot_retrieve_user_details (assets.tests.test_user_api.TestUserAPI) ... ok
 test_staff_cannot_create_account_with_short_password (assets.tests.test_user_api.TestUserAPI) ... ok
 test_staff_user_can_create_non_staff_account (assets.tests.test_user_api.TestUserAPI) ... ok
 test_staff_user_can_retrieve_user_details (assets.tests.test_user_api.TestUserAPI) ... ok</code></pre>
-    </details>
-    <details class="test-module">
-      <summary>User creation — 7 tests</summary>
-      <pre><code>test_default_account_is_not_privileged (assets.tests.test_user_creation_tool.TestUserCreationTool) ... ok
+        </details>
+      </section>
+      <section class="test-module" ng-show="testResultsFilter === 'all' || testResultsFilter === 'area-assets' || testResultsFilter === 'type-management-tool' || testResultsFilter === 'suite-assets-tests-test-user-creation-tool'">
+        <h4>User creation</h4>
+        <p class="test-module-meta">Management tool · 7 cases · 7 passed · 0 skipped · 0 problems</p>
+        <table class="test-case-table" ng-show="testResultsFilter !== 'all'">
+          <thead><tr><th>Test case</th><th>Test class</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>test_default_account_is_not_privileged</td><td>assets.tests.test_user_creation_tool.TestUserCreationTool</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_demo_account_disabling_is_dry_run_by_default</td><td>assets.tests.test_user_creation_tool.TestUserCreationTool</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_demo_account_disabling_removes_access_and_password</td><td>assets.tests.test_user_creation_tool.TestUserCreationTool</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_duplicate_usernames_are_rejected</td><td>assets.tests.test_user_creation_tool.TestUserCreationTool</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_short_passwords_are_rejected</td><td>assets.tests.test_user_creation_tool.TestUserCreationTool</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_staff_access_must_be_explicit</td><td>assets.tests.test_user_creation_tool.TestUserCreationTool</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_superuser_access_must_be_explicit</td><td>assets.tests.test_user_creation_tool.TestUserCreationTool</td><td class="test-status passed">ok</td></tr>
+          </tbody>
+        </table>
+        <details class="test-raw-output" ng-show="testResultsFilter !== 'all'">
+          <summary>Raw output</summary>
+          <pre><code>test_default_account_is_not_privileged (assets.tests.test_user_creation_tool.TestUserCreationTool) ... ok
 test_demo_account_disabling_is_dry_run_by_default (assets.tests.test_user_creation_tool.TestUserCreationTool) ... ok
 test_demo_account_disabling_removes_access_and_password (assets.tests.test_user_creation_tool.TestUserCreationTool) ... ok
 test_duplicate_usernames_are_rejected (assets.tests.test_user_creation_tool.TestUserCreationTool) ... ok
 test_short_passwords_are_rejected (assets.tests.test_user_creation_tool.TestUserCreationTool) ... ok
 test_staff_access_must_be_explicit (assets.tests.test_user_creation_tool.TestUserCreationTool) ... ok
 test_superuser_access_must_be_explicit (assets.tests.test_user_creation_tool.TestUserCreationTool) ... ok</code></pre>
-    </details>
-    <details class="test-module">
-      <summary>Page views — 3 tests</summary>
-      <pre><code>test_00_load_fixtures (assets.tests.test_views.TestIndexView) ... ok
+        </details>
+      </section>
+      <section class="test-module" ng-show="testResultsFilter === 'all' || testResultsFilter === 'area-assets' || testResultsFilter === 'type-server-rendered-views' || testResultsFilter === 'suite-assets-tests-test-views'">
+        <h4>Page views</h4>
+        <p class="test-module-meta">Server-rendered views · 3 cases · 3 passed · 0 skipped · 0 problems</p>
+        <table class="test-case-table" ng-show="testResultsFilter !== 'all'">
+          <thead><tr><th>Test case</th><th>Test class</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>test_00_load_fixtures</td><td>assets.tests.test_views.TestIndexView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_options</td><td>assets.tests.test_views.TestIndexView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>assets.tests.test_views.TestIndexView</td><td class="test-status passed">ok</td></tr>
+          </tbody>
+        </table>
+        <details class="test-raw-output" ng-show="testResultsFilter !== 'all'">
+          <summary>Raw output</summary>
+          <pre><code>test_00_load_fixtures (assets.tests.test_views.TestIndexView) ... ok
 test_01_options (assets.tests.test_views.TestIndexView) ... ok
 test_02_get (assets.tests.test_views.TestIndexView) ... ok</code></pre>
-    </details>
-  </details>
-  <details class="test-area">
-    <summary>Reporting — 50 tests across 4 modules</summary>
-    <details class="test-module">
-      <summary>API views — 16 tests</summary>
-      <pre><code>test_00_load_fixtures (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
+        </details>
+      </section>
+  </section>
+  <section class="test-area" ng-show="testResultsFilter === 'all' || testResultsFilter === 'area-summary' || testResultsFilter === 'type-rest-api' || testResultsFilter === 'suite-summary-tests-test-api-views' || testResultsFilter === 'type-models-and-database' || testResultsFilter === 'suite-summary-tests-test-models' || testResultsFilter === 'type-api-serializers' || testResultsFilter === 'suite-summary-tests-test-serializers' || testResultsFilter === 'type-url-routing' || testResultsFilter === 'suite-summary-tests-test-urls'">
+    <h3>Reporting — 50 cases across 4 suites</h3>
+      <section class="test-module" ng-show="testResultsFilter === 'all' || testResultsFilter === 'area-summary' || testResultsFilter === 'type-rest-api' || testResultsFilter === 'suite-summary-tests-test-api-views'">
+        <h4>API views</h4>
+        <p class="test-module-meta">REST API · 16 cases · 16 passed · 0 skipped · 0 problems</p>
+        <table class="test-case-table" ng-show="testResultsFilter !== 'all'">
+          <thead><tr><th>Test case</th><th>Test class</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>test_00_load_fixtures</td><td>summary.tests.test_api_views.TestAnnualSummaryByClientView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_options</td><td>summary.tests.test_api_views.TestAnnualSummaryByClientView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list</td><td>summary.tests.test_api_views.TestAnnualSummaryByClientView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_retrieve</td><td>summary.tests.test_api_views.TestAnnualSummaryByClientView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>summary.tests.test_api_views.TestAnnualSummaryByClientView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_destroy</td><td>summary.tests.test_api_views.TestAnnualSummaryByClientView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_full_update</td><td>summary.tests.test_api_views.TestAnnualSummaryByClientView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_partial_update</td><td>summary.tests.test_api_views.TestAnnualSummaryByClientView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>summary.tests.test_api_views.TestMonthlySummaryByClientView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_options</td><td>summary.tests.test_api_views.TestMonthlySummaryByClientView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list</td><td>summary.tests.test_api_views.TestMonthlySummaryByClientView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_retrieve</td><td>summary.tests.test_api_views.TestMonthlySummaryByClientView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>summary.tests.test_api_views.TestMonthlySummaryByClientView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_destroy</td><td>summary.tests.test_api_views.TestMonthlySummaryByClientView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_full_update</td><td>summary.tests.test_api_views.TestMonthlySummaryByClientView</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_partial_update</td><td>summary.tests.test_api_views.TestMonthlySummaryByClientView</td><td class="test-status passed">ok</td></tr>
+          </tbody>
+        </table>
+        <details class="test-raw-output" ng-show="testResultsFilter !== 'all'">
+          <summary>Raw output</summary>
+          <pre><code>test_00_load_fixtures (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
 test_01_options (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
 test_02_list (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
 test_03_retrieve (summary.tests.test_api_views.TestAnnualSummaryByClientView) ... ok
@@ -509,10 +1083,35 @@ test_04_create (summary.tests.test_api_views.TestMonthlySummaryByClientView) ...
 test_05_destroy (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok
 test_06_full_update (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok
 test_07_partial_update (summary.tests.test_api_views.TestMonthlySummaryByClientView) ... ok</code></pre>
-    </details>
-    <details class="test-module">
-      <summary>Models — 16 tests</summary>
-      <pre><code>test_00_load_fixtures (summary.tests.test_models.TestAnnualModel) ... ok
+        </details>
+      </section>
+      <section class="test-module" ng-show="testResultsFilter === 'all' || testResultsFilter === 'area-summary' || testResultsFilter === 'type-models-and-database' || testResultsFilter === 'suite-summary-tests-test-models'">
+        <h4>Models</h4>
+        <p class="test-module-meta">Models and database · 16 cases · 16 passed · 0 skipped · 0 problems</p>
+        <table class="test-case-table" ng-show="testResultsFilter !== 'all'">
+          <thead><tr><th>Test case</th><th>Test class</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>test_00_load_fixtures</td><td>summary.tests.test_models.TestAnnualModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>summary.tests.test_models.TestAnnualModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>summary.tests.test_models.TestAnnualModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>summary.tests.test_models.TestAnnualModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>summary.tests.test_models.TestAnnualModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_partial_update</td><td>summary.tests.test_models.TestAnnualModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>summary.tests.test_models.TestAnnualModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>summary.tests.test_models.TestAnnualModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>summary.tests.test_models.TestMonthlyModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_object</td><td>summary.tests.test_models.TestMonthlyModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_get</td><td>summary.tests.test_models.TestMonthlyModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_filter</td><td>summary.tests.test_models.TestMonthlyModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_04_create</td><td>summary.tests.test_models.TestMonthlyModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_05_partial_update</td><td>summary.tests.test_models.TestMonthlyModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_06_delete</td><td>summary.tests.test_models.TestMonthlyModel</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_07_save</td><td>summary.tests.test_models.TestMonthlyModel</td><td class="test-status passed">ok</td></tr>
+          </tbody>
+        </table>
+        <details class="test-raw-output" ng-show="testResultsFilter !== 'all'">
+          <summary>Raw output</summary>
+          <pre><code>test_00_load_fixtures (summary.tests.test_models.TestAnnualModel) ... ok
 test_01_object (summary.tests.test_models.TestAnnualModel) ... ok
 test_02_get (summary.tests.test_models.TestAnnualModel) ... ok
 test_03_filter (summary.tests.test_models.TestAnnualModel) ... ok
@@ -528,10 +1127,33 @@ test_04_create (summary.tests.test_models.TestMonthlyModel) ... ok
 test_05_partial_update (summary.tests.test_models.TestMonthlyModel) ... ok
 test_06_delete (summary.tests.test_models.TestMonthlyModel) ... ok
 test_07_save (summary.tests.test_models.TestMonthlyModel) ... ok</code></pre>
-    </details>
-    <details class="test-module">
-      <summary>Serializers — 14 tests</summary>
-      <pre><code>test_00_load_fixtures (summary.tests.test_serializers.TestAnnualReadSerializer) ... ok
+        </details>
+      </section>
+      <section class="test-module" ng-show="testResultsFilter === 'all' || testResultsFilter === 'area-summary' || testResultsFilter === 'type-api-serializers' || testResultsFilter === 'suite-summary-tests-test-serializers'">
+        <h4>Serializers</h4>
+        <p class="test-module-meta">API serializers · 14 cases · 14 passed · 0 skipped · 0 problems</p>
+        <table class="test-case-table" ng-show="testResultsFilter !== 'all'">
+          <thead><tr><th>Test case</th><th>Test class</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>test_00_load_fixtures</td><td>summary.tests.test_serializers.TestAnnualReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_retrieve</td><td>summary.tests.test_serializers.TestAnnualReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list</td><td>summary.tests.test_serializers.TestAnnualReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>summary.tests.test_serializers.TestAnnualWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>summary.tests.test_serializers.TestAnnualWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>summary.tests.test_serializers.TestAnnualWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_partial_update</td><td>summary.tests.test_serializers.TestAnnualWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>summary.tests.test_serializers.TestMonthlyReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_retrieve</td><td>summary.tests.test_serializers.TestMonthlyReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_list</td><td>summary.tests.test_serializers.TestMonthlyReadSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_00_load_fixtures</td><td>summary.tests.test_serializers.TestMonthlyWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_create</td><td>summary.tests.test_serializers.TestMonthlyWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_bulk_create</td><td>summary.tests.test_serializers.TestMonthlyWriteSerializer</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_03_partial_update</td><td>summary.tests.test_serializers.TestMonthlyWriteSerializer</td><td class="test-status passed">ok</td></tr>
+          </tbody>
+        </table>
+        <details class="test-raw-output" ng-show="testResultsFilter !== 'all'">
+          <summary>Raw output</summary>
+          <pre><code>test_00_load_fixtures (summary.tests.test_serializers.TestAnnualReadSerializer) ... ok
 test_01_retrieve (summary.tests.test_serializers.TestAnnualReadSerializer) ... ok
 test_02_list (summary.tests.test_serializers.TestAnnualReadSerializer) ... ok
 test_00_load_fixtures (summary.tests.test_serializers.TestAnnualWriteSerializer) ... ok
@@ -545,10 +1167,23 @@ test_00_load_fixtures (summary.tests.test_serializers.TestMonthlyWriteSerializer
 test_01_create (summary.tests.test_serializers.TestMonthlyWriteSerializer) ... ok
 test_02_bulk_create (summary.tests.test_serializers.TestMonthlyWriteSerializer) ... ok
 test_03_partial_update (summary.tests.test_serializers.TestMonthlyWriteSerializer) ... ok</code></pre>
-    </details>
-    <details class="test-module">
-      <summary>URL routing — 4 tests</summary>
-      <pre><code>test_01_annual_client (summary.tests.test_urls.TestSummaryAnnualAPIURLConf) ... ok
+        </details>
+      </section>
+      <section class="test-module" ng-show="testResultsFilter === 'all' || testResultsFilter === 'area-summary' || testResultsFilter === 'type-url-routing' || testResultsFilter === 'suite-summary-tests-test-urls'">
+        <h4>URL routing</h4>
+        <p class="test-module-meta">URL routing · 4 cases · 4 passed · 0 skipped · 0 problems</p>
+        <table class="test-case-table" ng-show="testResultsFilter !== 'all'">
+          <thead><tr><th>Test case</th><th>Test class</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>test_01_annual_client</td><td>summary.tests.test_urls.TestSummaryAnnualAPIURLConf</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_annual_client_year</td><td>summary.tests.test_urls.TestSummaryAnnualAPIURLConf</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_01_monthly_client_year</td><td>summary.tests.test_urls.TestSummaryMonthlyAPIURLConf</td><td class="test-status passed">ok</td></tr>
+            <tr><td>test_02_monthly_client_year_month</td><td>summary.tests.test_urls.TestSummaryMonthlyAPIURLConf</td><td class="test-status passed">ok</td></tr>
+          </tbody>
+        </table>
+        <details class="test-raw-output" ng-show="testResultsFilter !== 'all'">
+          <summary>Raw output</summary>
+          <pre><code>test_01_annual_client (summary.tests.test_urls.TestSummaryAnnualAPIURLConf) ... ok
 test_02_annual_client_year (summary.tests.test_urls.TestSummaryAnnualAPIURLConf) ... ok
 test_01_monthly_client_year (summary.tests.test_urls.TestSummaryMonthlyAPIURLConf) ... ok
 test_02_monthly_client_year_month (summary.tests.test_urls.TestSummaryMonthlyAPIURLConf) ... ok
@@ -558,9 +1193,14 @@ Destroying test database for alias &#x27;default&#x27; (&#x27;test_dairyfarm&#x2
 
 Back to saved test runs
 
+
+
+
+
 </code></pre>
-    </details>
-  </details>
+        </details>
+      </section>
+  </section>
   <h2>Run summary</h2>
 <p><strong>Ran 477 tests</strong></p>
 <p><strong>OK</strong></p>

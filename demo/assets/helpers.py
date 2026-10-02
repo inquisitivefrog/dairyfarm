@@ -1,4 +1,4 @@
-from django.utils.timezone import datetime, pytz
+from datetime import datetime, timezone
 
 class InvalidTime(Exception):
     def __init__(self, msg):
@@ -32,7 +32,7 @@ class AssetTime:
                         t.minute,
                         t.second,
                         t.microsecond,
-                        tzinfo=pytz.timezone('UTC'))
+                        tzinfo=timezone.utc)
 
     @classmethod
     def edate_year_month(cls, y, m):
@@ -60,7 +60,7 @@ class AssetTime:
                         t.minute,
                         t.second,
                         t.microsecond,
-                        tzinfo=pytz.timezone('UTC'))
+                        tzinfo=timezone.utc)
 
     @classmethod
     def edate_year(cls, y):
@@ -78,4 +78,4 @@ class AssetTime:
                         t.minute,
                         t.second,
                         t.microsecond,
-                        tzinfo=pytz.timezone('UTC'))
+                        tzinfo=timezone.utc)

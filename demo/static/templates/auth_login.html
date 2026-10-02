@@ -1,7 +1,6 @@
 <p ng-if="error">{{ error }}</p>
 
 <form method="post" action=".">
-    <input type="hidden" name="csrfmiddlewaretoken" ng-model="globals.token"/>
     <p><label for="id_username">Username:</label>
     <input type="text"
            name="username"
@@ -14,5 +13,5 @@
            ng-model="password"
            required/></p>
     <input type="hidden" name="next" value="/"/>
-    <input type="button" ng-click="login()" value="Login"/>
+    <input type="button" ng-click="login()" ng-disabled="!loginReady" value="Login"/>
 </form>

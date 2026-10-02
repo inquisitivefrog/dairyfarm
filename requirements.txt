@@ -1,8 +1,6 @@
-# Runtime dependencies for the current local/Docker application.
-# These legacy pins are a compatibility baseline, not a production target.
-Django==2.0.1
-djangorestframework==3.7.7
-psycopg2==2.7.3.2
-python-memcached==1.59
-pytz==2017.3
-six==1.11.0
+# Supported runtime dependencies for Python 3.14 and Django 5.2 LTS.
+Django==5.2.17
+djangorestframework==3.18.1
+gunicorn==26.2.0
+psycopg[binary]==3.3.6
+pymemcache==4.0.0

@@ -78,7 +78,7 @@ class TestActionSerializer(APITestCase):
         action = Action.objects.get(id=1)
         actual = ActionSerializer(action)
         self.assertRegex(actual.data['name'],
-                         '\w+')
+                         '\\w+')
 
     def test_04_list(self):
         expected = 10
@@ -168,7 +168,7 @@ class TestAgeSerializer(APITestCase):
         age = Age.objects.get(id=1)
         actual = AgeSerializer(age)
         self.assertRegex(actual.data['name'],
-                         '\w+')
+                         '\\w+')
 
     def test_04_list(self):
         expected = 10
@@ -258,9 +258,9 @@ class TestBreedSerializer(APITestCase):
         breed = Breed.objects.get(id=1)
         actual = BreedSerializer(breed)
         self.assertRegex(actual.data['name'],
-                         '\w+')
+                         '\\w+')
         self.assertRegex(actual.data['url'],
-                         '/static/images/breeds/\w+\.png')
+                         '/static/images/breeds/\\w+\\.png')
 
     def test_04_list(self):
         expected = 10
@@ -345,9 +345,9 @@ class TestClientSerializer(APITestCase):
         self.assertIn('name',
                       actual.data)
         self.assertRegex(actual.data['join_date'],
-                         '^\d{4}-\d{2}-\d{2}')
+                         '^\\d{4}-\\d{2}-\\d{2}')
         self.assertRegex(actual.data['inactive_date'],
-                         '^\d{4}-\d{2}-\d{2}')
+                         '^\\d{4}-\\d{2}-\\d{2}')
 
     def test_02_bulk_create(self):
         expected = 10
@@ -378,11 +378,11 @@ class TestClientSerializer(APITestCase):
         client = Client.objects.get(id=1)
         actual = ClientSerializer(client)
         self.assertRegex(actual.data['name'],
-                         '\w+')
+                         '\\w+')
         self.assertRegex(actual.data['join_date'],
-                         '^\d{4}-\d{2}-\d{2}')
+                         '^\\d{4}-\\d{2}-\\d{2}')
         self.assertRegex(actual.data['inactive_date'],
-                         '^\d{4}-\d{2}-\d{2}')
+                         '^\\d{4}-\\d{2}-\\d{2}')
 
     def test_04_list(self):
         expected = 10
@@ -478,7 +478,7 @@ class TestCerealHaySerializer(APITestCase):
         cereal = CerealHay.objects.get(id=1)
         actual = CerealHaySerializer(cereal)
         self.assertRegex(actual.data['name'],
-                         '\w+')
+                         '\\w+')
 
     def test_04_list(self):
         expected = 10
@@ -564,7 +564,7 @@ class TestGrassHaySerializer(APITestCase):
         grass = GrassHay.objects.get(id=1)
         actual = GrassHaySerializer(grass)
         self.assertRegex(actual.data['name'],
-                         '\w+')
+                         '\\w+')
 
     def test_04_list(self):
         expected = 10
@@ -656,9 +656,9 @@ class TestIllnessSerializer(APITestCase):
         illness = Illness.objects.get(id=1)
         actual = IllnessSerializer(illness)
         self.assertRegex(actual.data['diagnosis'],
-                         '\w+')
+                         '\\w+')
         self.assertRegex(actual.data['treatment'],
-                         '\w+')
+                         '\\w+')
 
     def test_04_list(self):
         expected = 10
@@ -770,9 +770,9 @@ class TestInjurySerializer(APITestCase):
         injury = Injury.objects.get(id=1)
         actual = InjurySerializer(injury)
         self.assertRegex(actual.data['diagnosis'],
-                         '\w+')
+                         '\\w+')
         self.assertRegex(actual.data['treatment'],
-                         '\w+')
+                         '\\w+')
 
     def test_04_list(self):
         expected = 10
@@ -878,7 +878,7 @@ class TestLegumeHaySerializer(APITestCase):
         legume = LegumeHay.objects.get(id=1)
         actual = LegumeHaySerializer(legume)
         self.assertRegex(actual.data['name'],
-                         '\w+')
+                         '\\w+')
 
     def test_04_list(self):
         expected = 10
@@ -944,11 +944,11 @@ class TestPastureReadSerializer(APITestCase):
         pasture = Pasture.objects.get(id=1)
         actual = PastureReadSerializer(pasture)
         self.assertRegex(actual.data['client']['name'],
-                         '\w+')
+                         '\\w+')
         self.assertRegex(actual.data['name'],
-                         '\w+')
+                         '\\w+')
         self.assertRegex(actual.data['url'],
-                         '/static/images/regions/\w+\.jpg$')
+                         '/static/images/regions/\\w+\\.jpg$')
         self.assertIsInstance(actual.data['fallow'],
                               bool)
         self.assertLessEqual(1,
@@ -1160,7 +1160,7 @@ class TestSeasonSerializer(APITestCase):
         season = Season.objects.get(id=1)
         actual = SeasonSerializer(season)
         self.assertRegex(actual.data['name'],
-                         '\w+')
+                         '\\w+')
 
     def test_04_list(self):
         expected = 10
@@ -1248,7 +1248,7 @@ class TestStatusSerializer(APITestCase):
         status = Status.objects.get(id=1)
         actual = StatusSerializer(status)
         self.assertRegex(actual.data['name'],
-                         '\w+')
+                         '\\w+')
 
     def test_04_list(self):
         expected = 10
@@ -1335,7 +1335,7 @@ class TestTreatmentSerializer(APITestCase):
         treatment = Treatment.objects.get(id=1)
         actual = TreatmentSerializer(treatment)
         self.assertRegex(actual.data['name'],
-                         '\w+')
+                         '\\w+')
 
     def test_04_list(self):
         expected = 10
@@ -1421,7 +1421,7 @@ class TestVaccineSerializer(APITestCase):
         vaccine = Vaccine.objects.get(id=1)
         actual = VaccineSerializer(vaccine)
         self.assertRegex(actual.data['name'],
-                         '\w+')
+                         '\\w+')
 
     def test_04_list(self):
         expected = 10
@@ -1507,15 +1507,15 @@ class TestCowReadSerializer(APITestCase):
         self.assertEqual(actual.data['purchased_by'],
                          TestData.get_random_user())
         self.assertRegex(actual.data['purchase_date'],
-                         '^\d{4}-\d{2}-\d{2}$')
+                         '^\\d{4}-\\d{2}-\\d{2}$')
         self.assertRegex(actual.data['age']['name'],
-                         '\d year')
+                         '\\d year')
         self.assertRegex(actual.data['breed']['name'],
-                         '\w')
+                         '\\w')
         self.assertRegex(actual.data['color']['name'],
-                         '\w_\w')
+                         '\\w_\\w')
         self.assertRegex(actual.data['client']['name'],
-                         '^\w')
+                         '^\\w')
 
     def test_02_list(self):
         expected = 10
@@ -1738,31 +1738,31 @@ class TestEventReadSerializer(APITestCase):
         self.assertGreaterEqual(10,
                                 actual.data['id'])
         self.assertRegex(actual.data['recorded_by'],
-                         '\w')
+                         '\\w')
         self.assertRegex(actual.data['event_time'],
-                         '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}-\d{2}:\d{2}$')
+                         '^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}-\\d{2}:\\d{2}$')
         self.assertGreaterEqual(10,
                                 actual.data['cow']['id'])
         self.assertRegex(actual.data['cow']['rfid'],
-                         '^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$')
+                         '^\\w{8}-\\w{4}-\\w{4}-\\w{4}-\\w{12}$')
         self.assertRegex(actual.data['cow']['purchased_by'],
-                         '\w')
+                         '\\w')
         self.assertRegex(actual.data['cow']['purchase_date'],
-                         '^\d{4}-\d{2}-\d{2}$')
+                         '^\\d{4}-\\d{2}-\\d{2}$')
         self.assertRegex(actual.data['cow']['age']['name'],
-                         '\d year')
+                         '\\d year')
         self.assertRegex(actual.data['cow']['breed']['name'],
-                         '\w')
+                         '\\w')
         self.assertRegex(actual.data['cow']['color']['name'],
-                         '\w_\w')
+                         '\\w_\\w')
         self.assertRegex(actual.data['cow']['link'],
-                         '/assets/api/cows/\d/')
+                         '/assets/api/cows/\\d/')
         self.assertRegex(actual.data['client']['name'],
-                         '\w+')
+                         '\\w+')
         self.assertRegex(actual.data['action']['name'],
-                         '\w+')
+                         '\\w+')
         self.assertRegex(actual.data['link'],
-                         '/assets/api/events/\d/')
+                         '/assets/api/events/\\d/')
 
     def test_02_list(self):
         expected = 10
@@ -2011,51 +2011,51 @@ class TestHealthRecordReadSerializer(APITestCase):
         self.assertGreaterEqual(10,
                                 actual.data['id'])
         self.assertRegex(actual.data['client']['name'],
-                         '\w')
+                         '\\w')
         self.assertRegex(actual.data['recorded_by'],
-                         '\w')
+                         '\\w')
         if actual.data['inspection_time'].find('.') > 0:
             self.assertRegex(actual.data['inspection_time'],
-                             '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}Z$')
+                             '^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{6}Z$')
         else:
             self.assertRegex(actual.data['inspection_time'],
-                             '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}-\d{2}:\d{2}$')
+                             '^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}-\\d{2}:\\d{2}$')
         self.assertGreaterEqual(10,
                                 actual.data['cow']['id'])
         self.assertRegex(actual.data['cow']['rfid'],
-                         '^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$')
+                         '^\\w{8}-\\w{4}-\\w{4}-\\w{4}-\\w{12}$')
         self.assertRegex(actual.data['cow']['purchased_by'],
-                         '\w')
+                         '\\w')
         self.assertRegex(actual.data['cow']['purchase_date'],
-                         '^\d{4}-\d{2}-\d{2}$')
+                         '^\\d{4}-\\d{2}-\\d{2}$')
         self.assertRegex(actual.data['cow']['age']['name'],
-                         '\d year')
+                         '\\d year')
         self.assertRegex(actual.data['cow']['breed']['name'],
-                         '\w')
+                         '\\w')
         self.assertRegex(actual.data['cow']['color']['name'],
-                         '\w_\w')
+                         '\\w_\\w')
         self.assertRegex(actual.data['cow']['link'],
-                         '/assets/api/cows/\d/')
+                         '/assets/api/cows/\\d/')
         self.assertRegex(str(actual.data['temperature']),
-                         '\d{3}\.\d')
+                         '\\d{3}\\.\\d')
         self.assertRegex(str(actual.data['respiratory_rate']),
-                         '\d{2}\.\d')
+                         '\\d{2}\\.\\d')
         self.assertRegex(str(actual.data['heart_rate']),
-                         '\d{2}\.\d')
+                         '\\d{2}\\.\\d')
         self.assertRegex(str(actual.data['blood_pressure']),
-                         '\d{3}\.\d')
+                         '\\d{3}\\.\\d')
         self.assertRegex(str(actual.data['weight']),
-                         '\d{3}')
+                         '\\d{3}')
         self.assertRegex(str(actual.data['body_condition_score']),
-                         '\d\.\d')
+                         '\\d\\.\\d')
         self.assertRegex(actual.data['status']['name'],
-                         '\w+')
+                         '\\w+')
         for attr in ['illness', 'injury', 'vaccine']:
             if attr in actual.data and actual.data[attr]:
                 self.assertRegex(actual.data[attr],
-                                 '\w+')
+                                 '\\w+')
         self.assertRegex(actual.data['link'],
-                         '/assets/api/healthrecords/\d/')
+                         '/assets/api/healthrecords/\\d/')
 
     def test_02_list(self):
         expected = 10
@@ -2276,25 +2276,25 @@ class TestHealthRecordWriteSerializer(APITestCase):
         self.assertEqual(self.hr_data['cow'],
                          actual.data['cow'])
         self.assertRegex(actual.data['inspection_time'],
-                         '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}-\d{2}:\d{2}$')
+                         '^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{6}-\\d{2}:\\d{2}$')
         self.assertRegex(str(actual.data['temperature']),
-                         '\d{3}\.\d')
+                         '\\d{3}\\.\\d')
         self.assertRegex(str(actual.data['respiratory_rate']),
-                         '\d{2}\.\d')
+                         '\\d{2}\\.\\d')
         self.assertRegex(str(actual.data['heart_rate']),
-                         '\d{2}\.\d')
+                         '\\d{2}\\.\\d')
         self.assertRegex(str(actual.data['blood_pressure']),
-                         '\d{3}\.\d')
+                         '\\d{3}\\.\\d')
         self.assertRegex(str(actual.data['weight']),
-                         '\d{3}')
+                         '\\d{3}')
         self.assertRegex(str(actual.data['body_condition_score']),
-                         '\d\.\d')
+                         '\\d\\.\\d')
         self.assertRegex(actual.data['status'],
-                         '\w+')
+                         '\\w+')
         for attr in ['illness', 'vaccine']:
             if attr in actual.data and actual.data[attr]:
                 self.assertRegex(actual.data[attr],
-                                 '\w+')
+                                 '\\w+')
 
     def test_04_partial_update(self):
         health_record = HealthRecord.objects.get(id=1)
@@ -2324,25 +2324,25 @@ class TestHealthRecordWriteSerializer(APITestCase):
         self.assertEqual(self.hr_data['cow'],
                          actual.data['cow'])
         self.assertRegex(actual.data['inspection_time'],
-                         '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}-\d{2}:\d{2}$')
+                         '^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{6}-\\d{2}:\\d{2}$')
         self.assertRegex(str(health_record.temperature),
-                         '\d{3}\.\d')
+                         '\\d{3}\\.\\d')
         self.assertRegex(str(actual.data['respiratory_rate']),
-                         '\d{2}\.\d')
+                         '\\d{2}\\.\\d')
         self.assertRegex(str(actual.data['heart_rate']),
-                         '\d{2}\.\d')
+                         '\\d{2}\\.\\d')
         self.assertRegex(str(actual.data['blood_pressure']),
-                         '\d{3}\.\d')
+                         '\\d{3}\\.\\d')
         self.assertRegex(str(health_record.weight),
-                         '\d{3}')
+                         '\\d{3}')
         self.assertRegex(str(actual.data['body_condition_score']),
-                         '\d\.\d')
+                         '\\d\\.\\d')
         self.assertRegex(actual.data['status'],
-                         '\w+')
+                         '\\w+')
         for attr in ['injury', 'treatment', 'vaccine']:
             if attr in actual.data and actual.data[attr]:
                 self.assertRegex(actual.data[attr],
-                                 '\w+')
+                                 '\\w+')
 
 class TestMilkReadSerializer(APITestCase):
     # note: order matters when loading fixtures
@@ -2384,31 +2384,31 @@ class TestMilkReadSerializer(APITestCase):
         self.assertGreaterEqual(10,
                                 actual.data['id'])
         self.assertRegex(actual.data['client']['name'],
-                         '\w')
+                         '\\w')
         self.assertRegex(actual.data['recorded_by'],
-                         '\w')
+                         '\\w')
         self.assertRegex(actual.data['milking_time'],
-                         '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}-\d{2}:\d{2}$')
+                         '^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}-\\d{2}:\\d{2}$')
         self.assertGreaterEqual(10,
                                 actual.data['cow']['id'])
         self.assertRegex(actual.data['cow']['rfid'],
-                         '^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$')
+                         '^\\w{8}-\\w{4}-\\w{4}-\\w{4}-\\w{12}$')
         self.assertRegex(actual.data['cow']['purchased_by'],
-                         '\w')
+                         '\\w')
         self.assertRegex(actual.data['cow']['purchase_date'],
-                         '^\d{4}-\d{2}-\d{2}$')
+                         '^\\d{4}-\\d{2}-\\d{2}$')
         self.assertRegex(actual.data['cow']['age']['name'],
-                         '\d year')
+                         '\\d year')
         self.assertRegex(actual.data['cow']['breed']['name'],
-                         '\w')
+                         '\\w')
         self.assertRegex(actual.data['cow']['color']['name'],
-                         '\w_\w')
+                         '\\w_\\w')
         self.assertRegex(actual.data['cow']['link'],
-                         '/assets/api/cows/\d/')
+                         '/assets/api/cows/\\d/')
         self.assertGreaterEqual(10,
                                 actual.data['gallons'])
         self.assertRegex(actual.data['link'],
-                         '/assets/api/milk/\d/')
+                         '/assets/api/milk/\\d/')
 
     def test_02_list(self):
         expected = 10
@@ -2643,22 +2643,22 @@ class TestSeedReadSerializer(APITestCase):
         self.assertEqual(actual.data['seeded_by'],
                          TestData.get_random_user())
         self.assertRegex(actual.data['client']['name'],
-                         '^\w')
+                         '^\\w')
         self.assertLessEqual(2014,
                              actual.data['year'])
         self.assertRegex(actual.data['season']['name'],
-                         '^\w+$')
+                         '^\\w+$')
         self.assertRegex(actual.data['pasture']['name'],
-                         '^\w+$')
+                         '^\\w+$')
         self.assertFalse(actual.data['pasture']['fallow'])
         self.assertLessEqual(1,
                              actual.data['pasture']['distance'])
         self.assertRegex(actual.data['cereal_hay']['name'],
-                         '^\w+$')
+                         '^\\w+$')
         self.assertRegex(actual.data['grass_hay']['name'],
-                         '^\w+$')
+                         '^\\w+$')
         self.assertRegex(actual.data['legume_hay']['name'],
-                         '^\w+$')
+                         '^\\w+$')
 
     def test_02_list(self):
         expected = 10
@@ -2762,7 +2762,7 @@ class TestSeedWriteSerializer(APITestCase):
         self.assertIn('id',
                       actual.data)
         self.assertRegex(actual.data['pasture'],
-                         '\w+')
+                         '\\w+')
         self.assertIn('year',
                       actual.data)
         self.assertIn('season',
@@ -2796,9 +2796,9 @@ class TestSeedWriteSerializer(APITestCase):
             self.assertIn('id',
                           actual.data[i])
             self.assertRegex(actual.data[i]['client'],
-                             '\w+')
+                             '\\w+')
             self.assertRegex(actual.data[i]['pasture'],
-                             '\w+')
+                             '\\w+')
             self.assertIn('year',
                           actual.data[i])
             self.assertIn('season',
@@ -2914,27 +2914,27 @@ class TestExerciseReadSerializer(APITestCase):
         self.assertGreaterEqual(10,
                                 actual.data['id'])
         self.assertRegex(actual.data['client']['name'],
-                         '\w')
+                         '\\w')
         self.assertRegex(actual.data['recorded_by'],
-                         '\w')
+                         '\\w')
         self.assertRegex(actual.data['exercise_time'],
-                         '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}-\d{2}:\d{2}$')
+                         '^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}-\\d{2}:\\d{2}$')
         self.assertGreaterEqual(10,
                                 actual.data['cow']['id'])
         self.assertRegex(actual.data['cow']['rfid'],
-                         '^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$')
+                         '^\\w{8}-\\w{4}-\\w{4}-\\w{4}-\\w{12}$')
         self.assertRegex(actual.data['cow']['purchased_by'],
-                         '\w')
+                         '\\w')
         self.assertRegex(actual.data['cow']['purchase_date'],
-                         '^\d{4}-\d{2}-\d{2}$')
+                         '^\\d{4}-\\d{2}-\\d{2}$')
         self.assertRegex(actual.data['cow']['age']['name'],
-                         '\d year')
+                         '\\d year')
         self.assertRegex(actual.data['cow']['breed']['name'],
-                         '\w')
+                         '\\w')
         self.assertRegex(actual.data['cow']['color']['name'],
-                         '\w_\w')
+                         '\\w_\\w')
         self.assertRegex(actual.data['cow']['link'],
-                         '/assets/api/cows/\d/')
+                         '/assets/api/cows/\\d/')
         self.assertLessEqual(1,
                              actual.data['pasture']['id'])
         self.assertIsInstance(actual.data['pasture']['fallow'],
@@ -2942,9 +2942,9 @@ class TestExerciseReadSerializer(APITestCase):
         self.assertLessEqual(1,
                              actual.data['pasture']['distance'])
         self.assertRegex(actual.data['pasture']['name'],
-                         '\w')
+                         '\\w')
         self.assertRegex(actual.data['link'],
-                         '/assets/api/exercises/\d+/')
+                         '/assets/api/exercises/\\d+/')
 
     def test_02_list(self):
         expected = 10

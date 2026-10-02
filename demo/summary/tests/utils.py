@@ -1,7 +1,6 @@
 from random import randint
 from uuid import uuid4
 
-from django.utils.timezone import datetime, localtime, pytz
 from django.contrib.auth.models import User
 
 class TestData:

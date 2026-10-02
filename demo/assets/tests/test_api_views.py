@@ -3,7 +3,7 @@ from random import randint
 from uuid import UUID
 
 from django.contrib.auth.models import User
-from django.utils.six import BytesIO
+from io import BytesIO
 
 from rest_framework.parsers import JSONParser
 from rest_framework.reverse import django_reverse
@@ -68,9 +68,9 @@ class TestCowListView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_list_methods(),
+        self.assertEqual(TestData.get_allowed_list_methods(),
                           response.get('allow'))
-        self.assertEquals(TestData.get_content_type(),
+        self.assertEqual(TestData.get_content_type(),
                           response.get('content-type'))
 
     def test_02_list(self):
@@ -171,9 +171,9 @@ class TestCowListByMonthView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_methods(),
+        self.assertEqual(TestData.get_allowed_methods(),
                           response.get('allow'))
-        self.assertEquals('application/json',
+        self.assertEqual('application/json',
                           response.get('content-type'))
         stream = BytesIO(response.content)
         data = JSONParser().parse(stream)
@@ -294,9 +294,9 @@ class TestCowListByYearView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_methods(),
+        self.assertEqual(TestData.get_allowed_methods(),
                           response.get('allow'))
-        self.assertEquals('application/json',
+        self.assertEqual('application/json',
                           response.get('content-type'))
         stream = BytesIO(response.content)
         data = JSONParser().parse(stream)
@@ -411,9 +411,9 @@ class TestCowDetailView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_all_allowed_detail_methods(),
+        self.assertEqual(TestData.get_all_allowed_detail_methods(),
                           response.get('allow'))
-        self.assertEquals(TestData.get_content_type(),
+        self.assertEqual(TestData.get_content_type(),
                           response.get('content-type'))
 
     def test_02_retrieve(self):
@@ -585,9 +585,9 @@ class TestSeedListView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_list_methods(),
+        self.assertEqual(TestData.get_allowed_list_methods(),
                           response.get('allow'))
-        self.assertEquals(TestData.get_content_type(),
+        self.assertEqual(TestData.get_content_type(),
                           response.get('content-type'))
 
     def test_02_list(self):
@@ -711,9 +711,9 @@ class TestSeedDetailView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_detail_methods(),
+        self.assertEqual(TestData.get_allowed_detail_methods(),
                           response.get('allow'))
-        self.assertEquals(TestData.get_content_type(),
+        self.assertEqual(TestData.get_content_type(),
                           response.get('content-type'))
 
     def test_02_retrieve(self):
@@ -840,9 +840,9 @@ class TestEventListView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_list_methods(),
+        self.assertEqual(TestData.get_allowed_list_methods(),
                           response.get('allow'))
-        self.assertEquals(TestData.get_content_type(),
+        self.assertEqual(TestData.get_content_type(),
                           response.get('content-type'))
 
     def test_02_list(self):
@@ -946,9 +946,9 @@ class TestEventDetailView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_detail_methods(),
+        self.assertEqual(TestData.get_allowed_detail_methods(),
                           response.get('allow'))
-        self.assertEquals(TestData.get_content_type(),
+        self.assertEqual(TestData.get_content_type(),
                           response.get('content-type'))
 
     def test_02_retrieve(self):
@@ -997,7 +997,7 @@ class TestEventDetailView(APITestCase):
         self.assertEqual(self.data['cow'],
                          data['cow'])
         self.assertRegex(data['event_time'],
-                         '\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}-\d{2}:\d{2}')
+                         r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}-\d{2}:\d{2}')
         self.assertEqual(self.data['action'],
                          data['action'])
 
@@ -1022,13 +1022,13 @@ class TestEventDetailView(APITestCase):
         self.assertIn('id',
                       data)
         self.assertRegex(data['recorded_by'],
-                         '\w')
+                         '\\w')
         self.assertRegex(data['client'],
-                         '\w+')
+                         '\\w+')
         self.assertTrue(isinstance(UUID(data['cow']),
                         UUID))
         self.assertRegex(data['event_time'],
-                         '\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}-\d{2}:\d{2}')
+                         '\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}-\\d{2}:\\d{2}')
         self.assertEqual(self.data['action'],
                          data['action'])
 
@@ -1091,9 +1091,9 @@ class TestExerciseListView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_list_methods(),
+        self.assertEqual(TestData.get_allowed_list_methods(),
                           response.get('allow'))
-        self.assertEquals(TestData.get_content_type(),
+        self.assertEqual(TestData.get_content_type(),
                           response.get('content-type'))
 
     def test_02_list(self):
@@ -1196,9 +1196,9 @@ class TestExerciseDetailView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_detail_methods(),
+        self.assertEqual(TestData.get_allowed_detail_methods(),
                           response.get('allow'))
-        self.assertEquals(TestData.get_content_type(),
+        self.assertEqual(TestData.get_content_type(),
                           response.get('content-type'))
 
     def test_02_retrieve(self):
@@ -1247,7 +1247,7 @@ class TestExerciseDetailView(APITestCase):
         self.assertEqual(self.data['cow'],
                          data['cow'])
         self.assertRegex(data['exercise_time'],
-                         '\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}-\d{2}:\d{2}')
+                         '\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{6}-\\d{2}:\\d{2}')
         self.assertEqual(self.data['pasture'],
                          data['pasture'])
 
@@ -1272,13 +1272,13 @@ class TestExerciseDetailView(APITestCase):
         self.assertIn('id',
                       data)
         self.assertRegex(data['recorded_by'],
-                         '\w')
+                         '\\w')
         self.assertRegex(data['client'],
-                         '\w+')
+                         '\\w+')
         self.assertTrue(isinstance(UUID(data['cow']),
                         UUID))
         self.assertRegex(data['exercise_time'],
-                         '\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}-\d{2}:\d{2}')
+                         '\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}-\\d{2}:\\d{2}')
         self.assertEqual(self.data['pasture'],
                          data['pasture'])
 
@@ -1337,9 +1337,9 @@ class TestMilkListView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_list_methods(),
+        self.assertEqual(TestData.get_allowed_list_methods(),
                           response.get('allow'))
-        self.assertEquals(TestData.get_content_type(),
+        self.assertEqual(TestData.get_content_type(),
                           response.get('content-type'))
 
     def test_02_list(self):
@@ -1438,9 +1438,9 @@ class TestMilkDetailView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_detail_methods(),
+        self.assertEqual(TestData.get_allowed_detail_methods(),
                           response.get('allow'))
-        self.assertEquals(TestData.get_content_type(),
+        self.assertEqual(TestData.get_content_type(),
                           response.get('content-type'))
 
     def test_02_retrieve(self):
@@ -1489,7 +1489,7 @@ class TestMilkDetailView(APITestCase):
         self.assertEqual(self.data['cow'],
                          data['cow'])
         self.assertRegex(data['milking_time'],
-                         '\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}-\d{2}:\d{2}')
+                         '\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{6}-\\d{2}:\\d{2}')
         self.assertEqual(self.data['gallons'],
                          data['gallons'])
 
@@ -1514,13 +1514,13 @@ class TestMilkDetailView(APITestCase):
         self.assertIn('id',
                       data)
         self.assertRegex(data['recorded_by'],
-                         '\w')
+                         '\\w')
         self.assertRegex(data['client'],
-                         '\w+')
+                         '\\w+')
         self.assertTrue(isinstance(UUID(data['cow']),
                         UUID))
         self.assertRegex(data['milking_time'],
-                         '\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}-\d{2}:\d{2}')
+                         '\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}-\\d{2}:\\d{2}')
         self.assertEqual(self.data['gallons'],
                          data['gallons'])
 
@@ -1606,9 +1606,9 @@ class TestHealthRecordListView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_list_methods(),
+        self.assertEqual(TestData.get_allowed_list_methods(),
                           response.get('allow'))
-        self.assertEquals(TestData.get_content_type(),
+        self.assertEqual(TestData.get_content_type(),
                           response.get('content-type'))
 
     def test_02_list(self):
@@ -1733,9 +1733,9 @@ class TestHealthRecordDetailView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_detail_methods(),
+        self.assertEqual(TestData.get_allowed_detail_methods(),
                           response.get('allow'))
-        self.assertEquals(TestData.get_content_type(),
+        self.assertEqual(TestData.get_content_type(),
                           response.get('content-type'))
 
     def test_02_retrieve(self):

@@ -734,9 +734,9 @@ class TestPastureModel(APITestCase):
         self.assertLessEqual(1,
                              p.distance)
         self.assertRegex(p.client.name,
-                         '^\w')
+                         '^\\w')
         self.assertRegex(p.link,
-                         '/assets/api/pastures/\d+/')
+                         '/assets/api/pastures/\\d+/')
 
     def test_03_filter(self):
         expected = Pasture.objects.filter(name='Pen')
@@ -765,7 +765,7 @@ class TestPastureModel(APITestCase):
         self.assertEqual(expected.distance,
                          actual.distance)
         self.assertRegex(expected.client.name,
-                         '^\w')
+                         '^\\w')
                              
     def test_06_delete(self):
         expected = Pasture.objects.get(id=1)
@@ -789,7 +789,7 @@ class TestPastureModel(APITestCase):
         self.assertEqual(expected.url,
                          actual.url)
         self.assertRegex(expected.client.name,
-                         '^\w')
+                         '^\\w')
         self.assertEqual(expected.fallow,
                          actual.fallow)
         self.assertEqual(expected.distance,
@@ -1117,11 +1117,11 @@ class TestCowModel(APITestCase):
     def test_02_get(self):
         c = Cow.objects.get(id=1)
         self.assertRegex(str(c.rfid),
-                         '^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$')
+                         '^\\w{8}-\\w{4}-\\w{4}-\\w{4}-\\w{12}$')
         self.assertRegex(c.age.name,
                          ' year')
         self.assertRegex(c.client.name,
-                         '^\w')
+                         '^\\w')
         self.assertRegex(c.color.name,
                          '_white$')
         self.assertRegex(c.breed.name,
@@ -1152,7 +1152,7 @@ class TestCowModel(APITestCase):
                               'color': c})
         actual = Cow.objects.create(**self.cow_data)
         self.assertRegex(str(actual.rfid),
-                         '^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$')
+                         '^\\w{8}-\\w{4}-\\w{4}-\\w{4}-\\w{12}$')
         self.assertEqual(self.age_data['name'],
                          actual.age.name)
         self.assertEqual(self.breed_data['name'],
@@ -1160,7 +1160,7 @@ class TestCowModel(APITestCase):
         self.assertEqual(self.breed_data['url'],
                          actual.breed.url)
         self.assertRegex(actual.client.name,
-                         '^\w')
+                         '^\\w')
         self.assertEqual(self.color_data['name'],
                          actual.color.name)
         self.assertEqual(self.cow_data['purchase_date'],
@@ -1186,7 +1186,7 @@ class TestCowModel(APITestCase):
         expected.save()
         actual = Cow.objects.get(id=expected.id)
         self.assertRegex(str(actual.rfid),
-                         '^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$')
+                         '^\\w{8}-\\w{4}-\\w{4}-\\w{4}-\\w{12}$')
         self.assertEqual(expected.age.name,
                          actual.age.name)
         self.assertEqual(expected.client.name,
@@ -1233,7 +1233,7 @@ class TestCowModel(APITestCase):
         expected.save()
         actual = Cow.objects.get(pk=expected.id)
         self.assertRegex(str(actual.rfid),
-                         '^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$')
+                         '^\\w{8}-\\w{4}-\\w{4}-\\w{4}-\\w{12}$')
         self.assertEqual(expected.age.name,
                          actual.age.name)
         self.assertEqual(expected.client.name,
@@ -1316,9 +1316,9 @@ class TestSeedModel(APITestCase):
         self.assertEqual(2015,
                          s.year)
         self.assertRegex(s.client.name,
-                         '\w+')
+                         '\\w+')
         self.assertRegex(s.season.name,
-                         '\w+')
+                         '\\w+')
         self.assertEqual('North',
                          s.pasture.name)        
         self.assertEqual('/static/images/regions/north.jpg',
@@ -1346,7 +1346,7 @@ class TestSeedModel(APITestCase):
         self.assertEqual(s.season.name,
                          actual.season.name)        
         self.assertRegex(s.client.name,
-                         '\w+')
+                         '\\w+')
         self.assertEqual(s.pasture.name,
                          actual.pasture.name)        
         self.assertEqual(s.pasture.url,
@@ -1491,7 +1491,7 @@ class TestEventModel(APITestCase):
         self.assertEqual('Wake Up',
                          e.action.name)        
         self.assertRegex(e.client.name,
-                         '^\w')
+                         '^\\w')
 
     def test_03_filter(self):
         expected = Event.objects.filter(cow__breed__name='Holstein')
@@ -1558,7 +1558,7 @@ class TestEventModel(APITestCase):
         self.assertEqual(expected.cow.breed.name,
                          actual.cow.breed.name)        
         self.assertRegex(TestTime.convert_datetime(actual.event_time),
-                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{5,6}\+[0-9]{2}:[0-9]{2}$')
+                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{5,6}\\+[0-9]{2}:[0-9]{2}$')
         self.assertEqual(expected.action.name,
                          actual.action.name)
 
@@ -1622,13 +1622,13 @@ class TestExerciseModel(APITestCase):
         self.assertEqual('Holstein',
                          e.cow.breed.name)        
         self.assertRegex(str(e.cow.rfid),
-                         '^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$')
+                         '^\\w{8}-\\w{4}-\\w{4}-\\w{4}-\\w{12}$')
         self.assertRegex(e.client.name,
-                         '^\w')
+                         '^\\w')
         self.assertRegex(e.pasture.name,
-                         '\w{2}')
+                         '\\w{2}')
         self.assertRegex(TestTime.convert_datetime(e.exercise_time),
-                         '^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{6}\+\d{2}:\d{2}$')
+                         '^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{6}\\+\\d{2}:\\d{2}$')
 
     def test_03_filter(self):
         expected = Exercise.objects.filter(pasture__name='Central North')
@@ -1650,7 +1650,7 @@ class TestExerciseModel(APITestCase):
         self.assertEqual(e.pasture.name,
                          actual.pasture.name)        
         self.assertRegex(TestTime.convert_datetime(actual.exercise_time),
-                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{5,6}\+[0-9]{2}:[0-9]{2}$')
+                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{5,6}\\+[0-9]{2}:[0-9]{2}$')
 
     def test_05_full_update(self):
         expected = Exercise.objects.get(id=1)
@@ -1669,7 +1669,7 @@ class TestExerciseModel(APITestCase):
         self.assertEqual(expected.pasture.name,
                          actual.pasture.name)        
         self.assertRegex(TestTime.convert_datetime(actual.exercise_time),
-                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{5,6}\+[0-9]{2}:[0-9]{2}$')
+                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{5,6}\\+[0-9]{2}:[0-9]{2}$')
                              
     def test_06_delete(self):
         expected = Exercise.objects.get(id=1)
@@ -1697,7 +1697,7 @@ class TestExerciseModel(APITestCase):
         self.assertEqual(expected.pasture.name,
                          actual.pasture.name)        
         self.assertRegex(TestTime.convert_datetime(actual.exercise_time),
-                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{5,6}\+[0-9]{2}:[0-9]{2}$')
+                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{5,6}\\+[0-9]{2}:[0-9]{2}$')
 
 class TestMilkModel(APITestCase):
     # Note: loading order does matter
@@ -1754,13 +1754,13 @@ class TestMilkModel(APITestCase):
         self.assertEqual('vet',
                          m.recorded_by.username)        
         self.assertRegex(m.client.name,
-                         '^\w')        
+                         '^\\w')
         self.assertEqual('Holstein',
                          m.cow.breed.name)        
         self.assertEqual('black_white',
                          m.cow.color.name)        
         self.assertRegex(TestTime.convert_datetime(m.milking_time),
-                         '^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{5,6}\+\d{2}:\d{2}$')
+                         '^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{5,6}\\+\\d{2}:\\d{2}$')
         self.assertLessEqual(0,
                              m.gallons)
 
@@ -1782,7 +1782,7 @@ class TestMilkModel(APITestCase):
         self.assertEqual(m.cow.color.name,
                          actual.cow.color.name)        
         self.assertRegex(TestTime.convert_datetime(actual.milking_time),
-                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{5,6}\+[0-9]{2}:[0-9]{2}$')
+                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{5,6}\\+[0-9]{2}:[0-9]{2}$')
         self.assertEqual(m.gallons,
                          actual.gallons)
 
@@ -1804,7 +1804,7 @@ class TestMilkModel(APITestCase):
         self.assertEqual(expected.client.name,
                          actual.client.name)        
         self.assertRegex(TestTime.convert_datetime(actual.milking_time),
-                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{5,6}\+[0-9]{2}:[0-9]{2}$')
+                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{5,6}\\+[0-9]{2}:[0-9]{2}$')
         self.assertEqual(expected.gallons,
                          actual.gallons)
                              
@@ -1834,7 +1834,7 @@ class TestMilkModel(APITestCase):
         self.assertEqual(expected.client.name,
                          actual.client.name)        
         self.assertRegex(TestTime.convert_datetime(actual.milking_time),
-                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{5,6}\+[0-9]{2}:[0-9]{2}$')
+                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{5,6}\\+[0-9]{2}:[0-9]{2}$')
         self.assertEqual(expected.gallons,
                          actual.gallons)
 
@@ -1912,19 +1912,19 @@ class TestHealthRecordModel(APITestCase):
  
     def test_02_get(self):
         hr = HealthRecord.objects.get(id=1)
-        self.assertRegex(hr.recorded_by.username, '\w')
+        self.assertRegex(hr.recorded_by.username, '\\w')
         self.assertRegex(TestTime.convert_datetime(hr.inspection_time),
-                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{5,6}\+[0-9]{2}:[0-9]{2}$')
-        self.assertRegex(hr.cow.breed.name, '\w')
-        self.assertRegex(hr.cow.color.name, '\w')
-        self.assertRegex(hr.client.name, '\w')
+                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{5,6}\\+[0-9]{2}:[0-9]{2}$')
+        self.assertRegex(hr.cow.breed.name, '\\w')
+        self.assertRegex(hr.cow.color.name, '\\w')
+        self.assertRegex(hr.client.name, '\\w')
         self.assertIsInstance(hr.temperature, float)
         self.assertIsInstance(hr.respiratory_rate, float)
         self.assertIsInstance(hr.heart_rate, float)
         self.assertIsInstance(hr.blood_pressure, float)
         self.assertIsInstance(hr.weight, int)
         self.assertIsInstance(hr.body_condition_score, float)
-        self.assertRegex(hr.status.name, '\w')
+        self.assertRegex(hr.status.name, '\\w')
         self.assertGreaterEqual(hr.id, 0)
 
     def test_03_filter(self):
@@ -1978,7 +1978,7 @@ class TestHealthRecordModel(APITestCase):
         self.assertEqual(expected.recorded_by.username,
                          actual.recorded_by.username)
         self.assertRegex(TestTime.convert_datetime(actual.inspection_time),
-                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{5,6}\+[0-9]{2}:[0-9]{2}$')
+                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{5,6}\\+[0-9]{2}:[0-9]{2}$')
         self.assertEqual(expected.cow.breed.name,
                          actual.cow.breed.name)        
         self.assertEqual(expected.cow.color.name,
@@ -2032,7 +2032,7 @@ class TestHealthRecordModel(APITestCase):
         self.assertEqual(expected.recorded_by.username,
                          actual.recorded_by.username)
         self.assertRegex(TestTime.convert_datetime(actual.inspection_time),
-                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{5,6}\+[0-9]{2}:[0-9]{2}$')
+                         '^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{5,6}\\+[0-9]{2}:[0-9]{2}$')
         self.assertEqual(expected.cow.breed.name,
                          actual.cow.breed.name)        
         self.assertEqual(expected.cow.color.name,

@@ -2,7 +2,7 @@ from json import dumps
 from random import randint
 
 from django.contrib.auth.models import User
-from django.utils.six import BytesIO
+from io import BytesIO
 
 from rest_framework.parsers import JSONParser
 from rest_framework.reverse import django_reverse
@@ -64,9 +64,9 @@ class TestAnnualSummaryByClientView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_methods(),
+        self.assertEqual(TestData.get_allowed_methods(),
                           response.get('allow'))
-        self.assertEquals(TestData.get_content_type(),
+        self.assertEqual(TestData.get_content_type(),
                           response.get('content-type'))
 
     def test_02_list(self):
@@ -179,9 +179,9 @@ class TestMonthlySummaryByClientView(APITestCase):
                          response.status_code)
         self.assertEqual('OK',
                          response.reason_phrase)
-        self.assertEquals(TestData.get_allowed_methods(),
+        self.assertEqual(TestData.get_allowed_methods(),
                           response.get('allow'))
-        self.assertEquals(TestData.get_content_type(),
+        self.assertEqual(TestData.get_content_type(),
                           response.get('content-type'))
 
     def test_02_list(self):
@@ -247,4 +247,3 @@ class TestMonthlySummaryByClientView(APITestCase):
     def test_07_partial_update(self):
         # unnecessary by design in favor of creating a replacement with newer data
         pass
-

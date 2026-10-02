@@ -1,7 +1,6 @@
 from random import randint
 from uuid import uuid4
-
-from django.utils.timezone import datetime, localtime, pytz
+from datetime import datetime
 
 class TestData:
     @classmethod

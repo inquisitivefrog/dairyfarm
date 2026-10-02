@@ -1,24 +1,29 @@
 # Local Docker baseline
 
-This Compose setup reproduces the current application locally; its Python 3.6
-image and Django dependencies are obsolete and must not be used for a public
-deployment.
+This Compose setup runs the application locally on Python 3.14, Django 5.2 LTS,
+and Django REST Framework 3.18. It is a development baseline, not by itself a
+complete public deployment configuration.
 
 ## Deployment preflight
 
 Before considering a public deployment, run
 `python sre-tools/deployment_preflight.py` inside the deployment image. It exits
-nonzero unless the runtime is at least Python 3.10 / Django 5.2,
+nonzero unless the runtime is at least Python 3.14 / Django 5.2,
 `DJANGO_ENVIRONMENT=production`, `DEBUG` is disabled, allowed hosts and a
 generated secret are configured, a non-SQLite database is used, secure
 cookies/HTTPS redirect/HSTS are enabled, and Django's deployment checks pass.
-The current legacy image is expected to fail this gate; do not disable the
-checks to force a deployment.
+Do not disable the checks to force a deployment.
 
 Configure production security settings through `DJANGO_SECURE_SSL_REDIRECT`,
-`DJANGO_SESSION_COOKIE_SECURE`, `DJANGO_CSRF_COOKIE_SECURE`, and
-`DJANGO_HSTS_SECONDS`. Enable HSTS only after HTTPS is correctly configured
-for the domain and its subdomains.
+`DJANGO_SESSION_COOKIE_SECURE`, `DJANGO_CSRF_COOKIE_SECURE`,
+`DJANGO_HSTS_SECONDS`, and `DJANGO_HSTS_INCLUDE_SUBDOMAINS`. Set
+`DJANGO_HSTS_PRELOAD=true` only when deploying on a domain you control and
+intend to submit to browser preload lists. Enable HSTS only after HTTPS is
+correctly configured for the domain and its subdomains.
+Set `DJANGO_CSRF_TRUSTED_ORIGINS` to the exact scheme-and-host origins used by
+the browser, comma-separated (for example, `https://farm.example.com`). The
+local Compose defaults trust only `http://localhost` and
+`http://127.0.0.1`.
 
 ## Configure and start
 
@@ -44,10 +49,7 @@ command.
 `requirements-dev.txt` includes those packages plus test and quality tools.
 The local Compose build opts into the development dependencies so it can run
 tests; a direct Docker build installs runtime requirements only by default.
-These pins reproduce the legacy app and are not suitable for production. The
-Compose API build targets `linux/amd64`, because the pinned legacy psycopg2
-release has no native ARM64 wheel; on Apple Silicon, direct Docker builds also
-need `--platform=linux/amd64`.
+The runtime dependencies are pinned to the currently validated versions.
 
 ## Checks and tests
 
@@ -80,11 +82,9 @@ Enable GitHub's dependency graph/Dependabot alerts and secret scanning with
 push protection in repository settings as well; workflow configuration cannot
 turn on those repository-level features.
 
-The legacy SQLite test baseline has a separate failure on newer SQLite:
-fixtures can fail with `no such table: main.auth_user__old`. A focused class
-passed when SQLite's `legacy_alter_table` behavior was enabled in an isolated
-container. This is a Django 2.0/SQLite compatibility observation, not a
-workaround enabled by this Compose setup.
+SQLite fixture tests previously failed on the legacy Django baseline with
+`no such table: main.auth_user__old`; the supported validation path uses
+PostgreSQL.
 
 ## Demo data and cleanup
 

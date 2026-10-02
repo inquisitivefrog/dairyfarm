@@ -54,7 +54,7 @@ class TestAnnualModel(APITestCase):
     def test_02_get(self):
         a = Annual.objects.get(id=self.pk)
         self.assertRegex(a.created_by.username,
-                         '\w')
+                         '\\w')
         self.assertLessEqual(2015,
                              a.year)
         self.assertLessEqual(1,
@@ -171,7 +171,7 @@ class TestMonthlyModel(APITestCase):
     def test_02_get(self):
         m = Monthly.objects.get(id=self.pk)
         self.assertRegex(m.created_by.username,
-                         '\w')
+                         '\\w')
         self.assertLessEqual(2014,
                              m.year)
         self.assertLessEqual(1,

@@ -40,10 +40,59 @@ h2 {
     font-weight: bold;
 }
 
+.nav details.sidebar-category {
+    margin: 0.2em 0 0.7em;
+    font-size: 1em;
+    text-align: left;
+}
+
+.nav details.sidebar-category > summary,
+.nav details.test-results-nav > summary {
+    display: block;
+    padding: 0.45em 0.65em;
+    border: 1px solid #999;
+    border-radius: 0.2em;
+    background: #f8f8f8;
+    cursor: pointer;
+    list-style: none;
+}
+
+.nav details.sidebar-category > summary::-webkit-details-marker,
+.nav details.test-results-nav > summary::-webkit-details-marker {
+    display: none;
+}
+
+.nav details.sidebar-category > summary::before,
+.nav details.test-results-nav > summary::before {
+    display: inline-block;
+    width: 1.25em;
+    content: "+";
+    font-weight: bold;
+}
+
+.nav details.sidebar-category[open] > summary::before,
+.nav details.test-results-nav[open] > summary::before {
+    content: "\2212";
+}
+
+.nav details.sidebar-category ul.documentation-toc {
+    font-size: 1em;
+}
+
 .nav ul.documentation-toc {
     margin: 0.25em 0 0.5em 1em;
     padding-left: 1em;
     font-size: 0.9em;
+}
+
+.nav details.test-results-nav {
+    margin: 0.2em 0 0.5em;
+    font-size: 1em;
+    text-align: left;
+}
+
+.nav details.test-results-nav ul.documentation-toc {
+    font-size: 1em;
 }
 
 .documentation-toc li {
@@ -147,6 +196,85 @@ div.raw {
     overflow: auto;
     background-color: #f4f4f4;
     padding: 0.75em;
+}
+
+.raw .test-results-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 0.75em;
+    border: 1px solid #777;
+    background: #f4f4f4;
+}
+
+.raw .test-results-nav-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.raw .test-results-nav button {
+    padding: 0.4em 0.65em;
+    border: 1px solid #555;
+    border-radius: 0.25em;
+    background: white;
+    cursor: pointer;
+}
+
+.raw .test-results-nav button.active {
+    color: white;
+    background: #333;
+}
+
+.raw .test-area {
+    margin: 0.75em 0;
+    border: 1px solid #777;
+    padding: 0.75em;
+}
+
+.raw .test-area h3,
+.raw .test-module h4 {
+    margin: 0.4em 0;
+    text-align: left;
+}
+
+.raw .test-module {
+    margin: 0.5em 0;
+    padding: 0.5em;
+    background: #fff7e8;
+}
+
+.raw .test-module-meta,
+.raw .test-results-help {
+    margin: 0.35em 0 0.75em;
+}
+
+.raw .test-case-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background: white;
+}
+
+.raw .test-case-table th,
+.raw .test-case-table td {
+    padding: 0.45em;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.raw .test-status.passed {
+    color: #176b2c;
+}
+
+.raw .test-status.failed {
+    color: #a31515;
+    font-weight: bold;
+}
+
+.raw .test-raw-output {
+    margin-top: 0.5em;
 }
 
 div {

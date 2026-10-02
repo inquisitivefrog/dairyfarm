@@ -66,4 +66,21 @@ farmApp.controller("ClientSelectionController",
                 $timeout($scope.scrollDocumentation, 0);
             }
         });
+
     });
+
+document.addEventListener("toggle", function (event) {
+    var element = event.target;
+    var sidebar = element.closest(".nav");
+    if (element instanceof HTMLDetailsElement && element.open &&
+            element.hasAttribute("data-sidebar-accordion") && sidebar) {
+        sidebar.querySelectorAll(
+            "details[data-sidebar-accordion][open]"
+        ).forEach(function (other) {
+            if (other !== element && !other.contains(element) &&
+                    !element.contains(other)) {
+                other.open = false;
+            }
+        });
+    }
+}, true);

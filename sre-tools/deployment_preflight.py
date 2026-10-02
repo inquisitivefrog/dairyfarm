@@ -13,7 +13,7 @@ import os
 import sys
 
 
-MINIMUM_PYTHON = (3, 10)
+MINIMUM_PYTHON = (3, 14)
 MINIMUM_DJANGO = (5, 2)
 MINIMUM_HSTS_SECONDS = 31536000
 
@@ -28,7 +28,7 @@ def main():
     blockers = []
     if sys.version_info[:2] < MINIMUM_PYTHON:
         blockers.append(
-            'Python {}.{} is below the supported deployment baseline 3.10'
+            'Python {}.{} is below the supported deployment baseline 3.14'
             .format(sys.version_info[0], sys.version_info[1]))
 
     try:

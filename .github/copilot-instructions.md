@@ -47,7 +47,7 @@ The project is a Django + Django REST Framework app for managing a dairy farm in
 
 ## Key conventions in this codebase
 
-- This is a legacy Django 2.0 / DRF 3.x codebase. Some files still use older Django patterns such as `django.conf.urls.url` instead of `path()`, and older generic class patterns. Follow the surrounding file style rather than modernizing unrelated code.
+- The application currently targets Django 5.2 LTS / Django REST Framework 3.18. Some code retains historical patterns such as regular-expression routes with `re_path()` and older generic class patterns. Follow surrounding style rather than modernizing unrelated code.
 - Model classes routinely override `save()` to compute and persist generated `link` URLs after the instance is created. If you add a model or update a save path, preserve that pattern when a resource needs a canonical URL.
 - The repo uses separate read/write serializer classes for many resources (for example `CowReadSerializer` / `CowWriteSerializer`, `EventReadSerializer` / `EventWriteSerializer`). When adding or changing an API schema, keep the same pattern unless the surrounding code clearly defines a different convention.
 - API filtering is heavily route-driven. Many endpoint patterns are parameterized by `client`, `year`, `month`, and `pk`, and tests often exercise those URL conventions directly.

@@ -1,8 +1,5 @@
-# Test and quality-tool dependencies. Install this together with runtime deps.
+# Test and quality-tool dependencies, in addition to runtime dependencies.
 -r requirements.txt
 
-beautifulsoup4==4.6.0
-flake8==3.5.0
-mccabe==0.6.1
-pycodestyle==2.3.1
-pyflakes==1.6.0
+beautifulsoup4==4.15.0
+flake8==7.4.1

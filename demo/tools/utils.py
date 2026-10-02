@@ -1,8 +1,9 @@
 from random import randint
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 from django.conf import settings
 from django.db.utils import IntegrityError
-from django.utils.timezone import datetime, pytz
 
 from sys import path
 
@@ -38,7 +39,7 @@ class ToolTime:
                         tmp.minute,
                         tmp.second,
                         tmp.microsecond,
-                        tzinfo=pytz.timezone(settings.TIME_ZONE))
+                        tzinfo=ZoneInfo(settings.TIME_ZONE))
 
     @classmethod
     def convert_date(cls, d):
@@ -54,7 +55,7 @@ class ToolTime:
                         tmp.minute,
                         tmp.second,
                         tmp.microsecond,
-                        tzinfo=pytz.timezone(settings.TIME_ZONE))
+                        tzinfo=ZoneInfo(settings.TIME_ZONE))
 
     @classmethod
     def get_evening(cls, d):
@@ -66,7 +67,7 @@ class ToolTime:
                         tmp.minute,
                         tmp.second,
                         tmp.microsecond,
-                        tzinfo=pytz.timezone(settings.TIME_ZONE))
+                        tzinfo=ZoneInfo(settings.TIME_ZONE))
 
 class ToolData:
     @classmethod

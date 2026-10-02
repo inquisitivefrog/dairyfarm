@@ -18,7 +18,7 @@ farmApp.config(function ($routeProvider, $locationProvider) {
           controller: "AnnualSummaryByClientController"
     })
     .when("/login/", {
-          templateUrl: "/static/templates/auth_login.html",
+          templateUrl: "/static/templates/auth_login.html?v=csrf-cookie-1",
           controller: "LoginController"
     })
     .when("/logout/", {
@@ -57,7 +57,7 @@ farmApp.config(function ($routeProvider, $locationProvider) {
           controller: "DDSummaryController"
     })
     .when("/docs/tests/", {
-          templateUrl: "/static/templates/docs_tests.html",
+          templateUrl: "/static/templates/docs_tests.html?v=test-results-dashboard-1",
           controller: "TestsController"
     })
     .when("/docs/tests/2018/", {
@@ -65,7 +65,11 @@ farmApp.config(function ($routeProvider, $locationProvider) {
           controller: "TestsController"
     })
     .when("/docs/tests/2026/", {
-          templateUrl: "/static/templates/docs_tests_2026.html",
+          templateUrl: "/static/templates/docs_tests_2026.html?v=test-results-dashboard-1",
+          controller: "TestsController"
+    })
+    .when("/docs/tests/2026/suite/:filter/", {
+          templateUrl: "/static/templates/docs_tests_2026.html?v=test-results-dashboard-1",
           controller: "TestsController"
     })
     .when("/summary/api/annual/", {

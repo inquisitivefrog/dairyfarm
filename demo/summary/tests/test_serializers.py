@@ -163,7 +163,7 @@ class TestAnnualWriteSerializer(APITestCase):
             self.assertIn('id',
                           actual.data[i])
             self.assertRegex(actual.data[i]['created_by'],
-                             '\w')
+                             '\\w')
             self.assertIsInstance(actual.data[i]['year'],
                                   int)
 
@@ -345,7 +345,7 @@ class TestMonthlyWriteSerializer(APITestCase):
             self.assertIn('id',
                           actual.data[i])
             self.assertRegex(actual.data[i]['created_by'],
-                             '\w')
+                             '\\w')
             self.assertIsInstance(actual.data[i]['year'],
                                   int)
             self.assertIsInstance(actual.data[i]['month'],
