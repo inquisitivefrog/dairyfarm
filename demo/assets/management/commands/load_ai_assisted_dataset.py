@@ -33,59 +33,70 @@ class Command(BaseCommand):
                 'Could not read synthetic dataset {}: {}'.format(
                     DATASET_PATH, error))
 
-        try:
-            owner, created = User.objects.get_or_create(
-                username=config['owner_username'],
-                defaults={
-                    'first_name': 'AI Managed',
-                    'last_name': 'Farms',
-                    'email': 'ai-managed@example.invalid',
-                },
-            )
-            if created:
-                owner.set_unusable_password()
-                owner.save(update_fields=['password'])
-            previous_owner = User.objects.get(
-                username=config['previous_owner_username'])
-            ages = list(Age.objects.order_by('id'))
-            breed = Breed.objects.get(name='Holstein')
-            color = Color.objects.get(name='black_white')
-            action = Action.objects.get(name='Get milked')
-            seasons = {
-                season.name: season
-                for season in Season.objects.filter(
-                    name__in=config['seed_seasons'])
-            }
-            cereal = CerealHay.objects.get(
-                name=config['seed_types']['cereal'])
-            grass = GrassHay.objects.get(
-                name=config['seed_types']['grass'])
-            legume = LegumeHay.objects.get(
-                name=config['seed_types']['legume'])
-            healthy = Status.objects.get(name='Healthy')
-            pregnant = Status.objects.get(name='Pregnant')
-            injured = Status.objects.get(name='Injured')
-            bacterial = Status.objects.get(name='Bacterial Illness')
-            viral = Status.objects.get(name='Viral Illness')
-            mastitis = Illness.objects.get(diagnosis='mastitis')
-            respiratory_illness = Illness.objects.get(diagnosis='BRD')
-            lameness = Injury.objects.get(diagnosis='lameness')
-        except (User.DoesNotExist, Age.DoesNotExist, Breed.DoesNotExist,
-                Color.DoesNotExist, Action.DoesNotExist,
-                CerealHay.DoesNotExist, GrassHay.DoesNotExist,
-                LegumeHay.DoesNotExist, Status.DoesNotExist,
-                Illness.DoesNotExist, Injury.DoesNotExist) as error:
-            raise CommandError(
-                'Load the original reference and user fixtures first: {}'
-                .format(error))
-
+        owner, created = User.objects.get_or_create(
+            username=config['owner_username'],
+            defaults={
+                'first_name': 'AI Managed',
+                'last_name': 'Farms',
+                'email': 'ai-managed@example.invalid',
+            },
+        )
+        if created:
+            owner.set_unusable_password()
+            owner.save(update_fields=['password'])
+        references = config['reference_data']
+        ages = [
+            Age.objects.get_or_create(name=name)[0]
+            for name in references['ages']
+        ]
         if not ages:
-            raise CommandError('Load age reference fixtures first.')
-        missing_seasons = set(config['seed_seasons']) - set(seasons)
-        if missing_seasons:
-            raise CommandError(
-                'Missing season reference fixtures: {}'.format(
-                    ', '.join(sorted(missing_seasons))))
+            raise CommandError('Synthetic dataset must define cow ages.')
+        breed = Breed.objects.get_or_create(
+            name=references['breed']['name'],
+            defaults={'url': references['breed']['url']},
+        )[0]
+        color = Color.objects.get_or_create(name=references['color'])[0]
+        action = Action.objects.get_or_create(name=references['action'])[0]
+        seasons = {
+            season_name: Season.objects.get_or_create(
+                name=season_name
+            )[0]
+            for season_name in config['seed_seasons']
+        }
+        cereal = CerealHay.objects.get_or_create(
+            name=config['seed_types']['cereal'])[0]
+        grass = GrassHay.objects.get_or_create(
+            name=config['seed_types']['grass'])[0]
+        legume = LegumeHay.objects.get_or_create(
+            name=config['seed_types']['legume'])[0]
+        statuses = {
+            status_name: Status.objects.get_or_create(
+                name=status_name
+            )[0]
+            for status_name in references['statuses']
+        }
+        illnesses = {
+            item['diagnosis']: Illness.objects.get_or_create(
+                diagnosis=item['diagnosis'],
+                defaults={'treatment': item['treatment']},
+            )[0]
+            for item in references['illnesses']
+        }
+        injuries = {
+            item['diagnosis']: Injury.objects.get_or_create(
+                diagnosis=item['diagnosis'],
+                defaults={'treatment': item['treatment']},
+            )[0]
+            for item in references['injuries']
+        }
+        healthy = statuses['Healthy']
+        pregnant = statuses['Pregnant']
+        injured = statuses['Injured']
+        bacterial = statuses['Bacterial Illness']
+        viral = statuses['Viral Illness']
+        mastitis = illnesses['mastitis']
+        respiratory_illness = illnesses['BRD']
+        lameness = injuries['lameness']
 
         client, _ = Client.objects.get_or_create(
             name=config['client_name'],
@@ -95,12 +106,9 @@ class Command(BaseCommand):
                     config['client_join_date'], '%Y-%m-%d').date(),
             },
         )
-        if client.user_id not in (owner.pk, previous_owner.pk):
+        if client.user_id != owner.pk:
             raise CommandError(
                 'Synthetic client already exists under a different owner.')
-        if client.user_id != owner.pk:
-            client.user = owner
-            client.save(update_fields=['user'])
 
         pastures = []
         for pasture_data in config['pastures']:

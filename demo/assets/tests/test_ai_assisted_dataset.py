@@ -3,57 +3,31 @@ from io import StringIO
 
 from django.contrib.auth.models import User
 from django.core.management import call_command
+from django.core.management.base import CommandError
 from django.test import TestCase
 from django.urls import reverse
 
-from assets.models import Action, Age, Breed, CerealHay, Client, Color
-from assets.models import Cow, Event, Exercise, GrassHay, HealthRecord
-from assets.models import Illness, Injury
-from assets.models import LegumeHay, Milk, Pasture, Season, Seed, Status
+from assets.models import Client, Cow, Event, Exercise, HealthRecord
+from assets.models import Milk, Pasture, Seed
 from summary.models import Annual, Monthly
 
 
 class TestAIassistedDataset(TestCase):
-    def setUp(self):
-        self.owner = User.objects.create_user(username='foster')
-        self.original_client = Client.objects.create(
-            user=self.owner,
-            name='Original Farm',
-            join_date=date(2018, 5, 25),
+    def test_does_not_take_over_existing_farm_owned_by_other_user(self):
+        existing_owner = User.objects.create_user(username='legacy-owner')
+        existing_client = Client.objects.create(
+            user=existing_owner,
+            name='AI-Assisted Demo Farm (2019-2026)',
+            join_date=date(2019, 1, 1),
         )
-        Pasture.objects.create(
-            client=self.original_client,
-            name='North',
-            url='/static/images/regions/north.jpg',
-        )
-        for name in ('1 year', '2 years', '3 years', '4 years', '5 years'):
-            Age.objects.create(name=name)
-        Breed.objects.create(name='Holstein', url='/holstein.png')
-        Color.objects.create(name='black_white')
-        Action.objects.create(name='Get milked')
-        for name in ('Spring', 'Summer', 'Autumn', 'Winter'):
-            Season.objects.create(name=name)
-        for model, name in (
-                (CerealHay, 'alfalfa'),
-                (GrassHay, 'bermuda'),
-                (LegumeHay, 'clover'),
-                (Status, 'Healthy'),
-                (Status, 'Pregnant')):
-            model.objects.create(name=name)
-        for name in ('Injured', 'Bacterial Illness', 'Viral Illness'):
-            Status.objects.create(name=name)
-        Illness.objects.create(
-            diagnosis='mastitis',
-            treatment='isolate and monitor',
-        )
-        Illness.objects.create(
-            diagnosis='BRD',
-            treatment='veterinary evaluation',
-        )
-        Injury.objects.create(
-            diagnosis='lameness',
-            treatment='rest and veterinary evaluation',
-        )
+
+        with self.assertRaises(CommandError):
+            call_command('load_ai_assisted_dataset', stdout=StringIO())
+
+        existing_client.refresh_from_db()
+        self.assertEqual(existing_owner, existing_client.user)
+        self.assertFalse(User.objects.filter(username='ai-managed').exists())
+        self.assertFalse(Cow.objects.exists())
 
     def test_loads_isolated_dataset_idempotently_and_generates_reports(self):
         call_command(
@@ -65,8 +39,12 @@ class TestAIassistedDataset(TestCase):
         ai_owner = User.objects.get(username='ai-managed')
 
         self.assertEqual(ai_owner, client.user)
-        self.assertNotEqual(self.owner, ai_owner)
-        self.assertEqual(2, Client.objects.count())
+        self.assertFalse(ai_owner.has_usable_password())
+        self.assertEqual(
+            ['ai-managed'],
+            list(User.objects.values_list('username', flat=True)),
+        )
+        self.assertEqual(1, Client.objects.count())
         self.assertEqual(8, Cow.objects.filter(client=client).count())
         self.assertEqual(4, Pasture.objects.filter(client=client).count())
         self.assertEqual(1536, Milk.objects.filter(client=client).count())
@@ -131,12 +109,6 @@ class TestAIassistedDataset(TestCase):
             Cow.objects.filter(client=client).earliest(
                 'purchase_date').purchase_date.year,
         )
-        self.client.force_login(self.owner)
-        logged_in = self.client.get(reverse('ui_logged_in')).json()
-        self.assertEqual(
-            ['Original Farm'],
-            [item['name'] for item in logged_in['user']['clients']],
-        )
         self.client.force_login(ai_owner)
         logged_in = self.client.get(reverse('ui_logged_in')).json()
         self.assertEqual(
@@ -185,7 +157,7 @@ class TestAIassistedDataset(TestCase):
             'load_ai_assisted_dataset',
             stdout=StringIO(),
         )
-        self.assertEqual(2, Client.objects.count())
+        self.assertEqual(1, Client.objects.count())
         self.assertEqual(1536, Milk.objects.filter(client=client).count())
         self.assertEqual(96, Monthly.objects.filter(client=client).count())
         self.assertEqual(ai_owner, Client.objects.get(pk=client.pk).user)
@@ -194,5 +166,4 @@ class TestAIassistedDataset(TestCase):
                 'gallons_milk', flat=True).distinct().count(),
             1,
         )
-        self.assertTrue(
-            Client.objects.filter(pk=self.original_client.pk).exists())
+        self.assertEqual(1, User.objects.count())

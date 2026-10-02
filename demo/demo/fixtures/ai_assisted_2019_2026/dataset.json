@@ -1,9 +1,31 @@
 {
   "provenance": "Copilot-assisted synthetic demo data, created 2026-10-01",
   "owner_username": "ai-managed",
-  "previous_owner_username": "foster",
   "client_name": "AI-Assisted Demo Farm (2019-2026)",
   "client_join_date": "2019-01-01",
+  "reference_data": {
+    "ages": ["1 year", "2 years", "3 years", "4 years", "5 years"],
+    "breed": {
+      "name": "Holstein",
+      "url": "/static/images/breeds/holstein.png"
+    },
+    "color": "black_white",
+    "action": "Get milked",
+    "statuses": [
+      "Healthy",
+      "Pregnant",
+      "Injured",
+      "Bacterial Illness",
+      "Viral Illness"
+    ],
+    "illnesses": [
+      {"diagnosis": "mastitis", "treatment": "Synthetic demo scenario"},
+      {"diagnosis": "BRD", "treatment": "Synthetic demo scenario"}
+    ],
+    "injuries": [
+      {"diagnosis": "lameness", "treatment": "Synthetic demo scenario"}
+    ]
+  },
   "years": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
   "cow_count": 8,
   "cow_rfid_namespace": "https://example.invalid/dairyfarm/ai-assisted/2019-2026/cow/",

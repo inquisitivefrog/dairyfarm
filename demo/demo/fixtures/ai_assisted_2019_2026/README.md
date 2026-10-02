@@ -7,11 +7,11 @@ dataset.
 
 `dataset.json` is the input specification. The explicitly invoked Django
 management command `python manage.py load_ai_assisted_dataset` reads it and
-creates an `ai-managed` login, a separate client, and associated records. This
-account owns only this synthetic farm; the Berkeley and Foster accounts and
-their data remain separate. The command can also transfer a previously loaded
-synthetic farm from the Foster account to the new account. It does not delete
-or replace existing records and is safe to rerun.
+creates the minimal reference records it needs, an `ai-managed` account, a
+separate client, and associated records. It does not require the historical
+user/client fixtures and does not create or import Foster/Berkeley accounts or
+their data. It does not delete or replace existing records and is safe to
+rerun.
 
 The new account is created with an unusable password. Set a local password
 explicitly before logging in:
@@ -28,12 +28,20 @@ healthy and pregnant checkups. These are explicitly synthetic scenarios, not
 real herd records or medical guidance. Rerunning the loader updates this
 dataset's generated milk and health details and recalculates its reports.
 
-To load it into a local database after the original fixtures are installed:
+To load it into a migrated, otherwise empty database:
 
 ```sh
 cd demo
 python manage.py load_ai_assisted_dataset
 ```
 
-Loading is not part of migrations or Reload Cache. Do not export the generated
-records over the original fixture files.
+The generated account has no usable password. The loader refuses to take over
+an existing synthetic farm owned by a different account. Loading is not part
+of migrations or Reload Cache. Do not export the generated records over the
+original fixture files.
+
+For a public, read-only deployment, set `DJANGO_PUBLIC_DEMO_READ_ONLY=true`.
+The mode allows anonymous reads only, scopes farm-record APIs to this
+`ai-managed` synthetic client, and rejects all API writes. Keep this disabled
+for the regular local application; public deployment must use a fresh
+database populated only with reviewed synthetic data.
