@@ -1,3 +1,4 @@
 .env
 **/__pycache__/
 README.tmp_creds
+.DS_Store

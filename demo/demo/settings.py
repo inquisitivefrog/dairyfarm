@@ -63,6 +63,9 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = os.environ.get(
 SECURE_HSTS_PRELOAD = os.environ.get(
     'DJANGO_HSTS_PRELOAD', 'false').lower() in (
         'true', '1', 'yes', 'on')
+if os.environ.get('DJANGO_TRUST_X_FORWARDED_PROTO', 'false').lower() in (
+        'true', '1', 'yes', 'on'):
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_CONTENT_TYPE_NOSNIFF = True
 X_FRAME_OPTIONS = 'DENY'
 
@@ -207,13 +210,20 @@ REST_FRAMEWORK = {
 
 LOGIN_URL = '/login/'
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
-        'LOCATION': os.environ.get(
-            'MEMCACHED_LOCATION', '127.0.0.1:11211'),
+if os.environ.get('MEMCACHED_LOCATION'):
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
+            'LOCATION': os.environ['MEMCACHED_LOCATION'],
+        }
     }
-}
+else:
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+            'LOCATION': 'dairyfarm',
+        }
+    }
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'farmapp@localhost.com'

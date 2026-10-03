@@ -44,6 +44,98 @@ jobs:
              python manage.py makemigrations --check --dry-run &&
              python -m flake8 ../sre-tools"
 
+  deploy-gcp:
+    name: Deploy public demo to GCP
+    if: github.event_name == 'push' && github.ref == 'refs/heads/ai-assisted'
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      GCP_PROJECT_ID: ${{ vars.GCP_PROJECT_ID }}
+      GCP_REGION: us-central1
+      IMAGE_TAG: production
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Authenticate to Google Cloud with Workload Identity Federation
+        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093
+        with:
+          workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
+          service_account: ${{ vars.GCP_DEPLOY_SERVICE_ACCOUNT }}
+
+      - name: Set up gcloud
+        uses: google-github-actions/setup-gcloud@aa5489c8933f4cc7a4f7d45035b3b1440c9c10db
+        with:
+          project_id: ${{ vars.GCP_PROJECT_ID }}
+
+      - name: Build and push Cloud Run images
+        env:
+          REPOSITORY: ${{ vars.GCP_ARTIFACT_REGISTRY }}
+        run: |
+          gcloud auth configure-docker "${GCP_REGION}-docker.pkg.dev" --quiet
+          docker build --platform linux/amd64 \
+            -f Dockerfile \
+            -t "${REPOSITORY}/api:${IMAGE_TAG}" .
+          docker push "${REPOSITORY}/api:${IMAGE_TAG}"
+          docker build --platform linux/amd64 \
+            -f docker/ui/cloudrun.Dockerfile \
+            -t "${REPOSITORY}/ui:${IMAGE_TAG}" .
+          docker push "${REPOSITORY}/ui:${IMAGE_TAG}"
+
+      - name: Deploy Cloud Run API, UI, and initialization job
+        env:
+          REPOSITORY: ${{ vars.GCP_ARTIFACT_REGISTRY }}
+        run: |
+          gcloud run jobs update dairyfarm-demo-initialize \
+            --project "${GCP_PROJECT_ID}" \
+            --region "${GCP_REGION}" \
+            --image "${REPOSITORY}/api:${IMAGE_TAG}" \
+            --quiet
+          gcloud run jobs execute dairyfarm-demo-initialize \
+            --project "${GCP_PROJECT_ID}" \
+            --region "${GCP_REGION}" \
+            --wait
+          gcloud run services update dairyfarm-demo-api \
+            --project "${GCP_PROJECT_ID}" \
+            --region "${GCP_REGION}" \
+            --image "${REPOSITORY}/api:${IMAGE_TAG}" \
+            --quiet
+          gcloud run services update dairyfarm-demo-ui \
+            --project "${GCP_PROJECT_ID}" \
+            --region "${GCP_REGION}" \
+            --image "${REPOSITORY}/ui:${IMAGE_TAG}" \
+            --quiet
+
+      - name: Verify deployed revisions and public UI
+        run: |
+          for service in dairyfarm-demo-api dairyfarm-demo-ui; do
+            ready="$(gcloud run services describe "$service" \
+              --project "${GCP_PROJECT_ID}" \
+              --region "${GCP_REGION}" \
+              --format='value(status.conditions[0].status)')"
+            test "$ready" = "True"
+          done
+          ui_url="$(gcloud run services describe dairyfarm-demo-ui \
+            --project "${GCP_PROJECT_ID}" \
+            --region "${GCP_REGION}" \
+            --format='value(status.url)')"
+          body="$(mktemp)"
+          status="$(curl -sS -o "$body" -w '%{http_code}' "$ui_url/")"
+          if [ "$status" = "200" ]; then
+            grep -q 'data-public-demo="true"' "$body"
+          elif [ "$status" = "503" ]; then
+            grep -q 'DairyFarm demo is offline' "$body"
+          else
+            echo "Unexpected UI response: HTTP ${status}" >&2
+            cat "$body" >&2
+            exit 1
+          fi
+          rm -f "$body"
+
   dependency-review:
     name: Review dependency changes
     if: github.event_name == 'pull_request'
