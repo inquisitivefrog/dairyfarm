@@ -2,8 +2,10 @@
 
 ## Modernization decision
 
-- Public-cloud planning is paused. No GCP project, Terraform configuration, or
-  cloud resources were created for DairyFarm.
+- DairyFarm is deployed as a public, synthetic-only, read-only demo on GCP.
+- The existing billed GCP project was used with isolated `dairyfarm-demo-*`
+  resource names. Terraform configuration and operational scripts are in
+  `terraform/gcp/`.
 - The user approved Python 3.14, Django 5.2 LTS, and a current Django REST
   Framework 3.18.x release as the modernization target.
 - The AngularJS frontend remains unchanged as a separate client of the
@@ -42,6 +44,27 @@
 
 ## Remaining roadmap
 
+- GCP Cloud Scheduler is configured for Cloud SQL startup at 4:30 a.m. and
+  shutdown at 6:00 p.m. `America/Los_Angeles` daily. The early startup allows
+  time for the database to become ready before the requested 5:00 a.m. opening.
+- The UI serves a friendly maintenance page when its API/database is
+  unavailable. The public API remains separately callable and can return a
+  server error while Cloud SQL is stopped.
+- GitHub Actions deploys pushes to `ai-assisted` after tests pass, using
+  repository/branch-restricted Workload Identity Federation rather than a
+  service-account key. Repository Actions variables were configured.
+- Added `./scripts/validate-github-workflow.sh` to parse the workflow YAML and
+  verify that deployment depends on the test job.
+- Deployment changes were committed locally as `7d40d36` (`Add scheduled GCP
+  demo deployment`). They have not been pushed; the user chose to defer the
+  push and automatic deployment until tomorrow.
+- Cloud SQL was explicitly stopped after hours and confirmed in `STOPPED`.
+  The API and UI Cloud Run services both have minimum instances set to zero,
+  so they scale to zero when idle. The resource checker was updated to treat
+  `STOPPED` as a valid state and to use Terraform state for database-resource
+  presence because Cloud SQL does not expose live database metadata while
+  stopped; it now reports 10 passed, 0 failed.
+
 - A read-only audit of the local PostgreSQL database found 11 active ordinary
   accounts, none staff/superusers. Nine match the historical user fixture; the
   fixture cleanup helper's dry run would disable all nine, including the
@@ -69,9 +92,8 @@
 - An additional active `login-probe` account and empty farm are present only in
   the local database, not in source or fixtures. Its origin is unknown; it was
   left unchanged.
-- Public deployment remains paused. Before it is reconsidered, revoke any
-  historical credentials shared externally, provision a fresh database with
-  only reviewed synthetic data, finish domain-specific production security
-  configuration, and confirm operational/backup requirements.
-- The existing Django/Gunicorn/Docker upgrade is local only; there is no
-  Terraform or cloud deployment configuration for DairyFarm yet.
+- Before further public operation, revoke any historical credentials shared
+  externally and confirm operational/backup requirements. Review the GCP
+  cost estimate and actual billing periodically; the scheduled database
+  compute window reduces compute charges but does not eliminate fixed and
+  usage-based costs.

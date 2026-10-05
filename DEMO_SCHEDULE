@@ -1,0 +1,20 @@
+DairyFarm public demo schedule
+==============================
+
+Agreed schedule: run daily, including weekends, using America/Los_Angeles
+local time (Pacific time, with daylight-saving changes):
+
+  4:30 a.m.  Cloud Scheduler sets the Cloud SQL instance to ALWAYS.
+             This provides startup time before the demo's 5:00 a.m. opening.
+  6:00 p.m.  Cloud Scheduler sets the Cloud SQL instance to NEVER.
+
+This schedule controls Cloud SQL only. Cloud Run services are configured to
+scale to zero when idle. Supporting resources such as Artifact Registry,
+Secret Manager, and Cloud Scheduler remain provisioned and may still incur
+charges.
+
+The live schedules are defined in terraform/gcp/scheduling.tf. To inspect
+their current configuration:
+
+  cd terraform/gcp
+  ./verify-schedule-gcp.sh --check

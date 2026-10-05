@@ -67,12 +67,30 @@ echo "== DairyFarm GCP resource check (project: $PROJECT_ID, region: $REGION) ==
 echo
 
 echo "-- Managed services --"
-check_value "Cloud SQL state" "RUNNABLE" \
-  gcloud sql instances describe "${PREFIX}-postgres" \
-  --project "$PROJECT_ID" --format="value(state)"
-check "Cloud SQL database" \
-  gcloud sql databases describe dairyfarm --instance="${PREFIX}-postgres" \
-  --project "$PROJECT_ID" --format="value(name)"
+SQL_STATE="$(gcloud sql instances describe "${PREFIX}-postgres" \
+  --project "$PROJECT_ID" --format="value(state)" 2>/dev/null)"
+if [[ "$SQL_STATE" == "RUNNABLE" || "$SQL_STATE" == "STOPPED" ]]; then
+  printf '  PASS  Cloud SQL state: %s\n' "$SQL_STATE"
+  PASS=$((PASS + 1))
+else
+  printf '  FAIL  Cloud SQL state: expected RUNNABLE or STOPPED, got %s\n' \
+    "${SQL_STATE:-empty}"
+  FAIL=$((FAIL + 1))
+fi
+if [[ "$SQL_STATE" == "RUNNABLE" ]]; then
+  check "Cloud SQL database" \
+    gcloud sql databases describe dairyfarm --instance="${PREFIX}-postgres" \
+    --project "$PROJECT_ID" --format="value(name)"
+elif [[ "$SQL_STATE" == "STOPPED" ]]; then
+  if terraform -chdir="$TF_DIR" state list 2>/dev/null |
+      grep -Fxq "google_sql_database.main"; then
+    echo "  PASS  Cloud SQL database resource is tracked in Terraform state (live database metadata is unavailable while stopped)."
+    PASS=$((PASS + 1))
+  else
+    echo "  FAIL  Cloud SQL database resource is not present in Terraform state."
+    FAIL=$((FAIL + 1))
+  fi
+fi
 check "Artifact Registry repository" \
   gcloud artifacts repositories describe "${PREFIX}-images" \
   --location "$REGION" --project "$PROJECT_ID" --format="value(name)"
