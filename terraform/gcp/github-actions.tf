@@ -44,6 +44,7 @@ resource "google_project_iam_custom_role" "github_run_deployer" {
   title       = "DairyFarm Cloud Run deployer"
   description = "Allows GitHub Actions to update DairyFarm Cloud Run services and jobs."
   permissions = [
+    "run.executions.get",
     "run.jobs.get",
     "run.jobs.run",
     "run.jobs.update",
