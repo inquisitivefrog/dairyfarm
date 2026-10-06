@@ -46,7 +46,9 @@ jobs:
 
   deploy-gcp:
     name: Deploy public demo to GCP
-    if: github.event_name == 'push' && github.ref == 'refs/heads/ai-assisted'
+    if: >-
+      github.ref == 'refs/heads/ai-assisted' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     needs: test
     runs-on: ubuntu-latest
     permissions:
@@ -58,21 +60,36 @@ jobs:
       IMAGE_TAG: production
 
     steps:
+      - name: Check demo operating hours
+        id: hours
+        run: |
+          hour="$(TZ=America/Los_Angeles date +%-H)"
+          if [ "$hour" -ge 5 ] && [ "$hour" -lt 18 ]; then
+            echo "open=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "open=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Cloud SQL is stopped outside 5:00 a.m.-6:00 p.m. Pacific; deployment skipped. Re-run this workflow during operating hours."
+          fi
+
       - name: Check out repository
+        if: steps.hours.outputs.open == 'true'
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Authenticate to Google Cloud with Workload Identity Federation
+        if: steps.hours.outputs.open == 'true'
         uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093
         with:
           workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
           service_account: ${{ vars.GCP_DEPLOY_SERVICE_ACCOUNT }}
 
       - name: Set up gcloud
+        if: steps.hours.outputs.open == 'true'
         uses: google-github-actions/setup-gcloud@aa5489c8933f4cc7a4f7d45035b3b1440c9c10db
         with:
           project_id: ${{ vars.GCP_PROJECT_ID }}
 
       - name: Build and push Cloud Run images
+        if: steps.hours.outputs.open == 'true'
         env:
           REPOSITORY: ${{ vars.GCP_ARTIFACT_REGISTRY }}
         run: |
@@ -87,6 +104,7 @@ jobs:
           docker push "${REPOSITORY}/ui:${IMAGE_TAG}"
 
       - name: Deploy Cloud Run API, UI, and initialization job
+        if: steps.hours.outputs.open == 'true'
         env:
           REPOSITORY: ${{ vars.GCP_ARTIFACT_REGISTRY }}
         run: |
@@ -111,6 +129,7 @@ jobs:
             --quiet
 
       - name: Verify deployed revisions and public UI
+        if: steps.hours.outputs.open == 'true'
         run: |
           for service in dairyfarm-demo-api dairyfarm-demo-ui; do
             ready="$(gcloud run services describe "$service" \
