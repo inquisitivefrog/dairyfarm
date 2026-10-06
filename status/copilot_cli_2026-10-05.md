@@ -48,3 +48,16 @@
   is existing dependency debt on `master`, and `ai-assisted` has already
   upgraded the runtime.
 - Cloud SQL stops at 6 p.m. and restarts at 4:30 a.m. as scheduled.
+
+## Evening update (7:25 p.m. Pacific)
+
+- Cloud SQL confirmed `STOPPED` (activation policy `NEVER`) after the 6 p.m.
+  scheduled stop.
+- Added `scripts/deploy-now.sh` (`7917fcb`): refuses outside 5 a.m.-6 p.m.
+  Pacific, requires Cloud SQL `RUNNABLE`, dispatches CI on `ai-assisted`, and
+  watches the run.
+- Runs for `192711f` and `7917fcb` passed; the after-hours deploy skip was
+  confirmed in the log ("deployment skipped" notice).
+- Outstanding: morning real-deploy test (`./scripts/deploy-now.sh`, then
+  `./terraform/gcp/verify-demo-gcp.sh --public`), revoke old resume
+  credentials, rerun `estimate-costs-gcp.sh`, watch Dependabot on `master`.
