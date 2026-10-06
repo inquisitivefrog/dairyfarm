@@ -24,6 +24,23 @@
   drift.
 - The rerun and the follow-up push (`dad1e61`) both completed successfully:
   tests, secret scan, and the GCP deploy job all passed.
+- The next push (`75b2ffd`) deployed at about 6:39 p.m. Pacific, after Cloud
+  SQL had stopped. The initialization job could not reach the database and
+  the deploy job failed (the live Cloud Run services were untouched). The
+  deploy job now checks the Pacific hour and skips, with a notice, outside
+  5:00 a.m.-6:00 p.m.; `workflow_dispatch` was added so it can be re-run
+  manually during operating hours. The edit is scripted in
+  `scripts/gate-deploy-on-hours.py` (idempotent). Pushed as `89476b7`.
+- That run's tests failed once on a flaky collision: the list tests in
+  `demo/assets/tests/test_serializers.py` (`TestInjurySerializer` and
+  `TestIllnessSerializer`) create 10 records with random 10-10000 suffixes, so
+  two could rarely match the unique `diagnosis` constraint (about 0.5% per
+  run). Each loop value now gets a unique index suffix. The affected tests
+  pass locally; this fix is committed in the next push.
+- Closed four stale Dependabot PRs (#4-#7, 2021-2022 bumps against the legacy
+  `master` stack). `master` and `ai-assisted` remain separate branches.
+- Expected next step: after 5 a.m. Pacific on Oct 6, trigger the workflow
+  manually on `ai-assisted` and confirm a real deploy passes end to end.
 - The public smoke test passed all 10 checks: only the synthetic farm is
   visible, farm numbering starts at 1, login and writes are blocked, and HTTPS
   with HSTS is active.

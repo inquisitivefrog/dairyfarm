@@ -665,6 +665,7 @@ class TestIllnessSerializer(APITestCase):
         illnesses = []
         for i in range(expected):
             self._load_illness_data()
+            self.illness_data['diagnosis'] += '_{}'.format(i)
             illness = Illness.objects.create(**self.illness_data)
             illnesses.append(illness)
         actual = IllnessSerializer(illnesses,
@@ -779,6 +780,7 @@ class TestInjurySerializer(APITestCase):
         injuries = []
         for i in range(expected):
             self._load_injury_data()
+            self.injury_data['diagnosis'] += '_{}'.format(i)
             injury = Injury.objects.create(**self.injury_data)
             injuries.append(injury)
         actual = InjurySerializer(injuries,
